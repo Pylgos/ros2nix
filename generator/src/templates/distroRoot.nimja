@@ -1,0 +1,7 @@
+# auto-generated DO NOT EDIT
+
+self: super: {
+{% for (name, pkg) in pkgs.pairs %}
+  {{ pkg.name }} = self.callPackage ./pkgs/{{ pkg.name }}.nix {};
+{% endfor %}
+}

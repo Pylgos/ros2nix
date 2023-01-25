@@ -1,0 +1,25 @@
+# auto-generated DO NOT EDIT
+
+{ buildRosPackage
+, fetchgit
+, fetchurl
+, {{ args }}
+}:
+
+buildRosPackage {
+  pname = "{{ pkg.name }}";
+  version = "{{ pkg.relVersion }}";
+  buildInputs = [ {{ buildInputs }} ];
+  nativeBuildInputs = [ {{ nativeBuildInputs }} ];
+  propagatedBuildInputs = [ {{ propagatedBuildInputs }} ];
+  propagatedNativeBuildInputs = [ {{ propagatedNativeBuildInputs }} ];
+  checkInputs = [ {{ checkInputs }} ];
+  postPatch = ''
+    {{ pkg.patch }}
+  '';
+  src = fetchgit {
+    url = "{{ pkg.prefetch.source.repoUrl }}";
+    rev = "{{ pkg.prefetch.commitHash }}";
+    sha256 = "{{ pkg.prefetch.hash }}";
+  };
+}

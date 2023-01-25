@@ -1,0 +1,5 @@
+switch("define", "ssl")
+switch("define", "chronicles_disable_thread_id")
+switch("gc", "orc")
+switch("threads", "on")
+# switch("define", "release")

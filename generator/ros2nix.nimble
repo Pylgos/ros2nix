@@ -1,0 +1,22 @@
+# Package
+
+version       = "0.1.0"
+author        = "Pylgos"
+description   = "A new awesome nimble package"
+license       = "MIT"
+srcDir        = "src"
+bin           = @["ros2nix"]
+
+
+# Dependencies
+
+requires "yaml#head"
+requires "nim >= 1.6.6"
+requires "argparse"
+requires "zippy"
+requires "chronicles"
+requires "parsetoml"
+requires "nimja"
+requires "threading"
+requires "macroutils"
+requires "taskpools"

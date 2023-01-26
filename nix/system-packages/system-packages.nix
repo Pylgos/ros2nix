@@ -1,8 +1,8 @@
 { nixpkgs
 , py3version
 , py2version
-, ignition
-, misc
+# , ignition
+# , misc
 } @ args:
 
 (import ./nixpkgs.nix args)

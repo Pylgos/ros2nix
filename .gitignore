@@ -1,2 +1,5 @@
 /.std
 /generator/ros2nix
+/setuphelper/setuphelper
+/result
+/prefetch_cache.json

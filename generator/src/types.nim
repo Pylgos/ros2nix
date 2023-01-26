@@ -42,12 +42,12 @@ type
     substitutions*: seq[Substitution]
   
   SubstitutionKind* = enum
-    sskReplaceToPath = "replaceToPath"
+    sskPatchVendor = "patchVendor"
 
   Substitution* = object
     filename*: string
     case kind*: SubstitutionKind
-    of sskReplaceToPath:
+    of sskPatchVendor:
       replaceFrom*: string
       replaceToPath*: FetchResult
 

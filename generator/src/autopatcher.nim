@@ -75,7 +75,7 @@ proc findCmakeVariables(content: string): Table[string, string] =
 
 
 # TODO: implement other sources like svn
-proc patchCmakeVendor(pkg: var PkgInfo, file: string) =
+proc patchCmakeVendor(pkg: var PkgInfo, file, dir: string) =
   dynamicLogScope(file = file):
     let content = file.readFile
     let calls = content.findFunctionCalls("externalproject_add")
@@ -89,7 +89,7 @@ proc patchCmakeVendor(pkg: var PkgInfo, file: string) =
       gitTagRegex = re"(GIT_TAG\s+([^\s]+))"
       invalidChar = {'$', '@'}
 
-    let relPath = relativePath(file, pkg.prefetch.path)
+    let relPath = relativePath(file, dir)
     let variables = findCmakeVariables(content)
 
     for call in calls:
@@ -110,7 +110,7 @@ proc patchCmakeVendor(pkg: var PkgInfo, file: string) =
           # """.dedent
         # pkg.patch.add patch
         pkg.substitutions.add Substitution(
-          kind: sskReplaceToPath,
+          kind: sskPatchVendor,
           filename: relPath,
           replaceFrom: orig,
           replaceToPath: fetchResult)
@@ -141,7 +141,7 @@ proc patchCmakeVendor(pkg: var PkgInfo, file: string) =
         #   """.dedent
         # pkg.patch.add patch
         pkg.substitutions.add Substitution(
-          kind: sskReplaceToPath,
+          kind: sskPatchVendor,
           filename: relPath,
           replaceFrom: orig,
           replaceToPath: fetchResult)
@@ -163,7 +163,11 @@ proc autoPatch*(pkg: var PkgInfo) =
       tmpDir = genTempPath("ros2nix_tarball_extract_", "_" & pkg.name)
       debug "Extracting", `from`=pkg.prefetch.path, dest=tmpDir
       pkg.prefetch.path.extractAll(tmpDir)
-      path = tmpDir
+      let
+        contents = tmpDir.walkDir.toSeq.filterIt:
+          it.path.splitFile.ext != ".data"
+      doAssert contents.len == 1
+      path = contents[0].path
 
 
     for file in path.walkDirRec({pcFile}):
@@ -174,7 +178,7 @@ proc autoPatch*(pkg: var PkgInfo) =
       const cmakeExt = [".cmake", ".in", ".cmake.in"].toHashSet
 
       if tail == "CMakeLists.txt" or ext in cmakeExt:
-        patchCmakeVendor(pkg, file)
+        patchCmakeVendor(pkg, file, path)
 
     if tmpDir != "":
       removeDir tmpDir

@@ -44,7 +44,8 @@ proc substitutionContent(subs: seq[Substitution]): JsonNode =
     j["kind"] = newJString $sub.kind
 
     case sub.kind:
-    of sskReplaceToPath:
+    of sskPatchVendor:
+      j["filename"] = newJString sub.filename
       j["from"] = newJString sub.replaceFrom
       j["to"] = sourceContent sub.replaceToPath
     

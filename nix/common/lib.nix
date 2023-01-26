@@ -16,20 +16,25 @@ in
 rec {
   getSource = source:
     if source.kind == "git" then
-      nixpkgs.fetchGit { inherit (source) url hash rev; }
+      nixpkgs.fetchgit { inherit (source) url rev; sha256 = source.hash; }
     else if source.kind == "url" then
-      nixpkgs.fetchUrl { inherit (source) url hash; }
+      nixpkgs.fetchurl { inherit (source) url; sha256 = source.hash; }
     else
       throw "Unsupported source type";
 
 
-  buildRosPackage =
+  buildRosPackageFor =
     rosDistroPkgs:
-    { substitutions ? { }
+    { substitutions ? []
+
     , buildDepend ? [ ]
     , buildExportDepend ? [ ]
     , buildToolDepend ? [ ]
     , buildToolExportDepend ? [ ]
+    , execDepend ? []
+    , testDepend ? []
+    , docDepend ? []
+
     , postSetup ? ""
     , postPatch ? ""
     , buildPhase ? null
@@ -40,38 +45,48 @@ rec {
     , ...
     } @ args:
     let
-      resolveDeps =
-        pkgs:
-        l.concatLists
-          (
-            map
-              (pkg:
-              if l.isString pkg then
+      resolveDeps = pkgs:
+        l.concatLists (map
+          (pkg:
+            if l.isString pkg then
+              if l.isList rosDistroPkgs.${pkg} then
                 rosDistroPkgs.${pkg}
-              else if l.isDerivation then
-                [ pkg ]
               else
-                throw "wtf"
-              )
-              pkgs
-          );
+                [ rosDistroPkgs.${pkg} ]
+            else if l.isDerivation pkg then
+              [ pkg ]
+            else
+              throw "wtf"
+          )
+          pkgs);
+
     in
-    nixpkgs.stdenv.mkDerivation (args // {
-      propagatedNativeBuildInputs = resolveDeps buildToolExportDepend;
-      nativeBuildInputs = resolveDeps ((l.subtractLists buildToolExportDepend buildToolDepend) ++ [ rosDistroPkgs.python3-colcon-common-extensions ]);
-      propagatedBuildInputs = resolveDeps buildExportDepend;
-      buildInputs = resolveDeps (l.subtractLists buildExportDepend buildDepend);
+    nixpkgs.stdenv.mkDerivation (
+      (l.removeAttrs args [
+        "substitutions"
+        "buildDepend"
+        "buildExportDepend"
+        "buildToolDepend"
+        "buildToolExportDepend"
+        "execDepend" 
+        "testDepend" 
+        "docDepend"
+      ]) // {
+      propagatedNativeBuildInputs = resolveDeps (buildToolExportDepend ++ buildToolDepend);
+      nativeBuildInputs = [ rosDistroPkgs.python3-colcon-common-extensions cell.packages.setupHook ];
+      propagatedBuildInputs = resolveDeps (buildExportDepend ++ buildDepend ++ execDepend);
+      checkInputs = resolveDeps testDepend;
 
       postPatch = postPatch +
-        l.concatMapStringSep
+        l.concatMapStringsSep
           ";\n"
           (sub:
-            if sub.kind == "replaceToPath" then
+            if sub.kind == "patchVendor" then
               let
                 source = getSource sub.to;
               in
               ''
-                substituteInPlace ${l.escapeShellArgs [ sub.filename "--replace" sub.from "${source}" ]}
+                substituteInPlace ${l.escapeShellArgs [ sub.filename "--replace" sub.from "URL ${source}" ]}
               ''
             else
               throw "Unsupported substitution type"
@@ -117,19 +132,19 @@ rec {
         '' else installPhase;
     });
 
-  loadRosPackagesFromJson = rosPkgs: distroName: jsonPath:
+  loadRosDistroFromJson = rosDistroPkgs: distroName: jsonPath:
     let
       j = l.fromJSON (l.readFile jsonPath);
       distro = j.distributions.${distroName};
     in
     l.mapAttrs
       (packageName: package:
-        buildRosPackage distro.packages {
+        buildRosPackageFor rosDistroPkgs {
           pname = packageName;
           inherit (package) version substitutions;
-          inherit (package.dependencies) buildDepend buildExportDepend buildToolDepend buildToolExportDepend;
+          inherit (package.dependencies) buildDepend buildExportDepend buildToolDepend buildToolExportDepend execDepend testDepend docDepend;
           src = getSource package.source;
         }
       )
       distro.packages;
-    }
+}

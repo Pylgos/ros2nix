@@ -269,11 +269,11 @@
           "substitutions": []
         },
         "joint_limits": {
-          "version": "2.20.0",
+          "version": "2.21.0",
           "source": {
             "kind": "url",
-            "hash": "03k27gpcl90wgl2vlrd78fck18vnwcyb0gih297da75hdslsr1sb",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/joint_limits/2.20.0-1.tar.gz"
+            "hash": "0fnpjp24frdz0bdb9lchjpb3gzd8rqqj6x1h5plqzrmykbryg3rk",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/joint_limits/2.21.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -976,11 +976,11 @@
           "substitutions": []
         },
         "dbw_ford_can": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "0sxh7jryvi7d6bbfadmm314jkclir4a6jn6zbc9f6992mc75kyz1",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_ford_can/2.1.0-1.tar.gz"
+            "hash": "06q8f1r90i3nnd15n7g2fgz14nl2w6zy96jg63802d2m3qyq8bb6",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_ford_can/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -1556,7 +1556,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "src/extern/grpc/CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/grpc/grpc.git",
               "to": {
                 "kind": "git",
@@ -1566,7 +1567,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "src/extern/gtest/CMakeLists.txt",
               "from": "URL https://github.com/google/googletest/archive/master.zip",
               "to": {
                 "kind": "url",
@@ -1575,7 +1577,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "src/extern/protobuf/CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/google/protobuf.git",
               "to": {
                 "kind": "git",
@@ -1585,7 +1588,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "src/extern/yaml-cpp/CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git",
               "to": {
                 "kind": "git",
@@ -1629,21 +1633,23 @@
           "substitutions": []
         },
         "effort_controllers": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "1prwaz9k2m215m86kbhab8c5pak9qwi11ipz6mkxkih8yv03sq57",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/effort_controllers/2.15.0-1.tar.gz"
+            "hash": "12c9ckbzq0bjjqqwjl0vg1yn55rzsm087x2ric6vy6j78jcfn6vn",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/effort_controllers/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
               "pluginlib",
               "rclcpp",
-              "forward_command_controller"
+              "forward_command_controller",
+              "backward_ros"
             ],
             "buildExportDepend": [
               "rclcpp",
-              "forward_command_controller"
+              "forward_command_controller",
+              "backward_ros"
             ],
             "buildToolDepend": [
               "ament_cmake"
@@ -1651,7 +1657,8 @@
             "buildToolExportDepend": [],
             "execDepend": [
               "rclcpp",
-              "forward_command_controller"
+              "forward_command_controller",
+              "backward_ros"
             ],
             "docDepend": [],
             "testDepend": [
@@ -3192,11 +3199,11 @@
           "substitutions": []
         },
         "dbw_ford_description": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "12y059lfq0sh0vfkq1gnv5a2k666dknbi1hhyr6ssakbb2ymkgvv",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_ford_description/2.1.0-1.tar.gz"
+            "hash": "1g1f7b0f22hzbm3gvri4x749c44z4hlyfgjgry16dhpvdyva7nij",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_ford_description/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -3246,7 +3253,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://github.com/curl/curl/releases/download/curl-7_81_0/curl-7.81.0.tar.gz",
               "to": {
                 "kind": "url",
@@ -3255,7 +3263,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://github.com/curl/curl/releases/download/curl-7_81_0/curl-7.81.0.tar.gz",
               "to": {
                 "kind": "url",
@@ -3417,7 +3426,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/osqp/osqp.git",
               "to": {
                 "kind": "git",
@@ -3989,11 +3999,11 @@
           "substitutions": []
         },
         "dbw_ford": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "1dbynv16zh9biqafxb185h62i853b6ss7n2nbb0p6hcjbbsx2smz",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_ford/2.1.0-1.tar.gz"
+            "hash": "00bzn0br2l207477a4mk0ir9z92rzh5maq8382sn5pwgbgayfkhl",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_ford/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -4779,11 +4789,11 @@
           "substitutions": []
         },
         "dataspeed_dbw_common": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "1vdagygzfz2lrrwrbx7id0kvbrshkdg9ynrj80cx6vlyxvsm2avg",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dataspeed_dbw_common/2.1.0-1.tar.gz"
+            "hash": "0djsyl01f9yg6dx864rk9fl84svq5pfjbil84309ih3g8h8asvdf",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dataspeed_dbw_common/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -5669,11 +5679,11 @@
           "substitutions": []
         },
         "admittance_controller": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "0njrg6qn87g88flpcswvi7a3gja544c3nd5bqmq8mgvnrhh1fm7f",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/admittance_controller/2.15.0-1.tar.gz"
+            "hash": "13mcsd43xjk6xswksak7xqgh75inw1my8yi44dz5gkq3fz75wsmi",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/admittance_controller/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -5695,7 +5705,8 @@
               "filters",
               "rclcpp",
               "trajectory_msgs",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildExportDepend": [
               "hardware_interface",
@@ -5716,7 +5727,8 @@
               "filters",
               "rclcpp",
               "trajectory_msgs",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildToolDepend": [
               "ament_cmake"
@@ -5741,7 +5753,8 @@
               "filters",
               "rclcpp",
               "trajectory_msgs",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "docDepend": [],
             "testDepend": [
@@ -5871,6 +5884,35 @@
           },
           "substitutions": []
         },
+        "diagnostic_common_diagnostics": {
+          "version": "3.1.0",
+          "source": {
+            "kind": "url",
+            "hash": "08na221ghkdyib3f76js8mv7fdhf0isd4yqdllv4x6ymwa7qjw29",
+            "url": "https://github.com/ros2-gbp/diagnostics-release/archive/refs/tags/release/humble/diagnostic_common_diagnostics/3.1.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [],
+            "buildExportDepend": [],
+            "buildToolDepend": [
+              "ament_cmake_python",
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "diagnostic_updater",
+              "ntpdate",
+              "rclpy"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_cmake_xmllint",
+              "ament_cmake_lint_cmake",
+              "ament_lint_auto"
+            ]
+          },
+          "substitutions": []
+        },
         "joy": {
           "version": "3.1.0",
           "source": {
@@ -5978,11 +6020,11 @@
           "substitutions": []
         },
         "ros2_controllers": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "0zf1q3bix3qjgm9z0l1a56i1ywnjsrbd9kyw4rvhjjsw16c6kzbf",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/ros2_controllers/2.15.0-1.tar.gz"
+            "hash": "10k91ckwj2by0i30kh0wbi5hf9mznmaky7mfib5cjh2fbpkc9fxy",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/ros2_controllers/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -6119,6 +6161,28 @@
             ],
             "buildToolExportDepend": [],
             "execDepend": [],
+            "docDepend": [],
+            "testDepend": []
+          },
+          "substitutions": []
+        },
+        "py_trees": {
+          "version": "2.2.0",
+          "source": {
+            "kind": "url",
+            "hash": "1k78dii9wzi3z4ljgcxx8pz9kqnjv5kga8d8w5bc7sgxl3a4n0y3",
+            "url": "https://github.com/stonier/py_trees-release/archive/refs/tags/release/humble/py_trees/2.2.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "python3-setuptools"
+            ],
+            "buildExportDepend": [],
+            "buildToolDepend": [],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "python3-pydot"
+            ],
             "docDepend": [],
             "testDepend": []
           },
@@ -6329,7 +6393,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://www.phidgets.com/downloads/phidget22/libraries/linux/libphidget22/libphidget22-1.9.20220203.tar.gz",
               "to": {
                 "kind": "url",
@@ -6848,7 +6913,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://github.com/cameron314/readerwriterqueue/archive/ef7dfbf553288064347d51b8ac335f1ca489032a.zip",
               "to": {
                 "kind": "url",
@@ -6857,7 +6923,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://github.com/cameron314/concurrentqueue/archive/8f65a8734d77c3cc00d74c0532efca872931d3ce.zip",
               "to": {
                 "kind": "url",
@@ -7008,6 +7075,97 @@
               "python3-pytest",
               "launch_testing"
             ]
+          },
+          "substitutions": []
+        },
+        "mapviz": {
+          "version": "2.2.0",
+          "source": {
+            "kind": "url",
+            "hash": "1qpbk8xqaxry0wknf0gwpm64wa52wlgs0d7df534grmc40lnv28n",
+            "url": "https://github.com/ros2-gbp/mapviz-release/archive/refs/tags/release/humble/mapviz/2.2.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "swri_transform_util",
+              "rqt_gui_cpp",
+              "glut",
+              "libxi-dev",
+              "tf2_ros",
+              "geometry_msgs",
+              "libglew-dev",
+              "std_srvs",
+              "cv_bridge",
+              "pluginlib",
+              "tf2",
+              "libqt5-core",
+              "image_transport",
+              "swri_math_util",
+              "tf2_geometry_msgs",
+              "libqt5-opengl-dev",
+              "mapviz_interfaces",
+              "rclcpp",
+              "yaml-cpp",
+              "libxmu-dev",
+              "rqt_gui",
+              "marti_common_msgs"
+            ],
+            "buildExportDepend": [
+              "swri_transform_util",
+              "rqt_gui_cpp",
+              "glut",
+              "libxi-dev",
+              "tf2_ros",
+              "geometry_msgs",
+              "libglew-dev",
+              "std_srvs",
+              "cv_bridge",
+              "pluginlib",
+              "tf2",
+              "libqt5-core",
+              "image_transport",
+              "swri_math_util",
+              "tf2_geometry_msgs",
+              "mapviz_interfaces",
+              "rclcpp",
+              "yaml-cpp",
+              "libxmu-dev",
+              "rqt_gui",
+              "marti_common_msgs"
+            ],
+            "buildToolDepend": [
+              "ament_cmake",
+              "pkg-config",
+              "qt5-qmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "swri_transform_util",
+              "rqt_gui_cpp",
+              "launch_xml",
+              "glut",
+              "libxi-dev",
+              "tf2_ros",
+              "geometry_msgs",
+              "libglew-dev",
+              "std_srvs",
+              "cv_bridge",
+              "pluginlib",
+              "tf2",
+              "libqt5-core",
+              "image_transport",
+              "swri_math_util",
+              "tf2_geometry_msgs",
+              "libqt5-opengl",
+              "mapviz_interfaces",
+              "rclcpp",
+              "yaml-cpp",
+              "libxmu-dev",
+              "rqt_gui",
+              "marti_common_msgs"
+            ],
+            "docDepend": [],
+            "testDepend": []
           },
           "substitutions": []
         },
@@ -7934,11 +8092,11 @@
           "substitutions": []
         },
         "controller_manager_msgs": {
-          "version": "2.20.0",
+          "version": "2.21.0",
           "source": {
             "kind": "url",
-            "hash": "1q4ln0akgcrimjldmacgwhb675g871z7x98v5id1abag9x2a9r44",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/controller_manager_msgs/2.20.0-1.tar.gz"
+            "hash": "0baw843l35wbvx2rlk5i5zknkcly8h43x975fpailnm9rhrycvck",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/controller_manager_msgs/2.21.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -7964,21 +8122,23 @@
           "substitutions": []
         },
         "velocity_controllers": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "15dyyk522s3pnk2xpp8dx6rl815m7csgnwrkw0ffqixz0031jf5x",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/velocity_controllers/2.15.0-1.tar.gz"
+            "hash": "1f11668ikkcc7kssmgs2azjrs3cdlwi4xv1dcgnrnib1vwy6jjf8",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/velocity_controllers/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
               "pluginlib",
               "rclcpp",
-              "forward_command_controller"
+              "forward_command_controller",
+              "backward_ros"
             ],
             "buildExportDepend": [
               "rclcpp",
-              "forward_command_controller"
+              "forward_command_controller",
+              "backward_ros"
             ],
             "buildToolDepend": [
               "ament_cmake"
@@ -7986,7 +8146,8 @@
             "buildToolExportDepend": [],
             "execDepend": [
               "rclcpp",
-              "forward_command_controller"
+              "forward_command_controller",
+              "backward_ros"
             ],
             "docDepend": [],
             "testDepend": [
@@ -8812,7 +8973,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/foonathan/memory.git",
               "to": {
                 "kind": "git",
@@ -8824,11 +8986,11 @@
           ]
         },
         "transmission_interface": {
-          "version": "2.20.0",
+          "version": "2.21.0",
           "source": {
             "kind": "url",
-            "hash": "1hsj3qbb428fyr0pijxaqgp73sm9vs0mancc0q5mfv4k5yh8jp8d",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/transmission_interface/2.20.0-1.tar.gz"
+            "hash": "1idqvvfjncgmpprkir6jb2mjial32w1qxqkg5fyl45sf98gbks8r",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/transmission_interface/2.21.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -9245,7 +9407,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/facebook/zstd.git",
               "to": {
                 "kind": "git",
@@ -10387,11 +10550,11 @@
           "substitutions": []
         },
         "controller_manager": {
-          "version": "2.20.0",
+          "version": "2.21.0",
           "source": {
             "kind": "url",
-            "hash": "1jh7p8q8yg0p0xnbl6czgdgxrbndds4wf8488wa0axi5127psqbi",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/controller_manager/2.20.0-1.tar.gz"
+            "hash": "0s99rjqq5p2k24a37q7iwdj0k42mm8rff8d403ksi2hjz183a4di",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/controller_manager/2.21.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -10531,11 +10694,11 @@
           "substitutions": []
         },
         "dbw_polaris_can": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "18w5c3i2nbd6b21jv3rqv5fld7xzd1kqdcw1rri3as1jx5y5fc71",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_polaris_can/2.1.0-1.tar.gz"
+            "hash": "16grznazjjlxzpbnkffq01lgi6gbzpy45x512g1y0bczvvrdind0",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_polaris_can/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -10609,11 +10772,11 @@
           "substitutions": []
         },
         "dbw_fca_joystick_demo": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "1nqkb0pw3d3gaiandcgzq66xsjn20fqrammfacz0f8jbfn9n6qla",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_fca_joystick_demo/2.1.0-1.tar.gz"
+            "hash": "1g59sxhb0fba5dry7mwycagyri1h0dnsmm9bjsxmy1v8iax2pqjf",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_fca_joystick_demo/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -10649,11 +10812,11 @@
           "substitutions": []
         },
         "ros2_controllers_test_nodes": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "0y784m0phs41sw28zgmr9g8b3i4zam4pqyxpfbnk6mdp9ygywyjy",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/ros2_controllers_test_nodes/2.15.0-1.tar.gz"
+            "hash": "1bics2nncx97x2pg6c9ngczvpa1s0383pvnpnxj3v9gbvgnsw04y",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/ros2_controllers_test_nodes/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -12803,11 +12966,11 @@
           "substitutions": []
         },
         "rqt_controller_manager": {
-          "version": "2.20.0",
+          "version": "2.21.0",
           "source": {
             "kind": "url",
-            "hash": "0h84nl7rh8p3h1j46hfhhd6f77i2nx6175qzx913hhjscfqba0gg",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/rqt_controller_manager/2.20.0-1.tar.gz"
+            "hash": "0pc85xihdgqaalyqk95jiqx5sph4gvm3as5gah9il8h9lcmb8cbq",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/rqt_controller_manager/2.21.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -13538,7 +13701,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/orocos/orocos_kinematics_dynamics.git",
               "to": {
                 "kind": "git",
@@ -13869,11 +14033,11 @@
           "substitutions": []
         },
         "dbw_polaris_msgs": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "00czyxkay9xjfxc8f0qp5b05ibiii7qvh6y3h3624a6wj9m9ai4w",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_polaris_msgs/2.1.0-1.tar.gz"
+            "hash": "0kf6wra9r3pj2c2di6aqpar4ps8g8j886ciz7zsjjy33rw19h0gg",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_polaris_msgs/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -13922,7 +14086,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/ThePhD/sol2.git",
               "to": {
                 "kind": "git",
@@ -14229,11 +14394,11 @@
           "substitutions": []
         },
         "diagnostic_aggregator": {
-          "version": "3.0.0",
+          "version": "3.1.0",
           "source": {
             "kind": "url",
-            "hash": "0bcm4rqdgqxl4l3nisrfqliib9apaj0nxcpgn20lfmmycwqg7v1g",
-            "url": "https://github.com/ros2-gbp/diagnostics-release/archive/refs/tags/release/humble/diagnostic_aggregator/3.0.0-1.tar.gz"
+            "hash": "0s10fvbsb7z3k5n2k7hr24kdgx83xvl1rf6gan85vwsinddb7ac9",
+            "url": "https://github.com/ros2-gbp/diagnostics-release/archive/refs/tags/release/humble/diagnostic_aggregator/3.1.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -14998,11 +15163,11 @@
           "substitutions": []
         },
         "ros2controlcli": {
-          "version": "2.20.0",
+          "version": "2.21.0",
           "source": {
             "kind": "url",
-            "hash": "0wpdckia40i166i0047y4f18qx1h7wg1zhlfmbk7glmnfgdfwpfc",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/ros2controlcli/2.20.0-1.tar.gz"
+            "hash": "03fg5yflj4jw15i60lq97zz1x65v1mwr439xm73g3f67b3ip0558",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/ros2controlcli/2.21.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -15044,11 +15209,11 @@
           "substitutions": []
         },
         "controller_interface": {
-          "version": "2.20.0",
+          "version": "2.21.0",
           "source": {
             "kind": "url",
-            "hash": "0x3j1gsdf121cfh893lbmmdfqrj5abyc38nphpsjg9y6zdwjs1kn",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/controller_interface/2.20.0-1.tar.gz"
+            "hash": "04vhqsq8r2r2x1x8chx2qfvx39kbjrizbmv9apy3lncchmb2izs2",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/controller_interface/2.21.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -15219,11 +15384,11 @@
           "substitutions": []
         },
         "dbw_polaris_description": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "0hfrnajdc6z69j1yr2rsmgbgwfcdmrzdizss8i71d9a8v4jbq1yf",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_polaris_description/2.1.0-1.tar.gz"
+            "hash": "1dhix5nhhf1jag5x10g81p4szksnqzfjb7vsg2hyz7shdglqghbr",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_polaris_description/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -16160,7 +16325,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/modelon-community/fmi-library.git",
               "to": {
                 "kind": "git",
@@ -16253,7 +16419,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://github.com/ros/console_bridge/archive/1.0.2.tar.gz",
               "to": {
                 "kind": "url",
@@ -16512,11 +16679,11 @@
           "substitutions": []
         },
         "dbw_polaris": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "1rihy3jvnyq82rw7jyi0kiskpyi8yq1qi99z48r5d5ivrqxa0r47",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_polaris/2.1.0-1.tar.gz"
+            "hash": "12qywjpvdwsd9fba5wnrafmzrp6qfxgkx8w3isdasf4k6dj0n86r",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_polaris/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -16566,14 +16733,15 @@
           "substitutions": []
         },
         "self_test": {
-          "version": "3.0.0",
+          "version": "3.1.0",
           "source": {
             "kind": "url",
-            "hash": "1pd3zpxp95x33k2ggr6x9s9qagwm6b0l40jy38pws3kinw08vjwa",
-            "url": "https://github.com/ros2-gbp/diagnostics-release/archive/refs/tags/release/humble/self_test/3.0.0-1.tar.gz"
+            "hash": "1w3ap3qwipdkllkp9ql4lhh7992azl0vk9pps6jpar4hiykixh74",
+            "url": "https://github.com/ros2-gbp/diagnostics-release/archive/refs/tags/release/humble/self_test/3.1.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
+              "ros_environment",
               "diagnostic_msgs",
               "diagnostic_updater",
               "rclcpp"
@@ -16709,11 +16877,11 @@
           "substitutions": []
         },
         "force_torque_sensor_broadcaster": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "0ilgfijxkm48h993v2ly6af4wcrdzpcgh3qd9lz0yl0b82xj12xy",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/force_torque_sensor_broadcaster/2.15.0-1.tar.gz"
+            "hash": "1qhf5kya9ij29daqb98ynrdq511y97ndqah5idd750zgy11hgs0c",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/force_torque_sensor_broadcaster/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -16724,7 +16892,8 @@
               "rclcpp_lifecycle",
               "pluginlib",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildExportDepend": [
               "hardware_interface",
@@ -16734,7 +16903,8 @@
               "rclcpp_lifecycle",
               "pluginlib",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildToolDepend": [
               "ament_cmake"
@@ -16748,7 +16918,8 @@
               "rclcpp_lifecycle",
               "pluginlib",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "docDepend": [],
             "testDepend": [
@@ -16819,11 +16990,11 @@
           "substitutions": []
         },
         "dbw_polaris_joystick_demo": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "11fczzrg63yhr8nad62whwpwjcl58b0r5xvx5r9n060nj1izk1rm",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_polaris_joystick_demo/2.1.0-1.tar.gz"
+            "hash": "0mzgzrrrbvss63mczh6byrdr8hf0xjcx4h5qc3zi5scx338h28w7",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_polaris_joystick_demo/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -17101,6 +17272,31 @@
           },
           "substitutions": []
         },
+        "mapviz_interfaces": {
+          "version": "2.2.0",
+          "source": {
+            "kind": "url",
+            "hash": "1r3z6mawssxa2yzym0kdsn5md679rhw6pmam4w8y0jfwwyrfbrgv",
+            "url": "https://github.com/ros2-gbp/mapviz-release/archive/refs/tags/release/humble/mapviz_interfaces/2.2.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "builtin_interfaces",
+              "marti_common_msgs"
+            ],
+            "buildExportDepend": [],
+            "buildToolDepend": [
+              "rosidl_default_generators"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "rosidl_default_runtime"
+            ],
+            "docDepend": [],
+            "testDepend": []
+          },
+          "substitutions": []
+        },
         "tensorrt_cmake_module": {
           "version": "0.0.3",
           "source": {
@@ -17154,7 +17350,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "cmake/cpptoml/cpptoml.cmake.in",
               "from": "GIT_REPOSITORY    https://github.com/skystrife/cpptoml.git",
               "to": {
                 "kind": "git",
@@ -17611,7 +17808,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://git.savannah.gnu.org/cgit/freetype/freetype2.git/snapshot/freetype2-VER-2-6-5.tar.gz",
               "to": {
                 "kind": "url",
@@ -17620,7 +17818,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://www.zlib.net/fossils/zlib-1.2.11.tar.gz",
               "to": {
                 "kind": "url",
@@ -17629,7 +17828,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://github.com/OGRECave/ogre/archive/v1.12.1.zip",
               "to": {
                 "kind": "url",
@@ -17961,7 +18161,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://github.com/gabime/spdlog/archive/v1.8.2.tar.gz",
               "to": {
                 "kind": "url",
@@ -17972,11 +18173,11 @@
           ]
         },
         "rqt_joint_trajectory_controller": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "00ajf7k2dbxv3skna2k59qvqgdarimkdd4y79lg42f4zhlj1iaj7",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/rqt_joint_trajectory_controller/2.15.0-1.tar.gz"
+            "hash": "1wr9ip57gcknnf6h6lc5simnrayy0p0mwfg3p7xgbl1yl4j6lpzk",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/rqt_joint_trajectory_controller/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -19056,7 +19257,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "cmakemodules/script_octomap.cmake",
               "from": "URL               \"https://github.com/OctoMap/octomap/archive/v1.9.6.zip\"",
               "to": {
                 "kind": "url",
@@ -19065,7 +19267,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "cmakemodules/script_jpeg.cmake",
               "from": "URL               \"https://github.com/libjpeg-turbo/libjpeg-turbo/archive/1.5.90.tar.gz\"",
               "to": {
                 "kind": "url",
@@ -19074,7 +19277,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "cmakemodules/script_eigen.cmake",
               "from": "URL               \"https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.tar.bz2\"",
               "to": {
                 "kind": "url",
@@ -19083,7 +19287,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "cmakemodules/script_assimp.cmake",
               "from": "URL               \"https://github.com/assimp/assimp/archive/v4.1.0.tar.gz\"",
               "to": {
                 "kind": "url",
@@ -19094,11 +19299,11 @@
           ]
         },
         "dataspeed_dbw_msgs": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "1myn8j99xvibz6dmkyfisnwyfzfr8p44qhaqc6j269vhppfggg72",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dataspeed_dbw_msgs/2.1.0-1.tar.gz"
+            "hash": "07qsgdj5bkcj11jx2hrdvxcw5bb78w2k4jyx80q96cgpyghr00p9",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dataspeed_dbw_msgs/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19469,6 +19674,71 @@
           },
           "substitutions": []
         },
+        "diagnostics": {
+          "version": "3.1.0",
+          "source": {
+            "kind": "url",
+            "hash": "0gf3k3blr4jijga07viqc2fk4hj661ljvbqp7dpchyqyayqh04a5",
+            "url": "https://github.com/ros2-gbp/diagnostics-release/archive/refs/tags/release/humble/diagnostics/3.1.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [],
+            "buildExportDepend": [],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "diagnostic_common_diagnostics",
+              "diagnostic_aggregator",
+              "diagnostic_updater",
+              "self_test"
+            ],
+            "docDepend": [],
+            "testDepend": []
+          },
+          "substitutions": []
+        },
+        "snowbot_operating_system": {
+          "version": "0.1.2",
+          "source": {
+            "kind": "url",
+            "hash": "1l22yiwyhjwblyfnj4nspfm2kzi555vlcb0if1s6q3v1p1fnj6q6",
+            "url": "https://github.com/ros2-gbp/snowbot_release/archive/refs/tags/release/humble/snowbot_operating_system/0.1.2-3.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "geometry_msgs",
+              "rviz_rendering",
+              "pluginlib",
+              "ament_cmake_ros",
+              "rviz_common"
+            ],
+            "buildExportDepend": [
+              "geometry_msgs",
+              "rviz_rendering",
+              "pluginlib",
+              "ament_cmake_ros",
+              "rviz_common"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "geometry_msgs",
+              "rviz_rendering",
+              "pluginlib",
+              "ament_cmake_ros",
+              "rviz_common"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_cmake_clang_format"
+            ]
+          },
+          "substitutions": []
+        },
         "turtlesim": {
           "version": "1.4.2",
           "source": {
@@ -19513,46 +19783,6 @@
             ],
             "docDepend": [],
             "testDepend": []
-          },
-          "substitutions": []
-        },
-        "snowbot_operating_system": {
-          "version": "0.1.2",
-          "source": {
-            "kind": "url",
-            "hash": "1l22yiwyhjwblyfnj4nspfm2kzi555vlcb0if1s6q3v1p1fnj6q6",
-            "url": "https://github.com/ros2-gbp/snowbot_release/archive/refs/tags/release/humble/snowbot_operating_system/0.1.2-3.tar.gz"
-          },
-          "dependencies": {
-            "buildDepend": [
-              "geometry_msgs",
-              "rviz_rendering",
-              "pluginlib",
-              "ament_cmake_ros",
-              "rviz_common"
-            ],
-            "buildExportDepend": [
-              "geometry_msgs",
-              "rviz_rendering",
-              "pluginlib",
-              "ament_cmake_ros",
-              "rviz_common"
-            ],
-            "buildToolDepend": [
-              "ament_cmake"
-            ],
-            "buildToolExportDepend": [],
-            "execDepend": [
-              "geometry_msgs",
-              "rviz_rendering",
-              "pluginlib",
-              "ament_cmake_ros",
-              "rviz_common"
-            ],
-            "docDepend": [],
-            "testDepend": [
-              "ament_cmake_clang_format"
-            ]
           },
           "substitutions": []
         },
@@ -19713,11 +19943,11 @@
           "substitutions": []
         },
         "forward_command_controller": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "04dn8h7ia8aabv6jyy6a9wclnscw70wf8r9ar92jkwikxhdqykm6",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/forward_command_controller/2.15.0-1.tar.gz"
+            "hash": "1faf8m6mwabr5ic888lqxf97jz5b95r55n796902gqlrslsg2d7f",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/forward_command_controller/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19728,7 +19958,8 @@
               "rclcpp_lifecycle",
               "pluginlib",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildExportDepend": [
               "hardware_interface",
@@ -19737,7 +19968,8 @@
               "realtime_tools",
               "rclcpp_lifecycle",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildToolDepend": [
               "ament_cmake"
@@ -19750,7 +19982,8 @@
               "realtime_tools",
               "rclcpp_lifecycle",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "docDepend": [],
             "testDepend": [
@@ -19762,11 +19995,11 @@
           "substitutions": []
         },
         "diff_drive_controller": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "1qsngny67hmk5qyvfc3n7immvvhby3sdqbiiqi11swqs79gllvd3",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/diff_drive_controller/2.15.0-1.tar.gz"
+            "hash": "19v770bcb0n2dnsnj9myzizqvyi9pz9cvysjlmymzlxs2ab9mjvq",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/diff_drive_controller/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19781,7 +20014,8 @@
               "nav_msgs",
               "tf2",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildExportDepend": [
               "rcpputils",
@@ -19793,7 +20027,8 @@
               "nav_msgs",
               "tf2",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildToolDepend": [
               "ament_cmake"
@@ -19809,7 +20044,8 @@
               "nav_msgs",
               "tf2",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "docDepend": [],
             "testDepend": [
@@ -20131,7 +20367,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/pybind/pybind11_json.git",
               "to": {
                 "kind": "git",
@@ -20638,11 +20875,11 @@
           "substitutions": []
         },
         "gripper_controllers": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "09f8pdxr0p6kxzdivaa1kdyl34g0cv9sl06iqfkk6b5s2251bxvr",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/gripper_controllers/2.15.0-1.tar.gz"
+            "hash": "1cs8rv9rsrlx4wq82y8mzwcras7h8rlagfsh8rnwjpq6f5gf9jyz",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/gripper_controllers/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -20654,7 +20891,8 @@
               "pluginlib",
               "control_msgs",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildExportDepend": [
               "rclcpp_action",
@@ -20664,7 +20902,8 @@
               "realtime_tools",
               "control_msgs",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildToolDepend": [
               "ament_cmake"
@@ -20678,7 +20917,8 @@
               "realtime_tools",
               "control_msgs",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "docDepend": [],
             "testDepend": [
@@ -21040,7 +21280,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://downloads.sourceforge.net/project/tinyxml/tinyxml/2.6.2/tinyxml_2_6_2.tar.gz",
               "to": {
                 "kind": "url",
@@ -21076,11 +21317,11 @@
           "substitutions": []
         },
         "dbw_fca": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "1mqqpzc20bqda37c6pmpx6p1rpsw3r7pj0g4rfmplmr0kifwn4nj",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_fca/2.1.0-1.tar.gz"
+            "hash": "11aiyijqbir1kz8j64wzj4y18f0p2yjn6751asl5gyn8hzj7wkad",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_fca/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -21421,11 +21662,11 @@
           "substitutions": []
         },
         "kinematics_interface": {
-          "version": "0.0.2",
+          "version": "0.1.0",
           "source": {
             "kind": "url",
-            "hash": "053galzxm4wan990hv4q67g4ksnddhd3cpyfd8rk0xj03zpkkvfy",
-            "url": "https://github.com/ros2-gbp/kinematics_interface-release/archive/refs/tags/release/humble/kinematics_interface/0.0.2-1.tar.gz"
+            "hash": "0s9jvjzyxs4l2njviikaiz3vkk9dgb8waxlr04shh24m7ch88gww",
+            "url": "https://github.com/ros2-gbp/kinematics_interface-release/archive/refs/tags/release/humble/kinematics_interface/0.1.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -22197,7 +22438,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/ignitionrobotics/ign-math.git",
               "to": {
                 "kind": "git",
@@ -22578,11 +22820,11 @@
           "substitutions": []
         },
         "mvsim": {
-          "version": "0.5.0",
+          "version": "0.5.1",
           "source": {
             "kind": "url",
-            "hash": "081kllsxyd82yicll479dk643c4vklm8kxjqg89yml93ljwkjink",
-            "url": "https://github.com/ros2-gbp/mvsim-release/archive/refs/tags/release/humble/mvsim/0.5.0-1.tar.gz"
+            "hash": "0grca5f8flllp9xk5b3sjyk5y3b4ybgj7ir5r9dnvq84l6261bj3",
+            "url": "https://github.com/ros2-gbp/mvsim-release/archive/refs/tags/release/humble/mvsim/0.5.1-2.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -23605,7 +23847,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/pybind/pybind11.git",
               "to": {
                 "kind": "git",
@@ -23646,7 +23889,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://github.com/assimp/assimp/archive/v4.1.0.tar.gz",
               "to": {
                 "kind": "url",
@@ -23868,11 +24112,11 @@
           "substitutions": []
         },
         "tricycle_controller": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "0fix7ka0qdq378hza3x1vglvzcmhsm6kf2rcbxdaazrvlv3s9my8",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/tricycle_controller/2.15.0-1.tar.gz"
+            "hash": "0sydz2arhz0xqdy50hjrx0bxfsqfvimhmkgfr8g5s5jpib4mnzlr",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/tricycle_controller/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -23888,7 +24132,8 @@
               "nav_msgs",
               "tf2",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildExportDepend": [
               "rcpputils",
@@ -23902,7 +24147,8 @@
               "nav_msgs",
               "tf2",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildToolDepend": [
               "ament_cmake"
@@ -23920,7 +24166,8 @@
               "nav_msgs",
               "tf2",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "docDepend": [],
             "testDepend": [
@@ -24011,7 +24258,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/apache/tvm",
               "to": {
                 "kind": "git",
@@ -24089,7 +24337,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/zeromq/zmqpp.git",
               "to": {
                 "kind": "git",
@@ -24254,7 +24503,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/pboettch/json-schema-validator.git",
               "to": {
                 "kind": "git",
@@ -25448,11 +25698,11 @@
           "substitutions": []
         },
         "dbw_ford_joystick_demo": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "0dhnp7y2sy324nm5ms88pzk03s8xx8hc0wrrapfapycf77bcm1yh",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_ford_joystick_demo/2.1.0-1.tar.gz"
+            "hash": "0qscv15a0z48vp767s3fmbspcd8d60kqmipr5h2vg6mxqdhy9r1z",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_ford_joystick_demo/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -25681,11 +25931,11 @@
           "substitutions": []
         },
         "hardware_interface": {
-          "version": "2.20.0",
+          "version": "2.21.0",
           "source": {
             "kind": "url",
-            "hash": "0s3z56q8i6pf3sa1pf7jpvd4ya0gf3paz7hg3cffv8pwry2i33lp",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/hardware_interface/2.20.0-1.tar.gz"
+            "hash": "1zacvpv1i5hpxaah69dswqbvsxw69bb36xjchqyy720g5v13h0s8",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/hardware_interface/2.21.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -26367,7 +26617,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/yaml/libyaml.git",
               "to": {
                 "kind": "git",
@@ -26762,11 +27013,11 @@
           "substitutions": []
         },
         "dbw_fca_can": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "1dvrny32f4ddgv4vjl4csmghwf6v6fvpbdwqdf6g3n0ix29jcrny",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_fca_can/2.1.0-1.tar.gz"
+            "hash": "019rnjjzhhlm0c6wl82w2hsj3bw2j0lcaczmg5pf73acmykh3jkf",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_fca_can/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -26899,11 +27150,11 @@
           "substitutions": []
         },
         "ros2_control": {
-          "version": "2.20.0",
+          "version": "2.21.0",
           "source": {
             "kind": "url",
-            "hash": "0in2fkqc0drbm2cdqbxpjgvvb58h6kyzdmjr4i8jagfzq2hfza79",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/ros2_control/2.20.0-1.tar.gz"
+            "hash": "07b0ds5prcmjjk7jnivw8mljl586wqcl6smh5qkic0hhq9knl4sn",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/ros2_control/2.21.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -27337,11 +27588,11 @@
           "substitutions": []
         },
         "joint_state_broadcaster": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "1b67acf262a0qbgzf627skmsmidxwkm6rd1b9y0pk6xbjhmi98a3",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/joint_state_broadcaster/2.15.0-1.tar.gz"
+            "hash": "1fs6608smc1mgwh85741darxxfgwffrd8pbicdcsm17rcrqs1361",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/joint_state_broadcaster/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -27353,7 +27604,8 @@
               "rclcpp_lifecycle",
               "pluginlib",
               "control_msgs",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildExportDepend": [
               "hardware_interface",
@@ -27362,7 +27614,8 @@
               "realtime_tools",
               "rclcpp_lifecycle",
               "control_msgs",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildToolDepend": [
               "ament_cmake"
@@ -27377,7 +27630,8 @@
               "rclcpp_lifecycle",
               "pluginlib",
               "control_msgs",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "docDepend": [],
             "testDepend": [
@@ -27390,11 +27644,11 @@
           "substitutions": []
         },
         "ros2_control_test_assets": {
-          "version": "2.20.0",
+          "version": "2.21.0",
           "source": {
             "kind": "url",
-            "hash": "0i99dkcx40799wahawv6zm2pckdgxg5qvy8wsr6i2j1f0i03pdnd",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/ros2_control_test_assets/2.20.0-1.tar.gz"
+            "hash": "164c6bspzf2id3vksjlzki3c2xkqfrqap2362dm35xpn63r1c63m",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/ros2_control_test_assets/2.21.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -27433,11 +27687,11 @@
           "substitutions": []
         },
         "dataspeed_ulc_can": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "0jmxk2a3ifcwlszihhlmklggxw83cbd5m1rqkzychx2vp5jdl7z7",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dataspeed_ulc_can/2.1.0-1.tar.gz"
+            "hash": "1ck9liv3g2smj92cc2iz5560bcd4gdxncg3jxqlk0a4gf0na67p9",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dataspeed_ulc_can/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -28288,16 +28542,17 @@
           "substitutions": []
         },
         "dataspeed_dbw_gateway": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "019dg6c7dhdsy1q4kbwz4j8b25mnp3byfv7jlajcw5slyjr5bfp3",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dataspeed_dbw_gateway/2.1.0-1.tar.gz"
+            "hash": "00q4mp584hdk0vg8z36ccmjy8l67gvlxxwl70g4zn99q74nscvxv",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dataspeed_dbw_gateway/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
               "rclcpp_components",
               "sensor_msgs",
+              "ros_environment",
               "dbw_polaris_msgs",
               "diagnostic_msgs",
               "dbw_fca_msgs",
@@ -28310,6 +28565,7 @@
             "buildExportDepend": [
               "rclcpp_components",
               "sensor_msgs",
+              "ros_environment",
               "dbw_polaris_msgs",
               "diagnostic_msgs",
               "dbw_fca_msgs",
@@ -28325,6 +28581,7 @@
             "execDepend": [
               "rclcpp_components",
               "sensor_msgs",
+              "ros_environment",
               "dbw_polaris_msgs",
               "diagnostic_msgs",
               "rosidl_default_runtime",
@@ -28368,7 +28625,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMake/external_libusb.cmake",
               "from": "GIT_REPOSITORY \"https://github.com/ev-mp/libusb.git\"",
               "to": {
                 "kind": "git",
@@ -28378,7 +28636,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMake/external_libcurl.cmake",
               "from": "GIT_REPOSITORY \"https://github.com/curl/curl.git\"",
               "to": {
                 "kind": "git",
@@ -28388,7 +28647,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "third-party/pybind11/CMakeLists.txt",
               "from": "GIT_REPOSITORY \"https://github.com/pybind/pybind11.git\"",
               "to": {
                 "kind": "git",
@@ -28790,11 +29050,11 @@
           "substitutions": []
         },
         "imu_sensor_broadcaster": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "0fpg83994bir8mqj24sf0ff1yx1qn3lshv5rqhf2lyxylj5dskms",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/imu_sensor_broadcaster/2.15.0-1.tar.gz"
+            "hash": "1ijhd4s838g97x873qp1dqp7b311cn5gw0nr4nf8q247ng7pbnqg",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/imu_sensor_broadcaster/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -28805,7 +29065,8 @@
               "rclcpp_lifecycle",
               "pluginlib",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildExportDepend": [
               "hardware_interface",
@@ -28815,7 +29076,8 @@
               "rclcpp_lifecycle",
               "pluginlib",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildToolDepend": [
               "ament_cmake"
@@ -28829,7 +29091,8 @@
               "rclcpp_lifecycle",
               "pluginlib",
               "rclcpp",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "docDepend": [],
             "testDepend": [
@@ -29563,11 +29826,11 @@
           "substitutions": []
         },
         "joint_trajectory_controller": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "1cia1cwnmy7np1gfvq2bz31gn86ac27z4by4lv2rjadi4wmz7xpm",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/joint_trajectory_controller/2.15.0-1.tar.gz"
+            "hash": "0080mfq4s91zck2nd0a2pb3s59ab3wr6pjrzlr4i5py7lxapjhb7",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/joint_trajectory_controller/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -29581,7 +29844,8 @@
               "angles",
               "rclcpp",
               "trajectory_msgs",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildExportDepend": [
               "hardware_interface",
@@ -29591,7 +29855,8 @@
               "control_msgs",
               "rclcpp",
               "trajectory_msgs",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "buildToolDepend": [
               "ament_cmake"
@@ -29608,7 +29873,8 @@
               "angles",
               "rclcpp",
               "trajectory_msgs",
-              "controller_interface"
+              "controller_interface",
+              "backward_ros"
             ],
             "docDepend": [],
             "testDepend": [
@@ -29774,7 +30040,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/ros2/Mimick.git",
               "to": {
                 "kind": "git",
@@ -30121,11 +30388,11 @@
           "substitutions": []
         },
         "dbw_fca_msgs": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "0bga5376mv95dzli1hlmpkzianxf2lvphgd9q053wh13rak7s1fm",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_fca_msgs/2.1.0-1.tar.gz"
+            "hash": "1c4anx3mwl9gl6wppqqafns1nq3mb98hyvy9q4d9barxfy02d0n2",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_fca_msgs/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -30519,7 +30786,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY http://git.code.sf.net/p/tclap/code",
               "to": {
                 "kind": "git",
@@ -30529,7 +30797,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/Tencent/rapidjson.git",
               "to": {
                 "kind": "git",
@@ -30539,7 +30808,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/p-ranav/tabulate.git",
               "to": {
                 "kind": "git",
@@ -30549,7 +30819,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/r-lyeh-archived/sole.git",
               "to": {
                 "kind": "git",
@@ -31167,11 +31438,11 @@
           "substitutions": []
         },
         "dbw_fca_description": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "0a8h0x9yqw6j12k3xw4wqd8rx5v8zr22g0yc0ndbl8gvbmc1xc99",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_fca_description/2.1.0-1.tar.gz"
+            "hash": "0agxix1s0szprs92ni8q0b03da0md3vzjslj60jlh54zss51dg04",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_fca_description/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -31284,11 +31555,11 @@
           "substitutions": []
         },
         "kinematics_interface_kdl": {
-          "version": "0.0.2",
+          "version": "0.1.0",
           "source": {
             "kind": "url",
-            "hash": "014q9h58icywf9arzkgh1yaxz59bypp93clywsjj2sjrdyi6dnnx",
-            "url": "https://github.com/ros2-gbp/kinematics_interface-release/archive/refs/tags/release/humble/kinematics_interface_kdl/0.0.2-1.tar.gz"
+            "hash": "0kbbzqwfhwb8b13y4qzzsgbr4kbd77mismwzl3k0iamp1wdz5b82",
+            "url": "https://github.com/ros2-gbp/kinematics_interface-release/archive/refs/tags/release/humble/kinematics_interface_kdl/0.1.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -31322,6 +31593,63 @@
               "ament_cmake_gmock",
               "ros2_control_test_assets"
             ]
+          },
+          "substitutions": []
+        },
+        "multires_image": {
+          "version": "2.2.0",
+          "source": {
+            "kind": "url",
+            "hash": "0q9g91f8grd7ak1dydvxsaqxbdy3q19b4zar78yars3dwfz0jqv3",
+            "url": "https://github.com/ros2-gbp/mapviz-release/archive/refs/tags/release/humble/multires_image/2.2.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "swri_transform_util",
+              "geometry_msgs",
+              "cv_bridge",
+              "pluginlib",
+              "tf2",
+              "libqt5-core",
+              "mapviz",
+              "swri_math_util",
+              "libqt5-opengl-dev",
+              "rclcpp",
+              "gps_msgs"
+            ],
+            "buildExportDepend": [
+              "swri_transform_util",
+              "geometry_msgs",
+              "cv_bridge",
+              "pluginlib",
+              "tf2",
+              "libqt5-core",
+              "mapviz",
+              "swri_math_util",
+              "rclcpp",
+              "gps_msgs"
+            ],
+            "buildToolDepend": [
+              "ament_cmake",
+              "qt5-qmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "swri_transform_util",
+              "geometry_msgs",
+              "cv_bridge",
+              "pluginlib",
+              "tf2",
+              "libqt5-core",
+              "mapviz",
+              "swri_math_util",
+              "libqt5-opengl",
+              "rclcpp",
+              "rclpy",
+              "gps_msgs"
+            ],
+            "docDepend": [],
+            "testDepend": []
           },
           "substitutions": []
         },
@@ -31994,11 +32322,11 @@
           "substitutions": []
         },
         "dataspeed_ulc": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "0m7d6faaw9cvm5y9kvv77bl600plpgfa8qv9h902g02r3vh9v6gl",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dataspeed_ulc/2.1.0-1.tar.gz"
+            "hash": "0iybwp6m0xi0zbblwklk8glvp0h1zpm762w2zi72y8jl006pxsql",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dataspeed_ulc/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -32205,7 +32533,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://www.libsdl.org/release/SDL2-2.0.14.tar.gz",
               "to": {
                 "kind": "url",
@@ -32915,7 +33244,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/cho3/acado.git",
               "to": {
                 "kind": "git",
@@ -32925,7 +33255,8 @@
               }
             },
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/cho3/hpmpc.git",
               "to": {
                 "kind": "git",
@@ -33608,7 +33939,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://www.sqlite.org/2018/sqlite-amalgamation-3240000.zip",
               "to": {
                 "kind": "url",
@@ -33807,41 +34139,30 @@
           },
           "substitutions": []
         },
-        "pendulum_control": {
-          "version": "0.20.3",
+        "apriltag_msgs": {
+          "version": "2.0.1",
           "source": {
             "kind": "url",
-            "hash": "0z9lkmgcvfc6h5lrphq96z0ixpm05ajgw35kbxs5iczkh3ahgq9w",
-            "url": "https://github.com/ros2-gbp/demos-release/archive/refs/tags/release/humble/pendulum_control/0.20.3-1.tar.gz"
+            "hash": "1h0vw122252iv8i045015jfgr6j8agzzyhyjv57jwv0hch96878m",
+            "url": "https://github.com/ros2-gbp/apriltag_msgs-release/archive/refs/tags/release/humble/apriltag_msgs/2.0.1-2.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
-              "pendulum_msgs",
-              "rttest",
-              "rclcpp",
-              "tlsf_cpp"
+              "std_msgs"
             ],
             "buildExportDepend": [],
             "buildToolDepend": [
-              "ament_cmake"
+              "ament_cmake",
+              "rosidl_default_generators"
             ],
             "buildToolExportDepend": [],
             "execDepend": [
-              "pendulum_msgs",
-              "rttest",
-              "rclcpp",
-              "tlsf_cpp"
+              "std_msgs",
+              "rosidl_default_runtime"
             ],
             "docDepend": [],
             "testDepend": [
-              "rmw_implementation_cmake",
-              "launch_testing_ament_cmake",
-              "launch",
-              "launch_testing_ros",
-              "ros2run",
               "ament_lint_auto",
-              "launch_testing",
-              "ament_cmake_pytest",
               "ament_lint_common"
             ]
           },
@@ -33921,6 +34242,46 @@
               "ament_cmake_xmllint",
               "ament_cmake_cppcheck",
               "ament_lint_auto"
+            ]
+          },
+          "substitutions": []
+        },
+        "pendulum_control": {
+          "version": "0.20.3",
+          "source": {
+            "kind": "url",
+            "hash": "0z9lkmgcvfc6h5lrphq96z0ixpm05ajgw35kbxs5iczkh3ahgq9w",
+            "url": "https://github.com/ros2-gbp/demos-release/archive/refs/tags/release/humble/pendulum_control/0.20.3-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "pendulum_msgs",
+              "rttest",
+              "rclcpp",
+              "tlsf_cpp"
+            ],
+            "buildExportDepend": [],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "pendulum_msgs",
+              "rttest",
+              "rclcpp",
+              "tlsf_cpp"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "rmw_implementation_cmake",
+              "launch_testing_ament_cmake",
+              "launch",
+              "launch_testing_ros",
+              "ros2run",
+              "ament_lint_auto",
+              "launch_testing",
+              "ament_cmake_pytest",
+              "ament_lint_common"
             ]
           },
           "substitutions": []
@@ -34649,7 +35010,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/google/benchmark.git",
               "to": {
                 "kind": "git",
@@ -35640,21 +36002,23 @@
           "substitutions": []
         },
         "position_controllers": {
-          "version": "2.15.0",
+          "version": "2.16.0",
           "source": {
             "kind": "url",
-            "hash": "04qq6clalsq9xbcqqzb1zxvfvjhi32s3gbpms5s7l95xjikvc91n",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/position_controllers/2.15.0-1.tar.gz"
+            "hash": "0y9bck5r0g4xgm9bxp1rhzxvvv2jdk5pmg9j2vd1dca72g8g1d74",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/position_controllers/2.16.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
               "pluginlib",
               "rclcpp",
-              "forward_command_controller"
+              "forward_command_controller",
+              "backward_ros"
             ],
             "buildExportDepend": [
               "rclcpp",
-              "forward_command_controller"
+              "forward_command_controller",
+              "backward_ros"
             ],
             "buildToolDepend": [
               "ament_cmake"
@@ -35662,7 +36026,8 @@
             "buildToolExportDepend": [],
             "execDepend": [
               "rclcpp",
-              "forward_command_controller"
+              "forward_command_controller",
+              "backward_ros"
             ],
             "docDepend": [],
             "testDepend": [
@@ -36730,11 +37095,11 @@
           "substitutions": []
         },
         "diagnostic_updater": {
-          "version": "3.0.0",
+          "version": "3.1.0",
           "source": {
             "kind": "url",
-            "hash": "1kxssxlkzd4xs4ysqnyvmwfr7lwrqkim33syci5kz7qisfkl0bsx",
-            "url": "https://github.com/ros2-gbp/diagnostics-release/archive/refs/tags/release/humble/diagnostic_updater/3.0.0-1.tar.gz"
+            "hash": "11rv9a1722ycbbbag1kbv3fqsv4iqhp0wr7pcvi3rfwdpxyqz284",
+            "url": "https://github.com/ros2-gbp/diagnostics-release/archive/refs/tags/release/humble/diagnostic_updater/3.1.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -36768,6 +37133,61 @@
               "ament_cmake_pytest",
               "ament_lint_common"
             ]
+          },
+          "substitutions": []
+        },
+        "tile_map": {
+          "version": "2.2.0",
+          "source": {
+            "kind": "url",
+            "hash": "1lhbsl06gm4j9d6wzvk7rf6sgfal51cl84492n0jvmh6whyw3dyg",
+            "url": "https://github.com/ros2-gbp/mapviz-release/archive/refs/tags/release/humble/tile_map/2.2.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "swri_transform_util",
+              "libglew-dev",
+              "pluginlib",
+              "tf2",
+              "libqt5-core",
+              "libjsoncpp-dev",
+              "mapviz",
+              "swri_math_util",
+              "libqt5-opengl-dev",
+              "yaml-cpp",
+              "rclcpp"
+            ],
+            "buildExportDepend": [
+              "swri_transform_util",
+              "libglew-dev",
+              "pluginlib",
+              "tf2",
+              "libqt5-core",
+              "mapviz",
+              "swri_math_util",
+              "yaml-cpp",
+              "rclcpp"
+            ],
+            "buildToolDepend": [
+              "ament_cmake",
+              "qt5-qmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "swri_transform_util",
+              "libjsoncpp",
+              "libglew-dev",
+              "pluginlib",
+              "tf2",
+              "libqt5-core",
+              "mapviz",
+              "swri_math_util",
+              "libqt5-opengl",
+              "yaml-cpp",
+              "rclcpp"
+            ],
+            "docDepend": [],
+            "testDepend": []
           },
           "substitutions": []
         },
@@ -36931,11 +37351,11 @@
           "substitutions": []
         },
         "dataspeed_ulc_msgs": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "0f785nzxfnzy7qf5kzlxi6lnxya9d6l3vfbd4m1r9156rp2nfc6k",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dataspeed_ulc_msgs/2.1.0-1.tar.gz"
+            "hash": "18yvldk74rmxkf124vlxn0vqcdk8vl8cr56r9ipd88q11rh3ninn",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dataspeed_ulc_msgs/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -37175,6 +37595,104 @@
               "ros_ign_bridge",
               "ros_ign_interfaces",
               "ros_ign_gazebo"
+            ],
+            "docDepend": [],
+            "testDepend": []
+          },
+          "substitutions": []
+        },
+        "mapviz_plugins": {
+          "version": "2.2.0",
+          "source": {
+            "kind": "url",
+            "hash": "0xkmkki200whs29nvyy1chl43rdzc0j12b83fs0wy58nggm0mmhs",
+            "url": "https://github.com/ros2-gbp/mapviz-release/archive/refs/tags/release/humble/mapviz_plugins/2.2.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "swri_transform_util",
+              "rclcpp_action",
+              "visualization_msgs",
+              "std_msgs",
+              "sensor_msgs",
+              "swri_image_util",
+              "marti_nav_msgs",
+              "marti_visualization_msgs",
+              "cv_bridge",
+              "marti_sensor_msgs",
+              "pluginlib",
+              "nav_msgs",
+              "tf2",
+              "libqt5-core",
+              "stereo_msgs",
+              "image_transport",
+              "swri_route_util",
+              "mapviz",
+              "swri_math_util",
+              "map_msgs",
+              "libqt5-opengl-dev",
+              "rclcpp",
+              "ament_index_cpp",
+              "marti_common_msgs",
+              "gps_msgs"
+            ],
+            "buildExportDepend": [
+              "swri_transform_util",
+              "rclcpp_action",
+              "visualization_msgs",
+              "std_msgs",
+              "sensor_msgs",
+              "swri_image_util",
+              "marti_nav_msgs",
+              "marti_visualization_msgs",
+              "cv_bridge",
+              "marti_sensor_msgs",
+              "pluginlib",
+              "nav_msgs",
+              "tf2",
+              "libqt5-core",
+              "stereo_msgs",
+              "image_transport",
+              "swri_route_util",
+              "mapviz",
+              "swri_math_util",
+              "map_msgs",
+              "rclcpp",
+              "ament_index_cpp",
+              "marti_common_msgs",
+              "gps_msgs"
+            ],
+            "buildToolDepend": [
+              "ament_cmake",
+              "qt5-qmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "swri_transform_util",
+              "rclcpp_action",
+              "visualization_msgs",
+              "std_msgs",
+              "sensor_msgs",
+              "swri_image_util",
+              "marti_nav_msgs",
+              "marti_visualization_msgs",
+              "cv_bridge",
+              "marti_sensor_msgs",
+              "pluginlib",
+              "nav_msgs",
+              "tf2",
+              "libqt5-core",
+              "stereo_msgs",
+              "image_transport",
+              "swri_route_util",
+              "mapviz",
+              "swri_math_util",
+              "map_msgs",
+              "libqt5-opengl",
+              "rclcpp",
+              "ament_index_cpp",
+              "marti_common_msgs",
+              "gps_msgs"
             ],
             "docDepend": [],
             "testDepend": []
@@ -37618,11 +38136,11 @@
           "substitutions": []
         },
         "eigenpy": {
-          "version": "2.8.1",
+          "version": "2.9.0",
           "source": {
             "kind": "url",
-            "hash": "0z6zylq14k7kshabs8px5sf6ah80p7d2r2gyhr36p3py5j63q41c",
-            "url": "https://github.com/ros2-gbp/eigenpy-release/archive/refs/tags/release/humble/eigenpy/2.8.1-1.tar.gz"
+            "hash": "1xvzhfg83r0gaym48zhlf0hhiw8zwvdvkpiy6lg8lazfnz98v1ni",
+            "url": "https://github.com/ros2-gbp/eigenpy-release/archive/refs/tags/release/humble/eigenpy/2.9.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -37680,7 +38198,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "URL https://github.com/jbeder/yaml-cpp/archive/yaml-cpp-0.7.0.tar.gz",
               "to": {
                 "kind": "url",
@@ -37759,11 +38278,11 @@
           "substitutions": []
         },
         "dbw_ford_msgs": {
-          "version": "2.1.0",
+          "version": "2.1.1",
           "source": {
             "kind": "url",
-            "hash": "04xpvxrvq52dzdinjy94gmdjhklxryd0rkihi68c367hvjan0na5",
-            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_ford_msgs/2.1.0-1.tar.gz"
+            "hash": "0ahcnvrfpak7aymxw6shqrxmdrr5h5dq4f0qwyvhx1dq522ql3d0",
+            "url": "https://github.com/DataspeedInc-release/dbw_ros-release/archive/refs/tags/release/humble/dbw_ford_msgs/2.1.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -39487,6 +40006,58 @@
           },
           "substitutions": []
         },
+        "apriltag_ros": {
+          "version": "3.1.1",
+          "source": {
+            "kind": "url",
+            "hash": "1sd8g8bn1sd28wipm3p1nyc6qra3qa9fzfhsd1xv6f9z6kx0sdyp",
+            "url": "https://github.com/ros2-gbp/apriltag_ros-release/archive/refs/tags/release/humble/apriltag_ros/3.1.1-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "rclcpp_components",
+              "tf2_ros",
+              "sensor_msgs",
+              "apriltag_msgs",
+              "cv_bridge",
+              "apriltag",
+              "image_transport",
+              "rclcpp",
+              "eigen"
+            ],
+            "buildExportDepend": [
+              "rclcpp_components",
+              "tf2_ros",
+              "sensor_msgs",
+              "apriltag_msgs",
+              "cv_bridge",
+              "apriltag",
+              "image_transport",
+              "rclcpp"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "rclcpp_components",
+              "tf2_ros",
+              "sensor_msgs",
+              "apriltag_msgs",
+              "cv_bridge",
+              "apriltag",
+              "image_transport",
+              "rclcpp"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_cmake_cppcheck",
+              "ament_lint_auto",
+              "ament_cmake_clang_format"
+            ]
+          },
+          "substitutions": []
+        },
         "image_view": {
           "version": "3.0.0",
           "source": {
@@ -39716,7 +40287,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/uncrustify/uncrustify.git",
               "to": {
                 "kind": "git",
@@ -39798,7 +40370,8 @@
           },
           "substitutions": [
             {
-              "kind": "replaceToPath",
+              "kind": "patchVendor",
+              "filename": "CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/ignitionrobotics/ign-cmake.git",
               "to": {
                 "kind": "git",

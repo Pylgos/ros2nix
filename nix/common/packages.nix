@@ -9,7 +9,7 @@ rec {
   setupHelper = nixpkgs.nimPackages.buildNimPackage {
     pname = "ros2nix-setup-helper";
     version = "0.1.0";
-    src = "${self}/setuphelper";
+    src = self + "/setuphelper";
   };
 
   setupHook = nixpkgs.makeSetupHook {

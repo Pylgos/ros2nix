@@ -17,8 +17,6 @@ let
     rmw_implementation = prev.rmw_implementation.overrideAttrs ({ propagatedBuildInputs ? [ ]
                                                                  , ...
                                                                  }: {
-      # The default implementation must be available to all dependent packages
-      # at build time.
       propagatedBuildInputs = [
         final.rmw_fastrtps_cpp
       ] ++ propagatedBuildInputs;

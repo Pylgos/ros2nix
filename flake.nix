@@ -1,7 +1,7 @@
 # flake.nix
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/22.11";
     std.url = "github:divnix/std";
     std.inputs.nixpkgs.follows = "nixpkgs";
   };

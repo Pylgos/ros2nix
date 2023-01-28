@@ -16,9 +16,7 @@
       ];
     }
     {
-      humble = std.harvest self [ "humble" "packages" ];
-      # packages = std.harvest self [ "cli" "packages" ];
+      packages = std.harvest self [ "humble" "packages" ];
       lib = std.harvest self [ "common" "lib" ];
-      # p = builtins.trace self.lib.x86_64-linux (self.lib.x86_64-linux.loadRosPackagesFromJson self.p "humble" ./generator/packages.json);
     };
 }

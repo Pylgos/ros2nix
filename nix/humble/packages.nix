@@ -28,6 +28,12 @@ let
       pname = "minimal";
       version = "0.0.0";
 
+      phases = [ "installPhase" ];
+
+      installPhase = ''
+        touch $out
+      '';
+
       buildDepend = [
         "examples_rclcpp_minimal_subscriber"
         "examples_rclcpp_minimal_publisher"

@@ -9,7 +9,7 @@ type
     name: PkgName
     deps: HashSet[string]
     prefix: PrefixPath
-  
+
   UnorderedPkgTable = Table[PkgName, Package]
 
   PkgTable = OrderedTable[PkgName, Package]
@@ -20,14 +20,14 @@ type
     dsvSet
     dsvSetIfUnset
     dsvSource
-  
+
   DsvOp = object
     case kind*: DsvOpKind
     of dsvPrependNonDup..dsvSetIfUnset:
       name, value: string
     of dsvSource:
       path: string
-  
+
   DsvParseError = object of ValueError
 
   OpKind = enum
@@ -35,14 +35,14 @@ type
     opSet
     opSetIfUnset
     opSource
-  
+
   Op = object
     case kind: OpKind
     of opPrependNonDup..opSetIfUnset:
       name, value: string
     of opSource:
       path: string
-  
+
   Env = Table[string, string]
 
   ShellKind = enum
@@ -66,14 +66,14 @@ proc collectPackagesFrom(pkgs: var UnorderedPkgTable, prefix: PrefixPath, alread
 
   for pkgFile in walkDir(prefix/"share/colcon-core/packages"):
     if pkgFile.kind notin {pcFile, pcLinkToFile}: continue
-    
+
     let
       pkgName = pkgFile.path.splitPath().tail.PkgName
       deps = readFile(pkgFile.path).split(":").toHashSet
-    
+
     # Skip already collected package
     if pkgName in pkgs: continue
-    
+
     var pkg = Package(name: pkgName, deps: deps, prefix: prefix)
     pkgs[pkgName] = pkg
 
@@ -96,7 +96,7 @@ proc removeNonRosDeps(pkgs: var UnorderedPkgTable) =
 
 proc reduceCycleSet(pkgs: var UnorderedPkgTable) =
   var lastDepended = none(HashSet[PkgName])
-  
+
   while pkgs.len >= 0:
     var depended = HashSet[PkgName]()
 
@@ -106,7 +106,7 @@ proc reduceCycleSet(pkgs: var UnorderedPkgTable) =
     for name in pkgs.keys():
       if name notin depended:
         pkgs.del name
-    
+
     if lastDepended.isSome:
       if lastDepended.get() == depended:
         return
@@ -118,19 +118,19 @@ proc orderPackages(pkgs: UnorderedPkgTable): PkgTable =
   var
     mPkgs = pkgs
     toBeOrdered = mPkgs.keys.toSeq
-  
+
   toBeOrdered.sort()
-  
+
   while toBeOrdered.len != 0:
     var pkgNamesWithoutDeps = collect:
       for name in toBeOrdered:
         if mPkgs[name].deps.len == 0:
           name
-    
+
     if pkgNamesWithoutDeps.len == 0:
       mPkgs.reduceCycleSet()
       stderr.writeLine "Circular dependency detected"
-    
+
     pkgNamesWithoutDeps.sort()
     let pkgName = pkgNamesWithoutDeps[0]
     if (let idx = toBeOrdered.find(pkgName); idx != -1):
@@ -155,19 +155,19 @@ proc parseDsvOp(line: string): DsvOp =
   of "prepend-non-duplicate":
     parseErrorIf(s.len != 3)
     result = DsvOp(kind: dsvPrependNonDup, name: s[1], value: s[2])
-  
+
   of "prepend-non-duplicate-if-exists":
     parseErrorIf(s.len != 3)
     result = DsvOp(kind: dsvPrependNonDupIfExists, name: s[1], value: s[2])
-  
+
   of "set":
     parseErrorIf(s.len != 3)
     result = DsvOp(kind: dsvSet, name: s[1], value: s[2])
-  
+
   of "set-if-unset":
     parseErrorIf(s.len != 3)
     result = DsvOp(kind: dsvSetIfUnset, name: s[1], value: s[2])
-  
+
   of "source":
     parseErrorIf(s.len != 2)
     result = DsvOp(kind: dsvSource, path: s[1])
@@ -223,6 +223,7 @@ type
     realEnv: Env
     env: Env
     ops: seq[Op]
+    deferredOps: seq[Op]
     hasNonDsvFileSourced: bool
     prevPrefix: PrefixPath
 
@@ -235,6 +236,21 @@ proc envDiff(ctx: Context): Env =
     else:
       result[name] = ctx.env[name]
 
+
+proc isSafeToAssumeNoSideEffect(scriptName: string): bool =
+  "argcomplete" in scriptName
+
+
+proc source(ctx: var Context, filename: string) =
+  if not ctx.hasNonDsvFileSourced and not isSafeToAssumeNoSideEffect(filename):
+    for (name, value) in ctx.envDiff.pairs:
+      ctx.ops.add Op(kind: opSet, name: name, value: value)
+    ctx.hasNonDsvFileSourced = true
+  
+  if isSafeToAssumeNoSideEffect(filename):
+    ctx.deferredOps.add Op(kind: opSource, path: filename)
+  else:
+    ctx.ops.add Op(kind: opSource, path: filename)
 
 
 proc computeOps(ctx: var Context, filename: string, prefix: PrefixPath) =
@@ -255,7 +271,7 @@ proc computeOps(ctx: var Context, filename: string, prefix: PrefixPath) =
       else:
         ctx.env.prependNonDup(dsvOp.name, dsvOp.value, prefix)
       inc i
-    
+
     of dsvPrependNonDupIfExists:
       let path = dsvOp.value.resolvePath(prefix)
       if path.fileExists or path.dirExists:
@@ -264,14 +280,14 @@ proc computeOps(ctx: var Context, filename: string, prefix: PrefixPath) =
         else:
           ctx.env.prependNonDup(dsvOp.name, dsvOp.value, prefix)
       inc i
-    
+
     of dsvSet:
       if ctx.hasNonDsvFileSourced:
         ctx.ops.add Op(kind: opSet, name: dsvOp.name, value: dsvOp.value.resolvePath(prefix))
       else:
         ctx.env.setEnv(dsvOp.name, dsvOp.value, prefix)
       inc i
-    
+
     of dsvSetIfUnset:
       if ctx.hasNonDsvFileSourced:
         ctx.ops.add Op(kind: opSetIfUnset, name: dsvOp.name, value: dsvOp.value.resolvePath(prefix))
@@ -283,40 +299,34 @@ proc computeOps(ctx: var Context, filename: string, prefix: PrefixPath) =
       let
         path = resolvePath(dsvOp.path, prefix)
         basePath = path.splitPath.head / path.splitFile.name
-      
+
       var kinds = {dsvOp.path.shellKind}
-      
+
       inc i
 
       while i < dsv.len:
         if dsv[i].kind != dsvSource: break
         let p = resolvePath(dsv[i].path, prefix)
         if p.splitPath.head / p.splitFile.name != basePath: break
-        
+
         let kind = dsv[i].path.shellKind
         if kind != shkOther and kind in kinds:
           stderr.writeLine "Duplicated source"
         kinds.incl kind
         inc i
-      
+
       for p in walkFiles(basePath & ".*"):
         let kind = p.shellKind
         kinds.incl kind
-      
+
       if shkDsv in kinds:
         ctx.computeOps(basePath & ".dsv", prefix)
-      
+
       elif shkBash in kinds:
-        for (name, value) in ctx.envDiff.pairs:
-          ctx.ops.add Op(kind: opSet, name: name, value: value)
-        ctx.ops.add Op(kind: opSource, path: basePath & ".bash")
-        ctx.hasNonDsvFileSourced = true
-      
+        ctx.source(basePath & ".bash")
+
       elif shkSh in kinds:
-        for (name, value) in ctx.envDiff.pairs:
-          ctx.ops.add Op(kind: opSet, name: name, value: value)
-        ctx.ops.add Op(kind: opSource, path: basePath & ".sh")
-        ctx.hasNonDsvFileSourced = true
+       ctx.source(basePath & ".sh")
 
       else:
         stderr.writeLine "Unsupported shell"
@@ -333,7 +343,7 @@ proc computeCommands(pkgs: PkgTable): seq[string] =
     for (name, value) in ctx.envDiff.pairs:
       ctx.ops.add Op(kind: opSet, name: name, value: value)
 
-  for op in ctx.ops:
+  for op in ctx.ops & ctx.deferredOps:
     case op.kind:
     of opSet:
       result.add fmt"export {op.name}={op.value.quoteShell}"
@@ -343,7 +353,7 @@ proc computeCommands(pkgs: PkgTable): seq[string] =
       result.add fmt"_colcon_prefix_sh_prepend_unique_value {op.name} {op.value.quoteShell}"
     of opSource:
       result.add fmt"source {op.path.quoteShell}"
-  
+
   result.add fmt"unset COLCON_CURRENT_PREFIX"
 
 
@@ -358,10 +368,10 @@ when isMainModule:
 
   for prefix in prefixes:
     unorderedPkgs.collectPackagesFrom(prefix)
-  
+
   unorderedPkgs.removeNonRosDeps()
 
 
   var pkgs = unorderedPkgs.orderPackages()
-  
+
   echo pkgs.computeCommands().join("\n")

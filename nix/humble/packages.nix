@@ -24,17 +24,10 @@ let
 
     buildRosPackage = l.buildRosPackageFor final;
 
-    minimalEnv = final.buildRosPackage {
-      pname = "minimal";
-      version = "0.0.0";
+    mkRosWorkspace = l.mkRosWorkspaceFor final;
 
-      phases = [ "installPhase" ];
-
-      installPhase = ''
-        touch $out
-      '';
-
-      buildDepend = [
+    minimalEnv = final.mkRosWorkspace {
+      pkgs = [
         "examples_rclcpp_minimal_subscriber"
         "examples_rclcpp_minimal_publisher"
         "ros2cli"

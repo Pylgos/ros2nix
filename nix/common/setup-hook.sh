@@ -63,8 +63,11 @@ deps+=("${depsHostHost[@]}")
 deps+=("${buildInputs[@]}")
 deps+=("${depsTargetTarget[@]}")
 
-echo executing @setupHelper@ "${deps[@]}"
-
 set +u
+
+if [[ ! -z $ROS2NIX_SETUP_VERBOSE ]]; then
+  echo executing @setupHelper@ "${deps[@]}"
+fi
 source <(@setupHelper@ "${deps[@]}")
+
 set -u

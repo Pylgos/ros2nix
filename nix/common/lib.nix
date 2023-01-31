@@ -22,18 +22,38 @@ rec {
     else
       throw "Unsupported source type";
 
+  resolveDepsFor = rosDistroPkgs: pkgs:
+    l.concatLists (map
+      (pkg:
+        if l.isString pkg then
+          if l.isList rosDistroPkgs.${pkg} then
+            rosDistroPkgs.${pkg}
+          else
+            [ rosDistroPkgs.${pkg} ]
+        else if l.isDerivation pkg then
+          [ pkg ]
+        else
+          throw "wtf"
+      )
+      pkgs);
+
 
   buildRosPackageFor =
     rosDistroPkgs:
-    { substitutions ? []
+    { substitutions ? [ ]
+
+    , propagatedNativeBuildInputs ? [ ]
+    , nativeBuildInputs ? [ ]
+    , propagatedBuildInputs ? [ ]
+    , checkInputs ? [ ]
 
     , buildDepend ? [ ]
     , buildExportDepend ? [ ]
     , buildToolDepend ? [ ]
     , buildToolExportDepend ? [ ]
-    , execDepend ? []
-    , testDepend ? []
-    , docDepend ? []
+    , execDepend ? [ ]
+    , testDepend ? [ ]
+    , docDepend ? [ ]
 
     , postSetup ? ""
     , postPatch ? ""
@@ -45,20 +65,7 @@ rec {
     , ...
     } @ args:
     let
-      resolveDeps = pkgs:
-        l.concatLists (map
-          (pkg:
-            if l.isString pkg then
-              if l.isList rosDistroPkgs.${pkg} then
-                rosDistroPkgs.${pkg}
-              else
-                [ rosDistroPkgs.${pkg} ]
-            else if l.isDerivation pkg then
-              [ pkg ]
-            else
-              throw "wtf"
-          )
-          pkgs);
+      resolveDeps = resolveDepsFor rosDistroPkgs;
 
     in
     nixpkgs.stdenv.mkDerivation (
@@ -68,16 +75,16 @@ rec {
         "buildExportDepend"
         "buildToolDepend"
         "buildToolExportDepend"
-        "execDepend" 
-        "testDepend" 
+        "execDepend"
+        "testDepend"
         "docDepend"
       ]) // {
-      propagatedNativeBuildInputs = resolveDeps (buildToolExportDepend ++ buildToolDepend);
-      nativeBuildInputs = [ rosDistroPkgs.python3-colcon-common-extensions cell.packages.setupHook ];
-      propagatedBuildInputs = resolveDeps (buildExportDepend ++ buildDepend ++ execDepend);
-      checkInputs = resolveDeps testDepend;
+        propagatedNativeBuildInputs = propagatedNativeBuildInputs ++ (resolveDeps (buildToolExportDepend ++ buildToolDepend));
+        nativeBuildInputs = nativeBuildInputs ++ [ rosDistroPkgs.python3-colcon-common-extensions cell.packages.setupHook nixpkgs.ninja ];
+        propagatedBuildInputs = propagatedBuildInputs ++ (resolveDeps (buildExportDepend ++ buildDepend ++ execDepend));
+        checkInputs = checkInputs ++ (resolveDeps testDepend);
 
-      postPatch = postPatch +
+        postPatch = postPatch +
         l.concatMapStringsSep
           ";\n"
           (sub:
@@ -93,44 +100,47 @@ rec {
           )
           substitutions;
 
-      inherit doCheck dontUseCmakeConfigure;
+        inherit doCheck dontUseCmakeConfigure;
 
-      postSetup = ''
+        postSetup = ''
 
       '';
 
-      buildPhase =
-        if buildPhase == null then ''
-          runHook preBuild
+        buildPhase =
+          if buildPhase == null then ''
+            runHook preBuild
 
-          colcon build \
-            --merge-install \
-            --install-base $out \
-            --build-base /tmp \
-            --event-handlers console_direct+ \
-            --cmake-args -DCMAKE_BUILD_TYPE=Release \
-            --cmake-args -DBUILD_TESTING=${if doCheck then "ON" else "OFF"}
+            colcon build \
+              --merge-install \
+              --install-base $out \
+              --build-base /tmp \
+              --event-handlers console_direct+ console_start_end- console_stderr- desktop_notification- summary- console_package_list- status- terminal_title- \
+              --cmake-args -DCMAKE_BUILD_TYPE=Release \
+              --cmake-args -DBUILD_TESTING=${if doCheck then "ON" else "OFF"} \
         
-          runHook postBuild
-        '' else buildPhase;
+            runHook postBuild
+          '' else buildPhase;
 
-      checkPhase =
-        if checkPhase == null then ''
-          runHook preCheck
+        checkPhase =
+          if checkPhase == null then ''
+            runHook preCheck
 
-          colcon test \
-            --merge-install \
-            --install-base $out
+            colcon test \
+              --merge-install \
+              --install-base $out
 
-          runHook postCheck
-        '' else checkPhase;
+            runHook postCheck
+          '' else checkPhase;
 
-      installPhase =
-        if installPhase == null then ''
-          runHook preInstall
-          runHook postInstall
-        '' else installPhase;
-    });
+        installPhase =
+          if installPhase == null then ''
+            runHook preInstall
+            runHook postInstall
+          '' else installPhase;
+
+        shellHook = l.replaceStrings [ "@setupHelper@" ] [ "${cell.packages.setupHelper}/bin/setuphelper" ] (l.readFile ./setup-hook.sh);
+      }
+    );
 
   loadRosDistroFromJson = rosDistroPkgs: distroName: jsonPath:
     let
@@ -147,4 +157,25 @@ rec {
         }
       )
       distro.packages;
+
+  mkRosWorkspaceFor = rosDistroPkgs:
+    { name ? "ros-workspace"
+    , pkgs
+    } @ args:
+    
+    buildRosPackageFor rosDistroPkgs (args // {
+      inherit name;
+      phases = [ "buildPhase" ];
+      buildDepend = pkgs;
+      buildPhase = ''
+        { echo "------------------------------------------------------------";
+          echo " WARNING: the existence of this path is not guaranteed.";
+          echo " It is an internal implementation detail for 'mkRosWorkspaceFor'.";
+          echo "------------------------------------------------------------";
+          echo;
+          # Record all build inputs as runtime dependencies
+          export;
+        } >> "$out"
+      '';
+    });
 }

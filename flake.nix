@@ -1,4 +1,3 @@
-# flake.nix
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/22.11";
@@ -13,10 +12,11 @@
       cellBlocks = with std.blockTypes; [
         (installables "packages")
         (functions "lib")
+        (pkgs "pkgs")
       ];
     }
     {
-      packages = std.harvest self [ "humble" "packages" ];
       lib = std.harvest self [ "common" "lib" ];
+      legacyPackages = std.harvest self [ "outputs" "pkgs" ];
     };
 }

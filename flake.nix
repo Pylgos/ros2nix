@@ -1,4 +1,10 @@
 {
+  nixConfig ={
+    extra-trusted-public-keys = "ros2nix.cachix.org-1:qeK6B6TjlrJ49Ny/pcTA5+/P0aBcA483XYgssc7ICVs=";
+    extra-substituters = "https://ros2nix.cachix.org";
+  };
+
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/22.11";
     std.url = "github:divnix/std";

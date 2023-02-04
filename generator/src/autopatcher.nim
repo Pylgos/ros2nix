@@ -159,17 +159,6 @@ proc autoPatch*(pkg: var PkgInfo) =
     var tmpDir = ""
     var path = pkg.prefetch.path
 
-    if path.endsWith ".tar.gz":
-      tmpDir = genTempPath("ros2nix_tarball_extract_", "_" & pkg.name)
-      debug "Extracting", `from`=pkg.prefetch.path, dest=tmpDir
-      pkg.prefetch.path.extractAll(tmpDir)
-      let
-        contents = tmpDir.walkDir.toSeq.filterIt:
-          it.path.splitFile.ext != ".data"
-      doAssert contents.len == 1
-      path = contents[0].path
-
-
     for file in path.walkDirRec({pcFile}):
       let
         tail = file.splitPath().tail

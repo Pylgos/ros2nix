@@ -1,7 +1,0 @@
-self: super:
-
-{% for distro in distroNames %}
-super.lib.composeManyExtensions [
-  (import ./{{ distro }})
-] self super
-{% endfor %}

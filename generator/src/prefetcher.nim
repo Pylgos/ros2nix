@@ -69,7 +69,7 @@ proc prefetchUrl*(url: Uri): FetchResult {.gcsafe.} =
   info "Fetching"
 
   let args = [
-    "--print-path", $url,
+    "--print-path", "--unpack", $url,
   ].toSeq
   debug "Executing", cmd = "nix-prefetch-url " & args.join(" ")
   let r = execProcess("nix-prefetch-url", "", args, nil, {poUsePath})
@@ -145,32 +145,8 @@ proc prefetchGit*(url: Uri, rev: RevStr, rewriteUrl=true): FetchResult {.gcsafe.
   return fr
 
 
-proc prefetch*(distroPkgs: DistroPkgsTable, nParallel = 6): DistroPkgsTable =
-  # var tp = TaskPool.new(nParallel)
-
-  proc prefetchGitWrapper(url: Uri, rev: RevStr, distroName: DistroName, pkgName: PkgName):
-        ptr tuple[fr: FetchResult, distroName: DistroName, pkgName: PkgName] =
-    try:
-      let fr = prefetchGit(url, rev)
-      let p = createShared(typeof result[])
-      p[].fr = fr
-      p[].distroName = distroName
-      p[].pkgName = pkgName
-      return p
-    except Exception as e:
-      writeStackTrace()
-      echo e[]
-
-  let futs = collect:
-    for (distroName, pkgs) in distroPkgs.pairs:
-      for i, (pkgName, pkg) in enumerate(pkgs.pairs):
-        info "Downloads left", n = (pkgs.len - i)
-        prefetchGitWrapper(pkg.repoUrl, pkg.tag, distroName, pkgName)
-
-  result = distroPkgs
-  for fut in futs:
-    # let p = fut.sync()
-    let p = fut
-    let r = p[]
-    deallocShared(p)
-    result[r.distroName][r.pkgName].prefetch = r.fr
+proc prefetch*(distroPkgs: var DistroPkgsTable) =
+  for (distroName, pkgs) in distroPkgs.pairs:
+    for i, (pkgName, pkg) in enumerate(pkgs.pairs):
+      info "Number of downloads remaining", n = (pkgs.len - i)
+      distroPkgs[distroName][pkgName].prefetch = prefetchGit(pkg.repoUrl, pkg.tag)

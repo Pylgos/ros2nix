@@ -153,7 +153,7 @@ proc main =
   except IOError:
     discard
 
-  distroPkgs = prefetch(distroPkgs, 64)
+  prefetch(distroPkgs)
   
   writePrefetchCache(prefetchCachePath)
 
@@ -167,4 +167,3 @@ proc main =
 
 when isMainModule:
   main()
-

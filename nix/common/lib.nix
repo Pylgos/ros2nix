@@ -18,7 +18,7 @@ rec {
     if source.kind == "git" then
       nixpkgs.fetchgit { inherit (source) url rev; sha256 = source.hash; }
     else if source.kind == "url" then
-      nixpkgs.fetchurl { inherit (source) url; sha256 = source.hash; }
+      nixpkgs.fetchzip { inherit (source) url; sha256 = source.hash; }
     else
       throw "Unsupported source type";
 

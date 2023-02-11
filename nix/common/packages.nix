@@ -20,4 +20,9 @@ rec {
       setupHelper = "${setupHelper}/bin/setuphelper";
     };
   } ./setup-hook.sh;
+
+  wrapQt5AppsHookRos = nixpkgs.makeSetupHook {
+    name = "wrap-qt5-apps-hook-ros";
+    deps = [ nixpkgs.qt5.wrapQtAppsHook ];
+  } ./wrap-qt-apps-hook-ros.sh;
 }

@@ -22,6 +22,13 @@ let
       ] ++ propagatedBuildInputs;
     });
 
+    qt_gui_cpp = prev.qt_gui_cpp.overrideAttrs ({ postPatch ? "", ... }: {
+      postPatch = postPatch + ''
+        substituteInPlace src/CMakeLists.txt --replace 'NOT qt_gui_cpp_BINDINGS' 'FALSE'
+        substituteInPlace CMakeLists.txt --replace 'NOT qt_gui_cpp_BINDINGS' 'FALSE'
+      '';
+    });
+
     buildRosPackage = l.buildRosPackageFor final;
 
     mkRosWorkspace = l.mkRosWorkspaceFor final;
@@ -32,6 +39,9 @@ let
         "examples_rclcpp_minimal_publisher"
         "ros2cli"
         "ros2run"
+        "rqt"
+        "rqt_graph"
+        "rviz2"
       ];
     };
   };

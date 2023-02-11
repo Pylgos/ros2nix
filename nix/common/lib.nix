@@ -41,12 +41,6 @@ rec {
   buildRosPackageFor =
     rosDistroPkgs:
     { substitutions ? [ ]
-
-    , propagatedNativeBuildInputs ? [ ]
-    , nativeBuildInputs ? [ ]
-    , propagatedBuildInputs ? [ ]
-    , checkInputs ? [ ]
-
     , buildDepend ? [ ]
     , buildExportDepend ? [ ]
     , buildToolDepend ? [ ]
@@ -55,18 +49,28 @@ rec {
     , testDepend ? [ ]
     , docDepend ? [ ]
 
-    , postSetup ? ""
+    , propagatedNativeBuildInputs ? [ ]
+    , nativeBuildInputs ? [ ]
+    , propagatedBuildInputs ? [ ]
+    , buildInputs ? [ ]
+    , checkInputs ? [ ]
     , postPatch ? ""
     , buildPhase ? null
     , checkPhase ? null
     , installPhase ? null
     , doCheck ? false
     , dontUseCmakeConfigure ? true
+    , dontWrapQtApps ? true
+
     , ...
     } @ args:
     let
       resolveDeps = resolveDepsFor rosDistroPkgs;
-
+      isQt5App =
+        let
+          deps = buildDepend ++ buildExportDepend;
+        in
+        l.any (dep: (l.match ".*(qt5|qtbase5).*" dep) != null) deps;
     in
     nixpkgs.stdenv.mkDerivation (
       (l.removeAttrs args [
@@ -79,14 +83,26 @@ rec {
         "testDepend"
         "docDepend"
       ]) // {
-        propagatedNativeBuildInputs = propagatedNativeBuildInputs ++ (resolveDeps (buildToolExportDepend ++ buildToolDepend));
-        nativeBuildInputs = nativeBuildInputs ++ [ rosDistroPkgs.python3-colcon-common-extensions cell.packages.setupHook nixpkgs.ninja ];
-        propagatedBuildInputs = propagatedBuildInputs ++ (resolveDeps (buildExportDepend ++ buildDepend ++ execDepend));
+        propagatedNativeBuildInputs = propagatedNativeBuildInputs ++
+        [ cell.packages.setupHook ] ++
+        (l.optional isQt5App [ cell.packages.wrapQt5AppsHookRos ]) ++
+        (resolveDeps buildToolExportDepend);
+
+        nativeBuildInputs = nativeBuildInputs ++
+        [ rosDistroPkgs.python3-colcon-common-extensions ] ++
+        (resolveDeps buildToolDepend);
+
+        propagatedBuildInputs = propagatedBuildInputs ++
+        (resolveDeps (buildExportDepend ++ execDepend ++ buildToolExportDepend));
+
+        buildInputs = buildInputs ++
+        (resolveDeps (buildDepend ++ buildToolDepend));
+
         checkInputs = checkInputs ++ (resolveDeps testDepend);
 
         postPatch = postPatch +
         l.concatMapStringsSep
-          ";\n"
+          "\n"
           (sub:
             if sub.kind == "patchVendor" then
               let
@@ -100,24 +116,22 @@ rec {
           )
           substitutions;
 
-        inherit doCheck dontUseCmakeConfigure;
-
-        postSetup = ''
-
-      '';
+        inherit doCheck dontUseCmakeConfigure dontWrapQtApps;
 
         buildPhase =
           if buildPhase == null then ''
             runHook preBuild
 
-            colcon build \
+            colcon --log-base /tmp/log build \
+              --paths . \
               --merge-install \
               --install-base $out \
-              --build-base /tmp \
-              --event-handlers console_direct+ console_start_end- console_stderr- desktop_notification- summary- console_package_list- status- terminal_title- \
+              --build-base /tmp/build \
+              --event-handlers console_cohesion- console_direct+ console_package_list- console_start_end- console_stderr- desktop_notification- event_log- log- log_command- status- store_result- summary- terminal_title- \
+              --executor sequential \
               --cmake-args -DCMAKE_BUILD_TYPE=Release \
               --cmake-args -DBUILD_TESTING=${if doCheck then "ON" else "OFF"} \
-        
+      
             runHook postBuild
           '' else buildPhase;
 
@@ -138,7 +152,11 @@ rec {
             runHook postInstall
           '' else installPhase;
 
-        shellHook = l.replaceStrings [ "@setupHelper@" ] [ "${cell.packages.setupHelper}/bin/setuphelper" ] (l.readFile ./setup-hook.sh);
+        shellHook =
+          l.replaceStrings
+            [ "@setupHelper@" ]
+            [ "${cell.packages.setupHelper}/bin/setuphelper" ]
+            (l.readFile ./setup-hook.sh);
       }
     );
 
@@ -162,7 +180,7 @@ rec {
     { name ? "ros-workspace"
     , pkgs
     } @ args:
-    
+
     buildRosPackageFor rosDistroPkgs (args // {
       inherit name;
       phases = [ "buildPhase" ];

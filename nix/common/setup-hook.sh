@@ -1,4 +1,7 @@
 # shellcheck shell=bash
+if [[ -z "${ros2nix_setup_hook_has_run-}" ]]; then
+ros2nix_setup_hook_has_run=1
+
 
 _colcon_prefix_sh_prepend_unique_value() {
   # arguments
@@ -71,3 +74,5 @@ fi
 source <(@setupHelper@ "${deps[@]}")
 
 set -u
+
+fi

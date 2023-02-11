@@ -1,0 +1,200 @@
+{
+  "macroutils-1.2.0": {
+    "url": "https://github.com/PMunch/macroutils",
+    "rev": "e6357d428f3888c3b0c068a9e2bd0cf66d25e3cd",
+    "date": "2021-12-03T11:26:46+01:00",
+    "path": "/nix/store/yj7z3dvhjgc14jf4pcrwwrkmkzws49a3-macroutils",
+    "sha256": "0hvr6sqx22dlcjv5q6rxmfs6jaccliq450fc5v0igfs0nqqmxn65",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "chronicles-0.10.3": {
+    "url": "https://github.com/status-im/nim-chronicles",
+    "rev": "32ac8679680ea699f7dbc046e8e0131cac97d41a",
+    "date": "2022-07-19T13:13:35+00:00",
+    "path": "/nix/store/vnxrmzlkma85rsf82abcr81ywrgr5dya-nim-chronicles-32ac867",
+    "sha256": "0w3ya0rpy0rp997nnfakq0cshpk4vyva195mmgrw5c9zp4pwv2hm",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "faststreams-0.3.0": {
+    "url": "https://github.com/status-im/nim-faststreams",
+    "rev": "814f8927e1f356f39219f37f069b83066bcc893a",
+    "date": "2023-01-12T15:18:54+01:00",
+    "path": "/nix/store/q2naqf1prlgly3pc4m5a9g9l5r784cry-nim-faststreams-814f892",
+    "sha256": "07nqjk7h0n8dmbgyqv08ajsz9dxcqplacibsr5fph9b1g4nhcp59",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "chronos-3.0.11": {
+    "url": "https://github.com/status-im/nim-chronos",
+    "rev": "5d3da66e563d21277b57a9b601744273c083a01b",
+    "date": "2023-02-09T07:15:22+02:00",
+    "path": "/nix/store/r6ni2pfv2b57k3gkp7ys1dj6bwvj62s0-nim-chronos-5d3da66",
+    "sha256": "0rckwacvrrkhprvj8z3lkfqrfma7j8vd453j2lkya5dckx2q5sld",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "nimja-0.8.6": {
+    "url": "https://github.com/enthus1ast/nimja",
+    "rev": "f86734ab7e43cf19ec651a26cde72f9cb5f4fce4",
+    "date": "2023-02-03T16:05:01+01:00",
+    "path": "/nix/store/kn2nf2q1w8cgdvabi9ka1rs0kzizx1h6-nimja",
+    "sha256": "12w6mk9zbf7spvmpwchybgw02s8m23kdzq7hw65fmwhy5zv5hzm1",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "bearssl-0.2.0": {
+    "url": "https://github.com/status-im/nim-bearssl",
+    "rev": "acf9645e328bdcab481cfda1c158e07ecd46bd7b",
+    "date": "2023-01-17T11:49:12+01:00",
+    "path": "/nix/store/lxj4v19r318383qv0lzhfdh5x80fvvl9-nim-bearssl-acf9645",
+    "sha256": "1y6lkm2378ygjb2q6z5k25krs6izs9k75k13fdma05dlxijgbpw8",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "serialization-0.1.0": {
+    "url": "https://github.com/status-im/nim-serialization",
+    "rev": "5b7cea55efeb074daa8abd8146a03a34adb4521a",
+    "date": "2023-02-08T09:37:34+07:00",
+    "path": "/nix/store/rfjvbqndhnnaiyrnkfirm0zmyk3fv8ph-nim-serialization-5b7cea5",
+    "sha256": "181d08003csj4l8fi9773f3q9p27qq827ykr465saq2m4mia0hz7",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "unittest2-0.0.5": {
+    "url": "https://github.com/status-im/nim-unittest2",
+    "rev": "da8398c45cafd5bd7772da1fc96e3924a18d3823",
+    "date": "2022-11-07T18:05:13+01:00",
+    "path": "/nix/store/axvif7nk9dyjgyd4yi37ljv026i0q6sq-nim-unittest2-da8398c",
+    "sha256": "06l0xwxm8p7w2qs2vas2wgixxry8v9113wr90cni9c5r4jvk7hb9",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "httputils-0.3.0": {
+    "url": "https://github.com/status-im/nim-http-utils",
+    "rev": "a85bd52ae0a956983ca6b3267c72961d2ec0245f",
+    "date": "2022-12-02T08:29:46+01:00",
+    "path": "/nix/store/g6zax34fj5l7c6p33pqijlx2nfs5ryfy-nim-http-utils-a85bd52",
+    "sha256": "1lz1jcbv4spmkq4yss6kj1jkwz494np1fb1hfv9kkylsjqni4vmc",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "yaml-#head": {
+    "url": "https://github.com/flyx/NimYAML",
+    "rev": "7dd8e88639b86f43d0a76f7c3763234c68741026",
+    "date": "2022-10-14T21:41:51+02:00",
+    "path": "/nix/store/4sx3jd47z8j8gzmra6dqf18znchwyy5g-NimYAML-7dd8e88",
+    "sha256": "0c0wfd8x4ik6rpiz0g9c27grab3p6w2s47wlbzigy30zcs84fgxr",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "argparse-4.0.1": {
+    "url": "https://github.com/iffy/nim-argparse",
+    "rev": "98c7c99bfbcaae750ac515a6fd603f85ed68668f",
+    "date": "2022-11-28T13:39:19-05:00",
+    "path": "/nix/store/nzabx1ni9m8alfm210bk2r8ix0zmyaff-nim-argparse",
+    "sha256": "03zi6z02drgcgqbqlyglcya97hazw7vm7y0gjwha9vf0jqs39l5f",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "zippy-0.10.7": {
+    "url": "https://github.com/guzba/zippy",
+    "rev": "ca5989a1ba8bdba897d7906dfd6ccda2580d9a5a",
+    "date": "2023-01-24T18:16:47-06:00",
+    "path": "/nix/store/dmp0888nh7mn3cd57dffr97c5g7ynwam-zippy",
+    "sha256": "0rk31ispck48ilvzs0lxpp7z6y238a7d7dh7lmlfwi5i7hx13la6",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "testutils-0.5.0": {
+    "url": "https://github.com/status-im/nim-testutils",
+    "rev": "dfc4c1b39f9ded9baf6365014de2b4bfb4dafc34",
+    "date": "2022-06-29T17:18:00+03:00",
+    "path": "/nix/store/5vdg8g4i7hc39d4vq7j0jp4rd7x56yq4-nim-testutils-dfc4c1b",
+    "sha256": "0fi59m8yvayzlh1ajbl98ddy43i3ikjqh3s5px16y0s3cidg4fai",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "json_serialization-0.1.0": {
+    "url": "https://github.com/status-im/nim-json-serialization",
+    "rev": "a7d815ed92f200f490c95d3cfd722089cc923ce6",
+    "date": "2022-11-24T13:49:34+01:00",
+    "path": "/nix/store/pybm61zayc0j8idf6h9cv2nqg01xq920-nim-json-serialization-a7d815e",
+    "sha256": "08aylqpsviwikj4z18k1wks0zrrwjpdlhprgwm0k9lfnaw9w02ln",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "stew-0.1.0": {
+    "url": "https://github.com/status-im/nim-stew",
+    "rev": "407a59883691d362db2fe8eab7f7c3b1f75112ff",
+    "date": "2023-02-02T09:30:40+01:00",
+    "path": "/nix/store/jmb2r4vapsnbim49xkvc3mzm7hhbpimz-nim-stew-407a598",
+    "sha256": "163qirq7cfyq6xvwvd9hsab6s036428zjl4z177wy9m9hgr8fcr8",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "parsetoml-0.7.0": {
+    "url": "https://github.com/NimParsers/parsetoml.git",
+    "rev": "33520d8e6d2e993157eeb08d46b6c5f058a32cb7",
+    "date": "2022-12-31T15:55:57+01:00",
+    "path": "/nix/store/q3p18ccbr1pjklgdpimfcm1xqy1fk72p-parsetoml",
+    "sha256": "0xk8pkccd8xplmb35g94bsgcgh5fvzpymazqmih18rbnvkksgnlf",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "taskpools-0.0.4": {
+    "url": "https://github.com/status-im/nim-taskpools",
+    "rev": "b3673c7a7a959ccacb393bd9b47e997bbd177f5a",
+    "date": "2022-11-21T19:56:12+01:00",
+    "path": "/nix/store/kwxh4wa2zdbg4hvim9ijcgaml7wzk0vd-nim-taskpools-b3673c7",
+    "sha256": "1da1ix1pfl1wv110z87mwd9d11hqgsn5xdhzq8b6khwzbdwvl48z",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  },
+  "threading-0.1.0": {
+    "url": "https://github.com/nim-lang/threading",
+    "rev": "49562fa0d393e765823b2ea96ca14fbb9889a566",
+    "date": "2022-03-30T15:15:44+02:00",
+    "path": "/nix/store/36syswlcq6z7ygrj05vm2rw5lmda988w-threading-49562fa",
+    "sha256": "1f7ffy6prsrj48f0ks8y8pa0wspj7alsva4nn8ahsrfyqiq05dsg",
+    "fetchLFS": false,
+    "fetchSubmodules": true,
+    "deepClone": false,
+    "leaveDotGit": false
+  }
+}

@@ -9,6 +9,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/22.11";
     std.url = "github:divnix/std";
     std.inputs.nixpkgs.follows = "nixpkgs";
+    nimble2nix.url = "github:bandithedoge/nimble2nix";
+    nimble2nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { std, self, ... } @ inputs: std.growOn

@@ -3,3 +3,5 @@
 /setuphelper/setuphelper
 /result
 /prefetch_cache.json
+.vscode
+.direnv

@@ -1,5 +1,7 @@
 switch("define", "ssl")
-switch("define", "chronicles_disable_thread_id")
+# switch("define", "chronicles_disable_thread_id")
+switch("define", "useMalloc")
+switch("define", "threadsafe")
 switch("gc", "orc")
 switch("threads", "on")
 # switch("define", "release")

@@ -1,9 +1,9 @@
-import std/[tables, sequtils, sets, strutils, uri, json]
+import std/[tables, sets, uri, json]
 import types, semver
 
 
 
-proc dependenciesContent(deps: DepDesc): JsonNode =
+proc processDependencies(deps: DepDesc): JsonNode =
   result = newJObject()
 
   template map(jsonName: string, dep: HashSet[PkgName]) =
@@ -12,16 +12,16 @@ proc dependenciesContent(deps: DepDesc): JsonNode =
       arr.add newJString pkg
     result[jsonName] = arr
 
-  map "buildDepend", deps.buildDeps
-  map "buildExportDepend", deps.buildExportDeps
-  map "buildToolDepend", deps.buildToolDeps
-  map "buildToolExportDepend", deps.buildToolExportDeps
-  map "execDepend", deps.execDeps
-  map "docDepend", deps.docDeps
-  map "testDepend", deps.testDeps
+  map "buildDepend", deps.buildDepend
+  map "buildExportDepend", deps.buildExportDepend
+  map "buildToolDepend", deps.buildToolDepend
+  map "buildToolExportDepend", deps.buildToolExportDepend
+  map "execDepend", deps.execDepend
+  map "docDepend", deps.docDepend
+  map "testDepend", deps.testDepend
 
 
-proc sourceContent(src: FetchResult): JsonNode = 
+proc processSource(src: FetchResult): JsonNode = 
   result = newJObject()
   
   result["kind"] = newJString $src.kind
@@ -35,7 +35,7 @@ proc sourceContent(src: FetchResult): JsonNode =
     result["url"] = newJString $src.source.url
 
 
-proc substitutionContent(subs: seq[Substitution]): JsonNode =
+proc processSubstitution(subs: seq[Substitution]): JsonNode =
   result = newJArray()
 
   for sub in subs:
@@ -47,25 +47,25 @@ proc substitutionContent(subs: seq[Substitution]): JsonNode =
     of sskPatchVendor:
       j["filename"] = newJString sub.filename
       j["from"] = newJString sub.replaceFrom
-      j["to"] = sourceContent sub.replaceToPath
+      j["to"] = processSource sub.replaceToPath
     
     result.add j
 
 
-proc pkgContent(pkg: PkgInfo): JsonNode =
+proc processPkg(pkg: PkgInfo): JsonNode =
   result = newJObject()
   result["version"] = newJString $pkg.version
-  result["source"] = sourceContent(pkg.prefetch)
-  result["dependencies"] = dependenciesContent(pkg.deps)
-  result["substitutions"] = substitutionContent(pkg.substitutions)
+  result["source"] = processSource(pkg.prefetch)
+  result["dependencies"] = processDependencies(pkg.deps)
+  result["substitutions"] = processSubstitution(pkg.substitutions)
 
 
-proc distroContent(pkgs: PkgTable): JsonNode =
+proc processDistro(pkgs: PkgTable): JsonNode =
   result = newJObject()
   let pkgsNode = newJObject()
   result["packages"] = pkgsNode
   for (name, pkg) in pkgs.pairs:
-    pkgsNode[name] = pkgContent(pkg)
+    pkgsNode[name] = processPkg(pkg)
 
 
 proc lockFileContent(distroPkgs: DistroPkgsTable): JsonNode =
@@ -73,7 +73,7 @@ proc lockFileContent(distroPkgs: DistroPkgsTable): JsonNode =
   let distroNode = newJObject()
   result["distributions"] = distroNode
   for (distroName, pkgs) in distroPkgs.pairs:
-    distroNode[distroName] = distroContent(pkgs)
+    distroNode[distroName] = processDistro(pkgs)
 
 
 proc writePkgJson*(distroPkgs: DistroPkgsTable, filename: string) =

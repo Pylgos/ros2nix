@@ -1,5 +1,5 @@
 # shellcheck shell=bash
-if [[ -z "${ros2nix_setup_hook_has_run-}" ]]; then
+if [[ -z "${ros2nix_setup_hook_has_run-}" || @isShellHook@ ]]; then
 ros2nix_setup_hook_has_run=1
 
 

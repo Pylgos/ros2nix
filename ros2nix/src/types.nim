@@ -6,7 +6,7 @@ type
   PkgName* = string
   ReleaseVersion* = string
   DistroName* = string
-  Sha256Str* = string
+  SriHashStr* = string
   RevStr* = string
 
 
@@ -25,7 +25,7 @@ type
     version*: ReleaseVersion
 
   DepDesc* = object
-    buildDeps*, buildExportDeps*, buildToolDeps*, buildToolExportDeps*, execDeps*, docDeps*, testDeps*: HashSet[PkgName]
+    buildDepend*, buildExportDepend*, buildToolDepend*, buildToolExportDepend*, execDepend*, docDepend*, testDepend*: HashSet[PkgName]
 
   PkgKind* = enum
     pkSys
@@ -67,8 +67,9 @@ type
       url*: Uri
 
   FetchResult* = object
+    name*: string
     source*: FetchSource
-    hash*: Sha256Str
+    hash*: SriHashStr
     path*: string
     case kind*: FetchKind
     of fkGit:
@@ -109,6 +110,7 @@ proc `%*`*(s: FetchSource): JsonNode =
 
 proc `%*`*(s: FetchResult): JsonNode = 
   result = newJObject()
+  result["name"] = newJString(s.name)
   result["source"] = %*s.source
   result["hash"] = newJString(s.hash)
   result["path"] = newJString(s.path)
@@ -150,6 +152,7 @@ proc toFetchResult*(j: JsonNode): FetchResult =
     )
   else:
     raise (ref ValueError)(msg: "Couldn't parse FetchResult")
+  result.name = j["name"].getStr()
   result.source = j["source"].toFetchSource()
   result.hash = j["hash"].getStr()
   result.path = j["path"].getStr()

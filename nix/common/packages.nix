@@ -18,6 +18,7 @@ rec {
   setupHook = nixpkgs.makeSetupHook {
     substitutions = {
       setupHelper = "${setupHelper}/bin/setuphelper";
+      isShellHook = "false";
     };
   } ./setup-hook.sh;
 

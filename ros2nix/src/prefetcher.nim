@@ -1,6 +1,6 @@
-import std/[os, json, uri, tables, strtabs, strutils, sugar, hashes, sequtils, osproc, locks, enumerate, options, sugar, strformat]
+import std/[os, json, uri, tables, strutils, sugar, sequtils, osproc, locks, enumerate, options, strformat, base64]
 import chronicles, taskpools
-import types
+import types, procutils, semver
 
 
 var fetchCacheLock: Lock
@@ -9,6 +9,7 @@ var fetchCache: Table[FetchSource, FetchResult]
 
 
 proc writePrefetchCache*(path: string) =
+  if path == "": return
   var j = newJArray()
 
   withLock fetchCacheLock:
@@ -22,6 +23,7 @@ proc writePrefetchCache*(path: string) =
 
 
 proc loadPrefetchCache*(path: string) =
+  if path == "": return
   let j = readFile(path).parseJson()
 
   withLock fetchCacheLock:
@@ -54,7 +56,38 @@ proc rewriteUrl(url: Uri, rev: RevStr): Option[Uri] =
   )
 
 
-proc prefetchUrl*(url: Uri): FetchResult {.gcsafe.} =
+proc decodeBase32(s: string): string =
+  var dst = newSeq[uint8]((s.len * 5) div 8)
+  const base32Chars = "0123456789abcdfghijklmnpqrsvwxyz"
+
+  for n in 0..<s.len:
+    let c = s[s.len-n-1]
+
+    let digit = base32Chars.find(c)
+    if digit == -1:
+      raise newException(ValueError, fmt"invalid base32 str {s}")
+
+    let
+      b = n.uint32 * 5
+      i = b div 8
+      j = b mod 8
+
+    dst[i] = dst[i] or (digit.uint8 shl j)
+
+    if i < 32 - 1:
+      dst[i+1] = dst[i+1] or (digit.uint8 shr (8 - j));
+    elif digit.uint8 shr (8 - j) != 0:
+      raise newException(ValueError, fmt"invalid base32 str {s}")
+  
+  for b in dst:
+    result.add chr(b)
+
+
+proc toSriHash(base32Str: string): SriHashStr =
+  "sha256-" & base64.encode(decodeBase32(base32Str))
+
+
+proc prefetchUrl*(url: Uri, name="source"): FetchResult {.gcsafe.} =
   logScope:
     url = url
 
@@ -63,21 +96,21 @@ proc prefetchUrl*(url: Uri): FetchResult {.gcsafe.} =
     {.cast(gcsafe).}:
       if source in fetchCache:
         info "Retrieved from cache"
-        result = fetchCache[source]
-        return
+        return fetchCache[source]
 
   info "Fetching"
 
-  let args = [
-    "--print-path", "--unpack", $url,
+  let cmd = [
+    "nix-prefetch-url", "--print-path", "--unpack", $url,
   ].toSeq
-  debug "Executing", cmd = "nix-prefetch-url " & args.join(" ")
-  let r = execProcess("nix-prefetch-url", "", args, nil, {poUsePath})
-  let lines = r.splitLines()
+  debug "Executing", cmd = cmd.join(" ")
+  let r = execCmdAdvanced(cmd, {poUsePath})
+  let lines = r.stdout.splitLines()
 
   let fr = FetchResult(
+    name: name,
     source: source,
-    hash: lines[0],
+    hash: toSriHash(lines[0]),
     path: lines[1],
     kind: fkUrl)
 
@@ -90,7 +123,7 @@ proc prefetchUrl*(url: Uri): FetchResult {.gcsafe.} =
   return fr
 
 
-proc prefetchGit*(url: Uri, rev: RevStr, rewriteUrl=true): FetchResult {.gcsafe.} =
+proc prefetchGit*(url: Uri, rev: RevStr, rewriteUrl=true, name="source"): FetchResult {.gcsafe.} =
   logScope:
     repoUrl = url
     rev = rev
@@ -98,19 +131,16 @@ proc prefetchGit*(url: Uri, rev: RevStr, rewriteUrl=true): FetchResult {.gcsafe.
   if rewriteUrl:
     let rewrittenUrl = rewriteUrl(url, rev)
     if rewrittenUrl.isSome:
-      debug "Url was rewritten", to=rewrittenUrl.get()
-      return prefetchUrl(rewrittenUrl.get())
+      # debug "Url was rewritten", to=rewrittenUrl.get()
+      return prefetchUrl(rewrittenUrl.get(), name)
 
   let source = FetchSource(kind: fkGit, repoUrl: url, rev: rev)
 
-  {.cast(gcsafe).}:
-    fetchCacheLock.acquire()
-    if source in fetchCache:
-      info "Retrieved from cache"
-      result = fetchCache[source]
-      fetchCacheLock.release()
-      return
-    fetchCacheLock.release()
+  withLock fetchCacheLock:
+    {.cast(gcsafe).}:
+      if source in fetchCache:
+        info "Retrieved from cache"
+        return fetchCache[source]
 
   info "Fetching"
 
@@ -121,32 +151,60 @@ proc prefetchGit*(url: Uri, rev: RevStr, rewriteUrl=true): FetchResult {.gcsafe.
     else:
       "--rev"
 
-  let args = [
-    "--url", $url, "--quiet", "--fetch-submodules", selector, rev.string
-  ].toSeq
-  debug "Executing", cmd = "nix-prefetch-git " & args.join(" ")
-  let r = execProcess("nix-prefetch-git", "", args, nil, {poUsePath})
-  let j = r.parseJson()
+  let cmd = [
+    "nix-prefetch-git", "--url", $url, "--quiet", "--fetch-submodules", selector, rev.string
+  ]
+  debug "Executing", cmd = cmd.join(" ")
+  let r = execCmdAdvanced(cmd, {poUsePath})
+  let j = r.stdout.parseJson()
 
   let fr = FetchResult(
+    name: name,
     source: source,
     path: j["path"].getStr(),
-    hash: j["sha256"].getStr(),
+    hash: j["sha256"].getStr().toSriHash,
     kind: fkGit,
     commitHash: j["rev"].getStr())
 
-  fetchCacheLock.acquire()
-  {.cast(gcsafe).}:
-    fetchCache[source] = fr
-  fetchCacheLock.release()
+  withLock fetchCacheLock:
+    {.cast(gcsafe).}:
+      fetchCache[source] = fr
 
   info "Completed", hash=fr.hash
 
   return fr
 
 
-proc prefetch*(distroPkgs: var DistroPkgsTable) =
+proc prefetchDistro*(distroPkgs: var DistroPkgsTable, parallel=8) =
+  let tp = Taskpool.new(numThreads=parallel)
+
+  type FetchResultAux = tuple[result: FetchResult, distroName: DistroName, pkgName: PkgName]
+  proc prefetchGitAux(url: Uri, tag, name: string, distroName: DistroName, pkgName: PkgName): ptr FetchResultAux {.gcsafe.} =
+    result = createShared(FetchResultAux)
+    info "Download started", name = name
+    result.result = prefetchGit(url, tag, name=name)
+    info "Download completed", name = name
+    result.distroName = distroName
+    result.pkgName = pkgName
+
+  var futures = newSeq[Flowvar[ptr FetchResultAux]]()
+
   for (distroName, pkgs) in distroPkgs.pairs:
     for i, (pkgName, pkg) in enumerate(pkgs.pairs):
-      info "Number of downloads remaining", n = (pkgs.len - i)
-      distroPkgs[distroName][pkgName].prefetch = prefetchGit(pkg.repoUrl, pkg.tag)
+      let
+        repoUrl = pkg.repoUrl
+        tag = pkg.tag
+        distroName = distroName
+        pkgName = pkgName
+        sourceName = fmt"{pkgName}-{pkg.version}-source"
+        fut = tp.spawn prefetchGitAux(repoUrl, tag, sourceName, distroName, pkgName)
+      futures.add fut
+  
+  tp.syncAll()
+
+  for future in futures:
+    let
+      resPtr = future.sync()
+      res = resPtr[]
+    distroPkgs[res.distroName][res.pkgName].prefetch = res.result
+    deallocShared(resPtr)

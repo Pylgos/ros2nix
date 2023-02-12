@@ -1,7 +1,6 @@
-import std/[os, strutils, sets, re, strformat, uri, tables, sequtils, tempfiles]
+import std/[os, strutils, sets, re, uri, tables, sequtils]
 import types, prefetcher
-import chronicles
-import zippy/tarballs
+import chronicles, taskpools
 
 
 proc splitExt(file: string): string =
@@ -154,7 +153,8 @@ proc patchCmakeVendor(pkg: var PkgInfo, file, dir: string) =
 
 
 
-proc autoPatch*(pkg: var PkgInfo) =
+proc autoPatch*(pkg: PkgInfo): PkgInfo =
+  result = pkg
   dynamicLogScope(pkgName=pkg.name):
     var tmpDir = ""
     var path = pkg.prefetch.path
@@ -167,7 +167,33 @@ proc autoPatch*(pkg: var PkgInfo) =
       const cmakeExt = [".cmake", ".in", ".cmake.in"].toHashSet
 
       if tail == "CMakeLists.txt" or ext in cmakeExt:
-        patchCmakeVendor(pkg, file, path)
+        patchCmakeVendor(result, file, path)
 
     if tmpDir != "":
       removeDir tmpDir
+
+
+proc autoPatchDistro*(distroPkgs: var DistroPkgsTable, parallel=8) =
+  let tp = Taskpool.new(numThreads=parallel)
+
+  type PatchResult = tuple[pkg: PkgInfo, distro: DistroName]
+  proc autoPatchAux(pkg: PkgInfo, distro: DistroName): ptr PatchResult {.gcsafe.} =
+    result = createShared(PatchResult)
+    info "Patching", pkgName = pkg.name
+    result.pkg = autoPatch(pkg)
+    result.distro = distro
+
+  var futures = newSeq[Flowvar[ptr PatchResult]]()
+
+  for (distroName, pkgs) in distroPkgs.pairs:
+    for pkgName, pkg in pkgs.pairs:
+      futures.add tp.spawn autoPatchAux(pkg, distroName)
+  
+  tp.syncAll()
+
+  for future in futures:
+    let
+      resPtr = future.sync()
+      res = resPtr[]
+    distroPkgs[res.distro][res.pkg.name] = res.pkg
+    deallocShared(resPtr)

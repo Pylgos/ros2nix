@@ -1,4 +1,4 @@
-import std/[os, tables, sequtils, algorithm, sets]
+import std/[os, tables, sequtils, algorithm]
 
 import parsetoml
 import chronicles

@@ -29,19 +29,24 @@ let
       '';
     });
 
+    desktop = prev.desktop.overrideAttrs (old: {
+      ROS2NIX_SETUP_VERBOSE=true;
+    });
+
     buildRosPackage = l.buildRosPackageFor final;
 
     mkRosWorkspace = l.mkRosWorkspaceFor final;
 
-    minimalEnv = final.mkRosWorkspace {
+    testWorkspace = final.mkRosWorkspace {
       pkgs = [
         "examples_rclcpp_minimal_subscriber"
         "examples_rclcpp_minimal_publisher"
         "ros2cli"
         "ros2run"
-        "rqt"
-        "rqt_graph"
-        "rviz2"
+        # "rqt"
+        # "rqt_graph"
+        # "rviz2"
+        # "desktop"
       ];
     };
   };

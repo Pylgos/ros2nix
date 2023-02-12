@@ -15,10 +15,13 @@ let
 in
 rec {
   getSource = source:
+    let
+      name = source.name or "source";
+    in
     if source.kind == "git" then
-      nixpkgs.fetchgit { inherit (source) url rev; sha256 = source.hash; }
+      nixpkgs.fetchgit { inherit (source) url rev hash; inherit name; }
     else if source.kind == "url" then
-      nixpkgs.fetchzip { inherit (source) url; sha256 = source.hash; }
+      nixpkgs.fetchzip { inherit (source) url hash; inherit name; }
     else
       throw "Unsupported source type";
 
@@ -154,8 +157,8 @@ rec {
 
         shellHook =
           l.replaceStrings
-            [ "@setupHelper@" ]
-            [ "${cell.packages.setupHelper}/bin/setuphelper" ]
+            [ "@setupHelper@" "@isShellHook@" ]
+            [ "${cell.packages.setupHelper}/bin/setuphelper" "true" ]
             (l.readFile ./setup-hook.sh);
       }
     );

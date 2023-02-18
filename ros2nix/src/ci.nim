@@ -1,4 +1,4 @@
-import std/[tables, sets, json, times, strformat, options, sequtils, sugar, algorithm, strutils, atomics, os]
+import std/[tables, sets, json, times, strformat, options, sequtils, sugar, algorithm, strutils, atomics]
 import threading/channels
 import types, procutils, ghactions
 

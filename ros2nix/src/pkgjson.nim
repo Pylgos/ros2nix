@@ -1,24 +1,9 @@
-import std/[tables, sets, uri, json]
+import std/[tables, sets, uri, json, algorithm, sequtils]
 import types, semver
 
 
-
 proc processDependencies(deps: DepDesc): JsonNode =
-  result = newJObject()
-
-  template map(jsonName: string, dep: HashSet[PkgName]) =
-    let arr = newJArray()
-    for pkg in dep:
-      arr.add newJString pkg
-    result[jsonName] = arr
-
-  map "buildDepend", deps.buildDepend
-  map "buildExportDepend", deps.buildExportDepend
-  map "buildToolDepend", deps.buildToolDepend
-  map "buildToolExportDepend", deps.buildToolExportDepend
-  map "execDepend", deps.execDepend
-  map "docDepend", deps.docDepend
-  map "testDepend", deps.testDepend
+  result = %*deps
 
 
 proc processSource(src: FetchResult): JsonNode = 
@@ -64,7 +49,7 @@ proc processDistro(pkgs: PkgTable): JsonNode =
   result = newJObject()
   let pkgsNode = newJObject()
   result["packages"] = pkgsNode
-  for (name, pkg) in pkgs.pairs:
+  for (name, pkg) in pkgs.pairs.toSeq.sortedByIt(it[0]):
     pkgsNode[name] = processPkg(pkg)
 
 
@@ -72,7 +57,7 @@ proc lockFileContent(distroPkgs: DistroPkgsTable): JsonNode =
   result = newJObject()
   let distroNode = newJObject()
   result["distributions"] = distroNode
-  for (distroName, pkgs) in distroPkgs.pairs:
+  for (distroName, pkgs) in distroPkgs.pairs.toSeq.sortedByIt(it[0]):
     distroNode[distroName] = processDistro(pkgs)
 
 

@@ -1,4 +1,4 @@
-{ callPackage, ignition, ... } @ args :
+{ callPackage, ignition-cmake2, ignition-math6, ignition-utils1, ... } @ args :
 
 callPackage ./. ({
   majorVersion = "4";

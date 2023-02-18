@@ -158,5 +158,24 @@ proc toFetchResult*(j: JsonNode): FetchResult =
   result.path = j["path"].getStr()
 
 
-when isMainModule:
-  discard
+proc `%`*(s: HashSet): JsonNode =
+  result = newJArray()
+  for elem in s.toSeq.sorted():
+    result.add %*elem
+
+
+proc to*(j: JsonNode, _: typedesc[HashSet[PkgName]]): HashSet[PkgName] =
+  result = initHashSet[PkgName](j.len)
+  for elem in j:
+    result.incl elem.getStr()
+
+
+proc to*(j: JsonNode, _: typedesc[DepDesc]): DepDesc =
+  result.buildDepend = j["buildDepend"].to(HashSet[PkgName])
+  result.buildExportDepend = j["buildExportDepend"].to(HashSet[PkgName])
+  result.buildToolDepend = j["buildToolDepend"].to(HashSet[PkgName])
+  result.buildToolExportDepend = j["buildToolExportDepend"].to(HashSet[PkgName])
+  result.execDepend = j["execDepend"].to(HashSet[PkgName])
+  result.docDepend = j["docDepend"].to(HashSet[PkgName])
+  result.testDepend = j["testDepend"].to(HashSet[PkgName])
+

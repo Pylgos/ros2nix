@@ -1,4 +1,4 @@
-import std/[os, json, uri, tables, strutils, sugar, sequtils, osproc, locks, enumerate, options, strformat, base64]
+import std/[os, json, uri, tables, strutils, sugar, sequtils, locks, enumerate, options, strformat, base64]
 import chronicles, taskpools
 import types, procutils, semver
 
@@ -104,7 +104,7 @@ proc prefetchUrl*(url: Uri, name="source"): FetchResult {.gcsafe.} =
     "nix-prefetch-url", "--print-path", "--unpack", $url,
   ].toSeq
   debug "Executing", cmd = cmd.join(" ")
-  let r = execCmdAdvanced(cmd, {poUsePath})
+  let r = execCmdUltra(cmd)
   let lines = r.stdout.splitLines()
 
   let fr = FetchResult(
@@ -155,7 +155,7 @@ proc prefetchGit*(url: Uri, rev: RevStr, rewriteUrl=true, name="source"): FetchR
     "nix-prefetch-git", "--url", $url, "--quiet", "--fetch-submodules", selector, rev.string
   ]
   debug "Executing", cmd = cmd.join(" ")
-  let r = execCmdAdvanced(cmd, {poUsePath})
+  let r = execCmdUltra(cmd)
   let j = r.stdout.parseJson()
 
   let fr = FetchResult(
@@ -176,7 +176,7 @@ proc prefetchGit*(url: Uri, rev: RevStr, rewriteUrl=true, name="source"): FetchR
 
 
 proc prefetchDistro*(distroPkgs: var DistroPkgsTable, parallel=8) =
-  let tp = Taskpool.new(numThreads=parallel)
+  var tp = Taskpool.new(numThreads=parallel)
 
   type FetchResultAux = tuple[result: FetchResult, distroName: DistroName, pkgName: PkgName]
   proc prefetchGitAux(url: Uri, tag, name: string, distroName: DistroName, pkgName: PkgName): ptr FetchResultAux {.gcsafe.} =
@@ -208,3 +208,5 @@ proc prefetchDistro*(distroPkgs: var DistroPkgsTable, parallel=8) =
       res = resPtr[]
     distroPkgs[res.distroName][res.pkgName].prefetch = res.result
     deallocShared(resPtr)
+  
+  tp.shutdown()

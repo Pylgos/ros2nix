@@ -29,10 +29,10 @@ rec {
     l.concatLists (map
       (pkg:
         if l.isString pkg then
-          if l.isList rosDistroPkgs.${pkg} then
-            rosDistroPkgs.${pkg}
+          if l.isList rosDistroPkgs.${pkg} or rosDistroPkgs.systemPackages.${pkg} then
+            rosDistroPkgs.${pkg} or rosDistroPkgs.systemPackages.${pkg}
           else
-            [ rosDistroPkgs.${pkg} ]
+            [ rosDistroPkgs.${pkg} or rosDistroPkgs.systemPackages.${pkg} ]
         else if l.isDerivation pkg then
           [ pkg ]
         else
@@ -58,6 +58,7 @@ rec {
     , buildInputs ? [ ]
     , checkInputs ? [ ]
     , postPatch ? ""
+    , preFixup ? ""
     , buildPhase ? null
     , checkPhase ? null
     , installPhase ? null
@@ -92,7 +93,7 @@ rec {
         (resolveDeps buildToolExportDepend);
 
         nativeBuildInputs = nativeBuildInputs ++
-        [ rosDistroPkgs.python3-colcon-common-extensions ] ++
+        [ rosDistroPkgs.systemPackages.python3-colcon-common-extensions ] ++
         (resolveDeps buildToolDepend);
 
         propagatedBuildInputs = propagatedBuildInputs ++
@@ -125,11 +126,11 @@ rec {
           if buildPhase == null then ''
             runHook preBuild
 
-            colcon --log-base /tmp/log build \
+            MAKEFLAGS="-j$NIX_BUILD_CORES" colcon --log-base /build/log build \
               --paths . \
               --merge-install \
               --install-base $out \
-              --build-base /tmp/build \
+              --build-base /build/build \
               --event-handlers console_cohesion- console_direct+ console_package_list- console_start_end- console_stderr- desktop_notification- event_log- log- log_command- status- store_result- summary- terminal_title- \
               --executor sequential \
               --cmake-args -DCMAKE_BUILD_TYPE=Release \
@@ -154,6 +155,11 @@ rec {
             runHook preInstall
             runHook postInstall
           '' else installPhase;
+        
+        preFixup = preFixup + ''
+          rm -rf /build/build
+          rm -rf /build/log
+        '';
 
         shellHook =
           l.replaceStrings

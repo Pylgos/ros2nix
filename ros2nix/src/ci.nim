@@ -1,4 +1,4 @@
-import std/[tables, sets, json, times, strformat, options, sequtils, sugar, algorithm, strutils, atomics]
+import std/[tables, sets, json, times, strformat, options, sequtils, sugar, algorithm, strutils, atomics, httpclient, os]
 import threading/channels
 import types, procutils, ghactions
 
@@ -29,6 +29,7 @@ type
     rkBuildError
     rkDependencyError
     rkSkipped
+    rkCached
 
   BuildResult = object
     name: RosPkgName
@@ -44,7 +45,7 @@ type
     buildThreads, uploadThreads: seq[Thread[Context]]
     distro: DistroName
     cores: Natural
-    verbose, foldOutput: bool
+    verbose: bool
 
     # Writable
     buildResults: BuildResultTable
@@ -69,11 +70,30 @@ func toMarkdown(k: BuildResultKind): string =
     "➖"
   of rkSkipped:
     "💤"
+  of rkCached:
+    "🔵"
+
+
+func isSuccess(k: BuildResultKind): bool =
+  k in {rkSuccess, rkCached}
 
 
 proc echoVerbose(ctx: Context, s: varargs[string, `$`]) =
   if ctx.verbose:
     echo s.join("")
+
+
+proc cacheExists(paths: seq[NixPath]): bool =
+  var cli {.threadvar.}: HttpClient
+  if cli == nil: cli = newHttpClient()
+  for path in paths:
+    let
+      hashStr = path.splitPath.tail[0..31]
+      url = fmt"https://ros2nix.cachix.org/{hashStr}.narinfo"
+      resp = cli.get(url)
+    if not resp.code.is2xx:
+      return false
+  return true
 
 
 proc uploadWorker(ctx: Context) {.thread.} =
@@ -114,21 +134,45 @@ proc buildWorker(ctx: Context) {.thread.} =
 
     let
       args = optArgs.get()
-      cmd = @["nix", "build", fmt".#{ctx.distro}.{args.name}", "-j1", "-L", "--no-link", "--accept-flake-config", "--cores", $ctx.cores, "--no-warn-dirty"]
-      dryRunCmd = cmd & @["--json", "--dry-run"]
+      showDrvCmd = @["nix", "show-derivation", fmt".#{ctx.distro}.{args.name}", "--quiet"]
     
     let
       maxDigits = len($args.total)
       percents = args.current * 100 div args.total
       prog = fmt"[{percents:3}%|{align($args.current, maxDigits)} of {args.total}]"
-    
-    if ctx.foldOutput: beginGroup(fmt"{prog} Building '{args.name}'")
 
-    if ctx.verbose or ctx.foldOutput:
+    let showDrvRes = execCmdUltra(showDrvCmd)
+
+    if showDrvRes.exitCode != 0:
+      beginGroup(fmt"{prog} Evaluation error '{args.name}'")
+      stdout.write(showDrvRes.stderr)
+      stdout.flushFile()
+      endGroup()
+      let buildRes = BuildResult(kind: rkEvalError, name: args.name, stdout: showDrvRes.stdout, stderr: showDrvRes.stderr)
+      ctx.buildResultQueue.send buildRes
+      continue
+    
+    let
+      drvJson = showDrvRes.stdout.parseJson()
+      drvPath = drvJson.keys.toSeq[0]
+      drvOutputs = collect:
+        for (outputName, output) in drvJson[drvPath]["outputs"].pairs:
+          output["path"].getStr()
+
+    if drvOutputs.cacheExists():
+      echo fmt"{prog} Cached '{args.name}'"
+      let buildRes = BuildResult(kind: rkCached, name: args.name)
+      ctx.buildResultQueue.send buildRes
+      continue
+    
+    let cmd = @["nix", "build", drvPath, "-j1", "-L", "--no-link", "--accept-flake-config", "--cores", $ctx.cores, "--no-warn-dirty"]
+
+    beginGroup(fmt"{prog} Building '{args.name}'")
+    if ctx.verbose:
       ctx.echoVerbose "Executing: ", cmd.join(" ")
 
     proc callback(ev: ProcEvent) =
-      if ctx.verbose or ctx.foldOutput:
+      if ctx.verbose:
         case ev.kind:
         of pekStdout:
           stdout.write ev.stdout
@@ -140,41 +184,32 @@ proc buildWorker(ctx: Context) {.thread.} =
     let
       buildStart = getTime()
       res = execCmdUltra(cmd, eventCallback=callback)
-      dryRunRes = execCmdUltra(dryRunCmd)
       buildEnd = getTime()
       buildTime = buildEnd - buildStart
     
-    if res.exitCode != 0 and dryRunRes.exitCode != 0:
-      let buildRes = BuildResult(kind: rkEvalError, name: args.name, buildTime: buildTime, stdout: res.stdout, stderr: res.stderr)
-      ctx.buildResultQueue.send buildRes
-      echo fmt"Error: failed to evaluate '{args.name}'"
-    
-    elif res.exitCode != 0 and dryRunRes.exitCode == 0:
+    if res.exitCode != 0:
       let buildRes = BuildResult(kind: rkBuildError, name: args.name, buildTime: buildTime, stdout: res.stdout, stderr: res.stderr)
       ctx.buildResultQueue.send buildRes
       echo fmt"Error: failed to build '{args.name}'"
     
-    elif res.exitCode == 0 and dryRunRes.exitCode == 0:
+    else:
       let buildRes = BuildResult(kind: rkSuccess, name: args.name, buildTime: buildTime, stdout: res.stdout, stderr: res.stderr)
       ctx.buildResultQueue.send buildRes
       echo fmt"Completed: '{args.name}'"
       
       var toUpload: seq[Option[UploadWorkerArgs]]
-      let j = dryRunRes.stdout.parseJson()
-      for k in j:
+      let j = showDrvRes.stdout.parseJson()
+      for (_, k) in j.pairs:
         for (_, l) in k["outputs"].pairs:
-          toUpload.add some UploadWorkerArgs(path: l.getStr())
+          toUpload.add some UploadWorkerArgs(path: l["path"].getStr())
 
       for path in toUpload:
         ctx.uploadQueue.send(path)
     
-    else:
-      doAssert false, "wtf"
-    
     endGroup()
 
 
-proc createContext(distro: DistroName, cores, maxJobs, maxUploadJobs, queueSize: Natural, verbose, foldOutput: bool, pkgs: OrderedPkgTable, importantPkgs: HashSet[RosPkgName]): Context =
+proc createContext(distro: DistroName, cores, maxJobs, maxUploadJobs, queueSize: Natural, verbose: bool, pkgs: OrderedPkgTable, importantPkgs: HashSet[RosPkgName]): Context =
   result = createShared(ContextObj)
   result.buildQueue = newChan[Option[BuildWorkerArgs]](queueSize)
   result.buildResultQueue = newChan[BuildResult](queueSize)
@@ -182,7 +217,6 @@ proc createContext(distro: DistroName, cores, maxJobs, maxUploadJobs, queueSize:
   result.distro = distro
   result.cores = cores
   result.verbose = verbose
-  result.foldOutput = foldOutput
   result.pkgs = pkgs
   result.importantPkgs = importantPkgs
   result.showUploadProgress.store(false)
@@ -277,6 +311,7 @@ proc buildPkgs(ctx: Context, origPkgs: OrderedPkgTable) =
       pkg.deps.excl pkgName
     pkgs.del pkgName
   
+  let numPkgsTotal = pkgs.len
   var numOfPkgsBuilt = 0
 
   while true:
@@ -295,7 +330,7 @@ proc buildPkgs(ctx: Context, origPkgs: OrderedPkgTable) =
     for pkgName in buildReadyPkgs:
       if pkgName notin buildingPkgs:
         ctx.echoVerbose "queueing ", pkgName
-        ctx.buildQueue.send some BuildWorkerArgs(name: pkgName, current: numOfPkgsBuilt + 1, total: origPkgs.len)
+        ctx.buildQueue.send some BuildWorkerArgs(name: pkgName, current: numOfPkgsBuilt + 1, total: numPkgsTotal)
         inc numOfPkgsBuilt
         buildingPkgs.incl pkgName
 
@@ -307,7 +342,7 @@ proc buildPkgs(ctx: Context, origPkgs: OrderedPkgTable) =
     
     pkgs.del buildResult.name
     
-    if buildResult.kind == rkSuccess:
+    if buildResult.kind.isSuccess:
       for pkg in pkgs.mvalues:
         pkg.deps.excl buildResult.name
     
@@ -349,14 +384,38 @@ proc isBlank(s: string): bool =
 proc writeSummary(ctx: Context) =
   var s = initJobSummary()
   s.line "## Summary"
+
+  s.line "### Statistics"
+  let
+    totalPkgCount = ctx.buildResults.len
+    okPkgCount = ctx.buildResults.values.toSeq.filterIt(it.kind.isSuccess).len
+    okPkgPercent = (okPkgCount * 100) div totalPkgCount
+    failedPkgCount = totalPkgCount - okPkgCount
+    failedPkgPercent = (failedPkgCount * 100) div totalPkgCount
+  s.tableHeader("Ok", "Failed", "Total")
+  s.tableRow(fmt"{okPkgCount} ({okPkgPercent}%)", fmt"{failedPkgCount} ({failedPkgPercent}%)", $totalPkgCount)
+  s.tableEnd()
   
   s.line "### Important packages"
   for pkgName in ctx.importantPkgs:
-    let r = if ctx.buildResults[pkgName].kind == rkSuccess: ":heavy_check_mark:" else: ":x:"
+    let r = if ctx.buildResults[pkgName].kind.isSuccess: ":heavy_check_mark:" else: ":x:"
     s.line fmt"- {pkgName}: {r}"
   
   s.line "### Details"
+  s.line "legend"
+  s.writeDedent fmt"""
+    ```text
+    Success: {rkSuccess.toMarkdown}
+    EvaluationError: {rkEvalError.toMarkdown}
+    BuildError: {rkBuildError.toMarkdown}
+    DependencyError: {rkDependencyError.toMarkdown}
+    Skipped: {rkSkipped.toMarkdown}
+    Cached: {rkCached.toMarkdown}
+    ```
+  """
+
   for (pkgName, result) in ctx.buildResults.pairs:
+    if result.kind in {rkSkipped, rkCached, rkDependencyError}: continue
     s.beginFold(fmt"{result.kind.toMarkdown}: {pkgName}")
     
     if not result.stdout.isBlank:
@@ -386,20 +445,12 @@ proc ci*(
     maxUploadJobs: Natural = 2,
     cores: Natural = 1,
     verbose = false,
-    foldOutput = true,
     skip: seq[RosPkgName] = @[]
   ): int =
-
-  let foldOutput =
-    if foldOutput and (maxJobs != 1 or verbose == true):
-      echo "Option 'foldOutput' is only available with option 'maxJobs=1' and 'verbose=false'"
-      false
-    else:
-      foldOutput
   
   let pkgs = loadRosPkgs(packageJsonFile, distro)
 
-  let ctx = createContext(distro, cores, maxJobs, maxUploadJobs, 1024, verbose, foldOutput, pkgs, important.toHashSet)
+  let ctx = createContext(distro, cores, maxJobs, maxUploadJobs, 1024, verbose, pkgs, important.toHashSet)
   defer: ctx.destroyContext()
 
   ctx.skipPackages(skip)
@@ -407,7 +458,7 @@ proc ci*(
   for importantPkg in ctx.importantPkgs:
     let pkgsSub = pkgs.recursiveDependencies(importantPkg)
     ctx.buildPkgs(pkgsSub)
-    if ctx.buildResults[importantPkg].kind != rkSuccess:
+    if not ctx.buildResults[importantPkg].kind.isSuccess:
       error fmt"Failed to build an important package '{importantPkg}'"
 
   if buildAll:

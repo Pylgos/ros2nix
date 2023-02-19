@@ -144,7 +144,7 @@ proc buildWorker(ctx: Context) {.thread.} =
     let showDrvRes = execCmdUltra(showDrvCmd)
 
     if showDrvRes.exitCode != 0:
-      beginGroup(fmt"{prog} Evaluation error '{args.name}'")
+      beginGroup(fmt"{prog} EvalError '{args.name}'")
       stdout.write(showDrvRes.stderr)
       stdout.flushFile()
       endGroup()
@@ -160,14 +160,14 @@ proc buildWorker(ctx: Context) {.thread.} =
           output["path"].getStr()
 
     if drvOutputs.cacheExists():
-      echo fmt"{prog} Cached '{args.name}'"
+      echo fmt"{prog} Cached    '{args.name}'"
       let buildRes = BuildResult(kind: rkCached, name: args.name)
       ctx.buildResultQueue.send buildRes
       continue
     
     let cmd = @["nix", "build", drvPath, "-j1", "-L", "--no-link", "--accept-flake-config", "--cores", $ctx.cores, "--no-warn-dirty"]
 
-    beginGroup(fmt"{prog} Building '{args.name}'")
+    beginGroup(fmt"{prog} Building  '{args.name}'")
     if ctx.verbose:
       ctx.echoVerbose "Executing: ", cmd.join(" ")
 

@@ -172,14 +172,13 @@ proc buildWorker(ctx: Context) {.thread.} =
       ctx.echoVerbose "Executing: ", cmd.join(" ")
 
     proc callback(ev: ProcEvent) =
-      if ctx.verbose:
-        case ev.kind:
-        of pekStdout:
-          stdout.write ev.stdout
-          stdout.flushFile()
-        of pekStderr:
-          stderr.write ev.stderr
-          stdout.flushFile()
+      case ev.kind:
+      of pekStdout:
+        stdout.write ev.stdout
+        stdout.flushFile()
+      of pekStderr:
+        stderr.write ev.stderr
+        stdout.flushFile()
 
     let
       buildStart = getTime()

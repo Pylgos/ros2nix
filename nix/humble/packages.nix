@@ -29,10 +29,6 @@ let
       '';
     });
 
-    desktop = prev.desktop.overrideAttrs (old: {
-      ROS2NIX_SETUP_VERBOSE=true;
-    });
-
     rosbags = nixpkgs.python310Packages.buildPythonPackage rec {
       pname = "rosbags";
       version = "0.9.14";

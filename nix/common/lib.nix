@@ -73,8 +73,12 @@ rec {
       isQt5App =
         let
           deps = buildDepend ++ buildExportDepend;
+          getDepName = dep:
+            if l.isString dep then dep
+            else if l.isDerivation dep then dep.pname or dep.name
+            else "";
         in
-        l.any (dep: (l.match ".*(qt5|qtbase5).*" dep) != null) deps;
+        l.any (dep: (l.match ".*(qt5|qtbase5).*" (getDepName dep)) != null) deps;
     in
     nixpkgs.stdenv.mkDerivation (
       (l.removeAttrs args [

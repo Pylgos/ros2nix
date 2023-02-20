@@ -51,9 +51,9 @@ let
     };
 
     testWorkspace = final.mkRosWorkspace {
-      pkgs = [
-        "examples_rclcpp_minimal_subscriber"
-        "examples_rclcpp_minimal_publisher"
+      pkgs = with final; [
+        examples_rclcpp_minimal_subscriber
+        examples_rclcpp_minimal_publisher
         "rosbags"
         "desktop"
       ];

@@ -3,7 +3,7 @@
 }:
 let
   inherit (inputs) self nixpkgs;
-  l = nixpkgs.lib // inputs.cells.common.lib // cell.lib // builtins;
+  l = nixpkgs.lib // inputs.cells.common.lib // builtins;
 
   systemPackages = inputs.cells.system-packages.lib.instantiateSystemPackageSet {
     inherit nixpkgs;
@@ -42,7 +42,7 @@ let
       ];
     };
 
-    testWorkspace = l.mkRosWorkspace {
+    testWorkspace = final.mkRosWorkspace {
       pkgs = with final; [
         examples_rclcpp_minimal_subscriber
         examples_rclcpp_minimal_publisher

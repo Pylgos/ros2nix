@@ -14,4 +14,5 @@ jobs:
         name: ros2nix
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
         skipPush: true
-    - run: nix run .#ros2nix -- ci --distro=humble --buildAll --important desktop
+    - run: nix build .#ros2nix --json --no-link | jq -r '.[].outputs | to_entries[].value' cachix push ros2nix
+    - run: nix run .#ros2nix --accept-flake-config -- ci --distro=humble --buildAll --important desktop

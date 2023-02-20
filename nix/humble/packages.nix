@@ -3,7 +3,7 @@
 }:
 let
   inherit (inputs) self nixpkgs;
-  l = nixpkgs.lib // inputs.cells.common.lib // builtins;
+  l = nixpkgs.lib // inputs.cells.common.lib // cell.lib // builtins;
 
   systemPackages = inputs.cells.system-packages.lib.instantiateSystemPackageSet {
     inherit nixpkgs;
@@ -33,10 +33,6 @@ let
       ROS2NIX_SETUP_VERBOSE=true;
     });
 
-    buildRosPackage = l.buildRosPackageFor final;
-
-    mkRosWorkspace = l.mkRosWorkspaceFor final;
-
     rosbags = nixpkgs.python310Packages.buildPythonPackage rec {
       pname = "rosbags";
       version = "0.9.14";
@@ -50,7 +46,7 @@ let
       ];
     };
 
-    testWorkspace = final.mkRosWorkspace {
+    testWorkspace = l.mkRosWorkspace {
       pkgs = with final; [
         examples_rclcpp_minimal_subscriber
         examples_rclcpp_minimal_publisher

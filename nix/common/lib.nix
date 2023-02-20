@@ -65,6 +65,7 @@ rec {
     , doCheck ? false
     , dontUseCmakeConfigure ? true
     , dontWrapQtApps ? true
+    , shellHook ? ""
 
     , ...
     } @ args:
@@ -166,10 +167,11 @@ rec {
         '';
 
         shellHook =
-          l.replaceStrings
+          (l.replaceStrings
             [ "@setupHelper@" "@isShellHook@" ]
             [ "${cell.packages.setupHelper}/bin/setuphelper" "true" ]
-            (l.readFile ./setup-hook.sh);
+            (l.readFile ./setup-hook.sh))
+          + (if shellHook != "" then "\n" + shellHook else "");
       }
     );
 
@@ -192,6 +194,7 @@ rec {
   mkRosWorkspaceFor = rosDistroPkgs:
     { name ? "ros-workspace"
     , pkgs
+    , ...
     } @ args:
 
     buildRosPackageFor rosDistroPkgs (args // {

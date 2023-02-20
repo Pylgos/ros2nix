@@ -57,6 +57,12 @@ let
         "rosbags"
         "desktop"
       ];
+
+      shellHook = ''
+        works() {
+          echo works
+        }
+      '';
     };
   };
 

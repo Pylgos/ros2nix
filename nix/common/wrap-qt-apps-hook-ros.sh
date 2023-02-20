@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 if [[ -z "${__nix_wrapQtAppsHookRos-}" ]]; then
 __nix_wrapQtAppsHookRos=1
 
@@ -12,7 +13,7 @@ wrapQtAppsHookRos() {
 
     local targetDirs=( "$prefix/bin" )
     targetDirs+=( "$prefix"/lib/*/ )
-    echo "wrapping Qt applications in ${targetDirs[@]}"
+    echo "wrapping Qt applications in " "${targetDirs[@]}"
 
     for targetDir in "${targetDirs[@]}"
     do
@@ -21,7 +22,7 @@ wrapQtAppsHookRos() {
         find "$targetDir" ! -type d -executable -print0 | while IFS= read -r -d '' file
         do
             # ignore files with extensions and hidden files
-            if [[ $(basename file) == *"."* ]]; then
+            if [[ $(basename "$file") == *"."* ]]; then
                 echo "skipping $file"
                 continue
             fi 

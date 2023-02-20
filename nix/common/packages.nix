@@ -26,4 +26,11 @@ rec {
     name = "wrap-qt5-apps-hook-ros";
     deps = [ nixpkgs.qt5.wrapQtAppsHook ];
   } ./wrap-qt-apps-hook-ros.sh;
+
+  wrapGLAppsHook = nixpkgs.makeSetupHook {
+    name = "wrap-gl-apps-hook";
+    substitutions = {
+      shell = "${nixpkgs.bash}/bin/bash";
+    };
+  } ./wrap-gl-apps-hook.sh;
 }

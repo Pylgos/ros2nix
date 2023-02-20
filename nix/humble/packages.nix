@@ -14,6 +14,10 @@ let
   rosPkgs = l.loadRosDistroFromJson final "humble" "${self}/packages.json";
 
   overlay = final: prev: {
+    buildRosPackage = l.buildRosPackageFor final;
+
+    mkRosWorkspace = l.mkRosWorkspaceFor final;
+    
     rmw_implementation = prev.rmw_implementation.overrideAttrs ({ propagatedBuildInputs ? [ ]
                                                                  , ...
                                                                  }: {
@@ -26,6 +30,18 @@ let
       postPatch = postPatch + ''
         substituteInPlace src/CMakeLists.txt --replace 'NOT qt_gui_cpp_BINDINGS' 'FALSE'
         substituteInPlace CMakeLists.txt --replace 'NOT qt_gui_cpp_BINDINGS' 'FALSE'
+      '';
+    });
+
+    plotjuggler = prev.plotjuggler.overrideAttrs ({ postFixup ? "", ...}: {
+      postFixup = postFixup + ''
+        echo 'source;share/plotjuggler/local_setup.dsv' >> "$out"/share/plotjuggler/package.dsv
+      '';
+    });
+
+    plotjuggler_ros = prev.plotjuggler_ros.overrideAttrs ({ postFixup ? "", ...}: {
+      postFixup = postFixup + ''
+        echo 'source;share/plotjuggler_ros/local_setup.dsv' >> "$out"/share/plotjuggler_ros/package.dsv
       '';
     });
 
@@ -48,6 +64,20 @@ let
         examples_rclcpp_minimal_publisher
         "rosbags"
         "desktop"
+      ];
+
+      shellHook = ''
+        works() {
+          echo works
+        }
+      '';
+    };
+
+    testws = final.mkRosWorkspace {
+      pkgs = with final; [
+        ros2cli
+        ros2run
+        plotjuggler_ros
       ];
 
       shellHook = ''

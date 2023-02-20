@@ -80,6 +80,17 @@ rec {
             else "";
         in
         l.any (dep: (l.match ".*(qt5|qtbase5).*" (getDepName dep)) != null) deps;
+      
+      isGLApp =
+        let
+          deps = buildDepend ++ buildExportDepend;
+          getDepName = dep:
+            if l.isString dep then dep
+            else if l.isDerivation dep then dep.pname or dep.name
+            else "";
+        in
+        l.any (dep: (l.match ".*opengl.*" (getDepName dep)) != null) deps;
+
     in
     nixpkgs.stdenv.mkDerivation (
       (l.removeAttrs args [
@@ -95,6 +106,7 @@ rec {
         propagatedNativeBuildInputs = propagatedNativeBuildInputs ++
         [ cell.packages.setupHook ] ++
         (l.optional isQt5App [ cell.packages.wrapQt5AppsHookRos ]) ++
+        (l.optional isGLApp [ cell.packages.wrapGLAppsHook ] ) ++
         (resolveDeps buildToolExportDepend);
 
         nativeBuildInputs = nativeBuildInputs ++

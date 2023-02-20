@@ -83,15 +83,24 @@ proc echoVerbose(ctx: Context, s: varargs[string, `$`]) =
     echo s.join("")
 
 
+proc fetchNarinfo(cli: HttpClient, path: NixPath): Option[Response] =
+  for attempt in 1..3:
+    try:
+      let
+        hashStr = path.splitPath.tail[0..31]
+        url = fmt"https://ros2nix.cachix.org/{hashStr}.narinfo"
+      return some cli.get(url)
+    except OSError:
+      sleep 1000
+
+  return none(Response)
+
+
 proc cacheExists(paths: seq[NixPath]): bool =
-  var cli {.threadvar.}: HttpClient
-  if cli == nil: cli = newHttpClient()
+  let cli = newHttpClient()
   for path in paths:
-    let
-      hashStr = path.splitPath.tail[0..31]
-      url = fmt"https://ros2nix.cachix.org/{hashStr}.narinfo"
-      resp = cli.get(url)
-    if not resp.code.is2xx:
+    let resp = cli.fetchNarinfo(path)
+    if resp.isNone or not resp.get.code.is2xx:
       return false
   return true
 

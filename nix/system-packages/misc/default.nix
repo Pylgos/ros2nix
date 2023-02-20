@@ -14,7 +14,7 @@ let
   };
 in
 {
-  python3-rospkg = [ s.rospkg ];
-  python3-ifcfg = [ s.ifcfg ];
-  python3-rosdistro-modules = [ s.rosdistro ];
+  python3-rospkg = s.rospkg;
+  python3-ifcfg = s.ifcfg;
+  python3-rosdistro-modules = s.rosdistro;
 }

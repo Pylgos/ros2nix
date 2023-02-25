@@ -488,7 +488,7 @@ proc buildDrv(drv: Drv): BuildResult =
       discard
 
   let
-    cmd = @["nix", "build", drv.drvPath, "-L", "--no-link", "--accept-flake-config"]
+    cmd = @["nix", "build", drv.drvPath, "-L", "--no-link", "--accept-flake-config", "--option", "log-lines", "0"]
     res = execCmdUltra(cmd, eventCallback=callback)
   
   if res.exitCode == 0:
@@ -546,10 +546,10 @@ proc buildDrvs(drvs: var DrvTable) =
       progressStr = progressIndicator(buildCount, drvs.len)
     let res =
       if drvToBuild.isCached:
-        echo fmt"  {progressStr} Cached '{drvToBuild.name}'"
+        echo fmt"{progressStr} Cached '{drvToBuild.name}'"
         BuildResult(drvPath: drvToBuild.drvPath, kind: rkCached)
       elif drvToBuild.buildResult.isSome:
-        echo fmt"  {progressStr} Already Built '{drvToBuild.name}'"
+        echo fmt"{progressStr} Already Built '{drvToBuild.name}'"
         drvToBuild.buildResult.get()
       else:
         beginGroup(fmt"{progressStr} Building '{drvToBuild.name}'")

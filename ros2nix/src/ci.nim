@@ -546,10 +546,10 @@ proc buildDrvs(drvs: var DrvTable) =
       progressStr = progressIndicator(buildCount, drvs.len)
     let res =
       if drvToBuild.isCached:
-        echo fmt" {progressStr} Cached '{drvToBuild.name}'"
+        echo fmt"  {progressStr} Cached '{drvToBuild.name}'"
         BuildResult(drvPath: drvToBuild.drvPath, kind: rkCached)
       elif drvToBuild.buildResult.isSome:
-        echo fmt" {progressStr} Already Built '{drvToBuild.name}'"
+        echo fmt"  {progressStr} Already Built '{drvToBuild.name}'"
         drvToBuild.buildResult.get()
       else:
         beginGroup(fmt"{progressStr} Building '{drvToBuild.name}'")

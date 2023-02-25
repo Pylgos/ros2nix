@@ -556,21 +556,24 @@ proc buildDrvs(drvs: var DrvTable) =
         let res = buildDrv(drvToBuild)
         endGroup()
         res
-    inc buildCount
     
     if res.isSuccess:
       drvs[drvPathToBuild].buildResult = some res
       depTree.del drvPathToBuild
+      inc buildCount
       for drv in depTree.mvalues:
         drv.excl drvPathToBuild
 
     else:
       drvs[drvPathToBuild].buildResult = some res
       depTree.del drvPathToBuild
+      inc buildCount
       var recursiveDependants: HashSet[DrvPath]
       getRecursiveDependants(recursiveDependants, drvs, drvPathToBuild)
       for dependant in recursiveDependants:
         depTree.del dependant
+        inc buildCount
+        echo fmt"{progressIndicator(buildCount, drvs.len)} Dependency Error '{drvs[dependant].name}'"
         drvs[drvPathToBuild].buildResult = some BuildResult(drvPath: dependant, kind: rkDependencyError)
 
 

@@ -143,6 +143,7 @@ proc execCmdUltra*(
           
           if ret != 0:
             buf.setLen(ret)
+            if eventCallback != nil: eventCallback(ProcEvent(kind: pekStderr, stderr: buf))
             result.stderr.add buf
             while (let lineChange = result.stderr.find('\n', lastStderrLineChange); lineChange != -1):
               if eventCallback != nil: eventCallback(ProcEvent(kind: pekStderrLine, stderrLine: result.stderr[lastStderrLineChange..lineChange-1]))

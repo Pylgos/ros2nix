@@ -574,8 +574,8 @@ proc buildDrvs(drvs: var DrvTable) =
         if dependant in depTree:
           depTree.del dependant
           inc buildCount
-        echo fmt"{progressIndicator(buildCount, drvs.len)} Dependency Error '{drvs[dependant].name}'"
-        drvs[drvPathToBuild].buildResult = some BuildResult(drvPath: dependant, kind: rkDependencyError)
+          echo fmt"{progressIndicator(buildCount, drvs.len)} Dependency Error '{drvs[dependant].name}'"
+          drvs[drvPathToBuild].buildResult = some BuildResult(drvPath: dependant, kind: rkDependencyError)
 
 
 proc buildDrvs(drvs: var DrvTable, target: DrvPath): bool =

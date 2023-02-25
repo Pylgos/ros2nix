@@ -14,7 +14,7 @@ in
     nativeBuildInputs = [ nixpkgs.makeWrapper ];
   }).overrideAttrs (oldAttrs: {
     postFixup = ''
-      wrapProgram $out/bin/ros2nix --prefix PATH : '${nixpkgs.nix-eval-jobs}/bin'
+      wrapProgram $out/bin/ros2nix --prefix PATH : '${inputs.nix-eval-jobs.packages.nix-eval-jobs}/bin'
     '';
   });
 }

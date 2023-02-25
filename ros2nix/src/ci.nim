@@ -591,7 +591,7 @@ proc getDrv(p: DrvPath): Drv =
 
 
 proc evaluate(distro: DistroName, system: string): tuple[drvs: DrvTable, evalErrors: seq[EvalError]] =
-  let cmd = ["nix-eval-jobs", "--gc-roots-dir", "gcroot", "--check-cache-status", "--flake", fmt".#legacyPackages.{system}.{distro}"]
+  let cmd = ["nix-eval-jobs", "--gc-roots-dir", "gcroot", "--check-cache-status", "--workers", "8", "--flake", fmt".#legacyPackages.{system}.{distro}"]
 
   let resultPtr = addr result
 
@@ -613,7 +613,7 @@ proc evaluate(distro: DistroName, system: string): tuple[drvs: DrvTable, evalErr
   let res = execCmdUltra(cmd, eventCallback=callback)
 
   if res.exitCode != 0:
-    raise newException(ValueError, "Failed to evaluate package set")
+    raise newException(ValueError, "Failed to evaluate package set:\n" & res.stderr)
   
   let rosDrvs = result.drvs.keys.toSeq.toHashSet
   for drv in result.drvs.mvalues:

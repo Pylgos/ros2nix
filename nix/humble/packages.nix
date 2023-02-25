@@ -58,26 +58,20 @@ let
       ];
     };
 
+    slam_toolbox = prev.slam_toolbox.overrideAttrs (oldAttrs: {
+      postPatch = ''
+        substituteInPlace lib/karto_sdk/CMakeLists.txt --replace NO_CMAKE_PACKAGE_REGISTRY ""
+        sed -i '1s;^;#include <mutex>;' lib/karto_sdk/include/karto_sdk/Karto.h 
+      '';
+      TBB_ROOT = nixpkgs.tbb;
+    });
+
     testWorkspace = final.mkRosWorkspace {
       pkgs = with final; [
         examples_rclcpp_minimal_subscriber
         examples_rclcpp_minimal_publisher
         "rosbags"
         "desktop"
-      ];
-
-      shellHook = ''
-        works() {
-          echo works
-        }
-      '';
-    };
-
-    testws = final.mkRosWorkspace {
-      pkgs = with final; [
-        ros2cli
-        ros2run
-        plotjuggler_ros
       ];
 
       shellHook = ''

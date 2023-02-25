@@ -671,6 +671,7 @@ proc ci*(
       echo fmt"Build completed '{targetDrv.name}'"
     else:
       error fmt"Failed to build an important package '{targetDrv.name}'"
+      return 1
 
   if buildAll:
     buildDrvs(drvs)

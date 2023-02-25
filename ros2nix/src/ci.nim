@@ -476,16 +476,6 @@ func isSuccess(k: BuildResult): bool =
 
 
 proc buildDrv(drv: Drv): BuildResult =
-  if drv.isCached:
-    echo fmt"Cached '{drv.name}'"
-    return BuildResult(drvPath: drv.drvPath, kind: rkCached)
-  
-  if drv.buildResult.isSome:
-    echo fmt"Already Built '{drv.name}'"
-    return drv.buildResult.get()
-
-  echo fmt"Building '{drv.name}'"
-
   proc callback(ev: ProcEvent) =
     case ev.kind
     of pekStdout:
@@ -524,11 +514,19 @@ proc getRecursiveDependencies(result: var HashSet[DrvPath], drvs: DrvTable, drvP
     result.incl dependency
 
 
+func progressIndicator(current, total: Natural): string =
+  let
+    maxDigits = len($total)
+    percents = current * 100 div total
+  fmt"[{percents:3}%|{align($current, maxDigits)} of {total}]"
+
+
 proc buildDrvs(drvs: var DrvTable) =
   var depTree = collect(initTable):
     for (drvPath, drv) in drvs.pairs:
       {drvPath: drv.rosInputDrvs}
 
+  var buildCount = 1
   while true:
     if depTree.len == 0:
       break
@@ -542,8 +540,23 @@ proc buildDrvs(drvs: var DrvTable) =
     if drvsPathsWithoutDeps.len == 0:
       raise newException(ValueError, "Possible cyclic dependency")
 
-    let drvPathToBuild = drvsPathsWithoutDeps[0]
-    let res = buildDrv(drvs[drvPathToBuild])
+    let
+      drvPathToBuild = drvsPathsWithoutDeps[0]
+      drvToBuild = drvs[drvPathToBuild]
+      progressStr = progressIndicator(buildCount, drvs.len)
+    let res =
+      if drvToBuild.isCached:
+        echo fmt" {progressStr} Cached '{drvToBuild.name}'"
+        BuildResult(drvPath: drvToBuild.drvPath, kind: rkCached)
+      elif drvToBuild.buildResult.isSome:
+        echo fmt" {progressStr} Already Built '{drvToBuild.name}'"
+        drvToBuild.buildResult.get()
+      else:
+        beginGroup(fmt"{progressStr} Building '{drvToBuild.name}'")
+        let res = buildDrv(drvToBuild)
+        endGroup()
+        res
+    inc buildCount
     
     if res.isSuccess:
       drvs[drvPathToBuild].buildResult = some res
@@ -591,7 +604,9 @@ proc getDrv(p: DrvPath): Drv =
 
 
 proc evaluate(distro: DistroName, system: string): tuple[drvs: DrvTable, evalErrors: seq[EvalError]] =
-  let cmd = ["nix-eval-jobs", "--gc-roots-dir", "gcroot", "--check-cache-status", "--workers", "8", "--flake", fmt".#legacyPackages.{system}.{distro}"]
+  let
+    packagePath = fmt".#legacyPackages.{system}.{distro}"
+    cmd = ["nix-eval-jobs", "--gc-roots-dir", "gcroot", "--check-cache-status", "--workers", "8", "--flake", packagePath]
 
   let resultPtr = addr result
 
@@ -610,7 +625,9 @@ proc evaluate(distro: DistroName, system: string): tuple[drvs: DrvTable, evalErr
     else:
       discard
 
+  beginGroup(fmt"Evaluating '{packagePath}'")
   let res = execCmdUltra(cmd, eventCallback=callback)
+  endGroup()
 
   if res.exitCode != 0:
     raise newException(ValueError, "Failed to evaluate package set:\n" & res.stderr)

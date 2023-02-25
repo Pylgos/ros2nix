@@ -1,10 +1,12 @@
-import std/[os, selectors, options, tables, posix]
+import std/[os, selectors, options, tables, posix, strutils]
 
 
 type
   ProcEventKind* = enum
     pekStdout
     pekStderr
+    pekStdoutLine
+    pekStderrLine
   
   ProcEvent* = object
     case kind*: ProcEventKind
@@ -12,6 +14,10 @@ type
       stdout*: string
     of pekStderr:
       stderr*: string
+    of pekStdoutLine:
+      stdoutLine*: string
+    of pekStderrLine:
+      stderrLine*: string
 
 
 const
@@ -102,6 +108,8 @@ proc execCmdUltra*(
       bytesWritten = 0
       stdoutClosed = false
       stderrClosed = false
+      lastStdoutLineChange = 0
+      lastStderrLineChange = 0
 
     while not stdoutClosed or not stderrClosed:
       let readyKeys = selector.select(-1)
@@ -123,6 +131,9 @@ proc execCmdUltra*(
             buf.setLen(ret)
             if eventCallback != nil: eventCallback(ProcEvent(kind: pekStdout, stdout: buf))
             result.stdout.add buf
+            while (let lineChange = result.stdout.find('\n', lastStdoutLineChange); lineChange != -1):
+              if eventCallback != nil: eventCallback(ProcEvent(kind: pekStdoutLine, stdoutLine: result.stdout[lastStdoutLineChange..lineChange-1]))
+              lastStdoutLineChange = lineChange + 1
           else:
             stdoutClosed = true
         
@@ -132,8 +143,10 @@ proc execCmdUltra*(
           
           if ret != 0:
             buf.setLen(ret)
-            if eventCallback != nil: eventCallback(ProcEvent(kind: pekStderr, stderr: buf))
             result.stderr.add buf
+            while (let lineChange = result.stderr.find('\n', lastStderrLineChange); lineChange != -1):
+              if eventCallback != nil: eventCallback(ProcEvent(kind: pekStderrLine, stderrLine: result.stderr[lastStderrLineChange..lineChange-1]))
+              lastStderrLineChange = lineChange + 1
           else:
             stderrClosed = true
         

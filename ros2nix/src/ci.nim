@@ -571,8 +571,9 @@ proc buildDrvs(drvs: var DrvTable) =
       var recursiveDependants: HashSet[DrvPath]
       getRecursiveDependants(recursiveDependants, drvs, drvPathToBuild)
       for dependant in recursiveDependants:
-        depTree.del dependant
-        inc buildCount
+        if dependant in depTree:
+          depTree.del dependant
+          inc buildCount
         echo fmt"{progressIndicator(buildCount, drvs.len)} Dependency Error '{drvs[dependant].name}'"
         drvs[drvPathToBuild].buildResult = some BuildResult(drvPath: dependant, kind: rkDependencyError)
 

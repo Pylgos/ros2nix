@@ -107,7 +107,6 @@ proc writeSummary(drvs: DrvTable, importantDrvs: seq[Drv], evalErrors: seq[EvalE
 
 proc uploadDrv(drv: Drv) =
   for path in drv.outputs.values:
-    echo path
     let
       cmd = ["cachix", "push", "ros2nix", path]
 

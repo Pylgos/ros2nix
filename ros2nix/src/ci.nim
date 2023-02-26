@@ -194,12 +194,16 @@ proc buildDrvs(drvs: var DrvTable) =
       drvPathToBuild = drvsPathsWithoutDeps[0]
       drvToBuild = drvs[drvPathToBuild]
       progressStr = progressIndicator(buildCount, drvs.len)
+    
+    var alreadyBuilt = false
+
     let res =
       if drvToBuild.isCached:
         echo fmt"{progressStr} Cached '{drvToBuild.name}'"
         BuildResult(drvPath: drvToBuild.drvPath, kind: rkCached)
       elif drvToBuild.buildResult.isSome:
         echo fmt"{progressStr} Already Built '{drvToBuild.name}'"
+        alreadyBuilt = true
         drvToBuild.buildResult.get()
       else:
         beginGroup(fmt"{progressStr} Building '{drvToBuild.name}'")
@@ -214,7 +218,7 @@ proc buildDrvs(drvs: var DrvTable) =
       for drv in depTree.mvalues:
         drv.excl drvPathToBuild
       
-      if not drvToBuild.isCached:
+      if not drvToBuild.isCached and not alreadyBuilt:
         beginGroup(fmt"Uploading '{drvToBuild.name}'")
         uploadDrv(drvToBuild)
         endGroup()

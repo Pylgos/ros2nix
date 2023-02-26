@@ -238,7 +238,7 @@ proc envDiff(ctx: Context): Env =
 
 
 proc isSafeToAssumeNoSideEffect(scriptName: string): bool =
-  "argcomplete" in scriptName or "ros_distro_check" in scriptName
+  "argcomplete" in scriptName or "ros_distro_check" in scriptName or "completion" in scriptName
 
 
 proc source(ctx: var Context, filename: string) =

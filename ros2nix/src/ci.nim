@@ -68,6 +68,7 @@ type
     rosInputDrvs: HashSet[DrvPath]
     dependantDrvs: HashSet[DrvPath]
     buildResult: Option[BuildResult]
+    outputs: Table[string, NixPath]
   
   EvalError = object
     attrName: string
@@ -475,6 +476,27 @@ func isSuccess(k: BuildResult): bool =
 #   s.save()
 
 
+proc uploadDrv(drv: Drv) =
+  for path in drv.outputs.values:
+    echo path
+    let
+      cmd = ["cachix", "push", "ros2nix", path]
+
+    proc callback(ev: ProcEvent) =
+      case ev.kind:
+      of pekStdout:
+        stdout.write ev.stdout
+        stdout.flushFile()
+      of pekStderr:
+        stderr.write ev.stderr
+        stdout.flushFile()
+      else:
+        discard
+
+    let
+      res = execCmdUltra(cmd, eventCallback=callback)
+
+
 proc buildDrv(drv: Drv): BuildResult =
   proc callback(ev: ProcEvent) =
     case ev.kind
@@ -563,6 +585,12 @@ proc buildDrvs(drvs: var DrvTable) =
       inc buildCount
       for drv in depTree.mvalues:
         drv.excl drvPathToBuild
+      
+      if not drvToBuild.isCached:
+        beginGroup(fmt"Uploading '{drvToBuild.name}'")
+        uploadDrv(drvToBuild)
+        endGroup()
+
 
     else:
       drvs[drvPathToBuild].buildResult = some res
@@ -605,6 +633,9 @@ proc getDrv(p: DrvPath): Drv =
   result.name = j[p]["env"]["name"].getStr()
   result.drvPath = p
   result.inputDrvs = j[p]["inputDrvs"].keys.toSeq.toHashSet
+
+  for (outName, path) in j[p]["outputs"].pairs:
+    result.outputs[outName] = path["path"].getStr()
 
 
 proc evaluate(distro: DistroName, system: string): tuple[drvs: DrvTable, evalErrors: seq[EvalError]] =

@@ -66,6 +66,14 @@ let
       TBB_ROOT = nixpkgs.tbb;
     });
 
+    xacro = prev.xacro.overrideAttrs (oldAttrs: {
+      postPatch = ''
+        substituteInPlace scripts/completion.bash --replace \
+          'complete -F "_complete_xacro" "xacro"' \
+          'if type complete 2> /dev/null; then complete -F "_complete_xacro" "xacro"; fi'
+      '';
+    });
+
     testWorkspace = final.mkRosWorkspace {
       pkgs = with final; [
         examples_rclcpp_minimal_subscriber

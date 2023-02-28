@@ -1,5 +1,4 @@
-import std/[tables, sets, json, times, strformat, options, sequtils, sugar, algorithm, strutils, atomics, httpclient, os]
-import threading/channels
+import std/[tables, sets, json, strformat, options, sequtils, sugar, algorithm, strutils]
 import types, procutils, ghactions
 
 
@@ -61,28 +60,40 @@ func isSuccess(k: BuildResult): bool =
   k.kind in {rkSuccess, rkCached}
 
 
-proc writeSummary(drvs: DrvTable, importantDrvs: seq[Drv], evalErrors: seq[EvalError]) =
+proc writeSummary(drvs: DrvTable, importantDrvPaths: seq[DrvPath], evalErrors: seq[EvalError]) =
   var s = initJobSummary()
   s.line "## Summary"
 
   s.line "### Statistics"
   let
     totalPkgCount = drvs.len
+
     okPkgCount = drvs.values.toSeq.filterIt(it.buildResult.get.isSuccess).len
     okPkgPercent = (okPkgCount * 100) div totalPkgCount
-    failedPkgCount = totalPkgCount - okPkgCount
+
+    skippedPkgCount = drvs.values.toSeq.filterIt(it.buildResult.get.kind == rkSkipped).len
+    skippedPkgPercent = (skippedPkgCount * 100) div totalPkgCount
+
+    failedPkgCount = totalPkgCount - okPkgCount - skippedPkgCount
     failedPkgPercent = (failedPkgCount * 100) div totalPkgCount
-  s.tableHeader("Ok", "Failed", "Total")
-  s.tableRow(fmt"{okPkgCount} ({okPkgPercent}%)", fmt"{failedPkgCount} ({failedPkgPercent}%)", $totalPkgCount)
+
+  s.tableHeader("Ok", "Failed", "Skipped", "Total")
+  s.tableRow(fmt"{okPkgCount} ({okPkgPercent}%)", fmt"{failedPkgCount} ({failedPkgPercent}%)", fmt"{skippedPkgCount} ({skippedPkgPercent}%)", $totalPkgCount)
   s.tableEnd()
   
   s.line "### Important packages"
-  for drv in importantDrvs:
-    let r = if drv.buildResult.get.isSuccess: ":heavy_check_mark:" else: ":x:"
-    s.line fmt"- {drv.attrName}: {r}"
+  for drvPath in importantDrvPaths:
+    let r =
+      if drvs[drvPath].buildResult.isSome:
+        if drvs[drvPath].buildResult.get.isSuccess:
+          ":heavy_check_mark:"
+        else:
+          ":x:"
+      else:
+        ":x:"
+    s.line fmt"- {drvs[drvPath].attrName}: {r}"
   
   s.line "### Details"
-  s.line "legend"
   s.writeDedent fmt"""
     ```text
     Success: {rkSuccess.toMarkdown}
@@ -96,11 +107,11 @@ proc writeSummary(drvs: DrvTable, importantDrvs: seq[Drv], evalErrors: seq[EvalE
 
   s.line
 
-  for err in evalErrors:
-    s.line fmt"❗ {err.attrName}"
+  for err in evalErrors.sortedByIt(it.attrName):
+    s.line fmt"- ❗ {err.attrName}"
 
-  for (drvPath, drv) in drvs.pairs:
-    s.line fmt"{drv.buildResult.get.kind.toMarkdown} {drv.attrName}"
+  for (drvPath, drv) in drvs.pairs.toSeq.sortedByIt(it[1].attrName):
+    s.line fmt"- {drv.buildResult.get.kind.toMarkdown} {drv.attrName}"
   
   s.save()
 
@@ -211,8 +222,9 @@ proc buildDrvs(drvs: var DrvTable) =
         endGroup()
         res
     
+    drvs[drvPathToBuild].buildResult = some res
+
     if res.isSuccess:
-      drvs[drvPathToBuild].buildResult = some res
       depTree.del drvPathToBuild
       inc buildCount
       for drv in depTree.mvalues:
@@ -225,7 +237,6 @@ proc buildDrvs(drvs: var DrvTable) =
 
 
     else:
-      drvs[drvPathToBuild].buildResult = some res
       depTree.del drvPathToBuild
       inc buildCount
       var recursiveDependants: HashSet[DrvPath]
@@ -332,19 +343,23 @@ proc ci*(
   var
     (drvs, evalErrors) = evaluate("humble", getCurrentSystem())
   
-  let importantDrvs = drvs.values.toSeq.filterIt(it.attrName in important)
+  let importantDrvPaths = drvs.values.toSeq.filterIt(it.attrName in important).mapIt(it.drvPath)
 
-  for targetDrv in importantDrvs:
-    let success = buildDrvs(drvs, targetDrv.drvPath)
+  for drvPath in importantDrvPaths:
+    let success = buildDrvs(drvs, drvPath)
     if success:
-      echo fmt"Build completed '{targetDrv.name}'"
+      echo fmt"Build completed '{drvs[drvPath].name}'"
     else:
-      error fmt"Failed to build an important package '{targetDrv.name}'"
+      error fmt"Failed to build an important package '{drvs[drvPath].name}'"
       return 1
 
   if buildAll:
     buildDrvs(drvs)
   
-  writeSummary(drvs, importantDrvs, evalErrors)
+  for drv in drvs.mvalues:
+    if drv.buildResult.isNone:
+      drv.buildResult = some BuildResult(kind: rkSkipped)
+  
+  writeSummary(drvs, importantDrvPaths, evalErrors)
 
   return 0

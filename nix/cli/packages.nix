@@ -12,9 +12,16 @@ in
       (self + /ros2nix)
     ];
     nativeBuildInputs = [ nixpkgs.makeWrapper ];
-  }).overrideAttrs (oldAttrs: {
-    postFixup = ''
-      wrapProgram $out/bin/ros2nix --prefix PATH : '${inputs.nix-eval-jobs.packages.nix-eval-jobs}/bin'
-    '';
-  });
+  }).overrideAttrs (oldAttrs:
+    let
+      binPath = nixpkgs.lib.makeBinPath [
+        inputs.nix-eval-jobs.packages.nix-eval-jobs
+        nixpkgs.nix-prefetch-git
+      ];
+    in
+    {
+      postFixup = ''
+        wrapProgram $out/bin/ros2nix --prefix PATH : '${binPath}'
+      '';
+    });
 }

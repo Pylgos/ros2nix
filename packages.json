@@ -274,11 +274,11 @@
           "substitutions": []
         },
         "admittance_controller": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-f1Ey2wryjU5D+gwpDG7CyYi8+tSKQo579sgXePZWg00=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/admittance_controller/2.16.1-1.tar.gz"
+            "hash": "sha256-RjdwOAfBv4HVvP8zuXtU7NKUsplxIBYab3vcjUvA/DQ=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/admittance_controller/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -2252,11 +2252,11 @@
           "substitutions": []
         },
         "aruco_opencv": {
-          "version": "2.0.1",
+          "version": "2.1.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-ca3mUsZkgnC8/oExpp5tpDqfM+nUZUkREVXHsWooY5I=",
-            "url": "https://github.com/ros2-gbp/aruco_opencv-release/archive/refs/tags/release/humble/aruco_opencv/2.0.1-1.tar.gz"
+            "hash": "sha256-deoHIJCQ1PvAMZi+JnKf5kQ1SALSv3ZliY8G/R2N60U=",
+            "url": "https://github.com/ros2-gbp/aruco_opencv-release/archive/refs/tags/release/humble/aruco_opencv/2.1.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -2267,7 +2267,8 @@
               "rclcpp_components",
               "rclcpp_lifecycle",
               "tf2_geometry_msgs",
-              "tf2_ros"
+              "tf2_ros",
+              "yaml-cpp"
             ],
             "buildExportDepend": [],
             "buildToolDepend": [
@@ -2278,23 +2279,34 @@
               "aruco_opencv_msgs",
               "cv_bridge",
               "image_transport",
+              "python3-img2pdf",
+              "python3-numpy",
+              "python3-opencv",
               "rclcpp",
               "rclcpp_components",
               "rclcpp_lifecycle",
               "tf2_geometry_msgs",
-              "tf2_ros"
+              "tf2_ros",
+              "yaml-cpp"
             ],
             "docDepend": [],
-            "testDepend": []
+            "testDepend": [
+              "ament_cmake_copyright",
+              "ament_cmake_cpplint",
+              "ament_cmake_lint_cmake",
+              "ament_cmake_uncrustify",
+              "ament_cmake_xmllint",
+              "ament_lint_auto"
+            ]
           },
           "substitutions": []
         },
         "aruco_opencv_msgs": {
-          "version": "2.0.1",
+          "version": "2.1.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-4slnSvY2edSo4u3wcW5fBMbb6syUoZD9u4L5RT48Ibw=",
-            "url": "https://github.com/ros2-gbp/aruco_opencv-release/archive/refs/tags/release/humble/aruco_opencv_msgs/2.0.1-1.tar.gz"
+            "hash": "sha256-lZ4tt/fCeBxmSPvoupCx3+ziJR5XQsV1B8A2C2kGnLU=",
+            "url": "https://github.com/ros2-gbp/aruco_opencv-release/archive/refs/tags/release/humble/aruco_opencv_msgs/2.1.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -2316,7 +2328,10 @@
               "std_msgs"
             ],
             "docDepend": [],
-            "testDepend": []
+            "testDepend": [
+              "ament_cmake_lint_cmake",
+              "ament_lint_auto"
+            ]
           },
           "substitutions": []
         },
@@ -2721,11 +2736,11 @@
           "substitutions": []
         },
         "behaviortree_cpp_v3": {
-          "version": "3.8.2",
+          "version": "3.8.3",
           "source": {
             "kind": "url",
-            "hash": "sha256-KuS/C9quRgq4cnqiu7BeZt1GD2vayxHHdnFZtvQBnck=",
-            "url": "https://github.com/BehaviorTree/behaviortree_cpp_v3-release/archive/refs/tags/release/humble/behaviortree_cpp_v3/3.8.2-1.tar.gz"
+            "hash": "sha256-sy5HFL4JX5nfMO4xT5WgSzRApsau0bmJNXyLFCw/gHc=",
+            "url": "https://github.com/BehaviorTree/behaviortree_cpp_v3-release/archive/refs/tags/release/humble/behaviortree_cpp_v3/3.8.3-2.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -3780,16 +3795,6 @@
           "substitutions": [
             {
               "kind": "patchVendor",
-              "filename": "src/extern/gtest/CMakeLists.txt",
-              "from": "URL https://github.com/google/googletest/archive/master.zip",
-              "to": {
-                "kind": "url",
-                "hash": "sha256-2DNpDsrKkmHr6tcSXtEQrmaXa696dWeFk5Wf0t3inLg=",
-                "url": "https://github.com/google/googletest/archive/master.zip"
-              }
-            },
-            {
-              "kind": "patchVendor",
               "filename": "src/extern/protobuf/CMakeLists.txt",
               "from": "GIT_REPOSITORY https://github.com/google/protobuf.git",
               "to": {
@@ -3801,13 +3806,12 @@
             },
             {
               "kind": "patchVendor",
-              "filename": "src/extern/grpc/CMakeLists.txt",
-              "from": "GIT_REPOSITORY https://github.com/grpc/grpc.git",
+              "filename": "src/extern/gtest/CMakeLists.txt",
+              "from": "URL https://github.com/google/googletest/archive/master.zip",
               "to": {
-                "kind": "git",
-                "hash": "sha256-dQt5gCHoxrEdkhMPKcVSvDKhPQEzN6fgq5klBucOZQQ=",
-                "url": "https://github.com/grpc/grpc.git",
-                "rev": "b567bb43670f7f2523164fdabdea8786a7595854"
+                "kind": "url",
+                "hash": "sha256-LKm6OQu3yWT/QvQ/w7ChXCVpApULOJ6qX0UQ1xvj8Ig=",
+                "url": "https://github.com/google/googletest/archive/master.zip"
               }
             },
             {
@@ -3819,6 +3823,17 @@
                 "hash": "sha256-D5brGCzg0v9SmCLcLx+NEOIXz//74ofQjA4kqw2LH4A=",
                 "url": "https://github.com/jbeder/yaml-cpp.git",
                 "rev": "ee99c4151c1af794a412b101a75921c086acaac0"
+              }
+            },
+            {
+              "kind": "patchVendor",
+              "filename": "src/extern/grpc/CMakeLists.txt",
+              "from": "GIT_REPOSITORY https://github.com/grpc/grpc.git",
+              "to": {
+                "kind": "git",
+                "hash": "sha256-dQt5gCHoxrEdkhMPKcVSvDKhPQEzN6fgq5klBucOZQQ=",
+                "url": "https://github.com/grpc/grpc.git",
+                "rev": "b567bb43670f7f2523164fdabdea8786a7595854"
               }
             }
           ]
@@ -3870,11 +3885,11 @@
           "substitutions": []
         },
         "control_toolbox": {
-          "version": "2.1.2",
+          "version": "2.2.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-e4FTDWkjuTT971m6bkwPhXRtUGbRETznWjX+DtmLPw8=",
-            "url": "https://github.com/ros2-gbp/control_toolbox-release/archive/refs/tags/release/humble/control_toolbox/2.1.2-1.tar.gz"
+            "hash": "sha256-chHTQCQZmvZ16PLcrzSR1qt1N56xbwnndSFRfFgAop0=",
+            "url": "https://github.com/ros2-gbp/control_toolbox-release/archive/refs/tags/release/humble/control_toolbox/2.2.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -3884,6 +3899,7 @@
               "realtime_tools"
             ],
             "buildExportDepend": [
+              "control_msgs",
               "rclcpp",
               "rcutils",
               "realtime_tools"
@@ -3908,11 +3924,11 @@
           "substitutions": []
         },
         "controller_interface": {
-          "version": "2.22.0",
+          "version": "2.24.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-iT/bQihlSAJY+tokenJeo4f4iHBBYcsApLeHq0W0kp4=",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/controller_interface/2.22.0-1.tar.gz"
+            "hash": "sha256-8D2AXAXSx0rhCKoXJGlDp2INpAN5k5xwG6ft2XykThU=",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/controller_interface/2.24.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -3938,11 +3954,11 @@
           "substitutions": []
         },
         "controller_manager": {
-          "version": "2.22.0",
+          "version": "2.24.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-5KW+xRlGQLweSaIP/yWfygyZVaWVJPw7XNo2F5hJrC8=",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/controller_manager/2.22.0-1.tar.gz"
+            "hash": "sha256-DAJU2H2Vx651VlPMVXcVbCne5N8UMVwI8deB7yQsPOs=",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/controller_manager/2.24.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -4009,11 +4025,11 @@
           "substitutions": []
         },
         "controller_manager_msgs": {
-          "version": "2.22.0",
+          "version": "2.24.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-fho4QKlFHLTGdMVL+Ab5gOWdcOubxKX5GqndkR9SFss=",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/controller_manager_msgs/2.22.0-1.tar.gz"
+            "hash": "sha256-sMg02XmzsT+zXQbGWBMw+l0eG5BGzb7+LNbrFKy2KD0=",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/controller_manager_msgs/2.24.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -4039,11 +4055,11 @@
           "substitutions": []
         },
         "costmap_queue": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-BBuVZ0hsAsJMW7C5wdi2R29FUDAua8IJCiFc98HIT/E=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/costmap_queue/1.1.5-1.tar.gz"
+            "hash": "sha256-Vmjnn7hjTCEGxKK81HlqjsHb/3d7ByYb3Vz+pLOo5nw=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/costmap_queue/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -5221,11 +5237,11 @@
           "substitutions": []
         },
         "depthai-ros": {
-          "version": "2.6.2",
+          "version": "2.6.4",
           "source": {
             "kind": "url",
-            "hash": "sha256-19T+GVHTVxRL465t2vBR7BQFcsHXhEk5AN3rn3hL05c=",
-            "url": "https://github.com/luxonis/depthai-ros-release/archive/refs/tags/release/humble/depthai-ros/2.6.2-1.tar.gz"
+            "hash": "sha256-GsZwo1Adiv5YKBzxeo/lhlTEDhp8tNdrRQrDDWqhMCM=",
+            "url": "https://github.com/luxonis/depthai-ros-release/archive/refs/tags/release/humble/depthai-ros/2.6.4-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -5247,11 +5263,11 @@
           "substitutions": []
         },
         "depthai_bridge": {
-          "version": "2.6.2",
+          "version": "2.6.4",
           "source": {
             "kind": "url",
-            "hash": "sha256-JeG/Ph9QHl2rS7Fsmkapp6W6GimhhalxkMBVonhVN10=",
-            "url": "https://github.com/luxonis/depthai-ros-release/archive/refs/tags/release/humble/depthai_bridge/2.6.2-1.tar.gz"
+            "hash": "sha256-OCZlltk9JAcJ276LElzpBmf03oZPuZ6FC6EIJ8phWus=",
+            "url": "https://github.com/luxonis/depthai-ros-release/archive/refs/tags/release/humble/depthai_bridge/2.6.4-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -5311,11 +5327,11 @@
           "substitutions": []
         },
         "depthai_examples": {
-          "version": "2.6.2",
+          "version": "2.6.4",
           "source": {
             "kind": "url",
-            "hash": "sha256-rlgYhFcHsDYTyJpQbbCVRdTS8mz0ZXd/eeQKeiYtl/s=",
-            "url": "https://github.com/luxonis/depthai-ros-release/archive/refs/tags/release/humble/depthai_examples/2.6.2-1.tar.gz"
+            "hash": "sha256-0voASqAuWS9oyR8vROTEPqwLuIonCf9YO0R3LLPfVns=",
+            "url": "https://github.com/luxonis/depthai-ros-release/archive/refs/tags/release/humble/depthai_examples/2.6.4-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -5382,15 +5398,16 @@
           "substitutions": []
         },
         "depthai_ros_driver": {
-          "version": "2.6.2",
+          "version": "2.6.4",
           "source": {
             "kind": "url",
-            "hash": "sha256-4Kb5OCDXi/N55k5bjuxJxGgKAvBBqd4HeJfRH0NHrtc=",
-            "url": "https://github.com/luxonis/depthai-ros-release/archive/refs/tags/release/humble/depthai_ros_driver/2.6.2-1.tar.gz"
+            "hash": "sha256-wwOiR2uw+fS7ZUyGT/zMcfIYhJdyMnsS7UYJPjtbVuw=",
+            "url": "https://github.com/luxonis/depthai-ros-release/archive/refs/tags/release/humble/depthai_ros_driver/2.6.4-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
               "ament_cmake_auto",
+              "camera_calibration",
               "cv_bridge",
               "depthai",
               "depthai_bridge",
@@ -5407,6 +5424,7 @@
             ],
             "buildExportDepend": [
               "ament_cmake_auto",
+              "camera_calibration",
               "cv_bridge",
               "depthai",
               "depthai_bridge",
@@ -5427,6 +5445,7 @@
             "buildToolExportDepend": [],
             "execDepend": [
               "ament_cmake_auto",
+              "camera_calibration",
               "cv_bridge",
               "depthai",
               "depthai_bridge",
@@ -5442,19 +5461,16 @@
               "vision_msgs"
             ],
             "docDepend": [],
-            "testDepend": [
-              "ament_lint_auto",
-              "ament_lint_common"
-            ]
+            "testDepend": []
           },
           "substitutions": []
         },
         "depthai_ros_msgs": {
-          "version": "2.6.2",
+          "version": "2.6.4",
           "source": {
             "kind": "url",
-            "hash": "sha256-Xs9l53yFvMw+nI40nlflKTDXPRETxcESFnU5MYTcWO8=",
-            "url": "https://github.com/luxonis/depthai-ros-release/archive/refs/tags/release/humble/depthai_ros_msgs/2.6.2-1.tar.gz"
+            "hash": "sha256-GDGpwzVOD3Tx6a0NxITuc1MRQUnQJHjpuaem/iAaO6I=",
+            "url": "https://github.com/luxonis/depthai-ros-release/archive/refs/tags/release/humble/depthai_ros_msgs/2.6.4-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -5798,11 +5814,11 @@
           "substitutions": []
         },
         "diff_drive_controller": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-dIUyo/tpk0rc7n/Hrdw5qEwi+k04nR383kNK5lXIHrM=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/diff_drive_controller/2.16.1-1.tar.gz"
+            "hash": "sha256-NbRYjQmTfzioZB0b+jtMTghl/96uq3ZXh7RRNZP/2Zo=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/diff_drive_controller/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -6153,11 +6169,11 @@
           "substitutions": []
         },
         "dwb_core": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-LDWKcL/DD/oWJ+SioEG/+fhEz+ytkXbQqnm8ojFXxgs=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/dwb_core/1.1.5-1.tar.gz"
+            "hash": "sha256-t/zBKdXMq9pELTQ2S/d+WPkJhdu7QThgDm/sTSShhyQ=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/dwb_core/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -6205,11 +6221,11 @@
           "substitutions": []
         },
         "dwb_critics": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-iWJWXE1NXOfJqHefoADghdO6rX5UjML2Ij99Y2V1a6U=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/dwb_critics/1.1.5-1.tar.gz"
+            "hash": "sha256-LITRWeR5CVxyzknfaZdjpgiuubPITBjvuuDm4NEPKiU=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/dwb_critics/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -6266,11 +6282,11 @@
           "substitutions": []
         },
         "dwb_msgs": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-dSMujnvEkkzkuQtkEUb+oOTyjT39QS9LmZv0hsPrAxw=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/dwb_msgs/1.1.5-1.tar.gz"
+            "hash": "sha256-f6OVK7QB4lemc1jx56axwiAspN5VMCHVEn7U1Baruo0=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/dwb_msgs/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -6307,11 +6323,11 @@
           "substitutions": []
         },
         "dwb_plugins": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-/c+dY1wJkWPiml1tZTlDsCyseFNgOXBYcqGe9HPYy7M=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/dwb_plugins/1.1.5-1.tar.gz"
+            "hash": "sha256-rJNvOllb/MWH6hSdOetKAmcUkWgdzLY9Iv2BI2ptIsw=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/dwb_plugins/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -6611,11 +6627,11 @@
           "substitutions": []
         },
         "effort_controllers": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-yttSswaDSyln4gpV9JJN/+WmZJf8gx/EEBG/qfb7I0Y=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/effort_controllers/2.16.1-1.tar.gz"
+            "hash": "sha256-d1T3cBM6Cg1qQZw8OqJNvBgLJE8kjh1esdYQyXxizp8=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/effort_controllers/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -7826,11 +7842,11 @@
           ]
         },
         "force_torque_sensor_broadcaster": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-OU8RmVA9W+qP0DugOg4ZB2cJh2tGVehpxDeGNu8oCjQ=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/force_torque_sensor_broadcaster/2.16.1-1.tar.gz"
+            "hash": "sha256-351ij3/J+cphaR5/KRAshgCs2St05opGWJE5EHehy4o=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/force_torque_sensor_broadcaster/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -8018,11 +8034,11 @@
           "substitutions": []
         },
         "forward_command_controller": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-M9nttvDptawzkD4u4+htf4n/cj/sKOf/vuxPlWXLqlg=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/forward_command_controller/2.16.1-1.tar.gz"
+            "hash": "sha256-ZHq5rbKT1djNzo3NRDF6PjZS3FdQn11uY9KEumX2KcE=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/forward_command_controller/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -8098,11 +8114,11 @@
           "substitutions": []
         },
         "foxglove_bridge": {
-          "version": "0.3.0",
+          "version": "0.4.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-wRnMOoLOn6E7TrYny2wfwmQuOqnYt2T/ru+L/9ua1Tk=",
-            "url": "https://github.com/ros2-gbp/foxglove_bridge-release/archive/refs/tags/release/humble/foxglove_bridge/0.3.0-1.tar.gz"
+            "hash": "sha256-79ZLx/WmlMEXdlT+mrsMzV0XzWf2muOB2fkwNWVQ34A=",
+            "url": "https://github.com/ros2-gbp/foxglove_bridge-release/archive/refs/tags/release/humble/foxglove_bridge/0.4.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -8114,7 +8130,8 @@
               "rclcpp",
               "rclcpp_components",
               "ros_environment",
-              "rosgraph_msgs"
+              "rosgraph_msgs",
+              "zlib"
             ],
             "buildExportDepend": [
               "ament_index_cpp",
@@ -8131,13 +8148,15 @@
               "openssl",
               "rclcpp",
               "rclcpp_components",
-              "rosgraph_msgs"
+              "rosgraph_msgs",
+              "zlib"
             ],
             "docDepend": [],
             "testDepend": [
               "ament_cmake_gtest",
               "ament_lint_auto",
-              "std_msgs"
+              "std_msgs",
+              "std_srvs"
             ]
           },
           "substitutions": []
@@ -8369,11 +8388,11 @@
           "substitutions": []
         },
         "gazebo_ros2_control": {
-          "version": "0.4.1",
+          "version": "0.4.2",
           "source": {
             "kind": "url",
-            "hash": "sha256-hHx3bedkIVFafycHb78E4+idfEgj1Xmh9HBF3s8f7A4=",
-            "url": "https://github.com/ros2-gbp/gazebo_ros2_control-release/archive/refs/tags/release/humble/gazebo_ros2_control/0.4.1-1.tar.gz"
+            "hash": "sha256-Cv1p/XBZLMFF1IVJ6tIAb+uUN3en1ASieJbRJH9Ul44=",
+            "url": "https://github.com/ros2-gbp/gazebo_ros2_control-release/archive/refs/tags/release/humble/gazebo_ros2_control/0.4.2-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -8423,11 +8442,11 @@
           "substitutions": []
         },
         "gazebo_ros2_control_demos": {
-          "version": "0.4.1",
+          "version": "0.4.2",
           "source": {
             "kind": "url",
-            "hash": "sha256-c4izoHRw54xV0yPkveEdPOruNX8DAM9nQ5C5lN+tnjU=",
-            "url": "https://github.com/ros2-gbp/gazebo_ros2_control-release/archive/refs/tags/release/humble/gazebo_ros2_control_demos/0.4.1-1.tar.gz"
+            "hash": "sha256-3F/mGLFIbufik/fGw8mOSIJI0T1oTaURRP4bFasMh1k=",
+            "url": "https://github.com/ros2-gbp/gazebo_ros2_control-release/archive/refs/tags/release/humble/gazebo_ros2_control_demos/0.4.2-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -8528,11 +8547,11 @@
           "substitutions": []
         },
         "generate_parameter_library": {
-          "version": "0.3.0",
+          "version": "0.3.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-roGeZanzoZNM9V5/iae41ikNVpsMi924g9fPD48wflw=",
-            "url": "https://github.com/ros2-gbp/generate_parameter_library-release/archive/refs/tags/release/humble/generate_parameter_library/0.3.0-1.tar.gz"
+            "hash": "sha256-hlYIgcs4BKODbaAZMIVCZKG8Vj/NIQDzixVaOHTil+8=",
+            "url": "https://github.com/ros2-gbp/generate_parameter_library-release/archive/refs/tags/release/humble/generate_parameter_library/0.3.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -8577,11 +8596,11 @@
           "substitutions": []
         },
         "generate_parameter_library_example": {
-          "version": "0.3.0",
+          "version": "0.3.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-hH6ARQmZWvProM7nvmi+RWSycC93HYWVrMbULnw6AyA=",
-            "url": "https://github.com/ros2-gbp/generate_parameter_library-release/archive/refs/tags/release/humble/generate_parameter_library_example/0.3.0-1.tar.gz"
+            "hash": "sha256-szTVdAbopt9BjCBUamZOa9CCneUK1D6yMFq+CbKZybs=",
+            "url": "https://github.com/ros2-gbp/generate_parameter_library-release/archive/refs/tags/release/humble/generate_parameter_library_example/0.3.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -8614,11 +8633,11 @@
           "substitutions": []
         },
         "generate_parameter_library_py": {
-          "version": "0.3.0",
+          "version": "0.3.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-5bTniyP8on8ZMXyGUkFKS2AT7IyI8yGgeOnw8WflxMM=",
-            "url": "https://github.com/ros2-gbp/generate_parameter_library-release/archive/refs/tags/release/humble/generate_parameter_library_py/0.3.0-1.tar.gz"
+            "hash": "sha256-UN1EWxKrrz3M2VBPN07QSGx+AQ21aQ6p1dlcRlB8mQw=",
+            "url": "https://github.com/ros2-gbp/generate_parameter_library-release/archive/refs/tags/release/humble/generate_parameter_library_py/0.3.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -9902,11 +9921,11 @@
           "substitutions": []
         },
         "gripper_controllers": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-DmXh4HkhStQjvS3tPJ+upfwdA5tEJg1x6bkNga8wZFU=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/gripper_controllers/2.16.1-1.tar.gz"
+            "hash": "sha256-DND5k8iol33Y+qjlbFdUktJWZZzRjpuQvV9S+sIusPU=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/gripper_controllers/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -10033,6 +10052,30 @@
           },
           "substitutions": []
         },
+        "gtsam": {
+          "version": "4.2.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-1KJ7zOWnzNuLLZnjKq/VVWmn/K4/dxPqH+s3wJHVXTY=",
+            "url": "https://github.com/ros2-gbp/gtsam-release/archive/refs/tags/release/humble/gtsam/4.2.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "boost",
+              "eigen",
+              "tbb"
+            ],
+            "buildExportDepend": [],
+            "buildToolDepend": [
+              "cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [],
+            "docDepend": [],
+            "testDepend": []
+          },
+          "substitutions": []
+        },
         "gurumdds_cmake_module": {
           "version": "3.3.1",
           "source": {
@@ -10061,11 +10104,11 @@
           "substitutions": []
         },
         "hardware_interface": {
-          "version": "2.22.0",
+          "version": "2.24.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-BD5LLrBppygUCObcNoY+3sWKxc8k4T1WfTfIJcCFxsM=",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/hardware_interface/2.22.0-1.tar.gz"
+            "hash": "sha256-AmGynj/t6Sbh4z6iYIARbLeF5G6Y5UZ3rskXIVOvl1s=",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/hardware_interface/2.24.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -10238,11 +10281,11 @@
           "substitutions": []
         },
         "iceoryx_binding_c": {
-          "version": "2.0.2",
+          "version": "2.0.3",
           "source": {
             "kind": "url",
-            "hash": "sha256-bYKtG1mrp/9TmmCt2BRAtbAsvOY5zYMpTKhZNuniXcg=",
-            "url": "https://github.com/ros2-gbp/iceoryx-release/archive/refs/tags/release/humble/iceoryx_binding_c/2.0.2-3.tar.gz"
+            "hash": "sha256-pwVvjIY+ogLaLy/S0/Dwdf3ja7FGzX0xZItMA2IPv34=",
+            "url": "https://github.com/ros2-gbp/iceoryx-release/archive/refs/tags/release/humble/iceoryx_binding_c/2.0.3-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -10263,11 +10306,11 @@
           "substitutions": []
         },
         "iceoryx_hoofs": {
-          "version": "2.0.2",
+          "version": "2.0.3",
           "source": {
             "kind": "url",
-            "hash": "sha256-Rp1PfAjOoTn1F97oI/pkwePNPqZ2GOmbh/M5RwIgHvU=",
-            "url": "https://github.com/ros2-gbp/iceoryx-release/archive/refs/tags/release/humble/iceoryx_hoofs/2.0.2-3.tar.gz"
+            "hash": "sha256-pf1aVAbyL93gn9UEt9v3X0v+wtEeBvgnAeGy87LadzM=",
+            "url": "https://github.com/ros2-gbp/iceoryx-release/archive/refs/tags/release/humble/iceoryx_hoofs/2.0.3-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -10294,11 +10337,11 @@
           "substitutions": []
         },
         "iceoryx_posh": {
-          "version": "2.0.2",
+          "version": "2.0.3",
           "source": {
             "kind": "url",
-            "hash": "sha256-P4HeIkdRap//axiH0seXCvNf5vCYpd2eImkztWl275M=",
-            "url": "https://github.com/ros2-gbp/iceoryx-release/archive/refs/tags/release/humble/iceoryx_posh/2.0.2-3.tar.gz"
+            "hash": "sha256-BJR+lY6/TEWtzWIoH7wv5G1d9o/HQwb5ZCqLGQmGrSQ=",
+            "url": "https://github.com/ros2-gbp/iceoryx-release/archive/refs/tags/release/humble/iceoryx_posh/2.0.3-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -10366,6 +10409,110 @@
               "doxygen"
             ],
             "testDepend": []
+          },
+          "substitutions": []
+        },
+        "ign_ros2_control": {
+          "version": "0.4.3",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-OaAoVU8DtO4Nwz5OjeQ8QTSiO/htPzvvqWxmwh7/U2Q=",
+            "url": "https://github.com/ros2-gbp/ign_ros2_control-release/archive/refs/tags/release/humble/ign_ros2_control/0.4.3-2.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "ament_index_cpp",
+              "controller_manager",
+              "hardware_interface",
+              "ignition-gazebo6",
+              "ignition-plugin",
+              "pluginlib",
+              "rclcpp",
+              "rclcpp_lifecycle",
+              "yaml_cpp_vendor"
+            ],
+            "buildExportDepend": [
+              "ament_index_cpp",
+              "controller_manager",
+              "hardware_interface",
+              "ignition-gazebo6",
+              "ignition-plugin",
+              "pluginlib",
+              "rclcpp",
+              "rclcpp_lifecycle",
+              "yaml_cpp_vendor"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "ament_index_cpp",
+              "controller_manager",
+              "hardware_interface",
+              "ignition-gazebo6",
+              "ignition-plugin",
+              "pluginlib",
+              "rclcpp",
+              "rclcpp_lifecycle",
+              "yaml_cpp_vendor"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
+        "ign_ros2_control_demos": {
+          "version": "0.4.3",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-OqTC6I+kLW/nNUQLOF+ux60ZTPkeC0Zv7pOpX0mY+PU=",
+            "url": "https://github.com/ros2-gbp/ign_ros2_control-release/archive/refs/tags/release/humble/ign_ros2_control_demos/0.4.3-2.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "control_msgs",
+              "geometry_msgs",
+              "rclcpp",
+              "rclcpp_action",
+              "std_msgs"
+            ],
+            "buildExportDepend": [],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "ament_index_python",
+              "control_msgs",
+              "diff_drive_controller",
+              "effort_controllers",
+              "geometry_msgs",
+              "hardware_interface",
+              "ign_ros2_control",
+              "imu_sensor_broadcaster",
+              "joint_state_broadcaster",
+              "joint_trajectory_controller",
+              "launch",
+              "launch_ros",
+              "rclcpp",
+              "robot_state_publisher",
+              "ros2controlcli",
+              "ros_ign_gazebo",
+              "std_msgs",
+              "tricycle_controller",
+              "velocity_controllers",
+              "xacro"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_cmake_gtest",
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
           },
           "substitutions": []
         },
@@ -10956,11 +11103,11 @@
           "substitutions": []
         },
         "imu_sensor_broadcaster": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-9qhuHSoRnBegjM976+YlkcCVFdrTvNY18Jnyh0+pN30=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/imu_sensor_broadcaster/2.16.1-1.tar.gz"
+            "hash": "sha256-Dh4CYTChmtyxgH+4nBSktIo2q1MnDkBj7gyjYA8RzLY=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/imu_sensor_broadcaster/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -11694,11 +11841,11 @@
           "substitutions": []
         },
         "joint_limits": {
-          "version": "2.22.0",
+          "version": "2.24.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-4f8bOyYnGUqOQsI7/RW2U7HrDFpdoPQfYEpwDwCOsvk=",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/joint_limits/2.22.0-1.tar.gz"
+            "hash": "sha256-uGUx4kfJXF9Rzqi60se6gPJ7sidtLfateRti4g9tClo=",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/joint_limits/2.24.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -11726,11 +11873,11 @@
           "substitutions": []
         },
         "joint_state_broadcaster": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-4w95exlo+jnqfxPSHGKcGsM/cebfhQ4AGjOer9Y9W3Y=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/joint_state_broadcaster/2.16.1-1.tar.gz"
+            "hash": "sha256-LfGt2PbjASFRja6uO3MuJeRNo5y59C+xWSxMxc3QN6M=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/joint_state_broadcaster/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -11833,11 +11980,11 @@
           "substitutions": []
         },
         "joint_trajectory_controller": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-q41MN5AKrLOKSBznf1S0lavDsvK1R3Df6d1mg2fir98=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/joint_trajectory_controller/2.16.1-1.tar.gz"
+            "hash": "sha256-9ME8ToKKQm08KCZMTMS6B15DqIG8J0gp82A5Yw3LxZU=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/joint_trajectory_controller/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -13702,17 +13849,6 @@
             },
             {
               "kind": "patchVendor",
-              "filename": "CMake/external_libcurl.cmake",
-              "from": "GIT_REPOSITORY \"https://github.com/curl/curl.git\"",
-              "to": {
-                "kind": "git",
-                "hash": "sha256-sR4Pv5YWcS5/zWUff5f9ASFkx7Fv75WdtpnxiKG4Ulc=",
-                "url": "https://github.com/curl/curl.git",
-                "rev": "2f33be817cbce6ad7a36f27dd7ada9219f13584c"
-              }
-            },
-            {
-              "kind": "patchVendor",
               "filename": "CMake/external_libusb.cmake",
               "from": "GIT_REPOSITORY \"https://github.com/ev-mp/libusb.git\"",
               "to": {
@@ -13721,18 +13857,30 @@
                 "url": "https://github.com/ev-mp/libusb.git",
                 "rev": "2a7372db54094a406a755f0b8548b614ba8c78ec"
               }
+            },
+            {
+              "kind": "patchVendor",
+              "filename": "CMake/external_libcurl.cmake",
+              "from": "GIT_REPOSITORY \"https://github.com/curl/curl.git\"",
+              "to": {
+                "kind": "git",
+                "hash": "sha256-sR4Pv5YWcS5/zWUff5f9ASFkx7Fv75WdtpnxiKG4Ulc=",
+                "url": "https://github.com/curl/curl.git",
+                "rev": "2f33be817cbce6ad7a36f27dd7ada9219f13584c"
+              }
             }
           ]
         },
         "libstatistics_collector": {
-          "version": "1.3.0",
+          "version": "1.3.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-7rsbCpc1gL9m6OOY7ZX2TWx77NS6j3IKDyoHF9zL2T8=",
-            "url": "https://github.com/ros2-gbp/libstatistics_collector-release/archive/refs/tags/release/humble/libstatistics_collector/1.3.0-1.tar.gz"
+            "hash": "sha256-sSwtyIzyLlqUEc3eCuD1NSyo19b7js8NslHAk48ExpQ=",
+            "url": "https://github.com/ros2-gbp/libstatistics_collector-release/archive/refs/tags/release/humble/libstatistics_collector/1.3.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
+              "builtin_interfaces",
               "rcl",
               "rcpputils",
               "rosidl_default_generators",
@@ -13740,6 +13888,7 @@
               "std_msgs"
             ],
             "buildExportDepend": [
+              "builtin_interfaces",
               "rcl",
               "rcpputils",
               "statistics_msgs"
@@ -13750,6 +13899,7 @@
             ],
             "buildToolExportDepend": [],
             "execDepend": [
+              "builtin_interfaces",
               "rcl",
               "rcpputils",
               "rosidl_default_runtime",
@@ -17492,16 +17642,6 @@
           "substitutions": [
             {
               "kind": "patchVendor",
-              "filename": "cmakemodules/script_octomap.cmake",
-              "from": "URL               \"https://github.com/OctoMap/octomap/archive/v1.9.6.zip\"",
-              "to": {
-                "kind": "url",
-                "hash": "sha256-4KxVe1Ffu6GUmIY+SH/CHxRsy+phEOHqdxco51ogYw8=",
-                "url": "https://github.com/OctoMap/octomap/archive/v1.9.6.zip"
-              }
-            },
-            {
-              "kind": "patchVendor",
               "filename": "cmakemodules/script_assimp.cmake",
               "from": "URL               \"https://github.com/assimp/assimp/archive/v4.1.0.tar.gz\"",
               "to": {
@@ -17528,6 +17668,16 @@
                 "kind": "url",
                 "hash": "sha256-yw8qGdNf35VrplhI+Sq2xNuwk78Ld6wkF6IVF5V8nKQ=",
                 "url": "https://github.com/libjpeg-turbo/libjpeg-turbo/archive/1.5.90.tar.gz"
+              }
+            },
+            {
+              "kind": "patchVendor",
+              "filename": "cmakemodules/script_octomap.cmake",
+              "from": "URL               \"https://github.com/OctoMap/octomap/archive/v1.9.6.zip\"",
+              "to": {
+                "kind": "url",
+                "hash": "sha256-4KxVe1Ffu6GUmIY+SH/CHxRsy+phEOHqdxco51ogYw8=",
+                "url": "https://github.com/OctoMap/octomap/archive/v1.9.6.zip"
               }
             }
           ]
@@ -17665,11 +17815,11 @@
           "substitutions": []
         },
         "mvsim": {
-          "version": "0.5.1",
+          "version": "0.6.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-E8duQNKx1R8uGZ3o3G3NSvLjxkRqwZDi+O2Moy0u38k=",
-            "url": "https://github.com/ros2-gbp/mvsim-release/archive/refs/tags/release/humble/mvsim/0.5.1-2.tar.gz"
+            "hash": "sha256-cB9hYTIufX832xZn+sL+AfTs2ZvLOn29taD8tt99Y9o=",
+            "url": "https://github.com/ros2-gbp/mvsim-release/archive/refs/tags/release/humble/mvsim/0.6.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -17868,11 +18018,11 @@
           "substitutions": []
         },
         "nav2_amcl": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-R7x4uc6DJoKoa/EcngTIMEPowqNSby3MuCDUGbR+G14=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_amcl/1.1.5-1.tar.gz"
+            "hash": "sha256-wqd4aeNTuSDygX7/RgX9N01vVSuEx63PhoKboSHxrGY=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_amcl/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -17937,11 +18087,11 @@
           "substitutions": []
         },
         "nav2_behavior_tree": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-mkZbc80ribWjiUGEmPZbyIV7o8J4bEn55gAPvrX1gqk=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_behavior_tree/1.1.5-1.tar.gz"
+            "hash": "sha256-4ZNWr3EMncoTNdtQhEazzBwmr4JtBf8LM1MbC7LOIh8=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_behavior_tree/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -17999,11 +18149,11 @@
           "substitutions": []
         },
         "nav2_behaviors": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-O7sM+hluHI1SMfQNSXTfDywkZ1Nw1qEiHes/f647iQ8=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_behaviors/1.1.5-1.tar.gz"
+            "hash": "sha256-Z/WLOB/0uh7m0kcJN5l58fr3+IMsf1uGPBuk4rXyEnI=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_behaviors/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18050,11 +18200,11 @@
           "substitutions": []
         },
         "nav2_bringup": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-WCrTOyFvorIdCqsSpCQgxzrYicR2kQvYmGrrc0l7bxE=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_bringup/1.1.5-1.tar.gz"
+            "hash": "sha256-EA+gK8vsBG5HfgFPba1duzlVzetERS2DHeAKfMoNabc=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_bringup/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18086,11 +18236,11 @@
           "substitutions": []
         },
         "nav2_bt_navigator": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-lROd/zr7VS1FuGarOYI32v1d0wS7go/27fRTUU6yjRM=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_bt_navigator/1.1.5-1.tar.gz"
+            "hash": "sha256-filw3Pt7MCB5ajQ66vw98vlJuQ2VwCOzCTcmkZHKLxQ=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_bt_navigator/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18139,11 +18289,11 @@
           "substitutions": []
         },
         "nav2_collision_monitor": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-fbeKziOP5UoA0xj50wgo1YLkA+kDHYGLEVdOcQPWdxE=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_collision_monitor/1.1.5-1.tar.gz"
+            "hash": "sha256-AL+ab1XERdeVA5jqDSWXorAfsh/qqTMaynvOtUXCm5E=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_collision_monitor/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18196,11 +18346,11 @@
           "substitutions": []
         },
         "nav2_common": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-s+0a12rLxZcfZrmMZ92naReCoPaU1BbDQK8IeFeqJzA=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_common/1.1.5-1.tar.gz"
+            "hash": "sha256-DUtZvFfQJbuOZmu4m9FtNLFmfS9SFA7IZdmQZwKtjNg=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_common/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18237,11 +18387,11 @@
           "substitutions": []
         },
         "nav2_constrained_smoother": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-VSb4XsRganX0rzvKiUkPWGHfN6meFP7aYc0hvmKdL9Y=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_constrained_smoother/1.1.5-1.tar.gz"
+            "hash": "sha256-BUHE1ZKCPnkJvNjuP/rCv7O1/rzCWI2m8hJjSukbAns=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_constrained_smoother/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18292,11 +18442,11 @@
           "substitutions": []
         },
         "nav2_controller": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-p8HguVQOXBMbYJDkrksQad1jjUcAHYAPxVV95+Q0H9I=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_controller/1.1.5-1.tar.gz"
+            "hash": "sha256-uBuXftpRhax1iQkur/PTuoxp+QL3TCDT57R+zlrAS40=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_controller/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18351,11 +18501,11 @@
           "substitutions": []
         },
         "nav2_core": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-OgGz4nIiGOIWxSTVXDhtxsy+wy3+XNWagnpcrxlgNXg=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_core/1.1.5-1.tar.gz"
+            "hash": "sha256-p643VJWDDgoKqpv2l5JRctdzNHMPUh5MIdCt32hMK08=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_core/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18409,11 +18559,11 @@
           "substitutions": []
         },
         "nav2_costmap_2d": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-oXL4kuLBV9GuK1+9RboPtXi5rCZDLuWGHVakkNXz1fM=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_costmap_2d/1.1.5-1.tar.gz"
+            "hash": "sha256-so6NAcwEtTN5K6DvC9BBggFFD3lS7ndKX3YwXGLPf7w=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_costmap_2d/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18501,11 +18651,11 @@
           "substitutions": []
         },
         "nav2_dwb_controller": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-nh++wAIFST48TWtPMDJkFvAL3oIhZ2EFLLd5mIoYhSs=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_dwb_controller/1.1.5-1.tar.gz"
+            "hash": "sha256-VK+16faE6YKawIURw9PMBGtpv95R3BzsRtjQLiR+++M=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_dwb_controller/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18545,11 +18695,11 @@
           "substitutions": []
         },
         "nav2_lifecycle_manager": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-njkY0ialLLVX259XGCz+/VWW4shFCKQkCpGOrzxNr/s=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_lifecycle_manager/1.1.5-1.tar.gz"
+            "hash": "sha256-62N2JmHm+BXC7k1EZAtOezNMPX3UPkZrUVj/JpXzmKc=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_lifecycle_manager/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18595,11 +18745,11 @@
           "substitutions": []
         },
         "nav2_map_server": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-coXUvX3MHEAgRfd4FrVURyxu1HADQYexSwy9GQS6dCA=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_map_server/1.1.5-1.tar.gz"
+            "hash": "sha256-W5KajOKAi6FgVsaVvM5r7Nv93YWZeT6dkbuCnar7S6g=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_map_server/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18659,11 +18809,11 @@
           "substitutions": []
         },
         "nav2_msgs": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-oAwKTRy96N27cs2/MjbKOkM83bgt/Yu9qhzJTQ7hxqg=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_msgs/1.1.5-1.tar.gz"
+            "hash": "sha256-bGA6ocp94iMkFymR618jKj2uACIKYFKj6v4XCv9Ox58=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_msgs/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18704,11 +18854,11 @@
           "substitutions": []
         },
         "nav2_navfn_planner": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-uwvpZ+/WlziHn1CUXY3mGLO/gp1BelHZ/djo1liIyZg=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_navfn_planner/1.1.5-1.tar.gz"
+            "hash": "sha256-GdpXKT6a1QoVzSQCStxLGT0fQw7S83Qx5aKsxlfkfcY=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_navfn_planner/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18773,11 +18923,11 @@
           "substitutions": []
         },
         "nav2_planner": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-5ivzsOzsZeY7EYX4KN1LtZuILeUrHC/EG5wJvr/hYJo=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_planner/1.1.5-1.tar.gz"
+            "hash": "sha256-OnKYjXPLrNTE2tAZj/m1MdgwSnVJguH0UctwvR/rAoI=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_planner/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18841,11 +18991,11 @@
           "substitutions": []
         },
         "nav2_regulated_pure_pursuit_controller": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-bqKOOCBD9hOf3YRy1rqlaTcb4rh0YHCvBeCsXdhcCak=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_regulated_pure_pursuit_controller/1.1.5-1.tar.gz"
+            "hash": "sha256-dLNph9eZYYi5RBOSnK27D3faGjou+m60/bKMD2+xtaU=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_regulated_pure_pursuit_controller/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18898,11 +19048,11 @@
           "substitutions": []
         },
         "nav2_rotation_shim_controller": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-Qn5rh4BuWSYIqRMQWJ4c21aMoTGEfnJ+Y/heZAXIu04=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_rotation_shim_controller/1.1.5-1.tar.gz"
+            "hash": "sha256-oD18GM5qR9gVNfIXuxPGC6MOszkb4Hqr4yLt1M2YVPI=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_rotation_shim_controller/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -18957,11 +19107,11 @@
           "substitutions": []
         },
         "nav2_rviz_plugins": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-hAK2H1a+Exj4L0Z+HCZk1zwkWur2BBqkJDEGCpHtG0c=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_rviz_plugins/1.1.5-1.tar.gz"
+            "hash": "sha256-58leyfxcmVKsw5icaVafJe7Pu841/GlBLOYg9ACpf9M=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_rviz_plugins/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19036,11 +19186,11 @@
           "substitutions": []
         },
         "nav2_simple_commander": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-pvdtjQAh7db4Jc8b93XYMBSOkxSZKIAmZrsf02O671Y=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_simple_commander/1.1.5-1.tar.gz"
+            "hash": "sha256-QnAgBfi8F28BxxqsGV9bblh4AWFpsJTD3e8KE2C/la4=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_simple_commander/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -19065,11 +19215,11 @@
           "substitutions": []
         },
         "nav2_smac_planner": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-AypDjwAhl5eS0rKPVIf0VM+BfXZLcC38WggTb8kwR9o=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_smac_planner/1.1.5-1.tar.gz"
+            "hash": "sha256-WWQMO47WbAxF34khZDPGGzBLUwTppt7Di0NsLUq0fhs=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_smac_planner/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19150,11 +19300,11 @@
           "substitutions": []
         },
         "nav2_smoother": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-gSo9sXGYyc81yZLSuLxkcmCVkcw1EMs32n5Uwp2iwyU=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_smoother/1.1.5-1.tar.gz"
+            "hash": "sha256-G46XkcntpNwimLJdfZt+Sv+6Eeqkw1fis/383fApxIY=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_smoother/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19212,11 +19362,11 @@
           "substitutions": []
         },
         "nav2_system_tests": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-q4U1W7bp+T9T4I5OaGqmSU1cbRml6XFka5ONu5cONJc=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_system_tests/1.1.5-1.tar.gz"
+            "hash": "sha256-ai2WXXBdnpoxI2p9uKZSH9Tq+/jFGRZn7byyuMmvIdE=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_system_tests/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19284,11 +19434,11 @@
           "substitutions": []
         },
         "nav2_theta_star_planner": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-yUYAEAkP0PkLIyEUzamqi0XwujthLDMpYU70nd5r+NA=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_theta_star_planner/1.1.5-1.tar.gz"
+            "hash": "sha256-j1HLtp1pYE/NFM1olCGr9Erqqr2KGgrUGivBDQ+JrAo=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_theta_star_planner/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19344,11 +19494,11 @@
           "substitutions": []
         },
         "nav2_util": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-8UQ7Y7etYnG0Dgx7eDMWUwSVU7+uWU0uB+j3ELShZ3s=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_util/1.1.5-1.tar.gz"
+            "hash": "sha256-0amti3Ob7bfNSmAGf5IbSKiZn0Eo0/Vbv7IqqxPyrbM=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_util/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19428,11 +19578,11 @@
           "substitutions": []
         },
         "nav2_velocity_smoother": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-QDEhW7N52Cm8gzkCT+SPekTsyqB0hha6XZFIFo3FwYw=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_velocity_smoother/1.1.5-1.tar.gz"
+            "hash": "sha256-hfY7czQDviA4PW8MT3AVNtYcDitlmqsuXs+mMdKfovk=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_velocity_smoother/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19468,11 +19618,11 @@
           "substitutions": []
         },
         "nav2_voxel_grid": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-vkFK2iZAo3WGSW/Hjn2bAP2kkCNds0aUH6ef3OZcKfA=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_voxel_grid/1.1.5-1.tar.gz"
+            "hash": "sha256-Zal1jLvXPE+eiZ3o/wp6pxfabDHyspfZc/sgGd2GwKg=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_voxel_grid/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19499,11 +19649,11 @@
           "substitutions": []
         },
         "nav2_waypoint_follower": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-xBFG1tzWTFgMJotMeUHiKQeCQhRWFOfXbd2LIbx0Gs4=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_waypoint_follower/1.1.5-1.tar.gz"
+            "hash": "sha256-swylSv2ZvuWtMtamZ4ecHvcwBZbulvtVOku/CCMvuz8=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav2_waypoint_follower/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19563,11 +19713,11 @@
           "substitutions": []
         },
         "nav_2d_msgs": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-+yKF03xOQtHvHSaRRksEcDVDl6el1lhjvYi/UYj2/nE=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav_2d_msgs/1.1.5-1.tar.gz"
+            "hash": "sha256-obytXFA0BAuDGYru/MJ50b1PuFmwCv2pF7O76tkrfa4=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav_2d_msgs/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19596,11 +19746,11 @@
           "substitutions": []
         },
         "nav_2d_utils": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-kUpdrI2YDtSem9wdTrZby2M8znXbeWbdsD0xMNw7rdc=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav_2d_utils/1.1.5-1.tar.gz"
+            "hash": "sha256-xzRZMaHYcAAFDPZVnyKv4AVAq49ML7W54C/Cz5Wq6Tw=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/nav_2d_utils/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -19684,11 +19834,11 @@
           "substitutions": []
         },
         "navigation2": {
-          "version": "1.1.5",
+          "version": "1.1.6",
           "source": {
             "kind": "url",
-            "hash": "sha256-UUMG8PWTqSQIHO7VY2pKjWndjwoo/ozQWPRSeXmhOt8=",
-            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/navigation2/1.1.5-1.tar.gz"
+            "hash": "sha256-oc+GBpQDzUgZLJ7SvWgjryaGHb0x54H31U/zX8T4020=",
+            "url": "https://github.com/SteveMacenski/navigation2-release/archive/refs/tags/release/humble/navigation2/1.1.6-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -20580,6 +20730,52 @@
           },
           "substitutions": []
         },
+        "openni2_camera": {
+          "version": "2.0.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-2wU/fNsWt//qbrSmBCh5IGRKqf4fk5wONFdG/7QChtk=",
+            "url": "https://github.com/ros2-gbp/openni2_camera-release/archive/refs/tags/release/humble/openni2_camera/2.0.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "builtin_interfaces",
+              "camera_info_manager",
+              "image_transport",
+              "libopenni2-dev",
+              "rclcpp",
+              "rclcpp_components",
+              "sensor_msgs"
+            ],
+            "buildExportDepend": [
+              "builtin_interfaces",
+              "camera_info_manager",
+              "image_transport",
+              "libopenni2-dev",
+              "rclcpp",
+              "rclcpp_components",
+              "sensor_msgs"
+            ],
+            "buildToolDepend": [
+              "ament_cmake",
+              "rosidl_default_generators"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "builtin_interfaces",
+              "camera_info_manager",
+              "image_transport",
+              "libopenni2-dev",
+              "rclcpp",
+              "rclcpp_components",
+              "rosidl_default_runtime",
+              "sensor_msgs"
+            ],
+            "docDepend": [],
+            "testDepend": []
+          },
+          "substitutions": []
+        },
         "orocos_kdl_vendor": {
           "version": "0.2.5",
           "source": {
@@ -20707,11 +20903,11 @@
           "substitutions": []
         },
         "ouster_msgs": {
-          "version": "0.4.1",
+          "version": "0.4.2",
           "source": {
             "kind": "url",
-            "hash": "sha256-3qpjUFSE0WEq3HoBFiCxaCCGGg6xfZ4VoQcfTCNUagQ=",
-            "url": "https://github.com/ros2-gbp/ros2_ouster_drivers-release/archive/refs/tags/release/humble/ouster_msgs/0.4.1-1.tar.gz"
+            "hash": "sha256-0JRMNiCpLrnFxurjJk0W54ur3aggszagwWsUAvz7Imw=",
+            "url": "https://github.com/ros2-gbp/ros2_ouster_drivers-release/archive/refs/tags/release/humble/ouster_msgs/0.4.2-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -20785,6 +20981,56 @@
             ],
             "docDepend": [],
             "testDepend": []
+          },
+          "substitutions": []
+        },
+        "pal_gazebo_plugins": {
+          "version": "4.0.3",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-UFF2IBKC9/kzngT5YVP3M/jj+I6f436jXAYKjyvCYQ8=",
+            "url": "https://github.com/pal-gbp/pal_gazebo_plugins-release/archive/refs/tags/release/humble/pal_gazebo_plugins/4.0.3-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "control_toolbox",
+              "gazebo_dev",
+              "gazebo_msgs",
+              "gazebo_ros",
+              "nav_msgs",
+              "rclcpp",
+              "std_msgs",
+              "tf2_geometry_msgs"
+            ],
+            "buildExportDepend": [
+              "control_toolbox",
+              "gazebo_dev",
+              "gazebo_msgs",
+              "gazebo_ros",
+              "nav_msgs",
+              "rclcpp",
+              "std_msgs",
+              "tf2_geometry_msgs"
+            ],
+            "buildToolDepend": [
+              "ament_cmake_auto"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "control_toolbox",
+              "gazebo_dev",
+              "gazebo_msgs",
+              "gazebo_ros",
+              "nav_msgs",
+              "rclcpp",
+              "std_msgs",
+              "tf2_geometry_msgs"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
           },
           "substitutions": []
         },
@@ -20963,11 +21209,11 @@
           "substitutions": []
         },
         "parameter_traits": {
-          "version": "0.3.0",
+          "version": "0.3.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-CE7WX8x5Ilik/BADGqMSQOBYcG2ZakWdUKs7Ergu22g=",
-            "url": "https://github.com/ros2-gbp/generate_parameter_library-release/archive/refs/tags/release/humble/parameter_traits/0.3.0-1.tar.gz"
+            "hash": "sha256-IIIdeNhI4fhGL33KcFpNdRoMAMn5/+GzQlUuJHMoYwU=",
+            "url": "https://github.com/ros2-gbp/generate_parameter_library-release/archive/refs/tags/release/humble/parameter_traits/0.3.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -22077,11 +22323,11 @@
           "substitutions": []
         },
         "pinocchio": {
-          "version": "2.6.16",
+          "version": "2.6.17",
           "source": {
             "kind": "url",
-            "hash": "sha256-L13o1TgQjczGxF9W4cWkZjSjFybe9mLLz0Coohsc/D8=",
-            "url": "https://github.com/ros2-gbp/pinocchio-release/archive/refs/tags/release/humble/pinocchio/2.6.16-1.tar.gz"
+            "hash": "sha256-kE7W/0b+Ap0ZUu1vp5iLRxDjNVwsGNChPiLGRroGP88=",
+            "url": "https://github.com/ros2-gbp/pinocchio-release/archive/refs/tags/release/humble/pinocchio/2.6.17-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -22782,6 +23028,103 @@
           },
           "substitutions": []
         },
+        "play_motion2": {
+          "version": "0.0.4",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-ZiOtyIcEZkqNg/LoP+LvUHNgAj1J4rVMpWLiSQthoUs=",
+            "url": "https://github.com/pal-gbp/play_motion2-release/archive/refs/tags/release/humble/play_motion2/0.0.4-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "control_msgs",
+              "controller_manager_msgs",
+              "lifecycle_msgs",
+              "play_motion2_msgs",
+              "rclcpp",
+              "rclcpp_action",
+              "rclcpp_lifecycle",
+              "sensor_msgs",
+              "trajectory_msgs"
+            ],
+            "buildExportDepend": [
+              "control_msgs",
+              "controller_manager_msgs",
+              "lifecycle_msgs",
+              "play_motion2_msgs",
+              "rclcpp",
+              "rclcpp_action",
+              "rclcpp_lifecycle",
+              "sensor_msgs",
+              "trajectory_msgs"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "control_msgs",
+              "controller_manager_msgs",
+              "lifecycle_msgs",
+              "play_motion2_msgs",
+              "rclcpp",
+              "rclcpp_action",
+              "rclcpp_lifecycle",
+              "sensor_msgs",
+              "trajectory_msgs"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_cmake_gtest",
+              "ament_index_cpp",
+              "ament_lint_auto",
+              "ament_lint_common",
+              "controller_manager",
+              "hardware_interface",
+              "joint_state_broadcaster",
+              "joint_trajectory_controller",
+              "launch_pal",
+              "launch_ros",
+              "launch_testing_ament_cmake",
+              "pluginlib",
+              "xacro"
+            ]
+          },
+          "substitutions": []
+        },
+        "play_motion2_msgs": {
+          "version": "0.0.4",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-32wmON/8EEGtwNj7HK8AsiliyMvBECvzw3J81GCmp7Y=",
+            "url": "https://github.com/pal-gbp/play_motion2-release/archive/refs/tags/release/humble/play_motion2_msgs/0.0.4-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "action_msgs",
+              "builtin_interfaces",
+              "rosidl_default_generators"
+            ],
+            "buildExportDepend": [
+              "action_msgs"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "action_msgs",
+              "builtin_interfaces",
+              "rosidl_default_runtime"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
         "plotjuggler": {
           "version": "3.5.1",
           "source": {
@@ -23402,11 +23745,11 @@
           "substitutions": []
         },
         "position_controllers": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-k3Wcb1Zb8Gku14f7eeaTq6CvWzph9AN9Cdgj4+zPneA=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/position_controllers/2.16.1-1.tar.gz"
+            "hash": "sha256-6Fkgr4x596bxL05UVn1yRif7FrpOsKNwaipg4yQ/OFk=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/position_controllers/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -23461,11 +23804,11 @@
           "substitutions": []
         },
         "py_trees_js": {
-          "version": "0.6.3",
+          "version": "0.6.4",
           "source": {
             "kind": "url",
-            "hash": "sha256-yJhE4gFaN/wl18CwYX0MG/td1vNQNW+fd7YwDB0BUPc=",
-            "url": "https://github.com/ros2-gbp/py_trees_js-release/archive/refs/tags/release/humble/py_trees_js/0.6.3-1.tar.gz"
+            "hash": "sha256-F1WhgnqYpmF486ZKeT63iO5+AVvNSxET33OZrdH0/88=",
+            "url": "https://github.com/ros2-gbp/py_trees_js-release/archive/refs/tags/release/humble/py_trees_js/0.6.4-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -25873,6 +26216,35 @@
               "python3-pytest",
               "python_cmake_module"
             ]
+          },
+          "substitutions": []
+        },
+        "rig_reconfigure": {
+          "version": "1.0.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-JvNwxW5jPVzZbSGgAhlp0fEk4cI3xoIenhLIvnD2LL4=",
+            "url": "https://github.com/ros2-gbp/rig_reconfigure-release/archive/refs/tags/release/humble/rig_reconfigure/1.0.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "libglfw3-dev",
+              "rclcpp"
+            ],
+            "buildExportDepend": [
+              "libglfw3-dev",
+              "rclcpp"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "libglfw3-dev",
+              "rclcpp"
+            ],
+            "docDepend": [],
+            "testDepend": []
           },
           "substitutions": []
         },
@@ -28641,11 +29013,11 @@
           "substitutions": []
         },
         "ros2_control": {
-          "version": "2.22.0",
+          "version": "2.24.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-ISHRi0sYcXCQfpho32+YjidZ9ilE+vJckZzVTZ1BJeA=",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/ros2_control/2.22.0-1.tar.gz"
+            "hash": "sha256-PSuEwJu6ZsugbQAOasPRPiiFnxu6aGRXBO9UpbPkGMc=",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/ros2_control/2.24.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -28670,11 +29042,11 @@
           "substitutions": []
         },
         "ros2_control_test_assets": {
-          "version": "2.22.0",
+          "version": "2.24.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-luSdVxJXDF7LYyikl4C6y361HzkjpiKIz48njrVLWKY=",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/ros2_control_test_assets/2.22.0-1.tar.gz"
+            "hash": "sha256-E0KCJ6Tf6pdi6LoIR3zd3apuVQlRw4+kKcOV54S4b0k=",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/ros2_control_test_assets/2.24.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -28690,11 +29062,11 @@
           "substitutions": []
         },
         "ros2_controllers": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-InX7ILpbtY5K52t5aXjsLtaLQQE/hxIDxwXCrHobLSc=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/ros2_controllers/2.16.1-1.tar.gz"
+            "hash": "sha256-UKOx6llI2gv+jW1Zenq5y4jJ/WXzu8Wc/olCaPfk9bY=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/ros2_controllers/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -28722,11 +29094,11 @@
           "substitutions": []
         },
         "ros2_controllers_test_nodes": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-eWb/uoT2u55DM97ju8Bym4Gw/Ug5TVRJeTC4IouzTOg=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/ros2_controllers_test_nodes/2.16.1-1.tar.gz"
+            "hash": "sha256-WmoRn02wGRFwTeN8rjQbam3qR7b9pWKQgZ4F++3yxEE=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/ros2_controllers_test_nodes/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -28754,11 +29126,11 @@
           "substitutions": []
         },
         "ros2_ouster": {
-          "version": "0.4.1",
+          "version": "0.4.2",
           "source": {
             "kind": "url",
-            "hash": "sha256-joU/Bcx482znG+itTVYhkSkQ6D3O2S38+Fr+5mSRmRY=",
-            "url": "https://github.com/ros2-gbp/ros2_ouster_drivers-release/archive/refs/tags/release/humble/ros2_ouster/0.4.1-1.tar.gz"
+            "hash": "sha256-Cz5g6bDwXtsWGAd8jXHq1U9le5Q9jzYhO7TBgpnT5sg=",
+            "url": "https://github.com/ros2-gbp/ros2_ouster_drivers-release/archive/refs/tags/release/humble/ros2_ouster/0.4.2-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -29124,16 +29496,17 @@
           "substitutions": []
         },
         "ros2controlcli": {
-          "version": "2.22.0",
+          "version": "2.24.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-koZQb9HC55jYqzzFvTpO2fysk5iEAqGzS6yEL541EdU=",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/ros2controlcli/2.22.0-1.tar.gz"
+            "hash": "sha256-g4CWIBW25n04M5PDjZ3dJ8oLKfXhXr1DuPbq9cFaHic=",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/ros2controlcli/2.24.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
               "controller_manager",
               "controller_manager_msgs",
+              "rcl_interfaces",
               "rclpy",
               "ros2cli",
               "ros2node",
@@ -29142,6 +29515,7 @@
             "buildExportDepend": [
               "controller_manager",
               "controller_manager_msgs",
+              "rcl_interfaces",
               "rclpy",
               "ros2cli",
               "ros2node",
@@ -29153,6 +29527,7 @@
               "controller_manager",
               "controller_manager_msgs",
               "python3-pygraphviz",
+              "rcl_interfaces",
               "rclpy",
               "ros2cli",
               "ros2node",
@@ -30444,6 +30819,32 @@
             "testDepend": [
               "ament_lint_auto",
               "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
+        "ros_industrial_cmake_boilerplate": {
+          "version": "0.4.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-rNr5ptlVmpZBVnjrfrX2w0kU2Evi+PxLWKfvzffxTnY=",
+            "url": "https://github.com/ros-industrial-release/ros_industrial_cmake_boilerplate-release/archive/refs/tags/release/humble/ros_industrial_cmake_boilerplate/0.4.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [],
+            "buildExportDepend": [],
+            "buildToolDepend": [
+              "cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [],
+            "docDepend": [],
+            "testDepend": [
+              "cppcheck",
+              "gtest",
+              "iwyu",
+              "lcov",
+              "libclang-dev"
             ]
           },
           "substitutions": []
@@ -32372,11 +32773,11 @@
           "substitutions": []
         },
         "rqt_controller_manager": {
-          "version": "2.22.0",
+          "version": "2.24.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-/b3y6NbaCdVZI6LjGV5HOXKp2YPFp4nH1V0qHelphIY=",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/rqt_controller_manager/2.22.0-1.tar.gz"
+            "hash": "sha256-ekq1JEfoDk3wP+fJP5FsqEcBLEDqbyQPUjiX96qDEtc=",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/rqt_controller_manager/2.24.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -32647,11 +33048,11 @@
           "substitutions": []
         },
         "rqt_joint_trajectory_controller": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-apiRiqgjTF+kUUMpq/Wysp+ijT1mOgdyXp2ewbG51Ak=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/rqt_joint_trajectory_controller/2.16.1-1.tar.gz"
+            "hash": "sha256-5yDNwM3aFPIv8wXTMnJdudpdkvD5wINjPJsfL1DYRT8=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/rqt_joint_trajectory_controller/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -34081,6 +34482,55 @@
           },
           "substitutions": []
         },
+        "rviz_satellite": {
+          "version": "4.0.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-1btiDvrU9NYm/CgsMa3Vwu6Fv4zgHc7A7OhZgKy8MBU=",
+            "url": "https://github.com/nobleo/rviz_satellite-release/archive/refs/tags/release/humble/rviz_satellite/4.0.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "angles",
+              "qtbase5-dev",
+              "rclcpp",
+              "rcpputils",
+              "rviz_common",
+              "rviz_default_plugins",
+              "sensor_msgs",
+              "tf2_ros"
+            ],
+            "buildExportDepend": [
+              "angles",
+              "rclcpp",
+              "rcpputils",
+              "rviz_common",
+              "rviz_default_plugins",
+              "sensor_msgs",
+              "tf2_ros"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "angles",
+              "rclcpp",
+              "rcpputils",
+              "rviz_common",
+              "rviz_default_plugins",
+              "sensor_msgs",
+              "tf2_ros"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_cmake_gtest",
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
         "rviz_visual_testing_framework": {
           "version": "11.2.5",
           "source": {
@@ -34210,6 +34660,124 @@
               "ament_cmake_gtest",
               "ament_lint_auto",
               "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
+        "schunk_svh_description": {
+          "version": "2.1.1",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-4N10izt0TwDo+3URnpQhoTsQlxdGczrItB3ZVf/opWk=",
+            "url": "https://github.com/ros2-gbp/schunk_svh_ros_driver-release/archive/refs/tags/release/humble/schunk_svh_description/2.1.1-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [],
+            "buildExportDepend": [],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
+        "schunk_svh_driver": {
+          "version": "2.1.1",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-0buDyivyqoRlMN5xkODA39xheWF5+ygyRutVPubIXWc=",
+            "url": "https://github.com/ros2-gbp/schunk_svh_ros_driver-release/archive/refs/tags/release/humble/schunk_svh_driver/2.1.1-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "hardware_interface",
+              "pluginlib",
+              "rclcpp",
+              "schunk_svh_library"
+            ],
+            "buildExportDepend": [
+              "hardware_interface",
+              "pluginlib",
+              "rclcpp",
+              "schunk_svh_library"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "controller_manager",
+              "hardware_interface",
+              "joint_state_broadcaster",
+              "joint_trajectory_controller",
+              "launch",
+              "launch_ros",
+              "pluginlib",
+              "rclcpp",
+              "ros2launch",
+              "schunk_svh_description",
+              "schunk_svh_library",
+              "xacro"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto"
+            ]
+          },
+          "substitutions": []
+        },
+        "schunk_svh_library": {
+          "version": "1.0.1",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-n1ECtIIlm0bPzlzsul/AH8CHSn5tXYbNJqbiCC9AuSs=",
+            "url": "https://github.com/ros2-gbp/schunk_svh_library-release/archive/refs/tags/release/humble/schunk_svh_library/1.0.1-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "boost"
+            ],
+            "buildExportDepend": [],
+            "buildToolDepend": [
+              "cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "ament_cmake"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "boost"
+            ]
+          },
+          "substitutions": []
+        },
+        "schunk_svh_tests": {
+          "version": "2.1.1",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-IT71FwEE4bMQ9QaC3uUSw09EhVClUM+lFg/6qbRXvtQ=",
+            "url": "https://github.com/ros2-gbp/schunk_svh_ros_driver-release/archive/refs/tags/release/humble/schunk_svh_tests/2.1.1-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [],
+            "buildExportDepend": [],
+            "buildToolDepend": [],
+            "buildToolExportDepend": [],
+            "execDepend": [],
+            "docDepend": [],
+            "testDepend": [
+              "controller_manager_msgs",
+              "launch",
+              "launch_ros",
+              "launch_testing_ament_cmake",
+              "schunk_svh_driver"
             ]
           },
           "substitutions": []
@@ -34754,11 +35322,11 @@
           "substitutions": []
         },
         "simple_launch": {
-          "version": "1.6.2",
+          "version": "1.7.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-mTdpp9QdRapkSJ5ElRJHiiDhAQKp9/ggLFQa+iXtTu0=",
-            "url": "https://github.com/ros2-gbp/simple_launch-release/archive/refs/tags/release/humble/simple_launch/1.6.2-1.tar.gz"
+            "hash": "sha256-u0AtcOaZLUaRmjMCnaODgRVaSxi/U3Zo8ydBWIKAkvk=",
+            "url": "https://github.com/ros2-gbp/simple_launch-release/archive/refs/tags/release/humble/simple_launch/1.7.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -35324,9 +35892,9 @@
               "from": "GIT_REPOSITORY https://github.com/ThePhD/sol2.git",
               "to": {
                 "kind": "git",
-                "hash": "sha256-4wHu+Bart2sSHwIv8DnKpn46ZuouDbOjOfFWQeWhdV8=",
+                "hash": "sha256-tqKVnQiXKH6XuttKPYureEWUCeR8qH9U+OY10h+5xGQ=",
                 "url": "https://github.com/ThePhD/sol2.git",
-                "rev": "19898d8d3e6c3def33625082343428be1bb9387b"
+                "rev": "eab1430ccdbf61a0d61d11bf86b4975838dcfb9a"
               }
             }
           ]
@@ -35813,6 +36381,37 @@
           },
           "substitutions": []
         },
+        "stomp": {
+          "version": "0.1.2",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-SMIxIQFBhVkKNSvnxdsAWw5pg4rc6p5xSsSck1Ig4Y8=",
+            "url": "https://github.com/ros2-gbp/stomp-release/archive/refs/tags/release/humble/stomp/0.1.2-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "eigen",
+              "libconsole-bridge-dev",
+              "ros_industrial_cmake_boilerplate"
+            ],
+            "buildExportDepend": [
+              "eigen",
+              "libconsole-bridge-dev"
+            ],
+            "buildToolDepend": [
+              "cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "libconsole-bridge-dev"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "gtest"
+            ]
+          },
+          "substitutions": []
+        },
         "stubborn_buddies": {
           "version": "1.0.0",
           "source": {
@@ -35876,11 +36475,11 @@
           "substitutions": []
         },
         "swri_console": {
-          "version": "2.0.2",
+          "version": "2.0.3",
           "source": {
             "kind": "url",
-            "hash": "sha256-+IdRKGoXtQ2rB0AxT2hAil9LMJuGt5fwb+GxhiKPwtw=",
-            "url": "https://github.com/ros2-gbp/swri_console-release/archive/refs/tags/release/humble/swri_console/2.0.2-1.tar.gz"
+            "hash": "sha256-yhS7mjM15nrIQFRN0byO3shvc2/yIcPEu0F2LyAOupc=",
+            "url": "https://github.com/ros2-gbp/swri_console-release/archive/refs/tags/release/humble/swri_console/2.0.3-2.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -37436,11 +38035,11 @@
           "substitutions": []
         },
         "tiago_bringup": {
-          "version": "4.0.2",
+          "version": "4.0.3",
           "source": {
             "kind": "url",
-            "hash": "sha256-04LvhBb3dC5k41KKhifxvVX8yi6YcIjgh/jT0nhWyso=",
-            "url": "https://github.com/pal-gbp/tiago_robot-release/archive/refs/tags/release/humble/tiago_bringup/4.0.2-1.tar.gz"
+            "hash": "sha256-zwul2Ad9HMo62yJ0gtNhJnBDWOGeWCmY6f3j/UuKfSc=",
+            "url": "https://github.com/pal-gbp/tiago_robot-release/archive/refs/tags/release/humble/tiago_bringup/4.0.3-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -37452,6 +38051,7 @@
             "execDepend": [
               "joy_teleop",
               "launch_pal",
+              "play_motion2",
               "robot_state_publisher",
               "tiago_controller_configuration",
               "tiago_description",
@@ -37466,11 +38066,11 @@
           "substitutions": []
         },
         "tiago_controller_configuration": {
-          "version": "4.0.2",
+          "version": "4.0.3",
           "source": {
             "kind": "url",
-            "hash": "sha256-6rp8cHf2smtH8AcpJRvtxQ0HiIxARnLDcWZMXn66j6M=",
-            "url": "https://github.com/pal-gbp/tiago_robot-release/archive/refs/tags/release/humble/tiago_controller_configuration/4.0.2-1.tar.gz"
+            "hash": "sha256-78VfGec7A68s9lT3Z9nkFm3JwVHwU01gE/cDN+m2V2k=",
+            "url": "https://github.com/pal-gbp/tiago_robot-release/archive/refs/tags/release/humble/tiago_controller_configuration/4.0.3-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -37495,11 +38095,11 @@
           "substitutions": []
         },
         "tiago_description": {
-          "version": "4.0.2",
+          "version": "4.0.3",
           "source": {
             "kind": "url",
-            "hash": "sha256-iHKVlPCeZWskQ1svV52gKgYCSGBVuQqPYdtKvyTnoA0=",
-            "url": "https://github.com/pal-gbp/tiago_robot-release/archive/refs/tags/release/humble/tiago_description/4.0.2-1.tar.gz"
+            "hash": "sha256-8HQHfvV1ERBpy0RCriNeXRA5E62Hrp33hIwEaghx0fE=",
+            "url": "https://github.com/pal-gbp/tiago_robot-release/archive/refs/tags/release/humble/tiago_description/4.0.3-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -37531,11 +38131,11 @@
           "substitutions": []
         },
         "tiago_gazebo": {
-          "version": "4.0.1",
+          "version": "4.0.2",
           "source": {
             "kind": "url",
-            "hash": "sha256-nuYyMqkfpNaWR1omQwBXNPyypfPMCWEjFhcoakcNl3k=",
-            "url": "https://github.com/pal-gbp/tiago_simulation-release/archive/refs/tags/release/humble/tiago_gazebo/4.0.1-1.tar.gz"
+            "hash": "sha256-ipYhrx3ilqZ8jlXkIS7/qI6gfmpyxtwDLA2o9ZITTxE=",
+            "url": "https://github.com/pal-gbp/tiago_simulation-release/archive/refs/tags/release/humble/tiago_gazebo/4.0.2-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -37551,7 +38151,9 @@
               "launch",
               "launch_pal",
               "launch_ros",
+              "pal_gazebo_plugins",
               "pal_gazebo_worlds",
+              "play_motion2_msgs",
               "tiago_2dnav",
               "tiago_bringup",
               "tiago_description",
@@ -37559,8 +38161,13 @@
             ],
             "docDepend": [],
             "testDepend": [
+              "ament_cmake_gtest",
               "ament_lint_auto",
-              "ament_lint_common"
+              "ament_lint_common",
+              "launch_testing_ament_cmake",
+              "play_motion2_msgs",
+              "rclcpp",
+              "sensor_msgs"
             ]
           },
           "substitutions": []
@@ -37620,11 +38227,11 @@
           "substitutions": []
         },
         "tiago_robot": {
-          "version": "4.0.2",
+          "version": "4.0.3",
           "source": {
             "kind": "url",
-            "hash": "sha256-tAwA7R2I1hE4lU8zf1634lb/xmctprICvCg9ZMo/GBQ=",
-            "url": "https://github.com/pal-gbp/tiago_robot-release/archive/refs/tags/release/humble/tiago_robot/4.0.2-1.tar.gz"
+            "hash": "sha256-UzbSdNomFu+3fplI1CRdrQDs/1Fdb1cfSlVJ1txepcI=",
+            "url": "https://github.com/pal-gbp/tiago_robot-release/archive/refs/tags/release/humble/tiago_robot/4.0.3-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -37644,11 +38251,11 @@
           "substitutions": []
         },
         "tiago_simulation": {
-          "version": "4.0.1",
+          "version": "4.0.2",
           "source": {
             "kind": "url",
-            "hash": "sha256-gXN5i1M0J0dvgNk4kwuEq94mdQt0UrKbWkXuK8S0Uw8=",
-            "url": "https://github.com/pal-gbp/tiago_simulation-release/archive/refs/tags/release/humble/tiago_simulation/4.0.1-1.tar.gz"
+            "hash": "sha256-U7Z7ORMEPxmIsKntFLWH3JUqpXRtjU+cO3crzwaOn1g=",
+            "url": "https://github.com/pal-gbp/tiago_simulation-release/archive/refs/tags/release/humble/tiago_simulation/4.0.2-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [],
@@ -38279,11 +38886,11 @@
           "substitutions": []
         },
         "transmission_interface": {
-          "version": "2.22.0",
+          "version": "2.24.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-UG7Dbk2c1/sxjHv151R9NqOM5coSd5LbAJX3bpf7F4w=",
-            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/transmission_interface/2.22.0-1.tar.gz"
+            "hash": "sha256-/zwGUMLvQOUQWn4j+47MpNpcFQ8bVz1AirJk1kJxAsY=",
+            "url": "https://github.com/ros2-gbp/ros2_control-release/archive/refs/tags/release/humble/transmission_interface/2.24.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -38310,11 +38917,11 @@
           "substitutions": []
         },
         "tricycle_controller": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-pT1/JVSxP4RD8Bb0n9IQ/sNCiuh5aHH44fL8CNxUTHA=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/tricycle_controller/2.16.1-1.tar.gz"
+            "hash": "sha256-0ns97JsyM4yu+e6reHPK24VJ6c2wNUQUNuzGfRawQhw=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/tricycle_controller/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -38877,6 +39484,578 @@
             ],
             "docDepend": [],
             "testDepend": []
+          },
+          "substitutions": []
+        },
+        "turtlebot4_base": {
+          "version": "1.0.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-heoYRz6YoMdoqEwd8Fgwms8YljYy8Rmd1CSAax4M2wA=",
+            "url": "https://github.com/ros2-gbp/turtlebot4_robot-release/archive/refs/tags/release/humble/turtlebot4_base/1.0.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "irobot_create_msgs",
+              "libgpiod-dev",
+              "rclcpp",
+              "rclcpp_action",
+              "rcutils",
+              "sensor_msgs",
+              "std_msgs",
+              "turtlebot4_msgs",
+              "turtlebot4_node"
+            ],
+            "buildExportDepend": [
+              "irobot_create_msgs",
+              "libgpiod-dev",
+              "rclcpp",
+              "rclcpp_action",
+              "rcutils",
+              "sensor_msgs",
+              "std_msgs",
+              "turtlebot4_msgs",
+              "turtlebot4_node"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "irobot_create_msgs",
+              "libgpiod-dev",
+              "rclcpp",
+              "rclcpp_action",
+              "rcutils",
+              "sensor_msgs",
+              "std_msgs",
+              "turtlebot4_msgs",
+              "turtlebot4_node"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
+        "turtlebot4_bringup": {
+          "version": "1.0.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-Z4hsQnr8EmHE7QNtzx6XdxgDLOF1YADbL9YdOnwvLqQ=",
+            "url": "https://github.com/ros2-gbp/turtlebot4_robot-release/archive/refs/tags/release/humble/turtlebot4_bringup/1.0.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "depthai_bridge",
+              "depthai_examples",
+              "depthai_ros_driver",
+              "depthai_ros_msgs",
+              "joy_linux",
+              "nav2_common",
+              "rplidar_ros",
+              "teleop_twist_joy",
+              "tf2_ros",
+              "turtlebot4_description",
+              "turtlebot4_diagnostics",
+              "turtlebot4_node"
+            ],
+            "buildExportDepend": [
+              "depthai_bridge",
+              "depthai_examples",
+              "depthai_ros_driver",
+              "depthai_ros_msgs",
+              "joy_linux",
+              "nav2_common",
+              "rplidar_ros",
+              "teleop_twist_joy",
+              "tf2_ros",
+              "turtlebot4_description",
+              "turtlebot4_diagnostics",
+              "turtlebot4_node"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "depthai_bridge",
+              "depthai_examples",
+              "depthai_ros_driver",
+              "depthai_ros_msgs",
+              "joy_linux",
+              "nav2_common",
+              "rplidar_ros",
+              "teleop_twist_joy",
+              "tf2_ros",
+              "turtlebot4_description",
+              "turtlebot4_diagnostics",
+              "turtlebot4_node"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
+        "turtlebot4_cpp_tutorials": {
+          "version": "1.0.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-QvwNiNC6Sl4tVYxOWo0213Ao/IUe2CEa0SNhZ60AjII=",
+            "url": "https://github.com/ros2-gbp/turtlebot4_tutorials-release/archive/refs/tags/release/humble/turtlebot4_cpp_tutorials/1.0.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "irobot_create_msgs",
+              "rclcpp"
+            ],
+            "buildExportDepend": [
+              "irobot_create_msgs",
+              "rclcpp"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "irobot_create_msgs",
+              "rclcpp"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
+        "turtlebot4_description": {
+          "version": "1.0.1",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-vPvS0/8a8XsDsCljpUgCe8iA4JdasEDYpNSjxBt6Cxk=",
+            "url": "https://github.com/ros2-gbp/turtlebot4-release/archive/refs/tags/release/humble/turtlebot4_description/1.0.1-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "irobot_create_description",
+              "robot_state_publisher",
+              "urdf"
+            ],
+            "buildExportDepend": [
+              "irobot_create_description",
+              "robot_state_publisher",
+              "urdf"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "irobot_create_description",
+              "robot_state_publisher",
+              "urdf"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
+        "turtlebot4_desktop": {
+          "version": "1.0.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-R9RZQK2umArCV3tbR4gaUyc7Pfp9cQtFc7Lm+/8d1lU=",
+            "url": "https://github.com/ros2-gbp/turtlebot4_desktop-release/archive/refs/tags/release/humble/turtlebot4_desktop/1.0.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "turtlebot4_viz"
+            ],
+            "buildExportDepend": [
+              "turtlebot4_viz"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "turtlebot4_viz"
+            ],
+            "docDepend": [],
+            "testDepend": []
+          },
+          "substitutions": []
+        },
+        "turtlebot4_diagnostics": {
+          "version": "1.0.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-2bmSn1yDyTiW5zDptD1ClQWc7oWZx1G/EY+BSEpWb3I=",
+            "url": "https://github.com/ros2-gbp/turtlebot4_robot-release/archive/refs/tags/release/humble/turtlebot4_diagnostics/1.0.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "diagnostic_aggregator",
+              "diagnostic_msgs",
+              "diagnostic_updater",
+              "irobot_create_msgs",
+              "rclpy",
+              "sensor_msgs"
+            ],
+            "buildExportDepend": [
+              "diagnostic_aggregator",
+              "diagnostic_msgs",
+              "diagnostic_updater",
+              "irobot_create_msgs",
+              "rclpy",
+              "sensor_msgs"
+            ],
+            "buildToolDepend": [],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "diagnostic_aggregator",
+              "diagnostic_msgs",
+              "diagnostic_updater",
+              "irobot_create_msgs",
+              "rclpy",
+              "sensor_msgs"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_copyright",
+              "ament_flake8",
+              "ament_pep257",
+              "python3-pytest"
+            ]
+          },
+          "substitutions": []
+        },
+        "turtlebot4_msgs": {
+          "version": "1.0.1",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-LnUzJ5XTW/v/+i8NKOLbaq/BQPBQW/DkJkQF8f7mgFg=",
+            "url": "https://github.com/ros2-gbp/turtlebot4-release/archive/refs/tags/release/humble/turtlebot4_msgs/1.0.1-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "rosidl_default_generators",
+              "std_msgs"
+            ],
+            "buildExportDepend": [
+              "std_msgs"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "rosidl_default_runtime",
+              "std_msgs"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
+        "turtlebot4_navigation": {
+          "version": "1.0.1",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-XbAlAZdEQbTOdVsrahnFuQPefemVOoxL6d3t1Re8i5o=",
+            "url": "https://github.com/ros2-gbp/turtlebot4-release/archive/refs/tags/release/humble/turtlebot4_navigation/1.0.1-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "nav2_bringup",
+              "nav2_simple_commander",
+              "slam_toolbox"
+            ],
+            "buildExportDepend": [
+              "nav2_bringup",
+              "nav2_simple_commander",
+              "slam_toolbox"
+            ],
+            "buildToolDepend": [
+              "ament_cmake",
+              "ament_cmake_python"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "nav2_bringup",
+              "nav2_simple_commander",
+              "slam_toolbox"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
+        "turtlebot4_node": {
+          "version": "1.0.1",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-+ybK4FIkCFhBoJQokjpMMJucwinc9yts59yeoPAFMBQ=",
+            "url": "https://github.com/ros2-gbp/turtlebot4-release/archive/refs/tags/release/humble/turtlebot4_node/1.0.1-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "irobot_create_msgs",
+              "rclcpp",
+              "rclcpp_action",
+              "rcutils",
+              "sensor_msgs",
+              "std_msgs",
+              "std_srvs",
+              "turtlebot4_msgs"
+            ],
+            "buildExportDepend": [
+              "irobot_create_msgs",
+              "rclcpp",
+              "rclcpp_action",
+              "rcutils",
+              "sensor_msgs",
+              "std_msgs",
+              "std_srvs",
+              "turtlebot4_msgs"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "irobot_create_msgs",
+              "rclcpp",
+              "rclcpp_action",
+              "rcutils",
+              "sensor_msgs",
+              "std_msgs",
+              "std_srvs",
+              "turtlebot4_msgs"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
+        "turtlebot4_python_tutorials": {
+          "version": "1.0.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-R/p8wmeKqpAlLNAkLWJW5ttIWLrJ7T2KH+OgccFjK8A=",
+            "url": "https://github.com/ros2-gbp/turtlebot4_tutorials-release/archive/refs/tags/release/humble/turtlebot4_python_tutorials/1.0.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "irobot_create_msgs",
+              "rclpy",
+              "turtlebot4_navigation"
+            ],
+            "buildExportDepend": [
+              "irobot_create_msgs",
+              "rclpy",
+              "turtlebot4_navigation"
+            ],
+            "buildToolDepend": [],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "irobot_create_msgs",
+              "rclpy",
+              "turtlebot4_navigation"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_copyright",
+              "ament_flake8",
+              "ament_pep257",
+              "python3-pytest"
+            ]
+          },
+          "substitutions": []
+        },
+        "turtlebot4_robot": {
+          "version": "1.0.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-IBGVirNXpbzLVtLVjFiB7EX7mKFgNennW0iMuCpiZPU=",
+            "url": "https://github.com/ros2-gbp/turtlebot4_robot-release/archive/refs/tags/release/humble/turtlebot4_robot/1.0.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "turtlebot4_base",
+              "turtlebot4_bringup",
+              "turtlebot4_diagnostics",
+              "turtlebot4_tests"
+            ],
+            "buildExportDepend": [
+              "turtlebot4_base",
+              "turtlebot4_bringup",
+              "turtlebot4_diagnostics",
+              "turtlebot4_tests"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "turtlebot4_base",
+              "turtlebot4_bringup",
+              "turtlebot4_diagnostics",
+              "turtlebot4_tests"
+            ],
+            "docDepend": [],
+            "testDepend": []
+          },
+          "substitutions": []
+        },
+        "turtlebot4_setup": {
+          "version": "1.0.2",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-GLhJvxRvltOgNMELB5003P6QfS+/3ycj2yM7PXxQ/Uo=",
+            "url": "https://github.com/ros2-gbp/turtlebot4_setup-release/archive/refs/tags/release/humble/turtlebot4_setup/1.0.2-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [],
+            "buildExportDepend": [],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "rmw_cyclonedds_cpp",
+              "rmw_fastrtps_cpp",
+              "robot_upstart",
+              "simple_term_menu_vendor"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
+        "turtlebot4_tests": {
+          "version": "1.0.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-ZMhAx09S5fxXJHXdx/6sdCP/SQ648AYABezJSmTqsdQ=",
+            "url": "https://github.com/ros2-gbp/turtlebot4_robot-release/archive/refs/tags/release/humble/turtlebot4_tests/1.0.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "irobot_create_msgs",
+              "python3-psutil",
+              "sensor_msgs",
+              "std_msgs",
+              "turtlebot4_msgs"
+            ],
+            "buildExportDepend": [
+              "irobot_create_msgs",
+              "python3-psutil",
+              "sensor_msgs",
+              "std_msgs",
+              "turtlebot4_msgs"
+            ],
+            "buildToolDepend": [],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "irobot_create_msgs",
+              "python3-psutil",
+              "sensor_msgs",
+              "std_msgs",
+              "turtlebot4_msgs"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_copyright",
+              "ament_flake8",
+              "ament_pep257",
+              "python3-pytest"
+            ]
+          },
+          "substitutions": []
+        },
+        "turtlebot4_tutorials": {
+          "version": "1.0.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-jjAhCQ7MvOYnU4C7eOMnV+jHFZbi6vayFQdMDLQG1VQ=",
+            "url": "https://github.com/ros2-gbp/turtlebot4_tutorials-release/archive/refs/tags/release/humble/turtlebot4_tutorials/1.0.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "turtlebot4_cpp_tutorials",
+              "turtlebot4_python_tutorials"
+            ],
+            "buildExportDepend": [
+              "turtlebot4_cpp_tutorials",
+              "turtlebot4_python_tutorials"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "turtlebot4_cpp_tutorials",
+              "turtlebot4_python_tutorials"
+            ],
+            "docDepend": [],
+            "testDepend": []
+          },
+          "substitutions": []
+        },
+        "turtlebot4_viz": {
+          "version": "1.0.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-nH7Y+3+zGDTHOsSApAV3eCu2LfzSzcbZIwsSDgT8Ppk=",
+            "url": "https://github.com/ros2-gbp/turtlebot4_desktop-release/archive/refs/tags/release/humble/turtlebot4_viz/1.0.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "rqt_robot_monitor",
+              "rviz2",
+              "turtlebot4_description"
+            ],
+            "buildExportDepend": [
+              "rqt_robot_monitor",
+              "rviz2",
+              "turtlebot4_description"
+            ],
+            "buildToolDepend": [
+              "ament_cmake"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "rqt_robot_monitor",
+              "rviz2",
+              "turtlebot4_description"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
           },
           "substitutions": []
         },
@@ -40320,11 +41499,11 @@
           "substitutions": []
         },
         "velocity_controllers": {
-          "version": "2.16.1",
+          "version": "2.17.1",
           "source": {
             "kind": "url",
-            "hash": "sha256-bZ971j4bbmCRQ11FVws72jNCrgr62UQENPX0fX/T70c=",
-            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/velocity_controllers/2.16.1-1.tar.gz"
+            "hash": "sha256-ub8DZUwSUZUx4JATs7s7Ef/yJ3Lq0Ti9lXGbYXMiEuQ=",
+            "url": "https://github.com/ros2-gbp/ros2_controllers-release/archive/refs/tags/release/humble/velocity_controllers/2.17.1-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -40647,11 +41826,11 @@
           "substitutions": []
         },
         "vision_msgs": {
-          "version": "4.0.0",
+          "version": "4.1.0",
           "source": {
             "kind": "url",
-            "hash": "sha256-eow1ZEywd5gzzb1zifOk/GXuWnmCrFL4gM1Iq7qN7wo=",
-            "url": "https://github.com/ros2-gbp/vision_msgs-release/archive/refs/tags/release/humble/vision_msgs/4.0.0-2.tar.gz"
+            "hash": "sha256-gwQA+eF0EyfryOhfIRMmnZdnokjNq8GglBedEKSOrds=",
+            "url": "https://github.com/ros2-gbp/vision_msgs-release/archive/refs/tags/release/humble/vision_msgs/4.1.0-1.tar.gz"
           },
           "dependencies": {
             "buildDepend": [
@@ -40701,6 +41880,61 @@
             "execDepend": [
               "rqt_image_overlay_layer",
               "vision_msgs"
+            ],
+            "docDepend": [],
+            "testDepend": [
+              "ament_lint_auto",
+              "ament_lint_common"
+            ]
+          },
+          "substitutions": []
+        },
+        "vision_msgs_rviz_plugins": {
+          "version": "4.1.0",
+          "source": {
+            "kind": "url",
+            "hash": "sha256-qgmwfKibhv5s6I0snq9lWTGHVOBoofSxZ29QiPSrI78=",
+            "url": "https://github.com/ros2-gbp/vision_msgs-release/archive/refs/tags/release/humble/vision_msgs_rviz_plugins/4.1.0-1.tar.gz"
+          },
+          "dependencies": {
+            "buildDepend": [
+              "pluginlib",
+              "rclcpp",
+              "rclpy",
+              "rviz2",
+              "rviz_common",
+              "rviz_default_plugins",
+              "rviz_rendering",
+              "vision_msgs",
+              "yaml_cpp_vendor"
+            ],
+            "buildExportDepend": [
+              "pluginlib",
+              "rclcpp",
+              "rclpy",
+              "rviz2",
+              "rviz_common",
+              "rviz_default_plugins",
+              "rviz_rendering",
+              "vision_msgs",
+              "yaml_cpp_vendor"
+            ],
+            "buildToolDepend": [
+              "ament_cmake",
+              "ament_cmake_python"
+            ],
+            "buildToolExportDepend": [],
+            "execDepend": [
+              "pluginlib",
+              "python3-numpy",
+              "rclcpp",
+              "rclpy",
+              "rviz2",
+              "rviz_common",
+              "rviz_default_plugins",
+              "rviz_rendering",
+              "vision_msgs",
+              "yaml_cpp_vendor"
             ],
             "docDepend": [],
             "testDepend": [

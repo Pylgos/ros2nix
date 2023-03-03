@@ -1,4 +1,4 @@
-name: cachix
+name: humble
 on:
   push:
 jobs:

@@ -235,7 +235,6 @@ proc buildDrvs(drvs: var DrvTable) =
         uploadDrv(drvToBuild)
         endGroup()
 
-
     else:
       depTree.del drvPathToBuild
       inc buildCount
@@ -246,7 +245,7 @@ proc buildDrvs(drvs: var DrvTable) =
           depTree.del dependant
           inc buildCount
           echo fmt"{progressIndicator(buildCount, drvs.len)} Dependency Error '{drvs[dependant].name}'"
-          drvs[drvPathToBuild].buildResult = some BuildResult(drvPath: dependant, kind: rkDependencyError)
+          drvs[dependant].buildResult = some BuildResult(drvPath: dependant, kind: rkDependencyError)
 
 
 proc buildDrvs(drvs: var DrvTable, target: DrvPath): bool =

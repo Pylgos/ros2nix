@@ -17,6 +17,8 @@ let
     buildRosPackage = l.buildRosPackageFor final;
 
     mkRosWorkspace = l.mkRosWorkspaceFor final;
+
+    wrapRos2Command = l.wrapRos2Command;
     
     rmw_implementation = prev.rmw_implementation.overrideAttrs ({ propagatedBuildInputs ? [ ]
                                                                  , ...
@@ -72,6 +74,10 @@ let
           'complete -F "_complete_xacro" "xacro"' \
           'if type complete 2> /dev/null; then complete -F "_complete_xacro" "xacro"; fi'
       '';
+    });
+
+    foxglove_bridge = prev.foxglove_bridge.overrideAttrs (oldAttrs: {
+      hardeningDisable = [ "fortify" ];
     });
 
     testWorkspace = final.mkRosWorkspace {

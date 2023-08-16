@@ -117,6 +117,7 @@ in {
   "g++-static" = [ ];
   "gawk" = nixpkgs.gawk;
   "gdal-bin" = nixpkgs.gdal;
+  "geographiclib" = nixpkgs.geographiclib;
   "geos" = nixpkgs.geos;
   "gettext-base" = nixpkgs.gettext;
   "gforth" = nixpkgs.gforth;

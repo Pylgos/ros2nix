@@ -105,7 +105,12 @@ proc prefetchUrl*(url: Uri, name="source"): FetchResult {.gcsafe.} =
   ].toSeq
   debug "Executing", cmd = cmd.join(" ")
   let r = execCmdUltra(cmd)
+  if r.exitCode != 0:
+    fatal "Command failed with non-zero exitcode", exitCode = r.exitCode
+  
   let lines = r.stdout.splitLines()
+  if lines.len < 2:
+    fatal "Invalid output", output=r.stdout
 
   let fr = FetchResult(
     name: name,

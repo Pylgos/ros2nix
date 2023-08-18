@@ -149,7 +149,7 @@ proc buildDrv(drv: Drv): BuildResult =
       discard
 
   let
-    cmd = @["nix", "build", drv.drvPath, "-L", "--no-link", "--accept-flake-config", "--option", "log-lines", "0"]
+    cmd = @["nix", "build", drv.drvPath & "^*", "-L", "--no-link", "--accept-flake-config", "--option", "log-lines", "0"]
     res = execCmdUltra(cmd, eventCallback=callback)
   
   if res.exitCode == 0:

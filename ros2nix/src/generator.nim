@@ -152,7 +152,7 @@ proc generate*(parallel=8, prefetchCacheFile="prefetch_cache.json") =
     discard
 
   prefetchDistro(distroPkgs, parallel)
-  
+
   writePrefetchCache(prefetchCacheFile)
 
   autoPatchDistro(distroPkgs, parallel)

@@ -687,7 +687,7 @@ in {
   "python3-bitarray" = python3Packages.bitarray;
   "python3-boto3" = python3Packages.boto3;
   "python3-bs4" = python3Packages.beautifulsoup4;
-  "python3-bson" = python3Packages.bson;
+  "python3-bson" = python3Packages.pymongo;
   "python3-cairo" = python3Packages.pycairo;
   "python3-cairosvg" = python3Packages.cairosvg;
   "python3-cffi" = python3Packages.cffi;

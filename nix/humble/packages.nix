@@ -72,7 +72,7 @@ let
       postPatch = ''
         substituteInPlace scripts/completion.bash --replace \
           'complete -F "_complete_xacro" "xacro"' \
-          'if type complete 2> /dev/null; then complete -F "_complete_xacro" "xacro"; fi'
+          'if type complete > /dev/null; then complete -F "_complete_xacro" "xacro"; fi'
       '';
     });
 

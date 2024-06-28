@@ -1,8 +1,1 @@
-/.std
-/ros2nix/ros2nix
-/setuphelper/setuphelper
-/result
-/prefetch_cache.json
-.vscode
-.direnv
-/gcroot
+/target

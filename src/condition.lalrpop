@@ -1,0 +1,27 @@
+use std::collections::HashMap;
+use super::unquote;
+
+grammar(env: &HashMap<String, String>);
+
+pub Condition: bool = {
+    #[precedence(level="0")]
+    "(" <Condition> ")" => <>,
+    #[precedence(level="1")] #[assoc(side="left")]
+    <a:Value> "==" <b:Value> => a == b,
+    #[precedence(level="1")] #[assoc(side="left")]
+    <a:Value> "!=" <b:Value> => a != b,
+    #[precedence(level="2")] #[assoc(side="left")]
+    <a:Condition> "and" <b:Condition> => a && b,
+    #[precedence(level="3")] #[assoc(side="left")]
+    <a:Condition> "or" <b:Condition> => a || b,
+}
+
+Value: String = {
+    Literal,
+}
+
+Literal: String = {
+    <r#"[a-zA-Z0-9_\-]+"#> => <>.to_string(),
+    <r#"'(\\.|[^'\\])*'"#> => unquote(<>).unwrap(),
+    <r#""(\\.|[^'\\])*""#> => unquote(<>).unwrap(),
+}

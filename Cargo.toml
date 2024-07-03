@@ -2,5 +2,21 @@
 name = "ros2nix"
 version = "0.1.0"
 edition = "2021"
+build = "build.rs"
 
 [dependencies]
+anyhow = "1.0.86"
+async-compression = { version = "0.4.11", features = ["futures-io", "gzip", "tokio"] }
+flate2 = "1.0.30"
+futures = "0.3.30"
+futures-io = "0.3.30"
+lalrpop-util = { version = "0.20.2", features = ["lexer"] }
+reqwest = "0.12.5"
+roxmltree = "0.20.0"
+serde = { version = "1.0.203", features = ["derive"] }
+serde-roxmltree = "0.8.1"
+tokio = { version = "1.38.0", features = ["full"] }
+yaml-rust2 = "0.8.1"
+
+[build-dependencies]
+lalrpop = "0.20.2"

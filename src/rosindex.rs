@@ -39,11 +39,11 @@ pub struct RosDistroIndexElement {
 }
 
 #[derive(Debug, Clone)]
-pub struct RosDistroIndex {
+pub struct DistroIndex {
     pub distros: HashMap<String, RosDistroIndexElement>,
 }
 
-async fn fetch_file_cached(cfg: ConfigRef, url: impl IntoUrl) -> Result<Vec<u8>> {
+async fn fetch_file_cached(cfg: &ConfigRef, url: impl IntoUrl) -> Result<Vec<u8>> {
     let url = url.into_url().unwrap();
     let cache_path = cfg
         .cache_dir
@@ -62,51 +62,53 @@ async fn fetch_file_cached(cfg: ConfigRef, url: impl IntoUrl) -> Result<Vec<u8>>
     Ok(bytes.to_vec())
 }
 
-async fn fetch_distro_index(cfg: ConfigRef) -> Result<RosDistroIndex> {
-    let url = "https://raw.githubusercontent.com/ros/rosdistro/master/index-v4.yaml";
-    let content = String::from_utf8(fetch_file_cached(cfg, url).await?)?;
+impl DistroIndex {
+    pub async fn fetch(cfg: &ConfigRef) -> Result<Self> {
+        let url = "https://raw.githubusercontent.com/ros/rosdistro/master/index-v4.yaml";
+        let content = String::from_utf8(fetch_file_cached(cfg, url).await?)?;
 
-    let docs = YamlLoader::load_from_str(&content)?;
-    let doc = &docs[0];
+        let docs = YamlLoader::load_from_str(&content)?;
+        let doc = &docs[0];
 
-    let distros = doc["distributions"]
-        .as_hash()
-        .unwrap()
-        .iter()
-        .map(|(distro_name, inner)| {
-            let name = distro_name.as_str().unwrap().to_string();
-            let status = match inner["distribution_status"].as_str().unwrap() {
-                "active" => DistroStatus::Active,
-                "end-of-life" => DistroStatus::EndOfLife,
-                "rolling" => DistroStatus::Rolling,
-                _ => unimplemented!(),
-            };
-            let cache = Url::parse(inner["distribution_cache"].as_str().unwrap()).unwrap();
-            let ros_version = match inner["distribution_type"].as_str().unwrap() {
-                "ros1" => RosVersion::Ros1,
-                "ros2" => RosVersion::Ros2,
-                _ => unimplemented!(),
-            };
-            let python_version = match inner["python_version"].as_i64().unwrap() {
-                2 => PythonVersion::Python2,
-                3 => PythonVersion::Python3,
-                _ => unimplemented!(),
-            };
+        let distros = doc["distributions"]
+            .as_hash()
+            .unwrap()
+            .iter()
+            .map(|(distro_name, inner)| {
+                let name = distro_name.as_str().unwrap().to_string();
+                let status = match inner["distribution_status"].as_str().unwrap() {
+                    "active" => DistroStatus::Active,
+                    "end-of-life" => DistroStatus::EndOfLife,
+                    "rolling" => DistroStatus::Rolling,
+                    _ => unimplemented!(),
+                };
+                let cache = Url::parse(inner["distribution_cache"].as_str().unwrap()).unwrap();
+                let ros_version = match inner["distribution_type"].as_str().unwrap() {
+                    "ros1" => RosVersion::Ros1,
+                    "ros2" => RosVersion::Ros2,
+                    _ => unimplemented!(),
+                };
+                let python_version = match inner["python_version"].as_i64().unwrap() {
+                    2 => PythonVersion::Python2,
+                    3 => PythonVersion::Python3,
+                    _ => unimplemented!(),
+                };
 
-            (
-                name.clone(),
-                RosDistroIndexElement {
-                    name,
-                    status,
-                    cache,
-                    ros_version,
-                    python_version,
-                },
-            )
-        })
-        .collect::<HashMap<_, _>>();
+                (
+                    name.clone(),
+                    RosDistroIndexElement {
+                        name,
+                        status,
+                        cache,
+                        ros_version,
+                        python_version,
+                    },
+                )
+            })
+            .collect::<HashMap<_, _>>();
 
-    Ok(RosDistroIndex { distros })
+        Ok(DistroIndex { distros })
+    }
 }
 
 #[derive(Debug, Clone)]
@@ -135,18 +137,16 @@ pub struct Dependencies {
 }
 
 impl DistroPackages {
-    pub async fn fetch(cfg: Config)
+    pub async fn fetch(cfg: &ConfigRef, url: &Url) -> Result<Self> {
+        let content = fetch_file_cached(cfg, url.clone()).await?;
+        let mut decoder = flate2::read::GzDecoder::new(&content[..]);
+        let mut buf = String::new();
+        decoder.read_to_string(&mut buf)?;
+        parse_distro_packages(cfg, &buf)
+    }
 }
 
-async fn fetch_distro_packages(cfg: ConfigRef, url: &Url) -> Result<DistroPackages> {
-    let content = fetch_file_cached(cfg.clone(), url.clone()).await?;
-    let mut decoder = flate2::read::GzDecoder::new(&content[..]);
-    let mut buf = String::new();
-    decoder.read_to_string(&mut buf)?;
-    parse_distro_packages(cfg.clone(), &buf)
-}
-
-fn parse_distro_packages(cfg: ConfigRef, data: &str) -> Result<DistroPackages> {
+fn parse_distro_packages(cfg: &ConfigRef, data: &str) -> Result<DistroPackages> {
     let docs = YamlLoader::load_from_str(&data)?;
     let doc = &docs[0];
     let distro = &doc["distribution_file"][0];
@@ -182,7 +182,7 @@ fn parse_distro_packages(cfg: ConfigRef, data: &str) -> Result<DistroPackages> {
                 .replace("{version}", version)
                 .replace("{package}", package_name);
             let package_xml_str = doc["release_package_xmls"][package_name].as_str().unwrap();
-            let dependencies = parse_package_xml(cfg.clone(), package_xml_str)?;
+            let dependencies = parse_package_xml(cfg, package_xml_str)?;
             let manifest = PackageManifest {
                 name: package_name.to_string(),
                 release_version: version.to_string(),
@@ -197,7 +197,7 @@ fn parse_distro_packages(cfg: ConfigRef, data: &str) -> Result<DistroPackages> {
     Ok(DistroPackages { packages })
 }
 
-fn parse_package_xml(cfg: ConfigRef, xml_str: &str) -> Result<Dependencies> {
+fn parse_package_xml(cfg: &ConfigRef, xml_str: &str) -> Result<Dependencies> {
     #[derive(Debug, serde::Deserialize)]
     struct Doc {
         version: String,
@@ -260,7 +260,7 @@ mod test {
     async fn test_fetch_distro_index() {
         let cfg = Config::new().into_ref();
         cfg.create_directories().unwrap();
-        let index = fetch_distro_index(cfg).await.unwrap();
+        let index = DistroIndex::fetch(&cfg).await.unwrap();
         println!("{:?}", index);
     }
 
@@ -268,11 +268,10 @@ mod test {
     async fn test_fetch_distro_cache() {
         let cfg = Config::new().into_ref();
         cfg.create_directories().unwrap();
-        let index = fetch_distro_index(cfg.clone()).await.unwrap();
+        let index = DistroIndex::fetch(&cfg).await.unwrap();
         let distro = index.distros.get("jazzy").unwrap();
-        let cache = fetch_distro_packages(cfg.clone(), &distro.cache)
-            .await
-            .unwrap();
-        println!("{:?}", cache);
+        let packages = DistroPackages::fetch(&cfg, &distro.cache).await.unwrap();
+        let first = packages.packages.iter().next().unwrap().1;
+        println!("{:?}", first);
     }
 }

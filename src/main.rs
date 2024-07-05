@@ -3,6 +3,7 @@ use anyhow::Result;
 mod config;
 mod condition;
 mod rosindex;
+mod source;
 
 #[tokio::main]
 async fn main() -> Result<()> {

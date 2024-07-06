@@ -5,10 +5,26 @@ use std::{
 };
 
 use anyhow::{Context as _, Result};
+use log::{debug, info};
 use reqwest::{IntoUrl, Url};
 use yaml_rust2::YamlLoader;
 
 use crate::{condition::eval_condition, config::ConfigRef};
+
+#[derive(Debug, Clone)]
+pub struct DistroIndex {
+    pub distros: BTreeMap<String, PackageIndex>,
+}
+
+#[derive(Debug, Clone)]
+pub struct PackageIndex {
+    pub name: String,
+    pub status: DistroStatus,
+    pub cache_url: Url,
+    pub ros_version: RosVersion,
+    pub python_version: PythonVersion,
+    pub manifests: BTreeMap<String, PackageManifest>,
+}
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum DistroStatus {
@@ -30,31 +46,39 @@ pub enum PythonVersion {
 }
 
 #[derive(Debug, Clone)]
-pub struct RosDistroIndexElement {
+pub struct PackageManifest {
     pub name: String,
-    pub status: DistroStatus,
-    pub cache: Url,
-    pub ros_version: RosVersion,
-    pub python_version: PythonVersion,
+    pub release_version: String,
+    pub description: String,
+    pub repository: String,
+    pub tag: String,
+    pub dependencies: Dependencies,
 }
 
 #[derive(Debug, Clone)]
-pub struct DistroIndex {
-    pub distros: HashMap<String, RosDistroIndexElement>,
+pub struct Dependencies {
+    pub build: BTreeSet<String>,
+    pub build_export: BTreeSet<String>,
+    pub buildtool: BTreeSet<String>,
+    pub buildtool_export: BTreeSet<String>,
+    pub exec: BTreeSet<String>,
+    pub test: BTreeSet<String>,
 }
 
 async fn fetch_file_cached(cfg: &ConfigRef, url: impl IntoUrl) -> Result<Vec<u8>> {
     let url = url.into_url().unwrap();
     let cache_path = cfg
-        .cache_dir
-        .join(url.path_segments().unwrap().last().unwrap());
+    .cache_dir
+    .join(url.path_segments().unwrap().last().unwrap());
     if cache_path.exists() {
+        debug!("cache hit {url}");
         let mut file = File::open(cache_path)?;
         let mut buf = Vec::new();
         file.read_to_end(&mut buf)?;
         return Ok(buf);
     }
 
+    debug!("downloading {url}");
     let response = reqwest::get(url.clone()).await?.error_for_status()?;
     let bytes = response.bytes().await?;
     let mut file = File::create(cache_path)?;
@@ -70,83 +94,64 @@ impl DistroIndex {
         let docs = YamlLoader::load_from_str(&content)?;
         let doc = &docs[0];
 
-        let distros = doc["distributions"]
-            .as_hash()
-            .unwrap()
-            .iter()
-            .map(|(distro_name, inner)| {
-                let name = distro_name.as_str().unwrap().to_string();
-                let status = match inner["distribution_status"].as_str().unwrap() {
-                    "active" => DistroStatus::Active,
-                    "end-of-life" => DistroStatus::EndOfLife,
-                    "rolling" => DistroStatus::Rolling,
-                    _ => unimplemented!(),
-                };
-                let cache = Url::parse(inner["distribution_cache"].as_str().unwrap()).unwrap();
-                let ros_version = match inner["distribution_type"].as_str().unwrap() {
-                    "ros1" => RosVersion::Ros1,
-                    "ros2" => RosVersion::Ros2,
-                    _ => unimplemented!(),
-                };
-                let python_version = match inner["python_version"].as_i64().unwrap() {
-                    2 => PythonVersion::Python2,
-                    3 => PythonVersion::Python3,
-                    _ => unimplemented!(),
-                };
+        let mut distros = BTreeMap::new();
 
-                (
-                    name.clone(),
-                    RosDistroIndexElement {
-                        name,
-                        status,
-                        cache,
-                        ros_version,
-                        python_version,
-                    },
-                )
-            })
-            .collect::<HashMap<_, _>>();
+        for (distro_name, distro) in doc["distributions"].as_hash().unwrap() {
+            let name = distro_name.as_str().unwrap().to_string();
+            let status = match distro["distribution_status"].as_str().unwrap() {
+                "active" => DistroStatus::Active,
+                "end-of-life" => DistroStatus::EndOfLife,
+                "rolling" => DistroStatus::Rolling,
+                _ => unimplemented!(),
+            };
+            let cache = Url::parse(distro["distribution_cache"].as_str().unwrap()).unwrap();
+            let ros_version = match distro["distribution_type"].as_str().unwrap() {
+                "ros1" => RosVersion::Ros1,
+                "ros2" => RosVersion::Ros2,
+                _ => unimplemented!(),
+            };
+            let python_version = match distro["python_version"].as_i64().unwrap() {
+                2 => PythonVersion::Python2,
+                3 => PythonVersion::Python3,
+                _ => unimplemented!(),
+            };
+
+            if ros_version != RosVersion::Ros2 {
+                continue;
+            }
+
+            let manifests = fetch_package_manifests(cfg, &cache).await?;
+
+            distros.insert(
+                name.clone(),
+                PackageIndex {
+                    name,
+                    status,
+                    cache_url: cache,
+                    ros_version,
+                    python_version,
+                    manifests,
+                },
+            );
+        }
 
         Ok(DistroIndex { distros })
     }
 }
 
-#[derive(Debug, Clone)]
-pub struct DistroPackages {
-    packages: BTreeMap<String, PackageManifest>,
+async fn fetch_package_manifests(
+    cfg: &ConfigRef,
+    url: &Url,
+) -> Result<BTreeMap<String, PackageManifest>> {
+    info!("fetching package manifest from {url}");
+    let content = fetch_file_cached(cfg, url.clone()).await?;
+    let mut decoder = flate2::read::GzDecoder::new(&content[..]);
+    let mut buf = String::new();
+    decoder.read_to_string(&mut buf)?;
+    Ok(parse_distro_packages(cfg, &buf)?)
 }
 
-#[derive(Debug, Clone)]
-pub struct PackageManifest {
-    name: String,
-    release_version: String,
-    description: String,
-    repository: String,
-    tag: String,
-    dependencies: Dependencies,
-}
-
-#[derive(Debug, Clone)]
-pub struct Dependencies {
-    build: BTreeSet<String>,
-    build_export: BTreeSet<String>,
-    buildtool: BTreeSet<String>,
-    buildtool_export: BTreeSet<String>,
-    exec: BTreeSet<String>,
-    test: BTreeSet<String>,
-}
-
-impl DistroPackages {
-    pub async fn fetch(cfg: &ConfigRef, url: &Url) -> Result<Self> {
-        let content = fetch_file_cached(cfg, url.clone()).await?;
-        let mut decoder = flate2::read::GzDecoder::new(&content[..]);
-        let mut buf = String::new();
-        decoder.read_to_string(&mut buf)?;
-        parse_distro_packages(cfg, &buf)
-    }
-}
-
-fn parse_distro_packages(cfg: &ConfigRef, data: &str) -> Result<DistroPackages> {
+fn parse_distro_packages(cfg: &ConfigRef, data: &str) -> Result<BTreeMap<String, PackageManifest>> {
     let docs = YamlLoader::load_from_str(&data)?;
     let doc = &docs[0];
     let distro = &doc["distribution_file"][0];
@@ -194,7 +199,7 @@ fn parse_distro_packages(cfg: &ConfigRef, data: &str) -> Result<DistroPackages> 
             packages.insert(package_name.to_string(), manifest);
         }
     }
-    Ok(DistroPackages { packages })
+    Ok(packages)
 }
 
 fn parse_package_xml(cfg: &ConfigRef, xml_str: &str) -> Result<Dependencies> {
@@ -258,20 +263,9 @@ mod test {
 
     #[tokio::test]
     async fn test_fetch_distro_index() {
+        let _ = env_logger::try_init();
         let cfg = Config::new().into_ref();
         cfg.create_directories().unwrap();
-        let index = DistroIndex::fetch(&cfg).await.unwrap();
-        println!("{:?}", index);
-    }
-
-    #[tokio::test]
-    async fn test_fetch_distro_cache() {
-        let cfg = Config::new().into_ref();
-        cfg.create_directories().unwrap();
-        let index = DistroIndex::fetch(&cfg).await.unwrap();
-        let distro = index.distros.get("jazzy").unwrap();
-        let packages = DistroPackages::fetch(&cfg, &distro.cache).await.unwrap();
-        let first = packages.packages.iter().next().unwrap().1;
-        println!("{:?}", first);
+        let _index = DistroIndex::fetch(&cfg).await.unwrap();
     }
 }

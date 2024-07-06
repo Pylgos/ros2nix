@@ -1,4 +1,4 @@
-use std::{collections::HashMap, path::PathBuf, sync::Arc};
+use std::{collections::HashMap, path::{Path, PathBuf}, sync::Arc};
 
 pub struct Config {
     pub cache_dir: PathBuf,
@@ -23,5 +23,11 @@ impl Config {
         std::fs::create_dir_all(&self.cache_dir)
     }
 
-    
+    pub fn cache_dir(&self) -> &Path {
+        &self.cache_dir
+    }
+
+    pub fn env(&self) -> &HashMap<String, String> {
+        &self.env
+    }
 }

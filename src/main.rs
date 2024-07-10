@@ -62,7 +62,7 @@ async fn main_inner() -> Result<()> {
         let sources = fetch_sources(&cfg, package_index).await?;
         let deps = resolve_dependencies(&cfg, &package_index.manifests)?;
         println!("{:?}", deps);
-        nixgen::generate(&cfg, package_index, &sources)?;
+        nixgen::generate(&cfg, package_index, &sources, &deps)?;
     }
 
     Ok(())

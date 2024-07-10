@@ -335,7 +335,7 @@ mod test {
 
     #[tokio::test]
     async fn test_fetch_distro_index() {
-        let _ = env_logger::try_init();
+        tracing_subscriber::fmt::init();
         let cfg = Config::new().into_ref();
         cfg.create_directories().unwrap();
         let _index = DistroIndex::fetch(&cfg).await.unwrap();

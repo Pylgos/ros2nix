@@ -9,13 +9,13 @@ use std::{
 
 use anyhow::{ensure, Result};
 use futures::{stream, StreamExt};
-use log::{debug, info, warn};
 use serde::{Deserialize, Serialize};
 use tokio::{
     process::{Child, Command},
     sync::Mutex,
 };
 use tokio_util::codec::{FramedRead, LinesCodec};
+use tracing::{debug, info, warn};
 
 use crate::{config::ConfigRef, rosindex::PackageIndex};
 
@@ -209,7 +209,7 @@ mod test {
 
     #[tokio::test]
     async fn test_fetch_git() {
-        let _ = env_logger::try_init();
+        tracing_subscriber::fmt::init();
         let url = "https://github.com/ros2-gbp/acado_vendor-release.git";
         Source::fetch_git(url, "master").await.unwrap();
         Source::fetch_git(url, "release/jazzy/acado_vendor/1.0.0-7")

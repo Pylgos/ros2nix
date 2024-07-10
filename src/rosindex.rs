@@ -4,9 +4,10 @@ use std::{
     io::{Read, Write},
 };
 
-use anyhow::{Context as _, Result};
-use log::{debug, info};
+use anyhow::{Context, Result};
 use reqwest::{IntoUrl, Url};
+use serde_roxmltree::Options;
+use tracing::{debug, info};
 use yaml_rust2::YamlLoader;
 
 use crate::{condition::eval_condition, config::ConfigRef};
@@ -52,24 +53,36 @@ pub struct PackageManifest {
     pub description: String,
     pub repository: String,
     pub tag: String,
-    pub dependencies: Dependencies,
+    pub dependencies: RosDependencies,
+    pub member_of_group: BTreeSet<String>,
 }
 
 #[derive(Debug, Clone)]
-pub struct Dependencies {
+pub struct RosDependencies {
     pub build: BTreeSet<String>,
     pub build_export: BTreeSet<String>,
     pub buildtool: BTreeSet<String>,
     pub buildtool_export: BTreeSet<String>,
     pub exec: BTreeSet<String>,
     pub test: BTreeSet<String>,
+    pub group_depend: BTreeSet<String>,
+}
+
+impl RosDependencies {
+    pub fn all_buildtool_deps(&self) -> BTreeSet<String> {
+        &self.buildtool | &self.buildtool_export
+    }
+
+    pub fn all_runtime_deps(&self) -> BTreeSet<String> {
+        &(&self.build | &self.build_export) | &self.exec
+    }
 }
 
 async fn fetch_file_cached(cfg: &ConfigRef, url: impl IntoUrl) -> Result<Vec<u8>> {
     let url = url.into_url().unwrap();
     let cache_path = cfg
-    .cache_dir
-    .join(url.path_segments().unwrap().last().unwrap());
+        .cache_dir()
+        .join(url.path_segments().unwrap().last().unwrap());
     if cache_path.exists() {
         debug!("cache hit {url}");
         let mut file = File::open(cache_path)?;
@@ -120,7 +133,31 @@ impl DistroIndex {
                 continue;
             }
 
-            let manifests = fetch_package_manifests(cfg, &cache).await?;
+            if status == DistroStatus::EndOfLife {
+                continue;
+            }
+
+            let mut env = cfg.env().get(&name).cloned().unwrap_or_default();
+            match ros_version {
+                RosVersion::Ros1 => {
+                    env.insert("ROS_VERSION".to_string(), "1".to_string());
+                    env.insert("ros_version".to_string(), "1".to_string());
+                }
+                RosVersion::Ros2 => {
+                    env.insert("ROS_VERSION".to_string(), "2".to_string());
+                    env.insert("ros_version".to_string(), "2".to_string());
+                }
+            }
+            match python_version {
+                PythonVersion::Python2 => {
+                    env.insert("ROS_PYTHON_VERSION".to_string(), "2".to_string());
+                }
+                PythonVersion::Python3 => {
+                    env.insert("ROS_PYTHON_VERSION".to_string(), "3".to_string());
+                }
+            }
+            env.insert("ROS_DISTRO".to_string(), name.clone());
+            let manifests = fetch_package_manifests(cfg, &cache, &name, &env).await?;
 
             distros.insert(
                 name.clone(),
@@ -142,16 +179,23 @@ impl DistroIndex {
 async fn fetch_package_manifests(
     cfg: &ConfigRef,
     url: &Url,
+    distro_name: &str,
+    env: &HashMap<String, String>,
 ) -> Result<BTreeMap<String, PackageManifest>> {
     info!("fetching package manifest from {url}");
     let content = fetch_file_cached(cfg, url.clone()).await?;
     let mut decoder = flate2::read::GzDecoder::new(&content[..]);
     let mut buf = String::new();
     decoder.read_to_string(&mut buf)?;
-    Ok(parse_distro_packages(cfg, &buf)?)
+    Ok(parse_distro_packages(cfg, &buf, distro_name, env)?)
 }
 
-fn parse_distro_packages(cfg: &ConfigRef, data: &str) -> Result<BTreeMap<String, PackageManifest>> {
+fn parse_distro_packages(
+    cfg: &ConfigRef,
+    data: &str,
+    distro_name: &str,
+    env: &HashMap<String, String>,
+) -> Result<BTreeMap<String, PackageManifest>> {
     let docs = YamlLoader::load_from_str(&data)?;
     let doc = &docs[0];
     let distro = &doc["distribution_file"][0];
@@ -183,11 +227,18 @@ fn parse_distro_packages(cfg: &ConfigRef, data: &str) -> Result<BTreeMap<String,
                 .collect()
         };
         for package_name in repo_packages.into_iter() {
+            let span = tracing::span!(
+                tracing::Level::INFO,
+                "parse package",
+                package = package_name
+            );
+            let _enter = span.enter();
             let tag = tag_template
                 .replace("{version}", version)
                 .replace("{package}", package_name);
             let package_xml_str = doc["release_package_xmls"][package_name].as_str().unwrap();
-            let dependencies = parse_package_xml(cfg, package_xml_str)?;
+            let (member_of_group, dependencies) = parse_package_xml(cfg, package_xml_str, env)
+                .context(format!("failed to parse package.xml of {package_name}"))?;
             let manifest = PackageManifest {
                 name: package_name.to_string(),
                 release_version: version.to_string(),
@@ -195,6 +246,7 @@ fn parse_distro_packages(cfg: &ConfigRef, data: &str) -> Result<BTreeMap<String,
                 repository: url.to_string(),
                 tag,
                 dependencies,
+                member_of_group,
             };
             packages.insert(package_name.to_string(), manifest);
         }
@@ -202,7 +254,11 @@ fn parse_distro_packages(cfg: &ConfigRef, data: &str) -> Result<BTreeMap<String,
     Ok(packages)
 }
 
-fn parse_package_xml(cfg: &ConfigRef, xml_str: &str) -> Result<Dependencies> {
+fn parse_package_xml(
+    cfg: &ConfigRef,
+    xml_str: &str,
+    env: &HashMap<String, String>,
+) -> Result<(BTreeSet<String>, RosDependencies)> {
     #[derive(Debug, serde::Deserialize)]
     struct Doc {
         version: String,
@@ -218,6 +274,12 @@ fn parse_package_xml(cfg: &ConfigRef, xml_str: &str) -> Result<Dependencies> {
         exec_depend: Vec<Dep>,
         #[serde(default)]
         test_depend: Vec<Dep>,
+        #[serde(default)]
+        depend: Vec<Dep>,
+        #[serde(default)]
+        group_depend: Vec<Dep>,
+        #[serde(default)]
+        member_of_group: Vec<String>,
     }
 
     #[derive(Debug, serde::Deserialize)]
@@ -232,7 +294,7 @@ fn parse_package_xml(cfg: &ConfigRef, xml_str: &str) -> Result<Dependencies> {
         let mut result = BTreeSet::new();
         for dep in deps.iter() {
             if let Some(cond) = &dep.condition {
-                if eval_condition(cond, &cfg.env)? {
+                if eval_condition(cond, env)? {
                     result.insert(dep.name.clone());
                 }
             } else {
@@ -243,17 +305,27 @@ fn parse_package_xml(cfg: &ConfigRef, xml_str: &str) -> Result<Dependencies> {
     };
 
     let xml_doc = roxmltree::Document::parse(xml_str)?;
-    let doc: Doc = serde_roxmltree::from_doc(&xml_doc)?;
-    let deps = Dependencies {
-        build: resolve(&doc.build_depend)?,
-        build_export: resolve(&doc.build_export_depend)?,
+    let doc: Doc = serde_roxmltree::defaults()
+        .prefix_attr()
+        .from_doc(&xml_doc)?;
+    let depend = resolve(&doc.depend)?;
+    let deps = RosDependencies {
+        build: resolve(&doc.build_depend)?
+            .union(&depend)
+            .cloned()
+            .collect(),
+        build_export: resolve(&doc.build_export_depend)?
+            .union(&depend)
+            .cloned()
+            .collect(),
         buildtool: resolve(&doc.buildtool_depend)?,
         buildtool_export: resolve(&doc.buildtool_export_depend)?,
-        exec: resolve(&doc.exec_depend)?,
+        exec: resolve(&doc.exec_depend)?.union(&depend).cloned().collect(),
         test: resolve(&doc.test_depend)?,
+        group_depend: resolve(&doc.group_depend)?,
     };
 
-    Ok(deps)
+    Ok((doc.member_of_group.into_iter().collect(), deps))
 }
 
 #[cfg(test)]

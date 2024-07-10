@@ -1,14 +1,16 @@
 use std::collections::HashMap;
 
-use anyhow::{anyhow, bail, ensure, Result};
+use anyhow::{anyhow, bail, ensure, Context as _, Result};
 use lalrpop_util::lalrpop_mod;
-
 
 lalrpop_mod!(condition);
 
 pub fn eval_condition(input: &str, env: &HashMap<String, String>) -> Result<bool> {
     let parser = condition::ConditionParser::new();
-    Ok(parser.parse(env, input).map_err(|e| anyhow!(e.to_string()))?)
+    Ok(parser
+        .parse(env, input)
+        .map_err(|e| anyhow!(e.to_string()))
+        .context(format!("failed to evaluate condition: {input:?}"))?)
 }
 
 fn unquote(s: &str) -> Result<String> {
@@ -28,10 +30,13 @@ fn unquote(s: &str) -> Result<String> {
                 Some('"') => result.push('"'),
                 Some(c) => bail!("invalid escape character: {}", c),
                 None => bail!("unterminated escape sequence"),
-            }
-            Some(c) if c == quote => {
-                ensure!(chars.next().is_none(), "extra characters after closing quote");
             },
+            Some(c) if c == quote => {
+                ensure!(
+                    chars.next().is_none(),
+                    "extra characters after closing quote"
+                );
+            }
             Some(c) => result.push(c),
             None => break,
         }

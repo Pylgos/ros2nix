@@ -2,14 +2,17 @@ use std::collections::BTreeMap;
 
 use anyhow::Result;
 use config::ConfigRef;
+use deps::resolve_dependencies;
 use futures::{future, stream, StreamExt as _};
-use log::warn;
 use rosindex::{DistroIndex, DistroStatus, PackageIndex};
 use source::{Source, SourceCache};
 use tokio::select;
+use tracing::{error, warn};
 
 mod condition;
 mod config;
+mod deps;
+mod nixgen;
 mod rosindex;
 mod source;
 
@@ -47,13 +50,19 @@ pub async fn fetch_sources(
 }
 
 async fn main_inner() -> Result<()> {
-    let cfg = config::Config::new().into_ref();
+    let cfg = config::Config::load("ros2nix.toml")?.into_ref();
     let distro_index = DistroIndex::fetch(&cfg).await?;
     for package_index in distro_index.distros.values() {
         if package_index.status != DistroStatus::Active {
             continue;
         }
+        if package_index.name != "jazzy" {
+            continue;
+        }
         let sources = fetch_sources(&cfg, package_index).await?;
+        let deps = resolve_dependencies(&cfg, &package_index.manifests)?;
+        println!("{:?}", deps);
+        nixgen::generate(&cfg, package_index, &sources)?;
     }
 
     Ok(())
@@ -61,12 +70,10 @@ async fn main_inner() -> Result<()> {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    env_logger::init();
+    tracing_subscriber::fmt::init();
 
     select! {
-        _ = main_inner() => {}
-        _ = tokio::signal::ctrl_c() => {}
+        res = main_inner() => res,
+        _ = tokio::signal::ctrl_c() => anyhow::bail!("ctrl-c"),
     }
-
-    Ok(())
 }

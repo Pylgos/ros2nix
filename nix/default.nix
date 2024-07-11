@@ -1,13 +1,10 @@
-{ lib }:
-final: prev:
+{ lib, distro } @ args:
 
 let
-in {
-  rosPackages = {
-    jazzy = final.makeScopeWithSplicing' {
-      otherSplices = final.generateSplicesForMkScope "rosPackages.jazzy";
-      f = import ./gen/jazzy.nix;
-    };
-  };
-}
-
+  mainOverlay = import ./main-overlay.nix args;
+  systemPackagesOverlay = import ./system-packages-overlay.nix args;
+in
+lib.composeManyExtensions [
+  systemPackagesOverlay
+  mainOverlay
+]

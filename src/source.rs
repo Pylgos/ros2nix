@@ -96,7 +96,7 @@ impl Source {
             serde_json::from_str(&stdout)?
         };
         info!(
-            "git repository fetched {url} {rev_or_branch} {}",
+            "git repository fetched '{url}' '{rev_or_branch}' into '{}'",
             out.path.to_string_lossy()
         );
         Ok(Source {

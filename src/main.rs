@@ -51,6 +51,7 @@ pub async fn fetch_sources(
 
 async fn main_inner() -> Result<()> {
     let cfg = config::Config::load("ros2nix.toml")?.into_ref();
+    cfg.create_directories()?;
     let distro_index = DistroIndex::fetch(&cfg).await?;
     for package_index in distro_index.distros.values() {
         if package_index.status != DistroStatus::Active {
@@ -61,7 +62,7 @@ async fn main_inner() -> Result<()> {
         }
         let sources = fetch_sources(&cfg, package_index).await?;
         let deps = resolve_dependencies(&cfg, &package_index.manifests)?;
-        println!("{:?}", deps);
+        // println!("{:?}", deps);
         nixgen::generate(&cfg, package_index, &sources, &deps)?;
     }
 
@@ -70,7 +71,7 @@ async fn main_inner() -> Result<()> {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    tracing_subscriber::fmt::init();
+    tracing_subscriber::fmt().with_max_level(tracing::Level::DEBUG).init();
 
     select! {
         res = main_inner() => res,

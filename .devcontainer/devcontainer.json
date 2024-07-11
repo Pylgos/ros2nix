@@ -27,7 +27,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "{ echo 'experimental-features = nix-command flakes'; echo 'bash-prompt-prefix = (nix:$name)\\040'; echo 'max-jobs = auto'; } | sudo tee -a /etc/nix/nix.conf"
+	"postCreateCommand": "sudo apt install -y acl && sudo setfacl -k /tmp && { echo 'experimental-features = nix-command flakes'; echo 'bash-prompt-prefix = (nix:$name)\\040'; echo 'max-jobs = auto'; } | sudo tee -a /etc/nix/nix.conf && nix profile install nixpkgs#nix-prefetch-git nixpkgs#nixd nixpkgs#nixfmt-rfc-style"
 
 	// Configure tool-specific properties.
 	// "customizations": {},

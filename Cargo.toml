@@ -6,7 +6,11 @@ build = "build.rs"
 
 [dependencies]
 anyhow = "1.0.86"
-async-compression = { version = "0.4.11", features = ["futures-io", "gzip", "tokio"] }
+async-compression = { version = "0.4.11", features = [
+  "futures-io",
+  "gzip",
+  "tokio",
+] }
 flate2 = "1.0.30"
 futures = "0.3.30"
 futures-io = "0.3.30"

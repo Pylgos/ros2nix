@@ -1,4 +1,4 @@
-{ lib, distro } @ args:
+{ lib, distro }@args:
 
 let
   mainOverlay = import ./main-overlay.nix args;

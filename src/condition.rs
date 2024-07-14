@@ -1,16 +1,16 @@
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 use anyhow::{anyhow, bail, ensure, Context as _, Result};
 use lalrpop_util::lalrpop_mod;
 
 lalrpop_mod!(condition);
 
-pub fn eval_condition(input: &str, env: &HashMap<String, String>) -> Result<bool> {
+pub fn eval_condition(input: &str, env: &BTreeMap<String, String>) -> Result<bool> {
     let parser = condition::ConditionParser::new();
-    Ok(parser
+    parser
         .parse(env, input)
         .map_err(|e| anyhow!(e.to_string()))
-        .context(format!("failed to evaluate condition: {input:?}"))?)
+        .context(format!("failed to evaluate condition: {input:?}"))
 }
 
 fn unquote(s: &str) -> Result<String> {

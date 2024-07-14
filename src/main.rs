@@ -1,13 +1,14 @@
 use std::collections::BTreeMap;
 
 use anyhow::Result;
+use autopatch::autopatch_source;
 use config::ConfigRef;
 use deps::resolve_dependencies;
 use futures::{future, stream, StreamExt as _};
 use rosindex::{DistroIndex, DistroStatus, PackageIndex};
 use source::{Source, SourceCache};
 use tokio::select;
-use tracing::{error, warn};
+use tracing::warn;
 
 mod condition;
 mod config;
@@ -15,6 +16,7 @@ mod deps;
 mod nixgen;
 mod rosindex;
 mod source;
+mod autopatch;
 
 pub async fn fetch_sources(
     cfg: &ConfigRef,
@@ -28,8 +30,8 @@ pub async fn fetch_sources(
             let name = name.clone();
             tokio::spawn(async move {
                 (
-                    name,
-                    cache.fetch_git(&manifest.repository, &manifest.tag).await,
+                    name.clone(),
+                    cache.fetch_git(name.as_str(), &manifest.repository, &manifest.tag).await,
                 )
             })
         })
@@ -62,8 +64,8 @@ async fn main_inner() -> Result<()> {
         }
         let sources = fetch_sources(&cfg, package_index).await?;
         let deps = resolve_dependencies(&cfg, &package_index.manifests)?;
-        // println!("{:?}", deps);
-        nixgen::generate(&cfg, package_index, &sources, &deps)?;
+        let patched_sources = sources.iter().map(|(name, src)| (name.clone(), autopatch_source(src))).collect();
+        nixgen::generate(&cfg, package_index, &patched_sources, &deps)?;
     }
 
     Ok(())

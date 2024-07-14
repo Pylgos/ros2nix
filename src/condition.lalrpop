@@ -1,10 +1,10 @@
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 use super::unquote;
 use lalrpop_util::ParseError;
 use anyhow::Error;
 use tracing::warn;
 
-grammar(env: &HashMap<String, String>);
+grammar(env: &BTreeMap<String, String>);
 
 extern {
     type Error = Error;
@@ -39,8 +39,8 @@ Value: String = {
 
 Literal: String = {
     <r#"[a-zA-Z0-9_\-]+"#> => <>.to_string(),
-    <r#"'(\\.|[^'\\])*'"#> =>? unquote(<>).map_err(|e| ParseError::User { error: e.into() }),
-    <r#""(\\.|[^'\\])*""#> =>? unquote(<>).map_err(|e| ParseError::User { error: e.into() }),
+    <r#"'(\\.|[^'\\])*'"#> =>? unquote(<>).map_err(|e| ParseError::User { error: e }),
+    <r#""(\\.|[^'\\])*""#> =>? unquote(<>).map_err(|e| ParseError::User { error: e }),
 }
 
 Subst: String = {

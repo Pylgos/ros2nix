@@ -1,18 +1,18 @@
 use std::{
-    collections::HashMap,
+    collections::BTreeMap,
     path::{Path, PathBuf},
     sync::Arc,
 };
 
-use anyhow::{anyhow, Result};
+use anyhow::Result;
 use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
 struct ConfigToml {
     cache_dir: Option<String>,
     gen_dir: Option<String>,
-    env: Option<HashMap<String, HashMap<String, String>>>,
-    system_packages: Option<HashMap<String, Vec<String>>>,
+    env: Option<BTreeMap<String, BTreeMap<String, String>>>,
+    system_packages: Option<BTreeMap<String, Vec<String>>>,
 }
 
 impl ConfigToml {
@@ -41,22 +41,24 @@ impl ConfigToml {
 pub struct Config {
     cache_dir: PathBuf,
     gen_dir: PathBuf,
-    env: HashMap<String, HashMap<String, String>>,
-    system_packages: HashMap<String, Vec<String>>,
+    env: BTreeMap<String, BTreeMap<String, String>>,
+    system_packages: BTreeMap<String, Vec<String>>,
 }
 
 pub type ConfigRef = std::sync::Arc<Config>;
 
-impl Config {
-    pub fn new() -> Config {
+impl Default for Config {
+    fn default() -> Self {
         Self {
             cache_dir: PathBuf::from("cache"),
             gen_dir: PathBuf::from("nix/gen"),
-            env: HashMap::new(),
-            system_packages: HashMap::new(),
+            env: BTreeMap::new(),
+            system_packages: BTreeMap::new(),
         }
     }
+}
 
+impl Config {
     pub fn load(path: impl AsRef<Path>) -> Result<Config> {
         ConfigToml::load(path.as_ref())
             .map_err(Into::into)
@@ -81,11 +83,11 @@ impl Config {
         &self.gen_dir
     }
 
-    pub fn env(&self) -> &HashMap<String, HashMap<String, String>> {
+    pub fn env(&self) -> &BTreeMap<String, BTreeMap<String, String>> {
         &self.env
     }
 
-    pub fn system_packages(&self) -> &HashMap<String, Vec<String>> {
+    pub fn system_packages(&self) -> &BTreeMap<String, Vec<String>> {
         &self.system_packages
     }
 }

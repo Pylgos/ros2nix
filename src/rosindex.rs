@@ -1,5 +1,5 @@
 use std::{
-    collections::{BTreeMap, BTreeSet, HashMap, HashSet},
+    collections::{BTreeMap, BTreeSet},
     fs::File,
     io::{Read, Write},
 };
@@ -57,26 +57,71 @@ pub struct PackageManifest {
     pub member_of_group: BTreeSet<String>,
 }
 
+#[derive(Debug, Copy, Clone, PartialEq, Eq, Hash, PartialOrd, Ord)]
+pub enum RosDependencyKind {
+    Build,
+    BuildExport,
+    Buildtool,
+    BuildtoolExport,
+    Exec,
+    Test,
+}
+
+impl RosDependencyKind {
+    pub fn is_buildtool(&self) -> bool {
+        [
+            RosDependencyKind::Buildtool,
+            RosDependencyKind::BuildtoolExport,
+        ]
+        .contains(self)
+    }
+
+    pub fn is_runtime(&self) -> bool {
+        [
+            RosDependencyKind::Build,
+            RosDependencyKind::BuildExport,
+            RosDependencyKind::Exec,
+        ]
+        .contains(self)
+    }
+}
+
+#[derive(Debug, Clone, Hash, PartialEq, Eq, PartialOrd, Ord)]
+pub struct RosDependency {
+    pub name: String,
+    pub kind: RosDependencyKind,
+}
+
 #[derive(Debug, Clone)]
 pub struct RosDependencies {
-    pub build: BTreeSet<String>,
-    pub build_export: BTreeSet<String>,
-    pub buildtool: BTreeSet<String>,
-    pub buildtool_export: BTreeSet<String>,
-    pub exec: BTreeSet<String>,
-    pub test: BTreeSet<String>,
-    pub group_depend: BTreeSet<String>,
+    pub deps: BTreeSet<RosDependency>,
+    pub group_deps: BTreeSet<String>,
 }
 
-impl RosDependencies {
-    pub fn all_buildtool_deps(&self) -> BTreeSet<String> {
-        &self.buildtool | &self.buildtool_export
-    }
+// #[derive(Debug, Clone)]
+// pub struct RosDependencies {
+//     // pub build: BTreeSet<String>,
+//     // pub build_export: BTreeSet<String>,
+//     // pub buildtool: BTreeSet<String>,
+//     // pub buildtool_export: BTreeSet<String>,
+//     // pub exec: BTreeSet<String>,
+//     // pub test: BTreeSet<String>,
+//     // pub group_depend: BTreeSet<String>,
+// }
 
-    pub fn all_runtime_deps(&self) -> BTreeSet<String> {
-        &(&self.build | &self.build_export) | &self.exec
-    }
-}
+// impl RosDependencies {
+// pub fn all_buildtool_deps(&self) -> impl Iterator<Item = &RosDependency> {
+
+// }
+
+// pub fn all_buildtool_deps(&self) -> BTreeSet<String> {
+//     &self.buildtool | &self.buildtool_export
+// }
+
+// pub fn all_runtime_deps(&self) -> BTreeSet<String> {
+//     &(&self.build | &self.build_export) | &self.exec
+// }
+// }
 
 async fn fetch_file_cached(cfg: &ConfigRef, url: impl IntoUrl) -> Result<Vec<u8>> {
     let url = url.into_url().unwrap();
@@ -157,7 +202,7 @@ impl DistroIndex {
                 }
             }
             env.insert("ROS_DISTRO".to_string(), name.clone());
-            let manifests = fetch_package_manifests(cfg, &cache, &name, &env).await?;
+            let manifests = fetch_package_manifests(cfg, &cache, &env).await?;
 
             distros.insert(
                 name.clone(),
@@ -179,24 +224,22 @@ impl DistroIndex {
 async fn fetch_package_manifests(
     cfg: &ConfigRef,
     url: &Url,
-    distro_name: &str,
-    env: &HashMap<String, String>,
+    env: &BTreeMap<String, String>,
 ) -> Result<BTreeMap<String, PackageManifest>> {
     info!("fetching package manifest from {url}");
     let content = fetch_file_cached(cfg, url.clone()).await?;
     let mut decoder = flate2::read::GzDecoder::new(&content[..]);
     let mut buf = String::new();
     decoder.read_to_string(&mut buf)?;
-    Ok(parse_distro_packages(cfg, &buf, distro_name, env)?)
+    parse_distro_packages(cfg, &buf, env)
 }
 
 fn parse_distro_packages(
     cfg: &ConfigRef,
     data: &str,
-    distro_name: &str,
-    env: &HashMap<String, String>,
+    env: &BTreeMap<String, String>,
 ) -> Result<BTreeMap<String, PackageManifest>> {
-    let docs = YamlLoader::load_from_str(&data)?;
+    let docs = YamlLoader::load_from_str(data)?;
     let doc = &docs[0];
     let distro = &doc["distribution_file"][0];
     let mut packages = BTreeMap::new();
@@ -255,13 +298,13 @@ fn parse_distro_packages(
 }
 
 fn parse_package_xml(
-    cfg: &ConfigRef,
+    _cfg: &ConfigRef,
     xml_str: &str,
-    env: &HashMap<String, String>,
+    env: &BTreeMap<String, String>,
 ) -> Result<(BTreeSet<String>, RosDependencies)> {
     #[derive(Debug, serde::Deserialize)]
     struct Doc {
-        version: String,
+        // version: String,
         #[serde(default)]
         build_depend: Vec<Dep>,
         #[serde(default)]
@@ -290,42 +333,53 @@ fn parse_package_xml(
         name: String,
     }
 
-    let resolve = |deps: &Vec<Dep>| -> Result<BTreeSet<String>> {
-        let mut result = BTreeSet::new();
-        for dep in deps.iter() {
-            if let Some(cond) = &dep.condition {
-                if eval_condition(cond, env)? {
-                    result.insert(dep.name.clone());
-                }
-            } else {
-                result.insert(dep.name.clone());
-            }
+    let check_condition = |dep: &Dep| -> bool {
+        if let Some(cond) = &dep.condition {
+            eval_condition(cond, env).unwrap()
+        } else {
+            true
         }
-        Ok(result)
     };
 
     let xml_doc = roxmltree::Document::parse(xml_str)?;
     let doc: Doc = serde_roxmltree::defaults()
         .prefix_attr()
         .from_doc(&xml_doc)?;
-    let depend = resolve(&doc.depend)?;
-    let deps = RosDependencies {
-        build: resolve(&doc.build_depend)?
-            .union(&depend)
-            .cloned()
-            .collect(),
-        build_export: resolve(&doc.build_export_depend)?
-            .union(&depend)
-            .cloned()
-            .collect(),
-        buildtool: resolve(&doc.buildtool_depend)?,
-        buildtool_export: resolve(&doc.buildtool_export_depend)?,
-        exec: resolve(&doc.exec_depend)?.union(&depend).cloned().collect(),
-        test: resolve(&doc.test_depend)?,
-        group_depend: resolve(&doc.group_depend)?,
-    };
 
-    Ok((doc.member_of_group.into_iter().collect(), deps))
+    let deps = [
+        (RosDependencyKind::Build, &doc.build_depend),
+        (RosDependencyKind::BuildExport, &doc.build_export_depend),
+        (RosDependencyKind::Buildtool, &doc.buildtool_depend),
+        (
+            RosDependencyKind::BuildtoolExport,
+            &doc.buildtool_export_depend,
+        ),
+        (RosDependencyKind::Exec, &doc.exec_depend),
+        (RosDependencyKind::Test, &doc.test_depend),
+        (RosDependencyKind::Build, &doc.depend),
+        (RosDependencyKind::BuildExport, &doc.depend),
+        (RosDependencyKind::Exec, &doc.depend),
+    ]
+    .into_iter()
+    .flat_map(|(kind, deps)| {
+        deps.iter()
+            .filter(|dep| check_condition(dep))
+            .map(move |dep| RosDependency {
+                name: dep.name.clone(),
+                kind,
+            })
+    })
+    .collect();
+
+    let group_deps = doc
+        .group_depend
+        .iter()
+        .filter(|dep| check_condition(dep))
+        .map(|d| d.name.clone())
+        .collect();
+    let ros_deps = RosDependencies { deps, group_deps };
+
+    Ok((doc.member_of_group.into_iter().collect(), ros_deps))
 }
 
 #[cfg(test)]
@@ -336,7 +390,7 @@ mod test {
     #[tokio::test]
     async fn test_fetch_distro_index() {
         tracing_subscriber::fmt::init();
-        let cfg = Config::new().into_ref();
+        let cfg = Config::default().into_ref();
         cfg.create_directories().unwrap();
         let _index = DistroIndex::fetch(&cfg).await.unwrap();
     }

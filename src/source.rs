@@ -1,26 +1,23 @@
 use std::{
     collections::BTreeMap,
     fs::File,
-    io::Stderr,
     path::{Path, PathBuf},
     process::{Output, Stdio},
     sync::Arc,
 };
 
 use anyhow::{ensure, Result};
-use futures::{stream, StreamExt};
+use futures::StreamExt;
 use serde::{Deserialize, Serialize};
-use tokio::{
-    process::{Child, Command},
-    sync::Mutex,
-};
+use tokio::process::{Child, Command};
 use tokio_util::codec::{FramedRead, LinesCodec};
 use tracing::{debug, info, warn};
 
-use crate::{config::ConfigRef, rosindex::PackageIndex};
+use crate::config::ConfigRef;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Source {
+    name: String,
     url: String,
     path: PathBuf,
     nar_hash: String,
@@ -28,6 +25,10 @@ pub struct Source {
 }
 
 impl Source {
+    pub fn name(&self) -> &str {
+        &self.name
+    }
+
     pub fn url(&self) -> &str {
         &self.url
     }
@@ -56,7 +57,7 @@ impl Source {
         todo!()
     }
 
-    pub async fn fetch_git(url: &str, rev_or_branch: &str) -> Result<Self> {
+    pub async fn fetch_git(name: &str, url: &str, rev_or_branch: &str) -> Result<Self> {
         #[derive(Debug, Deserialize)]
         struct Out {
             rev: String,
@@ -100,6 +101,7 @@ impl Source {
             out.path.to_string_lossy()
         );
         Ok(Source {
+            name: name.to_string(),
             url: url.to_string(),
             path: out.path,
             nar_hash: out.hash,
@@ -153,7 +155,7 @@ impl SourceCache {
             Err(_) => SourceCacheData::default(),
         };
         SourceCache {
-            path: path,
+            path,
             cache: std::sync::Mutex::new(cache),
         }
     }
@@ -162,7 +164,7 @@ impl SourceCache {
         Arc::new(Self::new(cfg, name))
     }
 
-    pub async fn fetch_git(&self, url: &str, rev_or_branch: &str) -> Result<Source> {
+    pub async fn fetch_git(&self, name: &str, url: &str, rev_or_branch: &str) -> Result<Source> {
         let key = format!("{url} {rev_or_branch}");
         {
             let cache = self.cache.lock().unwrap();
@@ -174,7 +176,7 @@ impl SourceCache {
                 _ => {}
             }
         }
-        let source = Source::fetch_git(url, rev_or_branch).await?;
+        let source = Source::fetch_git(name, url, rev_or_branch).await?;
         let mut cache = self.cache.lock().unwrap();
         cache.git_caches.insert(key, source.clone());
         Ok(source)
@@ -211,10 +213,10 @@ mod test {
     async fn test_fetch_git() {
         tracing_subscriber::fmt::init();
         let url = "https://github.com/ros2-gbp/acado_vendor-release.git";
-        Source::fetch_git(url, "master").await.unwrap();
-        Source::fetch_git(url, "release/jazzy/acado_vendor/1.0.0-7")
+        Source::fetch_git("acado_vendor", url, "master").await.unwrap();
+        Source::fetch_git("acado_vendor", url, "release/jazzy/acado_vendor/1.0.0-7")
             .await
             .unwrap();
-        Source::fetch_git(url, "aaaaaaaa").await.unwrap_err();
+        Source::fetch_git("acado_vendor", url, "aaaaaaaa").await.unwrap_err();
     }
 }

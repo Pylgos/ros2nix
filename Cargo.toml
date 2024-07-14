@@ -14,6 +14,7 @@ async-compression = { version = "0.4.11", features = [
 flate2 = "1.0.30"
 futures = "0.3.30"
 futures-io = "0.3.30"
+indenter = "0.3.3"
 lalrpop-util = { version = "0.20.2", features = ["lexer"] }
 reqwest = "0.12.5"
 roxmltree = "0.20.0"

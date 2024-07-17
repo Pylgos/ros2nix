@@ -161,9 +161,16 @@ fn classify_dependencies(
             })
             .map(|m| m.name.as_str()),
     );
-    definetly_not_buildtools.extend([
-        "ros2test", "ros2run", "rmf_building_map_tools", "rosidl_typesupport_interface", "qt5-qmake", 
-    ].iter());
+    definetly_not_buildtools.extend(
+        [
+            "ros2test",
+            "ros2run",
+            "rmf_building_map_tools",
+            "rosidl_typesupport_interface",
+            "qt5-qmake",
+        ]
+        .iter(),
+    );
 
     let mut both_buildtools_and_runtime = BTreeSet::new();
     both_buildtools_and_runtime.insert("python3");

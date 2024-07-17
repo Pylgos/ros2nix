@@ -384,12 +384,14 @@ fn parse_package_xml(
 
 #[cfg(test)]
 mod test {
+    use tracing::level_filters::LevelFilter;
+
     use super::*;
     use crate::config::Config;
 
     #[tokio::test]
     async fn test_fetch_distro_index() {
-        tracing_subscriber::fmt::init();
+        let _ = tracing_subscriber::fmt().with_max_level(LevelFilter::DEBUG).try_init();
         let cfg = Config::default().into_ref();
         cfg.create_directories().unwrap();
         let _index = DistroIndex::fetch(&cfg).await.unwrap();

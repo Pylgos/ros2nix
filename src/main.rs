@@ -10,13 +10,13 @@ use source::{Source, SourceCache};
 use tokio::select;
 use tracing::warn;
 
+mod autopatch;
 mod condition;
 mod config;
 mod deps;
 mod nixgen;
 mod rosindex;
 mod source;
-mod autopatch;
 
 pub async fn fetch_sources(
     cfg: &ConfigRef,
@@ -31,7 +31,9 @@ pub async fn fetch_sources(
             tokio::spawn(async move {
                 (
                     name.clone(),
-                    cache.fetch_git(name.as_str(), &manifest.repository, &manifest.tag).await,
+                    cache
+                        .fetch_git(name.as_str(), &manifest.repository, &manifest.tag)
+                        .await,
                 )
             })
         })
@@ -64,7 +66,10 @@ async fn main_inner() -> Result<()> {
         }
         let sources = fetch_sources(&cfg, package_index).await?;
         let deps = resolve_dependencies(&cfg, &package_index.manifests)?;
-        let patched_sources = sources.iter().map(|(name, src)| (name.clone(), autopatch_source(src))).collect();
+        let patched_sources = sources
+            .iter()
+            .map(|(name, src)| (name.clone(), autopatch_source(src)))
+            .collect();
         nixgen::generate(&cfg, package_index, &patched_sources, &deps)?;
     }
 
@@ -73,7 +78,9 @@ async fn main_inner() -> Result<()> {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    tracing_subscriber::fmt().with_max_level(tracing::Level::DEBUG).init();
+    tracing_subscriber::fmt()
+        .with_max_level(tracing::Level::DEBUG)
+        .init();
 
     select! {
         res = main_inner() => res,

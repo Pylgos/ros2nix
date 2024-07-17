@@ -1,5 +1,5 @@
 use anyhow::Result;
-use indenter::{indented, Indented};
+use indenter::indented;
 use std::collections::{BTreeMap, BTreeSet};
 use std::fmt::Write;
 use std::io::Write as _;
@@ -11,7 +11,6 @@ use crate::{
     config::ConfigRef,
     deps::NixDependencies,
     rosindex::{PackageIndex, PackageManifest},
-    source::Source,
 };
 
 struct Ctx<'a> {
@@ -39,11 +38,8 @@ fn generate_parameters(ctx: &Ctx, mut dst: impl Write, manifest: &PackageManifes
     let mut params: BTreeSet<_> = ctx.deps[&manifest.name]
         .iter()
         .map(|dep| match spliced_set_name(dep.kind) {
-            Some(set_name) if dep.name.contains(".") => {
-                println!("{set_name} {}", dep.name);
-                set_name
-            }
-            _ => dep.name.split(".").next().unwrap(),
+            Some(set_name) if dep.name.contains('.') => set_name,
+            _ => dep.name.split('.').next().unwrap(),
         })
         .collect();
     params.insert("buildRosPackage");
@@ -69,7 +65,7 @@ fn generate_package_body(ctx: &Ctx, mut dst: impl Write, manifest: &PackageManif
             .filter(|dep| dep.kind == kind && dep.propagated == propagated)
             .map(|dep: &NixDependency| -> String {
                 match spliced_set_name(dep.kind) {
-                    Some(set_name) if dep.name.contains(".") => {
+                    Some(set_name) if dep.name.contains('.') => {
                         format!("{set_name}.{}", dep.name)
                     }
                     _ => dep.name.clone(),
@@ -121,10 +117,9 @@ fn generate_package(ctx: &Ctx, mut dst: impl Write, manifest: &PackageManifest) 
 
 fn generate_package_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
     for (name, manifest) in ctx.package_index.manifests.iter() {
-        let Some(deps) = ctx.deps.get(name) else {
+        if !ctx.deps.contains_key(name) {
             continue;
         };
-        let src = ctx.sources.get(name).unwrap();
         writeln!(dst, "{name} = self.callPackage (")?;
         generate_package(ctx, indented(&mut dst).with_str("  "), manifest)?;
         writeln!(dst, ") {{}};")?;
@@ -138,8 +133,8 @@ fn generate_source_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
             SourceKind::Git { rev } => {
                 writeln!(dst, "{} = fetchGit {{", src.source.name())?;
                 writeln!(dst, "  url = {};", quote(src.source.url()))?;
-                writeln!(dst, "  hash = {};", quote(src.source.nar_hash()))?;
                 writeln!(dst, "  rev = {};", quote(rev))?;
+                writeln!(dst, "  hash = {};", quote(src.source.nar_hash()))?;
                 writeln!(dst, "}};")?;
             }
         }

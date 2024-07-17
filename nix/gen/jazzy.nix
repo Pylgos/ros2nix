@@ -3,6323 +3,6323 @@ let
   sources = self.callPackages ({ fetchZip, fetchGit, substituteSource }: {
     acado_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/acado_vendor-release.git";
-      hash = "sha256-8gA7ZwANcFmzyoc3egAGyB3xpAQlHrs4nK6U1/KanwA=";
       rev = "d4d640fe222daa32943cda8da9e45e859c98111c";
+      hash = "sha256-8gA7ZwANcFmzyoc3egAGyB3xpAQlHrs4nK6U1/KanwA=";
     };
     ackermann_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/ackermann_msgs-release.git";
-      hash = "sha256-zn0jbHQ6PrAlpzAwpr3Tu01dOE8TVcs0XYlTXL0x8wg=";
       rev = "c36723cfed1874827a122ca18bb40401753b0512";
+      hash = "sha256-zn0jbHQ6PrAlpzAwpr3Tu01dOE8TVcs0XYlTXL0x8wg=";
     };
     ackermann_steering_controller = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-D8Z00WbMVHY9mEctgfZ9rT4D+0nk4eP3QenvQ2vsZPQ=";
       rev = "d45d0c072587d83ee9f5dc026d2965b7b40b8cac";
+      hash = "sha256-D8Z00WbMVHY9mEctgfZ9rT4D+0nk4eP3QenvQ2vsZPQ=";
     };
     action_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rcl_interfaces-release.git";
-      hash = "sha256-0XYc90JzsBo5Kqbj1YJl3q/1gyUYZI1G/kewVb/PPWs=";
       rev = "6e0b31e86079a661e1aa4a13cab22c4c5c6a0c73";
+      hash = "sha256-0XYc90JzsBo5Kqbj1YJl3q/1gyUYZI1G/kewVb/PPWs=";
     };
     action_tutorials_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-N/IJQm5XhIM0dZIVhhYbQG2nBR2KkE6nW41RfIDIxmk=";
       rev = "921bfebbda26dcc7087ea9ef5e7c63219860426b";
+      hash = "sha256-N/IJQm5XhIM0dZIVhhYbQG2nBR2KkE6nW41RfIDIxmk=";
     };
     action_tutorials_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-yfWyue6LUQAXqSPBfhpeFfsq5VLyCiGIRs/sHP2ados=";
       rev = "9f4a74303f417ee9b148c2123a7caf06e93d84de";
+      hash = "sha256-yfWyue6LUQAXqSPBfhpeFfsq5VLyCiGIRs/sHP2ados=";
     };
     action_tutorials_py = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-SGXRECw8BNCknu/StKfvYKoVPdrcOOUqrQMLVD6BAmM=";
       rev = "9fe78fa9ead21d853aa4236e31c8b2f252a370c4";
+      hash = "sha256-SGXRECw8BNCknu/StKfvYKoVPdrcOOUqrQMLVD6BAmM=";
     };
     actionlib_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/common_interfaces-release.git";
-      hash = "sha256-W5qtKfERMOml/Kju3tQbLWR1kBr0jb2InsRMwMFDQwE=";
       rev = "e5ca8552eb6cf8f1a9006a91eba15929fb78e5c9";
+      hash = "sha256-W5qtKfERMOml/Kju3tQbLWR1kBr0jb2InsRMwMFDQwE=";
     };
     actuator_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/actuator_msgs-release.git";
-      hash = "sha256-euXTvPVaV7xPFXP/lH9jg2S87V9DyFmp1EwJVlF7AVs=";
       rev = "5b3260652e5c325a328b021361985c4ef8b508f8";
+      hash = "sha256-euXTvPVaV7xPFXP/lH9jg2S87V9DyFmp1EwJVlF7AVs=";
     };
     adaptive_component = fetchGit {
       url = "https://github.com/ros2-gbp/adaptive_component-release.git";
-      hash = "sha256-W7/vGlSCfAW+RH7nsv4Po+MFZLDvwzuq/iSATbF9jaQ=";
       rev = "d9dd18ab639552e3a078a7ee900a99583d7368b7";
+      hash = "sha256-W7/vGlSCfAW+RH7nsv4Po+MFZLDvwzuq/iSATbF9jaQ=";
     };
     admittance_controller = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-aucDuay1HbtHxixnjpcBxk7GuwrZvEp+6AEmidT6LmU=";
       rev = "683a9a5de64e923de4a9211da03d321ec66464e7";
+      hash = "sha256-aucDuay1HbtHxixnjpcBxk7GuwrZvEp+6AEmidT6LmU=";
     };
     ament_acceleration = fetchGit {
       url = "https://github.com/ros2-gbp/ament_acceleration-release.git";
-      hash = "sha256-tnkilfsTlrhC8xcFlu9E8VIt8hGsNKCcdD53KV8JRac=";
       rev = "7e0cf4e578a5509e687bb9e0f36398e0334a0e62";
+      hash = "sha256-tnkilfsTlrhC8xcFlu9E8VIt8hGsNKCcdD53KV8JRac=";
     };
     ament_black = fetchGit {
       url = "https://github.com/ros2-gbp/ament_black-release.git";
-      hash = "sha256-iiaYQXm/NThNO/Whm7mnXwjMt8Tv0BadacnpthQ+t8g=";
       rev = "73e6e5960fec6b5a0813c03c0409769ac414f871";
+      hash = "sha256-iiaYQXm/NThNO/Whm7mnXwjMt8Tv0BadacnpthQ+t8g=";
     };
     ament_clang_format = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-5I1qvVL1RNpJvCZa9P5A6+XVad0TvhYEHISldjxpZ2I=";
       rev = "108127c8819c5e591ef89309ddea19d561a93915";
+      hash = "sha256-5I1qvVL1RNpJvCZa9P5A6+XVad0TvhYEHISldjxpZ2I=";
     };
     ament_clang_tidy = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-rWZZKEhMo2MePoR630azSKSYAafpV2ROQHjQD7//L1E=";
       rev = "657a7ead01403d54af1ac7aae3f4fafceac09927";
+      hash = "sha256-rWZZKEhMo2MePoR630azSKSYAafpV2ROQHjQD7//L1E=";
     };
     ament_cmake = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-gzQNWAvMJZnaye/yRxtOMu6m3v+iBzdymPJUA6gL8sc=";
       rev = "4b7f3ca2b9f7d14c4393c82a62b0c55768e3ac01";
+      hash = "sha256-gzQNWAvMJZnaye/yRxtOMu6m3v+iBzdymPJUA6gL8sc=";
     };
     ament_cmake_auto = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-J1If3cVNRWqrWW421Z2KTDE+gW7Pv1WE7XveHX1N9XE=";
       rev = "7181c7fb46a89e026993ea016ab54889b3cdcc75";
+      hash = "sha256-J1If3cVNRWqrWW421Z2KTDE+gW7Pv1WE7XveHX1N9XE=";
     };
     ament_cmake_black = fetchGit {
       url = "https://github.com/ros2-gbp/ament_black-release.git";
-      hash = "sha256-+J4lUnp6nAP4gCaqIpWUixT404dEjDK07Dw7xcjhjEo=";
       rev = "0619d0836621763525160d811ee56d77d318642e";
+      hash = "sha256-+J4lUnp6nAP4gCaqIpWUixT404dEjDK07Dw7xcjhjEo=";
     };
     ament_cmake_catch2 = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake_catch2-release.git";
-      hash = "sha256-PFP5trdCmO4MmGg8CFeK0nTgMWRn+XQN2Z92TWyddYk=";
       rev = "99c9bf4fa0edf16c1ea0099598cf03eeb6793d6b";
+      hash = "sha256-PFP5trdCmO4MmGg8CFeK0nTgMWRn+XQN2Z92TWyddYk=";
     };
     ament_cmake_clang_format = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-XgbrX57vRIqCL+mko/GGENqmmDq9upqlbL4SRF9DHmQ=";
       rev = "860fa42aed1207f1c5555f90b3f8f8972fda89de";
+      hash = "sha256-XgbrX57vRIqCL+mko/GGENqmmDq9upqlbL4SRF9DHmQ=";
     };
     ament_cmake_clang_tidy = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-4ZgjaZqJQsEHsalfHbssmhm/5Hx+sM1L+BWEMkKOds4=";
       rev = "562390b923d85145a6adf9531e3a9f3a9e2422a4";
+      hash = "sha256-4ZgjaZqJQsEHsalfHbssmhm/5Hx+sM1L+BWEMkKOds4=";
     };
     ament_cmake_copyright = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-t0vY5c9Qog/0tjpoeXMzi90mG3EGT93frRtS4CWiCok=";
       rev = "1b5882814156bc618855e3ea600b8956676362c9";
+      hash = "sha256-t0vY5c9Qog/0tjpoeXMzi90mG3EGT93frRtS4CWiCok=";
     };
     ament_cmake_core = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-czHzCWezSznFjt0r10mEYbLNbFkZ1CoUf8QbjrZfsMM=";
       rev = "65ace2e56e472ed3b69364bd4fd7c652d752b15c";
+      hash = "sha256-czHzCWezSznFjt0r10mEYbLNbFkZ1CoUf8QbjrZfsMM=";
     };
     ament_cmake_cppcheck = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-LQPg2oJF0/bIp0FvFMLWVNZfmW0Bka5DQlsufV23qJk=";
       rev = "d180989000970b2979d9d6d84f76c6171ee9ab20";
+      hash = "sha256-LQPg2oJF0/bIp0FvFMLWVNZfmW0Bka5DQlsufV23qJk=";
     };
     ament_cmake_cpplint = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-pBDS27G8OZtNMGWRys5PY5uEpQLUn8qWxAiT02sJa9Y=";
       rev = "d2d1a8273bf0a2d803a1888153ce6bebc766162f";
+      hash = "sha256-pBDS27G8OZtNMGWRys5PY5uEpQLUn8qWxAiT02sJa9Y=";
     };
     ament_cmake_export_definitions = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-gjA5vE6MoQRHBoArre5vwo9dhBcSweurSOa5duKj4CM=";
       rev = "d05333c9e98e9d54210b9129da24398da08b5a93";
+      hash = "sha256-gjA5vE6MoQRHBoArre5vwo9dhBcSweurSOa5duKj4CM=";
     };
     ament_cmake_export_dependencies = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-S1tYBjIjvtfJCrfis6oUq5wEgO6kpa3y9j3GMIeLk/k=";
       rev = "41aa3c8243d4e647aa120fc636b29dcf528a5ead";
+      hash = "sha256-S1tYBjIjvtfJCrfis6oUq5wEgO6kpa3y9j3GMIeLk/k=";
     };
     ament_cmake_export_include_directories = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-smMbUeou3dpMhMS5gn+ZPqsO/wWZjHj9ZnZRNi9tJOQ=";
       rev = "285da55baa18a327b0357d4c192e2ac34b1758fe";
+      hash = "sha256-smMbUeou3dpMhMS5gn+ZPqsO/wWZjHj9ZnZRNi9tJOQ=";
     };
     ament_cmake_export_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-sDA4rGTnnDRsk4XYW/+Y8jSyj2g7TYH504sBEHlP8Gc=";
       rev = "701c75f89e3ec2cc9acf0b3a5273bba9a3c398e7";
+      hash = "sha256-sDA4rGTnnDRsk4XYW/+Y8jSyj2g7TYH504sBEHlP8Gc=";
     };
     ament_cmake_export_libraries = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-hyHKyrC0qCPmU61i5XbCz/A9iZ2EcUz6pBZSxa76gio=";
       rev = "72f229348f16dbece6e2541f6076e74d538810be";
+      hash = "sha256-hyHKyrC0qCPmU61i5XbCz/A9iZ2EcUz6pBZSxa76gio=";
     };
     ament_cmake_export_link_flags = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-vpjLsmo6PirL73NMhMciK26tYWpc1YbIU/6+BnXFnVo=";
       rev = "b46ce25edae48db6e13008a86eda21f2765316c2";
+      hash = "sha256-vpjLsmo6PirL73NMhMciK26tYWpc1YbIU/6+BnXFnVo=";
     };
     ament_cmake_export_targets = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-V36nAdHMYOoJg7ayBiAI9qReleGkG2O0LiTFO95nUFI=";
       rev = "521a7f65f30443a6a6fd9111d5d4b248c34064a6";
+      hash = "sha256-V36nAdHMYOoJg7ayBiAI9qReleGkG2O0LiTFO95nUFI=";
     };
     ament_cmake_flake8 = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-SCdCrbKNNBaJoq/MO+4HEbgR8sQXfX53Vy/VzHV1Ik0=";
       rev = "110a8ccfb5bfba1912d63c37f13c8fb0db504ccd";
+      hash = "sha256-SCdCrbKNNBaJoq/MO+4HEbgR8sQXfX53Vy/VzHV1Ik0=";
     };
     ament_cmake_gen_version_h = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-iM53Ds+Bz5kGrOaojMYc5LUlYCIwksTXl8n7BsYvaAE=";
       rev = "a7e9cce7b0c6f8b0600d338112c98fe5cbf1da59";
+      hash = "sha256-iM53Ds+Bz5kGrOaojMYc5LUlYCIwksTXl8n7BsYvaAE=";
     };
     ament_cmake_gmock = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-p/ujgJpEj8qGsnCzolischryGUnC4CVUFElTuHwJsLc=";
       rev = "dcd47081d7ad3bdf2aec1c295a33529487ad49e2";
+      hash = "sha256-p/ujgJpEj8qGsnCzolischryGUnC4CVUFElTuHwJsLc=";
     };
     ament_cmake_google_benchmark = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-3R3pYhCRVi6AFjNR7zQupuFKUNA0p1kv6xnew6hXOtc=";
       rev = "304fb5c4cd27736a60362d7971c8c00cb9ce92a3";
+      hash = "sha256-3R3pYhCRVi6AFjNR7zQupuFKUNA0p1kv6xnew6hXOtc=";
     };
     ament_cmake_gtest = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-YciA2zVQz/s8E5H9riC/gXb6pQGowQ9dbPIxQxhqACk=";
       rev = "1449389d4509d65830ab164cce5700edd6d800f4";
+      hash = "sha256-YciA2zVQz/s8E5H9riC/gXb6pQGowQ9dbPIxQxhqACk=";
     };
     ament_cmake_include_directories = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-m7C19IgcnFCEtnA/+gVZbGApP2NLZahyJsKRDopJ2RU=";
       rev = "338e259eab15b52d18c2957fbdacd74df92a2e9d";
+      hash = "sha256-m7C19IgcnFCEtnA/+gVZbGApP2NLZahyJsKRDopJ2RU=";
     };
     ament_cmake_libraries = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-qPsh1jLploxTcx7YSm921jfl/hTLS7rfyYoeg8VB8g4=";
       rev = "4f19452769a2137a73e98f1af2a4da29d907fbd3";
+      hash = "sha256-qPsh1jLploxTcx7YSm921jfl/hTLS7rfyYoeg8VB8g4=";
     };
     ament_cmake_lint_cmake = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-sYyP+R1o6szZhGnxGRhLcJa9nD6UKY98iFHIp+1ElH4=";
       rev = "f0e89fa066b9cdf407170c6debc0f8f655dab2c6";
+      hash = "sha256-sYyP+R1o6szZhGnxGRhLcJa9nD6UKY98iFHIp+1ElH4=";
     };
     ament_cmake_mypy = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-bEBmui69Fivty7/hw53LagD0lrC9qHgSMMkYZQUzKRE=";
       rev = "705ae426f665fa378fe2b962bf460bb85426f6d8";
+      hash = "sha256-bEBmui69Fivty7/hw53LagD0lrC9qHgSMMkYZQUzKRE=";
     };
     ament_cmake_pclint = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-+z9pHdy7Qbg/M9gZwkH5b3ZxkoTFPhe10AO3sfjvn1I=";
       rev = "4598f7358b2566f461b4efa944ecdfb9c7c2c050";
+      hash = "sha256-+z9pHdy7Qbg/M9gZwkH5b3ZxkoTFPhe10AO3sfjvn1I=";
     };
     ament_cmake_pep257 = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-KK/puCJaueNmVkNyucowZFhyXcoPwB0/qUkqDOjMygg=";
       rev = "a8ecb6e0dad421016fe3b344893d99df5b5a266a";
+      hash = "sha256-KK/puCJaueNmVkNyucowZFhyXcoPwB0/qUkqDOjMygg=";
     };
     ament_cmake_pycodestyle = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-NZlTgSZUwDO2wYr58UHvavY/enyZAFV6GsQjKSmgqg8=";
       rev = "f40575f5f47905d401902fe267dd018eb3529c4b";
+      hash = "sha256-NZlTgSZUwDO2wYr58UHvavY/enyZAFV6GsQjKSmgqg8=";
     };
     ament_cmake_pyflakes = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-/QXs6c3/sXVRznCZn4kS971pF5f53YHe1YXy8NqjY3Y=";
       rev = "d6c4463ac1ae85b3a4ec01f4fc1dcc28ae68cbbe";
+      hash = "sha256-/QXs6c3/sXVRznCZn4kS971pF5f53YHe1YXy8NqjY3Y=";
     };
     ament_cmake_pytest = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-EvqH8/HvE1+IJq3aMPtqxAAhZ2i80nVL92brdBZ9OlA=";
       rev = "fc58ed5a63f318a04230054b00827529e7bd2666";
+      hash = "sha256-EvqH8/HvE1+IJq3aMPtqxAAhZ2i80nVL92brdBZ9OlA=";
     };
     ament_cmake_python = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-pBQquv6pNDPWHZ5Bd454RyTXLa1f+h81olEcIzDZeWM=";
       rev = "3af1fe8eeb1cd05a19e9d35d2356247b3277c576";
+      hash = "sha256-pBQquv6pNDPWHZ5Bd454RyTXLa1f+h81olEcIzDZeWM=";
     };
     ament_cmake_ros = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake_ros-release.git";
-      hash = "sha256-tT6X6MXP8iTsdlyNk33jdPbZZT+sWXvuIn8cTnvTYyw=";
       rev = "3e2e92d82c1ae9b9a284684ae48601bfa3ca32fe";
+      hash = "sha256-tT6X6MXP8iTsdlyNk33jdPbZZT+sWXvuIn8cTnvTYyw=";
     };
     ament_cmake_target_dependencies = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-c+d56mCQKkjI9H5j8MPgUKeP1SUkn1HGUo/sIGYd5gQ=";
       rev = "20e71e7c06a7595eccc6abacae9aff75dcf0ce6b";
+      hash = "sha256-c+d56mCQKkjI9H5j8MPgUKeP1SUkn1HGUo/sIGYd5gQ=";
     };
     ament_cmake_test = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-RKywy1QY2j4gqIjiM79unPTrERgcjW3AdJihPKnwYpk=";
       rev = "4a2003a2e58c6c07a8c787f049431907f2c95d5d";
+      hash = "sha256-RKywy1QY2j4gqIjiM79unPTrERgcjW3AdJihPKnwYpk=";
     };
     ament_cmake_uncrustify = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-GG2ciHIKYUTdWdMbrZrc0wGNOCd5BuePogbKcQPF7Og=";
       rev = "6296ed02fa5fa9a16d242bb7bdc750ab964031e8";
+      hash = "sha256-GG2ciHIKYUTdWdMbrZrc0wGNOCd5BuePogbKcQPF7Og=";
     };
     ament_cmake_vendor_package = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-KkTE1QQazWtE0GfTss356rNFZaYbrqRkSkq8CMhAeU8=";
       rev = "97482c1209ed7cf762456a67198edcbfe360e6ea";
+      hash = "sha256-KkTE1QQazWtE0GfTss356rNFZaYbrqRkSkq8CMhAeU8=";
     };
     ament_cmake_version = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake-release.git";
-      hash = "sha256-BVd7jyhX4TNgCF1a1mrSGI9AfEqbvfezA+3m6IrykIA=";
       rev = "32420daf26d8fad29ef3e22789b21693b90d0cfb";
+      hash = "sha256-BVd7jyhX4TNgCF1a1mrSGI9AfEqbvfezA+3m6IrykIA=";
     };
     ament_cmake_xmllint = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-3B93teFzxO0437/wDohxprbq6i18PRBswRfYFL4fBQc=";
       rev = "8013b5d9a21161b181346c568df60d37d7aac2fd";
+      hash = "sha256-3B93teFzxO0437/wDohxprbq6i18PRBswRfYFL4fBQc=";
     };
     ament_copyright = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-LVeMfca8EQ5mvYuUo13PqnkllrAvlbUo0VOev/twp4k=";
       rev = "f654101da3cf1def189f0c17a520ae92f28798bd";
+      hash = "sha256-LVeMfca8EQ5mvYuUo13PqnkllrAvlbUo0VOev/twp4k=";
     };
     ament_cppcheck = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-rtc/wzp1wQPM+3yI94fIAuVRFAfAjqXMWBcyjktb09Q=";
       rev = "4865eb9b002730f58409ab27dabc50c3efed6cd3";
+      hash = "sha256-rtc/wzp1wQPM+3yI94fIAuVRFAfAjqXMWBcyjktb09Q=";
     };
     ament_cpplint = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-13KjfdbDXUhNFxtNJI4LCKRBjlVB1sw/ZlnAOK4FJ9c=";
       rev = "11877123f5f285c0dbdd8a5aa4ae6bea6d238cf6";
+      hash = "sha256-13KjfdbDXUhNFxtNJI4LCKRBjlVB1sw/ZlnAOK4FJ9c=";
     };
     ament_download = fetchGit {
       url = "https://github.com/ros2-gbp/ament_download-release.git";
-      hash = "sha256-6V9DhJraMIbNz3xeSeczpOFyaWgBqKsz2vQV4jFl6qk=";
       rev = "6ce6469292c63e6bc20f3e38a9062b0a027f92e4";
+      hash = "sha256-6V9DhJraMIbNz3xeSeczpOFyaWgBqKsz2vQV4jFl6qk=";
     };
     ament_flake8 = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-0sUE60ee36OXnMpBjLcxwpNlozQqWJUTo5BI9/c2Wfo=";
       rev = "14de142529f6aec081b365637f2683109321440d";
+      hash = "sha256-0sUE60ee36OXnMpBjLcxwpNlozQqWJUTo5BI9/c2Wfo=";
     };
     ament_index_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/ament_index-release.git";
-      hash = "sha256-ytQU6fmD13UGKlhbYq0WhC1KBdHZXHsuK7M+iNihXkk=";
       rev = "3c5dd9ddaad1ddb13eb85b7daa7c117fc8b5bf87";
+      hash = "sha256-ytQU6fmD13UGKlhbYq0WhC1KBdHZXHsuK7M+iNihXkk=";
     };
     ament_index_python = fetchGit {
       url = "https://github.com/ros2-gbp/ament_index-release.git";
-      hash = "sha256-7lIMorXGjQYthb0K4PtdrLSyjiRuLQ9ixmanpMqP83Y=";
       rev = "86457bacaeec03825e194c05e908a6fb2f9a6061";
+      hash = "sha256-7lIMorXGjQYthb0K4PtdrLSyjiRuLQ9ixmanpMqP83Y=";
     };
     ament_lint = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-dEz6J1YJhhpuCG2qc+Su536EpeXGuwXmQ4E86mfZfzE=";
       rev = "743e72f2a5a406d647dceeeaec8e201cceebe378";
+      hash = "sha256-dEz6J1YJhhpuCG2qc+Su536EpeXGuwXmQ4E86mfZfzE=";
     };
     ament_lint_auto = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-cTEKLki3mpr0mnz11IYBahCl0Pn7oWCg5BfIwzUCvU4=";
       rev = "9dfbe5dc5dc7367e57c8df22283e0a2d9c674511";
+      hash = "sha256-cTEKLki3mpr0mnz11IYBahCl0Pn7oWCg5BfIwzUCvU4=";
     };
     ament_lint_cmake = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-cWsd6T6EZHCvf1Sq4AKa4T06mJtVRx4JmC0SjOXzd3Q=";
       rev = "3fc981134ac46aeb042d8b45314d95125f9c21ca";
+      hash = "sha256-cWsd6T6EZHCvf1Sq4AKa4T06mJtVRx4JmC0SjOXzd3Q=";
     };
     ament_lint_common = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-y1nInGXgD+QW8FS3gjyXLux8o14wuUPgSjxWuTYjWjk=";
       rev = "607c45944545b8bfa53eac102eaaa82108f8ea27";
+      hash = "sha256-y1nInGXgD+QW8FS3gjyXLux8o14wuUPgSjxWuTYjWjk=";
     };
     ament_mypy = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-hM3pes968NZW++cG6X/0jH3kUejkInacRxaXCI3p994=";
       rev = "ee3cc105753726632d19cc5772a9ad3ca859010b";
+      hash = "sha256-hM3pes968NZW++cG6X/0jH3kUejkInacRxaXCI3p994=";
     };
     ament_nodl = fetchGit {
       url = "https://github.com/ros2-gbp/ament_nodl-release.git";
-      hash = "sha256-9azhFZrnSaHJiIRFdPiDTiDO3j2v3eKxQBNdAEFwd5A=";
       rev = "87296f88baceaac5b561ecdd0e95240673ea8044";
+      hash = "sha256-9azhFZrnSaHJiIRFdPiDTiDO3j2v3eKxQBNdAEFwd5A=";
     };
     ament_package = fetchGit {
       url = "https://github.com/ros2-gbp/ament_package-release.git";
-      hash = "sha256-UQTsrOgp2aSxuorO8p8yEInpzIOb5c6+s5Jp1F/FD9c=";
       rev = "70ffe60211c4feae5e780e5bc95e169d2f79e7ec";
+      hash = "sha256-UQTsrOgp2aSxuorO8p8yEInpzIOb5c6+s5Jp1F/FD9c=";
     };
     ament_pclint = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-mzVi+tRmtmtS69433ykdGKWc7EHM0VAGC9f6zdo4teQ=";
       rev = "725f2afddf9bf67ccb21defb0b368e4810f3c381";
+      hash = "sha256-mzVi+tRmtmtS69433ykdGKWc7EHM0VAGC9f6zdo4teQ=";
     };
     ament_pep257 = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-AeV5aRu0D5pK6O5Ywq4FIEho2kkeDb++umzFTgOkrAQ=";
       rev = "0bb71d571b221aeb287068c94187568fd9056cda";
+      hash = "sha256-AeV5aRu0D5pK6O5Ywq4FIEho2kkeDb++umzFTgOkrAQ=";
     };
     ament_pycodestyle = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-zY+5b5O+jZjQSE7zTWrWth8dDUlmpeCRiCBSCFR1Xbg=";
       rev = "6bef8f6c1ad417071b10bf2c6204134822cc74dc";
+      hash = "sha256-zY+5b5O+jZjQSE7zTWrWth8dDUlmpeCRiCBSCFR1Xbg=";
     };
     ament_pyflakes = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-KMHU5aqi9tt95GgtqbB7obYtSAUxzWzR/UFQhILKkdk=";
       rev = "1862376009b02b5088acb8ac300da55e65394d8a";
+      hash = "sha256-KMHU5aqi9tt95GgtqbB7obYtSAUxzWzR/UFQhILKkdk=";
     };
     ament_uncrustify = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-zLma8lPxGUpuHaQSfwEtRY4npt/4bNCOHQbjmYWevgQ=";
       rev = "4b95da7542ecd4e0178956e8067b78be8c9588b8";
+      hash = "sha256-zLma8lPxGUpuHaQSfwEtRY4npt/4bNCOHQbjmYWevgQ=";
     };
     ament_vitis = fetchGit {
       url = "https://github.com/ros2-gbp/ament_vitis-release.git";
-      hash = "sha256-Na2vZDmx1yo4NFMDS9mmn1De1NRtjjs953gSAHRCxtc=";
       rev = "270441817e4e65c986495b325a82f04e7e51c926";
+      hash = "sha256-Na2vZDmx1yo4NFMDS9mmn1De1NRtjjs953gSAHRCxtc=";
     };
     ament_xmllint = fetchGit {
       url = "https://github.com/ros2-gbp/ament_lint-release.git";
-      hash = "sha256-hEPWBk0jFXWmN31PEl3WknzxY1V5ToOead2AJ1xNJUA=";
       rev = "e9ba8180050ef6c9cc988053dc002c12a649d3f9";
+      hash = "sha256-hEPWBk0jFXWmN31PEl3WknzxY1V5ToOead2AJ1xNJUA=";
     };
     angles = fetchGit {
       url = "https://github.com/ros2-gbp/angles-release.git";
-      hash = "sha256-l4xIXnIMoWmTEkIubTtt1g/NZdI+H9zvYXd0izyPAKw=";
       rev = "9192c8b6ce21463dcfb1afdb7312257603f34d11";
+      hash = "sha256-l4xIXnIMoWmTEkIubTtt1g/NZdI+H9zvYXd0izyPAKw=";
     };
     apex_test_tools = fetchGit {
       url = "https://github.com/ros2-gbp/apex_test_tools-release.git";
-      hash = "sha256-vrX5LngYVt0Fxd0td4idUCVPg+j96W7S07zUG/lM8W4=";
       rev = "1de070b1ce7d0efb9a77e69eac2e17a3f1f3d212";
+      hash = "sha256-vrX5LngYVt0Fxd0td4idUCVPg+j96W7S07zUG/lM8W4=";
     };
     apriltag = fetchGit {
       url = "https://github.com/ros2-gbp/apriltag-release.git";
-      hash = "sha256-gh98hPfxaAHqN4iEbnlYrBGpiD9urWJSo4Qg5OZgfgE=";
       rev = "630ac8b64c23ee222b1ccc070efe20af30497908";
+      hash = "sha256-gh98hPfxaAHqN4iEbnlYrBGpiD9urWJSo4Qg5OZgfgE=";
     };
     apriltag_detector = fetchGit {
       url = "https://github.com/ros2-gbp/apriltag_detector-release.git";
-      hash = "sha256-jOHnmzOSEBudRKyE4FGX5VDw7JIfjVJ2gcmiwcNz4jQ=";
       rev = "4793979b66ea90f82cabfea99db22a25a732e435";
+      hash = "sha256-jOHnmzOSEBudRKyE4FGX5VDw7JIfjVJ2gcmiwcNz4jQ=";
     };
     apriltag_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/apriltag_msgs-release.git";
-      hash = "sha256-8gmaJqHmANuH5XDGCZ8C29KjCY7QKQ8r2DSpl1jxp20=";
       rev = "c9eedd48ea144914fc93feeb56812322635a8782";
+      hash = "sha256-8gmaJqHmANuH5XDGCZ8C29KjCY7QKQ8r2DSpl1jxp20=";
     };
     apriltag_ros = fetchGit {
       url = "https://github.com/ros2-gbp/apriltag_ros-release.git";
-      hash = "sha256-1BAPfaLgYZ+JV3LFidzL5IOnM4wd7fvcXNRkAzCyZU4=";
       rev = "1f0ff6ec7df749994976a6c7df51b3bfdf954763";
+      hash = "sha256-1BAPfaLgYZ+JV3LFidzL5IOnM4wd7fvcXNRkAzCyZU4=";
     };
     aruco = fetchGit {
       url = "https://github.com/pal-gbp/aruco_ros-release.git";
-      hash = "sha256-3Foblmp2VasqOKhDmgA7heDxnleqT6Pqnk7dXajdiE4=";
       rev = "1420fb9dbc4427826b9ba9b29c78d8a9905d0397";
+      hash = "sha256-3Foblmp2VasqOKhDmgA7heDxnleqT6Pqnk7dXajdiE4=";
     };
     aruco_msgs = fetchGit {
       url = "https://github.com/pal-gbp/aruco_ros-release.git";
-      hash = "sha256-EUZsF13naoL/xNnzsHHJmDuodN/Bb15EI1Pc+ZV2bHk=";
       rev = "dd365b8b0a63b154ef602fb3405829342398996f";
+      hash = "sha256-EUZsF13naoL/xNnzsHHJmDuodN/Bb15EI1Pc+ZV2bHk=";
     };
     aruco_opencv = fetchGit {
       url = "https://github.com/ros2-gbp/aruco_opencv-release.git";
-      hash = "sha256-SidyRIeaYeAZTr6h04wPmYBWhR8Z1YIGnV35sjdHmGY=";
       rev = "2627ed963f4a6e887754f8e910c15689f0b5c89f";
+      hash = "sha256-SidyRIeaYeAZTr6h04wPmYBWhR8Z1YIGnV35sjdHmGY=";
     };
     aruco_opencv_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/aruco_opencv-release.git";
-      hash = "sha256-dP2eRoPV3R8Okt63Wb5WW9MsbCpOeZ/3ti0YVxYtkKU=";
       rev = "c4ff2411a22a0916f08ff933eb620d58beecf73b";
+      hash = "sha256-dP2eRoPV3R8Okt63Wb5WW9MsbCpOeZ/3ti0YVxYtkKU=";
     };
     aruco_ros = fetchGit {
       url = "https://github.com/pal-gbp/aruco_ros-release.git";
-      hash = "sha256-LIF5MiASkw9eXs5hNg5L1VAmICC588FpCYYSOHAjZjU=";
       rev = "6a254acadd05ba78a14ddb800009dd556ab09508";
+      hash = "sha256-LIF5MiASkw9eXs5hNg5L1VAmICC588FpCYYSOHAjZjU=";
     };
     asio_cmake_module = fetchGit {
       url = "https://github.com/ros2-gbp/transport_drivers-release.git";
-      hash = "sha256-S4As/gOIQQTIqYgblUDPs2pjBDmLPz4Ii2/CTMHhRUs=";
       rev = "2b840fd6e7471e2732d02884a3711aacb9e3be80";
+      hash = "sha256-S4As/gOIQQTIqYgblUDPs2pjBDmLPz4Ii2/CTMHhRUs=";
     };
     async_web_server_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/async_web_server_cpp-release.git";
-      hash = "sha256-bz0je03yD60CjR08T++F1rGD5GhfXZJWAbL6L5rINbo=";
       rev = "82946dd9a58d8c6a924ae3464004272d467e5f63";
+      hash = "sha256-bz0je03yD60CjR08T++F1rGD5GhfXZJWAbL6L5rINbo=";
     };
     automotive_autonomy_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/automotive_autonomy_msgs-release.git";
-      hash = "sha256-R/GduU+VD3B9INpzOpa84Bl42xFAtGthn8PEt8iYmpw=";
       rev = "34fc7813acfef2ff1efba213b734f4fb35656208";
+      hash = "sha256-R/GduU+VD3B9INpzOpa84Bl42xFAtGthn8PEt8iYmpw=";
     };
     automotive_navigation_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/automotive_autonomy_msgs-release.git";
-      hash = "sha256-N+QDJUyFWyIto9hqSOYNMPTrVLJR+tIO2J4ExUZ27+0=";
       rev = "a7a4af96be7bcd5fb697f17127c2e7b3364b993b";
+      hash = "sha256-N+QDJUyFWyIto9hqSOYNMPTrVLJR+tIO2J4ExUZ27+0=";
     };
     automotive_platform_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/automotive_autonomy_msgs-release.git";
-      hash = "sha256-HMhXhLS41h9P1STIbuEdhOgxNORj/YJrfDldGKeMKfA=";
       rev = "52a0f24bbcbe3b2a5f503ada8e224014cab98b6c";
+      hash = "sha256-HMhXhLS41h9P1STIbuEdhOgxNORj/YJrfDldGKeMKfA=";
     };
     autoware_adapi_v1_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_adapi_msgs-release.git";
-      hash = "sha256-3qw3LKXoVJvcwO+Z0Hc9kK1I6NafABN0tFmZwgHOO+s=";
       rev = "3408aa0a229c1ae6a87b563bd6d208ee7edddacf";
+      hash = "sha256-3qw3LKXoVJvcwO+Z0Hc9kK1I6NafABN0tFmZwgHOO+s=";
     };
     autoware_adapi_version_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_adapi_msgs-release.git";
-      hash = "sha256-q8EbPhpC5WYidH72USs7dvCwus3YHdH9cvNUEwd4TB4=";
       rev = "7581adbbe614ba414135d14c82a1720004ccb650";
+      hash = "sha256-q8EbPhpC5WYidH72USs7dvCwus3YHdH9cvNUEwd4TB4=";
     };
     autoware_auto_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_auto_msgs-release.git";
-      hash = "sha256-sPwNe2uGjV3WHz+htqZrzm5dUO1JvGJC9xQcn2d+LU0=";
       rev = "f0718df1847edd2e93373607df31b52a675a0f31";
+      hash = "sha256-sPwNe2uGjV3WHz+htqZrzm5dUO1JvGJC9xQcn2d+LU0=";
     };
     autoware_cmake = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_cmake-release.git";
-      hash = "sha256-uNWJEFHdKrWaAM3S5MTv2SI5xia8uBU4BdoPu0+jjpc=";
       rev = "f180036d1d4661a5758129e22e5c74375308e6d8";
+      hash = "sha256-uNWJEFHdKrWaAM3S5MTv2SI5xia8uBU4BdoPu0+jjpc=";
     };
     autoware_common_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_msgs-release.git";
-      hash = "sha256-9HmKkjfm27Mi06V1q6+JfI9LuRj87TRy0KzuiE8XYZc=";
       rev = "da07e4e34ce21e48c33fdf6aa9dc4f7bad5c9974";
+      hash = "sha256-9HmKkjfm27Mi06V1q6+JfI9LuRj87TRy0KzuiE8XYZc=";
     };
     autoware_control_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_msgs-release.git";
-      hash = "sha256-ka1LsUG3V5LgaUP4rD7F+n5yk79a9XGUiwqOsERHQO4=";
       rev = "fb102e6b49e433607a29d0ad67525c0fec73b2a8";
+      hash = "sha256-ka1LsUG3V5LgaUP4rD7F+n5yk79a9XGUiwqOsERHQO4=";
     };
     autoware_internal_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_internal_msgs-release.git";
-      hash = "sha256-o0LLAep3fmsKNFwsA/PE0iu3HCSZQSHvL5Aztip1BX8=";
       rev = "540dcac14e55cb94f772b249abbe2c6f3db81d90";
+      hash = "sha256-o0LLAep3fmsKNFwsA/PE0iu3HCSZQSHvL5Aztip1BX8=";
     };
     autoware_lanelet2_extension = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_lanelet2_extension-release.git";
-      hash = "sha256-EFRG1W21EZmLUU11Hhahz8PUTCdRf3pKcTmP9wN3Qkw=";
       rev = "d1c034ea804495b9508355196a95d473d50afca0";
+      hash = "sha256-EFRG1W21EZmLUU11Hhahz8PUTCdRf3pKcTmP9wN3Qkw=";
     };
     autoware_lanelet2_extension_python = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_lanelet2_extension-release.git";
-      hash = "sha256-h9Pp8P4xjV1D41CEYNolr3IQCdeT4U2cB1wvH5TGbiA=";
       rev = "a86c41cc2d55cd2ff47be9bca1f8c9824fc1482b";
+      hash = "sha256-h9Pp8P4xjV1D41CEYNolr3IQCdeT4U2cB1wvH5TGbiA=";
     };
     autoware_lint_common = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_cmake-release.git";
-      hash = "sha256-fS+Hicd3o8vyffKxyp4X3iosj9vznc4UJIbAH8Kp5BU=";
       rev = "18799aeb6914ff30a282d4d668329f5a20c18ead";
+      hash = "sha256-fS+Hicd3o8vyffKxyp4X3iosj9vznc4UJIbAH8Kp5BU=";
     };
     autoware_localization_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_msgs-release.git";
-      hash = "sha256-pQqQiBLgVz+rPRabcqtXKDN+BhpqNvBvlqLiSM4bv+w=";
       rev = "ce12d777a3fad93b30d1504a2bdc5bdbd0f65da0";
+      hash = "sha256-pQqQiBLgVz+rPRabcqtXKDN+BhpqNvBvlqLiSM4bv+w=";
     };
     autoware_map_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_msgs-release.git";
-      hash = "sha256-tw7A6h4GJrNAeyyGfNJWeFjBubw4RNlELVvShpA64yM=";
       rev = "c59a0b6649ecee23ccbbb767e47738d49a589152";
+      hash = "sha256-tw7A6h4GJrNAeyyGfNJWeFjBubw4RNlELVvShpA64yM=";
     };
     autoware_perception_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_msgs-release.git";
-      hash = "sha256-xuyU9wSxb+THVuMVNB6e5X873sqw8K+veaG3XhEccRY=";
       rev = "07956c1a8bd43649a234761161e53d1d49a5dc79";
+      hash = "sha256-xuyU9wSxb+THVuMVNB6e5X873sqw8K+veaG3XhEccRY=";
     };
     autoware_planning_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_msgs-release.git";
-      hash = "sha256-BrRhj72+4kvRvHLaCv9roAUChrtG4jbulSwy8eF02VY=";
       rev = "b4f96f6e29387ed979065537dea862cc25a59fab";
+      hash = "sha256-BrRhj72+4kvRvHLaCv9roAUChrtG4jbulSwy8eF02VY=";
     };
     autoware_sensing_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_msgs-release.git";
-      hash = "sha256-tnSGZtUUErZDyMsltqWrm00QGikUuXEXi1SxlOzRXWY=";
       rev = "e98f5ddafae33a61b45c6bf7c70122c1d3454ac3";
+      hash = "sha256-tnSGZtUUErZDyMsltqWrm00QGikUuXEXi1SxlOzRXWY=";
     };
     autoware_system_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_msgs-release.git";
-      hash = "sha256-hbYa4pl/hLWUDxk+gN234i8Vz2MlS3Jfi1xp8aHXvqY=";
       rev = "96963a77d17c584973cd52f3e86f4b2c21b3272c";
+      hash = "sha256-hbYa4pl/hLWUDxk+gN234i8Vz2MlS3Jfi1xp8aHXvqY=";
     };
     autoware_utils = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_utils-release.git";
-      hash = "sha256-64bVDZx6Rh0NjYj7GrBjcZrD9RGeONzy0Gzq5qQ+1XU=";
       rev = "4d582d3100af60a9be279e0a93bf70672ba9ab70";
+      hash = "sha256-64bVDZx6Rh0NjYj7GrBjcZrD9RGeONzy0Gzq5qQ+1XU=";
     };
     autoware_vehicle_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/autoware_msgs-release.git";
-      hash = "sha256-6aO0NolqbPRlwrCNG4AgviUdoV/VJBIl8qrwZw9uYfw=";
       rev = "3acd63a48e658a68324868bddf4d761634286be3";
+      hash = "sha256-6aO0NolqbPRlwrCNG4AgviUdoV/VJBIl8qrwZw9uYfw=";
     };
     avt_vimba_camera = fetchGit {
       url = "https://github.com/ros2-gbp/avt_vimba_camera-release.git";
-      hash = "sha256-b1YFGg6j0b9K0ewtxAKbcnT1um/8yTIj7XIIbEChDbY=";
       rev = "b9560dba83cf75fde6656e573957548ef314dec6";
+      hash = "sha256-b1YFGg6j0b9K0ewtxAKbcnT1um/8yTIj7XIIbEChDbY=";
     };
     aws_sdk_cpp_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/aws_sdk_cpp_vendor-release.git";
-      hash = "sha256-y9V12GcuRTRxl5BbMVNzmPIoC3qIhoGQhgK3kjmd1xs=";
       rev = "41c63dd8468ba63aab2d7669694a8f32637fa771";
+      hash = "sha256-y9V12GcuRTRxl5BbMVNzmPIoC3qIhoGQhgK3kjmd1xs=";
     };
     azure_iot_sdk_c = fetchGit {
       url = "https://github.com/ros2-gbp/azure_iot_sdk_c-release.git";
-      hash = "sha256-QE6hU1HXCVU54bLQQ0XHXStpb3FWGJjupGq7NFIh43A=";
       rev = "e676a419f238786718cf3966015a0e9682777440";
+      hash = "sha256-QE6hU1HXCVU54bLQQ0XHXStpb3FWGJjupGq7NFIh43A=";
     };
     backward_ros = fetchGit {
       url = "https://github.com/ros2-gbp/backward_ros-release.git";
-      hash = "sha256-MH1nloz3Qfp5iNsqHTkmAkreWP6K+jyT3Zqn2SJySuU=";
       rev = "8ba754a2b952d207310db1e026bb9546c3611190";
+      hash = "sha256-MH1nloz3Qfp5iNsqHTkmAkreWP6K+jyT3Zqn2SJySuU=";
     };
     bag2_to_image = fetchGit {
       url = "https://github.com/ros2-gbp/bag2_to_image-release.git";
-      hash = "sha256-D602KBwsYPh+wbNrK2y25DZk1/wPPc2PlZj4ktvPhqI=";
       rev = "3297bdaf4e1c18b523774df23c0da5d666acca50";
+      hash = "sha256-D602KBwsYPh+wbNrK2y25DZk1/wPPc2PlZj4ktvPhqI=";
     };
     behaviortree_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/behaviortree_cpp_v4-release.git";
-      hash = "sha256-r9luPk1rJ4aHaMYIisJFcgiJzfuszFgKQWmOn4TiAG8=";
       rev = "d15330b9c1102ffff4dd21d68486f2e2b55e6f97";
+      hash = "sha256-r9luPk1rJ4aHaMYIisJFcgiJzfuszFgKQWmOn4TiAG8=";
     };
     behaviortree_cpp_v3 = fetchGit {
       url = "https://github.com/ros2-gbp/behaviortree_cpp-release.git";
-      hash = "sha256-mNfg3QRd1f1UOvmGK4o+bj8+rt+2/pir2Z6H+vRmxDE=";
       rev = "0b5edf037bf08f1401392b7914a0d6add7789360";
+      hash = "sha256-mNfg3QRd1f1UOvmGK4o+bj8+rt+2/pir2Z6H+vRmxDE=";
     };
     beluga = fetchGit {
       url = "https://github.com/ros2-gbp/beluga-release.git";
-      hash = "sha256-z5Drm8uEZ590QUMtDES+CD3DJd7gm0OYs542R0quhY8=";
       rev = "5a4b604ada6fee862adc8b71acd5e7a8b76ad2bd";
+      hash = "sha256-z5Drm8uEZ590QUMtDES+CD3DJd7gm0OYs542R0quhY8=";
     };
     beluga_amcl = fetchGit {
       url = "https://github.com/ros2-gbp/beluga-release.git";
-      hash = "sha256-o5w8tS4fYcmaf9rRYPabtPGEs27Xf50+6nRPhhPN7B8=";
       rev = "0a28678898be6587e8ef29c6a5d96109761837b1";
+      hash = "sha256-o5w8tS4fYcmaf9rRYPabtPGEs27Xf50+6nRPhhPN7B8=";
     };
     beluga_ros = fetchGit {
       url = "https://github.com/ros2-gbp/beluga-release.git";
-      hash = "sha256-4RnTLzRcla3M7v/bkXIxVunsAemyZVO4lcW3K5gSeUA=";
       rev = "2ce8e69bfddd01c5c394c9b23c499a4a6f18ce55";
+      hash = "sha256-4RnTLzRcla3M7v/bkXIxVunsAemyZVO4lcW3K5gSeUA=";
     };
     bicycle_steering_controller = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-KDTJiZaQCptUhLpYHvfN9X7IeoPCCKCPLBIlbDHitg0=";
       rev = "13ef71438fe15f21276ef9bdf06a80bce2fd930e";
+      hash = "sha256-KDTJiZaQCptUhLpYHvfN9X7IeoPCCKCPLBIlbDHitg0=";
     };
     bno055 = fetchGit {
       url = "https://github.com/ros2-gbp/bno055-release.git";
-      hash = "sha256-C8wFVPMD9UXtgtXX3T4ERtwtrr1IKIwYwiGzp1XWbS4=";
       rev = "49988d444537b50ab1266226e494e3b7253d64d7";
+      hash = "sha256-C8wFVPMD9UXtgtXX3T4ERtwtrr1IKIwYwiGzp1XWbS4=";
     };
     bond = fetchGit {
       url = "https://github.com/ros2-gbp/bond_core-release.git";
-      hash = "sha256-HumzPokICAnb7HyYW4rIhMDSZ8ZnZ+tzQ6LqYn9/dDU=";
       rev = "ef14f8df594843cad635278c35a496bc76cf3e06";
+      hash = "sha256-HumzPokICAnb7HyYW4rIhMDSZ8ZnZ+tzQ6LqYn9/dDU=";
     };
     bond_core = fetchGit {
       url = "https://github.com/ros2-gbp/bond_core-release.git";
-      hash = "sha256-pieGbpeYdGAOAULspCbQLtOYRAMogAi8zxZoMZkCNJI=";
       rev = "37dcfcd24735776aa874b749575f1c6ebd5787ff";
+      hash = "sha256-pieGbpeYdGAOAULspCbQLtOYRAMogAi8zxZoMZkCNJI=";
     };
     bondcpp = fetchGit {
       url = "https://github.com/ros2-gbp/bond_core-release.git";
-      hash = "sha256-fbNSgNmnnRCTFEsui9H+C9BJOcZyqF8Cv6sZjP+89qo=";
       rev = "5d1cd97ca5849587ac2763330b3841445d886e87";
+      hash = "sha256-fbNSgNmnnRCTFEsui9H+C9BJOcZyqF8Cv6sZjP+89qo=";
     };
     bondpy = fetchGit {
       url = "https://github.com/ros2-gbp/bond_core-release.git";
-      hash = "sha256-qBFpCzvtA7/Vghb+QkbCL8TBZoc5Kdhp+q876UZqVhM=";
       rev = "7c82a2866dd3a0416dd370b7163b3384ae48635b";
+      hash = "sha256-qBFpCzvtA7/Vghb+QkbCL8TBZoc5Kdhp+q876UZqVhM=";
     };
     boost_geometry_util = fetchGit {
       url = "https://github.com/ros2-gbp/boost_geometry_util-release.git";
-      hash = "sha256-5P2YMX4buwUYt7NAF7FiWJguryH/I8GC2y+vIK5KI0w=";
       rev = "e62a890a7f907b19266df8846abc46b3e92e291f";
+      hash = "sha256-5P2YMX4buwUYt7NAF7FiWJguryH/I8GC2y+vIK5KI0w=";
     };
     builtin_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/rcl_interfaces-release.git";
-      hash = "sha256-4Sz8x27mOS78Aif3y3nIoUnZ7MZNlGI2m1qqluPKoG8=";
       rev = "77d0c5db6fc502b0d44926e2a852b8149eebe704";
+      hash = "sha256-4Sz8x27mOS78Aif3y3nIoUnZ7MZNlGI2m1qqluPKoG8=";
     };
     camera_calibration = fetchGit {
       url = "https://github.com/ros2-gbp/image_pipeline-release.git";
-      hash = "sha256-GnCTurK+9iApYh6ffx9YFcmNN4Vu81kICyOpETIPGPM=";
       rev = "a964e757e664522d9a441d9fb17b69c2b5a3ac1e";
+      hash = "sha256-GnCTurK+9iApYh6ffx9YFcmNN4Vu81kICyOpETIPGPM=";
     };
     camera_calibration_parsers = fetchGit {
       url = "https://github.com/ros2-gbp/image_common-release.git";
-      hash = "sha256-wKn7KsxZviY/E9GTcDyMdCTVi7lAfKUWho7uaTIbx40=";
       rev = "07de0f00f55464e3c3ddbb662d24eed0e6b29281";
+      hash = "sha256-wKn7KsxZviY/E9GTcDyMdCTVi7lAfKUWho7uaTIbx40=";
     };
     camera_info_manager = fetchGit {
       url = "https://github.com/ros2-gbp/image_common-release.git";
-      hash = "sha256-YJtJO7eYICc27OtvRhSpPS9mad8FOcRp97czmEdAzjY=";
       rev = "0b086b5ef41dc07dc764a3fad18f09cd87471ddb";
+      hash = "sha256-YJtJO7eYICc27OtvRhSpPS9mad8FOcRp97czmEdAzjY=";
     };
     can_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/ros_canopen-release.git";
-      hash = "sha256-9K7mCEEppzWP9ITzFZlJje6JHNIFoBxJ/FXPs+NoX4M=";
       rev = "68c38f7cdd398daa84e83a808f8a7da772f6d71e";
+      hash = "sha256-9K7mCEEppzWP9ITzFZlJje6JHNIFoBxJ/FXPs+NoX4M=";
     };
     canopen = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_canopen-release.git";
-      hash = "sha256-piA4LMW+Rk9PuHBjbD9oATPlP3AXOEIdCD5BxTH7jEo=";
       rev = "f7ef32f1dd37b628c0f9fc1dc09a07d0367a0a2f";
+      hash = "sha256-piA4LMW+Rk9PuHBjbD9oATPlP3AXOEIdCD5BxTH7jEo=";
     };
     canopen_402_driver = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_canopen-release.git";
-      hash = "sha256-jzPNcmFGqFCQ+Iu0skkeiXVNfNC1s6nZO6zBvTw+p7o=";
       rev = "101f303cc30684d76e09bbfbfb90a6cdcebc361b";
+      hash = "sha256-jzPNcmFGqFCQ+Iu0skkeiXVNfNC1s6nZO6zBvTw+p7o=";
     };
     canopen_base_driver = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_canopen-release.git";
-      hash = "sha256-okKOznu5KCRhv5byFy36jawqcLh98ZQB/VR7Jjkf8gw=";
       rev = "ef623be7c9fcfa9e325e4a05fcdb0cfda9904565";
+      hash = "sha256-okKOznu5KCRhv5byFy36jawqcLh98ZQB/VR7Jjkf8gw=";
     };
     canopen_core = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_canopen-release.git";
-      hash = "sha256-FGvB62WkL47PY/x3FNDlblrjJJWiKutqhX/flTV/z9Q=";
       rev = "4121a85cba89840b28dfa6a7a0737946e3418555";
+      hash = "sha256-FGvB62WkL47PY/x3FNDlblrjJJWiKutqhX/flTV/z9Q=";
     };
     canopen_fake_slaves = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_canopen-release.git";
-      hash = "sha256-3/FPYI561bff5nqES47wLASGbBezxQt3pcmShGE1WOM=";
       rev = "19e6ce4bc36465f2bbd2b6a8c359391d8cd8d166";
+      hash = "sha256-3/FPYI561bff5nqES47wLASGbBezxQt3pcmShGE1WOM=";
     };
     canopen_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_canopen-release.git";
-      hash = "sha256-b4Art6VZ5FZEibqz5dLOW4lYb2loGS/4m9HV9+jWrS4=";
       rev = "45c79d4c66a246d9b5b6f71e9c79865e1be15b27";
+      hash = "sha256-b4Art6VZ5FZEibqz5dLOW4lYb2loGS/4m9HV9+jWrS4=";
     };
     canopen_master_driver = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_canopen-release.git";
-      hash = "sha256-xzkjzzOaEItvb16SVik9+qsQVSauWVtMX/phwDXKdDk=";
       rev = "f879ab2ee6a9a8d8fa4f75531daaff0d1f07375e";
+      hash = "sha256-xzkjzzOaEItvb16SVik9+qsQVSauWVtMX/phwDXKdDk=";
     };
     canopen_proxy_driver = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_canopen-release.git";
-      hash = "sha256-QwLvJwY8xrI+FKlIKORTwDnTRlrWA8r1hx7IQbDoTmA=";
       rev = "d5c0e9c04f634b1cada8a043355ee09a13fd294e";
+      hash = "sha256-QwLvJwY8xrI+FKlIKORTwDnTRlrWA8r1hx7IQbDoTmA=";
     };
     canopen_ros2_control = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_canopen-release.git";
-      hash = "sha256-NGL7U94YdUR2F84u0e/YXtn2NfkFbgya9dhhCSTcpYQ=";
       rev = "522659d64c9f9607958b6d52d4ea7da431e48a05";
+      hash = "sha256-NGL7U94YdUR2F84u0e/YXtn2NfkFbgya9dhhCSTcpYQ=";
     };
     canopen_ros2_controllers = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_canopen-release.git";
-      hash = "sha256-koxHonzCdViHXf1kTwf19nMEa8F/YF+ILwVF5p+Muhw=";
       rev = "c38699e89e1eab1a0d1984daf277c82f7e7a0a12";
+      hash = "sha256-koxHonzCdViHXf1kTwf19nMEa8F/YF+ILwVF5p+Muhw=";
     };
     canopen_tests = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_canopen-release.git";
-      hash = "sha256-lDdU44SmHu7qBWcilveZZLNdZmMRX/PIjsuqOfDy0V8=";
       rev = "245f785040107d7d95abbf1f3939c2638ec8024e";
+      hash = "sha256-lDdU44SmHu7qBWcilveZZLNdZmMRX/PIjsuqOfDy0V8=";
     };
     canopen_utils = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_canopen-release.git";
-      hash = "sha256-6Wm4mQlXmkNgHkDqu2NDjeeA/4QXqqxc0vWdyftHwgc=";
       rev = "181beef157c2ca0a620517759160ed38a96b752b";
+      hash = "sha256-6Wm4mQlXmkNgHkDqu2NDjeeA/4QXqqxc0vWdyftHwgc=";
     };
     cartographer = fetchGit {
       url = "https://github.com/ros2-gbp/cartographer-release.git";
-      hash = "sha256-++Ii26FmyqOYF3zYOPtQ+2ZqNUMomOanyu7Z5uYyu/Y=";
       rev = "9985ea5634e38f87cd15a64c35a15f34616d8e10";
+      hash = "sha256-++Ii26FmyqOYF3zYOPtQ+2ZqNUMomOanyu7Z5uYyu/Y=";
     };
     cartographer_ros = fetchGit {
       url = "https://github.com/ros2-gbp/cartographer_ros-release.git";
-      hash = "sha256-VvGxCdcHPGbZC+Mp6BMa4qpdJ2eoz0PuoBvhe/6gtCE=";
       rev = "220cc62d9b410d777c4bd483e9e4861e1a3325d7";
+      hash = "sha256-VvGxCdcHPGbZC+Mp6BMa4qpdJ2eoz0PuoBvhe/6gtCE=";
     };
     cartographer_ros_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/cartographer_ros-release.git";
-      hash = "sha256-POmR42dN/mrsnISU7egd4dQ/y+W+VWvPUwQK+JlLCeU=";
       rev = "9a63c21a390bff45650200ccf82af75957ba8dec";
+      hash = "sha256-POmR42dN/mrsnISU7egd4dQ/y+W+VWvPUwQK+JlLCeU=";
     };
     cartographer_rviz = fetchGit {
       url = "https://github.com/ros2-gbp/cartographer_ros-release.git";
-      hash = "sha256-HBhTH+7iZCDSV9zi8Okp+MFALOAAQc3TV+szBXmIvPU=";
       rev = "c0528e46728174c2c4893a6bbf43fe87ba86f2e5";
+      hash = "sha256-HBhTH+7iZCDSV9zi8Okp+MFALOAAQc3TV+szBXmIvPU=";
     };
     cascade_lifecycle_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/cascade_lifecycle-release.git";
-      hash = "sha256-vr1h9TdjCkXvrxYIYrmyyXpL/IO9M0hByXfdsHA2FO4=";
       rev = "545036c9a46bd1a542280f389d8a1e904cd219fa";
+      hash = "sha256-vr1h9TdjCkXvrxYIYrmyyXpL/IO9M0hByXfdsHA2FO4=";
     };
     catch_ros2 = fetchGit {
       url = "https://github.com/ros2-gbp/catch_ros2-release.git";
-      hash = "sha256-8+FIcqzIHZrfEeATgko1oxSpJA3YY5lis1+sEd2Y/Rk=";
       rev = "f16df2c7b6a00e3836e2546f9b66bf3b447cbe42";
+      hash = "sha256-8+FIcqzIHZrfEeATgko1oxSpJA3YY5lis1+sEd2Y/Rk=";
     };
     chomp_motion_planner = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-FHnAXCg4I5muP7vFkWMolNmTjY7+CfmJyqH38+qBOFg=";
       rev = "8d2072a1cdb79eae16ddf9a6a52a91049fce8851";
+      hash = "sha256-FHnAXCg4I5muP7vFkWMolNmTjY7+CfmJyqH38+qBOFg=";
     };
     class_loader = fetchGit {
       url = "https://github.com/ros2-gbp/class_loader-release.git";
-      hash = "sha256-VkYLe2iawf0S5dULWUBCq93K3PyWEyiwiARhE8Y5cMM=";
       rev = "769259c0b275d43eccf56c3ad2c5a0b7f9bfe0f1";
+      hash = "sha256-VkYLe2iawf0S5dULWUBCq93K3PyWEyiwiARhE8Y5cMM=";
     };
     classic_bags = fetchGit {
       url = "https://github.com/ros2-gbp/classic_bags-release.git";
-      hash = "sha256-qorfH5BwfKfqCtH4qpiFV99uRnkpbgifA4GgAuobCO8=";
       rev = "ca3d3002a3a85a41e18d51b759baf92321df1d41";
+      hash = "sha256-qorfH5BwfKfqCtH4qpiFV99uRnkpbgifA4GgAuobCO8=";
     };
     cmake_generate_parameter_module_example = fetchGit {
       url = "https://github.com/ros2-gbp/generate_parameter_library-release.git";
-      hash = "sha256-fv1GUmHiJR1Zj2CI0CdtNFcUIVXuykeEmbSN9ib0fRw=";
       rev = "98db3ef1d11ed8145e5643b2ce060fd0e274db90";
+      hash = "sha256-fv1GUmHiJR1Zj2CI0CdtNFcUIVXuykeEmbSN9ib0fRw=";
     };
     color_names = fetchGit {
       url = "https://github.com/ros2-gbp/color_names-release.git";
-      hash = "sha256-956LQvQPv4QtQBKeDL62YimdLDh1yLGsi9AYgWiBh/k=";
       rev = "e0678b4bf68ce7ce8cf1ec15ada29300e365ca06";
+      hash = "sha256-956LQvQPv4QtQBKeDL62YimdLDh1yLGsi9AYgWiBh/k=";
     };
     color_util = fetchGit {
       url = "https://github.com/ros2-gbp/color_util-release.git";
-      hash = "sha256-vHOcY7emyuuqZ06vo77SGvGnnV/T+wv1Va/tHUIGXIs=";
       rev = "231c6ee5d3a4330fa1d39e1085f260961d1acaf9";
+      hash = "sha256-vHOcY7emyuuqZ06vo77SGvGnnV/T+wv1Va/tHUIGXIs=";
     };
     common_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/common_interfaces-release.git";
-      hash = "sha256-wxRD1b3gGcPbjpovwadMlw+A3m7bfdNsaOyxgcA/lSI=";
       rev = "d3cd7bc2ac70c1f793bb486b8890a3e705d51955";
+      hash = "sha256-wxRD1b3gGcPbjpovwadMlw+A3m7bfdNsaOyxgcA/lSI=";
     };
     composition = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-khIarBBRLvdJsk/Our7rIOAIXGYcHOiIrufnZNQ1b/s=";
       rev = "deb73b233cbb746b766ab0c88cca5a9dfcffb3a1";
+      hash = "sha256-khIarBBRLvdJsk/Our7rIOAIXGYcHOiIrufnZNQ1b/s=";
     };
     composition_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/rcl_interfaces-release.git";
-      hash = "sha256-YTmCcgVPa5sosZzoRmcBvPGUebFIGOCK8SjI0aGXMRU=";
       rev = "7c7e9ce9c33e3d9920ce099ede290d836642e111";
+      hash = "sha256-YTmCcgVPa5sosZzoRmcBvPGUebFIGOCK8SjI0aGXMRU=";
     };
     compressed_depth_image_transport = fetchGit {
       url = "https://github.com/ros2-gbp/image_transport_plugins-release.git";
-      hash = "sha256-kpp3wHHQZkLto7sfY8eZlB/NZH7UMhemr7H2DGQfSgA=";
       rev = "91b4470b88b9cf5e5c03fef655621dd5258477a6";
+      hash = "sha256-kpp3wHHQZkLto7sfY8eZlB/NZH7UMhemr7H2DGQfSgA=";
     };
     compressed_image_transport = fetchGit {
       url = "https://github.com/ros2-gbp/image_transport_plugins-release.git";
-      hash = "sha256-LImoXUW1Wa2lVaSpwFoBuSMk83yHi40nWrPITzg27SY=";
       rev = "449c64364b22de9b8e4cd4232c8b99d55b545586";
+      hash = "sha256-LImoXUW1Wa2lVaSpwFoBuSMk83yHi40nWrPITzg27SY=";
     };
     console_bridge_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/console_bridge_vendor-release.git";
-      hash = "sha256-+m52Ig9uULM+20Ouz1g69az+DbquL6j4S81kz7VOxD4=";
       rev = "bb994f26fbd204276c099c630b9ee07e48e70026";
+      hash = "sha256-+m52Ig9uULM+20Ouz1g69az+DbquL6j4S81kz7VOxD4=";
     };
     control_box_rst = fetchGit {
       url = "https://github.com/ros2-gbp/control_box_rst-release.git";
-      hash = "sha256-HEG9kwIr6mxkYCMU0hJzDgZZOsx5NgqjKf0y6BkwcbA=";
       rev = "d516096763524853e8317020610ec07aac7b0da4";
+      hash = "sha256-HEG9kwIr6mxkYCMU0hJzDgZZOsx5NgqjKf0y6BkwcbA=";
     };
     control_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/control_msgs-release.git";
-      hash = "sha256-URQCB0GxwGeBx7qDLvfeBxUHDgifVGWnImV68kDRCws=";
       rev = "5dbea9d4a6f9d131e7449cd67483fc2d4e69c6f4";
+      hash = "sha256-URQCB0GxwGeBx7qDLvfeBxUHDgifVGWnImV68kDRCws=";
     };
     control_toolbox = fetchGit {
       url = "https://github.com/ros2-gbp/control_toolbox-release.git";
-      hash = "sha256-8k2Jlg4wFOuHFj1R/mlh8NMvgEGijDRy6kme0opUgm4=";
       rev = "a7a4962446f6437bd7342af6510361947f880ef3";
+      hash = "sha256-8k2Jlg4wFOuHFj1R/mlh8NMvgEGijDRy6kme0opUgm4=";
     };
     controller_interface = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_control-release.git";
-      hash = "sha256-9xGrWGmMXlzVKp6W5s4+T+LSXpgEIS7G5qIpMXJmFfU=";
       rev = "615e0a026e8eade8d2762b24eb7525ccb7e611ca";
+      hash = "sha256-9xGrWGmMXlzVKp6W5s4+T+LSXpgEIS7G5qIpMXJmFfU=";
     };
     controller_manager = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_control-release.git";
-      hash = "sha256-wTMWmOxsyQHo1aviWDWHrOIIdwiHclfAdfY/sI9ihyU=";
       rev = "5e396777bbb91cfe5d1f688755818a0a1fa87266";
+      hash = "sha256-wTMWmOxsyQHo1aviWDWHrOIIdwiHclfAdfY/sI9ihyU=";
     };
     controller_manager_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_control-release.git";
-      hash = "sha256-ajMROW1whoH+c9BugWr5yXyJOJDywrD+UA0202kLotA=";
       rev = "feb96d3350b4bc1bce6492a948bc068066384c8c";
+      hash = "sha256-ajMROW1whoH+c9BugWr5yXyJOJDywrD+UA0202kLotA=";
     };
     costmap_queue = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-6lIFNLqzNSGnQ/hnp6EG6mF7N4vBO88qTmMeIh2PE1M=";
       rev = "1f791537476975e56df5859d08dc3cdf58cb8ab8";
+      hash = "sha256-6lIFNLqzNSGnQ/hnp6EG6mF7N4vBO88qTmMeIh2PE1M=";
     };
     cudnn_cmake_module = fetchGit {
       url = "https://github.com/ros2-gbp/cudnn_cmake_module-release.git";
-      hash = "sha256-J6BqQzZzZMC0MVQ5oJCXgXu5fzoPlV+JErISeIuss6I=";
       rev = "de4d4f9f0b0abe550eb0594bb9cea11ceeb536e7";
+      hash = "sha256-J6BqQzZzZMC0MVQ5oJCXgXu5fzoPlV+JErISeIuss6I=";
     };
     cv_bridge = fetchGit {
       url = "https://github.com/ros2-gbp/vision_opencv-release.git";
-      hash = "sha256-2p4HVqVl4NRdIrRsJnGkfOapNAmOhKZN1R2KMmpxG/w=";
       rev = "d30ec40f8ebf943aaa16b860166e53a49a6f6174";
+      hash = "sha256-2p4HVqVl4NRdIrRsJnGkfOapNAmOhKZN1R2KMmpxG/w=";
     };
     cyclonedds = fetchGit {
       url = "https://github.com/ros2-gbp/cyclonedds-release.git";
-      hash = "sha256-JFn8HlIahFX99o5SBpVkhfap+EIKfLy3mZICNlZNh0o=";
       rev = "73713526652778f6d7b1cea5a4aa9e27c52f8fb3";
+      hash = "sha256-JFn8HlIahFX99o5SBpVkhfap+EIKfLy3mZICNlZNh0o=";
     };
     data_tamer_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/data_tamer-release.git";
-      hash = "sha256-2AzGQXKFYJAAluNZytnO9/Or37ZYidTyDew6IkPUyos=";
       rev = "5274316290956c5257fb416f790585cc9aa31cd6";
+      hash = "sha256-2AzGQXKFYJAAluNZytnO9/Or37ZYidTyDew6IkPUyos=";
     };
     data_tamer_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/data_tamer-release.git";
-      hash = "sha256-NxB4rc0pONAAz2IJs4m7OQeB4K5aF+RNCRjmwkRbjLc=";
       rev = "38fab093efa7d483c5039f181a3a0254bdf6184a";
+      hash = "sha256-NxB4rc0pONAAz2IJs4m7OQeB4K5aF+RNCRjmwkRbjLc=";
     };
     delphi_esr_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/astuff_sensor_msgs-release.git";
-      hash = "sha256-K7D4wHGenbiq35o06s88bjoKOUdZl3oqIoSabiYN24o=";
       rev = "1472f4d0624f3eb26fbc4f16588cb8361f059807";
+      hash = "sha256-K7D4wHGenbiq35o06s88bjoKOUdZl3oqIoSabiYN24o=";
     };
     delphi_mrr_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/astuff_sensor_msgs-release.git";
-      hash = "sha256-wRjHKzZNBmMaEJPFEgEysXQ+9dMe3vyzYyFO3V+cuEs=";
       rev = "80133cae1505fb482f79e8d2465c8f28d0685ddf";
+      hash = "sha256-wRjHKzZNBmMaEJPFEgEysXQ+9dMe3vyzYyFO3V+cuEs=";
     };
     delphi_srr_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/astuff_sensor_msgs-release.git";
-      hash = "sha256-Vu/trELYAZeFsNU7L9/L1c/gwv48ZdARSjJ1HkujJaU=";
       rev = "884b29c9fe2ee84935864b270cff7751791ecf3f";
+      hash = "sha256-Vu/trELYAZeFsNU7L9/L1c/gwv48ZdARSjJ1HkujJaU=";
     };
     demo_nodes_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-pSrlqygi3kMfiMtOngfgsOyV8AIgis5TnO4/7lIdr78=";
       rev = "bd715f2561120dca20102b8364013325adfc80d3";
+      hash = "sha256-pSrlqygi3kMfiMtOngfgsOyV8AIgis5TnO4/7lIdr78=";
     };
     demo_nodes_cpp_native = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-6OGfQUe3IK7NAwCmoNS77930g1kvWGnlNhOfnGDEnMM=";
       rev = "9e72479129ef53e4e5f013d5943795c8fe21311e";
+      hash = "sha256-6OGfQUe3IK7NAwCmoNS77930g1kvWGnlNhOfnGDEnMM=";
     };
     demo_nodes_py = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-+2ZZpQnOChaRARja3aOfvZjGKyzbKjSDB1OasCrEWyo=";
       rev = "4c25959b5066daab3e037533b7dfc380dda62a25";
+      hash = "sha256-+2ZZpQnOChaRARja3aOfvZjGKyzbKjSDB1OasCrEWyo=";
     };
     depth_image_proc = fetchGit {
       url = "https://github.com/ros2-gbp/image_pipeline-release.git";
-      hash = "sha256-8TVBEvZjci+l/+UNHByRhzfYnmZOU3fHKn3fE+JytQU=";
       rev = "9724a33599f520768a49ec59093a76c6b30daaa8";
+      hash = "sha256-8TVBEvZjci+l/+UNHByRhzfYnmZOU3fHKn3fE+JytQU=";
     };
     depthai = fetchGit {
       url = "https://github.com/luxonis/depthai-core-release.git";
-      hash = "sha256-ZlZa5BCuio603aG8TEheR/fHVoz4ugUeX7kXi2FK6Qk=";
       rev = "307f6308a2c46452fd4fac00c94591e6064dfdb7";
+      hash = "sha256-ZlZa5BCuio603aG8TEheR/fHVoz4ugUeX7kXi2FK6Qk=";
     };
     depthimage_to_laserscan = fetchGit {
       url = "https://github.com/ros2-gbp/depthimage_to_laserscan-release.git";
-      hash = "sha256-QU8tJNEPEB6X439eDP+kDXczR29OQNtKRX1uXKDqgDo=";
       rev = "519824930e5f9133698b8b7f683157a064c30d14";
+      hash = "sha256-QU8tJNEPEB6X439eDP+kDXczR29OQNtKRX1uXKDqgDo=";
     };
     derived_object_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/astuff_sensor_msgs-release.git";
-      hash = "sha256-gHKh+ix0fZzuNvAtc/i+u0v6YLY+jUfqW9BPaLgC0/U=";
       rev = "cd2176913fed3e36da3aa4941492f377c3ff662f";
+      hash = "sha256-gHKh+ix0fZzuNvAtc/i+u0v6YLY+jUfqW9BPaLgC0/U=";
     };
     desktop = fetchGit {
       url = "https://github.com/ros2-gbp/variants-release.git";
-      hash = "sha256-SDdRl/0AhXOo1iKjZqc+XABRaWTXxOE0fiLzJVFnvDY=";
       rev = "32f68b6baa355c7a47de783407f272843654644e";
+      hash = "sha256-SDdRl/0AhXOo1iKjZqc+XABRaWTXxOE0fiLzJVFnvDY=";
     };
     desktop_full = fetchGit {
       url = "https://github.com/ros2-gbp/variants-release.git";
-      hash = "sha256-Ym/P4L92jCLQbe2hhq+3I5CLtJE59ya1csIFnutZlBE=";
       rev = "3bdd312d71e66a970a9491a2beb2e6ee4a82e417";
+      hash = "sha256-Ym/P4L92jCLQbe2hhq+3I5CLtJE59ya1csIFnutZlBE=";
     };
     diagnostic_aggregator = fetchGit {
       url = "https://github.com/ros2-gbp/diagnostics-release.git";
-      hash = "sha256-lL0FmSDCv1n/Bmio+ZpqtEyJWMS5hh/Z5zjsVjkgAWw=";
       rev = "198d2c8af06bea61f9ce6dc639c6be7a8a7c4dfa";
+      hash = "sha256-lL0FmSDCv1n/Bmio+ZpqtEyJWMS5hh/Z5zjsVjkgAWw=";
     };
     diagnostic_common_diagnostics = fetchGit {
       url = "https://github.com/ros2-gbp/diagnostics-release.git";
-      hash = "sha256-EQsw/5GFDB9IqZNAIaVW4uETZLPQT88AlT4uqy4WPcc=";
       rev = "b269bcc4b678b37724dbaf370d138dc16fd5b620";
+      hash = "sha256-EQsw/5GFDB9IqZNAIaVW4uETZLPQT88AlT4uqy4WPcc=";
     };
     diagnostic_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/common_interfaces-release.git";
-      hash = "sha256-VaNM6gL1W9xv0Z4CsOxSt4rBRHODNb3jf8pvyhdfjI8=";
       rev = "2acf941fd8d1ca0aa5e22de6dbaee01208471ecb";
+      hash = "sha256-VaNM6gL1W9xv0Z4CsOxSt4rBRHODNb3jf8pvyhdfjI8=";
     };
     diagnostic_updater = fetchGit {
       url = "https://github.com/ros2-gbp/diagnostics-release.git";
-      hash = "sha256-NZauvVcfEk5z0VTtOQ431N/ebNLP0wMd7mDfnG+b/GM=";
       rev = "065b406337071a2c3de3b53dd1eb3d59a5955644";
+      hash = "sha256-NZauvVcfEk5z0VTtOQ431N/ebNLP0wMd7mDfnG+b/GM=";
     };
     diagnostics = fetchGit {
       url = "https://github.com/ros2-gbp/diagnostics-release.git";
-      hash = "sha256-wqulTiagNVXEU9RcCTRUdTAS4TnYBohbmn7/AtxFJ4M=";
       rev = "5b26998e35920e1f180210c14e5867457a8769d0";
+      hash = "sha256-wqulTiagNVXEU9RcCTRUdTAS4TnYBohbmn7/AtxFJ4M=";
     };
     diff_drive_controller = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-zUdfzT30sQwkpXQaFULPjylFeXom14gJLN04lTK3iSY=";
       rev = "419c05450280d31c7c4b0cf0c6c57f8ec33eca58";
+      hash = "sha256-zUdfzT30sQwkpXQaFULPjylFeXom14gJLN04lTK3iSY=";
     };
     dolly = fetchGit {
       url = "https://github.com/ros2-gbp/dolly-release.git";
-      hash = "sha256-1ugxemjgNM3QtSsQ64TCZHu8J9gYPS5Qh2s6VRBTiFA=";
       rev = "5d847c8aa319f738c369490da961e87b5e408508";
+      hash = "sha256-1ugxemjgNM3QtSsQ64TCZHu8J9gYPS5Qh2s6VRBTiFA=";
     };
     dolly_follow = fetchGit {
       url = "https://github.com/ros2-gbp/dolly-release.git";
-      hash = "sha256-Udj2U+dWE5+JIz9GOSB6X4C9y3g/g30Jp3+BTuiiRX0=";
       rev = "47cbab8d3916e099b2487642be419d68f98efa7f";
+      hash = "sha256-Udj2U+dWE5+JIz9GOSB6X4C9y3g/g30Jp3+BTuiiRX0=";
     };
     dolly_gazebo = fetchGit {
       url = "https://github.com/ros2-gbp/dolly-release.git";
-      hash = "sha256-sLCbhJjIRzZvq15SlStZjonIvhpPw57fK5vRlQ3689A=";
       rev = "0bde960b5ce53fba85a03fa3f289a6f4a2ca1286";
+      hash = "sha256-sLCbhJjIRzZvq15SlStZjonIvhpPw57fK5vRlQ3689A=";
     };
     dolly_ignition = fetchGit {
       url = "https://github.com/ros2-gbp/dolly-release.git";
-      hash = "sha256-BGdsjbemIWS94BjSHjDClK1ui6sM17J0lJlrhfhj/Vg=";
       rev = "30e66cc18f165d39df07f385651aa269dd5cb9f3";
+      hash = "sha256-BGdsjbemIWS94BjSHjDClK1ui6sM17J0lJlrhfhj/Vg=";
     };
     domain_bridge = fetchGit {
       url = "https://github.com/ros2-gbp/domain_bridge-release.git";
-      hash = "sha256-eajUFSE7L+45VSlUvbXcvd6RjjdERKimvpFjuXVbCO8=";
       rev = "23216d613ab4e031c139bbcf42e6306f907b0d13";
+      hash = "sha256-eajUFSE7L+45VSlUvbXcvd6RjjdERKimvpFjuXVbCO8=";
     };
     domain_coordinator = fetchGit {
       url = "https://github.com/ros2-gbp/ament_cmake_ros-release.git";
-      hash = "sha256-pOFTQT4CPWn2FDFTi9cNv54NZ97CMjH/7pOV24uR6Zo=";
       rev = "5e3d0a038b3fb9faa3533271fcecc7c606ad15e5";
+      hash = "sha256-pOFTQT4CPWn2FDFTi9cNv54NZ97CMjH/7pOV24uR6Zo=";
     };
     draco_point_cloud_transport = fetchGit {
       url = "https://github.com/ros2-gbp/point_cloud_transport_plugins-release.git";
-      hash = "sha256-6rpH1H2TMVBOm3m7lPgGWKjs4XsovibiazY5qClpMAA=";
       rev = "70cf5bd849fe6d94cb212c5c35e45a364be2ab97";
+      hash = "sha256-6rpH1H2TMVBOm3m7lPgGWKjs4XsovibiazY5qClpMAA=";
     };
     dual_arm_panda_moveit_config = fetchGit {
       url = "https://github.com/ros2-gbp/moveit_resources-release.git";
-      hash = "sha256-V71OPHp++p3BjHIOsZaorfCVHJWME4JIA7kB869Ruk0=";
       rev = "33a3867196bbccfc7bc2b335b9a67e1452701bed";
+      hash = "sha256-V71OPHp++p3BjHIOsZaorfCVHJWME4JIA7kB869Ruk0=";
     };
     dummy_map_server = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-SnBrRYUgjHWEpniJMfpF3pQ+9D2yZ5wEvV5uvkw5hus=";
       rev = "f8815b91ab5967a8d0c1ee7a981b54ca3104000c";
+      hash = "sha256-SnBrRYUgjHWEpniJMfpF3pQ+9D2yZ5wEvV5uvkw5hus=";
     };
     dummy_robot_bringup = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-SPZM3ZERTqe7Yr82lZTi9cID5qKsNtPP4o88bcEtvoA=";
       rev = "c8e83973d30a27ee3ffc9fbce7d4b91ec346459b";
+      hash = "sha256-SPZM3ZERTqe7Yr82lZTi9cID5qKsNtPP4o88bcEtvoA=";
     };
     dummy_sensors = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-cKpsUvA8UZzh02/237Xr4txRbltPht7AUTvn+cJruPg=";
       rev = "7e3e27660fd19a184efb4e59881b2a7bc8dd57a7";
+      hash = "sha256-cKpsUvA8UZzh02/237Xr4txRbltPht7AUTvn+cJruPg=";
     };
     dwb_core = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-2R+xjO19EMMv5DrSNdzw+UMv1uyYYYJcolX/DRKkfgM=";
       rev = "3b7115c77ba40cf49486b72cbe5758a34650d915";
+      hash = "sha256-2R+xjO19EMMv5DrSNdzw+UMv1uyYYYJcolX/DRKkfgM=";
     };
     dwb_critics = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-wf3WuqY+07bgqWT0P9DWlH9EZK5nkOVsWNXb5i/j+84=";
       rev = "a5eff0a8a61615ba0495c1a1334f2dcc369889a2";
+      hash = "sha256-wf3WuqY+07bgqWT0P9DWlH9EZK5nkOVsWNXb5i/j+84=";
     };
     dwb_msgs = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-95/XZWlJACz0Y4hy1HVEhleHpQ0iFQPTU7KmByY3IBY=";
       rev = "60b144db7804f985ad1d060b80f6e0ba7199e8b1";
+      hash = "sha256-95/XZWlJACz0Y4hy1HVEhleHpQ0iFQPTU7KmByY3IBY=";
     };
     dwb_plugins = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-DtmHY0SViAnvfz/MA9j4UOQ5bKI8JaRPmy4Ur2BDwi4=";
       rev = "00c0130b490628983cf57d9b08fee4d3347630a2";
+      hash = "sha256-DtmHY0SViAnvfz/MA9j4UOQ5bKI8JaRPmy4Ur2BDwi4=";
     };
     dynamic_edt_3d = fetchGit {
       url = "https://github.com/ros2-gbp/octomap-release.git";
-      hash = "sha256-w1VOjU0mpO24Z2FAcdzCrmrRF6p7q2M/GbXhGlh3K0w=";
       rev = "0915c4cff28e454f7fe2ac3338d5550f466cbcfb";
+      hash = "sha256-w1VOjU0mpO24Z2FAcdzCrmrRF6p7q2M/GbXhGlh3K0w=";
     };
     dynamixel_hardware = fetchGit {
       url = "https://github.com/ros2-gbp/dynamixel_hardware-release.git";
-      hash = "sha256-deu91vC3s0Ae1J44bHU0xIFpjV6bJ0q40HfourfwdvQ=";
       rev = "9e93cb35756ed7c16e03ad98297796433a909558";
+      hash = "sha256-deu91vC3s0Ae1J44bHU0xIFpjV6bJ0q40HfourfwdvQ=";
     };
     dynamixel_sdk = fetchGit {
       url = "https://github.com/ros2-gbp/dynamixel_sdk-release.git";
-      hash = "sha256-oqGB9nx57Y1CMx1pbn81xSZbN9xXdKhJmj0SvIXyaNY=";
       rev = "9ed7cf8e3a010569e4964bd0d3767b2cf30d6f64";
+      hash = "sha256-oqGB9nx57Y1CMx1pbn81xSZbN9xXdKhJmj0SvIXyaNY=";
     };
     dynamixel_sdk_custom_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/dynamixel_sdk-release.git";
-      hash = "sha256-pWGzlnONW1lXGAui57EHtKsqI3VguxYMeL+ytq6dgec=";
       rev = "85f07909dd34b31e3e7f105b1ae99b47c3e8810b";
+      hash = "sha256-pWGzlnONW1lXGAui57EHtKsqI3VguxYMeL+ytq6dgec=";
     };
     dynamixel_sdk_examples = fetchGit {
       url = "https://github.com/ros2-gbp/dynamixel_sdk-release.git";
-      hash = "sha256-TRPWVWEEJtx/attfpSr6SATpy7YhzqP9x8ef/IVsULA=";
       rev = "35ae7e09eb0d2d3a39c518764c296ea3d1aef187";
+      hash = "sha256-TRPWVWEEJtx/attfpSr6SATpy7YhzqP9x8ef/IVsULA=";
     };
     dynamixel_workbench = fetchGit {
       url = "https://github.com/ros2-gbp/dynamixel_workbench-release.git";
-      hash = "sha256-iA1/c6eRcHNi0wnJhwog1K7jH1fKwsqIvSfgCZivKrc=";
       rev = "f24e76f99e4784119d6923e895da3e3c2770b4f8";
+      hash = "sha256-iA1/c6eRcHNi0wnJhwog1K7jH1fKwsqIvSfgCZivKrc=";
     };
     dynamixel_workbench_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/dynamixel_workbench_msgs-release.git";
-      hash = "sha256-NMrVMFxbUmSDCdSRTO6gRJtKsmEeqY4Q5FqkBQCeY3I=";
       rev = "dc300702741bf35a25967aba0a7465a453890fca";
+      hash = "sha256-NMrVMFxbUmSDCdSRTO6gRJtKsmEeqY4Q5FqkBQCeY3I=";
     };
     dynamixel_workbench_toolbox = fetchGit {
       url = "https://github.com/ros2-gbp/dynamixel_workbench-release.git";
-      hash = "sha256-nOIZ6YHjctUbm0SxTewtbsAXlfG10kknrKhpsVPGR5k=";
       rev = "8cc15eb3375e6ff7c40998b8d799bb0942d979d6";
+      hash = "sha256-nOIZ6YHjctUbm0SxTewtbsAXlfG10kknrKhpsVPGR5k=";
     };
     ecl_build = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_tools-release.git";
-      hash = "sha256-ttmcSFmWhB7bERQkup3ucja+EU9tIc4Sb4cVetuSS00=";
       rev = "d6b76b771a66754d6a4b03c493decf0a0b33c207";
+      hash = "sha256-ttmcSFmWhB7bERQkup3ucja+EU9tIc4Sb4cVetuSS00=";
     };
     ecl_command_line = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-0rOoPXNkY6U26dMB39t2IjB44typZqO4T5rW2jrEOl8=";
       rev = "f9f941661ee74e5aea6ea8015798ca4f7a7f6fbd";
+      hash = "sha256-0rOoPXNkY6U26dMB39t2IjB44typZqO4T5rW2jrEOl8=";
     };
     ecl_concepts = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-hH2MIha8e5l0G1CqvBSjisV52RKAkaE0J9ZtGpxM9EM=";
       rev = "a0348c6d3a69b498f2e10dc009637ae7751e6329";
+      hash = "sha256-hH2MIha8e5l0G1CqvBSjisV52RKAkaE0J9ZtGpxM9EM=";
     };
     ecl_config = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_lite-release.git";
-      hash = "sha256-eH0ytH9tso+gcYGQSXy83dIPeklxY5K+/Jo0cV9qAxI=";
       rev = "19f1dae955c6a2accdf1e788f69880c70658033c";
+      hash = "sha256-eH0ytH9tso+gcYGQSXy83dIPeklxY5K+/Jo0cV9qAxI=";
     };
     ecl_console = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_lite-release.git";
-      hash = "sha256-w1XZlDsjZDQ0MPDG+dhU0mD3KZjRt4yslxJCP5RHeTE=";
       rev = "8ae020da4280c2a5035e07302d4bb15e2e59a78b";
+      hash = "sha256-w1XZlDsjZDQ0MPDG+dhU0mD3KZjRt4yslxJCP5RHeTE=";
     };
     ecl_containers = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-943O8bp1zs58toB05o+e+e5rOiiB7i0OAWEjrbjQ7Ng=";
       rev = "b06753c443575d5f82ed4a98aa1933c674737437";
+      hash = "sha256-943O8bp1zs58toB05o+e+e5rOiiB7i0OAWEjrbjQ7Ng=";
     };
     ecl_converters = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-hZthKv3t/fhEc7ubch+5EneflAc54IyTtCuBW4vzaF0=";
       rev = "2afba0633775bff93778d25664c02fdb1b7f82c5";
+      hash = "sha256-hZthKv3t/fhEc7ubch+5EneflAc54IyTtCuBW4vzaF0=";
     };
     ecl_converters_lite = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_lite-release.git";
-      hash = "sha256-a8sm73bxxx6IYDP6tv76IbjyUHSAzx6QreCCBMQUePE=";
       rev = "11f9c0317747fc6f91194c2cc986acb51c53eb7c";
+      hash = "sha256-a8sm73bxxx6IYDP6tv76IbjyUHSAzx6QreCCBMQUePE=";
     };
     ecl_core = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-/qmRsU0lb8R70sW/g5572zrbdGlRSBu3BL+GhX77UII=";
       rev = "46da871000a3a83679269de8f8c116e49f5403a0";
+      hash = "sha256-/qmRsU0lb8R70sW/g5572zrbdGlRSBu3BL+GhX77UII=";
     };
     ecl_core_apps = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-s2Ebyn5n1kiUIFSZ3pa4Ycrcv+Zxp6fh/XBk2xxjWbI=";
       rev = "ba34ad25a3cf2830523653dfcf6428cc69b26adb";
+      hash = "sha256-s2Ebyn5n1kiUIFSZ3pa4Ycrcv+Zxp6fh/XBk2xxjWbI=";
     };
     ecl_devices = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-fdhKBuF9q7x8XDG5ld90RQRXHhZf4I6pJGU5KK6EOeI=";
       rev = "1ad2716be394bc1c710c0983d14843e7c1edcc76";
+      hash = "sha256-fdhKBuF9q7x8XDG5ld90RQRXHhZf4I6pJGU5KK6EOeI=";
     };
     ecl_eigen = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-tkEm2XgT3kJqdj/+L317KVB0SOyCjRKuLqsOWToPxbo=";
       rev = "208e5f42160f4e760287d44b5c5cd0ede3331972";
+      hash = "sha256-tkEm2XgT3kJqdj/+L317KVB0SOyCjRKuLqsOWToPxbo=";
     };
     ecl_errors = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_lite-release.git";
-      hash = "sha256-tMZvRB3bre8Dk+0YS+OqnkCGKff09J6PKWHytWxelmk=";
       rev = "22b35c290286e16af8fc32b17a30d92f0dbc0f16";
+      hash = "sha256-tMZvRB3bre8Dk+0YS+OqnkCGKff09J6PKWHytWxelmk=";
     };
     ecl_exceptions = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-vSUx0IaohNthgxC/EHPPCyDY6YrVAcZUT4u5L099eA4=";
       rev = "be56e8dab26536c5577b5810ea4272f1a4542070";
+      hash = "sha256-vSUx0IaohNthgxC/EHPPCyDY6YrVAcZUT4u5L099eA4=";
     };
     ecl_filesystem = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-b9AmUCVBFQ84JFx0ER/eD+2NF6JP/zybtNFnzKAI+dg=";
       rev = "f05b4974145c3bf020724e07908c1d00e621c44c";
+      hash = "sha256-b9AmUCVBFQ84JFx0ER/eD+2NF6JP/zybtNFnzKAI+dg=";
     };
     ecl_formatters = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-KJ9Xhcl2ACKk7qJz2OTu+dVkgzMcvIBEwmXdl0NaiKg=";
       rev = "33a563df933bc760b7baaafd8fd17f0b8267f278";
+      hash = "sha256-KJ9Xhcl2ACKk7qJz2OTu+dVkgzMcvIBEwmXdl0NaiKg=";
     };
     ecl_geometry = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-XXr9pl1hLn7gS04rAzdTRXa+Fe0p4Mn7sC0scLWC2Zc=";
       rev = "88fb603dc11bb212904342a75158fdbad487a916";
+      hash = "sha256-XXr9pl1hLn7gS04rAzdTRXa+Fe0p4Mn7sC0scLWC2Zc=";
     };
     ecl_io = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_lite-release.git";
-      hash = "sha256-I434FhFkRvH1CxPDYASTtfmyT/mK0OLoVA+VPEiSa24=";
       rev = "42299c5544a59b82a57735e51e4a761e53f41952";
+      hash = "sha256-I434FhFkRvH1CxPDYASTtfmyT/mK0OLoVA+VPEiSa24=";
     };
     ecl_ipc = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-VScic0GudpLDyw3R7bdxdgKjaPeyx0ynFGMpfB66eRo=";
       rev = "591c2d181016f5c4ea267c904d7da916fd09074a";
+      hash = "sha256-VScic0GudpLDyw3R7bdxdgKjaPeyx0ynFGMpfB66eRo=";
     };
     ecl_license = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_tools-release.git";
-      hash = "sha256-7IkZyQJw9go1s2je+YLPGemSTMtC8PNA66qCC6akU6w=";
       rev = "6cac334990aa3f48432e60c033a56aa590a79261";
+      hash = "sha256-7IkZyQJw9go1s2je+YLPGemSTMtC8PNA66qCC6akU6w=";
     };
     ecl_linear_algebra = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-2Mofxug8ckLfTnStaTQtx69z6SvToiY8incBV3OMXJo=";
       rev = "67190a8dea831f2c6b0ebf36d232d4bf5b9b58c0";
+      hash = "sha256-2Mofxug8ckLfTnStaTQtx69z6SvToiY8incBV3OMXJo=";
     };
     ecl_lite = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_lite-release.git";
-      hash = "sha256-pfGGGa3tTMW+9VEsHT0ofv7mnz478eGmJA10PjrEvJI=";
       rev = "b21a43e7be198acd2a02ba5e51ee340d19675952";
+      hash = "sha256-pfGGGa3tTMW+9VEsHT0ofv7mnz478eGmJA10PjrEvJI=";
     };
     ecl_manipulators = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-O2B7UtubuHvctssWyG6E5OwnApjjdWF+m62+6Da9Qy4=";
       rev = "918c1d66427daaa5f9454b3fc53b1e5125c80a22";
+      hash = "sha256-O2B7UtubuHvctssWyG6E5OwnApjjdWF+m62+6Da9Qy4=";
     };
     ecl_math = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-FJevrMf2MxF+heenjke0paV5yAvePcxmHcEW7Is+Pmc=";
       rev = "8c03abd2b51a5c4517c465743b82c07def3571a2";
+      hash = "sha256-FJevrMf2MxF+heenjke0paV5yAvePcxmHcEW7Is+Pmc=";
     };
     ecl_mobile_robot = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-NQJy3LdrqwiDAynl1fLCbDJz/A4qCxq6VpeaO+fr/4Y=";
       rev = "a9c1743d3485af826a0cfa4f960ec5af94841de6";
+      hash = "sha256-NQJy3LdrqwiDAynl1fLCbDJz/A4qCxq6VpeaO+fr/4Y=";
     };
     ecl_mpl = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-b7VJovFqbuLBco3qEl5r57uuO7wTyZrjQSNR6hNX00k=";
       rev = "dbcec2bc48eba197df4b3795e1fce8bb119b96ff";
+      hash = "sha256-b7VJovFqbuLBco3qEl5r57uuO7wTyZrjQSNR6hNX00k=";
     };
     ecl_sigslots = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-c5lvTwI1CTmfeMKJsCuyr/ilN2KWeABt+RYdAxB9cdI=";
       rev = "3538d06591cc853d4e0cdef4e822477bd8125aac";
+      hash = "sha256-c5lvTwI1CTmfeMKJsCuyr/ilN2KWeABt+RYdAxB9cdI=";
     };
     ecl_sigslots_lite = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_lite-release.git";
-      hash = "sha256-nGYQQNr6VnsCIPQoCQfLmIxpw1uEBrqSu1PjF4XPSxk=";
       rev = "5ef1635c1eef70e7fa3bb94f07a43adf19806042";
+      hash = "sha256-nGYQQNr6VnsCIPQoCQfLmIxpw1uEBrqSu1PjF4XPSxk=";
     };
     ecl_statistics = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-znVdvA/1rSX25k4ZeeWg3ageP91ua9cDRosJ2FCTUyo=";
       rev = "78080a935dfbc52cb865bfcf0c688bfcd3447b8f";
+      hash = "sha256-znVdvA/1rSX25k4ZeeWg3ageP91ua9cDRosJ2FCTUyo=";
     };
     ecl_streams = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-IpgY894/j+PnAx+KIYX8Wvb7yve2eAvnuYrKq0ZgX0s=";
       rev = "73bdd35f128030911ff03e6720e4a5178d89a226";
+      hash = "sha256-IpgY894/j+PnAx+KIYX8Wvb7yve2eAvnuYrKq0ZgX0s=";
     };
     ecl_threads = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-4lhOg9DicobrUw8Xel3vSP7jrgFI9obXn6dYbQEyFHA=";
       rev = "9c8d0fd7fa1235ba4439c41fbfc2ec61bfb2d349";
+      hash = "sha256-4lhOg9DicobrUw8Xel3vSP7jrgFI9obXn6dYbQEyFHA=";
     };
     ecl_time = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-SC1B6uuNMjWdHD10L5nXdVvgkguZSiwRc1i/zONxu5E=";
       rev = "737c5377306d2ab352553b7abac2e223d197c918";
+      hash = "sha256-SC1B6uuNMjWdHD10L5nXdVvgkguZSiwRc1i/zONxu5E=";
     };
     ecl_time_lite = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_lite-release.git";
-      hash = "sha256-xUWy6QEatAillIK/EUqV549irG+mWxeknSHHCLIkMT0=";
       rev = "e01d6ea66feaa66afcb6351f65934b129fd692fb";
+      hash = "sha256-xUWy6QEatAillIK/EUqV549irG+mWxeknSHHCLIkMT0=";
     };
     ecl_tools = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_tools-release.git";
-      hash = "sha256-z/lKRKqVLxiSJ9nSnQyQh/Dsk/+USiDw68+Nfg9Fc0U=";
       rev = "edfc0a38f86fa95d0d26a7c5f051a2bc7642399d";
+      hash = "sha256-z/lKRKqVLxiSJ9nSnQyQh/Dsk/+USiDw68+Nfg9Fc0U=";
     };
     ecl_type_traits = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-s8Qksqd5xzvMghgqo0aQ6r0Oyou3x5hgXLB5t3MvZVk=";
       rev = "9344fa6b5e1d35e90a1cd7c040e3d153a8c90a47";
+      hash = "sha256-s8Qksqd5xzvMghgqo0aQ6r0Oyou3x5hgXLB5t3MvZVk=";
     };
     ecl_utilities = fetchGit {
       url = "https://github.com/ros2-gbp/ecl_core-release.git";
-      hash = "sha256-lr/gRtkjgtYbXIMwa5OUbaSehxs5kKRTATWgZooFnRA=";
       rev = "b5d6924f855d8ab70a7d59415fbed2d89ed6cd38";
+      hash = "sha256-lr/gRtkjgtYbXIMwa5OUbaSehxs5kKRTATWgZooFnRA=";
     };
     effort_controllers = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-853bq9TIn9qiTIXol93tb4o4YzPtmRqZMui6i14jXd0=";
       rev = "1ac70dcea7abbb86f9e0f5c489ba673c6be5b1a7";
+      hash = "sha256-853bq9TIn9qiTIXol93tb4o4YzPtmRqZMui6i14jXd0=";
     };
     eigen3_cmake_module = fetchGit {
       url = "https://github.com/ros2-gbp/eigen3_cmake_module-release.git";
-      hash = "sha256-k2+KI5dgNItTq+Q9z/ORtjXBmyG29cWrs8Hwqk6lw5k=";
       rev = "558850a9bed7e064e1dd11c03f5c43eaeaa8f656";
+      hash = "sha256-k2+KI5dgNItTq+Q9z/ORtjXBmyG29cWrs8Hwqk6lw5k=";
     };
     eigen_stl_containers = fetchGit {
       url = "https://github.com/ros2-gbp/eigen_stl_containers-release.git";
-      hash = "sha256-Zjjaom5lCGLMKC33kq6er1Ji54XUj/3hkSIWcBnXI+E=";
       rev = "764dd93e29b143630f05b7e6396789c2967395f3";
+      hash = "sha256-Zjjaom5lCGLMKC33kq6er1Ji54XUj/3hkSIWcBnXI+E=";
     };
     eigenpy = fetchGit {
       url = "https://github.com/ros2-gbp/eigenpy-release.git";
-      hash = "sha256-MZ1G6CeMAyd4QNxOthd+LfXnpGHVqb9yi1wUbSJFhTU=";
       rev = "59964cc674d0c3424f6db5978a4dc0cdaba49839";
+      hash = "sha256-MZ1G6CeMAyd4QNxOthd+LfXnpGHVqb9yi1wUbSJFhTU=";
     };
     etsi_its_cam_coding = fetchGit {
       url = "https://github.com/ros2-gbp/etsi_its_messages-release.git";
-      hash = "sha256-o/O0488lozKnGTOebwvYgVCrbLZGaIdNUceJd0G1+NU=";
       rev = "a19ebf003dad2a5510507c5282bf21e0255f3bf2";
+      hash = "sha256-o/O0488lozKnGTOebwvYgVCrbLZGaIdNUceJd0G1+NU=";
     };
     etsi_its_cam_conversion = fetchGit {
       url = "https://github.com/ros2-gbp/etsi_its_messages-release.git";
-      hash = "sha256-U04yBihW8oMI74WedgJ09WHsei9+FLV0DlBwpixQFTI=";
       rev = "33bb208ef2e4f74ea1e24d9bdce15cd341c73cba";
+      hash = "sha256-U04yBihW8oMI74WedgJ09WHsei9+FLV0DlBwpixQFTI=";
     };
     etsi_its_cam_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/etsi_its_messages-release.git";
-      hash = "sha256-0rqmElxLU0ZXNqZjizWBw254fX9WJZu3CBUGdH5DldE=";
       rev = "5efbe0797b0e493279caa27bed2458319f70530a";
+      hash = "sha256-0rqmElxLU0ZXNqZjizWBw254fX9WJZu3CBUGdH5DldE=";
     };
     etsi_its_coding = fetchGit {
       url = "https://github.com/ros2-gbp/etsi_its_messages-release.git";
-      hash = "sha256-5GfA1H1WwNYYVFNXYBiK8Yb9xhzkiiOc7v/4SO+LQcI=";
       rev = "500167235b34db4f63bc6df3ee79b3528d3b03b9";
+      hash = "sha256-5GfA1H1WwNYYVFNXYBiK8Yb9xhzkiiOc7v/4SO+LQcI=";
     };
     etsi_its_conversion = fetchGit {
       url = "https://github.com/ros2-gbp/etsi_its_messages-release.git";
-      hash = "sha256-KEJOw8zGW2EExhZPx5CsBzIBg5k2hgE3sbE1DQNL1ik=";
       rev = "b4211c89661a0ed48b2811f49637680004692f41";
+      hash = "sha256-KEJOw8zGW2EExhZPx5CsBzIBg5k2hgE3sbE1DQNL1ik=";
     };
     etsi_its_denm_coding = fetchGit {
       url = "https://github.com/ros2-gbp/etsi_its_messages-release.git";
-      hash = "sha256-4nlbTzT0Ep6DZhRgf5dIz+hyZTHbrTQ10xwQ0Dg8gW4=";
       rev = "15355d04c4d092ff555a609f1c6aa8692662f18b";
+      hash = "sha256-4nlbTzT0Ep6DZhRgf5dIz+hyZTHbrTQ10xwQ0Dg8gW4=";
     };
     etsi_its_denm_conversion = fetchGit {
       url = "https://github.com/ros2-gbp/etsi_its_messages-release.git";
-      hash = "sha256-3D4Ptry5jbxai/lE0Jt5cIZQ1Yhvnsf6l6clJHCJMa0=";
       rev = "77e313e8b3ac4415fd5220899beb406b3bcad5ab";
+      hash = "sha256-3D4Ptry5jbxai/lE0Jt5cIZQ1Yhvnsf6l6clJHCJMa0=";
     };
     etsi_its_denm_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/etsi_its_messages-release.git";
-      hash = "sha256-soDc6jIybbGRSr5DigIDNv6qQ6RnoG+FqOa3DytlQ3M=";
       rev = "13fecf60d34c863c09a00348a6c4ee6d8d597fb1";
+      hash = "sha256-soDc6jIybbGRSr5DigIDNv6qQ6RnoG+FqOa3DytlQ3M=";
     };
     etsi_its_messages = fetchGit {
       url = "https://github.com/ros2-gbp/etsi_its_messages-release.git";
-      hash = "sha256-JU1PzaSKN9Wox0tGPGRO8RU0nsoBKAXvboVEsQiHIBk=";
       rev = "a40dbc20d9849e297ba9b74b21f00942d8c817d1";
+      hash = "sha256-JU1PzaSKN9Wox0tGPGRO8RU0nsoBKAXvboVEsQiHIBk=";
     };
     etsi_its_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/etsi_its_messages-release.git";
-      hash = "sha256-PisQE2Jlo+Xk9Tvs8yuv5Ai3aj8zb/DD+8RBh9DdH40=";
       rev = "3404554c458115cac3981a5d678f6547f00d9e03";
+      hash = "sha256-PisQE2Jlo+Xk9Tvs8yuv5Ai3aj8zb/DD+8RBh9DdH40=";
     };
     etsi_its_msgs_utils = fetchGit {
       url = "https://github.com/ros2-gbp/etsi_its_messages-release.git";
-      hash = "sha256-4m9rkftE0f05rRclVc/Ydtwxsa10Ly68mzSIds7ouP4=";
       rev = "8865a7e55f0fccff31fa6735dcb9d0057be25663";
+      hash = "sha256-4m9rkftE0f05rRclVc/Ydtwxsa10Ly68mzSIds7ouP4=";
     };
     etsi_its_primitives_conversion = fetchGit {
       url = "https://github.com/ros2-gbp/etsi_its_messages-release.git";
-      hash = "sha256-gM1SxBTjxgp5LRbNUYinuNTAlnr0Rlw3UUMYzB0UFKs=";
       rev = "47547a482c63a8fd2272eefbe362f8649b2a5d99";
+      hash = "sha256-gM1SxBTjxgp5LRbNUYinuNTAlnr0Rlw3UUMYzB0UFKs=";
     };
     etsi_its_rviz_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/etsi_its_messages-release.git";
-      hash = "sha256-eLfpGd3dSpaQ2mcH2MIscz/9bfubvA2PdaVAbaqKt3g=";
       rev = "76f149cdbaa2f94918f52e9ebb3ea5955b8e37e0";
+      hash = "sha256-eLfpGd3dSpaQ2mcH2MIscz/9bfubvA2PdaVAbaqKt3g=";
     };
     event_camera_codecs = fetchGit {
       url = "https://github.com/ros2-gbp/event_camera_codecs-release.git";
-      hash = "sha256-Okh/tAcO2MFOTeIVFOE8a+B/bDwyTZeOP6AinyAHjsk=";
       rev = "885550d7f26f6df532e74cf11839590c5c8f5564";
+      hash = "sha256-Okh/tAcO2MFOTeIVFOE8a+B/bDwyTZeOP6AinyAHjsk=";
     };
     event_camera_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/event_camera_msgs-release.git";
-      hash = "sha256-1ZtF5SndbEknqRZ9evnMI25GzONA2ezHKphMlwhsk0g=";
       rev = "91ad63afda709d4e566d992476ed002309af2f20";
+      hash = "sha256-1ZtF5SndbEknqRZ9evnMI25GzONA2ezHKphMlwhsk0g=";
     };
     event_camera_py = fetchGit {
       url = "https://github.com/ros2-gbp/event_camera_py-release.git";
-      hash = "sha256-uthadX9Wphw+c1YYKt/PywG59JLnXNya4kfxTW+VVyY=";
       rev = "c24a962f62635b52f9c51cdb33b2cbb1feee5daa";
+      hash = "sha256-uthadX9Wphw+c1YYKt/PywG59JLnXNya4kfxTW+VVyY=";
     };
     event_camera_renderer = fetchGit {
       url = "https://github.com/ros2-gbp/event_camera_renderer-release.git";
-      hash = "sha256-WnRWflQ+N8Urzm077M3kQCQ5qXRvnyKtXlxE2ITfAiY=";
       rev = "224dfb7f7b9201a58a0bdba4eb8bb69deb44f3b0";
+      hash = "sha256-WnRWflQ+N8Urzm077M3kQCQ5qXRvnyKtXlxE2ITfAiY=";
     };
     example_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/example_interfaces-release.git";
-      hash = "sha256-mRegvkQKSsJH6SsUNhDlJidkIxKojf6U4GltTKF0oAY=";
       rev = "7b504cc01ddad6288771bb716451c6f4f7f6c51d";
+      hash = "sha256-mRegvkQKSsJH6SsUNhDlJidkIxKojf6U4GltTKF0oAY=";
     };
     examples_rclcpp_async_client = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-0iq4XGvRdCCPBT06auHiCmfr+gES26/yu36Ccrfp6Xs=";
       rev = "8a61aae631e4a7b75eaec9385bf64d272e487dc3";
+      hash = "sha256-0iq4XGvRdCCPBT06auHiCmfr+gES26/yu36Ccrfp6Xs=";
     };
     examples_rclcpp_cbg_executor = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-f/zcFuUwgYeNFnSm15GE7RBebIioaCa8/9yyIWYd6sY=";
       rev = "59a1ddcd3150eb580a593adb64d43f384191df5a";
+      hash = "sha256-f/zcFuUwgYeNFnSm15GE7RBebIioaCa8/9yyIWYd6sY=";
     };
     examples_rclcpp_minimal_action_client = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-44QoVGXKolZcxjZVubSNcgfDnEtRK2G4agpjaDy4x1M=";
       rev = "fddd31813cf15e39e787379c6669bd5f36a984f3";
+      hash = "sha256-44QoVGXKolZcxjZVubSNcgfDnEtRK2G4agpjaDy4x1M=";
     };
     examples_rclcpp_minimal_action_server = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-qYAaj/GLdsU+3e4ZBiLXB151Kt2aFEEsuurI/4I4msU=";
       rev = "afc6fa81d44132e10e507fb1ced443ff8a6b9eea";
+      hash = "sha256-qYAaj/GLdsU+3e4ZBiLXB151Kt2aFEEsuurI/4I4msU=";
     };
     examples_rclcpp_minimal_client = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-wPicBMGjRRmUPFCsxsE4DsIXPtB3+Qqm+QRtLbhkDc4=";
       rev = "ec48e85fd9500302ef911a6c8e8083aea9134d67";
+      hash = "sha256-wPicBMGjRRmUPFCsxsE4DsIXPtB3+Qqm+QRtLbhkDc4=";
     };
     examples_rclcpp_minimal_composition = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-dPfMx29eNlCzMVbVDpm3hllPIEIen7qj4TVdvzxzxws=";
       rev = "403504eef1104799cb560b86188f34d8b70a46d9";
+      hash = "sha256-dPfMx29eNlCzMVbVDpm3hllPIEIen7qj4TVdvzxzxws=";
     };
     examples_rclcpp_minimal_publisher = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-9fjvWKgKmVm0aaJXMzewXL5UMuZ3AboylZsjXk3BN4o=";
       rev = "2efab9be76af3b788ee8f06a3f43fdf36bc71461";
+      hash = "sha256-9fjvWKgKmVm0aaJXMzewXL5UMuZ3AboylZsjXk3BN4o=";
     };
     examples_rclcpp_minimal_service = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-TK40aRRYWs3kQbrTRrkP0Hpjoez1wQ+pxCXkq44ckFE=";
       rev = "7608f6207925ceaec3e0ad3a65d7e1a5cbbd663f";
+      hash = "sha256-TK40aRRYWs3kQbrTRrkP0Hpjoez1wQ+pxCXkq44ckFE=";
     };
     examples_rclcpp_minimal_subscriber = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-tu9OkbPYxmWgDYDJhYrmvkDUtuBr4uK5El2ZvTgnb8k=";
       rev = "51085a7cdc7e60d40c5f523e193748e79d1b9dba";
+      hash = "sha256-tu9OkbPYxmWgDYDJhYrmvkDUtuBr4uK5El2ZvTgnb8k=";
     };
     examples_rclcpp_minimal_timer = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-uXaIMpc0z/lqqhOahATIjbp47EVX2QjQNIJPYEDWCuA=";
       rev = "8ccfde6efcf379fe568a24dfd552ad2eef07003f";
+      hash = "sha256-uXaIMpc0z/lqqhOahATIjbp47EVX2QjQNIJPYEDWCuA=";
     };
     examples_rclcpp_multithreaded_executor = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-U2cq59Pmhxel0vHc1C8RuXzQJTZ5k/qKW1Hi9lVIauc=";
       rev = "198bc59389c12b3dcd106d51cacdc722d6afb5d2";
+      hash = "sha256-U2cq59Pmhxel0vHc1C8RuXzQJTZ5k/qKW1Hi9lVIauc=";
     };
     examples_rclcpp_wait_set = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-bcYdoXpGb2pdK56zFdit4yfNtigRFiQbZP3GfWVr9JQ=";
       rev = "07cecbcdc765f817583332f6cd674f5dc462b940";
+      hash = "sha256-bcYdoXpGb2pdK56zFdit4yfNtigRFiQbZP3GfWVr9JQ=";
     };
     examples_rclpy_executors = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-D2/VFcVtE/o7xbLmqJSRM8BZhaHWvJWpYRoUTnimDR4=";
       rev = "3cd171437d698a92f9e5a2dae9b1ea9514e156f0";
+      hash = "sha256-D2/VFcVtE/o7xbLmqJSRM8BZhaHWvJWpYRoUTnimDR4=";
     };
     examples_rclpy_guard_conditions = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-XuoPymroDyoXWYabkwprlEVdOyalu5DjW759xyQjsPs=";
       rev = "8e9f8d35826ef49362df7a763dd229f27d3b651a";
+      hash = "sha256-XuoPymroDyoXWYabkwprlEVdOyalu5DjW759xyQjsPs=";
     };
     examples_rclpy_minimal_action_client = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-vIQff2y6l1Jq5uMtp2HaEQut9x/n0LaWMp9RrMx5ACE=";
       rev = "3c333603cacbdde270f94bd36697211e18f9e635";
+      hash = "sha256-vIQff2y6l1Jq5uMtp2HaEQut9x/n0LaWMp9RrMx5ACE=";
     };
     examples_rclpy_minimal_action_server = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-KYqLXOVHuLvkJFzeJoe7P3ZmBDjckZ6v5358ljw2bt4=";
       rev = "0bfaa358a63b8bc1f7ecfa7f1db366afe7eb7639";
+      hash = "sha256-KYqLXOVHuLvkJFzeJoe7P3ZmBDjckZ6v5358ljw2bt4=";
     };
     examples_rclpy_minimal_client = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-ArQUsjRTLQk95bcoXaFC1l3execpR74HzzFrOyYJpAk=";
       rev = "d149821ca87d6608df40eb67fc9625e567a5d1a4";
+      hash = "sha256-ArQUsjRTLQk95bcoXaFC1l3execpR74HzzFrOyYJpAk=";
     };
     examples_rclpy_minimal_publisher = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-VysiiWLtXoquWvhGtov2Uj90jvJ+GFRDkAGu9KUIMjg=";
       rev = "46e87448dadb5671d4688a05ecf121c0c03abab9";
+      hash = "sha256-VysiiWLtXoquWvhGtov2Uj90jvJ+GFRDkAGu9KUIMjg=";
     };
     examples_rclpy_minimal_service = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-jrpXqNzN9kxaRAjcxrJQvNyjOtifMEcr+3dqMovB9zY=";
       rev = "974f22c135ba13dab49c95d5268e06ecd6d46805";
+      hash = "sha256-jrpXqNzN9kxaRAjcxrJQvNyjOtifMEcr+3dqMovB9zY=";
     };
     examples_rclpy_minimal_subscriber = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-nuGs5Mzwj75ogKk/ZYVbwRHETmQJujeuUm+LaiLV/rc=";
       rev = "7d29ff785559ea11d79ae4e58b24a0d995e96166";
+      hash = "sha256-nuGs5Mzwj75ogKk/ZYVbwRHETmQJujeuUm+LaiLV/rc=";
     };
     examples_rclpy_pointcloud_publisher = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-0coxblLLRw5cUv8P6h3qr0L6z2LaGp5ZC5YN35q2kVg=";
       rev = "2d3126625922b57bdf5e07a97d251ce3678a6377";
+      hash = "sha256-0coxblLLRw5cUv8P6h3qr0L6z2LaGp5ZC5YN35q2kVg=";
     };
     examples_tf2_py = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-pMk7tDj+6IB2MqJ4DuR77oWQ/ZJG+SL3qQNsviDWwYA=";
       rev = "684c650fa72d57a815634547d67d85bd5d7cd8c5";
+      hash = "sha256-pMk7tDj+6IB2MqJ4DuR77oWQ/ZJG+SL3qQNsviDWwYA=";
     };
     executive_smach = fetchGit {
       url = "https://github.com/ros2-gbp/executive_smach-release.git";
-      hash = "sha256-68w8XZNadjLJdkgr+OVVW8Stg9rqS5wqQgYUxlZtOo0=";
       rev = "01a5cca0e387bee47acbf617134ea0e851c7d993";
+      hash = "sha256-68w8XZNadjLJdkgr+OVVW8Stg9rqS5wqQgYUxlZtOo0=";
     };
     fastcdr = fetchGit {
       url = "https://github.com/ros2-gbp/fastcdr-release.git";
-      hash = "sha256-/KJcVY0p1qX56K44c6u5ZwcgzQHKUcHmqTeBWyZTyes=";
       rev = "88698600fccc8bee85c04825020673097f7a6422";
+      hash = "sha256-/KJcVY0p1qX56K44c6u5ZwcgzQHKUcHmqTeBWyZTyes=";
     };
     fastrtps = fetchGit {
       url = "https://github.com/ros2-gbp/fastrtps-release.git";
-      hash = "sha256-wECFJjYb5fz4u/B375jBBUkB8xQ1njY3pIcc8pixN9g=";
       rev = "2ed4a01f31f5e04860e4e24fedc8a4a1012a282f";
+      hash = "sha256-wECFJjYb5fz4u/B375jBBUkB8xQ1njY3pIcc8pixN9g=";
     };
     fastrtps_cmake_module = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_typesupport_fastrtps-release.git";
-      hash = "sha256-CMvgUlOB5CpgyTkKXPsg5gTBnHHJWz1DLOwjQRe/UDs=";
       rev = "d3265cdbcaad3096098474edb966fd17eb5a977f";
+      hash = "sha256-CMvgUlOB5CpgyTkKXPsg5gTBnHHJWz1DLOwjQRe/UDs=";
     };
     ffmpeg_image_transport = fetchGit {
       url = "https://github.com/ros2-gbp/ffmpeg_image_transport-release.git";
-      hash = "sha256-NNfHNOjQyl6FVnmws3dcgDvUuE+EkIy2CyhFkCqoDNM=";
       rev = "a1a0e2db2352c98dda15d1f0faa9c7d5945306a5";
+      hash = "sha256-NNfHNOjQyl6FVnmws3dcgDvUuE+EkIy2CyhFkCqoDNM=";
     };
     ffmpeg_image_transport_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/ffmpeg_image_transport_msgs-release.git";
-      hash = "sha256-pqSfqQqwy2iI4Z76hMWtAkpmjCYHy0xa0SBqsE+X/dQ=";
       rev = "27fad7bbaba75016c36e07b12364819edd074066";
+      hash = "sha256-pqSfqQqwy2iI4Z76hMWtAkpmjCYHy0xa0SBqsE+X/dQ=";
     };
     ffmpeg_image_transport_tools = fetchGit {
       url = "https://github.com/ros2-gbp/ffmpeg_image_transport_tools-release.git";
-      hash = "sha256-swXtnWDcYMHi4NZTdTTgmdmj5yWFc7cyTm/393iJ1aA=";
       rev = "108a05c70fd25d0549623c09a2986e6a37578700";
+      hash = "sha256-swXtnWDcYMHi4NZTdTTgmdmj5yWFc7cyTm/393iJ1aA=";
     };
     fields2cover = fetchGit {
       url = "https://github.com/ros2-gbp/fields2cover-release.git";
-      hash = "sha256-M6nTrgKOJ8WBcqrcY99OK9HEHW3JqWnKANPdzd/r1cQ=";
       rev = "e8bc661c50b9b50ee18959d72574c639ef3ce675";
+      hash = "sha256-M6nTrgKOJ8WBcqrcY99OK9HEHW3JqWnKANPdzd/r1cQ=";
     };
     filters = fetchGit {
       url = "https://github.com/ros2-gbp/filters-release.git";
-      hash = "sha256-hz/dFfNO4Dl2v0luZbIJQrfAimC4iBuF7HtT0XInGgk=";
       rev = "4453644af7cf5338d89bb7df64174695674d45c8";
+      hash = "sha256-hz/dFfNO4Dl2v0luZbIJQrfAimC4iBuF7HtT0XInGgk=";
     };
     find_object_2d = fetchGit {
       url = "https://github.com/ros2-gbp/find_object_2d-release.git";
-      hash = "sha256-KtLe1v52K9gb/p4t0Yqdkc99Hgi67wNcFpmguOilOnA=";
       rev = "22898328d7fbb663e8e46c4f7f608a8491906407";
+      hash = "sha256-KtLe1v52K9gb/p4t0Yqdkc99Hgi67wNcFpmguOilOnA=";
     };
     flexbe_behavior_engine = fetchGit {
       url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release.git";
-      hash = "sha256-l9yTnBvmIxQL5DNjo75+SegiknEw20p8+lO43JC6KaA=";
       rev = "7bba4017945659d7c661bf76c3e165c9219678e4";
+      hash = "sha256-l9yTnBvmIxQL5DNjo75+SegiknEw20p8+lO43JC6KaA=";
     };
     flexbe_core = fetchGit {
       url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release.git";
-      hash = "sha256-H4Wrtmbl6nwhcBJBbA+XtOkHJnDhvtGLfec0Qz0K99g=";
       rev = "237e2098a1e767209cf6aa0806947e9d68ae024c";
+      hash = "sha256-H4Wrtmbl6nwhcBJBbA+XtOkHJnDhvtGLfec0Qz0K99g=";
     };
     flexbe_input = fetchGit {
       url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release.git";
-      hash = "sha256-zcBWjs46lO3Mn9pE3mtDK1mqO1tF+F2iToPqTvFECY4=";
       rev = "15e469e007b5664e9321f2a291e2a952409147b5";
+      hash = "sha256-zcBWjs46lO3Mn9pE3mtDK1mqO1tF+F2iToPqTvFECY4=";
     };
     flexbe_mirror = fetchGit {
       url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release.git";
-      hash = "sha256-SSn47+ekb/7OgTTqqklfqRhzbO2J+7heIZotvzRPa9c=";
       rev = "2d45bf836c525403e10f6fc2caedd98e0da9a926";
+      hash = "sha256-SSn47+ekb/7OgTTqqklfqRhzbO2J+7heIZotvzRPa9c=";
     };
     flexbe_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release.git";
-      hash = "sha256-uBMqKj7xP+bWHd1rLyL8C2Tx+/vWfPi7wrtzjqmywGM=";
       rev = "a5d7f9f1c81ae33f3c3c2fb01e0721bb2bdd926a";
+      hash = "sha256-uBMqKj7xP+bWHd1rLyL8C2Tx+/vWfPi7wrtzjqmywGM=";
     };
     flexbe_onboard = fetchGit {
       url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release.git";
-      hash = "sha256-EbO7yBYjwzsyok21wnRFK+vFSQE/2Pf3K63lSfzHNSk=";
       rev = "62eef8ad46fa86a61d4e4dce3c42aa1feb201993";
+      hash = "sha256-EbO7yBYjwzsyok21wnRFK+vFSQE/2Pf3K63lSfzHNSk=";
     };
     flexbe_states = fetchGit {
       url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release.git";
-      hash = "sha256-9nCf5YRLrdFBBRGVTkMGtiBfcHoiWNVdCLwqKnaSv3k=";
       rev = "bf1958c7b02732f3092c6c868df978a05622c2c5";
+      hash = "sha256-9nCf5YRLrdFBBRGVTkMGtiBfcHoiWNVdCLwqKnaSv3k=";
     };
     flexbe_testing = fetchGit {
       url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release.git";
-      hash = "sha256-Z8v7JR6IuSmak5toK1AzflLXgHOoa40m9WxX883LZ7w=";
       rev = "7cbe302c79f606b5f242338a4d8fdfc0c1cd7e94";
+      hash = "sha256-Z8v7JR6IuSmak5toK1AzflLXgHOoa40m9WxX883LZ7w=";
     };
     flexbe_widget = fetchGit {
       url = "https://github.com/ros2-gbp/flexbe_behavior_engine-release.git";
-      hash = "sha256-JDdAs26UU39Hp/4i314mPuzJ2ZT957pRGJ/i8u9zW6I=";
       rev = "ce31f66657d5a4e49e0842f6915ae5a51baca4d5";
+      hash = "sha256-JDdAs26UU39Hp/4i314mPuzJ2ZT957pRGJ/i8u9zW6I=";
     };
     flir_camera_description = fetchGit {
       url = "https://github.com/ros2-gbp/flir_camera_driver-release.git";
-      hash = "sha256-BW9xfT7JS4SQrUug5BG2EQ0c49xUa1glCNWO0Wpwk2g=";
       rev = "8f67b40ac16a50c4a57a54b1839ca12b61bff0bf";
+      hash = "sha256-BW9xfT7JS4SQrUug5BG2EQ0c49xUa1glCNWO0Wpwk2g=";
     };
     flir_camera_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/flir_camera_driver-release.git";
-      hash = "sha256-jlKxZPXxL4UTWrIgsk4bOYU9oeyoW9deS08ci3Uh2GI=";
       rev = "1c637058a2939d3672eacbad70310a1138c922f6";
+      hash = "sha256-jlKxZPXxL4UTWrIgsk4bOYU9oeyoW9deS08ci3Uh2GI=";
     };
     fluent_rviz = fetchGit {
       url = "https://github.com/ros2-gbp/fluent_rviz-release.git";
-      hash = "sha256-/LmzIiGEHhv+jlon28dyJAjyB233kvyupBzUS01rdjA=";
       rev = "e271cd3172ef0ebd5a1c682f0443b893ee909caa";
+      hash = "sha256-/LmzIiGEHhv+jlon28dyJAjyB233kvyupBzUS01rdjA=";
     };
     fmi_adapter = fetchGit {
       url = "https://github.com/ros2-gbp/fmi_adapter-release.git";
-      hash = "sha256-bdDksqaZAqG/5URM3Ifb8DOvHvjwqqadN4eguWTN3Vk=";
       rev = "7cd1b63789fc2756d115d493ec4d79add7e8edc7";
+      hash = "sha256-bdDksqaZAqG/5URM3Ifb8DOvHvjwqqadN4eguWTN3Vk=";
     };
     fmi_adapter_examples = fetchGit {
       url = "https://github.com/ros2-gbp/fmi_adapter-release.git";
-      hash = "sha256-FNLnKvCy1QMsMlkdwfiwnupdtP9U06oTSPaQTkp7XOA=";
       rev = "d784763bdaa87a53b3bed241dc18f46bc3fc6d1e";
+      hash = "sha256-FNLnKvCy1QMsMlkdwfiwnupdtP9U06oTSPaQTkp7XOA=";
     };
     fmilibrary_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/fmilibrary_vendor-release.git";
-      hash = "sha256-RwFS1j6Bue1ac96cXWL4i1A+KcMFWctqGRc0ZGeTR70=";
       rev = "a2c5aea2e1092520a763dfba27fd2621d761a9ab";
+      hash = "sha256-RwFS1j6Bue1ac96cXWL4i1A+KcMFWctqGRc0ZGeTR70=";
     };
     foonathan_memory_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/foonathan_memory_vendor-release.git";
-      hash = "sha256-LmTgr8JI5jo23rCSvEeq6WSeCvLx/dmYpqtNx0hZ7lE=";
       rev = "446ac182791f3c0ab3817f3b503c38954e6a0133";
+      hash = "sha256-LmTgr8JI5jo23rCSvEeq6WSeCvLx/dmYpqtNx0hZ7lE=";
     };
     force_torque_sensor_broadcaster = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-eSTtk3McVsSPQAqfgrUnnOXrzErV3DSb5AcRqTtPoeM=";
       rev = "d2b5c4cc66afa2f098b15bab34b0ea6c5778b033";
+      hash = "sha256-eSTtk3McVsSPQAqfgrUnnOXrzErV3DSb5AcRqTtPoeM=";
     };
     forward_command_controller = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-wGBABeEj1H80jKKvJjxyXX02QjiNZUWr64hN7bqN9Fc=";
       rev = "47f71845d1b218bd164462968c531754c7e4ed79";
+      hash = "sha256-wGBABeEj1H80jKKvJjxyXX02QjiNZUWr64hN7bqN9Fc=";
     };
     four_wheel_steering_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/four_wheel_steering_msgs-release.git";
-      hash = "sha256-lESkZ6d2jUSfCCCB5KsV8gJwBTO0EG7O4/LInYggSzc=";
       rev = "cf71cef5c668cd51e53724dc48c8d7201221e3de";
+      hash = "sha256-lESkZ6d2jUSfCCCB5KsV8gJwBTO0EG7O4/LInYggSzc=";
     };
     foxglove_bridge = fetchGit {
       url = "https://github.com/ros2-gbp/foxglove_bridge-release.git";
-      hash = "sha256-sHoOCw7W4xLs/4wgqXsIZQtJDKN341E/+fdTtQaQlDQ=";
       rev = "fcddcdc2258c3a36376d9325699565e8febc6b1d";
+      hash = "sha256-sHoOCw7W4xLs/4wgqXsIZQtJDKN341E/+fdTtQaQlDQ=";
     };
     foxglove_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/ros_foxglove_msgs-release.git";
-      hash = "sha256-M7/eEP7tPukgpkdDKo93zEfydXTiLUzUaeR6h4c6lxM=";
       rev = "1643daf92cf16b9a75cc2e3e184c7077de87db2a";
+      hash = "sha256-M7/eEP7tPukgpkdDKo93zEfydXTiLUzUaeR6h4c6lxM=";
     };
     fuse = fetchGit {
       url = "https://github.com/ros2-gbp/fuse-release.git";
-      hash = "sha256-L7mooOifcCJDLiXwk0are7MS7SnxR8s1MrIPCwexfD4=";
       rev = "146b505aa3208d25a2e7c1b5d170efc44094bc45";
+      hash = "sha256-L7mooOifcCJDLiXwk0are7MS7SnxR8s1MrIPCwexfD4=";
     };
     fuse_constraints = fetchGit {
       url = "https://github.com/ros2-gbp/fuse-release.git";
-      hash = "sha256-c62NE6NrO6Amg2XxYP/AdRC42P1WIxHe7O6ypp7gOvE=";
       rev = "1200006240989303f086811f226ab7a841a124d6";
+      hash = "sha256-c62NE6NrO6Amg2XxYP/AdRC42P1WIxHe7O6ypp7gOvE=";
     };
     fuse_core = fetchGit {
       url = "https://github.com/ros2-gbp/fuse-release.git";
-      hash = "sha256-Ge1xbnN6OG5f2HhwAR/cxfzZv6PBB4W7N18Zhhi0RL0=";
       rev = "b3b1cb3f75ff1d3fa4e45646dbdbf24f5497857b";
+      hash = "sha256-Ge1xbnN6OG5f2HhwAR/cxfzZv6PBB4W7N18Zhhi0RL0=";
     };
     fuse_doc = fetchGit {
       url = "https://github.com/ros2-gbp/fuse-release.git";
-      hash = "sha256-uY1vnIJQ0LsiGyvvSWFiqNVyu1/Ag328pzFCn2jhhsQ=";
       rev = "24121e81f24f166c52c66267ea0be8332a1446a5";
+      hash = "sha256-uY1vnIJQ0LsiGyvvSWFiqNVyu1/Ag328pzFCn2jhhsQ=";
     };
     fuse_graphs = fetchGit {
       url = "https://github.com/ros2-gbp/fuse-release.git";
-      hash = "sha256-AusfOIWBhrljSrjmV1TdhWQl0a1eq5cjsk1nCwPdOe0=";
       rev = "d0b61c3be9af005a8bc82a956e46093c53dab16d";
+      hash = "sha256-AusfOIWBhrljSrjmV1TdhWQl0a1eq5cjsk1nCwPdOe0=";
     };
     fuse_loss = fetchGit {
       url = "https://github.com/ros2-gbp/fuse-release.git";
-      hash = "sha256-euEBZo32VlyBPb2xMuQ1jUISg2Z8v9ftPmATkr1iHOY=";
       rev = "0f73e371eac052747faaa867ca413ef08c36d9a4";
+      hash = "sha256-euEBZo32VlyBPb2xMuQ1jUISg2Z8v9ftPmATkr1iHOY=";
     };
     fuse_models = fetchGit {
       url = "https://github.com/ros2-gbp/fuse-release.git";
-      hash = "sha256-N2bDbs4TD0BkUWc4ewNT2KRCMSvN4FvVzTyzBpyOHI4=";
       rev = "4b3d2a3c62eda494d2a2dc9feb8d8bb73406c7f1";
+      hash = "sha256-N2bDbs4TD0BkUWc4ewNT2KRCMSvN4FvVzTyzBpyOHI4=";
     };
     fuse_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/fuse-release.git";
-      hash = "sha256-K5wgOTOOHaXlC+cqCiC5b5HYQcs38mxUs99d3/wYe44=";
       rev = "9abf81408525991f00ffa99f9b9d52f2143819ef";
+      hash = "sha256-K5wgOTOOHaXlC+cqCiC5b5HYQcs38mxUs99d3/wYe44=";
     };
     fuse_optimizers = fetchGit {
       url = "https://github.com/ros2-gbp/fuse-release.git";
-      hash = "sha256-dabQsl6P+3hhZYHysGHSSw3bSnbLe+0tgaMNcYyu6kY=";
       rev = "cfabad7a430ea1c75b98f294edddf5dd4679e1c6";
+      hash = "sha256-dabQsl6P+3hhZYHysGHSSw3bSnbLe+0tgaMNcYyu6kY=";
     };
     fuse_publishers = fetchGit {
       url = "https://github.com/ros2-gbp/fuse-release.git";
-      hash = "sha256-tI9Xxj7PiAdTcEHsNLiz1j74FStbd7vEnIFopSJRkPU=";
       rev = "e42da48d8d0c58cb5bff839478ed8e423e959f74";
+      hash = "sha256-tI9Xxj7PiAdTcEHsNLiz1j74FStbd7vEnIFopSJRkPU=";
     };
     fuse_tutorials = fetchGit {
       url = "https://github.com/ros2-gbp/fuse-release.git";
-      hash = "sha256-jix3x/BhHI2P7id3wpsr2TRpqn3Mp/Q+ppU0oZwwSBU=";
       rev = "f232a1b1da77324067d9d5fa4433af543fd2f9bc";
+      hash = "sha256-jix3x/BhHI2P7id3wpsr2TRpqn3Mp/Q+ppU0oZwwSBU=";
     };
     fuse_variables = fetchGit {
       url = "https://github.com/ros2-gbp/fuse-release.git";
-      hash = "sha256-AMhieBzcBZ3yM1FzMq5T4FSo0yIRC4CmcOU3jOloF0Q=";
       rev = "145adf8242958fb6fcd560f0dd2290831f56b5c3";
+      hash = "sha256-AMhieBzcBZ3yM1FzMq5T4FSo0yIRC4CmcOU3jOloF0Q=";
     };
     fuse_viz = fetchGit {
       url = "https://github.com/ros2-gbp/fuse-release.git";
-      hash = "sha256-lnugFK/IinY63VpqqOFq53NwuUHa/hYedDm1S0QM30E=";
       rev = "1368b1b48e2bbd395801fa762ba6b607f9c81054";
+      hash = "sha256-lnugFK/IinY63VpqqOFq53NwuUHa/hYedDm1S0QM30E=";
     };
     game_controller_spl = fetchGit {
       url = "https://github.com/ros2-gbp/game_controller_spl-release.git";
-      hash = "sha256-FvjsH3PKrQtxsZS4hXMelGbnTjvs6W2JjiYn6WevoWA=";
       rev = "722cad901ad97f959b0fca1199076f464f8479e7";
+      hash = "sha256-FvjsH3PKrQtxsZS4hXMelGbnTjvs6W2JjiYn6WevoWA=";
     };
     game_controller_spl_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/game_controller_spl-release.git";
-      hash = "sha256-uB8HT6Qzj0QLcmO0XYv5Lw6PpjmowbR2sz0FywtT/6U=";
       rev = "64bc955029e0e7ed74ef442b0ab000b9f8c19963";
+      hash = "sha256-uB8HT6Qzj0QLcmO0XYv5Lw6PpjmowbR2sz0FywtT/6U=";
     };
     gc_spl = fetchGit {
       url = "https://github.com/ros2-gbp/game_controller_spl-release.git";
-      hash = "sha256-kZmdkalxnRdGGdrKhvxICSX3XNubLGW9lgzSf1zTjys=";
       rev = "348df86f0c57eea9c7b2f5f7d9f9dc381beb9efa";
+      hash = "sha256-kZmdkalxnRdGGdrKhvxICSX3XNubLGW9lgzSf1zTjys=";
     };
     gc_spl_2022 = fetchGit {
       url = "https://github.com/ros2-gbp/game_controller_spl-release.git";
-      hash = "sha256-TfjfnmIcrHDLljR0mc7TbRI7pB8FeP3JFv1Jf6C9zpM=";
       rev = "614c89da758766a75b5428d8572d113dab487143";
+      hash = "sha256-TfjfnmIcrHDLljR0mc7TbRI7pB8FeP3JFv1Jf6C9zpM=";
     };
     gc_spl_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/game_controller_spl-release.git";
-      hash = "sha256-zib/AEpu2CDmpEXFyiedKxZD52Ub6+OPzPJpw/a2jqE=";
       rev = "8a8f52cc53fe2489e2143ad6d9c8bbdd1ed6e6a3";
+      hash = "sha256-zib/AEpu2CDmpEXFyiedKxZD52Ub6+OPzPJpw/a2jqE=";
     };
     generate_parameter_library = fetchGit {
       url = "https://github.com/ros2-gbp/generate_parameter_library-release.git";
-      hash = "sha256-3/xDuucYQUArz1x/C9LSjpYpCEX8i3QuApT+wUhylr0=";
       rev = "9b3b5eadcc4de586ae0880f33293fc9d64022fea";
+      hash = "sha256-3/xDuucYQUArz1x/C9LSjpYpCEX8i3QuApT+wUhylr0=";
     };
     generate_parameter_library_example = fetchGit {
       url = "https://github.com/ros2-gbp/generate_parameter_library-release.git";
-      hash = "sha256-d0nHulgcdsijc/fqux0zSYWVUPWx2mS9mWEa+PpXhtM=";
       rev = "e2a76fd024efeaea79c11eaff89b60753bee9981";
+      hash = "sha256-d0nHulgcdsijc/fqux0zSYWVUPWx2mS9mWEa+PpXhtM=";
     };
     generate_parameter_library_py = fetchGit {
       url = "https://github.com/ros2-gbp/generate_parameter_library-release.git";
-      hash = "sha256-YBWzYIIwR1Lla1+nuymfR73est+/pRbnkswPjPA5iOM=";
       rev = "96e638716be38fa957ab8646224c4b643b1d2b1b";
+      hash = "sha256-YBWzYIIwR1Lla1+nuymfR73est+/pRbnkswPjPA5iOM=";
     };
     generate_parameter_module_example = fetchGit {
       url = "https://github.com/ros2-gbp/generate_parameter_library-release.git";
-      hash = "sha256-HkXslneaMtWnT7O2G7ZfzPxK8AtAzT0SzjoJ5rVxha0=";
       rev = "0bf2b4606ea98146fa03404cf91e490ae37666ee";
+      hash = "sha256-HkXslneaMtWnT7O2G7ZfzPxK8AtAzT0SzjoJ5rVxha0=";
     };
     geodesy = fetchGit {
       url = "https://github.com/ros2-gbp/geographic_info-release.git";
-      hash = "sha256-+iSI/nF1U9zJNt1tRwph3J72AI6GDwamBRol2QrwTUY=";
       rev = "babebedcfcb762f050b6dc334b93f4c55acb2714";
+      hash = "sha256-+iSI/nF1U9zJNt1tRwph3J72AI6GDwamBRol2QrwTUY=";
     };
     geographic_info = fetchGit {
       url = "https://github.com/ros2-gbp/geographic_info-release.git";
-      hash = "sha256-9v0PhFwY4GRy9FH7XCYu+48GcNisf9Hg2093eaFWEKU=";
       rev = "95889c879210cdd9d936dce1750a8cdac4036071";
+      hash = "sha256-9v0PhFwY4GRy9FH7XCYu+48GcNisf9Hg2093eaFWEKU=";
     };
     geographic_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/geographic_info-release.git";
-      hash = "sha256-nhS4kFuDj1V2F56pjP2GmIYfCB+bVsr1RI3DzbZVfsI=";
       rev = "caa6354cd98e112a31d8f26ab3168880bb3d327e";
+      hash = "sha256-nhS4kFuDj1V2F56pjP2GmIYfCB+bVsr1RI3DzbZVfsI=";
     };
     geometric_shapes = fetchGit {
       url = "https://github.com/ros2-gbp/geometric_shapes-release.git";
-      hash = "sha256-o2Eck5v0SgZlsbOmbpf5qikEjkjDqv/wJ2kTdTiq2RQ=";
       rev = "96327540c29c53b84b4d769295d2d3bfabb46144";
+      hash = "sha256-o2Eck5v0SgZlsbOmbpf5qikEjkjDqv/wJ2kTdTiq2RQ=";
     };
     geometry2 = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-bq87Ix4oVIJlfSkUAXp5kkyZasX2MR56w98E16EisOo=";
       rev = "a73891fc89f22c33e4539248a070d00c04a46613";
+      hash = "sha256-bq87Ix4oVIJlfSkUAXp5kkyZasX2MR56w98E16EisOo=";
     };
     geometry_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/common_interfaces-release.git";
-      hash = "sha256-tnsz8Gchh0hrKtLOTi//KLdKxmJrnhMGrJRz1PbBvxw=";
       rev = "9b595e5a5c793cc02c430a4fcc8c4cda4eef3725";
+      hash = "sha256-tnsz8Gchh0hrKtLOTi//KLdKxmJrnhMGrJRz1PbBvxw=";
     };
     geometry_tutorials = fetchGit {
       url = "https://github.com/ros2-gbp/geometry_tutorials-release.git";
-      hash = "sha256-Cy6+rG9fkARM6Pr7xFDRN/CEObs8kkLsxj+qr4W2h0U=";
       rev = "c064e47195c5ee0a878f8fc9ef2c180878800ebe";
+      hash = "sha256-Cy6+rG9fkARM6Pr7xFDRN/CEObs8kkLsxj+qr4W2h0U=";
     };
     gmock_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/googletest-release.git";
-      hash = "sha256-oqAqYShfUP95H55v5CayrGi0vMXgdbUdwKWq7xnKEjI=";
       rev = "969537cdd819e38a3448dedc902a148616965a9f";
+      hash = "sha256-oqAqYShfUP95H55v5CayrGi0vMXgdbUdwKWq7xnKEjI=";
     };
     google_benchmark_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/google_benchmark_vendor-release.git";
-      hash = "sha256-YHQEziwNPQzFfRVEHovMpimPk2aOqLC0khzmZStlr8Y=";
       rev = "2da4208dbfcb32f943585ece1d9ff3e51cb916c6";
+      hash = "sha256-YHQEziwNPQzFfRVEHovMpimPk2aOqLC0khzmZStlr8Y=";
     };
     gps_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/gps_umd-release.git";
-      hash = "sha256-1RkI1XM2+N+2B6AXCDVx6WfEhwXaU/PIHvKOB0B9q1Y=";
       rev = "f572d023b466c3b5960fd5629951424b5344b677";
+      hash = "sha256-1RkI1XM2+N+2B6AXCDVx6WfEhwXaU/PIHvKOB0B9q1Y=";
     };
     gps_tools = fetchGit {
       url = "https://github.com/ros2-gbp/gps_umd-release.git";
-      hash = "sha256-QlW/IzkRFxYsEks3A9lEuQANpxUCf0RKCDA/PSsqzyg=";
       rev = "04f6468301ac6916a9c164f10dfc565e495cb679";
+      hash = "sha256-QlW/IzkRFxYsEks3A9lEuQANpxUCf0RKCDA/PSsqzyg=";
     };
     gps_umd = fetchGit {
       url = "https://github.com/ros2-gbp/gps_umd-release.git";
-      hash = "sha256-vIL98+Jzy8M+CuClxVCxEEDOOgpD+n26au28onECvQ0=";
       rev = "ff0f9cdec7713df9990a4d9ed38373f80998f00e";
+      hash = "sha256-vIL98+Jzy8M+CuClxVCxEEDOOgpD+n26au28onECvQ0=";
     };
     gpsd_client = fetchGit {
       url = "https://github.com/ros2-gbp/gps_umd-release.git";
-      hash = "sha256-5UEXqwcIMfl3tStPrZyLbVOdaoRcW2YuUtkSzCQZhmo=";
       rev = "16e02a0573ebaf6c2fe0b131285c43ccccfb49d4";
+      hash = "sha256-5UEXqwcIMfl3tStPrZyLbVOdaoRcW2YuUtkSzCQZhmo=";
     };
     graph_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/graph_msgs-release.git";
-      hash = "sha256-Zs/vEflqm3Ft6PVC5rmE7JAj2pPFja8QAhBxSsH93dg=";
       rev = "cb9838e309f09242d2ccef5878756aa50588a063";
+      hash = "sha256-Zs/vEflqm3Ft6PVC5rmE7JAj2pPFja8QAhBxSsH93dg=";
     };
     grbl_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/grbl_msgs-release.git";
-      hash = "sha256-cjvc4arr+Z92IcwzqZryuU4FC2MY+FNpA+6JBe0dhiE=";
       rev = "b34c59b7115f76da24c00f80b924d9514b88c7ea";
+      hash = "sha256-cjvc4arr+Z92IcwzqZryuU4FC2MY+FNpA+6JBe0dhiE=";
     };
     grbl_ros = fetchGit {
       url = "https://github.com/ros2-gbp/grbl_ros-release.git";
-      hash = "sha256-F1t2vcBH6JU+xByKp5lu3SCks+qWKp4ztQ5WkL6N+rI=";
       rev = "5799fb212d9171d9944488a5c871f2574b7d5ffb";
+      hash = "sha256-F1t2vcBH6JU+xByKp5lu3SCks+qWKp4ztQ5WkL6N+rI=";
     };
     gripper_controllers = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-CCsnwlvb+zyYFo+RVYGKz9tGSCjujNUSYtJwoC63yX8=";
       rev = "907f781358cfcbf13439df5c7ceaeffebfc84499";
+      hash = "sha256-CCsnwlvb+zyYFo+RVYGKz9tGSCjujNUSYtJwoC63yX8=";
     };
     gscam = fetchGit {
       url = "https://github.com/ros2-gbp/gscam-release.git";
-      hash = "sha256-CKQzdZxZ6OZeWkirhmcrfJhb0hNN0vSimKIRHSUDT3k=";
       rev = "9de9e1c8a5353dc48666256b4fbdb77f6cbcfc66";
+      hash = "sha256-CKQzdZxZ6OZeWkirhmcrfJhb0hNN0vSimKIRHSUDT3k=";
     };
     gtest_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/googletest-release.git";
-      hash = "sha256-hfNPBuRwt4tacGQDjHj0OfgABSsSMXo2L8rlGApqxBc=";
       rev = "949478db25504854988f1510571c5b93a67f9c4b";
+      hash = "sha256-hfNPBuRwt4tacGQDjHj0OfgABSsSMXo2L8rlGApqxBc=";
     };
     gtsam = fetchGit {
       url = "https://github.com/ros2-gbp/gtsam-release.git";
-      hash = "sha256-pB7YNdBRIvvJ21JFD/rNx7KcYzVzXMLJcyUyVg6w8Zk=";
       rev = "b3a199bd675027475f53cd0cf40d48c0825e3ade";
+      hash = "sha256-pB7YNdBRIvvJ21JFD/rNx7KcYzVzXMLJcyUyVg6w8Zk=";
     };
     gz_cmake_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_cmake_vendor-release.git";
-      hash = "sha256-mh1shfa2X3rE8xoqZP26ifszBx1NDE+RqsWMx6QZjj0=";
       rev = "f20c7fd5e142e2fabd75b12ae3576fd7c6a1bc7d";
+      hash = "sha256-mh1shfa2X3rE8xoqZP26ifszBx1NDE+RqsWMx6QZjj0=";
     };
     gz_common_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_common_vendor-release.git";
-      hash = "sha256-g+C82uYpNbdkxuiALKrXgHBROl3EqSfzk5y0UrPruWw=";
       rev = "dac2a4f1bbc25a269c0b1a290082ec5eaac46acb";
+      hash = "sha256-g+C82uYpNbdkxuiALKrXgHBROl3EqSfzk5y0UrPruWw=";
     };
     gz_dartsim_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_dartsim_vendor-release.git";
-      hash = "sha256-M1p+knNPSpbfQpQATwwHo5EqtCKx0Fn9S7rZLTTWICY=";
       rev = "38bdb4c6948952978b640c95beb7b4e8aaea61f3";
+      hash = "sha256-M1p+knNPSpbfQpQATwwHo5EqtCKx0Fn9S7rZLTTWICY=";
     };
     gz_fuel_tools_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_fuel_tools_vendor-release.git";
-      hash = "sha256-gjBPA5xiLQJS07+JRJQfPo03SE0lzKNCX+KcBcyGmyY=";
       rev = "40c733ff8578ea9beecb0a461c5d7919c675a599";
+      hash = "sha256-gjBPA5xiLQJS07+JRJQfPo03SE0lzKNCX+KcBcyGmyY=";
     };
     gz_gui_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_gui_vendor-release.git";
-      hash = "sha256-EKGNiBBmlE//7XCL6UQgqzbuMCe5QQIVVtUxb/JbMQ4=";
       rev = "b8232ccda8ffe6416c6652bf4c7409f52d45026c";
+      hash = "sha256-EKGNiBBmlE//7XCL6UQgqzbuMCe5QQIVVtUxb/JbMQ4=";
     };
     gz_launch_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_launch_vendor-release.git";
-      hash = "sha256-tlWehAYOYaLfvvZQzS0xVkMXKfkQPuOX3c6lAce+ij8=";
       rev = "56966c515d46fd020678dd1ba1dcad154173bc14";
+      hash = "sha256-tlWehAYOYaLfvvZQzS0xVkMXKfkQPuOX3c6lAce+ij8=";
     };
     gz_math_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_math_vendor-release.git";
-      hash = "sha256-mv5JDoyAF8047mJFHCaW+qEffBjX4EfiyTncYAUaxiY=";
       rev = "f1a1f4ddc9755565ace5bf8994fdf198cb6c7de4";
+      hash = "sha256-mv5JDoyAF8047mJFHCaW+qEffBjX4EfiyTncYAUaxiY=";
     };
     gz_msgs_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_msgs_vendor-release.git";
-      hash = "sha256-N0N+HMjbSycAwW2nS20h/zbMe6ZMUEqDsZ7pDUV9jZU=";
       rev = "18c035d7f59a0e73283468dcd3cf8c7022d3315f";
+      hash = "sha256-N0N+HMjbSycAwW2nS20h/zbMe6ZMUEqDsZ7pDUV9jZU=";
     };
     gz_ogre_next_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_ogre_next_vendor-release.git";
-      hash = "sha256-4kfeqp5NoagMC+EqNw8tl7dtjCFunMNruZhuWfzyVow=";
       rev = "72fb805e4715ba139c8104c830c31a0e3b71c957";
+      hash = "sha256-4kfeqp5NoagMC+EqNw8tl7dtjCFunMNruZhuWfzyVow=";
     };
     gz_physics_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_physics_vendor-release.git";
-      hash = "sha256-bJwvgJ32RT8iOBdBtAsFg5jhKONJROhzN3DTZFEK7xQ=";
       rev = "3ac324e31eef6284c7bc48eb10c3bb92d6008413";
+      hash = "sha256-bJwvgJ32RT8iOBdBtAsFg5jhKONJROhzN3DTZFEK7xQ=";
     };
     gz_plugin_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_plugin_vendor-release.git";
-      hash = "sha256-/y43QtJVsVEotHcmAu+Ttyji97D5EFXJIH1HzVkePAM=";
       rev = "51389742f66ee9612a68092bfb2ca2a02d63e623";
+      hash = "sha256-/y43QtJVsVEotHcmAu+Ttyji97D5EFXJIH1HzVkePAM=";
     };
     gz_rendering_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_rendering_vendor-release.git";
-      hash = "sha256-X41BHiRkFFVoA5Ua52e6ClR9giYlS2y92qiH7B4EIQk=";
       rev = "e89bd74f9f586eb6ac4b972c65f04c9309c290fa";
+      hash = "sha256-X41BHiRkFFVoA5Ua52e6ClR9giYlS2y92qiH7B4EIQk=";
     };
     gz_ros2_control = fetchGit {
       url = "https://github.com/ros2-gbp/ign_ros2_control-release.git";
-      hash = "sha256-HS89D2xwT7qUMK1+1ynXhgCwanU1Bhqc9UNgpx6GWDg=";
       rev = "037fafcee3a019a0508853ed47bed46597b0e934";
+      hash = "sha256-HS89D2xwT7qUMK1+1ynXhgCwanU1Bhqc9UNgpx6GWDg=";
     };
     gz_ros2_control_demos = fetchGit {
       url = "https://github.com/ros2-gbp/ign_ros2_control-release.git";
-      hash = "sha256-P5CXvSDKynZZj8t5kFkORyMAZHkfkwtRLAm+hzJIrME=";
       rev = "029fe8f3e9add1d272ac0219fdc26561f8881925";
+      hash = "sha256-P5CXvSDKynZZj8t5kFkORyMAZHkfkwtRLAm+hzJIrME=";
     };
     gz_sensors_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_sensors_vendor-release.git";
-      hash = "sha256-8L5/tSyH6kkVWR1hK3tjTTehcWK6UTcrzwfo74BoBzU=";
       rev = "faa054907e5b2168e7f5513877938e6635bb4463";
+      hash = "sha256-8L5/tSyH6kkVWR1hK3tjTTehcWK6UTcrzwfo74BoBzU=";
     };
     gz_sim_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_sim_vendor-release.git";
-      hash = "sha256-Wt+uY21jWBllaClDEypMjjI5Fq1lqX7YbONJkbE5zcM=";
       rev = "32e521b1e6d755f0be80f21d5bf889aa6097e286";
+      hash = "sha256-Wt+uY21jWBllaClDEypMjjI5Fq1lqX7YbONJkbE5zcM=";
     };
     gz_tools_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_tools_vendor-release.git";
-      hash = "sha256-Ha0HMQgXsfsWhwB1+MDCeeqbDMl+52CXQr+dJ15EL+I=";
       rev = "3a0a7ca81753ff2b366fee977f7bdc4ce3e4ecb5";
+      hash = "sha256-Ha0HMQgXsfsWhwB1+MDCeeqbDMl+52CXQr+dJ15EL+I=";
     };
     gz_transport_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_transport_vendor-release.git";
-      hash = "sha256-2yv5Vn9MfAl0aHX9K8souz0y2RLiCXxvhgLeQIZUWns=";
       rev = "33e5a3ebe1a76d899169a83140aec80998f19d36";
+      hash = "sha256-2yv5Vn9MfAl0aHX9K8souz0y2RLiCXxvhgLeQIZUWns=";
     };
     gz_utils_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/gz_utils_vendor-release.git";
-      hash = "sha256-XSES/VOnowqLB7zTSz3NcKXmrOKHsGkNwLQ93IsX9JI=";
       rev = "af727228ba30b99fb6e8186ea25a5e86ffcecbb8";
+      hash = "sha256-XSES/VOnowqLB7zTSz3NcKXmrOKHsGkNwLQ93IsX9JI=";
     };
     hardware_interface = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_control-release.git";
-      hash = "sha256-76VKdicTIO18oZS9CMhddTxTXs5qbLZhMjgHsuGzAQ8=";
       rev = "89e4aea82db4472115c5992e269fc23d3599a9b4";
+      hash = "sha256-76VKdicTIO18oZS9CMhddTxTXs5qbLZhMjgHsuGzAQ8=";
     };
     hardware_interface_testing = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_control-release.git";
-      hash = "sha256-jFT+Y0sHUbO7gYOR7TSTbCzX3of8qBQnE0BW1Eq8piQ=";
       rev = "d910bfc8c3f1600c9bd01084d6ef8ce3cb572b70";
+      hash = "sha256-jFT+Y0sHUbO7gYOR7TSTbCzX3of8qBQnE0BW1Eq8piQ=";
     };
     hash_library_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/hash_library_vendor-release.git";
-      hash = "sha256-/aXRAfmumq2WRfhcS24fzeg13YY+hDi9NQYpVUQNR6w=";
       rev = "cd243a064b6da2fcbd714575e2dd3d6158af7901";
+      hash = "sha256-/aXRAfmumq2WRfhcS24fzeg13YY+hDi9NQYpVUQNR6w=";
     };
     heaphook = fetchGit {
       url = "https://github.com/ros2-gbp/heaphook-release.git";
-      hash = "sha256-muNY40LV1Jqtg043Lo1oCWIqz93a3zVaQ23jgFaEOPE=";
       rev = "3b17a1da870178e805963b7092d2cdad36d6e4be";
+      hash = "sha256-muNY40LV1Jqtg043Lo1oCWIqz93a3zVaQ23jgFaEOPE=";
     };
     hls_lfcd_lds_driver = fetchGit {
       url = "https://github.com/ros2-gbp/hls_lfcd_lds_driver-release.git";
-      hash = "sha256-gFslT2HGpW6SzRM8frU8D/gistcJDw02YkcZTXZcfa8=";
       rev = "43116c85f64ac8288dd6fb013e81b3fcf98d9bad";
+      hash = "sha256-gFslT2HGpW6SzRM8frU8D/gistcJDw02YkcZTXZcfa8=";
     };
     hpp-fcl = fetchGit {
       url = "https://github.com/ros2-gbp/hpp_fcl-release.git";
-      hash = "sha256-4a0Cw1cMtwXrxbPK3vFuzojHRF99b1r0HYEid8ElLgg=";
       rev = "6415f979ff1acda170dc3c0aed0ecb604f3889d4";
+      hash = "sha256-4a0Cw1cMtwXrxbPK3vFuzojHRF99b1r0HYEid8ElLgg=";
     };
     ibeo_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/astuff_sensor_msgs-release.git";
-      hash = "sha256-RLaDU8WKC534uEb0HZcS/iP0//JhyyaFVG8osixglEY=";
       rev = "6aed5d661ed5b628fb845ca1200801935771735d";
+      hash = "sha256-RLaDU8WKC534uEb0HZcS/iP0//JhyyaFVG8osixglEY=";
     };
     iceoryx_binding_c = fetchGit {
       url = "https://github.com/ros2-gbp/iceoryx-release.git";
-      hash = "sha256-MK/r8dSrJHO5SjuOTcRVaAOT5E8CXs0vOCivgRvoAbA=";
       rev = "cd93f6a8b8a0aba7828db592fca2a61065227605";
+      hash = "sha256-MK/r8dSrJHO5SjuOTcRVaAOT5E8CXs0vOCivgRvoAbA=";
     };
     iceoryx_hoofs = fetchGit {
       url = "https://github.com/ros2-gbp/iceoryx-release.git";
-      hash = "sha256-C57YmMV/QQbRaySst8JrcobpnMXYdJ0EFLLY/Zi72ak=";
       rev = "2f62692079fe655eb34a51b2c22c2a8555b2a132";
+      hash = "sha256-C57YmMV/QQbRaySst8JrcobpnMXYdJ0EFLLY/Zi72ak=";
     };
     iceoryx_introspection = fetchGit {
       url = "https://github.com/ros2-gbp/iceoryx-release.git";
-      hash = "sha256-CQJ3hBCcrotZK6RXc42VUx+ZWcAJfXVoSQDC3eKzLi4=";
       rev = "8fb32f968a3828199e8fbe8086d9eea445d3942a";
+      hash = "sha256-CQJ3hBCcrotZK6RXc42VUx+ZWcAJfXVoSQDC3eKzLi4=";
     };
     iceoryx_posh = fetchGit {
       url = "https://github.com/ros2-gbp/iceoryx-release.git";
-      hash = "sha256-6VuZh+ArFljLw8Bw7qp7V7J5VAGvxF2WtzfcaOeFIfQ=";
       rev = "0bdf67fa301f17d3d141f07f6a038018ace95953";
+      hash = "sha256-6VuZh+ArFljLw8Bw7qp7V7J5VAGvxF2WtzfcaOeFIfQ=";
     };
     ifm3d_core = fetchGit {
       url = "https://github.com/ros2-gbp/ifm3d-release.git";
-      hash = "sha256-uR93fGa2he8/x1p8bZM2xobrFhbm7cnUGAw341qYlOE=";
       rev = "a24997b1557ad4919fe504bf6ac3580cac5f6e46";
+      hash = "sha256-uR93fGa2he8/x1p8bZM2xobrFhbm7cnUGAw341qYlOE=";
     };
     image_common = fetchGit {
       url = "https://github.com/ros2-gbp/image_common-release.git";
-      hash = "sha256-zEuvWBkITR9VlL546Qsx9vSbwzkK+uzb4FZwz78NPtQ=";
       rev = "acc5e443a8ef4111b48a5adf86e358873e77eba0";
+      hash = "sha256-zEuvWBkITR9VlL546Qsx9vSbwzkK+uzb4FZwz78NPtQ=";
     };
     image_geometry = fetchGit {
       url = "https://github.com/ros2-gbp/vision_opencv-release.git";
-      hash = "sha256-y4DJ9zOSPtaMJqyHbcxWEc8zhZkKGJwDlT8xyVy114A=";
       rev = "f5ea0ce5972556558784659e5a6c45b27176d2a0";
+      hash = "sha256-y4DJ9zOSPtaMJqyHbcxWEc8zhZkKGJwDlT8xyVy114A=";
     };
     image_pipeline = fetchGit {
       url = "https://github.com/ros2-gbp/image_pipeline-release.git";
-      hash = "sha256-oaTuvRDFAa4erbc/RSyI0g0c6SoCK5wDES8H483Vmis=";
       rev = "a4a6574dc166e10d15dd83dbe3f8acdafa34dec1";
+      hash = "sha256-oaTuvRDFAa4erbc/RSyI0g0c6SoCK5wDES8H483Vmis=";
     };
     image_proc = fetchGit {
       url = "https://github.com/ros2-gbp/image_pipeline-release.git";
-      hash = "sha256-61ii9GHtv32LCTNpjAEzObW+P94iKkCgZXwweh8LnJ8=";
       rev = "c5e017f304f10b5f50c80e0535098a386893c571";
+      hash = "sha256-61ii9GHtv32LCTNpjAEzObW+P94iKkCgZXwweh8LnJ8=";
     };
     image_publisher = fetchGit {
       url = "https://github.com/ros2-gbp/image_pipeline-release.git";
-      hash = "sha256-rCvf6YYtux2EQ6ZvJRxfSpkT2C2O820QhuvOUN2jBNg=";
       rev = "c4e0f661bfb6b8d580dd97dbc9da6659bee9657f";
+      hash = "sha256-rCvf6YYtux2EQ6ZvJRxfSpkT2C2O820QhuvOUN2jBNg=";
     };
     image_rotate = fetchGit {
       url = "https://github.com/ros2-gbp/image_pipeline-release.git";
-      hash = "sha256-YDukvBMdCCegsNqlFs3t7+DZR6n+9j4bNtBxdlviiSQ=";
       rev = "84c4621d08f01cbe11bcf140676d9151f389adc0";
+      hash = "sha256-YDukvBMdCCegsNqlFs3t7+DZR6n+9j4bNtBxdlviiSQ=";
     };
     image_tools = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-fh6FijVZUH/JQJpq8qmDGzh10rT8u54uwAydwFUNeaw=";
       rev = "0cc974002837ffb97c76514086a711fca8f9600d";
+      hash = "sha256-fh6FijVZUH/JQJpq8qmDGzh10rT8u54uwAydwFUNeaw=";
     };
     image_transport = fetchGit {
       url = "https://github.com/ros2-gbp/image_common-release.git";
-      hash = "sha256-01/wzTSHt4s99cW7SmDH6W+kpY4ehCc4WbIcsq8Uws8=";
       rev = "d1ebdfe1ed0dc2c90d16fa624fc21fe23bce6122";
+      hash = "sha256-01/wzTSHt4s99cW7SmDH6W+kpY4ehCc4WbIcsq8Uws8=";
     };
     image_transport_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/image_transport_plugins-release.git";
-      hash = "sha256-YClB7oI9s8BJqKh1h9ZF6aw3uOgKo/ju81jmapjSYUc=";
       rev = "5f3a1b389f115af354440dbf73f95758c406a365";
+      hash = "sha256-YClB7oI9s8BJqKh1h9ZF6aw3uOgKo/ju81jmapjSYUc=";
     };
     image_view = fetchGit {
       url = "https://github.com/ros2-gbp/image_pipeline-release.git";
-      hash = "sha256-xzdoGTo/nQDLBSDzrk9e4uq/JOfOT9Fnysbw8Ju2p6k=";
       rev = "49fd99cc1c40dda793cea06205b889957e6e116c";
+      hash = "sha256-xzdoGTo/nQDLBSDzrk9e4uq/JOfOT9Fnysbw8Ju2p6k=";
     };
     imu_complementary_filter = fetchGit {
       url = "https://github.com/ros2-gbp/imu_tools-release.git";
-      hash = "sha256-wuAsf255PYh35JCpP4czKRL9rKu2pxO/i4NOMSETePc=";
       rev = "e14b791b4d7933504d13ecb0cb24587b78688f31";
+      hash = "sha256-wuAsf255PYh35JCpP4czKRL9rKu2pxO/i4NOMSETePc=";
     };
     imu_filter_madgwick = fetchGit {
       url = "https://github.com/ros2-gbp/imu_tools-release.git";
-      hash = "sha256-w1yVzPSVadsRmFRs1oZ8HEZ6DXYiezID3dunE9J6VUY=";
       rev = "59e949934d499233cb04ebd9050138423fae2962";
+      hash = "sha256-w1yVzPSVadsRmFRs1oZ8HEZ6DXYiezID3dunE9J6VUY=";
     };
     imu_pipeline = fetchGit {
       url = "https://github.com/ros2-gbp/imu_pipeline-release.git";
-      hash = "sha256-dJGjG62iCrupov3xWznx6yfooP5Q5w6rg7pfsX1P9x0=";
       rev = "97bb02692bfea574dd283391bd56ec611cd8fd70";
+      hash = "sha256-dJGjG62iCrupov3xWznx6yfooP5Q5w6rg7pfsX1P9x0=";
     };
     imu_processors = fetchGit {
       url = "https://github.com/ros2-gbp/imu_pipeline-release.git";
-      hash = "sha256-ShCwGu82++kzA8jDNQZHJIG8R7Av04iVDxp8sMYze2g=";
       rev = "438faa657139abc7315d8d38d35b125c385e812c";
+      hash = "sha256-ShCwGu82++kzA8jDNQZHJIG8R7Av04iVDxp8sMYze2g=";
     };
     imu_sensor_broadcaster = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-a627UmNH0GzxSPgxSQvBy6IUozJ87wTgBZUR5lWABsM=";
       rev = "8559d09646f8d1c2057a72a02966a5e56747007d";
+      hash = "sha256-a627UmNH0GzxSPgxSQvBy6IUozJ87wTgBZUR5lWABsM=";
     };
     imu_tools = fetchGit {
       url = "https://github.com/ros2-gbp/imu_tools-release.git";
-      hash = "sha256-+i6Cvdit5GQDlcCdOUAFdg6ESROTgWjJQ1IqxGC94Ug=";
       rev = "df19112520926bebd06030f598ac67b9e1c7b9fb";
+      hash = "sha256-+i6Cvdit5GQDlcCdOUAFdg6ESROTgWjJQ1IqxGC94Ug=";
     };
     imu_transformer = fetchGit {
       url = "https://github.com/ros2-gbp/imu_pipeline-release.git";
-      hash = "sha256-lcQiOtqXK/0Dj9s+hSjZPSC6ypDEmOUVpRrIqNzO+Qw=";
       rev = "fa9d7c47c35a05548c3db37bfa58ba7d99d7ff61";
+      hash = "sha256-lcQiOtqXK/0Dj9s+hSjZPSC6ypDEmOUVpRrIqNzO+Qw=";
     };
     interactive_marker_twist_server = fetchGit {
       url = "https://github.com/ros2-gbp/interactive_marker_twist_server-release.git";
-      hash = "sha256-FvPQhN5z6jkYZtScraxOUe3bjI3cA495ni/sp/Hh7uk=";
       rev = "ebbcfde78840e10069a8c7d8c7c8255dcd8668a7";
+      hash = "sha256-FvPQhN5z6jkYZtScraxOUe3bjI3cA495ni/sp/Hh7uk=";
     };
     interactive_markers = fetchGit {
       url = "https://github.com/ros2-gbp/interactive_markers-release.git";
-      hash = "sha256-AnynI7NBpQeYuWFq0tNqFBkjlyKyY5BekFPSGeZbmrs=";
       rev = "0e209ec4bf7d7ab5eaf38ebe8d9375a04cf49eb0";
+      hash = "sha256-AnynI7NBpQeYuWFq0tNqFBkjlyKyY5BekFPSGeZbmrs=";
     };
     intra_process_demo = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-cNMpagAnT23gRDMluJf+ysU2kuWRjIn37p/UHtLVZmc=";
       rev = "7565142ae5a7bdefda6b4e5021d621674da42ca0";
+      hash = "sha256-cNMpagAnT23gRDMluJf+ysU2kuWRjIn37p/UHtLVZmc=";
     };
     io_context = fetchGit {
       url = "https://github.com/ros2-gbp/transport_drivers-release.git";
-      hash = "sha256-RINF/bmOZEexBa8eMAkn2J1r1NOrze8SI3fx1t/ywak=";
       rev = "3a6f852f38351b39895ea0189258a87938b80de6";
+      hash = "sha256-RINF/bmOZEexBa8eMAkn2J1r1NOrze8SI3fx1t/ywak=";
     };
     irobot_create_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/irobot_create_msgs-release.git";
-      hash = "sha256-N1qIlklUPDvElU+dpUZJGeSzsiBeFmgh0kyqT+KM2fs=";
       rev = "d6ad51b50f113a00229ac22ef07831ed3d086002";
+      hash = "sha256-N1qIlklUPDvElU+dpUZJGeSzsiBeFmgh0kyqT+KM2fs=";
     };
     joint_limits = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_control-release.git";
-      hash = "sha256-DMtGAwJJ1G9QD5vo+XD0AdkW4IVp0Ww1FaGBaD2Tp7Q=";
       rev = "7f970d6188b386adb8ef775fe426c58ffc7811b1";
+      hash = "sha256-DMtGAwJJ1G9QD5vo+XD0AdkW4IVp0Ww1FaGBaD2Tp7Q=";
     };
     joint_state_broadcaster = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-7B88dLPMCmXcIAPVIJ0EHwUxlFIydisdT99b0hIYi38=";
       rev = "ea2bed31371c4970e0646282618a018d67a2e617";
+      hash = "sha256-7B88dLPMCmXcIAPVIJ0EHwUxlFIydisdT99b0hIYi38=";
     };
     joint_state_publisher = fetchGit {
       url = "https://github.com/ros2-gbp/joint_state_publisher-release.git";
-      hash = "sha256-Nw7THKbjIvXASwE8//Ta0Z1Q5BPXlK5VafC2jZvMs4E=";
       rev = "ccdbff6f0f4072ff38800b8cd98649b9403ebc93";
+      hash = "sha256-Nw7THKbjIvXASwE8//Ta0Z1Q5BPXlK5VafC2jZvMs4E=";
     };
     joint_state_publisher_gui = fetchGit {
       url = "https://github.com/ros2-gbp/joint_state_publisher-release.git";
-      hash = "sha256-ZumKM1KrbYTFo3f4tigUBtyVcxNOVbG2+FR7x85ZLhM=";
       rev = "21816fed55bedeedc28f78d7a028f6bc75729f01";
+      hash = "sha256-ZumKM1KrbYTFo3f4tigUBtyVcxNOVbG2+FR7x85ZLhM=";
     };
     joint_trajectory_controller = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-HffwXlveNz//rs2kMN/rH1eOVOgoCwNJhY4w1W48E0o=";
       rev = "3cabe719ecea2c3620cf12b95cf5802f83ec6b32";
+      hash = "sha256-HffwXlveNz//rs2kMN/rH1eOVOgoCwNJhY4w1W48E0o=";
     };
     joy = fetchGit {
       url = "https://github.com/ros2-gbp/joystick_drivers-release.git";
-      hash = "sha256-D1K9/q5C0I7lztfZMomXMVDmBUV0UKvl2iNljHx2pPY=";
       rev = "67a9a49bc8f5af4f3bb4631169fb4364ec3bbb42";
+      hash = "sha256-D1K9/q5C0I7lztfZMomXMVDmBUV0UKvl2iNljHx2pPY=";
     };
     joy_linux = fetchGit {
       url = "https://github.com/ros2-gbp/joystick_drivers-release.git";
-      hash = "sha256-MCxXwhqUhQHqDvJeyzEVpjLjHtbbIKly+aduefEBefM=";
       rev = "fd06a72f341af1e90fad0c24ff51ffa212ca38c9";
+      hash = "sha256-MCxXwhqUhQHqDvJeyzEVpjLjHtbbIKly+aduefEBefM=";
     };
     joy_teleop = fetchGit {
       url = "https://github.com/ros2-gbp/teleop_tools-release.git";
-      hash = "sha256-VhLfbJ1z++s5bQPQospx/fGaVJbwS6BuLHFiFyn45bk=";
       rev = "1b823b4602932f6352a53fdff8378aa2ca62d4f7";
+      hash = "sha256-VhLfbJ1z++s5bQPQospx/fGaVJbwS6BuLHFiFyn45bk=";
     };
     joy_tester = fetchGit {
       url = "https://github.com/ros2-gbp/joy_tester-release.git";
-      hash = "sha256-4aFhMjPuS3BCh6fHb0WNYkfy1WWLeNrxlXiK8vs/zGI=";
       rev = "7287ff765bbd548f037e3d25bea88aeaca17a6f2";
+      hash = "sha256-4aFhMjPuS3BCh6fHb0WNYkfy1WWLeNrxlXiK8vs/zGI=";
     };
     kartech_linear_actuator_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/astuff_sensor_msgs-release.git";
-      hash = "sha256-Xad77u1Iv7LJdsdK8vW1H475ls/kjnSvZbln4wUXpmQ=";
       rev = "ff9619e827b54c47fa7510043858db7b8a01d211";
+      hash = "sha256-Xad77u1Iv7LJdsdK8vW1H475ls/kjnSvZbln4wUXpmQ=";
     };
     kdl_parser = fetchGit {
       url = "https://github.com/ros2-gbp/kdl_parser-release.git";
-      hash = "sha256-0pqo6+kDyd4jq/rIh9aXBLrvipyDVHZKbj2VAlBvZ/g=";
       rev = "62e426bc35f02277867bdb8204444c055c6d0d85";
+      hash = "sha256-0pqo6+kDyd4jq/rIh9aXBLrvipyDVHZKbj2VAlBvZ/g=";
     };
     key_teleop = fetchGit {
       url = "https://github.com/ros2-gbp/teleop_tools-release.git";
-      hash = "sha256-P0O7MXzaLKeuYvu6YMXX96VVA/7xslaPVosdEfWAtMU=";
       rev = "75b8ae3e866881d89ad71775e85739d70c0b349a";
+      hash = "sha256-P0O7MXzaLKeuYvu6YMXX96VVA/7xslaPVosdEfWAtMU=";
     };
     keyboard_handler = fetchGit {
       url = "https://github.com/ros2-gbp/keyboard_handler-release.git";
-      hash = "sha256-MrlcTu+x6mBfTXFBvem82OYZkmwmdCO51eLno3SvoY8=";
       rev = "69c6f6299fa48d6a45e44fbdb040e4dc0fae1423";
+      hash = "sha256-MrlcTu+x6mBfTXFBvem82OYZkmwmdCO51eLno3SvoY8=";
     };
     kinematics_interface = fetchGit {
       url = "https://github.com/ros2-gbp/kinematics_interface-release.git";
-      hash = "sha256-NIcnxxLBdixzZQeXN0f2g03lIQQMoKqYrwTiwVagNSE=";
       rev = "abc2ffaf360bde2bca52225ba766fdb598b1af71";
+      hash = "sha256-NIcnxxLBdixzZQeXN0f2g03lIQQMoKqYrwTiwVagNSE=";
     };
     kinematics_interface_kdl = fetchGit {
       url = "https://github.com/ros2-gbp/kinematics_interface-release.git";
-      hash = "sha256-HTVJf1HOvp/ulI4ThFx2Zk1xyznJeK3pe76vV5sQU8E=";
       rev = "355ba76f768e7c64e57c086fba538d5a7d36cb30";
+      hash = "sha256-HTVJf1HOvp/ulI4ThFx2Zk1xyznJeK3pe76vV5sQU8E=";
     };
     kitti_metrics_eval = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-Yawv8N6uShKzEr+S/EdzFcQ/y5+4CW07tYSLKrqFKl0=";
       rev = "f4edfe4d5203859cc517e8780bab42ca4e9185e2";
+      hash = "sha256-Yawv8N6uShKzEr+S/EdzFcQ/y5+4CW07tYSLKrqFKl0=";
     };
     kobuki_core = fetchGit {
       url = "https://github.com/ros2-gbp/kobuki_core-release.git";
-      hash = "sha256-Bq/+5lnLAiJ2HQtIr0h6wB08J7OxRxT4YhcLHIrCUwI=";
       rev = "00876e81a32953ec6b09b474c2f8e82289245f75";
+      hash = "sha256-Bq/+5lnLAiJ2HQtIr0h6wB08J7OxRxT4YhcLHIrCUwI=";
     };
     kobuki_ros_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/kobuki_ros_interfaces-release.git";
-      hash = "sha256-svbQG6e1o4u1HncdcNcx55XoYK99I02G7CxL2jvBZhs=";
       rev = "205640a951da2a7d5fa47e3518b32d6df046829d";
+      hash = "sha256-svbQG6e1o4u1HncdcNcx55XoYK99I02G7CxL2jvBZhs=";
     };
     kobuki_velocity_smoother = fetchGit {
       url = "https://github.com/ros2-gbp/kobuki_velocity_smoother-release.git";
-      hash = "sha256-kZmyem+NJit8xtwuRz5Zx8AkdojVm7/pxgSOR63CkcM=";
       rev = "7851383e06b59c96286db423f2e4db9287693ba9";
+      hash = "sha256-kZmyem+NJit8xtwuRz5Zx8AkdojVm7/pxgSOR63CkcM=";
     };
     lanelet2 = fetchGit {
       url = "https://github.com/ros2-gbp/lanelet2-release.git";
-      hash = "sha256-AzSwj7wfb5mwc935jTjea1QB6+8BRLtOJyhJlWiBoLM=";
       rev = "35568a79dd5ce9e1e1d0aa22e4e06903d4a23915";
+      hash = "sha256-AzSwj7wfb5mwc935jTjea1QB6+8BRLtOJyhJlWiBoLM=";
     };
     lanelet2_core = fetchGit {
       url = "https://github.com/ros2-gbp/lanelet2-release.git";
-      hash = "sha256-Nz/Uglhw2hDL1gfYqEdDLJHWEOErA4wg5rDzu3S1wik=";
       rev = "5630708c5df854376fa1a16947d6172dc6468b1f";
+      hash = "sha256-Nz/Uglhw2hDL1gfYqEdDLJHWEOErA4wg5rDzu3S1wik=";
     };
     lanelet2_examples = fetchGit {
       url = "https://github.com/ros2-gbp/lanelet2-release.git";
-      hash = "sha256-jbMdHabSoOnjj7zKI54sz2P3Nrq8NRpYCHYb7pekzX0=";
       rev = "e82ea17278cb8ee2b78d0a81a2b1e265f12f601c";
+      hash = "sha256-jbMdHabSoOnjj7zKI54sz2P3Nrq8NRpYCHYb7pekzX0=";
     };
     lanelet2_io = fetchGit {
       url = "https://github.com/ros2-gbp/lanelet2-release.git";
-      hash = "sha256-B0AHMNYejPsaUhx0+RpURz56wZfnlpEXWZ/KnhdUuOQ=";
       rev = "3a62e4d061574a0d62757874c354ffaf6e3a4128";
+      hash = "sha256-B0AHMNYejPsaUhx0+RpURz56wZfnlpEXWZ/KnhdUuOQ=";
     };
     lanelet2_maps = fetchGit {
       url = "https://github.com/ros2-gbp/lanelet2-release.git";
-      hash = "sha256-neyAYG4BaHOn/2vqAXGTk6mFwmVeutNUc/jdcl7B1HY=";
       rev = "7704cae374e41e84d1549947a4c06afe5d55f061";
+      hash = "sha256-neyAYG4BaHOn/2vqAXGTk6mFwmVeutNUc/jdcl7B1HY=";
     };
     lanelet2_matching = fetchGit {
       url = "https://github.com/ros2-gbp/lanelet2-release.git";
-      hash = "sha256-umrqsdgMBtb04ryHzY6h/Yb+wrZUXVnyvb+0AeF2ebI=";
       rev = "e120080f9db30d7662445e1114d585757305a81f";
+      hash = "sha256-umrqsdgMBtb04ryHzY6h/Yb+wrZUXVnyvb+0AeF2ebI=";
     };
     lanelet2_projection = fetchGit {
       url = "https://github.com/ros2-gbp/lanelet2-release.git";
-      hash = "sha256-o4Gx/d7ijKvebHUq8BO78HeTfCKTIkE1raVOjESdhR4=";
       rev = "52590ef39bce10c356693a799124c8a09637168b";
+      hash = "sha256-o4Gx/d7ijKvebHUq8BO78HeTfCKTIkE1raVOjESdhR4=";
     };
     lanelet2_python = fetchGit {
       url = "https://github.com/ros2-gbp/lanelet2-release.git";
-      hash = "sha256-ShlQQ/+8TBL3/8PE/BeVaLtJW5l2B8FQO8eY06yg5Lc=";
       rev = "4cfdc2c64a26f91af854d2bc8a035f2a2562e7eb";
+      hash = "sha256-ShlQQ/+8TBL3/8PE/BeVaLtJW5l2B8FQO8eY06yg5Lc=";
     };
     lanelet2_routing = fetchGit {
       url = "https://github.com/ros2-gbp/lanelet2-release.git";
-      hash = "sha256-nGVDdE1W8o7u9mMs1LHE5cT4A9mFdBo3NEHLB0QeZqE=";
       rev = "dbd7e7453edcca24e6a8face2b3b64f538039d84";
+      hash = "sha256-nGVDdE1W8o7u9mMs1LHE5cT4A9mFdBo3NEHLB0QeZqE=";
     };
     lanelet2_traffic_rules = fetchGit {
       url = "https://github.com/ros2-gbp/lanelet2-release.git";
-      hash = "sha256-4z23mvgIB58yuFaSmCW3z5im50f74rrIYVTXxo8XYRA=";
       rev = "cab3d2d9315ab49c368620eae99f38e406d1463c";
+      hash = "sha256-4z23mvgIB58yuFaSmCW3z5im50f74rrIYVTXxo8XYRA=";
     };
     lanelet2_validation = fetchGit {
       url = "https://github.com/ros2-gbp/lanelet2-release.git";
-      hash = "sha256-tAvB7lkQDSwBBpXUvHkuAzwo2zlSEbMsZr1Gy8AElXI=";
       rev = "87bf0325bf0bae457a4dd104d10554118276f260";
+      hash = "sha256-tAvB7lkQDSwBBpXUvHkuAzwo2zlSEbMsZr1Gy8AElXI=";
     };
     laser_filters = fetchGit {
       url = "https://github.com/ros2-gbp/laser_filters-release.git";
-      hash = "sha256-ruSsWz10XSElakzxzN1wQp+rS0CVAcaNHQpoVnP0f3k=";
       rev = "4171b198fc1a21628180da5964eb289b35a3d934";
+      hash = "sha256-ruSsWz10XSElakzxzN1wQp+rS0CVAcaNHQpoVnP0f3k=";
     };
     laser_geometry = fetchGit {
       url = "https://github.com/ros2-gbp/laser_geometry-release.git";
-      hash = "sha256-GSBMpUJXRXQebdpMp9Ph7mOwyPP7lg6YbgBTc6bXrXg=";
       rev = "37dcc4181306237a30f6d7139d4ba9a148b2e592";
+      hash = "sha256-GSBMpUJXRXQebdpMp9Ph7mOwyPP7lg6YbgBTc6bXrXg=";
     };
     laser_proc = fetchGit {
       url = "https://github.com/ros2-gbp/laser_proc-release.git";
-      hash = "sha256-h2lPjaJimCF/20eVEH3+ZS7CDqoML9voXq2B0x32NSY=";
       rev = "089952614224b15fcc4e69539094e10a651c626e";
+      hash = "sha256-h2lPjaJimCF/20eVEH3+ZS7CDqoML9voXq2B0x32NSY=";
     };
     launch = fetchGit {
       url = "https://github.com/ros2-gbp/launch-release.git";
-      hash = "sha256-4r3hs/NhnD3VtuC0Io5xDtYqSnhHjRcfJf8xpbEJKWk=";
       rev = "196ad94e0bdbb2865e27b660917f7d4a2e15cf72";
+      hash = "sha256-4r3hs/NhnD3VtuC0Io5xDtYqSnhHjRcfJf8xpbEJKWk=";
     };
     launch_param_builder = fetchGit {
       url = "https://github.com/ros2-gbp/launch_param_builder-release.git";
-      hash = "sha256-5wzPO7Vg6sA7heEmRxiLcDbilS5YyieLi8fBrtcJe/g=";
       rev = "2280989be87fab08084bbe03dc0680c190b698d9";
+      hash = "sha256-5wzPO7Vg6sA7heEmRxiLcDbilS5YyieLi8fBrtcJe/g=";
     };
     launch_pytest = fetchGit {
       url = "https://github.com/ros2-gbp/launch-release.git";
-      hash = "sha256-pS4hgFpqm9iWHZj/NbsFhtlXbgFKyElxwA5ormakf+Q=";
       rev = "c7496b91e9a9fa581eb4108a4d6f13a377df745b";
+      hash = "sha256-pS4hgFpqm9iWHZj/NbsFhtlXbgFKyElxwA5ormakf+Q=";
     };
     launch_ros = fetchGit {
       url = "https://github.com/ros2-gbp/launch_ros-release.git";
-      hash = "sha256-cV925fWAMrUPzECwVRsuI+lqITsE2hoUUK+5X0gGpik=";
       rev = "614dac856387c97632678b01252b0de112f1a346";
+      hash = "sha256-cV925fWAMrUPzECwVRsuI+lqITsE2hoUUK+5X0gGpik=";
     };
     launch_system_modes = fetchGit {
       url = "https://github.com/ros2-gbp/system_modes-release.git";
-      hash = "sha256-igv7EQutLOf+qcExGB554hDDTuFxB1P9COvQUY2izGA=";
       rev = "a08a9c8c80eee8713a7f490c95cd4db75d3f1805";
+      hash = "sha256-igv7EQutLOf+qcExGB554hDDTuFxB1P9COvQUY2izGA=";
     };
     launch_testing = fetchGit {
       url = "https://github.com/ros2-gbp/launch-release.git";
-      hash = "sha256-e6Zfr3gooc/K16iYNLOe8NrtH2ikKvKRBQGka3T0Jm8=";
       rev = "b79367de3cd844ef48059d8e4b91ebe48ec9535d";
+      hash = "sha256-e6Zfr3gooc/K16iYNLOe8NrtH2ikKvKRBQGka3T0Jm8=";
     };
     launch_testing_ament_cmake = fetchGit {
       url = "https://github.com/ros2-gbp/launch-release.git";
-      hash = "sha256-5+zwcqUD4kG22oYJie85A8Wl3jxRdcPmkUcQu/nGCFI=";
       rev = "afe506445d42429c57e0486867d866ab7054a8a0";
+      hash = "sha256-5+zwcqUD4kG22oYJie85A8Wl3jxRdcPmkUcQu/nGCFI=";
     };
     launch_testing_examples = fetchGit {
       url = "https://github.com/ros2-gbp/examples-release.git";
-      hash = "sha256-AnGtfmc/Fo5R0zEcot5yB6C+xgFOA31yvAnV9fQRBK0=";
       rev = "c2236ee11ef8f07bccd6904e0db1d6579fd030d4";
+      hash = "sha256-AnGtfmc/Fo5R0zEcot5yB6C+xgFOA31yvAnV9fQRBK0=";
     };
     launch_testing_ros = fetchGit {
       url = "https://github.com/ros2-gbp/launch_ros-release.git";
-      hash = "sha256-EaW2/JmgZXRjYiG0YFcWQA2jQNQVAnPudqOLe3J7/kA=";
       rev = "8e943047d58bff614e8f7dd35c0c809bf58a1f12";
+      hash = "sha256-EaW2/JmgZXRjYiG0YFcWQA2jQNQVAnPudqOLe3J7/kA=";
     };
     launch_xml = fetchGit {
       url = "https://github.com/ros2-gbp/launch-release.git";
-      hash = "sha256-Qqc/i5ghzglsx794HAP6CBwuymTldnwQzcBT/psyhw0=";
       rev = "d38b5e1dff58ba58a94a822846318b0840786023";
+      hash = "sha256-Qqc/i5ghzglsx794HAP6CBwuymTldnwQzcBT/psyhw0=";
     };
     launch_yaml = fetchGit {
       url = "https://github.com/ros2-gbp/launch-release.git";
-      hash = "sha256-iTmdj7Xmv7WasHOQRLTCptwQoYDOht8pT+KWtklLPxI=";
       rev = "9ec1892e132a4c5eafda96bbdd987781d98551e6";
+      hash = "sha256-iTmdj7Xmv7WasHOQRLTCptwQoYDOht8pT+KWtklLPxI=";
     };
     lely_core_libraries = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_canopen-release.git";
-      hash = "sha256-XbLd6G2IQP4m5Fdi/04Xg1Og2BUFtPxMfonMm+uCI9g=";
       rev = "a2c52c6ab8e6405d6c61adb8ba3633c923bd4dd5";
+      hash = "sha256-XbLd6G2IQP4m5Fdi/04Xg1Og2BUFtPxMfonMm+uCI9g=";
     };
     leo = fetchGit {
       url = "https://github.com/ros2-gbp/leo_common-release.git";
-      hash = "sha256-qRmRxzhzTgwKSELlVR4rhl4PT3KhP04L3wJCEVsnpSI=";
       rev = "096460a339bcbe739b5becd7655b304416b02fc4";
+      hash = "sha256-qRmRxzhzTgwKSELlVR4rhl4PT3KhP04L3wJCEVsnpSI=";
     };
     leo_bringup = fetchGit {
       url = "https://github.com/ros2-gbp/leo_robot-release.git";
-      hash = "sha256-L+gWo7c5nMDO1ro4o4wCIQuFWuJzcQOQKBKcJOdViwI=";
       rev = "73eab93f993751eacc4c6948077b6de916f7ff57";
+      hash = "sha256-L+gWo7c5nMDO1ro4o4wCIQuFWuJzcQOQKBKcJOdViwI=";
     };
     leo_description = fetchGit {
       url = "https://github.com/ros2-gbp/leo_common-release.git";
-      hash = "sha256-Yi8hUp1UDui0Zdzwx6JhxHXBD4N3/L36/mN0dwOHufY=";
       rev = "e6e0ce195979662d770a228c6d72aa71f83abc07";
+      hash = "sha256-Yi8hUp1UDui0Zdzwx6JhxHXBD4N3/L36/mN0dwOHufY=";
     };
     leo_desktop = fetchGit {
       url = "https://github.com/ros2-gbp/leo_desktop-release.git";
-      hash = "sha256-6KTjQDWAPViQZPNJ0TvIOpgM0ZK6q5bDKX6joQDuOnw=";
       rev = "c1a54f9b40ddbf3bc97fee01d5c59273e6dde297";
+      hash = "sha256-6KTjQDWAPViQZPNJ0TvIOpgM0ZK6q5bDKX6joQDuOnw=";
     };
     leo_fw = fetchGit {
       url = "https://github.com/ros2-gbp/leo_robot-release.git";
-      hash = "sha256-P9NJHS6QNdT2tsdtQVCLg4+fd0xJYQZJS3dOrTRDWUk=";
       rev = "179cae449589d487d8f40044e75526ebe38c5150";
+      hash = "sha256-P9NJHS6QNdT2tsdtQVCLg4+fd0xJYQZJS3dOrTRDWUk=";
     };
     leo_gz_bringup = fetchGit {
       url = "https://github.com/ros2-gbp/leo_simulator-release.git";
-      hash = "sha256-0y/ePaYkD004cZ1wt5INnVSgdpRwZiQHUTGqphJgZoI=";
       rev = "09ae0956938149841ea2ec9ad8ce738aec9beec6";
+      hash = "sha256-0y/ePaYkD004cZ1wt5INnVSgdpRwZiQHUTGqphJgZoI=";
     };
     leo_gz_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/leo_simulator-release.git";
-      hash = "sha256-ga6r0cJy5q52i+zHX5Xo5GGXCKsEWC34Gu3hMMr29FU=";
       rev = "f8a8026d4d76621ccf33b1f573f1de3e16dac872";
+      hash = "sha256-ga6r0cJy5q52i+zHX5Xo5GGXCKsEWC34Gu3hMMr29FU=";
     };
     leo_gz_worlds = fetchGit {
       url = "https://github.com/ros2-gbp/leo_simulator-release.git";
-      hash = "sha256-EK1pczV1p2fHTbGPgwjCdNvPHbNkIXiSHcLDo6OfCGQ=";
       rev = "0b56515cc9fcb0a59080c1f37dbfaa6e9a46cbf7";
+      hash = "sha256-EK1pczV1p2fHTbGPgwjCdNvPHbNkIXiSHcLDo6OfCGQ=";
     };
     leo_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/leo_common-release.git";
-      hash = "sha256-sXiMSsfTjgdxjO/akTTMgVO9nP50z0mfvcJP242J2tk=";
       rev = "df72fc935fb95c27b2a368f080d9164e2de212ca";
+      hash = "sha256-sXiMSsfTjgdxjO/akTTMgVO9nP50z0mfvcJP242J2tk=";
     };
     leo_robot = fetchGit {
       url = "https://github.com/ros2-gbp/leo_robot-release.git";
-      hash = "sha256-0LFVi2DALRU231BQNWmUX5ZbnWkeGbjwQ7+D8HUZ5Rw=";
       rev = "5fc7b4aebe09394d8bc1b59b969563f7a8dad1f4";
+      hash = "sha256-0LFVi2DALRU231BQNWmUX5ZbnWkeGbjwQ7+D8HUZ5Rw=";
     };
     leo_simulator = fetchGit {
       url = "https://github.com/ros2-gbp/leo_simulator-release.git";
-      hash = "sha256-9NYk63AFSej3cyv3E/oe0Je7ctEdJ/3W2HmArd4XKp0=";
       rev = "2eb3d91a1f287e2f534b9c7385b44b4b05bb07a9";
+      hash = "sha256-9NYk63AFSej3cyv3E/oe0Je7ctEdJ/3W2HmArd4XKp0=";
     };
     leo_teleop = fetchGit {
       url = "https://github.com/ros2-gbp/leo_common-release.git";
-      hash = "sha256-JeNimAF404UWrQOSZAjVQxl5ntBZtCKMBiq6oUssPTo=";
       rev = "8f00e8b87e7197ac928ad1c538d672ca6ae5b152";
+      hash = "sha256-JeNimAF404UWrQOSZAjVQxl5ntBZtCKMBiq6oUssPTo=";
     };
     leo_viz = fetchGit {
       url = "https://github.com/ros2-gbp/leo_desktop-release.git";
-      hash = "sha256-JrS6oiobEEu7mNXfAH7Ayk6hIbPY0ldoaaA3B4v78iI=";
       rev = "8a2ac2489016316dbf3b188848e424ab9c664891";
+      hash = "sha256-JrS6oiobEEu7mNXfAH7Ayk6hIbPY0ldoaaA3B4v78iI=";
     };
     lgsvl_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/lgsvl_msgs-release.git";
-      hash = "sha256-Pd5TP0wLuUr0/m+WvLpkvURpB0d0hbik3SOPkifg8YU=";
       rev = "df62ae3eea8caa26f3b54f6c394ca369ddfa63be";
+      hash = "sha256-Pd5TP0wLuUr0/m+WvLpkvURpB0d0hbik3SOPkifg8YU=";
     };
     libcaer = fetchGit {
       url = "https://github.com/ros2-gbp/libcaer-release.git";
-      hash = "sha256-dwttE1L2vvosLFP5cMWaZTptd7PcE7Cb6Znyo9FB22o=";
       rev = "3606412f5d392f2c3103b6d09d5f8d2b146dbcb2";
+      hash = "sha256-dwttE1L2vvosLFP5cMWaZTptd7PcE7Cb6Znyo9FB22o=";
     };
     libcaer_driver = fetchGit {
       url = "https://github.com/ros2-gbp/libcaer_driver-release.git";
-      hash = "sha256-2CCXUtNReP9e8B8KI4rXba1zz2y08JMikrKRtzV0+fI=";
       rev = "98c5d05aae3f8ae95769dfb0b4342036a1f7c7e3";
+      hash = "sha256-2CCXUtNReP9e8B8KI4rXba1zz2y08JMikrKRtzV0+fI=";
     };
     libcaer_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/libcaer_vendor-release.git";
-      hash = "sha256-qbXJBtbU/GC6K5vEd6Dt1V5gnwyiWAhWD/mya3K/z40=";
       rev = "0424ca45235d713578a786c73480717ad9b316d6";
+      hash = "sha256-qbXJBtbU/GC6K5vEd6Dt1V5gnwyiWAhWD/mya3K/z40=";
     };
     libcamera = fetchGit {
       url = "https://github.com/ros2-gbp/libcamera-release.git";
-      hash = "sha256-JmZ0j75Bh3/iVK8U2l/7P3kF9nswD54/DEQBvhfeCV8=";
       rev = "8722fe191723f74cd203b007bc4e228ccd8de4d6";
+      hash = "sha256-JmZ0j75Bh3/iVK8U2l/7P3kF9nswD54/DEQBvhfeCV8=";
     };
     libcurl_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/resource_retriever-release.git";
-      hash = "sha256-v0iNPURg6MEcVD010bSbeJ81E/2SNv2HQ97U/fcjz1A=";
       rev = "e223cb19353802a673a50fa06be2b1cf48452255";
+      hash = "sha256-v0iNPURg6MEcVD010bSbeJ81E/2SNv2HQ97U/fcjz1A=";
     };
     libg2o = fetchGit {
       url = "https://github.com/ros2-gbp/libg2o-release.git";
-      hash = "sha256-AzJrNRj+c+u/OLswKvFbPe9agz7fRITYCGNA6rW8/SY=";
       rev = "00c43ed56545d657e65c2d9df7aae526f9624e13";
+      hash = "sha256-AzJrNRj+c+u/OLswKvFbPe9agz7fRITYCGNA6rW8/SY=";
     };
     liblz4_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-7qUW2AEwVXQRPc8y3Kz3ZmAPEtKj3pR8brDzXbZjVYc=";
       rev = "24a4a9d4e509be6f2345787f490c3111e74c82e7";
+      hash = "sha256-7qUW2AEwVXQRPc8y3Kz3ZmAPEtKj3pR8brDzXbZjVYc=";
     };
     libmavconn = fetchGit {
       url = "https://github.com/ros2-gbp/mavros-release.git";
-      hash = "sha256-QBritO4WHraRumwSo3Zp7pZ16Sj5xlwZNFNpMxUNM3M=";
       rev = "1ad9db29a5ebe61ce571344e569fd3a92235953e";
+      hash = "sha256-QBritO4WHraRumwSo3Zp7pZ16Sj5xlwZNFNpMxUNM3M=";
     };
     libnabo = fetchGit {
       url = "https://github.com/ros2-gbp/libnabo-release.git";
-      hash = "sha256-v97tjlJi2QXQYpa3qut6ICB4FlDDEz6GBYMY9ParEWw=";
       rev = "160592c7ea514f53d953d86d718910a908cbfd21";
+      hash = "sha256-v97tjlJi2QXQYpa3qut6ICB4FlDDEz6GBYMY9ParEWw=";
     };
     libphidget22 = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-6qmEwpvLQ3uNtKDMaZipmO91nKI98FLjFSl0zWR+tCk=";
       rev = "f325a1971b200ca0531ddcbdc51241c1e6a2d3e5";
+      hash = "sha256-6qmEwpvLQ3uNtKDMaZipmO91nKI98FLjFSl0zWR+tCk=";
     };
     libpointmatcher = fetchGit {
       url = "https://github.com/ros2-gbp/libpointmatcher-release.git";
-      hash = "sha256-Dc7s28fmp2qhKe+0NG+8xjM0KMSvt8o6mGF2liWpEB4=";
       rev = "42d41781f7dcc4dc8151c3985cb5825bdeaf8978";
+      hash = "sha256-Dc7s28fmp2qhKe+0NG+8xjM0KMSvt8o6mGF2liWpEB4=";
     };
     librealsense2 = fetchGit {
       url = "https://github.com/IntelRealSense/librealsense2-release.git";
-      hash = "sha256-tI3pz5+/WaOQ2PifY/4auyUraj3cReWbBOFBn7k6Hok=";
       rev = "9b999a96567dc0721be20811b3f715c0c33227d1";
+      hash = "sha256-tI3pz5+/WaOQ2PifY/4auyUraj3cReWbBOFBn7k6Hok=";
     };
     libstatistics_collector = fetchGit {
       url = "https://github.com/ros2-gbp/libstatistics_collector-release.git";
-      hash = "sha256-cvI6rweNMAPnISrPDjCi0dRMq6O79AA7JWqrBt01vEA=";
       rev = "19d619f753118a3cae6e41d2f9974d9a37fea539";
+      hash = "sha256-cvI6rweNMAPnISrPDjCi0dRMq6O79AA7JWqrBt01vEA=";
     };
     libyaml_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/libyaml_vendor-release.git";
-      hash = "sha256-B4KqEW6DWzKfnmVCRwlG37WRdC5jasM41pTz21e1of0=";
       rev = "6716b363b25f6dd62d1d1673537ea10bc9f9c3d8";
+      hash = "sha256-B4KqEW6DWzKfnmVCRwlG37WRdC5jasM41pTz21e1of0=";
     };
     lifecycle = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-GWbDRSuuSH51jk1Ag2+oCnn/IXk4Z/RKe27IgZoUEXY=";
       rev = "8a97eee798f6d52494e3b2ca858f1b9c5ffb609c";
+      hash = "sha256-GWbDRSuuSH51jk1Ag2+oCnn/IXk4Z/RKe27IgZoUEXY=";
     };
     lifecycle_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rcl_interfaces-release.git";
-      hash = "sha256-nPm3livoSK0Z2bpSS4SLfqqc0ya2k0zP9IdIfR94V1E=";
       rev = "30b6f421c32024a0d90ba0d026c41a3d4214181a";
+      hash = "sha256-nPm3livoSK0Z2bpSS4SLfqqc0ya2k0zP9IdIfR94V1E=";
     };
     lifecycle_py = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-G2SQPzmMZnrFR7ETFon/1Nj1gKgoJxZGMGsV5Ng12Fc=";
       rev = "94f453f81ef00cf3b7eb677fc52ab7a39b4fb4a1";
+      hash = "sha256-G2SQPzmMZnrFR7ETFon/1Nj1gKgoJxZGMGsV5Ng12Fc=";
     };
     linux_isolate_process = fetchGit {
       url = "https://github.com/ros2-gbp/linux_isolate_process-release.git";
-      hash = "sha256-1MOoCotNkz3eD3lwztz0QfmCyDxEk36KY1YmdCQIjK4=";
       rev = "adcde99dc53e5480e71a4533a5e438325f72a216";
+      hash = "sha256-1MOoCotNkz3eD3lwztz0QfmCyDxEk36KY1YmdCQIjK4=";
     };
     logging_demo = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-nJDlVxMHpHwjrytNjksUmppri/YZudnpxyZaemNzaJM=";
       rev = "b9f19e69f1e8607359091485e1a21b78d379acf1";
+      hash = "sha256-nJDlVxMHpHwjrytNjksUmppri/YZudnpxyZaemNzaJM=";
     };
     lttngpy = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_tracing-release.git";
-      hash = "sha256-mo3tqXxJdLniu+FxFGa58ZhnR8/dFAV8o2+BrXActq8=";
       rev = "1d2a357d75de1e5d115ceb0b5e3d17d18b8f123f";
+      hash = "sha256-mo3tqXxJdLniu+FxFGa58ZhnR8/dFAV8o2+BrXActq8=";
     };
     magic_enum = fetchGit {
       url = "https://github.com/ros2-gbp/magic_enum-release.git";
-      hash = "sha256-UM1GrwIoe4ScsiC1IhCSqgRqsh3PwDk62bt78smr1rs=";
       rev = "795fc2fd62c047e4282c49aa9a55d20fdab4eed7";
+      hash = "sha256-UM1GrwIoe4ScsiC1IhCSqgRqsh3PwDk62bt78smr1rs=";
     };
     map_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/navigation_msgs-release.git";
-      hash = "sha256-M1If3wiTKnM4fAey6QfTAMmUHRGIf83bzE1VuxSlGvw=";
       rev = "4675ed3bf06517781914cb22ee88628485cf7b78";
+      hash = "sha256-M1If3wiTKnM4fAey6QfTAMmUHRGIf83bzE1VuxSlGvw=";
     };
     mapviz = fetchGit {
       url = "https://github.com/ros2-gbp/mapviz-release.git";
-      hash = "sha256-QOavYJZ21V7PB+K2MI7j0uEWX1GmRRIocdvdSs2ZfP0=";
       rev = "4530d80eb34d0350971485ca44740c07f0ce00cd";
+      hash = "sha256-QOavYJZ21V7PB+K2MI7j0uEWX1GmRRIocdvdSs2ZfP0=";
     };
     mapviz_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/mapviz-release.git";
-      hash = "sha256-rYyoJaGeXYVTz+zNNdikD4+2i+gWQFabeVsFZQL/4aY=";
       rev = "c89e07171d3a49b50ca2c391f2c2e0eb15520008";
+      hash = "sha256-rYyoJaGeXYVTz+zNNdikD4+2i+gWQFabeVsFZQL/4aY=";
     };
     mapviz_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/mapviz-release.git";
-      hash = "sha256-Uv0w5dSfMSuB3oQZadzM2gPcdxIXoR+wiLnsLZVECk4=";
       rev = "753bce671094fcfc07cdd2be85d9a8d08671f98f";
+      hash = "sha256-Uv0w5dSfMSuB3oQZadzM2gPcdxIXoR+wiLnsLZVECk4=";
     };
     marine_acoustic_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/marine_msgs-release.git";
-      hash = "sha256-ALbjKiPGNTichMtqbwwJIA4Y52MYdCELmDl3tLU3dC4=";
       rev = "2accedcdf1b48bdcbf7a91bf9e33f19a9deebd79";
+      hash = "sha256-ALbjKiPGNTichMtqbwwJIA4Y52MYdCELmDl3tLU3dC4=";
     };
     marine_sensor_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/marine_msgs-release.git";
-      hash = "sha256-D0FezQ0OVWOXoPzNWC1TM9TGTcHR8hhUTXBz6uEQBnw=";
       rev = "156f210aeeefe204e671aee16bc0b561960193cd";
+      hash = "sha256-D0FezQ0OVWOXoPzNWC1TM9TGTcHR8hhUTXBz6uEQBnw=";
     };
     marti_can_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/marti_messages-release.git";
-      hash = "sha256-SXOyPmMtRuzNSPclfR5SXtJwdCKxJdRwVXnMk5X0/Sc=";
       rev = "50c5478d3f5766227eccc7f1da1be88457ebf61c";
+      hash = "sha256-SXOyPmMtRuzNSPclfR5SXtJwdCKxJdRwVXnMk5X0/Sc=";
     };
     marti_common_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/marti_messages-release.git";
-      hash = "sha256-gaOU6sxuZ+abN7u8RPke/CL2TRRRxH+jAwDvOMS6Mbc=";
       rev = "290d7ab8b65b59afda6e2d1a924350641542e85c";
+      hash = "sha256-gaOU6sxuZ+abN7u8RPke/CL2TRRRxH+jAwDvOMS6Mbc=";
     };
     marti_dbw_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/marti_messages-release.git";
-      hash = "sha256-2cBEP9kN6iQjXwvxWDdZEzieO85HsbDrY9g7PbwblV0=";
       rev = "9b35d34dbaedd432ef5e58bae972d90bb657a8e0";
+      hash = "sha256-2cBEP9kN6iQjXwvxWDdZEzieO85HsbDrY9g7PbwblV0=";
     };
     marti_introspection_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/marti_messages-release.git";
-      hash = "sha256-bytCDHgxW2xWVWTggl/gLqndp8+d3HaxOxh1p3yy8N4=";
       rev = "9db2328906cf1977373fe9140e1c2474f0b86671";
+      hash = "sha256-bytCDHgxW2xWVWTggl/gLqndp8+d3HaxOxh1p3yy8N4=";
     };
     marti_nav_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/marti_messages-release.git";
-      hash = "sha256-pHZeqpnOV1h2FMiPfwJ/JSnqTJvVpfXMgsc7lbZmJLs=";
       rev = "752bfea3eb9a581c179f0699a1d26550657ebe21";
+      hash = "sha256-pHZeqpnOV1h2FMiPfwJ/JSnqTJvVpfXMgsc7lbZmJLs=";
     };
     marti_perception_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/marti_messages-release.git";
-      hash = "sha256-2qxhSta0F3EVZvP65ORIvmv7wvdpFJtBiATwG+jFkXE=";
       rev = "9bc0b5e821d800944446fd7ad9041cb410c53947";
+      hash = "sha256-2qxhSta0F3EVZvP65ORIvmv7wvdpFJtBiATwG+jFkXE=";
     };
     marti_sensor_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/marti_messages-release.git";
-      hash = "sha256-WyVlezrzQz/gG2DAcv31gIGeJ5Y6ex4TFTymyh4DDY8=";
       rev = "78ca6c513f16161e13428e3986735e4bfae35d8e";
+      hash = "sha256-WyVlezrzQz/gG2DAcv31gIGeJ5Y6ex4TFTymyh4DDY8=";
     };
     marti_status_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/marti_messages-release.git";
-      hash = "sha256-H0OZx2auL2+GA25U5LCch9035IPk6AjvN3KCUFmT+1k=";
       rev = "1473de972739dccf58bf16e981dee77176885c3e";
+      hash = "sha256-H0OZx2auL2+GA25U5LCch9035IPk6AjvN3KCUFmT+1k=";
     };
     marti_visualization_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/marti_messages-release.git";
-      hash = "sha256-peyK91dgzn2v2AC23GwQee/eFKooMV3SDLs06KCSnQQ=";
       rev = "3bf65109ff66d795a78872eb4baebfb817cc5d4d";
+      hash = "sha256-peyK91dgzn2v2AC23GwQee/eFKooMV3SDLs06KCSnQQ=";
     };
     mavlink = fetchGit {
       url = "https://github.com/ros2-gbp/mavlink-gbp-release.git";
-      hash = "sha256-eMcLVGZW3EwpEMSzXTtwesNUPH1veBpJQRE0DEAaQC4=";
       rev = "1ebc30fddf3bc7bc55237f144a262f09f9240c90";
+      hash = "sha256-eMcLVGZW3EwpEMSzXTtwesNUPH1veBpJQRE0DEAaQC4=";
     };
     mavros = fetchGit {
       url = "https://github.com/ros2-gbp/mavros-release.git";
-      hash = "sha256-45ZIQJFqpxq+2FRWIxmsJn9gNb+VUMlu7A951/VcfjE=";
       rev = "31d2090fed1e28a8a3d6eeb570bce12ea0bbf072";
+      hash = "sha256-45ZIQJFqpxq+2FRWIxmsJn9gNb+VUMlu7A951/VcfjE=";
     };
     mavros_extras = fetchGit {
       url = "https://github.com/ros2-gbp/mavros-release.git";
-      hash = "sha256-ed8UPRtqFOo6c7dGBvyW2v0z91P70cELsh5bH2xApKY=";
       rev = "50cca906c0e232e86bae6f6311a6e2e59c0c9c3a";
+      hash = "sha256-ed8UPRtqFOo6c7dGBvyW2v0z91P70cELsh5bH2xApKY=";
     };
     mavros_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/mavros-release.git";
-      hash = "sha256-AWdktlWefd9i32GeYclFTFzF6N2LKeGhVQgrtV9GIvs=";
       rev = "a6a97a2e4aa44b927dc948f352e90d9ab2657c6e";
+      hash = "sha256-AWdktlWefd9i32GeYclFTFzF6N2LKeGhVQgrtV9GIvs=";
     };
     mcap_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-GeTzcZi2qkundHMGWvGRD6vfh7FfNGRN7M2Gg6ret+U=";
       rev = "5c4b554a4a9faf7e6fce2ed3a5d276dcebf482fd";
+      hash = "sha256-GeTzcZi2qkundHMGWvGRD6vfh7FfNGRN7M2Gg6ret+U=";
     };
     menge_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/menge_vendor-release.git";
-      hash = "sha256-AJu4LBC/jCbOc7xsuWQYqlSM6c4VDKO69VNdPQljsDE=";
       rev = "dc8e4100a05e84a960dcb1362a6c08fd42f7cb06";
+      hash = "sha256-AJu4LBC/jCbOc7xsuWQYqlSM6c4VDKO69VNdPQljsDE=";
     };
     message_filters = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_message_filters-release.git";
-      hash = "sha256-uPk1GEuVW1gKQg6ni9uM9iJXK4fYx6Wo9LM+oEf9P5Q=";
       rev = "8d4a77934f4c418d5437fd6960cea3ded3caffde";
+      hash = "sha256-uPk1GEuVW1gKQg6ni9uM9iJXK4fYx6Wo9LM+oEf9P5Q=";
     };
     message_tf_frame_transformer = fetchGit {
       url = "https://github.com/ros2-gbp/message_tf_frame_transformer-release.git";
-      hash = "sha256-vWCcNT8fLXTKeJfhSDyA/wyHJjnuC3gX+U4gtEZXfCA=";
       rev = "bfe9a7f73c48565396efa8f1fa0e0b927a903b07";
+      hash = "sha256-vWCcNT8fLXTKeJfhSDyA/wyHJjnuC3gX+U4gtEZXfCA=";
     };
     metavision_driver = fetchGit {
       url = "https://github.com/ros2-gbp/metavision_driver-release.git";
-      hash = "sha256-6YJm1D2gLZgtxGftqG+MCBCzfpJxkonaTl9z9Qz+nVs=";
       rev = "dff2f1635200cb1b5b3e7f364de82e3d04a771ca";
+      hash = "sha256-6YJm1D2gLZgtxGftqG+MCBCzfpJxkonaTl9z9Qz+nVs=";
     };
     micro_ros_diagnostic_bridge = fetchGit {
       url = "https://github.com/ros2-gbp/micro_ros_diagnostics-release.git";
-      hash = "sha256-mBsQdSKOPVQJVBc/FxvaxH5NOtAJy3M+bYciq7eHg+c=";
       rev = "453216f9df2aeba2bd83c63ba0fe56186fc34585";
+      hash = "sha256-mBsQdSKOPVQJVBc/FxvaxH5NOtAJy3M+bYciq7eHg+c=";
     };
     micro_ros_diagnostic_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/micro_ros_diagnostics-release.git";
-      hash = "sha256-SzsjLMKb42ISN6YTe6pUsmSDS9aBoczr3ayWBkrJAgU=";
       rev = "76f5de2933fddaf626219a8b72351b75113974ed";
+      hash = "sha256-SzsjLMKb42ISN6YTe6pUsmSDS9aBoczr3ayWBkrJAgU=";
     };
     micro_ros_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/micro_ros_msgs-release.git";
-      hash = "sha256-kuDv7e3C0BCXolx6ePv0TLEpK9E3OfLGFAh0K/9Wb8o=";
       rev = "68328fce0490d843544f5d50941ac3ea2f424ad0";
+      hash = "sha256-kuDv7e3C0BCXolx6ePv0TLEpK9E3OfLGFAh0K/9Wb8o=";
     };
     microstrain_inertial_description = fetchGit {
       url = "https://github.com/ros2-gbp/microstrain_inertial-release.git";
-      hash = "sha256-lOHPxY9ciFC3/2X7J0UY5DTOJATWSsB7GRP81vSSZRU=";
       rev = "3cdc10c99e3ed5990d3eefa08004aff8f3b03d9e";
+      hash = "sha256-lOHPxY9ciFC3/2X7J0UY5DTOJATWSsB7GRP81vSSZRU=";
     };
     microstrain_inertial_driver = fetchGit {
       url = "https://github.com/ros2-gbp/microstrain_inertial-release.git";
-      hash = "sha256-X29UZFDfi/zZxdj6lxfQRxhsXTZv1yBdjg0x98wbD/Y=";
       rev = "2a8e8a4f6c2870f11e6c826e72a19efc0c0f0b30";
+      hash = "sha256-X29UZFDfi/zZxdj6lxfQRxhsXTZv1yBdjg0x98wbD/Y=";
     };
     microstrain_inertial_examples = fetchGit {
       url = "https://github.com/ros2-gbp/microstrain_inertial-release.git";
-      hash = "sha256-6qnRt0tiuZyHBlqC5NktccOcL7n5foFcwVNFivIhINg=";
       rev = "d8617764987772ebacb842e6ce10374da496b547";
+      hash = "sha256-6qnRt0tiuZyHBlqC5NktccOcL7n5foFcwVNFivIhINg=";
     };
     microstrain_inertial_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/microstrain_inertial-release.git";
-      hash = "sha256-PeKXv1/tOxe0ML45M74+JehJ/xq8DuPKe1yVSVEhXOY=";
       rev = "257256a1d14c4960778d9bdbf8c41c36ce17b1bc";
+      hash = "sha256-PeKXv1/tOxe0ML45M74+JehJ/xq8DuPKe1yVSVEhXOY=";
     };
     microstrain_inertial_rqt = fetchGit {
       url = "https://github.com/ros2-gbp/microstrain_inertial-release.git";
-      hash = "sha256-SfEuY4PDqEWUD0/6/draATnUJY0mGH4OOeGYhdeYicA=";
       rev = "c8821e68f3737d903958e60a46608e0a1ae7cb96";
+      hash = "sha256-SfEuY4PDqEWUD0/6/draATnUJY0mGH4OOeGYhdeYicA=";
     };
     mimick_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/mimick_vendor-release.git";
-      hash = "sha256-wQW/rdoXG6vBtOKZi4dSPTuRv1vmyfVQzzwmj2hOZ20=";
       rev = "1be11e576e4ab6745b5fa85c3dc3147b79523679";
+      hash = "sha256-wQW/rdoXG6vBtOKZi4dSPTuRv1vmyfVQzzwmj2hOZ20=";
     };
     mobileye_560_660_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/astuff_sensor_msgs-release.git";
-      hash = "sha256-VUBlCZa6YHrHj0N2L4MPJZXOD74+Uu4leG3oXg1ZOJg=";
       rev = "e8de98737d059f4e2e5b2fef12cb57ecc8ff8283";
+      hash = "sha256-VUBlCZa6YHrHj0N2L4MPJZXOD74+Uu4leG3oXg1ZOJg=";
     };
     mola = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-0k6S97+RfOGopfefX+vpaklgl1JH2VpH22vHt4bt2uQ=";
       rev = "b7be414b5b8467fc11c41eb3a926d355cf9660e9";
+      hash = "sha256-0k6S97+RfOGopfefX+vpaklgl1JH2VpH22vHt4bt2uQ=";
     };
     mola_bridge_ros2 = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-jxbG3BnHn8KqByvBE0R5WNjxZeyoAuH1H1QBONySt7Y=";
       rev = "70b26b4e8925d59c1fc4e4119e3213fdef7b5c68";
+      hash = "sha256-jxbG3BnHn8KqByvBE0R5WNjxZeyoAuH1H1QBONySt7Y=";
     };
     mola_common = fetchGit {
       url = "https://github.com/ros2-gbp/mola_common-release.git";
-      hash = "sha256-JetMKVWYQtfaVcAHBcrqzrTCToKE126m5lWzdjs5VAQ=";
       rev = "e6799934cd94df30596c4f65be77e8ec9ef905d0";
+      hash = "sha256-JetMKVWYQtfaVcAHBcrqzrTCToKE126m5lWzdjs5VAQ=";
     };
     mola_demos = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-XrTSbNh3tlYbur782MaGRByYapPhDBmO9/GTLgwHgWE=";
       rev = "d8bfb6433a8902f0fe646cdb3632f86ae6453dc1";
+      hash = "sha256-XrTSbNh3tlYbur782MaGRByYapPhDBmO9/GTLgwHgWE=";
     };
     mola_imu_preintegration = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-cAKpNoFmb63UtwzEUa0OoN2xtBVWydHgFUtwfd6mJKA=";
       rev = "9d11cba1f1429259b12ba46686e83f6f6850c948";
+      hash = "sha256-cAKpNoFmb63UtwzEUa0OoN2xtBVWydHgFUtwfd6mJKA=";
     };
     mola_input_euroc_dataset = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-4G5pzRTKcZysRrzJ9Y7K3iUMytOyAjXVs1Vn6dOP6K0=";
       rev = "d51c962be9214ede76c55fdc536c9ab18fe42ab3";
+      hash = "sha256-4G5pzRTKcZysRrzJ9Y7K3iUMytOyAjXVs1Vn6dOP6K0=";
     };
     mola_input_kitti360_dataset = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-KuOMrRimlEEnraU4iYt5stuFyGXVbs/c3ZW2XC8e7ek=";
       rev = "5241c7fa0030d020a90968e661011c7e4146626f";
+      hash = "sha256-KuOMrRimlEEnraU4iYt5stuFyGXVbs/c3ZW2XC8e7ek=";
     };
     mola_input_kitti_dataset = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-x6wxSZsH+m0OjwJkwpwy5pStOAeyeY2Vue06sDfpBTw=";
       rev = "d76a79570de23a416b7d277dabc64043b6822134";
+      hash = "sha256-x6wxSZsH+m0OjwJkwpwy5pStOAeyeY2Vue06sDfpBTw=";
     };
     mola_input_mulran_dataset = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-Pyd6LDUfq4Dcf8avJuvr/Rv/SOZtmHHylgA0ddopQSI=";
       rev = "fcaf5ff2f00083243925ac56500b2f8825d8bd09";
+      hash = "sha256-Pyd6LDUfq4Dcf8avJuvr/Rv/SOZtmHHylgA0ddopQSI=";
     };
     mola_input_paris_luco_dataset = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-uT7VSGCguyjsyLWSGJElRtpqtzFVsnCScv1a0RL+MjM=";
       rev = "7888ec90c98c8a7fb410bdf64e0ea6723ac782f0";
+      hash = "sha256-uT7VSGCguyjsyLWSGJElRtpqtzFVsnCScv1a0RL+MjM=";
     };
     mola_input_rawlog = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-D54M915V3Pe84qAjY5uAP4MCfpT7E+/C8Z3f2z043c0=";
       rev = "6b13ad6f0cbcff4effe568d386a2b763b4f9125b";
+      hash = "sha256-D54M915V3Pe84qAjY5uAP4MCfpT7E+/C8Z3f2z043c0=";
     };
     mola_input_rosbag2 = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-K3+U9HWRCi4GzWtIlh7AReA7LcLidA2LAcoyJek7rKM=";
       rev = "a2f0f35687d65abb2c3411e33721070b8bf32991";
+      hash = "sha256-K3+U9HWRCi4GzWtIlh7AReA7LcLidA2LAcoyJek7rKM=";
     };
     mola_kernel = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-T6yYunIpMJXMfUiSDYOOwWFC2Rewjq1uNU9uR60TmVs=";
       rev = "8f418e9e06f52ef3acaef95979bd2c48d9a3a648";
+      hash = "sha256-T6yYunIpMJXMfUiSDYOOwWFC2Rewjq1uNU9uR60TmVs=";
     };
     mola_launcher = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-GRf9Vra3VSYFhMsHnyFlcmVi3UAXy4bTVe/ngnvUQ4Y=";
       rev = "2090cb44078b6398da7a2cd664b24f3d3f0045b9";
+      hash = "sha256-GRf9Vra3VSYFhMsHnyFlcmVi3UAXy4bTVe/ngnvUQ4Y=";
     };
     mola_metric_maps = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-/OhIDf+0rU/PhnVWE03vDT/Dne4y/rw0H1fREl6WL6s=";
       rev = "5f67ddd96f7ade96f98654e67980370c34771367";
+      hash = "sha256-/OhIDf+0rU/PhnVWE03vDT/Dne4y/rw0H1fREl6WL6s=";
     };
     mola_navstate_fg = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-pOk8DGxSVAz2XkBVYP09rspvnYzRdpXWTPzenuSFbF4=";
       rev = "ede7cd0157ab8cb724fe22ef40172b711274961d";
+      hash = "sha256-pOk8DGxSVAz2XkBVYP09rspvnYzRdpXWTPzenuSFbF4=";
     };
     mola_navstate_fuse = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-OPOC9s8A2o6MOM22wxEf2o2pGu0rXL/FmiBI/ewcyxg=";
       rev = "7853f153e7c6a152536016606a98a8e9fcfb4ca6";
+      hash = "sha256-OPOC9s8A2o6MOM22wxEf2o2pGu0rXL/FmiBI/ewcyxg=";
     };
     mola_pose_list = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-lErQqkdThV+fJ59Zh+5l10r8O7bwQibb74FoH8jZu2c=";
       rev = "fa78c28c882f50c750550d6b2bde610498cb88ed";
+      hash = "sha256-lErQqkdThV+fJ59Zh+5l10r8O7bwQibb74FoH8jZu2c=";
     };
     mola_relocalization = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-DKJZen9gJKTp1AHQHbhz7W1I3qyZ4noxY3W4xysYpwU=";
       rev = "bc0df8e05d45b8134332f6997ff5a2e4199786db";
+      hash = "sha256-DKJZen9gJKTp1AHQHbhz7W1I3qyZ4noxY3W4xysYpwU=";
     };
     mola_test_datasets = fetchGit {
       url = "https://github.com/ros2-gbp/mola_test_datasets-release.git";
-      hash = "sha256-P0TT8xB70P0BO98brdl0coZ9fThbvpg4d5BJ5AMzWno=";
       rev = "06e75aac14a591b2cd4ec61adb54919b8ec9bbdf";
+      hash = "sha256-P0TT8xB70P0BO98brdl0coZ9fThbvpg4d5BJ5AMzWno=";
     };
     mola_traj_tools = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-lcWYjdqG9W7GNzcUuW/AsWUB6X7cSA1O5uFU+cZN3TM=";
       rev = "7cbb9578cf47c8f82aa47fd5e907e2f3b9fc0306";
+      hash = "sha256-lcWYjdqG9W7GNzcUuW/AsWUB6X7cSA1O5uFU+cZN3TM=";
     };
     mola_viz = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-4e4L9w5blHlC21UCn9O2VqhwSXbnyeKCy5fSgXRRbHw=";
       rev = "c2bb4bcefdee7c485713a8ed17a627712805816a";
+      hash = "sha256-4e4L9w5blHlC21UCn9O2VqhwSXbnyeKCy5fSgXRRbHw=";
     };
     mola_yaml = fetchGit {
       url = "https://github.com/ros2-gbp/mola-release.git";
-      hash = "sha256-8cfBNObwcLp+gG8Vd2pi7dy5xHk7Ke578Qp9ZMUEFsY=";
       rev = "ab5749adfd4ddee83c8f0d55355a690356c58ad5";
+      hash = "sha256-8cfBNObwcLp+gG8Vd2pi7dy5xHk7Ke578Qp9ZMUEFsY=";
     };
     motion_capture_tracking = fetchGit {
       url = "https://github.com/ros2-gbp/motion_capture_tracking-release.git";
-      hash = "sha256-i4x1fFnItmyr13Kz2YfUYfYKcessV15UqBvrOb4Q41c=";
       rev = "42bccb83df2d4181678a85d158baf5f9a996a3fe";
+      hash = "sha256-i4x1fFnItmyr13Kz2YfUYfYKcessV15UqBvrOb4Q41c=";
     };
     motion_capture_tracking_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/motion_capture_tracking-release.git";
-      hash = "sha256-ho+25GyuWOKXqZqIp74ZO8leEndRFRqfn74DBKWKZWk=";
       rev = "d3cb19d132f7ebed6e4e1845c9b859f4d217da8b";
+      hash = "sha256-ho+25GyuWOKXqZqIp74ZO8leEndRFRqfn74DBKWKZWk=";
     };
     mouse_teleop = fetchGit {
       url = "https://github.com/ros2-gbp/teleop_tools-release.git";
-      hash = "sha256-4ApQu9cIv086UTOdot+fSpAb8OEJT8gTERQwK2OWWL0=";
       rev = "c4340fc498afb1b2a88f351619cddb1817e9b256";
+      hash = "sha256-4ApQu9cIv086UTOdot+fSpAb8OEJT8gTERQwK2OWWL0=";
     };
     moveit = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-ks+3x/OmI9wu9+rUiTQQo2PYVKkbS5A0U5xsNN9LqhA=";
       rev = "893aaf222051de5478b6f8bd9077f974cbf8c132";
+      hash = "sha256-ks+3x/OmI9wu9+rUiTQQo2PYVKkbS5A0U5xsNN9LqhA=";
     };
     moveit_common = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-+nYHvpEkbnYH7o6lx4IhWXvErGHpMSME97pdidmL7wA=";
       rev = "f940ec341fab3a1a9e1134ef6765630ee5b2d4b1";
+      hash = "sha256-+nYHvpEkbnYH7o6lx4IhWXvErGHpMSME97pdidmL7wA=";
     };
     moveit_configs_utils = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-8DDHsJCi1DVNRwZcC9PrM6vw7VJA2mZjeOroGm+NewY=";
       rev = "5b1a56d796279057a36d9738191655ecf616b024";
+      hash = "sha256-8DDHsJCi1DVNRwZcC9PrM6vw7VJA2mZjeOroGm+NewY=";
     };
     moveit_core = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-WwWn+S+POgbqVVFiTNS9YCPW4HwH0UtkvCrAYRmEuIE=";
       rev = "4ddbf0913eeb711c68b916e71d92c144500892da";
+      hash = "sha256-WwWn+S+POgbqVVFiTNS9YCPW4HwH0UtkvCrAYRmEuIE=";
     };
     moveit_hybrid_planning = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-KUzQByTujYnu6ZUbStJRiivd3oUpOSdi34fHHSs9Zy0=";
       rev = "85a5b5c67eb522f7730ee025c2e603c36e4acaeb";
+      hash = "sha256-KUzQByTujYnu6ZUbStJRiivd3oUpOSdi34fHHSs9Zy0=";
     };
     moveit_kinematics = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-hseesEOBXSfOj36mGIbEmGSddLotrO+orC8BkjQnkzw=";
       rev = "e6bac77b77b63caf01dda902c3d3c38b8de6cc18";
+      hash = "sha256-hseesEOBXSfOj36mGIbEmGSddLotrO+orC8BkjQnkzw=";
     };
     moveit_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/moveit_msgs-release.git";
-      hash = "sha256-xpAnqhbeUYf85S2GbiQw9gxJsrS6zLTPMNFaUetjRtY=";
       rev = "1225bd68c7aaae83a9d763303e0b2ac909b3062a";
+      hash = "sha256-xpAnqhbeUYf85S2GbiQw9gxJsrS6zLTPMNFaUetjRtY=";
     };
     moveit_planners = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-tHhEg3jwekHAsyucoYE+gFnMw+bCXkrKzo++Lkpf0So=";
       rev = "52849597ee1e7579bd26f4d857e96fd813815e1e";
+      hash = "sha256-tHhEg3jwekHAsyucoYE+gFnMw+bCXkrKzo++Lkpf0So=";
     };
     moveit_planners_chomp = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-W8GhBQYkvLZ6DKk+pkVc/ZwnfNVRwIcTqlqWHX3sHSE=";
       rev = "21ee9a088ae8b104c1719b7e15353681ba2ee853";
+      hash = "sha256-W8GhBQYkvLZ6DKk+pkVc/ZwnfNVRwIcTqlqWHX3sHSE=";
     };
     moveit_planners_ompl = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-W+rFXVi8+8p9Zw1yJ7jOSgc6aT0r1pT4bZ9kGXdDySc=";
       rev = "e1c5a7257b73f495419808e94652fae0b0782afc";
+      hash = "sha256-W+rFXVi8+8p9Zw1yJ7jOSgc6aT0r1pT4bZ9kGXdDySc=";
     };
     moveit_planners_stomp = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-EgW89h7du3ms3jp8R5zyUq8/S0pCauPOEUcwWkEyJ3Q=";
       rev = "7a1d93e2b0eacdf13cb8e2dfaf76e4211c17422b";
+      hash = "sha256-EgW89h7du3ms3jp8R5zyUq8/S0pCauPOEUcwWkEyJ3Q=";
     };
     moveit_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-kPrOE89xIqGfsHcYKSmL7YsJpWCBNDPmdbHY5x0lG1M=";
       rev = "5141fa4cd1dcf35e61f772376dba2c30930168db";
+      hash = "sha256-kPrOE89xIqGfsHcYKSmL7YsJpWCBNDPmdbHY5x0lG1M=";
     };
     moveit_py = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-g7saOz9IdlSXYFhRUfWk6SF4+/6zNq8nFfHzfeWf2bo=";
       rev = "1a2ca49341be3d3cfdda1883cf49118ccdf47c62";
+      hash = "sha256-g7saOz9IdlSXYFhRUfWk6SF4+/6zNq8nFfHzfeWf2bo=";
     };
     moveit_resources = fetchGit {
       url = "https://github.com/ros2-gbp/moveit_resources-release.git";
-      hash = "sha256-nQVTLNFKshftxcEkkLVLw+Azj/KgNptezxk3p/3foWw=";
       rev = "ae769c36e1183d208fb2aea7d5135c440427c26d";
+      hash = "sha256-nQVTLNFKshftxcEkkLVLw+Azj/KgNptezxk3p/3foWw=";
     };
     moveit_resources_fanuc_description = fetchGit {
       url = "https://github.com/ros2-gbp/moveit_resources-release.git";
-      hash = "sha256-x/iys4VikU/BQxbNSLBFX67NjJOLF/0SG8WHjCrEovs=";
       rev = "d468edc461adbbc22d4f3fcf715695f491927ce9";
+      hash = "sha256-x/iys4VikU/BQxbNSLBFX67NjJOLF/0SG8WHjCrEovs=";
     };
     moveit_resources_fanuc_moveit_config = fetchGit {
       url = "https://github.com/ros2-gbp/moveit_resources-release.git";
-      hash = "sha256-5W4dgdY+Kj2gphTOhUv2nAWi/hYFhI2zB855Sf5izOI=";
       rev = "c5ed7e182a3c639bab928f65b63a4497ecd359db";
+      hash = "sha256-5W4dgdY+Kj2gphTOhUv2nAWi/hYFhI2zB855Sf5izOI=";
     };
     moveit_resources_panda_description = fetchGit {
       url = "https://github.com/ros2-gbp/moveit_resources-release.git";
-      hash = "sha256-50HSyW1h2ttqppwymHM5VIpHYEHUYQ03FbKAAnIfdGs=";
       rev = "7bfc2734fd09c71ca53b88b0b17d944375e06f51";
+      hash = "sha256-50HSyW1h2ttqppwymHM5VIpHYEHUYQ03FbKAAnIfdGs=";
     };
     moveit_resources_panda_moveit_config = fetchGit {
       url = "https://github.com/ros2-gbp/moveit_resources-release.git";
-      hash = "sha256-G2SAJQ8QFn7N5xCMdzG4MnXGoK2oaVA4NcrLUShEM7A=";
       rev = "f048126f19cacecb1f7c092287c00c0b39bb162e";
+      hash = "sha256-G2SAJQ8QFn7N5xCMdzG4MnXGoK2oaVA4NcrLUShEM7A=";
     };
     moveit_resources_pr2_description = fetchGit {
       url = "https://github.com/ros2-gbp/moveit_resources-release.git";
-      hash = "sha256-9yVWeyYXh1lWUcisKLickZOAQgmOAKkwvWNQ+99mCKQ=";
       rev = "821741ae9a650e7a880e86656b85a7366a9f6ccc";
+      hash = "sha256-9yVWeyYXh1lWUcisKLickZOAQgmOAKkwvWNQ+99mCKQ=";
     };
     moveit_resources_prbt_ikfast_manipulator_plugin = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-3jp2d4fWMgZrmfzyREuAa9rG/lPVjD4zLbUcZPN6mpI=";
       rev = "b15cc6b1a54aa61aed6476ae3d8484ead2d20e7c";
+      hash = "sha256-3jp2d4fWMgZrmfzyREuAa9rG/lPVjD4zLbUcZPN6mpI=";
     };
     moveit_resources_prbt_moveit_config = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-PIPewmh2T1boe+I/jVlC1Weg6gP4O+52b6sazqkllTA=";
       rev = "9d3d55c82237a47583441415d0f69748ffa0ccf3";
+      hash = "sha256-PIPewmh2T1boe+I/jVlC1Weg6gP4O+52b6sazqkllTA=";
     };
     moveit_resources_prbt_pg70_support = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-ChdyKCb3jx8wp4q/LC4M9me9rV6zIVHbqHsrZ0O8kmE=";
       rev = "5321b978d890fdf94c055b8bf35f0d53b756c188";
+      hash = "sha256-ChdyKCb3jx8wp4q/LC4M9me9rV6zIVHbqHsrZ0O8kmE=";
     };
     moveit_resources_prbt_support = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-lAWIBlYGwRc0l2Zzos29VCzMyDmR5ajjrM1Jj05ToJM=";
       rev = "6e0d73e81e61b35524cb3fd7348318881affb6ff";
+      hash = "sha256-lAWIBlYGwRc0l2Zzos29VCzMyDmR5ajjrM1Jj05ToJM=";
     };
     moveit_ros = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-hRBtjcp1PnATPTuIVhroUdtnXgo/Lihj0Dd+FF7Gsnk=";
       rev = "892a548c79100fe246e5230d1a4319cc0b1222a6";
+      hash = "sha256-hRBtjcp1PnATPTuIVhroUdtnXgo/Lihj0Dd+FF7Gsnk=";
     };
     moveit_ros_benchmarks = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-sHVNAk/cZy7UtZldddJLN7kWaaakA6FCskuG1egghKU=";
       rev = "93bf8852d4435dfccab9055a267af6c5111f9934";
+      hash = "sha256-sHVNAk/cZy7UtZldddJLN7kWaaakA6FCskuG1egghKU=";
     };
     moveit_ros_control_interface = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-B6O13tr7cM05cETrXCrQREZPR6laPf99em5jREAsHt4=";
       rev = "5795f623592a04d8002e48ee67f9cb5775818429";
+      hash = "sha256-B6O13tr7cM05cETrXCrQREZPR6laPf99em5jREAsHt4=";
     };
     moveit_ros_move_group = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-U0PtBToT0E3CmCLzeIRuD+JqDiLKTC6jV/PjNZnxAiM=";
       rev = "088e184c434cc45da5c81fe0bcfb7c9546764c70";
+      hash = "sha256-U0PtBToT0E3CmCLzeIRuD+JqDiLKTC6jV/PjNZnxAiM=";
     };
     moveit_ros_occupancy_map_monitor = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-WHbMOwEkQoPOrHQOeH/0GJyEa7g/ez3LJsJTZw6jUUw=";
       rev = "6ab5e07eb5f5945162f845d32c84b7c8ce827ab4";
+      hash = "sha256-WHbMOwEkQoPOrHQOeH/0GJyEa7g/ez3LJsJTZw6jUUw=";
     };
     moveit_ros_perception = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-NJpX8zqkfP2SGj0YS4mprp/gC9Zwy9jc+md61MDNsSg=";
       rev = "5a4fd053525dfaaa338cf73cb2d1956f089d83f4";
+      hash = "sha256-NJpX8zqkfP2SGj0YS4mprp/gC9Zwy9jc+md61MDNsSg=";
     };
     moveit_ros_planning = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-mGutKWZONAbd2APXkqN5kCBsCLpgdjYtgZGWoOjZBgg=";
       rev = "0b3b7b2e01ccc67f01a6214a468ef407440b27a1";
+      hash = "sha256-mGutKWZONAbd2APXkqN5kCBsCLpgdjYtgZGWoOjZBgg=";
     };
     moveit_ros_planning_interface = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-LyXQVbAHkCqEPgV96kQUi7a4P4PKxhDCnBlX0igjFGU=";
       rev = "651babb8c7c8f6def4d0b32851564b07c6fc413f";
+      hash = "sha256-LyXQVbAHkCqEPgV96kQUi7a4P4PKxhDCnBlX0igjFGU=";
     };
     moveit_ros_robot_interaction = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-z8r+vWJe9V5E0HFgvUdAPpSxQN4woZl0l/ec5guTiDo=";
       rev = "ddb05e33043712ce2b4d9f1fd8baaf8fbf7e494f";
+      hash = "sha256-z8r+vWJe9V5E0HFgvUdAPpSxQN4woZl0l/ec5guTiDo=";
     };
     moveit_ros_tests = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-CBtAHgOOSEBQ/Ccgd8mFuMEkvE1S2+T3ZGx0c8fLr+E=";
       rev = "0ab7f4dac1d6d69e2d07e83f7f6cd732d42fcee4";
+      hash = "sha256-CBtAHgOOSEBQ/Ccgd8mFuMEkvE1S2+T3ZGx0c8fLr+E=";
     };
     moveit_ros_visualization = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-T8ZN045rArWrW5ioSB6F5P+mx5YprOYmizGj9sKsUrM=";
       rev = "2ff04821cc1ca95f85ab9e1149e77387453c11a6";
+      hash = "sha256-T8ZN045rArWrW5ioSB6F5P+mx5YprOYmizGj9sKsUrM=";
     };
     moveit_ros_warehouse = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-VOBxChpRFT62DKi68B+v/i7ZfgDIYLnkBbhfDFi8ck0=";
       rev = "c2a61092f73916e5537581377247478d8ca410d6";
+      hash = "sha256-VOBxChpRFT62DKi68B+v/i7ZfgDIYLnkBbhfDFi8ck0=";
     };
     moveit_runtime = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-SR3G7cM+iKdHJI3TKxLIjvWalU7z2ah5YPtuF295yGk=";
       rev = "2ddde4274e5e80ea818897525648caaf6cdd54ac";
+      hash = "sha256-SR3G7cM+iKdHJI3TKxLIjvWalU7z2ah5YPtuF295yGk=";
     };
     moveit_servo = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-4S4Bt6Fu+LWXvvdRWVqxwaCP7Q2ELAJsz0I3zGYIWvM=";
       rev = "cb66905f35b3d028d549fedb54280842822adbe6";
+      hash = "sha256-4S4Bt6Fu+LWXvvdRWVqxwaCP7Q2ELAJsz0I3zGYIWvM=";
     };
     moveit_setup_app_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-v3WYe91IjpNTCrgyLUKfw1KhEM8py0v0i46Np9JzSEo=";
       rev = "621950b42f943bddfebe7be7a13e56c73f6a8a13";
+      hash = "sha256-v3WYe91IjpNTCrgyLUKfw1KhEM8py0v0i46Np9JzSEo=";
     };
     moveit_setup_assistant = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-NSji7+ZlJPetoyTGf8EL+tktqrNMizkfwp/KmM/V6xo=";
       rev = "7237ec22571e5e59ca619e26270d7bb0ffc38446";
+      hash = "sha256-NSji7+ZlJPetoyTGf8EL+tktqrNMizkfwp/KmM/V6xo=";
     };
     moveit_setup_controllers = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-zvscEXuZnQ5Iz08FIIvh8kcnJcoRoKGt/jBrky0tHfM=";
       rev = "ebab99912374cff2100a3f9efc20fdd3ae1ba654";
+      hash = "sha256-zvscEXuZnQ5Iz08FIIvh8kcnJcoRoKGt/jBrky0tHfM=";
     };
     moveit_setup_core_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-zu0imYmCxzAZeYZhj925AlKQbSyYk3L+0kr0pIJkiyw=";
       rev = "46f3e46b144520f8f6ffa72521ed718e7eaff8b9";
+      hash = "sha256-zu0imYmCxzAZeYZhj925AlKQbSyYk3L+0kr0pIJkiyw=";
     };
     moveit_setup_framework = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-11UWNQcUX87xuOSYir0gcYs+rkUvPXMNp7PXBwErVCg=";
       rev = "376bde171f1210b2bdf29dbc2324eea288f02bbf";
+      hash = "sha256-11UWNQcUX87xuOSYir0gcYs+rkUvPXMNp7PXBwErVCg=";
     };
     moveit_setup_srdf_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-MFThaG7t1x9XbP+Y+w2dQF28A/I7Oiq0qD7PTQ8IFY0=";
       rev = "966f9f9255ac91a2abea818c45aeebeb6b7c433d";
+      hash = "sha256-MFThaG7t1x9XbP+Y+w2dQF28A/I7Oiq0qD7PTQ8IFY0=";
     };
     moveit_simple_controller_manager = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-phTAY2teeJGDQBTJPZ/T6NS6p89dX8IaJixBCe745ew=";
       rev = "876f7bb5cef97fc88176ae77dd1015afb7a50fdb";
+      hash = "sha256-phTAY2teeJGDQBTJPZ/T6NS6p89dX8IaJixBCe745ew=";
     };
     moveit_visual_tools = fetchGit {
       url = "https://github.com/ros2-gbp/moveit_visual_tools-release.git";
-      hash = "sha256-OsgJs0kV7m3GzRlDL1x8i5hG03piwA+9f+Mbpx+dOmw=";
       rev = "6d23bf6d6d79f31f79218e55b81b9e9c53ce90b7";
+      hash = "sha256-OsgJs0kV7m3GzRlDL1x8i5hG03piwA+9f+Mbpx+dOmw=";
     };
     mp2p_icp = fetchGit {
       url = "https://github.com/ros2-gbp/mp2p_icp-release.git";
-      hash = "sha256-d/NBEsK/Fb23saL9uL2NwobhcaA/DqdZX1i8TRibgvU=";
       rev = "00a4d7059a4813cbfe1057690a2fce7eec4f3406";
+      hash = "sha256-d/NBEsK/Fb23saL9uL2NwobhcaA/DqdZX1i8TRibgvU=";
     };
     mqtt_client = fetchGit {
       url = "https://github.com/ros2-gbp/mqtt_client-release.git";
-      hash = "sha256-6PiP7jY7cdK3oodJirtS2kLQUyqVVn1Jp3eY8StfXls=";
       rev = "4b91cd4dcf7559b8fdc8c45bd4a4d621e2b31ffd";
+      hash = "sha256-6PiP7jY7cdK3oodJirtS2kLQUyqVVn1Jp3eY8StfXls=";
     };
     mqtt_client_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/mqtt_client-release.git";
-      hash = "sha256-uodTNl9Jgjak1DPQpOe1aOEwSCdyfYY8zvExpOctHJE=";
       rev = "ec05d23655623974f238aeb0e689822995659a2c";
+      hash = "sha256-uodTNl9Jgjak1DPQpOe1aOEwSCdyfYY8zvExpOctHJE=";
     };
     mrpt2 = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt2-release.git";
-      hash = "sha256-rVrQK4cNuaGYOlHTI1EEnTCZKUVq2/emy4aTVWpxc+o=";
       rev = "13832bbaec2d6710e0f9fc44f87f86461c2d0fb6";
+      hash = "sha256-rVrQK4cNuaGYOlHTI1EEnTCZKUVq2/emy4aTVWpxc+o=";
     };
     mrpt_generic_sensor = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_sensors-release.git";
-      hash = "sha256-nr8jwpb9Ty6wt1Tc9ism2P69nPC/tN54EDR4z87piIo=";
       rev = "f0d32d342322d278f37498efe3716d24bad80000";
+      hash = "sha256-nr8jwpb9Ty6wt1Tc9ism2P69nPC/tN54EDR4z87piIo=";
     };
     mrpt_map_server = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_navigation-release.git";
-      hash = "sha256-lJmz9GTaZwG9nIqlqn9eJW01gjWJ4OpGzuoTyTFpodA=";
       rev = "92089f958ac091e2e69946f1d1dcf639bf1f44bf";
+      hash = "sha256-lJmz9GTaZwG9nIqlqn9eJW01gjWJ4OpGzuoTyTFpodA=";
     };
     mrpt_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_msgs-release.git";
-      hash = "sha256-aWWfgmGZaX5Hai0iTV9oUl1V2Gz9/csFD9tIVQdlPRE=";
       rev = "58cee178b86be2e6a62b1c4895603c4d10a3939a";
+      hash = "sha256-aWWfgmGZaX5Hai0iTV9oUl1V2Gz9/csFD9tIVQdlPRE=";
     };
     mrpt_msgs_bridge = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_navigation-release.git";
-      hash = "sha256-eNG8bYk+y4ccqCxpy+thZLJc94k6b6vmXLpefYFdKV8=";
       rev = "d7df35e67f6b0580158ca3828ac356166d40cac6";
+      hash = "sha256-eNG8bYk+y4ccqCxpy+thZLJc94k6b6vmXLpefYFdKV8=";
     };
     mrpt_nav_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_navigation-release.git";
-      hash = "sha256-XQOrXaqISwGgrmhf7cVuA5CBJcclLntIn8sKUswUY88=";
       rev = "f8493efed334b478b6b0dba852b3eddcaf52b271";
+      hash = "sha256-XQOrXaqISwGgrmhf7cVuA5CBJcclLntIn8sKUswUY88=";
     };
     mrpt_navigation = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_navigation-release.git";
-      hash = "sha256-41PIEZUsBlzOkBCIqVxABdbgwHTPbeCVAeMtXdzbKGQ=";
       rev = "035efef98238b83663969b20d590b4a9e71392f4";
+      hash = "sha256-41PIEZUsBlzOkBCIqVxABdbgwHTPbeCVAeMtXdzbKGQ=";
     };
     mrpt_path_planning = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_path_planning-release.git";
-      hash = "sha256-XWexI9w2FPA3Rg8km5x+SQGxY5414oFxsWRAWvFVrxY=";
       rev = "9ff6ce496eb36011c9d70495c122c72ebdcd16cb";
+      hash = "sha256-XWexI9w2FPA3Rg8km5x+SQGxY5414oFxsWRAWvFVrxY=";
     };
     mrpt_pf_localization = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_navigation-release.git";
-      hash = "sha256-fucX2BkaWAKGq0PLdbZ+inqt83+Vgcal/NDBINo+AYM=";
       rev = "42fe01f7a0284e7edcbf9462c5ef917f9655da6f";
+      hash = "sha256-fucX2BkaWAKGq0PLdbZ+inqt83+Vgcal/NDBINo+AYM=";
     };
     mrpt_pointcloud_pipeline = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_navigation-release.git";
-      hash = "sha256-bjQ/GNeTXz1ULPbBHr3M5valz626pDhLLRAIzblLjrg=";
       rev = "0462967f0064b6e1b86770463c1a272722891046";
+      hash = "sha256-bjQ/GNeTXz1ULPbBHr3M5valz626pDhLLRAIzblLjrg=";
     };
     mrpt_rawlog = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_navigation-release.git";
-      hash = "sha256-J8iXb6VGvbMd+shvFvFVGLWJTrWbRIxxzuh9oBYnNtQ=";
       rev = "a4a2fe484e1d358d8892a0ea2e385242c8457034";
+      hash = "sha256-J8iXb6VGvbMd+shvFvFVGLWJTrWbRIxxzuh9oBYnNtQ=";
     };
     mrpt_reactivenav2d = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_navigation-release.git";
-      hash = "sha256-bG1tBK3tmCfCjoEuyJfALn2hEVUbJdePWEsRv9mccHs=";
       rev = "5287aff260b81aba178025561e8e034d67731044";
+      hash = "sha256-bG1tBK3tmCfCjoEuyJfALn2hEVUbJdePWEsRv9mccHs=";
     };
     mrpt_sensor_bumblebee_stereo = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_sensors-release.git";
-      hash = "sha256-gd0HJZjUVN6e3MaIGP6sE4XGYX3QjDSEkmthkGOsVZo=";
       rev = "3d5b32ac0951ec334e5832ca6a2fb61dfd6d5096";
+      hash = "sha256-gd0HJZjUVN6e3MaIGP6sE4XGYX3QjDSEkmthkGOsVZo=";
     };
     mrpt_sensor_gnns_nmea = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_sensors-release.git";
-      hash = "sha256-OoWcBwnycBqqT/zC3uy27v+h5v5aktKDMM1OOi7dh2k=";
       rev = "1fd5838d813b81ede0dd947c915b062eef28f7b7";
+      hash = "sha256-OoWcBwnycBqqT/zC3uy27v+h5v5aktKDMM1OOi7dh2k=";
     };
     mrpt_sensorlib = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_sensors-release.git";
-      hash = "sha256-+7nUpi7eYvtdRefS6EE71CFbqiFQ0sUcLW0PgmujZAU=";
       rev = "36cf99f287f66f2f02356f2ed1e8f97e9eae916f";
+      hash = "sha256-+7nUpi7eYvtdRefS6EE71CFbqiFQ0sUcLW0PgmujZAU=";
     };
     mrpt_sensors = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_sensors-release.git";
-      hash = "sha256-eu2Js5l2LFFtkwRx/hn78whQpKXiqQXkUOzhrwc0KK8=";
       rev = "7d95272cef1b27201d324cd2b9a88a83511febcb";
+      hash = "sha256-eu2Js5l2LFFtkwRx/hn78whQpKXiqQXkUOzhrwc0KK8=";
     };
     mrpt_tutorials = fetchGit {
       url = "https://github.com/ros2-gbp/mrpt_navigation-release.git";
-      hash = "sha256-op5QzXtPzS28BARwqqbL52mJ1Bj8GCZqBjdWatFgvNY=";
       rev = "bbd3bc5e0d3ae3d77bb0b7335bcd8033b6d1dfb8";
+      hash = "sha256-op5QzXtPzS28BARwqqbL52mJ1Bj8GCZqBjdWatFgvNY=";
     };
     mrt_cmake_modules = fetchGit {
       url = "https://github.com/ros2-gbp/mrt_cmake_modules-release.git";
-      hash = "sha256-PCqR+osiiGlHN0JWW6C/bhSD9H7GuzuQ4Lo8fExnOk0=";
       rev = "7c6d3217898f0c45a9eb0a0673174ff3efafc058";
+      hash = "sha256-PCqR+osiiGlHN0JWW6C/bhSD9H7GuzuQ4Lo8fExnOk0=";
     };
     multires_image = fetchGit {
       url = "https://github.com/ros2-gbp/mapviz-release.git";
-      hash = "sha256-KvU020VAzmWVhBEWe4vfhtWwK375EA3fBv8Ss5DwgR8=";
       rev = "1fd376251a241780b6b1b7f891c9c27eec819b07";
+      hash = "sha256-KvU020VAzmWVhBEWe4vfhtWwK375EA3fBv8Ss5DwgR8=";
     };
     mvsim = fetchGit {
       url = "https://github.com/ros2-gbp/mvsim-release.git";
-      hash = "sha256-nVLQEho55D7tfOG4MwITL8EIA4Ly6UaCzOpm8BaZbzo=";
       rev = "efc26e20dc7b174ada9c038ca007f1470de7abe9";
+      hash = "sha256-nVLQEho55D7tfOG4MwITL8EIA4Ly6UaCzOpm8BaZbzo=";
     };
     nao_button_sim = fetchGit {
       url = "https://github.com/ros2-gbp/nao_button_sim-release.git";
-      hash = "sha256-IV6xrXwb9dZjmwilXG0QxfVUpofGVKBxJdaqAVjcCO8=";
       rev = "2079860e6e50b930bf87f6000645ecabb9eb67d7";
+      hash = "sha256-IV6xrXwb9dZjmwilXG0QxfVUpofGVKBxJdaqAVjcCO8=";
     };
     nao_command_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/nao_interfaces-release.git";
-      hash = "sha256-geYK5hMHI66LcCD6GJ3Lr8T0ocK3/ExFHKKq9kBUZRs=";
       rev = "a36d9eed21ce44896146e9f47d6e14298c4c69a0";
+      hash = "sha256-geYK5hMHI66LcCD6GJ3Lr8T0ocK3/ExFHKKq9kBUZRs=";
     };
     nao_lola = fetchGit {
       url = "https://github.com/ros2-gbp/nao_lola-release.git";
-      hash = "sha256-4PYS6ui19PLLdGv3RK/Yocfe4mLcF7codg2N1R+L2NM=";
       rev = "8a20246aaa40a9b39b647fca378090da73caa4cc";
+      hash = "sha256-4PYS6ui19PLLdGv3RK/Yocfe4mLcF7codg2N1R+L2NM=";
     };
     nao_lola_client = fetchGit {
       url = "https://github.com/ros2-gbp/nao_lola-release.git";
-      hash = "sha256-EC4It9qdpgQxnpVxErStgFzOy5Uq4NCqJ4mbwm4CWjk=";
       rev = "c81a45165ab9fa279a5a60509cf97db5c2a31b15";
+      hash = "sha256-EC4It9qdpgQxnpVxErStgFzOy5Uq4NCqJ4mbwm4CWjk=";
     };
     nao_lola_command_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/nao_lola-release.git";
-      hash = "sha256-IndgGzImBnJw0rE9ABJUpaTnide4Sgyo0iQGNQ2MAC0=";
       rev = "bee52f8cf556d8d71ae7eaa5020654e986e6f8e0";
+      hash = "sha256-IndgGzImBnJw0rE9ABJUpaTnide4Sgyo0iQGNQ2MAC0=";
     };
     nao_lola_sensor_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/nao_lola-release.git";
-      hash = "sha256-I+mOw69Qd5OqCcNdvjpOn3LGw/W/7hPl71P0sgF+42k=";
       rev = "fe59a77b09ee5da05220551d7714d0099e545e04";
+      hash = "sha256-I+mOw69Qd5OqCcNdvjpOn3LGw/W/7hPl71P0sgF+42k=";
     };
     nao_sensor_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/nao_interfaces-release.git";
-      hash = "sha256-z8HBYfJ4SH1kbToGsf6tHPccjImandiilK9gxOLUF90=";
       rev = "0a14ed88efbf4923f9cc1b219425ee9a0f5e0d35";
+      hash = "sha256-z8HBYfJ4SH1kbToGsf6tHPccjImandiilK9gxOLUF90=";
     };
     nav2_amcl = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-9kwfyxHaUTkmY0XuvccTi0Bl+1WKU7Le7k7n5aW2KSo=";
       rev = "9f742b9ca81abbb94d104c1df1d2a758342f885e";
+      hash = "sha256-9kwfyxHaUTkmY0XuvccTi0Bl+1WKU7Le7k7n5aW2KSo=";
     };
     nav2_behavior_tree = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-0+wrWPtw2GqubuDNVIOPHvDxcxxiHWjUJKECRvej0yc=";
       rev = "4194188ae497e71da48bb64a1f24ab2bbea5188e";
+      hash = "sha256-0+wrWPtw2GqubuDNVIOPHvDxcxxiHWjUJKECRvej0yc=";
     };
     nav2_behaviors = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-vedWvaNjpM1Xr+nRzotbnCu9rirmpsItL6zgp6+HPgY=";
       rev = "95110e59dd0b72de7eabca4f781342e54dcb9c78";
+      hash = "sha256-vedWvaNjpM1Xr+nRzotbnCu9rirmpsItL6zgp6+HPgY=";
     };
     nav2_bringup = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-2AfHsTGLd0zIZa7CdbnOGKHHAM06sCT14Cy3H5Hzg4E=";
       rev = "d5079dfa9dfb52dbc6fafb5fc7e37aef00e72e69";
+      hash = "sha256-2AfHsTGLd0zIZa7CdbnOGKHHAM06sCT14Cy3H5Hzg4E=";
     };
     nav2_bt_navigator = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-zy0VHxzPhaqY6m22thgM9NkB/wK8rTqqLV7Mzr040Yg=";
       rev = "8eb83286cc88a4e598cc9ebee20896a805fc017e";
+      hash = "sha256-zy0VHxzPhaqY6m22thgM9NkB/wK8rTqqLV7Mzr040Yg=";
     };
     nav2_collision_monitor = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-jJEfn6HjtESHmPRu/RBPBx+eZGbCPxwbnjXI7n4mdtY=";
       rev = "555514ea871c57c4d96f7b9efe16196c19515726";
+      hash = "sha256-jJEfn6HjtESHmPRu/RBPBx+eZGbCPxwbnjXI7n4mdtY=";
     };
     nav2_common = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-xwvOsQ9AbDsqOfY07YmwujiyOUEammC7QMr3LbqnfD0=";
       rev = "11da3bf82def61c133d0ad4353a83280f088c42d";
+      hash = "sha256-xwvOsQ9AbDsqOfY07YmwujiyOUEammC7QMr3LbqnfD0=";
     };
     nav2_constrained_smoother = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-tdO/A5FNAqSUWaphD+iSywKrVZCYoOKCdt+ucqy9wbY=";
       rev = "7270db9bb8f83f315c5df6458f537fae04ed73a2";
+      hash = "sha256-tdO/A5FNAqSUWaphD+iSywKrVZCYoOKCdt+ucqy9wbY=";
     };
     nav2_controller = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-QWhwt/vdiW2bhAj6Ev5C0cj+WnrK5woGDzUV9Sk98GY=";
       rev = "403351d84d9420f428d60c52ccf52247419afbbd";
+      hash = "sha256-QWhwt/vdiW2bhAj6Ev5C0cj+WnrK5woGDzUV9Sk98GY=";
     };
     nav2_core = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-oaIrrYY4yd3YDxaPmTLVqF/W50925gyNWSEzPUKN+yk=";
       rev = "1a22cd5d49ea960256cf09ef4ab91a227eef733e";
+      hash = "sha256-oaIrrYY4yd3YDxaPmTLVqF/W50925gyNWSEzPUKN+yk=";
     };
     nav2_costmap_2d = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-WR6tTG35bWxhd/Wfny25mob40W1pahFQ7InJwWzCW40=";
       rev = "47f10eb53318b49a3b34ebacd11c97cc090ae48c";
+      hash = "sha256-WR6tTG35bWxhd/Wfny25mob40W1pahFQ7InJwWzCW40=";
     };
     nav2_dwb_controller = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-mwL2g04Vs3SdQlNtuvfgQS+xPpfsTARKoTOXTNuqeYw=";
       rev = "0c62361b3023e556e3487961c0b0210669565842";
+      hash = "sha256-mwL2g04Vs3SdQlNtuvfgQS+xPpfsTARKoTOXTNuqeYw=";
     };
     nav2_graceful_controller = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-EySxARKMADE8RVp5WMIQ0B/7YLTE3ZijVWs5Tj/MLoY=";
       rev = "ff3bc6357733887e0d7cec0f4da95f505c9e9a01";
+      hash = "sha256-EySxARKMADE8RVp5WMIQ0B/7YLTE3ZijVWs5Tj/MLoY=";
     };
     nav2_lifecycle_manager = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-IvyKGfmX6AcqrHboX+b9Hz0qx6T7emyz0rsJtkffICs=";
       rev = "f01e8e6b6a8f0a38d43af2f3f14f5b1e26b06e50";
+      hash = "sha256-IvyKGfmX6AcqrHboX+b9Hz0qx6T7emyz0rsJtkffICs=";
     };
     nav2_map_server = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-roqUdRVxi+FHoy+uPceq1cpI/en8ev/aMeliiPjeTXo=";
       rev = "0391957d785d72e71b5091a084a5a9e9c1f2e8f7";
+      hash = "sha256-roqUdRVxi+FHoy+uPceq1cpI/en8ev/aMeliiPjeTXo=";
     };
     nav2_minimal_tb3_sim = fetchGit {
       url = "https://github.com/ros-navigation/nav2_minimal_turtlebot_simulation-release.git";
-      hash = "sha256-ooAXS+KL4tKLDGNN5Esp22qX9t3i+RPs0BYlWK40mng=";
       rev = "6fdb74ef5014c45665763a5ec57a524bcc05e4ab";
+      hash = "sha256-ooAXS+KL4tKLDGNN5Esp22qX9t3i+RPs0BYlWK40mng=";
     };
     nav2_minimal_tb4_description = fetchGit {
       url = "https://github.com/ros-navigation/nav2_minimal_turtlebot_simulation-release.git";
-      hash = "sha256-r1KPRn5VOO/olYF6Mmv/bf6pcOMHjL89MxlPhLetbyI=";
       rev = "432d4a90df96c75d5c6c6578ea0f576fe3cad75d";
+      hash = "sha256-r1KPRn5VOO/olYF6Mmv/bf6pcOMHjL89MxlPhLetbyI=";
     };
     nav2_minimal_tb4_sim = fetchGit {
       url = "https://github.com/ros-navigation/nav2_minimal_turtlebot_simulation-release.git";
-      hash = "sha256-rQfuepSMdQIJmkfUmcjG45kyVyy1F0+Tz8RlKHKTujc=";
       rev = "8761baaf35829730ab24dbd553f7d437b4a542dc";
+      hash = "sha256-rQfuepSMdQIJmkfUmcjG45kyVyy1F0+Tz8RlKHKTujc=";
     };
     nav2_mppi_controller = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-5xmU1ga1kmDi1fb+prFHI/tWdCmRECFxlSW/ao+XktQ=";
       rev = "74ed9a89f935c9afa4ea238ef38ebf71623fe51c";
+      hash = "sha256-5xmU1ga1kmDi1fb+prFHI/tWdCmRECFxlSW/ao+XktQ=";
     };
     nav2_msgs = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-DSoCMP13PdjSY8tA4h86qdDA3nOWqHXkPraSTb4p+dA=";
       rev = "b77007d6cc4cc0adc0fa10a114128e682d76c1e8";
+      hash = "sha256-DSoCMP13PdjSY8tA4h86qdDA3nOWqHXkPraSTb4p+dA=";
     };
     nav2_navfn_planner = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-S8ZnqN5czsKrDQRnUIiYxBGC4OKOfyaNhk0ndP4yAPY=";
       rev = "61a74dd182e3cc0581936a8b280ffa6496dd4426";
+      hash = "sha256-S8ZnqN5czsKrDQRnUIiYxBGC4OKOfyaNhk0ndP4yAPY=";
     };
     nav2_planner = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-CuV66uDE8qqUIv5493Q/ioiMPk3u/3nud6j4090nicg=";
       rev = "45a4afb2e35f2ac1e35523f7d9d835b67b0c77c8";
+      hash = "sha256-CuV66uDE8qqUIv5493Q/ioiMPk3u/3nud6j4090nicg=";
     };
     nav2_regulated_pure_pursuit_controller = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-OmE1Hqvqv/GJX2yK+Vr+e07Gc5e4II+zQnJyvkJOc6A=";
       rev = "cafd073c2a40aa54455b495c85fb6bf0a77ea3a1";
+      hash = "sha256-OmE1Hqvqv/GJX2yK+Vr+e07Gc5e4II+zQnJyvkJOc6A=";
     };
     nav2_rotation_shim_controller = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-7FJxjZRToVV8XqqM+WfgTbjVB50roNHOfvsv20p8REc=";
       rev = "a122f5212dfbf5879e912aaa53793eba2f50f4e9";
+      hash = "sha256-7FJxjZRToVV8XqqM+WfgTbjVB50roNHOfvsv20p8REc=";
     };
     nav2_rviz_plugins = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-SlyzCbLB81jKEK0dqO3Hs0oNcHh7M8VjeHI2uNCGgy8=";
       rev = "35fa0e140bbda438071354402e21a3efd75dee48";
+      hash = "sha256-SlyzCbLB81jKEK0dqO3Hs0oNcHh7M8VjeHI2uNCGgy8=";
     };
     nav2_simple_commander = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-jjcEhT1H9w33oBfi7eaHgVm21/A/Lx5Cfmq2MY3TFkw=";
       rev = "2f7c0d496b9c9129789862609500ed966e80d894";
+      hash = "sha256-jjcEhT1H9w33oBfi7eaHgVm21/A/Lx5Cfmq2MY3TFkw=";
     };
     nav2_smac_planner = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-4oKc3weGfBq2L8uo1iPErJj0CO8MxVnp9JQ5ffssSKk=";
       rev = "26ae0c267be0f96235111552c072bc41b0c462ce";
+      hash = "sha256-4oKc3weGfBq2L8uo1iPErJj0CO8MxVnp9JQ5ffssSKk=";
     };
     nav2_smoother = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-YcFWs95kYyBgeuBq9633eHaNCBuQlUjrIynvDB8JDoA=";
       rev = "98bd663934007eee69743338bfe9b49004d4ad66";
+      hash = "sha256-YcFWs95kYyBgeuBq9633eHaNCBuQlUjrIynvDB8JDoA=";
     };
     nav2_system_tests = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-CTFSyDlyX7rnQYTcOnYMAj5tSP/VckZJX6XZrplzPfg=";
       rev = "43abf92c5582502f060188049cc4e43286b9afbe";
+      hash = "sha256-CTFSyDlyX7rnQYTcOnYMAj5tSP/VckZJX6XZrplzPfg=";
     };
     nav2_theta_star_planner = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-cI+YETmKxi90sb4WdERWy/pqbN0Y6ZRMT2YfmZiU4oI=";
       rev = "cdfa41da67baef0ceb8dc10d8bea39e2a68c77c1";
+      hash = "sha256-cI+YETmKxi90sb4WdERWy/pqbN0Y6ZRMT2YfmZiU4oI=";
     };
     nav2_util = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-hSroNMArBIOdRu0xsksZso/CPpayQRffKAY2X8Cr5Oo=";
       rev = "462e2d833665521819d17620af65080188e7a9d2";
+      hash = "sha256-hSroNMArBIOdRu0xsksZso/CPpayQRffKAY2X8Cr5Oo=";
     };
     nav2_velocity_smoother = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-+bFcukPpghbMv5pgmnkiAa0Mr6R4OAXXCsJH4y1D/K8=";
       rev = "dd8c8e95fafa2102e5abb0e51fcef8e07294ad66";
+      hash = "sha256-+bFcukPpghbMv5pgmnkiAa0Mr6R4OAXXCsJH4y1D/K8=";
     };
     nav2_voxel_grid = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-HPdXr4wG6JuQ0WG3bTp4rhWpedD2dG1Rwyv/6dhuZOE=";
       rev = "5c8cba2a54c9f2c60adadf2ecb419431c0a0e945";
+      hash = "sha256-HPdXr4wG6JuQ0WG3bTp4rhWpedD2dG1Rwyv/6dhuZOE=";
     };
     nav2_waypoint_follower = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-siSFfmlvB4EunVnhUzJixlqnF4hSvP2pcMu99qjhpos=";
       rev = "b6de89407c0c277ece335caba67123ff2b442977";
+      hash = "sha256-siSFfmlvB4EunVnhUzJixlqnF4hSvP2pcMu99qjhpos=";
     };
     nav_2d_msgs = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-E1znrBfE4nFmwe9ydNdASZ5ZRnnxX6SVvPv/kcXqIrs=";
       rev = "a9c822105bb310b40213ebac743bc683effff5eb";
+      hash = "sha256-E1znrBfE4nFmwe9ydNdASZ5ZRnnxX6SVvPv/kcXqIrs=";
     };
     nav_2d_utils = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-oHxnA0gWubyHWzrWuYRiGcDW0H2rWuYyUUA+UJf9XZE=";
       rev = "7b42cf777bd801014d2da6ceb20c76b1d14f0a78";
+      hash = "sha256-oHxnA0gWubyHWzrWuYRiGcDW0H2rWuYyUUA+UJf9XZE=";
     };
     nav_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/common_interfaces-release.git";
-      hash = "sha256-fSQ9CHh8TU+8S9dZkjjwH6zbyKtOdq/auWMvP7vPEKs=";
       rev = "296c753ed61df7932e9ddc07b399d9eb2f29fd7b";
+      hash = "sha256-fSQ9CHh8TU+8S9dZkjjwH6zbyKtOdq/auWMvP7vPEKs=";
     };
     navigation2 = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-2JLIL4TyOL7VyNmPxiJ54gBbXgWGrR3jb72PRvuc06k=";
       rev = "308b590040ea50995bdec640cd53be42ff537ba0";
+      hash = "sha256-2JLIL4TyOL7VyNmPxiJ54gBbXgWGrR3jb72PRvuc06k=";
     };
     neo_simulation2 = fetchGit {
       url = "https://github.com/ros2-gbp/neo_simulation2-release.git";
-      hash = "sha256-RDPwVwW9QTfOVM8jYVgKbR+YmGDSXRq1Wz5minbCbD8=";
       rev = "c13b97f6ffbb4750704ec1811473e7b2a6489e57";
+      hash = "sha256-RDPwVwW9QTfOVM8jYVgKbR+YmGDSXRq1Wz5minbCbD8=";
     };
     neobotix_usboard_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/astuff_sensor_msgs-release.git";
-      hash = "sha256-dKwQGX4Fl0MagRbLNTnXobUGLXFfems8P6ArP7uljjs=";
       rev = "4d80630c58872af31fe2bc99eedddb30fe53971b";
+      hash = "sha256-dKwQGX4Fl0MagRbLNTnXobUGLXFfems8P6ArP7uljjs=";
     };
     nlohmann_json_schema_validator_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/nlohmann_json_schema_validator_vendor-release.git";
-      hash = "sha256-pBIRF/MRTDv02vSUyB5ADB9Huv00MrRRhBElaBHa4ro=";
       rev = "df4a8c1ea35981d6d29738b8415db11f55e501ef";
+      hash = "sha256-pBIRF/MRTDv02vSUyB5ADB9Huv00MrRRhBElaBHa4ro=";
     };
     nmea_hardware_interface = fetchGit {
       url = "https://github.com/ros2-gbp/nmea_hardware_interface-release.git";
-      hash = "sha256-YibMQpu2E/mEdOx3OB8wbxnUVH/AukvJlND3wu5+oeE=";
       rev = "f2654a1aa9f22cabae90bb75c31680c3271d3a1d";
+      hash = "sha256-YibMQpu2E/mEdOx3OB8wbxnUVH/AukvJlND3wu5+oeE=";
     };
     nmea_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/nmea_msgs-release.git";
-      hash = "sha256-bLkC+tkA0cqER/1WKKbOYYYpOp96t3ZNxVS5VgFVYOE=";
       rev = "b80bfbffa9a31b97cfa2952ce66e2758c00bd0ac";
+      hash = "sha256-bLkC+tkA0cqER/1WKKbOYYYpOp96t3ZNxVS5VgFVYOE=";
     };
     nmea_navsat_driver = fetchGit {
       url = "https://github.com/ros2-gbp/nmea_navsat_driver-release.git";
-      hash = "sha256-Sk5PVLiGhnZlswzI74j4DqsxsA7icXEWu6Wb6JlbN4s=";
       rev = "653584d333ea4290927125ab49c0927c52fe2c4b";
+      hash = "sha256-Sk5PVLiGhnZlswzI74j4DqsxsA7icXEWu6Wb6JlbN4s=";
     };
     nodl_python = fetchGit {
       url = "https://github.com/ros2-gbp/nodl-release.git";
-      hash = "sha256-rHEAtKnNTsXSB1UGfZYRfy3DQXrnGFWNntTfJyxEymc=";
       rev = "7498d36b5e6a075fc2c2d02be23fcebd6428db13";
+      hash = "sha256-rHEAtKnNTsXSB1UGfZYRfy3DQXrnGFWNntTfJyxEymc=";
     };
     nodl_to_policy = fetchGit {
       url = "https://github.com/ros2-gbp/nodl_to_policy-release.git";
-      hash = "sha256-e3+aKkyGXpBFCwulLKU8Tv8PSYEtqUTsp6iL1bE5W9g=";
       rev = "5cca667b9fbde1e0dfb2a9eca25035e45727fb29";
+      hash = "sha256-e3+aKkyGXpBFCwulLKU8Tv8PSYEtqUTsp6iL1bE5W9g=";
     };
     novatel_gps_driver = fetchGit {
       url = "https://github.com/ros2-gbp/novatel_gps_driver-release.git";
-      hash = "sha256-ySTUo1pz5bUi9Fxugmpv6utH9hUGIyQlng4HHGc08C0=";
       rev = "7580e71bbf15956d6866097fe57b8760dd838974";
+      hash = "sha256-ySTUo1pz5bUi9Fxugmpv6utH9hUGIyQlng4HHGc08C0=";
     };
     novatel_gps_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/novatel_gps_driver-release.git";
-      hash = "sha256-kjJ9vONE54WT4ZTXe3G+F0WieULuO/6mgMO3dAFCZGc=";
       rev = "206e6e5aa21232efca280c704ab77e6b648de308";
+      hash = "sha256-kjJ9vONE54WT4ZTXe3G+F0WieULuO/6mgMO3dAFCZGc=";
     };
     ntpd_driver = fetchGit {
       url = "https://github.com/ros2-gbp/ntpd_driver-release.git";
-      hash = "sha256-Y3hISLK0EHzcJD4MrfgxDdmYH+cpgQTjbH3DCmbd0VE=";
       rev = "88930151cfd996362a02a17d50c6a727638abe2e";
+      hash = "sha256-Y3hISLK0EHzcJD4MrfgxDdmYH+cpgQTjbH3DCmbd0VE=";
     };
     ntrip_client = fetchGit {
       url = "https://github.com/ros2-gbp/ntrip_client-release.git";
-      hash = "sha256-mjgvoEVgfLQBBMLRNOu0vuIREhBqOf96dPTY2PVPqV0=";
       rev = "8b043737e69f30b6c448fc926d7d5192521f2eb1";
+      hash = "sha256-mjgvoEVgfLQBBMLRNOu0vuIREhBqOf96dPTY2PVPqV0=";
     };
     ntrip_client_node = fetchGit {
       url = "https://github.com/ros2-gbp/ublox_dgnss-release.git";
-      hash = "sha256-TOR7OmySSgVy4hvBF0qqUpuD20RQeutyTK7ge2x5Cmk=";
       rev = "153c7bdbaf4ecee8decb754480f2443f2fd6b90a";
+      hash = "sha256-TOR7OmySSgVy4hvBF0qqUpuD20RQeutyTK7ge2x5Cmk=";
     };
     object_recognition_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/object_recognition_msgs-release.git";
-      hash = "sha256-51GLrMSSWkdlTz5SBW9ImQilU5Rojo8emRiwZZtZtS0=";
       rev = "413107d99caa9d8d477112ce00967a5e87913a2f";
+      hash = "sha256-51GLrMSSWkdlTz5SBW9ImQilU5Rojo8emRiwZZtZtS0=";
     };
     octomap = fetchGit {
       url = "https://github.com/ros2-gbp/octomap-release.git";
-      hash = "sha256-kIh/20gkpK5nfe4T87wUfoECW0QNMp8f7M73+FJqmUE=";
       rev = "895657943d1ba59b781d1c1da097dab12568b016";
+      hash = "sha256-kIh/20gkpK5nfe4T87wUfoECW0QNMp8f7M73+FJqmUE=";
     };
     octomap_mapping = fetchGit {
       url = "https://github.com/ros2-gbp/octomap_mapping-release.git";
-      hash = "sha256-Xf/Pq3HfJ/6Hm+t722RHPOoTiNsBqvjgeAOre7ySUnc=";
       rev = "2287aefe102a50ed8eaccfc030ecee4e542b971a";
+      hash = "sha256-Xf/Pq3HfJ/6Hm+t722RHPOoTiNsBqvjgeAOre7ySUnc=";
     };
     octomap_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/octomap_msgs-release.git";
-      hash = "sha256-97tbZTVcZMc2CB2JAW6gn0/ABahvBbfiC3jpHDIJJ6I=";
       rev = "39bbd140c83dca8c443e3eb536ac20fbf1321d3f";
+      hash = "sha256-97tbZTVcZMc2CB2JAW6gn0/ABahvBbfiC3jpHDIJJ6I=";
     };
     octomap_ros = fetchGit {
       url = "https://github.com/ros2-gbp/octomap_ros-release.git";
-      hash = "sha256-RD+gwS31k6UPEKegLdv6kSOha4ju5W2T5EwCpMkZ5Lc=";
       rev = "f448d9b9d109727b979531acf8bfb1a8ef46592e";
+      hash = "sha256-RD+gwS31k6UPEKegLdv6kSOha4ju5W2T5EwCpMkZ5Lc=";
     };
     octomap_rviz_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/octomap_rviz_plugins-release.git";
-      hash = "sha256-M9xdQSP9dc1bw2Jkn7tJ506Ah5/lABFrjFf03Ot8828=";
       rev = "8b7865753aa980c533a47ea45d8bedc54743ed20";
+      hash = "sha256-M9xdQSP9dc1bw2Jkn7tJ506Ah5/lABFrjFf03Ot8828=";
     };
     octomap_server = fetchGit {
       url = "https://github.com/ros2-gbp/octomap_mapping-release.git";
-      hash = "sha256-p7gjUVnwb4YKRu0Qi6qrTnyQ/ju7Xpfn2o2FDhdQQKw=";
       rev = "5badd9a30530d2d16bec74c459ddbd667e894dfc";
+      hash = "sha256-p7gjUVnwb4YKRu0Qi6qrTnyQ/ju7Xpfn2o2FDhdQQKw=";
     };
     octovis = fetchGit {
       url = "https://github.com/ros2-gbp/octomap-release.git";
-      hash = "sha256-TxMKU0t80X4leyZ3fdp6/PWCKK9UQhv7DITRuosz9Xw=";
       rev = "5e9de4466ea20bce487a9d3a30a5294567904faa";
+      hash = "sha256-TxMKU0t80X4leyZ3fdp6/PWCKK9UQhv7DITRuosz9Xw=";
     };
     odom_to_tf_ros2 = fetchGit {
       url = "https://github.com/ros2-gbp/odom_to_tf_ros2-release.git";
-      hash = "sha256-0/u/YYeXujwGxRaQtoi8WfVuy0NFu558FY9r5etmJkY=";
       rev = "cdb19962a1ac17d970b355a94691a32d54b87c35";
+      hash = "sha256-0/u/YYeXujwGxRaQtoi8WfVuy0NFu558FY9r5etmJkY=";
     };
     odri_master_board_sdk = fetchGit {
       url = "https://github.com/ros2-gbp/odri_master_board_sdk-release.git";
-      hash = "sha256-CcSf83I4FBj55ky6BiSf/pINL6ZbZYFZiAFrlketTuQ=";
       rev = "89c6951871e6b89f5cd809eb53a14680ea70ea40";
+      hash = "sha256-CcSf83I4FBj55ky6BiSf/pINL6ZbZYFZiAFrlketTuQ=";
     };
     ompl = fetchGit {
       url = "https://github.com/ros2-gbp/ompl-release.git";
-      hash = "sha256-5BOfJbZfx2T6vZS5UOpQh9XueTRPtNBGmpHauSbvUxw=";
       rev = "ddb73f12b5dce5dc95ccbc56c3350d6220bd1673";
+      hash = "sha256-5BOfJbZfx2T6vZS5UOpQh9XueTRPtNBGmpHauSbvUxw=";
     };
     openeb_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/openeb_vendor-release.git";
-      hash = "sha256-FrogLrgo3JfoRC+Si2YPRBLgLBwzDer0agYmaVr6Q8o=";
       rev = "22386ba13272c88122433d96beb7e66c5eafe49b";
+      hash = "sha256-FrogLrgo3JfoRC+Si2YPRBLgLBwzDer0agYmaVr6Q8o=";
     };
     opennav_docking = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-aa/5TrLWsEL5IKvujApGrTkKCcoMbcoYvXo5dCUS+P8=";
       rev = "440367280a139530d7367938dea6cfbb43e85df6";
+      hash = "sha256-aa/5TrLWsEL5IKvujApGrTkKCcoMbcoYvXo5dCUS+P8=";
     };
     opennav_docking_bt = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-foF7uopSkMczIRyZn4+9vEex97H3rI5gOPuUJbnr6E4=";
       rev = "249530b0b54e64bd792e009da5240b952c2b8e22";
+      hash = "sha256-foF7uopSkMczIRyZn4+9vEex97H3rI5gOPuUJbnr6E4=";
     };
     opennav_docking_core = fetchGit {
       url = "https://github.com/SteveMacenski/navigation2-release.git";
-      hash = "sha256-elJcTijCzL4myAvXmtH6OJ+Gabr8OHPqBvNbTT4a2pY=";
       rev = "60d49f10fc50268d784a15878700132abf8affea";
+      hash = "sha256-elJcTijCzL4myAvXmtH6OJ+Gabr8OHPqBvNbTT4a2pY=";
     };
     openni2_camera = fetchGit {
       url = "https://github.com/ros2-gbp/openni2_camera-release.git";
-      hash = "sha256-d5AMUxLjzzeQo2bIW0srlsIPpCsd+kQ7/CUlXwoP4bE=";
       rev = "6666deff20156f0330cb511e3f348d9d66c6e812";
+      hash = "sha256-d5AMUxLjzzeQo2bIW0srlsIPpCsd+kQ7/CUlXwoP4bE=";
     };
     orocos_kdl_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/orocos_kdl_vendor-release.git";
-      hash = "sha256-LHj4WXKVrh8UKDJyfN3lT7gTuGCu0j5eAiN0bigrN2Q=";
       rev = "adca6201616af928533d70faea6042fe0239e898";
+      hash = "sha256-LHj4WXKVrh8UKDJyfN3lT7gTuGCu0j5eAiN0bigrN2Q=";
     };
     ortools_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/ortools_vendor-release.git";
-      hash = "sha256-yvm3NB4vC9QcixufG3FnSuEdpj75/eiLD2tzhd7gh5s=";
       rev = "87e2a82f7ef8300503e749a1647146e94baff921";
+      hash = "sha256-yvm3NB4vC9QcixufG3FnSuEdpj75/eiLD2tzhd7gh5s=";
     };
     osqp_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/osqp_vendor-release.git";
-      hash = "sha256-I6jhthmRppj6fiDd1M+bbW8W/bsR5/0ur5UWcf4/ZGQ=";
       rev = "581a58b5467b5dcdca551e613b4bb1e4d47e30e0";
+      hash = "sha256-I6jhthmRppj6fiDd1M+bbW8W/bsR5/0ur5UWcf4/ZGQ=";
     };
     osrf_pycommon = fetchGit {
       url = "https://github.com/ros2-gbp/osrf_pycommon-release.git";
-      hash = "sha256-r7SjLNdaRpcA2w4gbir3vE/3B7hy6aHv2HUw8wJi8OI=";
       rev = "77786223feb1aa12ee889310a09c68c575612f29";
+      hash = "sha256-r7SjLNdaRpcA2w4gbir3vE/3B7hy6aHv2HUw8wJi8OI=";
     };
     osrf_testing_tools_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/osrf_testing_tools_cpp-release.git";
-      hash = "sha256-Jh4CDB0AzEVKGiQHV2dLXeARF8QEd5zvYEMIHaIP+y8=";
       rev = "5ecc33aa92e5f47d455076ace8533a0145c88b54";
+      hash = "sha256-Jh4CDB0AzEVKGiQHV2dLXeARF8QEd5zvYEMIHaIP+y8=";
     };
     ouster_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_ouster_drivers-release.git";
-      hash = "sha256-kbxKCPctIeCQIpH7MYSFhHGR93vWUupeV+uPuMPiZAY=";
       rev = "bfaf981363e7ae511071b87298ad434fc36593a8";
+      hash = "sha256-kbxKCPctIeCQIpH7MYSFhHGR93vWUupeV+uPuMPiZAY=";
     };
     ouster_ros = fetchGit {
       url = "https://github.com/ros2-gbp/ouster-ros-release.git";
-      hash = "sha256-Opx0mFprXiIgty9hc+lRjuMa4S82Wsjq0scFsO4oWbs=";
       rev = "3dd5ba0f91e8c8a4126e676e4729b34cd5faa8c0";
+      hash = "sha256-Opx0mFprXiIgty9hc+lRjuMa4S82Wsjq0scFsO4oWbs=";
     };
     ouster_sensor_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/ouster-ros-release.git";
-      hash = "sha256-fWka9voPQDtcLHrGdOeYmWY8U9UNQhMwTOlIudhLi28=";
       rev = "88c8ddb06249e2ea9d794edd07856dfb06d05ebd";
+      hash = "sha256-fWka9voPQDtcLHrGdOeYmWY8U9UNQhMwTOlIudhLi28=";
     };
     ouxt_common = fetchGit {
       url = "https://github.com/ros2-gbp/ouxt_common-release.git";
-      hash = "sha256-4nyGy7HVcpb5Cb/zBa9+kz8o7aXZyGqY2Fdy17Xd9ZY=";
       rev = "73ece7bb9cee3dc13c28efd24b80a0804f0a7f41";
+      hash = "sha256-4nyGy7HVcpb5Cb/zBa9+kz8o7aXZyGqY2Fdy17Xd9ZY=";
     };
     ouxt_lint_common = fetchGit {
       url = "https://github.com/ros2-gbp/ouxt_common-release.git";
-      hash = "sha256-CzvbzrJWL16B2/c63ryLS008hT4dSu50P4AhU+lsHpQ=";
       rev = "9df07eae34ba86ab0378e1fbcd9c5aedea232362";
+      hash = "sha256-CzvbzrJWL16B2/c63ryLS008hT4dSu50P4AhU+lsHpQ=";
     };
     pal_statistics = fetchGit {
       url = "https://github.com/ros2-gbp/pal_statistics-release.git";
-      hash = "sha256-iuQqs6XBZ9nDhHWgffrR71peHVJVK9W4VBMRw/c3lm0=";
       rev = "0327653fba3aff104f3471d72c47b99f1433367e";
+      hash = "sha256-iuQqs6XBZ9nDhHWgffrR71peHVJVK9W4VBMRw/c3lm0=";
     };
     pal_statistics_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/pal_statistics-release.git";
-      hash = "sha256-8QGt/RdBUUO5MaWpDpaVy7xWuLywg94gm/Gmo1J8GiY=";
       rev = "5c1dcf3225b3179bdc651e2ce8ad00e41d3c0301";
+      hash = "sha256-8QGt/RdBUUO5MaWpDpaVy7xWuLywg94gm/Gmo1J8GiY=";
     };
     pangolin = fetchGit {
       url = "https://github.com/ros2-gbp/Pangolin-release.git";
-      hash = "sha256-VAE6VKDuVagjFsw1q6X/hpGUYbDSIx+Os9F+/76bo08=";
       rev = "4a5f472c7c48e921bcce34c2d9ddad4f0e130970";
+      hash = "sha256-VAE6VKDuVagjFsw1q6X/hpGUYbDSIx+Os9F+/76bo08=";
     };
     parameter_traits = fetchGit {
       url = "https://github.com/ros2-gbp/generate_parameter_library-release.git";
-      hash = "sha256-tbkbI2Z5iOPtVMur4gJQVJQ+af59uhEZt7UNahBZ01I=";
       rev = "0577dcddd4cb3493754104e11613a3cbf858f777";
+      hash = "sha256-tbkbI2Z5iOPtVMur4gJQVJQ+af59uhEZt7UNahBZ01I=";
     };
     pcl_conversions = fetchGit {
       url = "https://github.com/ros2-gbp/perception_pcl-release.git";
-      hash = "sha256-JMlxHj6XMHqOVfS/n5Ir4meRb4o0pK3VoeE0GYS69FI=";
       rev = "84489a5fbd00fae46cebabf8498b8db56f85ad99";
+      hash = "sha256-JMlxHj6XMHqOVfS/n5Ir4meRb4o0pK3VoeE0GYS69FI=";
     };
     pcl_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/pcl_msgs-release.git";
-      hash = "sha256-YdspDlpwU8CIVBKEa3kLCnDsR3MsuehC9zuvXtAnt4w=";
       rev = "7dc61b313025de201d4d87702c28542f88d4a2ac";
+      hash = "sha256-YdspDlpwU8CIVBKEa3kLCnDsR3MsuehC9zuvXtAnt4w=";
     };
     pcl_ros = fetchGit {
       url = "https://github.com/ros2-gbp/perception_pcl-release.git";
-      hash = "sha256-JYaF0rM0jptFPpMnfXIyQDMAwFXoG/ULAVW/d4/CVPs=";
       rev = "4200ad2cd0685c607ff4c420e6825f5abeb5457c";
+      hash = "sha256-JYaF0rM0jptFPpMnfXIyQDMAwFXoG/ULAVW/d4/CVPs=";
     };
     pendulum_control = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-cuQxIxEwdu5dmh4GXA2yYufTaxS3rMC8GT3SaduQBXs=";
       rev = "7aebd5e6f58a7c2fa5c0f81a3d77171d5da4aa23";
+      hash = "sha256-cuQxIxEwdu5dmh4GXA2yYufTaxS3rMC8GT3SaduQBXs=";
     };
     pendulum_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-mywKB3uFB5Pi+7HIUy7am5JdzrkF+Sg8WQzsQvUrptU=";
       rev = "feb51dfce9be20ca78e706894a6d81bf29a4f116";
+      hash = "sha256-mywKB3uFB5Pi+7HIUy7am5JdzrkF+Sg8WQzsQvUrptU=";
     };
     perception = fetchGit {
       url = "https://github.com/ros2-gbp/variants-release.git";
-      hash = "sha256-dm1psyuV0pFw4lLrVBcz/ElZ/T+49Lqaf1kDqahOvLs=";
       rev = "3e52d9c0398d0dc8fd4c9fb231aa929fcd3b0a27";
+      hash = "sha256-dm1psyuV0pFw4lLrVBcz/ElZ/T+49Lqaf1kDqahOvLs=";
     };
     perception_pcl = fetchGit {
       url = "https://github.com/ros2-gbp/perception_pcl-release.git";
-      hash = "sha256-P/Qu0+b3vRkm+jivWMUPgmcBsnB+nSLxDlJDEOmtuCQ=";
       rev = "95b50e2aced7d1d6c743f13b7debe0960e9285a8";
+      hash = "sha256-P/Qu0+b3vRkm+jivWMUPgmcBsnB+nSLxDlJDEOmtuCQ=";
     };
     performance_test = fetchGit {
       url = "https://github.com/ros2-gbp/performance_test-release.git";
-      hash = "sha256-wlQOogTIJm3/yPmuBAhSGRXFNiy0UAJyPZfWK+NgsyQ=";
       rev = "be48f37e34cf496f4c557b712c3fe4c7491783d5";
+      hash = "sha256-wlQOogTIJm3/yPmuBAhSGRXFNiy0UAJyPZfWK+NgsyQ=";
     };
     performance_test_fixture = fetchGit {
       url = "https://github.com/ros2-gbp/performance_test_fixture-release.git";
-      hash = "sha256-NAF3nP4D9c9kOls8XwBPUCzqZS/44+LrwmEMy1oZrP0=";
       rev = "b459a303e469ad6a63549350dcf2102772cd0db9";
+      hash = "sha256-NAF3nP4D9c9kOls8XwBPUCzqZS/44+LrwmEMy1oZrP0=";
     };
     phidgets_accelerometer = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-n67meToobs7UjIZD2wOckhr3agFm7lVHWykPlZdb3zA=";
       rev = "3b7df33f24230edad5d18ca212e18311d743fc06";
+      hash = "sha256-n67meToobs7UjIZD2wOckhr3agFm7lVHWykPlZdb3zA=";
     };
     phidgets_analog_inputs = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-cMwYeNmiFnip2gj4Ih+D+arDK2cxYuKHts79lM/mIVg=";
       rev = "77dbe128a6d1d7999efd1d539305932e6b91ec80";
+      hash = "sha256-cMwYeNmiFnip2gj4Ih+D+arDK2cxYuKHts79lM/mIVg=";
     };
     phidgets_analog_outputs = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-xi78W37HY59f/oeBUwFQpdqmfHhjmVubarF16PXOWiM=";
       rev = "f515b9e4933159442a9fc7e3004abd5b1896f1eb";
+      hash = "sha256-xi78W37HY59f/oeBUwFQpdqmfHhjmVubarF16PXOWiM=";
     };
     phidgets_api = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-yApWn4EjkZOKG71s1bRI+kpC+mFXm6uJk5hROmuXNFc=";
       rev = "d8b5d6ddafdaa270c0181fb2cb2ede7f133683b4";
+      hash = "sha256-yApWn4EjkZOKG71s1bRI+kpC+mFXm6uJk5hROmuXNFc=";
     };
     phidgets_digital_inputs = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-taMmD3Mb/CxQDtrkT5cyYYpsjvqCfhPtQH88w96/tto=";
       rev = "28b6e1c5cba7484cc3c576b6ea9baaa9fe9e7be5";
+      hash = "sha256-taMmD3Mb/CxQDtrkT5cyYYpsjvqCfhPtQH88w96/tto=";
     };
     phidgets_digital_outputs = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-KupijHg2trBRdHREmgsrAmrCxE0f+hnvA6BJOjIZ1Yc=";
       rev = "2ead02e0d424b0ae8a26ef0a84d165fdfc8825ae";
+      hash = "sha256-KupijHg2trBRdHREmgsrAmrCxE0f+hnvA6BJOjIZ1Yc=";
     };
     phidgets_drivers = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-rz3bXQCzLS7qlt76ncNcmGDBSviM4KOAU8fEjNGUoXo=";
       rev = "5d0d67f72fb6b3780e8f040dcb825140a3dc087e";
+      hash = "sha256-rz3bXQCzLS7qlt76ncNcmGDBSviM4KOAU8fEjNGUoXo=";
     };
     phidgets_gyroscope = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-umLPYnGNeRNHzYU1z5tXxDJe/QFYAnmXCCPxLFH4E5U=";
       rev = "72021452c01dbeab059587f5315966915cd0d4af";
+      hash = "sha256-umLPYnGNeRNHzYU1z5tXxDJe/QFYAnmXCCPxLFH4E5U=";
     };
     phidgets_high_speed_encoder = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-+tQ+vw/pWTXBDexHIJi6YokVycAl8GdJSxKQ6Lxj39Y=";
       rev = "a4e500c0e6d045bebe29ff6b1a27ca5159d4e5ad";
+      hash = "sha256-+tQ+vw/pWTXBDexHIJi6YokVycAl8GdJSxKQ6Lxj39Y=";
     };
     phidgets_ik = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-8IA8dKcL9AG0xtXDPn5m0P13buJaZryijdm8U9hjXWc=";
       rev = "1494b1d4035ef6de251e503e91dd1b7b9b0907c7";
+      hash = "sha256-8IA8dKcL9AG0xtXDPn5m0P13buJaZryijdm8U9hjXWc=";
     };
     phidgets_magnetometer = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-3Ggm9kmzc70h+9ehA3T5rBXPWdUFeWN5ptgZJMeh+sk=";
       rev = "c3be132b5cbcf62e2eabc71c39be8314811d9c9a";
+      hash = "sha256-3Ggm9kmzc70h+9ehA3T5rBXPWdUFeWN5ptgZJMeh+sk=";
     };
     phidgets_motors = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-eF/wWphPu1aKOeoNItNTNLRGVPMMHtxzvEKCkgGwL+o=";
       rev = "afcc4b0c5a39676cf7c78dd6670bbda44a16740f";
+      hash = "sha256-eF/wWphPu1aKOeoNItNTNLRGVPMMHtxzvEKCkgGwL+o=";
     };
     phidgets_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-IenMv0kesMXll/udluqu/FKfShQu8sd0QaGFr+rW4/E=";
       rev = "5362a78082f7eee98478e8b0eeb8f85041be1202";
+      hash = "sha256-IenMv0kesMXll/udluqu/FKfShQu8sd0QaGFr+rW4/E=";
     };
     phidgets_spatial = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-My63osp4yOvSPXWqo60ZVvGbG6cF/ApGd5AegiOUg/M=";
       rev = "089fa8bf3aade8c1a78df5c040bffa2c4ba35742";
+      hash = "sha256-My63osp4yOvSPXWqo60ZVvGbG6cF/ApGd5AegiOUg/M=";
     };
     phidgets_temperature = fetchGit {
       url = "https://github.com/ros2-gbp/phidgets_drivers-release.git";
-      hash = "sha256-AUCf5/QLj4oi3q8yB/SIYcdPJoog9kG0irWiQraVKgQ=";
       rev = "727c5532a02296d0807b6c498805a38de9d3af75";
+      hash = "sha256-AUCf5/QLj4oi3q8yB/SIYcdPJoog9kG0irWiQraVKgQ=";
     };
     pick_ik = fetchGit {
       url = "https://github.com/ros2-gbp/pick_ik-release.git";
-      hash = "sha256-TKEKv9lclKHQqUyAVLAw2f8hI+p0lV4m8xLdNCeqBYA=";
       rev = "6dd0fb91beb17489e4511a811c4d55c6351e3eea";
+      hash = "sha256-TKEKv9lclKHQqUyAVLAw2f8hI+p0lV4m8xLdNCeqBYA=";
     };
     picknik_ament_copyright = fetchGit {
       url = "https://github.com/ros2-gbp/picknik_ament_copyright-release.git";
-      hash = "sha256-zw0URrOQbcL7fo+BgOUHgI0yqf0DDRVGnOOxbJmog48=";
       rev = "6cd350c41214ab5be92012ac5b0b8bdf2f35c3df";
+      hash = "sha256-zw0URrOQbcL7fo+BgOUHgI0yqf0DDRVGnOOxbJmog48=";
     };
     picknik_reset_fault_controller = fetchGit {
       url = "https://github.com/ros2-gbp/picknik_controllers-release.git";
-      hash = "sha256-1YeT/ItbimfyeiruRaU6K0IcXsIuJworLhzpN4VczDs=";
       rev = "9e3a77bed62ad2d5b25641c7e8347d58db308aca";
+      hash = "sha256-1YeT/ItbimfyeiruRaU6K0IcXsIuJworLhzpN4VczDs=";
     };
     picknik_twist_controller = fetchGit {
       url = "https://github.com/ros2-gbp/picknik_controllers-release.git";
-      hash = "sha256-y6aZb1J/2JpuY/SFhUMgaDqYvXU7KiQYiETGOGIYF3I=";
       rev = "c804147e12cf217d0904037f9dcbf6a71df35071";
+      hash = "sha256-y6aZb1J/2JpuY/SFhUMgaDqYvXU7KiQYiETGOGIYF3I=";
     };
     pid_controller = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-qrLaA4Af7l83DJvr3uh8q8fZ+OeeBqyfTJ915DQYy5o=";
       rev = "5d38a4f1d2c9983d5adf9701adec20d81405b913";
+      hash = "sha256-qrLaA4Af7l83DJvr3uh8q8fZ+OeeBqyfTJ915DQYy5o=";
     };
     pilz_industrial_motion_planner = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-xoXukfuBXUzVY0X/2RHTDXrfEguOhOW+gLlVHHxi76Y=";
       rev = "7f54e1e6587ec32e9130546eb9863c38abfbf155";
+      hash = "sha256-xoXukfuBXUzVY0X/2RHTDXrfEguOhOW+gLlVHHxi76Y=";
     };
     pilz_industrial_motion_planner_testutils = fetchGit {
       url = "https://github.com/ros2-gbp/moveit2-release.git";
-      hash = "sha256-7WiArC/gMWnzY2VBbU2qqYwXwxvBo7+1yo9oyX/SB0U=";
       rev = "e37a5de225970f5c0d697690238624890d61eade";
+      hash = "sha256-7WiArC/gMWnzY2VBbU2qqYwXwxvBo7+1yo9oyX/SB0U=";
     };
     pinocchio = fetchGit {
       url = "https://github.com/ros2-gbp/pinocchio-release.git";
-      hash = "sha256-YFDwdoORgCb/x5PR//6nJtG6NghoeKsE60VEwuNP/ik=";
       rev = "4ece81b852e001508a82e42194a34de911b1db5b";
+      hash = "sha256-YFDwdoORgCb/x5PR//6nJtG6NghoeKsE60VEwuNP/ik=";
     };
     plotjuggler = fetchGit {
       url = "https://github.com/ros2-gbp/plotjuggler-release.git";
-      hash = "sha256-btYnAV/G2I+WURDeN8C6WfMHh79M4e4l5Ix9Zx7srrs=";
       rev = "243d8c1cf472c0d6cac26cc2ab34fad9f2bb0622";
+      hash = "sha256-btYnAV/G2I+WURDeN8C6WfMHh79M4e4l5Ix9Zx7srrs=";
     };
     plotjuggler_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/plotjuggler_msgs-release.git";
-      hash = "sha256-Lu4ZRsDpvbS2QzbjWOL23H8lsKRSTPGe6MgiCaUedO4=";
       rev = "5edb7b4a405975459292f0410ccdff2e9f11982d";
+      hash = "sha256-Lu4ZRsDpvbS2QzbjWOL23H8lsKRSTPGe6MgiCaUedO4=";
     };
     plotjuggler_ros = fetchGit {
       url = "https://github.com/ros2-gbp/plotjuggler-ros-plugins-release.git";
-      hash = "sha256-ulay40u10VuTXLPe/c8xBf5qxL1TR6D03Fb1uRYaoAw=";
       rev = "e31f1220d72fc2f17ef195073827140644390fed";
+      hash = "sha256-ulay40u10VuTXLPe/c8xBf5qxL1TR6D03Fb1uRYaoAw=";
     };
     pluginlib = fetchGit {
       url = "https://github.com/ros2-gbp/pluginlib-release.git";
-      hash = "sha256-ZIVIHw0nimqFqss8537p3ec6RbiUeWpREml5RkLqwdg=";
       rev = "e8b556270ca67d5640214fb34d895a2ff5081689";
+      hash = "sha256-ZIVIHw0nimqFqss8537p3ec6RbiUeWpREml5RkLqwdg=";
     };
     point_cloud_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/point_cloud_transport_plugins-release.git";
-      hash = "sha256-ruPI5xWtceZHkhQlA0zRPEik1GiJIJNLL4jWSl6/LK8=";
       rev = "b2531ec28eb8206681a8e3948c828d95d24d0191";
+      hash = "sha256-ruPI5xWtceZHkhQlA0zRPEik1GiJIJNLL4jWSl6/LK8=";
     };
     point_cloud_msg_wrapper = fetchGit {
       url = "https://github.com/ros2-gbp/point_cloud_msg_wrapper-release.git";
-      hash = "sha256-LiHXg+Jj7fMDItxqFAz8F5On1mitqVf18p4luIzXtWk=";
       rev = "fb047463b9aa30d35af541c7fa4472b2f01c3b1b";
+      hash = "sha256-LiHXg+Jj7fMDItxqFAz8F5On1mitqVf18p4luIzXtWk=";
     };
     point_cloud_transport = fetchGit {
       url = "https://github.com/ros2-gbp/point_cloud_transport-release.git";
-      hash = "sha256-LXXo41jU5dP7mjE6H0OcgvjAAylkW4eC+cV9YE82TF0=";
       rev = "452aa97f48936798370822d1ac54ba8fd430050a";
+      hash = "sha256-LXXo41jU5dP7mjE6H0OcgvjAAylkW4eC+cV9YE82TF0=";
     };
     point_cloud_transport_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/point_cloud_transport_plugins-release.git";
-      hash = "sha256-lqeOuoqjhvJnGTFuO9VEnPfroS+x4IC/XGicW8HA0Zw=";
       rev = "797f716f465af208d6c126a912ddb380e372b3c7";
+      hash = "sha256-lqeOuoqjhvJnGTFuO9VEnPfroS+x4IC/XGicW8HA0Zw=";
     };
     point_cloud_transport_py = fetchGit {
       url = "https://github.com/ros2-gbp/point_cloud_transport-release.git";
-      hash = "sha256-PfnHWd9RP3pnxe3ZTDPrDrNyLUzftfo1k8falKmeS2E=";
       rev = "866093b8df9dd575ced356edd091f0b2e8f2df51";
+      hash = "sha256-PfnHWd9RP3pnxe3ZTDPrDrNyLUzftfo1k8falKmeS2E=";
     };
     point_cloud_transport_tutorial = fetchGit {
       url = "https://github.com/ros2-gbp/point_cloud_transport_tutorial-release.git";
-      hash = "sha256-buQXTqTqhIZJ68B+sbZ3lVovLVRVKBrL7yCCoQygSc8=";
       rev = "ccd2158c015825d178014cf7a96d1a6e48165bd2";
+      hash = "sha256-buQXTqTqhIZJ68B+sbZ3lVovLVRVKBrL7yCCoQygSc8=";
     };
     pointcloud_to_laserscan = fetchGit {
       url = "https://github.com/ros2-gbp/pointcloud_to_laserscan-release.git";
-      hash = "sha256-qr3WavBoAsGaLii5dCMmNk764fMGdISwf7EAd5q14MQ=";
       rev = "d19872adb793dfa32827e6e782be47947070a30a";
+      hash = "sha256-qr3WavBoAsGaLii5dCMmNk764fMGdISwf7EAd5q14MQ=";
     };
     polygon_demos = fetchGit {
       url = "https://github.com/ros2-gbp/polygon_ros-release.git";
-      hash = "sha256-x70C4EJov4YXvVoslWgtJitf3qqvczBaIjNp7jwFOYk=";
       rev = "6376a68a6d934f8f5482598ba2a38f5179cce13b";
+      hash = "sha256-x70C4EJov4YXvVoslWgtJitf3qqvczBaIjNp7jwFOYk=";
     };
     polygon_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/polygon_ros-release.git";
-      hash = "sha256-6gLLltnSdYNP7QkYUOAj9bdphjw1W6jDytYsbJL7DA4=";
       rev = "256eed28fc4f343a85fb0723794ece19e05313bd";
+      hash = "sha256-6gLLltnSdYNP7QkYUOAj9bdphjw1W6jDytYsbJL7DA4=";
     };
     polygon_rviz_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/polygon_ros-release.git";
-      hash = "sha256-KMmv93mqtxZNcLSOVHhFfJMCuQI8fP6NKp7mEnY5O18=";
       rev = "0d1284be8b4cd9977d6cbb8f4432ce8ad065a77e";
+      hash = "sha256-KMmv93mqtxZNcLSOVHhFfJMCuQI8fP6NKp7mEnY5O18=";
     };
     polygon_utils = fetchGit {
       url = "https://github.com/ros2-gbp/polygon_ros-release.git";
-      hash = "sha256-0deQK1zVECzgKwBQrLq3CbvDnZaRlnSpT1XOqhV1h58=";
       rev = "622f2fd1fd527b46fb8e8294fa028901f57a32dd";
+      hash = "sha256-0deQK1zVECzgKwBQrLq3CbvDnZaRlnSpT1XOqhV1h58=";
     };
     pose_cov_ops = fetchGit {
       url = "https://github.com/ros2-gbp/pose_cov_ops-release.git";
-      hash = "sha256-dB+me1aSCzx1zSg6mLTc191a3Ur+9zuYbt4JmcnxCcY=";
       rev = "4b7549be273bc3571b58178b4c7e6717baac519a";
+      hash = "sha256-dB+me1aSCzx1zSg6mLTc191a3Ur+9zuYbt4JmcnxCcY=";
     };
     position_controllers = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-oLSMmBT54HtRsWaqnyEneZNAecURg4sjZB9DB6aIfvw=";
       rev = "a5848134abd80f19f93359d03f38c141aad00084";
+      hash = "sha256-oLSMmBT54HtRsWaqnyEneZNAecURg4sjZB9DB6aIfvw=";
     };
     proxsuite = fetchGit {
       url = "https://github.com/ros2-gbp/proxsuite-release.git";
-      hash = "sha256-Qfv+vWLLcZfUtZpRYZaoL3rQ3ibCYBKQcAkpFP0YdWI=";
       rev = "b1b7dbc9106d896b347c4d5db9d01de37e0c2a2c";
+      hash = "sha256-Qfv+vWLLcZfUtZpRYZaoL3rQ3ibCYBKQcAkpFP0YdWI=";
     };
     py_binding_tools = fetchGit {
       url = "https://github.com/ros-gbp/py_binding_tools-release.git";
-      hash = "sha256-cLKC035rnQgXR9VanE59CX4qYEvBcNuUHLgDPLDuLxQ=";
       rev = "c50daecc39ff8aa9bb5daa6d305744f4ce165610";
+      hash = "sha256-cLKC035rnQgXR9VanE59CX4qYEvBcNuUHLgDPLDuLxQ=";
     };
     py_trees = fetchGit {
       url = "https://github.com/ros2-gbp/py_trees-release.git";
-      hash = "sha256-D4D4KgMpC2gXiPRmmTMkb2IW5rzxXUbEUFu5RVEnaqc=";
       rev = "6aa58f8414fb672071074c6d4621c3ca8968488f";
+      hash = "sha256-D4D4KgMpC2gXiPRmmTMkb2IW5rzxXUbEUFu5RVEnaqc=";
     };
     py_trees_js = fetchGit {
       url = "https://github.com/ros2-gbp/py_trees_js-release.git";
-      hash = "sha256-F1WhgnqYpmF486ZKeT63iO5+AVvNSxET33OZrdH0/88=";
       rev = "ecad3cd6b72e461cf22b476a470920dae68e82f1";
+      hash = "sha256-F1WhgnqYpmF486ZKeT63iO5+AVvNSxET33OZrdH0/88=";
     };
     py_trees_ros = fetchGit {
       url = "https://github.com/ros2-gbp/py_trees_ros-release.git";
-      hash = "sha256-bJ7EieVdM2WQ6yRmsyC+RzLbx2zvlqBoVCWjuBVF8Yc=";
       rev = "0f8245cb708e3fc07f8209f20b16fae3ca339e4a";
+      hash = "sha256-bJ7EieVdM2WQ6yRmsyC+RzLbx2zvlqBoVCWjuBVF8Yc=";
     };
     py_trees_ros_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/py_trees_ros_interfaces-release.git";
-      hash = "sha256-QrixpzDzAj86KcSWBgYVI0CjrjuAtdFy7bMlEJgweaw=";
       rev = "461e14c922c6c5c08dac7346b43608f832d30045";
+      hash = "sha256-QrixpzDzAj86KcSWBgYVI0CjrjuAtdFy7bMlEJgweaw=";
     };
     pybind11_json_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/pybind11_json_vendor-release.git";
-      hash = "sha256-MRTBHHIoxucf4OASlszDZ3LuA0He/SRhobqoNsA8vDo=";
       rev = "21bd9e6509c1d7e65a2876d888ad8a7990a51208";
+      hash = "sha256-MRTBHHIoxucf4OASlszDZ3LuA0He/SRhobqoNsA8vDo=";
     };
     pybind11_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/pybind11_vendor-release.git";
-      hash = "sha256-IqvDvVq5oLGYddeKV7uYtjHnf3SS24Ji+DO4Wua7xbU=";
       rev = "6551cb9a99f0e0bb3666b9a9d3b2bda0b598c167";
+      hash = "sha256-IqvDvVq5oLGYddeKV7uYtjHnf3SS24Ji+DO4Wua7xbU=";
     };
     python_cmake_module = fetchGit {
       url = "https://github.com/ros2-gbp/python_cmake_module-release.git";
-      hash = "sha256-Klye1NN6+5ap5R+UqUk2oAwG5lScU4OPpYX+nALlnno=";
       rev = "52f6dbc990f7a89ceb09ab0cc394cc7214138f62";
+      hash = "sha256-Klye1NN6+5ap5R+UqUk2oAwG5lScU4OPpYX+nALlnno=";
     };
     python_orocos_kdl_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/orocos_kdl_vendor-release.git";
-      hash = "sha256-vl1eKkJp/P4mQsOWDBIWnCOpp/m2LB18yxZI9GWgaYY=";
       rev = "d1d43bdb1c1352d9e431c857e7bc6537c2ff680b";
+      hash = "sha256-vl1eKkJp/P4mQsOWDBIWnCOpp/m2LB18yxZI9GWgaYY=";
     };
     python_qt_binding = fetchGit {
       url = "https://github.com/ros2-gbp/python_qt_binding-release.git";
-      hash = "sha256-6O8drSOVJ+eJfYkt/pqnGBJYqAulmgEjbElU4k8h68M=";
       rev = "68ffe1fac31519713735be637c6c3280455dbc2a";
+      hash = "sha256-6O8drSOVJ+eJfYkt/pqnGBJYqAulmgEjbElU4k8h68M=";
     };
     qpoases_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/qpoases_vendor-release.git";
-      hash = "sha256-jUSNiB8b0P8JHYXdXeKMs5Ucxjk+fhbPqxcJnD2GIQ4=";
       rev = "b00c8ebcfedecf8b34d02b6e9ce45d641efc43e8";
+      hash = "sha256-jUSNiB8b0P8JHYXdXeKMs5Ucxjk+fhbPqxcJnD2GIQ4=";
     };
     qt_dotgraph = fetchGit {
       url = "https://github.com/ros2-gbp/qt_gui_core-release.git";
-      hash = "sha256-neIiFXuQRDJ4lsjRo1j9tUX/QwS8Qsz2SSvk8AaL3yE=";
       rev = "f4dc66c120b1196c813ea3c91f55e17c7565ff86";
+      hash = "sha256-neIiFXuQRDJ4lsjRo1j9tUX/QwS8Qsz2SSvk8AaL3yE=";
     };
     qt_gui = fetchGit {
       url = "https://github.com/ros2-gbp/qt_gui_core-release.git";
-      hash = "sha256-YuRclZVVR6g6KaGhlNV5lAJE4+tZoD2yCApPKtlMw5w=";
       rev = "f7a152206f14b0d5e5120c41677a073aad67797b";
+      hash = "sha256-YuRclZVVR6g6KaGhlNV5lAJE4+tZoD2yCApPKtlMw5w=";
     };
     qt_gui_app = fetchGit {
       url = "https://github.com/ros2-gbp/qt_gui_core-release.git";
-      hash = "sha256-OU68D6ke+OYEcT00UuAmVxqOKUeC5NEf4XwD7qMKLMI=";
       rev = "3930bb62257a42688018d6f9c6e445fc670f1946";
+      hash = "sha256-OU68D6ke+OYEcT00UuAmVxqOKUeC5NEf4XwD7qMKLMI=";
     };
     qt_gui_core = fetchGit {
       url = "https://github.com/ros2-gbp/qt_gui_core-release.git";
-      hash = "sha256-MY4qrGTr1ir5q/XdggeSBKaCGFXruCU/sFvoT1MNtQc=";
       rev = "0d3d2456d64c9eae29bdacfb5c196129db530563";
+      hash = "sha256-MY4qrGTr1ir5q/XdggeSBKaCGFXruCU/sFvoT1MNtQc=";
     };
     qt_gui_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/qt_gui_core-release.git";
-      hash = "sha256-MErOrE3H9r3HGOJfiShwraVUJ2mFRRNQvwroqac6QmE=";
       rev = "08b713a20f93a00a1453852534c6cf503140913b";
+      hash = "sha256-MErOrE3H9r3HGOJfiShwraVUJ2mFRRNQvwroqac6QmE=";
     };
     qt_gui_py_common = fetchGit {
       url = "https://github.com/ros2-gbp/qt_gui_core-release.git";
-      hash = "sha256-fr/eKfgCisQ89QrL92zKHDa6k20UvCg4Zhr3pYFz6ug=";
       rev = "fed5071489e0c1bc1ad02393a2a596636f9c834e";
+      hash = "sha256-fr/eKfgCisQ89QrL92zKHDa6k20UvCg4Zhr3pYFz6ug=";
     };
     quality_of_service_demo_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-eV322lS9mlCw4J9vxnObcwuusY4ldrt84WgCVkFjcAI=";
       rev = "f852dcbe304b496852fef35c01091e9a1ea98874";
+      hash = "sha256-eV322lS9mlCw4J9vxnObcwuusY4ldrt84WgCVkFjcAI=";
     };
     quality_of_service_demo_py = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-DmEwJUW5s0CWgLCobzk8jZHAJT0hfGm41Uy6Djg/3Sg=";
       rev = "7660946e3fdcaa4bc82fb2749810ea5351459c29";
+      hash = "sha256-DmEwJUW5s0CWgLCobzk8jZHAJT0hfGm41Uy6Djg/3Sg=";
     };
     quaternion_operation = fetchGit {
       url = "https://github.com/ros2-gbp/quaternion_operation-release.git";
-      hash = "sha256-EOoZrowJNVGtJNutD+5WlSgVWbmOGlzSJyvsALmfji8=";
       rev = "5caa679fcf2a9098a3c9fb91fe47c62b4006baf6";
+      hash = "sha256-EOoZrowJNVGtJNutD+5WlSgVWbmOGlzSJyvsALmfji8=";
     };
     r2r_spl_7 = fetchGit {
       url = "https://github.com/ros2-gbp/r2r_spl-release.git";
-      hash = "sha256-KqN+JK6GIZritk8/5cBigl1cu2sdMFz9nP3mrSQOsro=";
       rev = "f7a4640e5235a1993aa0a8033747b281187f0f46";
+      hash = "sha256-KqN+JK6GIZritk8/5cBigl1cu2sdMFz9nP3mrSQOsro=";
     };
     radar_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/radar_msgs-release.git";
-      hash = "sha256-HO0hAoc99su0O3J40Mywg7/qtbQJof/b5/wwBnx6xbI=";
       rev = "6c0b968beda9b9ca9623b7b2bea09a66ecf9f8de";
+      hash = "sha256-HO0hAoc99su0O3J40Mywg7/qtbQJof/b5/wwBnx6xbI=";
     };
     random_numbers = fetchGit {
       url = "https://github.com/ros2-gbp/random_numbers-release.git";
-      hash = "sha256-hQN9n+tLK1rKA+wXOXW/TfT4RzrXxvaIfDlzgV+LJnU=";
       rev = "bc34cb9eb07ea35f6aa223286de5e1bb40c689af";
+      hash = "sha256-hQN9n+tLK1rKA+wXOXW/TfT4RzrXxvaIfDlzgV+LJnU=";
     };
     range_sensor_broadcaster = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-MEjoEoOGmEd/nnJ1YN/HDkiG3cbkGDe8i5ueK7zDEoQ=";
       rev = "1db4145021d67df54a29d8ae3d926065bf736aa2";
+      hash = "sha256-MEjoEoOGmEd/nnJ1YN/HDkiG3cbkGDe8i5ueK7zDEoQ=";
     };
     rc_common_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rc_common_msgs_ros2-release.git";
-      hash = "sha256-/ApqcAoxtUu0eHcF5gxxFhroOIdz457iCAONfAC2xxQ=";
       rev = "a1a39a8b05b4be20838bc8acec4af66a3f0d90dd";
+      hash = "sha256-/ApqcAoxtUu0eHcF5gxxFhroOIdz457iCAONfAC2xxQ=";
     };
     rc_dynamics_api = fetchGit {
       url = "https://github.com/ros2-gbp/rc_dynamics_api-release.git";
-      hash = "sha256-o9jsHD+cly1o6EPT+4dJfJDATxJF+nGdtaPKEOT6ZXo=";
       rev = "adad10c595a8e0dae8721169740ac3480df23496";
+      hash = "sha256-o9jsHD+cly1o6EPT+4dJfJDATxJF+nGdtaPKEOT6ZXo=";
     };
     rc_genicam_api = fetchGit {
       url = "https://github.com/ros2-gbp/rc_genicam_api-release.git";
-      hash = "sha256-bp8a9UBIdmzBsLXwZO86DD8/PxRp2Bl0HRWOS+fWgOg=";
       rev = "57bf6c445677c596d425b929c0f82266f98c1cda";
+      hash = "sha256-bp8a9UBIdmzBsLXwZO86DD8/PxRp2Bl0HRWOS+fWgOg=";
     };
     rc_genicam_driver = fetchGit {
       url = "https://github.com/ros2-gbp/rc_genicam_driver_ros2-release.git";
-      hash = "sha256-DXGpRFliAauxi+eYKJddSkZfNo9jJ/5UsxBtJEkSdCs=";
       rev = "d56cbe21b74232fd2602bc2cc2921c365d034321";
+      hash = "sha256-DXGpRFliAauxi+eYKJddSkZfNo9jJ/5UsxBtJEkSdCs=";
     };
     rc_reason_clients = fetchGit {
       url = "https://github.com/ros2-gbp/rc_reason_clients-release.git";
-      hash = "sha256-nrDAYPBtkbSi1QAZJHR9jYhMnPLwemNMDxIzccehO1o=";
       rev = "e8e4ce1459a8bae56c3865eaa512dbf4ee360532";
+      hash = "sha256-nrDAYPBtkbSi1QAZJHR9jYhMnPLwemNMDxIzccehO1o=";
     };
     rc_reason_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rc_reason_clients-release.git";
-      hash = "sha256-4UWrVAe/idz19Rp3JIISd3dreXqEZKnY2FgbPcNPfqQ=";
       rev = "c2bfd85279bd8034d4fd68c8b63394160884d4d2";
+      hash = "sha256-4UWrVAe/idz19Rp3JIISd3dreXqEZKnY2FgbPcNPfqQ=";
     };
     rcdiscover = fetchGit {
       url = "https://github.com/ros2-gbp/rcdiscover-release.git";
-      hash = "sha256-leXJVw7Yx8SeMv0jUFtQmpFCpDaJkvd7U6AqjpdLEOE=";
       rev = "f1d160f25f0eca51cf73316956d15bef7df6bcce";
+      hash = "sha256-leXJVw7Yx8SeMv0jUFtQmpFCpDaJkvd7U6AqjpdLEOE=";
     };
     rcgcd_spl_14 = fetchGit {
       url = "https://github.com/ros2-gbp/game_controller_spl-release.git";
-      hash = "sha256-naRnWiBaNmsQqaucIPL28thbmjie8mBvwk3zLJibvQA=";
       rev = "0d610deaef87d5251720143fcf6e39e29043c610";
+      hash = "sha256-naRnWiBaNmsQqaucIPL28thbmjie8mBvwk3zLJibvQA=";
     };
     rcgcd_spl_14_conversion = fetchGit {
       url = "https://github.com/ros2-gbp/game_controller_spl-release.git";
-      hash = "sha256-vEiB03hHosdjl+RcKMvGYxd7RnFNFQcB7pEearKQX0s=";
       rev = "29079b53aeb5d589b4bdd5e36fc343c79b7ac4cf";
+      hash = "sha256-vEiB03hHosdjl+RcKMvGYxd7RnFNFQcB7pEearKQX0s=";
     };
     rcgcrd_spl_4 = fetchGit {
       url = "https://github.com/ros2-gbp/game_controller_spl-release.git";
-      hash = "sha256-du68Eq0gNlBSz8RHUaKfCmnCe4dMuBRNBVY/Xr+/+cU=";
       rev = "1a4163d230639126421ebff6381f7887eba98caa";
+      hash = "sha256-du68Eq0gNlBSz8RHUaKfCmnCe4dMuBRNBVY/Xr+/+cU=";
     };
     rcgcrd_spl_4_conversion = fetchGit {
       url = "https://github.com/ros2-gbp/game_controller_spl-release.git";
-      hash = "sha256-K6SsOmDF2Dk83+uU8ncpvCemrAtVafqT2p8nJLEgu44=";
       rev = "1d86fdac4ca8359ad861ed1eff4b9382ca2bac77";
+      hash = "sha256-K6SsOmDF2Dk83+uU8ncpvCemrAtVafqT2p8nJLEgu44=";
     };
     rcl = fetchGit {
       url = "https://github.com/ros2-gbp/rcl-release.git";
-      hash = "sha256-l9mj//2/7axiyNylbp9bDWkgjlPP59Ag8GRijHENLeY=";
       rev = "05ba0fa95f087ea043099d7f4c04ed051cf55d3a";
+      hash = "sha256-l9mj//2/7axiyNylbp9bDWkgjlPP59Ag8GRijHENLeY=";
     };
     rcl_action = fetchGit {
       url = "https://github.com/ros2-gbp/rcl-release.git";
-      hash = "sha256-1VxuWEpSDQzVfy3ZbKfYArxRaFr7BpDiAqdXGr/AWis=";
       rev = "0b1beda4ea6a470b5070f8b82ee6687118cf71f2";
+      hash = "sha256-1VxuWEpSDQzVfy3ZbKfYArxRaFr7BpDiAqdXGr/AWis=";
     };
     rcl_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/rcl_interfaces-release.git";
-      hash = "sha256-7FNEn996pHXba3q0kcEYwzrOMJcdzGOrgC5MQNqKIPA=";
       rev = "9c7b19dc93631608bcd38604143175a5d63e5e51";
+      hash = "sha256-7FNEn996pHXba3q0kcEYwzrOMJcdzGOrgC5MQNqKIPA=";
     };
     rcl_lifecycle = fetchGit {
       url = "https://github.com/ros2-gbp/rcl-release.git";
-      hash = "sha256-Btrg85RoT6vL1w8Y+4+YKQcVkdyA6xia7rGbLNItxbo=";
       rev = "e332623fb648cee51d1e52476fe92c9f8eed3f84";
+      hash = "sha256-Btrg85RoT6vL1w8Y+4+YKQcVkdyA6xia7rGbLNItxbo=";
     };
     rcl_logging_interface = fetchGit {
       url = "https://github.com/ros2-gbp/rcl_logging-release.git";
-      hash = "sha256-r7WviMcNX31Wz2qwm6JYMErRwdpCCnHYKsXyqBxrTrc=";
       rev = "0f02a66b68786b02e070f4e4a90d73f26f115413";
+      hash = "sha256-r7WviMcNX31Wz2qwm6JYMErRwdpCCnHYKsXyqBxrTrc=";
     };
     rcl_logging_noop = fetchGit {
       url = "https://github.com/ros2-gbp/rcl_logging-release.git";
-      hash = "sha256-XpmOGX13xXUHBOzLXAuAXWun1j/BzpliZo8V4xX5T94=";
       rev = "423b070d9aea34e99dacd881947dfdbeb124c159";
+      hash = "sha256-XpmOGX13xXUHBOzLXAuAXWun1j/BzpliZo8V4xX5T94=";
     };
     rcl_logging_spdlog = fetchGit {
       url = "https://github.com/ros2-gbp/rcl_logging-release.git";
-      hash = "sha256-1G9tkqVueqbs4DvEFCJyRqYkNap6ekz9JUZzdLt4emw=";
       rev = "5648031902b5d7055b6bf46596cf424912d86a3e";
+      hash = "sha256-1G9tkqVueqbs4DvEFCJyRqYkNap6ekz9JUZzdLt4emw=";
     };
     rcl_yaml_param_parser = fetchGit {
       url = "https://github.com/ros2-gbp/rcl-release.git";
-      hash = "sha256-/70LR/9CDjA2j5oY1oMNR6RmH3dIlPpTrDOsj9AyMmI=";
       rev = "24461844ed9a5e1772ef5988261c90b0a2bf9493";
+      hash = "sha256-/70LR/9CDjA2j5oY1oMNR6RmH3dIlPpTrDOsj9AyMmI=";
     };
     rclc = fetchGit {
       url = "https://github.com/ros2-gbp/rclc-release.git";
-      hash = "sha256-A49/yUw6gCxZpDhW8qijU7K6AFuP1R5dzLhqDvefndA=";
       rev = "b34236539056dee4ec3a309c0c3a4c8db6ebd383";
+      hash = "sha256-A49/yUw6gCxZpDhW8qijU7K6AFuP1R5dzLhqDvefndA=";
     };
     rclc_examples = fetchGit {
       url = "https://github.com/ros2-gbp/rclc-release.git";
-      hash = "sha256-oGcnLCr8skjywWIh93EYKzbeJaXxJpnHiJB2rbxQjSI=";
       rev = "c337bef2b8518d838a103f525de33bab614c50ab";
+      hash = "sha256-oGcnLCr8skjywWIh93EYKzbeJaXxJpnHiJB2rbxQjSI=";
     };
     rclc_lifecycle = fetchGit {
       url = "https://github.com/ros2-gbp/rclc-release.git";
-      hash = "sha256-S6rPft/BC8XXLe0C9UCT8oPlYVqM0Vvvoj1MqVoApNQ=";
       rev = "63cb85126fa62f19193ad312fb39b8f15ab223c1";
+      hash = "sha256-S6rPft/BC8XXLe0C9UCT8oPlYVqM0Vvvoj1MqVoApNQ=";
     };
     rclc_parameter = fetchGit {
       url = "https://github.com/ros2-gbp/rclc-release.git";
-      hash = "sha256-A93x6TfzcxJIYgtjzdk6WxPcZgdk96frAyeKMnqXQKQ=";
       rev = "75d6c45f9192e3d14b1b982bf9c25d70e42729e5";
+      hash = "sha256-A93x6TfzcxJIYgtjzdk6WxPcZgdk96frAyeKMnqXQKQ=";
     };
     rclcpp = fetchGit {
       url = "https://github.com/ros2-gbp/rclcpp-release.git";
-      hash = "sha256-kHVqYs0l7FaLgvlDHIAzDR5nSPe/bjpZvNCnscPwPvs=";
       rev = "1c97a6b4ae76f18f30cf2c354ea6d525c498f5c8";
+      hash = "sha256-kHVqYs0l7FaLgvlDHIAzDR5nSPe/bjpZvNCnscPwPvs=";
     };
     rclcpp_action = fetchGit {
       url = "https://github.com/ros2-gbp/rclcpp-release.git";
-      hash = "sha256-XRVxWyxvfoDWCo/bAbinc90OQhtQD+JmJ7wt0jbIqcY=";
       rev = "46881c0ad91db1d4deb5fedca2fe42855a3ef05d";
+      hash = "sha256-XRVxWyxvfoDWCo/bAbinc90OQhtQD+JmJ7wt0jbIqcY=";
     };
     rclcpp_cascade_lifecycle = fetchGit {
       url = "https://github.com/ros2-gbp/cascade_lifecycle-release.git";
-      hash = "sha256-tJ+QyrBJij5KGBc/C7qOJIbVs9xcT5mG8e6fFABi1wI=";
       rev = "c6b311bca5f6bbaba2fd5f5f98c68f26e3594638";
+      hash = "sha256-tJ+QyrBJij5KGBc/C7qOJIbVs9xcT5mG8e6fFABi1wI=";
     };
     rclcpp_components = fetchGit {
       url = "https://github.com/ros2-gbp/rclcpp-release.git";
-      hash = "sha256-yaaoRkTV+EOcYi4X2H8EMnfxvQiqgp18u8Bu0TY+cSU=";
       rev = "dca0791271f0e50265edb89aca9987deaff140f8";
+      hash = "sha256-yaaoRkTV+EOcYi4X2H8EMnfxvQiqgp18u8Bu0TY+cSU=";
     };
     rclcpp_lifecycle = fetchGit {
       url = "https://github.com/ros2-gbp/rclcpp-release.git";
-      hash = "sha256-1GvWpAeLggOQWbWe5pymJEtjnvdRCYs53OwwGv+dGvQ=";
       rev = "c587a31987d9eb3ba421f441953b3d5e8b86a657";
+      hash = "sha256-1GvWpAeLggOQWbWe5pymJEtjnvdRCYs53OwwGv+dGvQ=";
     };
     rclpy = fetchGit {
       url = "https://github.com/ros2-gbp/rclpy-release.git";
-      hash = "sha256-BSf+cbcOUVpJK5gtEz0d4ymuruqqFGkmdNy6K+j5emY=";
       rev = "05f2d82710ff0e7ed52b15f8353443df442dfac0";
+      hash = "sha256-BSf+cbcOUVpJK5gtEz0d4ymuruqqFGkmdNy6K+j5emY=";
     };
     rclpy_message_converter = fetchGit {
       url = "https://github.com/ros2-gbp/rospy_message_converter-release.git";
-      hash = "sha256-4HeOI1VnkkBwlxa0SlJMAGbmV5bMUIvxslRecDwZm04=";
       rev = "5e7b6eadffc924bce02c147aaee115e21b564fc8";
+      hash = "sha256-4HeOI1VnkkBwlxa0SlJMAGbmV5bMUIvxslRecDwZm04=";
     };
     rclpy_message_converter_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rospy_message_converter-release.git";
-      hash = "sha256-vWAM+JjdKQvohD6qBeuCVmL+zcOgq1szEkS8jYnSPkw=";
       rev = "68ed7f2459595f5a2b9727448de4484a0452e459";
+      hash = "sha256-vWAM+JjdKQvohD6qBeuCVmL+zcOgq1szEkS8jYnSPkw=";
     };
     rcpputils = fetchGit {
       url = "https://github.com/ros2-gbp/rcpputils-release.git";
-      hash = "sha256-A4fgkUrENQpRAgy7AiiW8WK1huoOIvTvoYr4bKTwQK0=";
       rev = "114da6d318c5254ae3ddad8eb29006411796ca8b";
+      hash = "sha256-A4fgkUrENQpRAgy7AiiW8WK1huoOIvTvoYr4bKTwQK0=";
     };
     rcss3d_agent = fetchGit {
       url = "https://github.com/ros2-gbp/rcss3d_agent-release.git";
-      hash = "sha256-U3T+91EoVbYapHoNLcIBJqlUz/YI9BB5jc7jAEpVpZw=";
       rev = "df2d12c89346565c8f54bc45259cb0c19d54c820";
+      hash = "sha256-U3T+91EoVbYapHoNLcIBJqlUz/YI9BB5jc7jAEpVpZw=";
     };
     rcss3d_agent_basic = fetchGit {
       url = "https://github.com/ros2-gbp/rcss3d_agent-release.git";
-      hash = "sha256-nDJGmIM8WHHjNPs3KRLNXOf8EM2VIwF9YZX1CVE662Q=";
       rev = "eca722d4386f3ff65accb38b49054b6c848b9c53";
+      hash = "sha256-nDJGmIM8WHHjNPs3KRLNXOf8EM2VIwF9YZX1CVE662Q=";
     };
     rcss3d_agent_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rcss3d_agent-release.git";
-      hash = "sha256-AN/eyLroQDeZjI/JosPYI5tZHhbJn0jP1d8D3wjuN54=";
       rev = "a19aa68dfd8b67bf49b04821bbb990650ebff241";
+      hash = "sha256-AN/eyLroQDeZjI/JosPYI5tZHhbJn0jP1d8D3wjuN54=";
     };
     rcss3d_agent_msgs_to_soccer_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/rcss3d_agent-release.git";
-      hash = "sha256-2bEjbfPy02UiTflYzF8AZb2bjZB/Xg1iHUC0deLs7UQ=";
       rev = "db5b91ed8ecfb5f0f7ac66b88749763d3c33d0ad";
+      hash = "sha256-2bEjbfPy02UiTflYzF8AZb2bjZB/Xg1iHUC0deLs7UQ=";
     };
     rcss3d_nao = fetchGit {
       url = "https://github.com/ros2-gbp/rcss3d_nao-release.git";
-      hash = "sha256-gDCJv4U5VGvPzE6+9SysE6xYUMNx7KGRawSEwZp7sVM=";
       rev = "5e5fbf6b7aca0c8cb593e6b23ea545b41323e774";
+      hash = "sha256-gDCJv4U5VGvPzE6+9SysE6xYUMNx7KGRawSEwZp7sVM=";
     };
     rcutils = fetchGit {
       url = "https://github.com/ros2-gbp/rcutils-release.git";
-      hash = "sha256-lwEyd62jInhq9Ln3NiUEt6sB9cggMg6KqszeaVL2/EA=";
       rev = "ce5771d365180496a672d93826664df83baa98ae";
+      hash = "sha256-lwEyd62jInhq9Ln3NiUEt6sB9cggMg6KqszeaVL2/EA=";
     };
     realsense2_camera = fetchGit {
       url = "https://github.com/IntelRealSense/realsense-ros-release.git";
-      hash = "sha256-HLMJvHtjNkhBqaTH95BraW0/xbrTUIcDdAE/18aDBWw=";
       rev = "7acfab07cc185dbc1feb9a98c38c77a81d45f558";
+      hash = "sha256-HLMJvHtjNkhBqaTH95BraW0/xbrTUIcDdAE/18aDBWw=";
     };
     realsense2_camera_msgs = fetchGit {
       url = "https://github.com/IntelRealSense/realsense-ros-release.git";
-      hash = "sha256-uL0BZSHsWOr4JF0PxcIJa6XvMAWzM+MVRW7SacxABH4=";
       rev = "def1802d06398e80848aea8958ce2321d1c439d1";
+      hash = "sha256-uL0BZSHsWOr4JF0PxcIJa6XvMAWzM+MVRW7SacxABH4=";
     };
     realsense2_description = fetchGit {
       url = "https://github.com/IntelRealSense/realsense-ros-release.git";
-      hash = "sha256-Er8wmje8+L8O8X37B/c7pa22cwsjuK21LnWLzY2bo0c=";
       rev = "dbdca2538210cac2b854291ba47f099df80224d9";
+      hash = "sha256-Er8wmje8+L8O8X37B/c7pa22cwsjuK21LnWLzY2bo0c=";
     };
     realtime_tools = fetchGit {
       url = "https://github.com/ros2-gbp/realtime_tools-release.git";
-      hash = "sha256-Q+ZmEMwbVher38kNPY7nBhoTCWhDQRs6ytN4V4cZqjM=";
       rev = "c8f2f2743fe5e16187e32786e3a25df1c11fd090";
+      hash = "sha256-Q+ZmEMwbVher38kNPY7nBhoTCWhDQRs6ytN4V4cZqjM=";
     };
     resource_retriever = fetchGit {
       url = "https://github.com/ros2-gbp/resource_retriever-release.git";
-      hash = "sha256-VwQaQ1RxDY6NO5ZZk4CdkeTkBC60WhAP+nBKX7z/DZM=";
       rev = "b8d030d40febf9e5b6a338ab78471e57682d3c4a";
+      hash = "sha256-VwQaQ1RxDY6NO5ZZk4CdkeTkBC60WhAP+nBKX7z/DZM=";
     };
     rig_reconfigure = fetchGit {
       url = "https://github.com/ros2-gbp/rig_reconfigure-release.git";
-      hash = "sha256-gZ+VV9GFmbsEaslar1+3aM0MYYc/PCvELyOWAiUPxHM=";
       rev = "9c79fe972e8beb44531194d8522048695851b45f";
+      hash = "sha256-gZ+VV9GFmbsEaslar1+3aM0MYYc/PCvELyOWAiUPxHM=";
     };
     rmf_api_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_api_msgs-release.git";
-      hash = "sha256-Ak1dhux0ba8ujWuk1C3DYnT66cMNOm8TpfQXwo3I/BQ=";
       rev = "4418fc3b6cdc5ba308fae642fe43f33cf4953585";
+      hash = "sha256-Ak1dhux0ba8ujWuk1C3DYnT66cMNOm8TpfQXwo3I/BQ=";
     };
     rmf_battery = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_battery-release.git";
-      hash = "sha256-hxlFgpVq/Yv8gGoDRvDd4tkZQGZokoEQ/8oSL17YTlU=";
       rev = "12aba542679f2d9abdf111b1162a48d531ad6eae";
+      hash = "sha256-hxlFgpVq/Yv8gGoDRvDd4tkZQGZokoEQ/8oSL17YTlU=";
     };
     rmf_building_map_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_building_map_msgs-release.git";
-      hash = "sha256-C77ct0ayA1iMUC5gSOnns2Wu7+0zSOFJQcUeQDWL9oE=";
       rev = "cd2a08a4ba530b41cd9f6b1ff2864ec2a02822d6";
+      hash = "sha256-C77ct0ayA1iMUC5gSOnns2Wu7+0zSOFJQcUeQDWL9oE=";
     };
     rmf_building_map_tools = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_traffic_editor-release.git";
-      hash = "sha256-4cUoJgBGbyqyS7tb68emxaWNBl+LdMnihmzy7xwvW90=";
       rev = "a6b0c09699bf074088d044d3d12641925b532289";
+      hash = "sha256-4cUoJgBGbyqyS7tb68emxaWNBl+LdMnihmzy7xwvW90=";
     };
     rmf_building_sim_gz_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_simulation-release.git";
-      hash = "sha256-QVQQUL2yytg0sEDzQAdj3kKsPVD+98c7O/zrkeUB348=";
       rev = "b4f209d394558c80991e7e17cf0e04754d58c0db";
+      hash = "sha256-QVQQUL2yytg0sEDzQAdj3kKsPVD+98c7O/zrkeUB348=";
     };
     rmf_charger_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_internal_msgs-release.git";
-      hash = "sha256-NFjgcKNZ79NPI7w721r0OF/bLq+8h5uaCacJvl1iS9A=";
       rev = "bde00fd01965a9e0f8702937a3c1cdd750ecfdc4";
+      hash = "sha256-NFjgcKNZ79NPI7w721r0OF/bLq+8h5uaCacJvl1iS9A=";
     };
     rmf_charging_schedule = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_ros2-release.git";
-      hash = "sha256-ql4Svaydi+6EMmJD2iI8yl4XF4W/obllLFTfgxqk5CY=";
       rev = "b6f6991030adbb82f57c229a8ba8b4eafe8c3b3d";
+      hash = "sha256-ql4Svaydi+6EMmJD2iI8yl4XF4W/obllLFTfgxqk5CY=";
     };
     rmf_dev = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_variants-release.git";
-      hash = "sha256-XThgYJiLzrj6OBp7jqdHvFPpT5xTuTKIEv2Yz2DoDIU=";
       rev = "844b092fe10885f11327c84f9f7c1fd7ffdcee12";
+      hash = "sha256-XThgYJiLzrj6OBp7jqdHvFPpT5xTuTKIEv2Yz2DoDIU=";
     };
     rmf_dispenser_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_internal_msgs-release.git";
-      hash = "sha256-qpAm0ecWPoXYYo1hULsTjDPidPxEL7uKxI6unEvelow=";
       rev = "61720e68e4a4c4f29a09cf7507f4816a512caf0a";
+      hash = "sha256-qpAm0ecWPoXYYo1hULsTjDPidPxEL7uKxI6unEvelow=";
     };
     rmf_door_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_internal_msgs-release.git";
-      hash = "sha256-QO2MDDtXTa8mwRTW5kPJkmHhAoJiLSl8vHWOIaKDhqM=";
       rev = "986379366c8d3cea206c7e70ca31dc0f085a2757";
+      hash = "sha256-QO2MDDtXTa8mwRTW5kPJkmHhAoJiLSl8vHWOIaKDhqM=";
     };
     rmf_fleet_adapter = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_ros2-release.git";
-      hash = "sha256-oQ0/oL7OkU5P/UTAStvoPh/dF525gW4Idrj15egR9rw=";
       rev = "e954912b45d187dcfe3efa3cb0d4b7182d34996b";
+      hash = "sha256-oQ0/oL7OkU5P/UTAStvoPh/dF525gW4Idrj15egR9rw=";
     };
     rmf_fleet_adapter_python = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_ros2-release.git";
-      hash = "sha256-XfTRe/cSJkIfMDeYg8+8REz8J6kBWUPi3zslGOtnAtk=";
       rev = "8610a99d68bcb570375b501d06425abab9df31c5";
+      hash = "sha256-XfTRe/cSJkIfMDeYg8+8REz8J6kBWUPi3zslGOtnAtk=";
     };
     rmf_fleet_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_internal_msgs-release.git";
-      hash = "sha256-QaqVOt131AkNx/j3XV9y1Sj8rQtNYW1fG8UqY+c5WjM=";
       rev = "5f504ece9fa97c79ac0ef871dd330b9fdf6fe6e6";
+      hash = "sha256-QaqVOt131AkNx/j3XV9y1Sj8rQtNYW1fG8UqY+c5WjM=";
     };
     rmf_ingestor_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_internal_msgs-release.git";
-      hash = "sha256-mV4zRGv4p2Z14D4ZBO3j4ZdV8iq0fEshoEGIXtohlK0=";
       rev = "703b764f5209079372337e9ef30e6608fc69df4c";
+      hash = "sha256-mV4zRGv4p2Z14D4ZBO3j4ZdV8iq0fEshoEGIXtohlK0=";
     };
     rmf_lift_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_internal_msgs-release.git";
-      hash = "sha256-nOEHLKOFOfoESrFoDSQcXcBWu20rgvI33o0DoeC9IE4=";
       rev = "7bde0e3a44aa28f48a200305762f4dbb81636c08";
+      hash = "sha256-nOEHLKOFOfoESrFoDSQcXcBWu20rgvI33o0DoeC9IE4=";
     };
     rmf_obstacle_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_internal_msgs-release.git";
-      hash = "sha256-mxfaFAH5p/S3vxK4RdkH6kRiLSEWAyw4UfSCuD8DwBI=";
       rev = "a796af42f093c36eab792b59b423a4d1f98c57f0";
+      hash = "sha256-mxfaFAH5p/S3vxK4RdkH6kRiLSEWAyw4UfSCuD8DwBI=";
     };
     rmf_robot_sim_common = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_simulation-release.git";
-      hash = "sha256-w0qFx4C5VaFH20/vYzf/UCmQRb9mrIetgO+qmcmffcw=";
       rev = "11fbc3b5f59f867be3c8a00b4e354fa600198ea0";
+      hash = "sha256-w0qFx4C5VaFH20/vYzf/UCmQRb9mrIetgO+qmcmffcw=";
     };
     rmf_robot_sim_gz_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_simulation-release.git";
-      hash = "sha256-43Z/qobZT7vEhNNDK55q0pLbla9DCcNNEJYVq3d6Hm0=";
       rev = "49b2478e35f7ed08b8ba41285f6698c708b3f3b2";
+      hash = "sha256-43Z/qobZT7vEhNNDK55q0pLbla9DCcNNEJYVq3d6Hm0=";
     };
     rmf_scheduler_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_internal_msgs-release.git";
-      hash = "sha256-BLugMH1dCJbTLgCKvbTBILeO9aMEYSMIvy193XTz9XI=";
       rev = "ec92a0656c5e758e74c5ff4773cbe8ed24b91d33";
+      hash = "sha256-BLugMH1dCJbTLgCKvbTBILeO9aMEYSMIvy193XTz9XI=";
     };
     rmf_site_map_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_internal_msgs-release.git";
-      hash = "sha256-k0Vuz81CsgXUmBvVR/uZY7Tc0Wg11MHSYYFy/oswRQ0=";
       rev = "2499966df824e46199a90238cbe273a9e3eff560";
+      hash = "sha256-k0Vuz81CsgXUmBvVR/uZY7Tc0Wg11MHSYYFy/oswRQ0=";
     };
     rmf_task = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_task-release.git";
-      hash = "sha256-elrSBRSbYp9FkGt6dvo70RwbBEtr6WBTzywkr0W01uc=";
       rev = "b42a6d47b406d4534212fd4bdce519fc6fc0ad7d";
+      hash = "sha256-elrSBRSbYp9FkGt6dvo70RwbBEtr6WBTzywkr0W01uc=";
     };
     rmf_task_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_internal_msgs-release.git";
-      hash = "sha256-/hT+jeQZaC1FhffhkaFh+XaMshLsJO3TruueWB+syIU=";
       rev = "8c3afc71eb9b2ad7f5e6853cedbb0013ad110337";
+      hash = "sha256-/hT+jeQZaC1FhffhkaFh+XaMshLsJO3TruueWB+syIU=";
     };
     rmf_task_ros2 = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_ros2-release.git";
-      hash = "sha256-g2F060KdE6F9gJut0a9HaEVWpiXe0Qe1ao27SICYYkw=";
       rev = "21db0de84f77d1e6e627636c77600231c582df64";
+      hash = "sha256-g2F060KdE6F9gJut0a9HaEVWpiXe0Qe1ao27SICYYkw=";
     };
     rmf_task_sequence = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_task-release.git";
-      hash = "sha256-9OH24N9NPVg+Uw3eMjJKKfPn7qJZJ3VjcAnc68hJ3Qc=";
       rev = "d571a0315533786952852c1e372bb868a43bf059";
+      hash = "sha256-9OH24N9NPVg+Uw3eMjJKKfPn7qJZJ3VjcAnc68hJ3Qc=";
     };
     rmf_traffic = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_traffic-release.git";
-      hash = "sha256-4ohkEyM2wji8NvyX9v0qDK8vKb5T5uCahaQc83GmKuo=";
       rev = "788dbf8355d4db7f572c009ef58e019c668216b5";
+      hash = "sha256-4ohkEyM2wji8NvyX9v0qDK8vKb5T5uCahaQc83GmKuo=";
     };
     rmf_traffic_editor = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_traffic_editor-release.git";
-      hash = "sha256-/bCf//VJVmOLJCSaTg1j/g7qr0BfYLnLrUdf0C5cX+4=";
       rev = "a17b109599bbc97db4b07b9f9d6a490a7475f491";
+      hash = "sha256-/bCf//VJVmOLJCSaTg1j/g7qr0BfYLnLrUdf0C5cX+4=";
     };
     rmf_traffic_editor_assets = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_traffic_editor-release.git";
-      hash = "sha256-hvm0OpnlRfng+KymFmP2C7+TLhgh/Tf2X7VmfiKfE6w=";
       rev = "7db843be7c149dc679fb7f112d273a756ab76f07";
+      hash = "sha256-hvm0OpnlRfng+KymFmP2C7+TLhgh/Tf2X7VmfiKfE6w=";
     };
     rmf_traffic_editor_test_maps = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_traffic_editor-release.git";
-      hash = "sha256-+CyU4MrWaOGPsEtm5SXBONfFEeg5kLfRAu+zuSx4nbo=";
       rev = "0cae53184649ffa92ff7f95414420d400f872d35";
+      hash = "sha256-+CyU4MrWaOGPsEtm5SXBONfFEeg5kLfRAu+zuSx4nbo=";
     };
     rmf_traffic_examples = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_traffic-release.git";
-      hash = "sha256-pMdBb9M0tdombzn0B22IYQRO6zA6tQIhQii8pN+8XiI=";
       rev = "850ece6b823d78a9939f9e0652a032199d365779";
+      hash = "sha256-pMdBb9M0tdombzn0B22IYQRO6zA6tQIhQii8pN+8XiI=";
     };
     rmf_traffic_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_internal_msgs-release.git";
-      hash = "sha256-AFZalqcapZOxO9m3KqMakovAIUJNb5ucV403kSXzvQ0=";
       rev = "878206895e1dcdf7c0b21dd41f0953e0bebf5991";
+      hash = "sha256-AFZalqcapZOxO9m3KqMakovAIUJNb5ucV403kSXzvQ0=";
     };
     rmf_traffic_ros2 = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_ros2-release.git";
-      hash = "sha256-KFBuTj1Pd07XXDg4yJb/k/348Kok9/gssa/Sp2avtes=";
       rev = "40fa2ed90aa5a1e948f10bd91179e7f69a266bb1";
+      hash = "sha256-KFBuTj1Pd07XXDg4yJb/k/348Kok9/gssa/Sp2avtes=";
     };
     rmf_utils = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_utils-release.git";
-      hash = "sha256-v0ho2LvZxTvkDGnOgTDbMk3fKAsWxhTBqiV3M8emWxI=";
       rev = "45dfebf8e030a6c3a5817c41883b871daab829a1";
+      hash = "sha256-v0ho2LvZxTvkDGnOgTDbMk3fKAsWxhTBqiV3M8emWxI=";
     };
     rmf_visualization = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_visualization-release.git";
-      hash = "sha256-Yf6tYLAXIEZoxfZmTA0Wxl67vp5SeI90iIog9NWMJvw=";
       rev = "7425f0eec9cfae30f755539a7e3ff8c4e99c6736";
+      hash = "sha256-Yf6tYLAXIEZoxfZmTA0Wxl67vp5SeI90iIog9NWMJvw=";
     };
     rmf_visualization_building_systems = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_visualization-release.git";
-      hash = "sha256-F8cP3CB2QRr8ckFPE9e5dKeGDcdZZ/vtif3MnTVg+5g=";
       rev = "e3075e116978d6ef9e3d17dc6aef0c7d208c65d9";
+      hash = "sha256-F8cP3CB2QRr8ckFPE9e5dKeGDcdZZ/vtif3MnTVg+5g=";
     };
     rmf_visualization_fleet_states = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_visualization-release.git";
-      hash = "sha256-/OUN3LLuQOV7jZ7wDvSaySMVfCHoeErt7GxHZdSUd9c=";
       rev = "9946b5947d41a77654c9740630532215f888f8ea";
+      hash = "sha256-/OUN3LLuQOV7jZ7wDvSaySMVfCHoeErt7GxHZdSUd9c=";
     };
     rmf_visualization_floorplans = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_visualization-release.git";
-      hash = "sha256-BxNcC59t9WO3W0PX0Rv+O/5chNuWk6lIDXqubQQLMBQ=";
       rev = "5543de571340f7c6d374ddb0fe404e17adcb0261";
+      hash = "sha256-BxNcC59t9WO3W0PX0Rv+O/5chNuWk6lIDXqubQQLMBQ=";
     };
     rmf_visualization_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_visualization_msgs-release.git";
-      hash = "sha256-liXmF2tzQW00JCTHCWApZT9RXJNAdHU+SxGxB8mlFS4=";
       rev = "fbd15383e5391ebad5bb12934e2c9e893c46d33b";
+      hash = "sha256-liXmF2tzQW00JCTHCWApZT9RXJNAdHU+SxGxB8mlFS4=";
     };
     rmf_visualization_navgraphs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_visualization-release.git";
-      hash = "sha256-/MJqArAa3rNM1IItwqwfCYIiEZx1nsXBMQf9lMLLXb0=";
       rev = "5d7847890ceeea5f3168973690211db71127ef37";
+      hash = "sha256-/MJqArAa3rNM1IItwqwfCYIiEZx1nsXBMQf9lMLLXb0=";
     };
     rmf_visualization_obstacles = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_visualization-release.git";
-      hash = "sha256-Cu1rClmXAp3Zuzc5DhsHEau7XqrwfIKFKHXhFHYXU0U=";
       rev = "ea5997876c9e316df71b29cb446ba5299b768c7c";
+      hash = "sha256-Cu1rClmXAp3Zuzc5DhsHEau7XqrwfIKFKHXhFHYXU0U=";
     };
     rmf_visualization_rviz2_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_visualization-release.git";
-      hash = "sha256-JW8h27nDnZY7HFklphMYJCP/FARy5JqLWMrGFx5R2wY=";
       rev = "6a446a8b53432f788570fd1d75e5004fc5d784a2";
+      hash = "sha256-JW8h27nDnZY7HFklphMYJCP/FARy5JqLWMrGFx5R2wY=";
     };
     rmf_visualization_schedule = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_visualization-release.git";
-      hash = "sha256-2SvzpAD0Uei7K1eYXbcIRujC09Ra/c1aC/c6Ab59Yho=";
       rev = "4aa4ddacce52315f98211824e219ce9c983b599d";
+      hash = "sha256-2SvzpAD0Uei7K1eYXbcIRujC09Ra/c1aC/c6Ab59Yho=";
     };
     rmf_websocket = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_ros2-release.git";
-      hash = "sha256-MUiwzL+DeP2+MZAfptPIqDcEKmUp4+aD605v14HBrVs=";
       rev = "cca3b39018221e53345b0f5755d9c021a86b164b";
+      hash = "sha256-MUiwzL+DeP2+MZAfptPIqDcEKmUp4+aD605v14HBrVs=";
     };
     rmf_workcell_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rmf_internal_msgs-release.git";
-      hash = "sha256-WDX8+s5nPdHojLMyUrnb8A8DZrBcrxxGnJrqQFTUGdE=";
       rev = "715146877dfba8c3ebe19c2f376394ef5227522e";
+      hash = "sha256-WDX8+s5nPdHojLMyUrnb8A8DZrBcrxxGnJrqQFTUGdE=";
     };
     rmw = fetchGit {
       url = "https://github.com/ros2-gbp/rmw-release.git";
-      hash = "sha256-ytGuQrW/Nt8ZX9IJPoGLQCbkrs/QPjZxskxKOD2rLtU=";
       rev = "785f02ef6ccd4c863ddb665f39498a854c14d0a3";
+      hash = "sha256-ytGuQrW/Nt8ZX9IJPoGLQCbkrs/QPjZxskxKOD2rLtU=";
     };
     rmw_connextdds = fetchGit {
       url = "https://github.com/ros2-gbp/rmw_connextdds-release.git";
-      hash = "sha256-Jrjpk82Ee3GTqvyLSRQt/mMnMAxxBxQkcV27miew8cM=";
       rev = "c66b73f5ee1d30f38d77a8c9ce854754bd56ff1f";
+      hash = "sha256-Jrjpk82Ee3GTqvyLSRQt/mMnMAxxBxQkcV27miew8cM=";
     };
     rmw_connextdds_common = fetchGit {
       url = "https://github.com/ros2-gbp/rmw_connextdds-release.git";
-      hash = "sha256-+XqwhtzZuRCp9cCFk/lRomX6qv6u9rvJFim/061Lrpo=";
       rev = "e0c79b4f730db4ada5914508bd0bcfc53158fbf3";
+      hash = "sha256-+XqwhtzZuRCp9cCFk/lRomX6qv6u9rvJFim/061Lrpo=";
     };
     rmw_cyclonedds_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/rmw_cyclonedds-release.git";
-      hash = "sha256-Ms0sZO/fHUk8WCYwTfrQFJqDS+99s4ZAXESVAVCbc9Q=";
       rev = "338f8d6d15b58ca2d7689f162da64ea6b1445798";
+      hash = "sha256-Ms0sZO/fHUk8WCYwTfrQFJqDS+99s4ZAXESVAVCbc9Q=";
     };
     rmw_dds_common = fetchGit {
       url = "https://github.com/ros2-gbp/rmw_dds_common-release.git";
-      hash = "sha256-wc3HbuwzxNPLut+Q0TPcQI5xPIZd1euV/y2t3Acat8k=";
       rev = "8d736a951300b342b1d672e7923ad9c50f04f726";
+      hash = "sha256-wc3HbuwzxNPLut+Q0TPcQI5xPIZd1euV/y2t3Acat8k=";
     };
     rmw_fastrtps_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/rmw_fastrtps-release.git";
-      hash = "sha256-JgRbkDDPKgz9Hd3CBhShc1N/rmcR/5R3NBdAY5MWnbY=";
       rev = "200c86865116196d4debb4e58dad7cdb05db2d2f";
+      hash = "sha256-JgRbkDDPKgz9Hd3CBhShc1N/rmcR/5R3NBdAY5MWnbY=";
     };
     rmw_fastrtps_dynamic_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/rmw_fastrtps-release.git";
-      hash = "sha256-V2828PQAQJIhgnDggB3AHrhDQ4z2qbzacR9XAmvkgwQ=";
       rev = "e707a96d012841d846d5440de99c86887cf7a4a5";
+      hash = "sha256-V2828PQAQJIhgnDggB3AHrhDQ4z2qbzacR9XAmvkgwQ=";
     };
     rmw_fastrtps_shared_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/rmw_fastrtps-release.git";
-      hash = "sha256-adf+3Se8tqfuijOpOkifvbK+bsVN0Lw1yY1GjLm04fU=";
       rev = "0e173ceeb37f9fbb0295b3c8fa95391d18dabb06";
+      hash = "sha256-adf+3Se8tqfuijOpOkifvbK+bsVN0Lw1yY1GjLm04fU=";
     };
     rmw_implementation = fetchGit {
       url = "https://github.com/ros2-gbp/rmw_implementation-release.git";
-      hash = "sha256-m0Kurk9EC6Yc7JrKHFGjSZ5eIanWr0QxoYkXWNLXQ2o=";
       rev = "6f7fca96237a7a41e888dc55ff8406876dd3cd1b";
+      hash = "sha256-m0Kurk9EC6Yc7JrKHFGjSZ5eIanWr0QxoYkXWNLXQ2o=";
     };
     rmw_implementation_cmake = fetchGit {
       url = "https://github.com/ros2-gbp/rmw-release.git";
-      hash = "sha256-aXrzFTM5hESGOTN25ojbzGxw19rcwTsGhCqCqAiDLz0=";
       rev = "7e0cca826ec27a0fe05672ed366b35468b492adb";
+      hash = "sha256-aXrzFTM5hESGOTN25ojbzGxw19rcwTsGhCqCqAiDLz0=";
     };
     robot_calibration = fetchGit {
       url = "https://github.com/ros2-gbp/robot_calibration-release.git";
-      hash = "sha256-R/RGa0/pVTyj3BGOHgYuQMwXXdm3/WMRrE7OsQ1WEGI=";
       rev = "aa1a98c2d363abddf3067426c2c52b2e34acbe11";
+      hash = "sha256-R/RGa0/pVTyj3BGOHgYuQMwXXdm3/WMRrE7OsQ1WEGI=";
     };
     robot_calibration_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/robot_calibration-release.git";
-      hash = "sha256-b3n32e2IjIsvjVq2nY/zf7dUbihjtmww0IfyUiyHFVU=";
       rev = "9ddd37d1432322248aa032f9db600fb08cad2545";
+      hash = "sha256-b3n32e2IjIsvjVq2nY/zf7dUbihjtmww0IfyUiyHFVU=";
     };
     robot_localization = fetchGit {
       url = "https://github.com/ros2-gbp/robot_localization-release.git";
-      hash = "sha256-GpzFamql3QOEMFc2VxVaRveYni8bElyv48UgJHAwel8=";
       rev = "fe41f9d50fca415b7945a70a70cd77fba858db9e";
+      hash = "sha256-GpzFamql3QOEMFc2VxVaRveYni8bElyv48UgJHAwel8=";
     };
     robot_state_publisher = fetchGit {
       url = "https://github.com/ros2-gbp/robot_state_publisher-release.git";
-      hash = "sha256-5FTqMqeamQAFt8XEpHuYh6JzILoqjaGujXl4Q30xwro=";
       rev = "877b7bc7de42bf1fdb65631902b524a0f70c5942";
+      hash = "sha256-5FTqMqeamQAFt8XEpHuYh6JzILoqjaGujXl4Q30xwro=";
     };
     robotiq_controllers = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_robotiq_gripper-release.git";
-      hash = "sha256-JhCCmqa9agEkqVO3vJ372AV/ZDF6zTNZta6YYwe29Y8=";
       rev = "6c6fbff726bf1944fd9a5a51ed3ee60365f53e5f";
+      hash = "sha256-JhCCmqa9agEkqVO3vJ372AV/ZDF6zTNZta6YYwe29Y8=";
     };
     robotiq_description = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_robotiq_gripper-release.git";
-      hash = "sha256-CO6k93lrA+H92beTQuG1tnfMsO99+vpYtYXmfABHcr4=";
       rev = "4131e61c1f07d1e4deeef87ac2f4da3a8e2e6637";
+      hash = "sha256-CO6k93lrA+H92beTQuG1tnfMsO99+vpYtYXmfABHcr4=";
     };
     ros2_control = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_control-release.git";
-      hash = "sha256-ZcOvMYVDG4vlJihVb5xLJJOug+yKrBLvyr3FokMxeAc=";
       rev = "8d5fc29417acbfbf7394f96cddc150f39cfd406d";
+      hash = "sha256-ZcOvMYVDG4vlJihVb5xLJJOug+yKrBLvyr3FokMxeAc=";
     };
     ros2_control_test_assets = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_control-release.git";
-      hash = "sha256-GHFpNe97l1QM43jb2vBMx/h75I47/8L8uQdXBSDylX8=";
       rev = "6c0fcda76bf3d5d8a84a884c1edbd4be996d3be0";
+      hash = "sha256-GHFpNe97l1QM43jb2vBMx/h75I47/8L8uQdXBSDylX8=";
     };
     ros2_controllers = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-+mt6CwEjQaBzAO8l/lovmv6NggtjR8ZdJ/VImmD9pyc=";
       rev = "be8c38bd64ea8dd63f7e5c91b9afd5425a554513";
+      hash = "sha256-+mt6CwEjQaBzAO8l/lovmv6NggtjR8ZdJ/VImmD9pyc=";
     };
     ros2_controllers_test_nodes = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-yBqay62SDlFzwLSzIkWKd4+p0vPybrGWmPAK0A6iNLY=";
       rev = "a7b06155a4a125858257afc51dc630e2843fbd58";
+      hash = "sha256-yBqay62SDlFzwLSzIkWKd4+p0vPybrGWmPAK0A6iNLY=";
     };
     ros2_ouster = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_ouster_drivers-release.git";
-      hash = "sha256-J10TOgX5uVLswW2+O6EN/NNITTTF3PLHYm1NxHBoinw=";
       rev = "37b090d16b2ee85344d291abc8524b70f79b2a6c";
+      hash = "sha256-J10TOgX5uVLswW2+O6EN/NNITTTF3PLHYm1NxHBoinw=";
     };
     ros2_socketcan = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_socketcan-release.git";
-      hash = "sha256-C7sHXShjAPuT3+vpDoihoprvWh93i9HpJyVHbnZFfkY=";
       rev = "7d8a7b4ed904679ec45f9fb89c116df56bb83eb7";
+      hash = "sha256-C7sHXShjAPuT3+vpDoihoprvWh93i9HpJyVHbnZFfkY=";
     };
     ros2_socketcan_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_socketcan-release.git";
-      hash = "sha256-w72AADKlMFfhOngn3t7lc0wwaMSb6c31gfpeoiCDXg4=";
       rev = "6578f6e0f796d288361225777eb4de806d47b627";
+      hash = "sha256-w72AADKlMFfhOngn3t7lc0wwaMSb6c31gfpeoiCDXg4=";
     };
     ros2acceleration = fetchGit {
       url = "https://github.com/ros2-gbp/ros2acceleration-release.git";
-      hash = "sha256-DRkaUv6JAKKbX1+DqnpK8wTDm1+jlEoHal/0i6rhA6I=";
       rev = "18eede7c818416a07f43314c8a39b6c7abc5b03e";
+      hash = "sha256-DRkaUv6JAKKbX1+DqnpK8wTDm1+jlEoHal/0i6rhA6I=";
     };
     ros2action = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-/PSvmfbQBmQ9GmPYUoTPBfgOs60p6W9yQ+xOiwp6JMA=";
       rev = "28aef19d429d83f5e135a724dc63f83097fbe792";
+      hash = "sha256-/PSvmfbQBmQ9GmPYUoTPBfgOs60p6W9yQ+xOiwp6JMA=";
     };
     ros2bag = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-wfOK7yr2giKKP3nGzfbQn9WUZNNwoJ+NaZthXDKXg/k=";
       rev = "888b279d8d0d4d76a9125d0b4328df70f387bf59";
+      hash = "sha256-wfOK7yr2giKKP3nGzfbQn9WUZNNwoJ+NaZthXDKXg/k=";
     };
     ros2cli = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-LpwlTyOQWsoWVEoxdPppPmPztdEB7oAx7QjmG9bU2/Y=";
       rev = "7b822ccef565a9d5a3d7f75815c16c781611592d";
+      hash = "sha256-LpwlTyOQWsoWVEoxdPppPmPztdEB7oAx7QjmG9bU2/Y=";
     };
     ros2cli_common_extensions = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli_common_extensions-release.git";
-      hash = "sha256-b3Ru11kcJWZbAquNYaTJOX8DiTVNJAWNcV6N8QA4ykQ=";
       rev = "1687ba1b3328e41ebee8c4e51255f1d728243bf0";
+      hash = "sha256-b3Ru11kcJWZbAquNYaTJOX8DiTVNJAWNcV6N8QA4ykQ=";
     };
     ros2cli_test_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-IpL1SqU83kbinY4QSBMYJ9v8CmLnWQdwkLedTylh3ZI=";
       rev = "b1bf6454355b950121990d46c76a3d882a85c461";
+      hash = "sha256-IpL1SqU83kbinY4QSBMYJ9v8CmLnWQdwkLedTylh3ZI=";
     };
     ros2component = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-KvDKQqXD6vv76CVNmmcBHWb8l0ktorsRYkGo51se1CE=";
       rev = "4d0984d4989f109d9cd7e15951c6ac1ce6ac8378";
+      hash = "sha256-KvDKQqXD6vv76CVNmmcBHWb8l0ktorsRYkGo51se1CE=";
     };
     ros2controlcli = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_control-release.git";
-      hash = "sha256-woJrrpZfcqU4r3w1x777fOtXnBBCYDkN4kb+VgU01h4=";
       rev = "bb75121b71e09348bded44ea826642c201128b60";
+      hash = "sha256-woJrrpZfcqU4r3w1x777fOtXnBBCYDkN4kb+VgU01h4=";
     };
     ros2doctor = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-JXBAZbli5oJOfIgCmMgvtoe2omh/HSe5ghJP6JBBxms=";
       rev = "de0f2b78fac592f82ef568a19fdb0bf63a19b92d";
+      hash = "sha256-JXBAZbli5oJOfIgCmMgvtoe2omh/HSe5ghJP6JBBxms=";
     };
     ros2interface = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-Amr7KhVrHZ1RxrrcLH3gqZmMqGBE5P+uqTIiAkfOSis=";
       rev = "2fc4821d3d5b0e0d1effbb7dd5533b5bde2b33e1";
+      hash = "sha256-Amr7KhVrHZ1RxrrcLH3gqZmMqGBE5P+uqTIiAkfOSis=";
     };
     ros2launch = fetchGit {
       url = "https://github.com/ros2-gbp/launch_ros-release.git";
-      hash = "sha256-E6Ud3YgAuns/SgPWysda6aIg4WL4tIsihgZwqbOHeVk=";
       rev = "4fcbd74e9fe1d7b272ad91b099ae03f394b7774d";
+      hash = "sha256-E6Ud3YgAuns/SgPWysda6aIg4WL4tIsihgZwqbOHeVk=";
     };
     ros2launch_security = fetchGit {
       url = "https://github.com/ros2-gbp/ros2launch_security-release.git";
-      hash = "sha256-MM1mvGLVBpSePXEUKQScahRPpulucGxMTaTp+jSKbNo=";
       rev = "e896c13bfc8f93f259902eec99483b65336b2458";
+      hash = "sha256-MM1mvGLVBpSePXEUKQScahRPpulucGxMTaTp+jSKbNo=";
     };
     ros2launch_security_examples = fetchGit {
       url = "https://github.com/ros2-gbp/ros2launch_security-release.git";
-      hash = "sha256-NWaQ/UIv5e//ahvk4u8zBHDsw6po6o9VLTnHTmXsQR8=";
       rev = "ffa975e487020ef5c667a0e2c5950fbf9a0fcfca";
+      hash = "sha256-NWaQ/UIv5e//ahvk4u8zBHDsw6po6o9VLTnHTmXsQR8=";
     };
     ros2lifecycle = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-S9FLUwdE2CY/gbgzCUqKhCMruLHomN++Ktz65M6X4t4=";
       rev = "28cd456ef9fe0bc616f29a3ddc0133d0baee90e7";
+      hash = "sha256-S9FLUwdE2CY/gbgzCUqKhCMruLHomN++Ktz65M6X4t4=";
     };
     ros2lifecycle_test_fixtures = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-L4zZbd8fMvXvo0n2Jf5wgcEM3qVeA0Hg0YgjMaWtXVo=";
       rev = "ea85fa884c6417acf21d1d7e858f5379bc8e8b9c";
+      hash = "sha256-L4zZbd8fMvXvo0n2Jf5wgcEM3qVeA0Hg0YgjMaWtXVo=";
     };
     ros2multicast = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-No/jcpN7VYZg24B6jWpMh+aDTeAA4CUjIW7Gu1NgRes=";
       rev = "ce0d5651fc2f7216e8e13e5ffb1aa81ab01ad85c";
+      hash = "sha256-No/jcpN7VYZg24B6jWpMh+aDTeAA4CUjIW7Gu1NgRes=";
     };
     ros2node = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-ldTUVQjlf++mL5uLb/d4St3RX/MYVIKuO1AhFn9GnkQ=";
       rev = "a3f805865fbc26c9231798f40fedbdb052c1159d";
+      hash = "sha256-ldTUVQjlf++mL5uLb/d4St3RX/MYVIKuO1AhFn9GnkQ=";
     };
     ros2nodl = fetchGit {
       url = "https://github.com/ros2-gbp/nodl-release.git";
-      hash = "sha256-8JQgseO9AxfsDy2YuxQ/dojS/6MOLaCKwBGUX8hIgwk=";
       rev = "79e166114dcef2812bc1d7bc0d91b798323565ea";
+      hash = "sha256-8JQgseO9AxfsDy2YuxQ/dojS/6MOLaCKwBGUX8hIgwk=";
     };
     ros2param = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-XSOpnY0a2+4OjpeKOrPY5J9WItW0sAZ2VGeByFpd4N0=";
       rev = "ee8dd6eb93f0f338a6cbb016e7badabee6c7e64f";
+      hash = "sha256-XSOpnY0a2+4OjpeKOrPY5J9WItW0sAZ2VGeByFpd4N0=";
     };
     ros2pkg = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-g+sC73+O+uYoTYMGSauFm+Q4+0Y/Nwfaldpou5TGQO8=";
       rev = "1cfd8c26024f1bb5696e6389ee7197e137b90ec8";
+      hash = "sha256-g+sC73+O+uYoTYMGSauFm+Q4+0Y/Nwfaldpou5TGQO8=";
     };
     ros2run = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-b47uz+wWc18dLvBagcwf6HiDyCOJMzRparykgHbsYIo=";
       rev = "5f07e2d9f5b281179e66b8db861fae89bec28750";
+      hash = "sha256-b47uz+wWc18dLvBagcwf6HiDyCOJMzRparykgHbsYIo=";
     };
     ros2service = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-YzPP2VRyQyjcJxEV0UyOaGs5+Ls5UkeykNwdu92GAh0=";
       rev = "14aa2bef1b8f15296b3e17a3252747dbde689211";
+      hash = "sha256-YzPP2VRyQyjcJxEV0UyOaGs5+Ls5UkeykNwdu92GAh0=";
     };
     ros2test = fetchGit {
       url = "https://github.com/ros2-gbp/ros_testing-release.git";
-      hash = "sha256-tqKhYA9+IzjW93SioL3LjEtOGETxMpk409QC1KJF5w4=";
       rev = "87f9361b131712dfb1e3b7e342eb8f293fd919df";
+      hash = "sha256-tqKhYA9+IzjW93SioL3LjEtOGETxMpk409QC1KJF5w4=";
     };
     ros2topic = fetchGit {
       url = "https://github.com/ros2-gbp/ros2cli-release.git";
-      hash = "sha256-i2HNgtWFUYxZ0nKYGTzkLR7khK1Hnzp5nPQMtt4yWWc=";
       rev = "f95e34ae173e6bc94e70e3aa8cc63bfd99d4e216";
+      hash = "sha256-i2HNgtWFUYxZ0nKYGTzkLR7khK1Hnzp5nPQMtt4yWWc=";
     };
     ros2trace = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_tracing-release.git";
-      hash = "sha256-hmiZoe7r+QFGR4VLuq03ec/KXmfgWmZvQ4nKaCHAx0w=";
       rev = "5223ad9d5972e59c64ea5936c068533628510dcb";
+      hash = "sha256-hmiZoe7r+QFGR4VLuq03ec/KXmfgWmZvQ4nKaCHAx0w=";
     };
     ros2trace_analysis = fetchGit {
       url = "https://github.com/ros2-gbp/tracetools_analysis-release.git";
-      hash = "sha256-88nEQ39lxqn4A5k9lH63DZqI0nV7umn2QUpbOCQyVpE=";
       rev = "23e4677fbc691efadbad1a8a231fab60e2d794a5";
+      hash = "sha256-88nEQ39lxqn4A5k9lH63DZqI0nV7umn2QUpbOCQyVpE=";
     };
     ros_base = fetchGit {
       url = "https://github.com/ros2-gbp/variants-release.git";
-      hash = "sha256-qDeMCM1VeU74XfEYB3E5caLxe/rMeyfJaQYQTyUmR98=";
       rev = "5e0023e0e7580c315c038b95ad50501de894a7d2";
+      hash = "sha256-qDeMCM1VeU74XfEYB3E5caLxe/rMeyfJaQYQTyUmR98=";
     };
     ros_core = fetchGit {
       url = "https://github.com/ros2-gbp/variants-release.git";
-      hash = "sha256-kDPxLgU8jx1J5KfLiQqBhPR9zuKlluBb1whA8WDCOjA=";
       rev = "57df522c61794399f11cf3acd025160470e14de8";
+      hash = "sha256-kDPxLgU8jx1J5KfLiQqBhPR9zuKlluBb1whA8WDCOjA=";
     };
     ros_environment = fetchGit {
       url = "https://github.com/ros2-gbp/ros_environment-release.git";
-      hash = "sha256-dwFnwm7ilNij7JeJ7sBPii3MX2KZVS3uvMBD8MJpIag=";
       rev = "cfb36f6e53a770b4b31a053b82dfc0dec648b685";
+      hash = "sha256-dwFnwm7ilNij7JeJ7sBPii3MX2KZVS3uvMBD8MJpIag=";
     };
     ros_gz = fetchGit {
       url = "https://github.com/ros2-gbp/ros_ign-release.git";
-      hash = "sha256-godE6LkidTWOxgIYgdCS8IJSOikLjEDfuAcBpS4HZmg=";
       rev = "e93b9fa0d8eb8af666447d38920b1bdd44e51944";
+      hash = "sha256-godE6LkidTWOxgIYgdCS8IJSOikLjEDfuAcBpS4HZmg=";
     };
     ros_gz_bridge = fetchGit {
       url = "https://github.com/ros2-gbp/ros_ign-release.git";
-      hash = "sha256-kpZXtsJ4uuG63FGuN7NeTX7aciMhm6X6yhNRX6VIQjU=";
       rev = "c1bb1a07fcd09caa4c499f1f3cb9cfe86b89b43e";
+      hash = "sha256-kpZXtsJ4uuG63FGuN7NeTX7aciMhm6X6yhNRX6VIQjU=";
     };
     ros_gz_image = fetchGit {
       url = "https://github.com/ros2-gbp/ros_ign-release.git";
-      hash = "sha256-MixLUjOfR/eSA3mqa5cKocItzS6PglAJHMnehRj8s80=";
       rev = "9bfbc65098329e8517660bd7dcf02a4ac48a3a71";
+      hash = "sha256-MixLUjOfR/eSA3mqa5cKocItzS6PglAJHMnehRj8s80=";
     };
     ros_gz_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/ros_ign-release.git";
-      hash = "sha256-+RChQLXRYWWfXtwOev8/fscwAW2EID09D7mf4xd3nJ0=";
       rev = "27540ee34048ba8f0fbe0dd4b5ccab705e8a523c";
+      hash = "sha256-+RChQLXRYWWfXtwOev8/fscwAW2EID09D7mf4xd3nJ0=";
     };
     ros_gz_sim = fetchGit {
       url = "https://github.com/ros2-gbp/ros_ign-release.git";
-      hash = "sha256-6zhOjiznYO1AOWjNPOTVuIAka7+zmiHa6JKJUTtWcU8=";
       rev = "10b15fb8fa355980e1f26a278c6dd8258500be03";
+      hash = "sha256-6zhOjiznYO1AOWjNPOTVuIAka7+zmiHa6JKJUTtWcU8=";
     };
     ros_gz_sim_demos = fetchGit {
       url = "https://github.com/ros2-gbp/ros_ign-release.git";
-      hash = "sha256-ow1ehDLjDN8AcpsUEs81QuVRD8qcuRPkFKHX6sXmquE=";
       rev = "959d822540f9a06904afa36634bf6c0e7b4c9fa0";
+      hash = "sha256-ow1ehDLjDN8AcpsUEs81QuVRD8qcuRPkFKHX6sXmquE=";
     };
     ros_image_to_qimage = fetchGit {
       url = "https://github.com/ros2-gbp/ros_image_to_qimage-release.git";
-      hash = "sha256-qxt94vxyKVhWR64DyvjU5D5xKcJcflZdDd/jA2e0d9U=";
       rev = "73eb2db321f27aab67b475a236a19607124896be";
+      hash = "sha256-qxt94vxyKVhWR64DyvjU5D5xKcJcflZdDd/jA2e0d9U=";
     };
     ros_industrial_cmake_boilerplate = fetchGit {
       url = "https://github.com/ros2-gbp/ros_industrial_cmake_boilerplate-release.git";
-      hash = "sha256-yxsr0rMyvBYeoeMkhnWs1wSUR+qmZ66S/z9WOpMtRwk=";
       rev = "09c03bebd52e95c6f5f92dc7dbe5071039b220fd";
+      hash = "sha256-yxsr0rMyvBYeoeMkhnWs1wSUR+qmZ66S/z9WOpMtRwk=";
     };
     ros_testing = fetchGit {
       url = "https://github.com/ros2-gbp/ros_testing-release.git";
-      hash = "sha256-fs+oXGxdtoXxQxvZSsImWJtNFp+X3jdTHN31wD+47Yg=";
       rev = "698ef5baf793b32a4d4e3ffcce820c13902e4ef1";
+      hash = "sha256-fs+oXGxdtoXxQxvZSsImWJtNFp+X3jdTHN31wD+47Yg=";
     };
     ros_workspace = fetchGit {
       url = "https://github.com/ros2-gbp/ros_workspace-release.git";
-      hash = "sha256-+tYPQJjQzjD0UJKtZroIo9VzvGZ6Up1hzFfYxxQKiy0=";
       rev = "7bf5b2dda99e80015f603d80529cf7852471bc39";
+      hash = "sha256-+tYPQJjQzjD0UJKtZroIo9VzvGZ6Up1hzFfYxxQKiy0=";
     };
     rosapi = fetchGit {
       url = "https://github.com/ros2-gbp/rosbridge_suite-release.git";
-      hash = "sha256-5gDyqSXHMOUheu+7fjleKwHApIpOlhVvL9dpEujRBA4=";
       rev = "72cbe2e3a2f5a98e160d86e54667eceda6d47114";
+      hash = "sha256-5gDyqSXHMOUheu+7fjleKwHApIpOlhVvL9dpEujRBA4=";
     };
     rosapi_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rosbridge_suite-release.git";
-      hash = "sha256-mS6s9obrtPJQkYEJluig+KM2GqAKwG2QSBz9iGCJMtc=";
       rev = "697cc305441c19d030d17c756d093c4d11af6195";
+      hash = "sha256-mS6s9obrtPJQkYEJluig+KM2GqAKwG2QSBz9iGCJMtc=";
     };
     rosbag2 = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-dKeT6PQJAjB2IrW3pDrKpGTBey0i+0+I4cGEyHdn1Ts=";
       rev = "6ba01fa099671d7ca84cafa41ae663732bb3511f";
+      hash = "sha256-dKeT6PQJAjB2IrW3pDrKpGTBey0i+0+I4cGEyHdn1Ts=";
     };
     rosbag2_compression = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-8nlnW5g1RTYkA+ArxXZrXOdbjHbgAQQP93gtEWnDQrM=";
       rev = "e9f02784260049a13a59f732a6fa929e9fb95880";
+      hash = "sha256-8nlnW5g1RTYkA+ArxXZrXOdbjHbgAQQP93gtEWnDQrM=";
     };
     rosbag2_compression_zstd = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-GYsTVG0fIt6dimaK74NGwhh8ps5R9pVU6ysA8nzQI0g=";
       rev = "79be289debf2763d704091f415e0766f1397907f";
+      hash = "sha256-GYsTVG0fIt6dimaK74NGwhh8ps5R9pVU6ysA8nzQI0g=";
     };
     rosbag2_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-IhbEvIVe3emxwC07mXb1FKswcgOJaA3DLJtWHEzSg7Y=";
       rev = "c21454fbcde9726dcf5326f40fb6c8611f4d04c1";
+      hash = "sha256-IhbEvIVe3emxwC07mXb1FKswcgOJaA3DLJtWHEzSg7Y=";
     };
     rosbag2_examples_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-Kb2iaURMhNXv5qH//PBFubsT/V6M8DI5mwq2Y9whRk4=";
       rev = "71697870cb664f60b01916d0f359b401f4bf257e";
+      hash = "sha256-Kb2iaURMhNXv5qH//PBFubsT/V6M8DI5mwq2Y9whRk4=";
     };
     rosbag2_examples_py = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-j8OOPQ8nAcVB/1QGB6wVNXITGZ9lI+yt77Ce/DbB68Q=";
       rev = "e542dd9512cdf0ae010755d0b12c74725ab1cb79";
+      hash = "sha256-j8OOPQ8nAcVB/1QGB6wVNXITGZ9lI+yt77Ce/DbB68Q=";
     };
     rosbag2_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-a8VlWj+jyXbgQgb+RcRu2y5YKRC4co6gFj0lMyV4IvE=";
       rev = "cf10934c20192408430e4f989a02163fc7e329be";
+      hash = "sha256-a8VlWj+jyXbgQgb+RcRu2y5YKRC4co6gFj0lMyV4IvE=";
     };
     rosbag2_performance_benchmarking = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-hzDDbAW9ix/OYN+Ssuz11IrcQnrFMbOJlQRv2QoXi9s=";
       rev = "e9119ad170ca65b399410eec68fed21e5e50720f";
+      hash = "sha256-hzDDbAW9ix/OYN+Ssuz11IrcQnrFMbOJlQRv2QoXi9s=";
     };
     rosbag2_performance_benchmarking_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-4DSpl5muKYerp+HOlbqJ6pqz3X2emIhG4p7b7OFAwDo=";
       rev = "d743467677665c4774feb4f171c932777fef5803";
+      hash = "sha256-4DSpl5muKYerp+HOlbqJ6pqz3X2emIhG4p7b7OFAwDo=";
     };
     rosbag2_py = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-31xNUvjXzshlSUI+HuqrA9hi/lHgLKTosxap52k1TNc=";
       rev = "15b3bec7a59f80a082f9b994b3d8b1fb58a9b542";
+      hash = "sha256-31xNUvjXzshlSUI+HuqrA9hi/lHgLKTosxap52k1TNc=";
     };
     rosbag2_storage = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-4RoVLck4aAUfpX/d4/u+KRlM4Q0+ql8j9jKdqRTNLJI=";
       rev = "d09ba6a8e9ad269bb2a8c040ca6ac6f0b96a78f1";
+      hash = "sha256-4RoVLck4aAUfpX/d4/u+KRlM4Q0+ql8j9jKdqRTNLJI=";
     };
     rosbag2_storage_default_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-Zk51LnlEeYOqq9VCDjrpxOQiq6Zb4vuOCl8Z6UZPLSE=";
       rev = "dc12d7706e00d42c49444bddb676bb8293b7cef3";
+      hash = "sha256-Zk51LnlEeYOqq9VCDjrpxOQiq6Zb4vuOCl8Z6UZPLSE=";
     };
     rosbag2_storage_mcap = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-TL6JdnDhtZz2N5HYDO8elpPRSP3QZDfwBpdIlCLOEmo=";
       rev = "374245c946ae8a4e35444ecc54488f017d098afa";
+      hash = "sha256-TL6JdnDhtZz2N5HYDO8elpPRSP3QZDfwBpdIlCLOEmo=";
     };
     rosbag2_storage_sqlite3 = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-1dfMcvXr36k9SaPUBfVN97ab9rKx9ZCWL24N9Gl0T/c=";
       rev = "56f0aba97bc331e48e2037da1a11b72cce6e1a8c";
+      hash = "sha256-1dfMcvXr36k9SaPUBfVN97ab9rKx9ZCWL24N9Gl0T/c=";
     };
     rosbag2_test_common = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-E2znGKtEvp3Kaozhfe74MrSLlJx6AplnwVb8HOHbTCc=";
       rev = "92828d12f0e98c97cf5f4aed18f8d7e374ef3cbb";
+      hash = "sha256-E2znGKtEvp3Kaozhfe74MrSLlJx6AplnwVb8HOHbTCc=";
     };
     rosbag2_test_msgdefs = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-EOnJSisxerLpUqPsWTxR3JI/8uMqU189Hgf3Txz/ibI=";
       rev = "47d18da60fe893b68a08ff43f3d68282730ea7be";
+      hash = "sha256-EOnJSisxerLpUqPsWTxR3JI/8uMqU189Hgf3Txz/ibI=";
     };
     rosbag2_tests = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-mTdPLFndAOcafMOiDeCI/1GRVq0gg5Fn6dY9ryTRNsg=";
       rev = "791dc26aca19c871e13566924ced7daa2738d563";
+      hash = "sha256-mTdPLFndAOcafMOiDeCI/1GRVq0gg5Fn6dY9ryTRNsg=";
     };
     rosbag2_transport = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-SI8rH5910DNwjJyUGu78qr2Pu8oFVasdD4kMOUizC1U=";
       rev = "7576c106eb1f562095d0f1fbb296350ff63c0e15";
+      hash = "sha256-SI8rH5910DNwjJyUGu78qr2Pu8oFVasdD4kMOUizC1U=";
     };
     rosbridge_library = fetchGit {
       url = "https://github.com/ros2-gbp/rosbridge_suite-release.git";
-      hash = "sha256-Xk40YYsXUGj/59ea63e2ppoCwrhXp7wDqiWhM84sIR8=";
       rev = "7e8eb24c489ea49ef698dd9e785d5220ea9a0acc";
+      hash = "sha256-Xk40YYsXUGj/59ea63e2ppoCwrhXp7wDqiWhM84sIR8=";
     };
     rosbridge_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rosbridge_suite-release.git";
-      hash = "sha256-gef94q+tOtKcYirePzrQpnNRqyw/TxlebG49vn/OYXI=";
       rev = "4abc4e5de80f7e4dcb16bc59483edc78756191f6";
+      hash = "sha256-gef94q+tOtKcYirePzrQpnNRqyw/TxlebG49vn/OYXI=";
     };
     rosbridge_server = fetchGit {
       url = "https://github.com/ros2-gbp/rosbridge_suite-release.git";
-      hash = "sha256-t1Tj/Y8NdOi7Yunvx/UfIz5LF9ZGXrf9BSc9bUPdaT8=";
       rev = "84c89ddabc1e1b553a8f6116390450a08c8077da";
+      hash = "sha256-t1Tj/Y8NdOi7Yunvx/UfIz5LF9ZGXrf9BSc9bUPdaT8=";
     };
     rosbridge_suite = fetchGit {
       url = "https://github.com/ros2-gbp/rosbridge_suite-release.git";
-      hash = "sha256-MWpailueIvylSaPCRcXsKgmzpatxkZq+HsJMGXnMUPs=";
       rev = "7259f925429829be861d8d96d1946e6923e61f80";
+      hash = "sha256-MWpailueIvylSaPCRcXsKgmzpatxkZq+HsJMGXnMUPs=";
     };
     rosbridge_test_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rosbridge_suite-release.git";
-      hash = "sha256-ZgToC3Qm971d8Pn8MxepqwV+Qby1hi//qfK1idwJSIc=";
       rev = "6b0fff188b9fd6ba9109f18426d8b055ea8332c7";
+      hash = "sha256-ZgToC3Qm971d8Pn8MxepqwV+Qby1hi//qfK1idwJSIc=";
     };
     rosgraph_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rcl_interfaces-release.git";
-      hash = "sha256-hEDZCurb6TJooZeBv+lAeDryX6S2nIjCRJkpeItDr0o=";
       rev = "9af86c0d06f950a298f48c4380eb93646a25bd91";
+      hash = "sha256-hEDZCurb6TJooZeBv+lAeDryX6S2nIjCRJkpeItDr0o=";
     };
     rosidl_adapter = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl-release.git";
-      hash = "sha256-NkvVWsMgN6qrB9/sbgk0gblTWWQb9IaAu+ZVsB+Bgw4=";
       rev = "bfccb990ec35e72c560715ef495a7048a602a35a";
+      hash = "sha256-NkvVWsMgN6qrB9/sbgk0gblTWWQb9IaAu+ZVsB+Bgw4=";
     };
     rosidl_cli = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl-release.git";
-      hash = "sha256-HE0sUa9zqCr5vhV5Cs3G51DYIdYJG34ce11BoNAFJaw=";
       rev = "9221c1ad87215e3f88c227b5903f21be9b79718b";
+      hash = "sha256-HE0sUa9zqCr5vhV5Cs3G51DYIdYJG34ce11BoNAFJaw=";
     };
     rosidl_cmake = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl-release.git";
-      hash = "sha256-ViES5VI+AC1X3x0SsH13umc4X6Oo+WqUm/V5tOoTHaU=";
       rev = "afb2bd78ca34ec39997c21e46fb871282a1e10fe";
+      hash = "sha256-ViES5VI+AC1X3x0SsH13umc4X6Oo+WqUm/V5tOoTHaU=";
     };
     rosidl_core_generators = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_core-release.git";
-      hash = "sha256-9Zg4MF56i7rxbst/X+B9Nav1oRFYrQenpjKoBR70PpE=";
       rev = "70703ed098d9fe0db994524204401121c3c4886c";
+      hash = "sha256-9Zg4MF56i7rxbst/X+B9Nav1oRFYrQenpjKoBR70PpE=";
     };
     rosidl_core_runtime = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_core-release.git";
-      hash = "sha256-NEpTeaiX8517sB5rwONF2QeR226fOrZrOGQC3+zKeHs=";
       rev = "c188af0ac3b90cc867086c53c7401cd8aafa7fab";
+      hash = "sha256-NEpTeaiX8517sB5rwONF2QeR226fOrZrOGQC3+zKeHs=";
     };
     rosidl_default_generators = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_defaults-release.git";
-      hash = "sha256-+yGCfFFsE0n3AZlq1sE1F6lIt9Tl/2LEwFw/M+U6/6M=";
       rev = "54bd52d5becc6c897650b447e2de370c04c4db05";
+      hash = "sha256-+yGCfFFsE0n3AZlq1sE1F6lIt9Tl/2LEwFw/M+U6/6M=";
     };
     rosidl_default_runtime = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_defaults-release.git";
-      hash = "sha256-vjsipJB0+/VPIsA3LK9gH6WS/Eai0uZ3YKW3TRptp7Y=";
       rev = "d25a92b065e9f454ed6e96e89c07d61cc7f96ce9";
+      hash = "sha256-vjsipJB0+/VPIsA3LK9gH6WS/Eai0uZ3YKW3TRptp7Y=";
     };
     rosidl_dynamic_typesupport = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_dynamic_typesupport-release.git";
-      hash = "sha256-oKjjvQ8+9kmE/JYX1boHfRN4q52+Uk9mjH3KtVPWC1U=";
       rev = "11e03873b5cc3303db45c9729a8c3fdc57d0d5b8";
+      hash = "sha256-oKjjvQ8+9kmE/JYX1boHfRN4q52+Uk9mjH3KtVPWC1U=";
     };
     rosidl_dynamic_typesupport_fastrtps = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_dynamic_typesupport_fastrtps-release.git";
-      hash = "sha256-d42W+4HLC4Q8TCe25XwXRCPf0y7vJFmfKMZ+/ozS/sQ=";
       rev = "700363b667895d30d6670e3e097623462f34cc41";
+      hash = "sha256-d42W+4HLC4Q8TCe25XwXRCPf0y7vJFmfKMZ+/ozS/sQ=";
     };
     rosidl_generator_c = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl-release.git";
-      hash = "sha256-1l817j0n3HvXQ2glqdW88lJ/Ri/lSzHKAYQo4BXabBg=";
       rev = "8c0b35ed588f72678c956454604ba1a815a447c7";
+      hash = "sha256-1l817j0n3HvXQ2glqdW88lJ/Ri/lSzHKAYQo4BXabBg=";
     };
     rosidl_generator_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl-release.git";
-      hash = "sha256-AMnGovzxooayTc4Y9scRE4RwxgvZMa/N22QxrIvWi0w=";
       rev = "caa7fc9ef84eff9c815e222b9d80723a068ad5b4";
+      hash = "sha256-AMnGovzxooayTc4Y9scRE4RwxgvZMa/N22QxrIvWi0w=";
     };
     rosidl_generator_dds_idl = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_dds-release.git";
-      hash = "sha256-nJaLUL1Ey0Ie3J6YMr3sYag2w9r0FEkdrowJp1MGklY=";
       rev = "97af97f45b3bb41d4e49c28aa1f50a7ff48e5554";
+      hash = "sha256-nJaLUL1Ey0Ie3J6YMr3sYag2w9r0FEkdrowJp1MGklY=";
     };
     rosidl_generator_py = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_python-release.git";
-      hash = "sha256-oe7q6zEijgXySpyRe+qMBw/0JkOggcPLAPf1XvbTaO8=";
       rev = "8220427f3d3a26be945adc0a3291127a9b4a8f82";
+      hash = "sha256-oe7q6zEijgXySpyRe+qMBw/0JkOggcPLAPf1XvbTaO8=";
     };
     rosidl_generator_type_description = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl-release.git";
-      hash = "sha256-H3dIGZRfMX0OOi2a1Te6a3GOmCmBfxMRiTkjObPjMMs=";
       rev = "f9e925141a8c57f331e0533060e16f68f7f95397";
+      hash = "sha256-H3dIGZRfMX0OOi2a1Te6a3GOmCmBfxMRiTkjObPjMMs=";
     };
     rosidl_parser = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl-release.git";
-      hash = "sha256-1I50K0T66XY1/1i+VW6N5U4GBE+IO0PgoXOTokA/MHI=";
       rev = "2614864434f193b3b71076744337419a0138df7e";
+      hash = "sha256-1I50K0T66XY1/1i+VW6N5U4GBE+IO0PgoXOTokA/MHI=";
     };
     rosidl_pycommon = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl-release.git";
-      hash = "sha256-pz2N7wj/tWNBN+Zhjeaoj0eAWJLvOAu91LZmpw0RWfg=";
       rev = "f13376be46a3ff8db06c6e8ac04371c9f02bce13";
+      hash = "sha256-pz2N7wj/tWNBN+Zhjeaoj0eAWJLvOAu91LZmpw0RWfg=";
     };
     rosidl_runtime_c = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl-release.git";
-      hash = "sha256-NMDm5IYafAIZ7tuU5wLvFPN1Xjt4+RU+nh6tKOdkB9g=";
       rev = "4bfad483abc1bb0601ea6406b1de7e8b11230f1c";
+      hash = "sha256-NMDm5IYafAIZ7tuU5wLvFPN1Xjt4+RU+nh6tKOdkB9g=";
     };
     rosidl_runtime_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl-release.git";
-      hash = "sha256-KJ63ZYA74bwaGDSI9lZ0J5Cv+iuidH0yytBeYKyGwj8=";
       rev = "bef252b1cedc0f99956d56fc09a1f19b59534c4e";
+      hash = "sha256-KJ63ZYA74bwaGDSI9lZ0J5Cv+iuidH0yytBeYKyGwj8=";
     };
     rosidl_runtime_py = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_runtime_py-release.git";
-      hash = "sha256-jytdOfWquw/4LfZWrw4Y5ENdwCIZr54jgWE40LjBpbU=";
       rev = "0b05e57c72fb835489f909e39d6868e234957a7a";
+      hash = "sha256-jytdOfWquw/4LfZWrw4Y5ENdwCIZr54jgWE40LjBpbU=";
     };
     rosidl_typesupport_c = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_typesupport-release.git";
-      hash = "sha256-JCYXTlvnyR+O2YgS8alsztQk5kBOkkxeZ86LyuTNIbw=";
       rev = "5dea37cf7a79d5651289f3f65380399f15febf5d";
+      hash = "sha256-JCYXTlvnyR+O2YgS8alsztQk5kBOkkxeZ86LyuTNIbw=";
     };
     rosidl_typesupport_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_typesupport-release.git";
-      hash = "sha256-HxpOKtBoeqyhnYXHJi+nTWIsqh6SVVCDZrKv/rrZ/7A=";
       rev = "f132a4ebc1ac6e5a48413071265c88035f5d9b09";
+      hash = "sha256-HxpOKtBoeqyhnYXHJi+nTWIsqh6SVVCDZrKv/rrZ/7A=";
     };
     rosidl_typesupport_fastrtps_c = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_typesupport_fastrtps-release.git";
-      hash = "sha256-2sTle4oic16XurofpMlrAfaniopgwzVHCSQjv2xsl04=";
       rev = "1400a09497690c6e15d49aaefc87531b96f1285d";
+      hash = "sha256-2sTle4oic16XurofpMlrAfaniopgwzVHCSQjv2xsl04=";
     };
     rosidl_typesupport_fastrtps_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl_typesupport_fastrtps-release.git";
-      hash = "sha256-ZEqX9gfGLYVCUifj/xBT95/lQvxtssBJj1kRPdX1Ki8=";
       rev = "251957bd6af1dd6f15113952b69d74aaad79eb5c";
+      hash = "sha256-ZEqX9gfGLYVCUifj/xBT95/lQvxtssBJj1kRPdX1Ki8=";
     };
     rosidl_typesupport_interface = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl-release.git";
-      hash = "sha256-ppGJYEONVip3/7Cr7zw5Su52mfxFT7EhDttXmwEFUt4=";
       rev = "6311df134f65a3fb5b1a8a8666b77b9947087843";
+      hash = "sha256-ppGJYEONVip3/7Cr7zw5Su52mfxFT7EhDttXmwEFUt4=";
     };
     rosidl_typesupport_introspection_c = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl-release.git";
-      hash = "sha256-Utc3fA3YYrzBZaivher4NCqr0STET3xUX3h05BiTfSg=";
       rev = "aae15adb0832c95825bb906a285ef94b6cdb05c2";
+      hash = "sha256-Utc3fA3YYrzBZaivher4NCqr0STET3xUX3h05BiTfSg=";
     };
     rosidl_typesupport_introspection_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/rosidl-release.git";
-      hash = "sha256-fSgRqqO4cDX+Qi0jW/FJ1dcvBOSKXZkOnm5hDnYgkDE=";
       rev = "d73e8a123926da9125739b192a0fe11b513632b9";
+      hash = "sha256-fSgRqqO4cDX+Qi0jW/FJ1dcvBOSKXZkOnm5hDnYgkDE=";
     };
     rot_conv = fetchGit {
       url = "https://github.com/ros2-gbp/rot_conv_lib-release.git";
-      hash = "sha256-VqbATzeNKPD8JPuhSHw/tFUaehAd/D5z7SlyxRL1P9w=";
       rev = "a61148e0f5bd8fbd7480973e37023da1777a9c5f";
+      hash = "sha256-VqbATzeNKPD8JPuhSHw/tFUaehAd/D5z7SlyxRL1P9w=";
     };
     rplidar_ros = fetchGit {
       url = "https://github.com/ros2-gbp/rplidar_ros-release.git";
-      hash = "sha256-lOiYrTggsDiQb9sCYtWAup4+kVoMnpSYqKqWGtnb2AU=";
       rev = "62ee07ff9d0bf9532bbdcdb1b8f0c22f8e7b25b8";
+      hash = "sha256-lOiYrTggsDiQb9sCYtWAup4+kVoMnpSYqKqWGtnb2AU=";
     };
     rpyutils = fetchGit {
       url = "https://github.com/ros2-gbp/rpyutils-release.git";
-      hash = "sha256-irKkZj0IqKDEwaCIh2Rn3jRQmeR3VI8Gkjah0FuSC0I=";
       rev = "65683d21b74349178a9e518eeac64287dc528127";
+      hash = "sha256-irKkZj0IqKDEwaCIh2Rn3jRQmeR3VI8Gkjah0FuSC0I=";
     };
     rqt = fetchGit {
       url = "https://github.com/ros2-gbp/rqt-release.git";
-      hash = "sha256-peBv6HLShNFar0fL+NpWuVKsiVpkVkHzSejtvm5eYg4=";
       rev = "74f9483352ef59abf5b390f088660c02914ee74f";
+      hash = "sha256-peBv6HLShNFar0fL+NpWuVKsiVpkVkHzSejtvm5eYg4=";
     };
     rqt_action = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_action-release.git";
-      hash = "sha256-BpjG5n+k8+z0l/4NhcvSTBOKKYBJF4u3LRRHw1jiGgg=";
       rev = "3e7beb2f37abb99e324091b4b07801e0517f66fd";
+      hash = "sha256-BpjG5n+k8+z0l/4NhcvSTBOKKYBJF4u3LRRHw1jiGgg=";
     };
     rqt_bag = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_bag-release.git";
-      hash = "sha256-K+pDQ5wUSt1qrw0P87qv4my3psSCvJKlgSXdwmMuw1A=";
       rev = "fc6116adc9db168a71892ec9eb8c83105363e27f";
+      hash = "sha256-K+pDQ5wUSt1qrw0P87qv4my3psSCvJKlgSXdwmMuw1A=";
     };
     rqt_bag_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_bag-release.git";
-      hash = "sha256-HYDA8epYBRYiphjEhCdwFpWSlI9RuUTOHaaICu0mXJI=";
       rev = "692f9dfaae890f15fab4e0c5bf2f38cd10d2ffb4";
+      hash = "sha256-HYDA8epYBRYiphjEhCdwFpWSlI9RuUTOHaaICu0mXJI=";
     };
     rqt_common_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_common_plugins-release.git";
-      hash = "sha256-rSJ8tB78EOgjtaHw8wleVvW+Rx9+z5d0IAznXj0aKmg=";
       rev = "67b5569cee6ac6ea7774944fbc2b9344d3317eac";
+      hash = "sha256-rSJ8tB78EOgjtaHw8wleVvW+Rx9+z5d0IAznXj0aKmg=";
     };
     rqt_console = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_console-release.git";
-      hash = "sha256-nnitj5EX/4GJUalogu9OlEP1Bql0LuzLuCV6Ib+myAo=";
       rev = "4e7179b14078dcbeec86ec11008b37b74f5ba133";
+      hash = "sha256-nnitj5EX/4GJUalogu9OlEP1Bql0LuzLuCV6Ib+myAo=";
     };
     rqt_controller_manager = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_control-release.git";
-      hash = "sha256-ZtI/PCNDvUZjVrCCQ+Qz+Aqq6popQqRsIy3eeYuMUH8=";
       rev = "3b00a5315234065f7ddb2e900565d421c803123f";
+      hash = "sha256-ZtI/PCNDvUZjVrCCQ+Qz+Aqq6popQqRsIy3eeYuMUH8=";
     };
     rqt_gauges = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_gauges-release.git";
-      hash = "sha256-ie5l6SHrK6cQczLp2R3MdzrJRVZGAxGnuO7NzFIwbJY=";
       rev = "fae55efa182e582154dd83da2cf3e8f2ae94843c";
+      hash = "sha256-ie5l6SHrK6cQczLp2R3MdzrJRVZGAxGnuO7NzFIwbJY=";
     };
     rqt_graph = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_graph-release.git";
-      hash = "sha256-Y3VJbiQ/I3s1fFoCRZ+OkJiLE/9+pabzSDJ0ja/xuJo=";
       rev = "6771816961fa978fc42be3f8b5bf6b241052d595";
+      hash = "sha256-Y3VJbiQ/I3s1fFoCRZ+OkJiLE/9+pabzSDJ0ja/xuJo=";
     };
     rqt_gui = fetchGit {
       url = "https://github.com/ros2-gbp/rqt-release.git";
-      hash = "sha256-nY0zbmJ/xPK7ZekKh0ONOV+us66g03mWsFQeC42Wx7Y=";
       rev = "8eec9c6a8d6951524a0d1fe98f9640ef8ef40267";
+      hash = "sha256-nY0zbmJ/xPK7ZekKh0ONOV+us66g03mWsFQeC42Wx7Y=";
     };
     rqt_gui_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/rqt-release.git";
-      hash = "sha256-JJ48LH0MfEaVb8AgbGKYBZ2v/ihBf0A2MZ267/+zhDY=";
       rev = "0ff9411e1fae5cdb1942231565a13b10a85d001b";
+      hash = "sha256-JJ48LH0MfEaVb8AgbGKYBZ2v/ihBf0A2MZ267/+zhDY=";
     };
     rqt_gui_py = fetchGit {
       url = "https://github.com/ros2-gbp/rqt-release.git";
-      hash = "sha256-QjZHZ660Tz4AV/n/ClJC+y1iDiqcBvEiUvtEh4iECxc=";
       rev = "90003d619c3aec91e9532590d384395add0a0571";
+      hash = "sha256-QjZHZ660Tz4AV/n/ClJC+y1iDiqcBvEiUvtEh4iECxc=";
     };
     rqt_image_overlay = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_image_overlay-release.git";
-      hash = "sha256-rjv8Zxu7V4qDtMRcwMdiYByPpFiYIRJL8N+KK/Gte+E=";
       rev = "3b47252303977088f137c8bc94c0b375f98e4bf5";
+      hash = "sha256-rjv8Zxu7V4qDtMRcwMdiYByPpFiYIRJL8N+KK/Gte+E=";
     };
     rqt_image_overlay_layer = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_image_overlay-release.git";
-      hash = "sha256-w86vqlc7t/EJJOh8aI+DT1ECcEMdvidOeDtsyDhjTXc=";
       rev = "02784b28cc1e852177b9e4d0b25b49f144422fe6";
+      hash = "sha256-w86vqlc7t/EJJOh8aI+DT1ECcEMdvidOeDtsyDhjTXc=";
     };
     rqt_image_view = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_image_view-release.git";
-      hash = "sha256-yg3Ts00hd8hELleYHejS5qrq7xSwPt9WphpSoj5mBTY=";
       rev = "44d834181b382620bcbbec51491a33d0ddb6c497";
+      hash = "sha256-yg3Ts00hd8hELleYHejS5qrq7xSwPt9WphpSoj5mBTY=";
     };
     rqt_joint_trajectory_controller = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-LWZHdXeZNSM3WDM3Joa4UniwytF3w0MI5/ypEAzB3Cg=";
       rev = "c92bca8e7658080911621d5269409ab15ab71ba6";
+      hash = "sha256-LWZHdXeZNSM3WDM3Joa4UniwytF3w0MI5/ypEAzB3Cg=";
     };
     rqt_moveit = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_moveit-release.git";
-      hash = "sha256-A4bGoHfpokKaYjSrBzvtYgzyf6sJGECfPJCIM0iZgYU=";
       rev = "907f5687d674b3f68e5590c2d0d08eddac25ec41";
+      hash = "sha256-A4bGoHfpokKaYjSrBzvtYgzyf6sJGECfPJCIM0iZgYU=";
     };
     rqt_msg = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_msg-release.git";
-      hash = "sha256-AD3nHOjjAOHbKFshSLeo7W57HAIhBjMJzfzM0woKsQk=";
       rev = "0171aafa8d1dd700e104ee98421ee4a5e4ea45d3";
+      hash = "sha256-AD3nHOjjAOHbKFshSLeo7W57HAIhBjMJzfzM0woKsQk=";
     };
     rqt_plot = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_plot-release.git";
-      hash = "sha256-VmIIMvUcQ/f00LDrrtFDer4fk/echPE3VQcf6LgSZas=";
       rev = "ca0c115bb0c90da1c6fb4d03ef88c9c223205450";
+      hash = "sha256-VmIIMvUcQ/f00LDrrtFDer4fk/echPE3VQcf6LgSZas=";
     };
     rqt_publisher = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_publisher-release.git";
-      hash = "sha256-TFsWLYSUlJfO+cj2md0qhAlWz//ATUWUdHtqV4UBbBg=";
       rev = "cb589e728965b6994e4ecc79b7bcddf738531acf";
+      hash = "sha256-TFsWLYSUlJfO+cj2md0qhAlWz//ATUWUdHtqV4UBbBg=";
     };
     rqt_py_common = fetchGit {
       url = "https://github.com/ros2-gbp/rqt-release.git";
-      hash = "sha256-H/iAtFmK7PVUTchMY43rrjinZ8FP5i2yivXA4MCdqZQ=";
       rev = "80e2f847182d27477df1159a9022413c4fcfd186";
+      hash = "sha256-H/iAtFmK7PVUTchMY43rrjinZ8FP5i2yivXA4MCdqZQ=";
     };
     rqt_py_console = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_py_console-release.git";
-      hash = "sha256-DmiST+nR2HDVS8cVQioQqII2/Kt+zIocmOUuhtsYGgY=";
       rev = "7ee2c10f1fdbe6e5dc8fd76689d626cd9ea08d45";
+      hash = "sha256-DmiST+nR2HDVS8cVQioQqII2/Kt+zIocmOUuhtsYGgY=";
     };
     rqt_reconfigure = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_reconfigure-release.git";
-      hash = "sha256-rtGFPpkjpqWFtwS3+dluHUc6chX6awVufZbN1zksUJM=";
       rev = "a7fa894fe92c07f1c317c593830ae7d31bcc59ad";
+      hash = "sha256-rtGFPpkjpqWFtwS3+dluHUc6chX6awVufZbN1zksUJM=";
     };
     rqt_robot_dashboard = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_robot_dashboard-release.git";
-      hash = "sha256-o2FskVGSpDLTcYD8PlfRgHpBlDa3UId/Xq+IlAvaZGY=";
       rev = "9af87622aa4d2f3d538fb7353965bb5e49686d92";
+      hash = "sha256-o2FskVGSpDLTcYD8PlfRgHpBlDa3UId/Xq+IlAvaZGY=";
     };
     rqt_robot_monitor = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_robot_monitor-release.git";
-      hash = "sha256-8SFE5pix0PTYkcufr7ovmE/HYmjWyGUdT073Kolmm4I=";
       rev = "1841f5ee767e52b37a7884478766445acad7b0a5";
+      hash = "sha256-8SFE5pix0PTYkcufr7ovmE/HYmjWyGUdT073Kolmm4I=";
     };
     rqt_robot_steering = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_robot_steering-release.git";
-      hash = "sha256-GQCdfFYxE/yR3Eostcf+T9VKwP2N45EzidAhXz5uVrw=";
       rev = "0bbc8ad54804819c3b35ca495bc285825d9a0b03";
+      hash = "sha256-GQCdfFYxE/yR3Eostcf+T9VKwP2N45EzidAhXz5uVrw=";
     };
     rqt_runtime_monitor = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_runtime_monitor-release.git";
-      hash = "sha256-7LyebmhKcj1ltMsj4LbDUxXX5v9ejuW4g4lIKitP28Q=";
       rev = "f30d349549c838cdf2f7ff70e8e3c1d6c49c028f";
+      hash = "sha256-7LyebmhKcj1ltMsj4LbDUxXX5v9ejuW4g4lIKitP28Q=";
     };
     rqt_service_caller = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_service_caller-release.git";
-      hash = "sha256-SkbOwJQXbq432M9Ogjsl0vOfVi+A35O7CltyhS/2lk8=";
       rev = "e98925d2967198ddbd60bb9df580fd8dff129f3d";
+      hash = "sha256-SkbOwJQXbq432M9Ogjsl0vOfVi+A35O7CltyhS/2lk8=";
     };
     rqt_shell = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_shell-release.git";
-      hash = "sha256-PrYmOnuXCXtk1fSjFdX/IY2yiWZtCWukgeHIycvxpEY=";
       rev = "6dc71a67c66af28d53271088c3eb566d31b883a6";
+      hash = "sha256-PrYmOnuXCXtk1fSjFdX/IY2yiWZtCWukgeHIycvxpEY=";
     };
     rqt_srv = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_srv-release.git";
-      hash = "sha256-sb6x9v14bi5IE3lj47VcC0k7Asl/8ue55fXQ7xMqvDk=";
       rev = "a139307d763dc09a9e001d93d3ba014726cbbc9f";
+      hash = "sha256-sb6x9v14bi5IE3lj47VcC0k7Asl/8ue55fXQ7xMqvDk=";
     };
     rqt_tf_tree = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_tf_tree-release.git";
-      hash = "sha256-waY5Aa3qycV9O2EEFcztdpfuu+CFOxb42p7gI/IuZUU=";
       rev = "bddd1dc3eb5c80eae48a68e9701110d3e5832e0c";
+      hash = "sha256-waY5Aa3qycV9O2EEFcztdpfuu+CFOxb42p7gI/IuZUU=";
     };
     rqt_topic = fetchGit {
       url = "https://github.com/ros2-gbp/rqt_topic-release.git";
-      hash = "sha256-1GUkB2gBxpzqAS5sfsL4iVAvf+2hN5+x2nwVzfr6ojQ=";
       rev = "412d3f7290b3bfefc12c991589ca10044ea64252";
+      hash = "sha256-1GUkB2gBxpzqAS5sfsL4iVAvf+2hN5+x2nwVzfr6ojQ=";
     };
     rsl = fetchGit {
       url = "https://github.com/ros2-gbp/RSL-release.git";
-      hash = "sha256-E8+8s6cFca2isl5g5q2OD85VomBeUfxjFIb3we5RUTA=";
       rev = "c14d264098040784eb396e61c4d6a6ecdb0896cd";
+      hash = "sha256-E8+8s6cFca2isl5g5q2OD85VomBeUfxjFIb3we5RUTA=";
     };
     rt_manipulators_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/rt_manipulators_cpp-release.git";
-      hash = "sha256-YUJkRUHMLukwe5vyCr9kFhmmkkBb/ezgelg3SKIop3w=";
       rev = "bb2d50792170208923b06cfb63055701e6f17baa";
+      hash = "sha256-YUJkRUHMLukwe5vyCr9kFhmmkkBb/ezgelg3SKIop3w=";
     };
     rt_manipulators_examples = fetchGit {
       url = "https://github.com/ros2-gbp/rt_manipulators_cpp-release.git";
-      hash = "sha256-dHVhmshZaD7z/hfD5tLkvXw6mehXEQSlivgKwLZ4YZM=";
       rev = "9a5622cda1c32f88ff33ebd4055f911337754914";
+      hash = "sha256-dHVhmshZaD7z/hfD5tLkvXw6mehXEQSlivgKwLZ4YZM=";
     };
     rtabmap = fetchGit {
       url = "https://github.com/ros2-gbp/rtabmap-release.git";
-      hash = "sha256-ou+qifSp8gCqbYK6Uppq7AKnRmdBcP7MPXxWBXLwLgw=";
       rev = "d02bd5ff146b7361860e71257b0f5c7e160fcd67";
+      hash = "sha256-ou+qifSp8gCqbYK6Uppq7AKnRmdBcP7MPXxWBXLwLgw=";
     };
     rtcm_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rtcm_msgs-release.git";
-      hash = "sha256-5yTtIdGostlOwChSlKKL4JivCyK284g0KYZxB6GBtBY=";
       rev = "3e17a8d363a51a20a0d8d6eb0af1879e2adf2fee";
+      hash = "sha256-5yTtIdGostlOwChSlKKL4JivCyK284g0KYZxB6GBtBY=";
     };
     rti_connext_dds_cmake_module = fetchGit {
       url = "https://github.com/ros2-gbp/rmw_connextdds-release.git";
-      hash = "sha256-RykpmIJ4bETrDDRubjorqi5Ls7IWS+G547VkutoTzBg=";
       rev = "7fbef60e22d457caca1ed2d7306bc51a1368bf80";
+      hash = "sha256-RykpmIJ4bETrDDRubjorqi5Ls7IWS+G547VkutoTzBg=";
     };
     rttest = fetchGit {
       url = "https://github.com/ros2-gbp/realtime_support-release.git";
-      hash = "sha256-DzzoynuB0QJTrIEO6Y6FHd2Im5vR4jSXYc/6IFcZ65o=";
       rev = "19a193b3d09bcc656177b5df025466181096871d";
+      hash = "sha256-DzzoynuB0QJTrIEO6Y6FHd2Im5vR4jSXYc/6IFcZ65o=";
     };
     ruckig = fetchGit {
       url = "https://github.com/ros2-gbp/ruckig-release.git";
-      hash = "sha256-xzv0PejVB2frTXtd7fnF72E49MOQaARx6boGHYzyVnQ=";
       rev = "6e6056ac1b4b292b397710b0c242512eaac92bd4";
+      hash = "sha256-xzv0PejVB2frTXtd7fnF72E49MOQaARx6boGHYzyVnQ=";
     };
     rviz2 = fetchGit {
       url = "https://github.com/ros2-gbp/rviz-release.git";
-      hash = "sha256-HuTaxttDGcp8bm19D66yoxHiG1qk4OJj47WZNFuhdOU=";
       rev = "c2a2008c4b2b3547bf12afefc0ad63ab495d19fb";
+      hash = "sha256-HuTaxttDGcp8bm19D66yoxHiG1qk4OJj47WZNFuhdOU=";
     };
     rviz_2d_overlay_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rviz_2d_overlay_plugins-release.git";
-      hash = "sha256-5D74IzZ2A8JXaF9VzMxWd4WryX6A8MsUtaz+3ZRBFK4=";
       rev = "d95be3fa314cb8cbff835e30b8558cd4cd04670a";
+      hash = "sha256-5D74IzZ2A8JXaF9VzMxWd4WryX6A8MsUtaz+3ZRBFK4=";
     };
     rviz_2d_overlay_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/rviz_2d_overlay_plugins-release.git";
-      hash = "sha256-5KPjUMZyqAgUXuO87e61O6tTFRDf9qA4oCK56AOXXPE=";
       rev = "ef1d6cf9de03f4c0db3a7f47cdde9ed6bde6208e";
+      hash = "sha256-5KPjUMZyqAgUXuO87e61O6tTFRDf9qA4oCK56AOXXPE=";
     };
     rviz_assimp_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/rviz-release.git";
-      hash = "sha256-u9JD903yl+ICtk2/KX/RkX+ZNHHP9vcdPE/8fZLG/eo=";
       rev = "172ad6402665d7e348d56e0c523c2f2f7c412e7b";
+      hash = "sha256-u9JD903yl+ICtk2/KX/RkX+ZNHHP9vcdPE/8fZLG/eo=";
     };
     rviz_common = fetchGit {
       url = "https://github.com/ros2-gbp/rviz-release.git";
-      hash = "sha256-dHNDb5/9g9jE9i/hOYlQGNqVeOdceLjpfBDhqba0Z9I=";
       rev = "416a89affad7b458afd88e87a5f2e6224d19395a";
+      hash = "sha256-dHNDb5/9g9jE9i/hOYlQGNqVeOdceLjpfBDhqba0Z9I=";
     };
     rviz_default_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/rviz-release.git";
-      hash = "sha256-+ZqUYfk4OxL/BW/woH4t/Nz6PiBapRm7SP5PUk7ji70=";
       rev = "9a1167cd2978f5fd0b0c06c4b8b18de88eebf3f1";
+      hash = "sha256-+ZqUYfk4OxL/BW/woH4t/Nz6PiBapRm7SP5PUk7ji70=";
     };
     rviz_imu_plugin = fetchGit {
       url = "https://github.com/ros2-gbp/imu_tools-release.git";
-      hash = "sha256-PTP1jn127e3dBx0iCfyHU2gcO709T+HE0I+CZyIHCJY=";
       rev = "53a0f03e5450e57519355b0c71ba1d9eddeac71d";
+      hash = "sha256-PTP1jn127e3dBx0iCfyHU2gcO709T+HE0I+CZyIHCJY=";
     };
     rviz_ogre_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/rviz-release.git";
-      hash = "sha256-1DkCwlnSLGJcNPhyfFqcXN6Iu+zp5KnCobzsEDH5/DI=";
       rev = "4d4dec1a3a3d4a9c3a39b046f132b23381835a4b";
+      hash = "sha256-1DkCwlnSLGJcNPhyfFqcXN6Iu+zp5KnCobzsEDH5/DI=";
     };
     rviz_rendering = fetchGit {
       url = "https://github.com/ros2-gbp/rviz-release.git";
-      hash = "sha256-IFWE/1W66Kp2cdIr7vA592jOAPG/KD/Uz+ql4yv84EA=";
       rev = "e574fce37e5946b318cc3128ad1d3a844545c20a";
+      hash = "sha256-IFWE/1W66Kp2cdIr7vA592jOAPG/KD/Uz+ql4yv84EA=";
     };
     rviz_rendering_tests = fetchGit {
       url = "https://github.com/ros2-gbp/rviz-release.git";
-      hash = "sha256-eusKrbZwgdP/jsUXsg9JZCeUt+8ibtBGJTkvu2jsDpY=";
       rev = "1e6f76886d7c4708eba32c16be5ba92dd04034c2";
+      hash = "sha256-eusKrbZwgdP/jsUXsg9JZCeUt+8ibtBGJTkvu2jsDpY=";
     };
     rviz_satellite = fetchGit {
       url = "https://github.com/nobleo/rviz_satellite-release.git";
-      hash = "sha256-1btiDvrU9NYm/CgsMa3Vwu6Fv4zgHc7A7OhZgKy8MBU=";
       rev = "6ac71e291cd5d616e2369c91b69abd5b442d3999";
+      hash = "sha256-1btiDvrU9NYm/CgsMa3Vwu6Fv4zgHc7A7OhZgKy8MBU=";
     };
     rviz_visual_testing_framework = fetchGit {
       url = "https://github.com/ros2-gbp/rviz-release.git";
-      hash = "sha256-/t1vSUdYOrL2gikocaCfD6WubpGLRsQznGq8biSZc3Q=";
       rev = "1740c69709f4d9c9dbbdca7ab78a6efabc65c2d4";
+      hash = "sha256-/t1vSUdYOrL2gikocaCfD6WubpGLRsQznGq8biSZc3Q=";
     };
     rviz_visual_tools = fetchGit {
       url = "https://github.com/ros2-gbp/rviz_visual_tools-release.git";
-      hash = "sha256-tVfPKQNpM962nm3D4nPbalanEed98pZ6A4v4ySC79yI=";
       rev = "2e05b97387c407ea702931822cc02c3f29dea126";
+      hash = "sha256-tVfPKQNpM962nm3D4nPbalanEed98pZ6A4v4ySC79yI=";
     };
     sdformat_test_files = fetchGit {
       url = "https://github.com/ros2-gbp/sdformat_urdf-release.git";
-      hash = "sha256-mSjrs/uxaDwGlXpCRMQumT42Y93HGoSMp9QYSk9aTD8=";
       rev = "8c299f750f424fdc4c3f0f040c8f9cf222b0299d";
+      hash = "sha256-mSjrs/uxaDwGlXpCRMQumT42Y93HGoSMp9QYSk9aTD8=";
     };
     sdformat_urdf = fetchGit {
       url = "https://github.com/ros2-gbp/sdformat_urdf-release.git";
-      hash = "sha256-QJfr03O+ead4T8Bj6BazQbRKJsmW3J6I9g1XWtun6Us=";
       rev = "d923456c7a3c40a1cf8b8c32e52f9838c95ddfde";
+      hash = "sha256-QJfr03O+ead4T8Bj6BazQbRKJsmW3J6I9g1XWtun6Us=";
     };
     sdformat_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/sdformat_vendor-release.git";
-      hash = "sha256-Hcyl+RxJjbYOH+rjkk7RIL0EB/KFOhE3Sc3fSG/LplE=";
       rev = "add2e5a2002981b0b5ff89d4a258cce150e8241f";
+      hash = "sha256-Hcyl+RxJjbYOH+rjkk7RIL0EB/KFOhE3Sc3fSG/LplE=";
     };
     sdl2_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/joystick_drivers-release.git";
-      hash = "sha256-FPIFbwhynn0Z2eddBdAgdM0oExj1aEQTgF2n59zGr40=";
       rev = "bf998888b1b75e03fe402bfefb8ccb9f0649de5a";
+      hash = "sha256-FPIFbwhynn0Z2eddBdAgdM0oExj1aEQTgF2n59zGr40=";
     };
     self_test = fetchGit {
       url = "https://github.com/ros2-gbp/diagnostics-release.git";
-      hash = "sha256-guP8WukpjpeqdkhbouP0zyrSmpbOZ3FV2Hh+oKK+oDI=";
       rev = "ed1378c9aea4b4842ab523e4bf35f8818464da46";
+      hash = "sha256-guP8WukpjpeqdkhbouP0zyrSmpbOZ3FV2Hh+oKK+oDI=";
     };
     sensor_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/common_interfaces-release.git";
-      hash = "sha256-hszAgR55yQyD6P85LEtYsMVCaf4OpnWk0gS5G8tjEdk=";
       rev = "25593c7bb356cae9badacb11b6598a0b1b639901";
+      hash = "sha256-hszAgR55yQyD6P85LEtYsMVCaf4OpnWk0gS5G8tjEdk=";
     };
     sensor_msgs_py = fetchGit {
       url = "https://github.com/ros2-gbp/common_interfaces-release.git";
-      hash = "sha256-RyIafHfr3e2zSJlKB8OoYweMJErq7q9KrJqK/fGSmLo=";
       rev = "6c3323e5153a1c9c6dd9f54bdbbb039fde31873a";
+      hash = "sha256-RyIafHfr3e2zSJlKB8OoYweMJErq7q9KrJqK/fGSmLo=";
     };
     septentrio_gnss_driver = fetchGit {
       url = "https://github.com/ros2-gbp/septentrio_gnss_driver_ros2-release.git";
-      hash = "sha256-Niu7hKw+RoX5arAfszLzwSA7s386DFt5rV01ULTfYrs=";
       rev = "cafe531cf88f44cd615c78b2951163c8d57f31ff";
+      hash = "sha256-Niu7hKw+RoX5arAfszLzwSA7s386DFt5rV01ULTfYrs=";
     };
     serial_driver = fetchGit {
       url = "https://github.com/ros2-gbp/transport_drivers-release.git";
-      hash = "sha256-1Oc6jtsGEX0Jaxqs7jdlxu/nZJxZPxvagRST+L9bdwI=";
       rev = "cf792907df67d7d479e8c5bd069e0a148657da03";
+      hash = "sha256-1Oc6jtsGEX0Jaxqs7jdlxu/nZJxZPxvagRST+L9bdwI=";
     };
     service_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rcl_interfaces-release.git";
-      hash = "sha256-SovP7aJEnj43eO5TW1SAqqteW/DQtfYWtr9rP9mJn/k=";
       rev = "12ada02c781e18aef01dc69973206662fc87ab4b";
+      hash = "sha256-SovP7aJEnj43eO5TW1SAqqteW/DQtfYWtr9rP9mJn/k=";
     };
     shape_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/common_interfaces-release.git";
-      hash = "sha256-rs1GqK5oBr04xDLis20P/Ym2CrxVsS+UgNrnVCMDKb0=";
       rev = "79f7106056e38493dc72b9ab32567657a1b2bead";
+      hash = "sha256-rs1GqK5oBr04xDLis20P/Ym2CrxVsS+UgNrnVCMDKb0=";
     };
     shared_queues_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-BrWsI3yFX/Qg+13ZAMwMXRBH47qhG+nVbHpuNHNjM0k=";
       rev = "b6134b7292a65ce2151f04b7b7faa20cbb4f1df1";
+      hash = "sha256-BrWsI3yFX/Qg+13ZAMwMXRBH47qhG+nVbHpuNHNjM0k=";
     };
     sick_safevisionary_base = fetchGit {
       url = "https://github.com/ros2-gbp/sick_safevisionary_base-release.git";
-      hash = "sha256-EMtEy8XLykxcLHYCPgk6Ralivtfddx0U4aPIsdnxSlc=";
       rev = "1ab4169f71f6ad75a790b1c8ec712bea04d694d6";
+      hash = "sha256-EMtEy8XLykxcLHYCPgk6Ralivtfddx0U4aPIsdnxSlc=";
     };
     sick_safevisionary_driver = fetchGit {
       url = "https://github.com/ros2-gbp/sick_safevisionary_ros2-release.git";
-      hash = "sha256-+JkVULStq1kUDR609jEbn44uWsjZ4O5x1ogtxSHoM8Y=";
       rev = "88de2851a6fc1871b02acf8d5984603a7609b555";
+      hash = "sha256-+JkVULStq1kUDR609jEbn44uWsjZ4O5x1ogtxSHoM8Y=";
     };
     sick_safevisionary_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/sick_safevisionary_ros2-release.git";
-      hash = "sha256-7qiJXkBhZMJSxhYrVSgDCUBskK0DEX4aQAixkvpRaP4=";
       rev = "93072eb8bf6cd41df6e4e8a173b0abdc0c400325";
+      hash = "sha256-7qiJXkBhZMJSxhYrVSgDCUBskK0DEX4aQAixkvpRaP4=";
     };
     sick_safevisionary_tests = fetchGit {
       url = "https://github.com/ros2-gbp/sick_safevisionary_ros2-release.git";
-      hash = "sha256-Q8HR5ihqZXIb5vP+goYKCgxgf635GsyPBnh2t5oPkgI=";
       rev = "b65cb75ceb9c334712556b496bec8b5e36f089ec";
+      hash = "sha256-Q8HR5ihqZXIb5vP+goYKCgxgf635GsyPBnh2t5oPkgI=";
     };
     sick_scan_xd = fetchGit {
       url = "https://github.com/ros2-gbp/sick_scan_xd-release.git";
-      hash = "sha256-BsB3KIayNL+JY+49OzB9j4yJ7VZdJiosk2Oqbu3V6OI=";
       rev = "920e922b859d04cc93976e6f5cfca7f456350265";
+      hash = "sha256-BsB3KIayNL+JY+49OzB9j4yJ7VZdJiosk2Oqbu3V6OI=";
     };
     simple_actions = fetchGit {
       url = "https://github.com/ros2-gbp/simple_actions-release.git";
-      hash = "sha256-g9TlS44Lr3KdSWRB3wnibXGgKPYkTq996gaI+anSw7g=";
       rev = "c7252cf610f126324e386373d40978d43cd29abe";
+      hash = "sha256-g9TlS44Lr3KdSWRB3wnibXGgKPYkTq996gaI+anSw7g=";
     };
     simple_launch = fetchGit {
       url = "https://github.com/ros2-gbp/simple_launch-release.git";
-      hash = "sha256-6W/jg30bsrTBiV+5p6/AaFd29TgtIaowVp8xr3FIWB0=";
       rev = "301e7308560a163b20efe0d0d31436c18872c19e";
+      hash = "sha256-6W/jg30bsrTBiV+5p6/AaFd29TgtIaowVp8xr3FIWB0=";
     };
     simulation = fetchGit {
       url = "https://github.com/ros2-gbp/variants-release.git";
-      hash = "sha256-F5Xdwf30yp+svq3b6jwcfeMbm+oLQKi9hw3ZkozBy68=";
       rev = "a3513af0b98ac4456aeeb919c038ab17b02c3fbb";
+      hash = "sha256-F5Xdwf30yp+svq3b6jwcfeMbm+oLQKi9hw3ZkozBy68=";
     };
     slam_toolbox = fetchGit {
       url = "https://github.com/SteveMacenski/slam_toolbox-release.git";
-      hash = "sha256-XuG5qBercHsZopAr/jEnaSer+0FrgZ0DhIdnHt+thkE=";
       rev = "1e73a216a61722acd0b77d7ef25759db4b183dc4";
+      hash = "sha256-XuG5qBercHsZopAr/jEnaSer+0FrgZ0DhIdnHt+thkE=";
     };
     slider_publisher = fetchGit {
       url = "https://github.com/ros2-gbp/slider_publisher-release.git";
-      hash = "sha256-t3ye55W5XqkQUd/eAabhQKJUazIAi3ly0BsO7vpuHu4=";
       rev = "8987416044584eb2e10d013016a80b431a5f0265";
+      hash = "sha256-t3ye55W5XqkQUd/eAabhQKJUazIAi3ly0BsO7vpuHu4=";
     };
     smach = fetchGit {
       url = "https://github.com/ros2-gbp/executive_smach-release.git";
-      hash = "sha256-vyRxq6EM6nOhjwQFIV+ikGPs5Wr0pb7e9iAq8+R8cwo=";
       rev = "b15e2d1392843c513a463dce44ef17bf45b1c103";
+      hash = "sha256-vyRxq6EM6nOhjwQFIV+ikGPs5Wr0pb7e9iAq8+R8cwo=";
     };
     smach_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/executive_smach-release.git";
-      hash = "sha256-GO/kVPGJMyEujXHxScev2o0WXzzzWX0rZHWTMJTPCwg=";
       rev = "e4906ce6c6e13e5c028b738e8f00b7b518a5d76e";
+      hash = "sha256-GO/kVPGJMyEujXHxScev2o0WXzzzWX0rZHWTMJTPCwg=";
     };
     smach_ros = fetchGit {
       url = "https://github.com/ros2-gbp/executive_smach-release.git";
-      hash = "sha256-T0yVHzrZV1N2ejjOTANcS1gUlVKrvGgoMD+On5KNoHo=";
       rev = "d16b3bef96ff7b3cac35e8f8ec771f6503498842";
+      hash = "sha256-T0yVHzrZV1N2ejjOTANcS1gUlVKrvGgoMD+On5KNoHo=";
     };
     smclib = fetchGit {
       url = "https://github.com/ros2-gbp/bond_core-release.git";
-      hash = "sha256-0GdXtzthCDeBP6DCt4Gd6e86nzEmrdCJNLuxyDTGGK4=";
       rev = "1790dcfb4e6720bdaf5630dd1a47c4d73ca5f255";
+      hash = "sha256-0GdXtzthCDeBP6DCt4Gd6e86nzEmrdCJNLuxyDTGGK4=";
     };
     snowbot_operating_system = fetchGit {
       url = "https://github.com/ros2-gbp/snowbot_release.git";
-      hash = "sha256-jsc6W+E4XVtTLGd+ZSn45ChfZmV6/c9nUg1FpqA6d8s=";
       rev = "df8b6b2679855c245fb9cb9e6f80612438815599";
+      hash = "sha256-jsc6W+E4XVtTLGd+ZSn45ChfZmV6/c9nUg1FpqA6d8s=";
     };
     soccer_geometry_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/soccer_interfaces-release.git";
-      hash = "sha256-gMowKNUK3HPz9hWgGtJ8VWq8btZTIYly2Ydi23VUsdA=";
       rev = "889363aa5db8950eaa22156ff7e66d46ab9acc61";
+      hash = "sha256-gMowKNUK3HPz9hWgGtJ8VWq8btZTIYly2Ydi23VUsdA=";
     };
     soccer_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/soccer_interfaces-release.git";
-      hash = "sha256-Qyw6VmsZdw+IhJM06b4fGhTFvxrT63DWIjEjqtmU8oI=";
       rev = "487f6200cb1c1e90d8270b7631a4a64a8236a437";
+      hash = "sha256-Qyw6VmsZdw+IhJM06b4fGhTFvxrT63DWIjEjqtmU8oI=";
     };
     soccer_model_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/soccer_interfaces-release.git";
-      hash = "sha256-CGzaSmn0XKOI2Vq0FoGUiKLfqeE3RryN6A+WRhir8+E=";
       rev = "ebf0e34af5420aeb209be524c5792b13da56c101";
+      hash = "sha256-CGzaSmn0XKOI2Vq0FoGUiKLfqeE3RryN6A+WRhir8+E=";
     };
     soccer_vision_2d_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/soccer_interfaces-release.git";
-      hash = "sha256-em8g5g678f+FbD3DqO9JWOOeAsMRCYf+KT4Uo7ZFh1g=";
       rev = "c7037ba9eb39939b2e5008c671d14566ff53b9cc";
+      hash = "sha256-em8g5g678f+FbD3DqO9JWOOeAsMRCYf+KT4Uo7ZFh1g=";
     };
     soccer_vision_3d_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/soccer_interfaces-release.git";
-      hash = "sha256-mefLwquylSQ8WewNihJ2SMPAIUXP2T1Ye+Q7n9q7b8c=";
       rev = "53e5c907b54c8767acd236cc367a537656904b95";
+      hash = "sha256-mefLwquylSQ8WewNihJ2SMPAIUXP2T1Ye+Q7n9q7b8c=";
     };
     soccer_vision_3d_rviz_markers = fetchGit {
       url = "https://github.com/ros2-gbp/soccer_vision_3d_rviz_markers-release.git";
-      hash = "sha256-69FCCxAxZa6hSkchZAWrsNb7uNruIRhwkIConj14Ue4=";
       rev = "0f9e4a04b95b9a0bb158ed0d6529cd8ce72cea53";
+      hash = "sha256-69FCCxAxZa6hSkchZAWrsNb7uNruIRhwkIConj14Ue4=";
     };
     soccer_vision_attribute_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/soccer_interfaces-release.git";
-      hash = "sha256-9qP2U6SUU5zrVvt+xkbzRF6iJCxm6YSfeUBgsj29Hf8=";
       rev = "f44eead2de262caf02988809719f54cf89f5d8d7";
+      hash = "sha256-9qP2U6SUU5zrVvt+xkbzRF6iJCxm6YSfeUBgsj29Hf8=";
     };
     sol_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/sol_vendor-release.git";
-      hash = "sha256-KyC2VV3zPu3hKaonkepXXm9mAKqTakBjLDSdKBEh4Os=";
       rev = "7032049f388b7782d9c969c8b11371e07c40d61e";
+      hash = "sha256-KyC2VV3zPu3hKaonkepXXm9mAKqTakBjLDSdKBEh4Os=";
     };
     sophus = fetchGit {
       url = "https://github.com/ros2-gbp/sophus-release.git";
-      hash = "sha256-xTS2ysDs9SSKpvKrxnhooJVtfpwRvYCuMpbFc4skbDM=";
       rev = "39c729040cd2c3720879b0df85f162c4ac789877";
+      hash = "sha256-xTS2ysDs9SSKpvKrxnhooJVtfpwRvYCuMpbFc4skbDM=";
     };
     spacenav = fetchGit {
       url = "https://github.com/ros2-gbp/joystick_drivers-release.git";
-      hash = "sha256-5WXkdmHcAdaPaMSMNcTfScbDq9VNmFSb7jofUAAHyAk=";
       rev = "7d9a402af6c74eeef6f7290a9becb946963bc807";
+      hash = "sha256-5WXkdmHcAdaPaMSMNcTfScbDq9VNmFSb7jofUAAHyAk=";
     };
     spdlog_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/spdlog_vendor-release.git";
-      hash = "sha256-0BY6luUFbdOJPREolo3FR1ZYPXi1nZG1OB84R+VkFiQ=";
       rev = "5044abc0cdde628dce0ebf8cff7f571d27878c14";
+      hash = "sha256-0BY6luUFbdOJPREolo3FR1ZYPXi1nZG1OB84R+VkFiQ=";
     };
     spinnaker_camera_driver = fetchGit {
       url = "https://github.com/ros2-gbp/flir_camera_driver-release.git";
-      hash = "sha256-MTLkSEO/NkdU6Fa/1zhCvcWbcyRFQ58qqX66+pGBmdk=";
       rev = "7c6a3104f5cc1e7f807d2533cda87da5bf75e416";
+      hash = "sha256-MTLkSEO/NkdU6Fa/1zhCvcWbcyRFQ58qqX66+pGBmdk=";
     };
     spinnaker_synchronized_camera_driver = fetchGit {
       url = "https://github.com/ros2-gbp/flir_camera_driver-release.git";
-      hash = "sha256-00at/VcWxA8N7f7Y/CHRtm6A7EnyL3p5j1qVoksz4R4=";
       rev = "35e568dc85cd1e7f018ed43e0fee98b7399419c8";
+      hash = "sha256-00at/VcWxA8N7f7Y/CHRtm6A7EnyL3p5j1qVoksz4R4=";
     };
     splsm_7 = fetchGit {
       url = "https://github.com/ros2-gbp/r2r_spl-release.git";
-      hash = "sha256-mJ9R0CRbOAigpJZL+lmcW5OrC4wfPc83FiMx8+NKjwY=";
       rev = "ad902c08fe13db07fdacf98d2f6e641fda5fea40";
+      hash = "sha256-mJ9R0CRbOAigpJZL+lmcW5OrC4wfPc83FiMx8+NKjwY=";
     };
     splsm_7_conversion = fetchGit {
       url = "https://github.com/ros2-gbp/r2r_spl-release.git";
-      hash = "sha256-hot8TlsdjVjgyVkdoUFaIy47vVP67OUYUwJHsdfSm0M=";
       rev = "dfb857922a764e55bb98304008cfc9066660c501";
+      hash = "sha256-hot8TlsdjVjgyVkdoUFaIy47vVP67OUYUwJHsdfSm0M=";
     };
     sqlite3_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-nhY+4MfnCPiP6YX0UpUyLfMMaDi9VhUOX6ePMFU2IaA=";
       rev = "fbfd03994971b73ad7da2680adf4ca01bd9855b1";
+      hash = "sha256-nhY+4MfnCPiP6YX0UpUyLfMMaDi9VhUOX6ePMFU2IaA=";
     };
     srdfdom = fetchGit {
       url = "https://github.com/ros2-gbp/srdfdom-release.git";
-      hash = "sha256-4SrjgL5tauV2LvLisilSnXwyD2qTdhVdYDtH8D/69yg=";
       rev = "6817f4b07d5c39f06de2a713efb0b3264e8cb10c";
+      hash = "sha256-4SrjgL5tauV2LvLisilSnXwyD2qTdhVdYDtH8D/69yg=";
     };
     sros2 = fetchGit {
       url = "https://github.com/ros2-gbp/sros2-release.git";
-      hash = "sha256-AFBegFKnVMDaE0Y8vtfiJv+gfqwvz088nnAIG4U5u50=";
       rev = "3a92a9b9cc2f7dcf45cb81837d02f4bd4b1025d5";
+      hash = "sha256-AFBegFKnVMDaE0Y8vtfiJv+gfqwvz088nnAIG4U5u50=";
     };
     sros2_cmake = fetchGit {
       url = "https://github.com/ros2-gbp/sros2-release.git";
-      hash = "sha256-Lk74feQcy27POAavf9+1v/TP/9b5J0tRA/mb7qTBdH0=";
       rev = "1a083aac5944c3e33072b5dd99adf8d9d1c3b076";
+      hash = "sha256-Lk74feQcy27POAavf9+1v/TP/9b5J0tRA/mb7qTBdH0=";
     };
     statistics_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rcl_interfaces-release.git";
-      hash = "sha256-UcbiXBuVNpueB6FiqFoeqrJbmQb7HE6x1f4ZWlQ2U7U=";
       rev = "bf5c981ef3868ed225cf3f713e4724c67397ae4c";
+      hash = "sha256-UcbiXBuVNpueB6FiqFoeqrJbmQb7HE6x1f4ZWlQ2U7U=";
     };
     std_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/common_interfaces-release.git";
-      hash = "sha256-qujzcYOInYZiNTUVuim1nJOC0QVdfbwKE8n0e2qBsco=";
       rev = "15bc7a0227f9937e286719154fdba18501cb7b11";
+      hash = "sha256-qujzcYOInYZiNTUVuim1nJOC0QVdfbwKE8n0e2qBsco=";
     };
     std_srvs = fetchGit {
       url = "https://github.com/ros2-gbp/common_interfaces-release.git";
-      hash = "sha256-vZj9EDZ4Q3C4tcVlUQ7EJdMmxFJ6yAnuNdvztWjedfA=";
       rev = "8fc86bed667466d9fc6f8d56c36be60bcc6f59f2";
+      hash = "sha256-vZj9EDZ4Q3C4tcVlUQ7EJdMmxFJ6yAnuNdvztWjedfA=";
     };
     steering_controllers_library = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-uL4d6msbxguKG1sNEilVgjtznFoTCnPPla0tPYUo5OA=";
       rev = "868ac382f6ca7854f164d4ece0ce8c1614eecbea";
+      hash = "sha256-uL4d6msbxguKG1sNEilVgjtznFoTCnPPla0tPYUo5OA=";
     };
     steering_functions = fetchGit {
       url = "https://github.com/ros2-gbp/steering_functions-release.git";
-      hash = "sha256-pU2fKTdPvxp9CHgQpy478rFkO/GvfwD54b2lnQlOAcE=";
       rev = "6bc9fd51c83a1040d0e1a7f66aca7dfa3a716611";
+      hash = "sha256-pU2fKTdPvxp9CHgQpy478rFkO/GvfwD54b2lnQlOAcE=";
     };
     stereo_image_proc = fetchGit {
       url = "https://github.com/ros2-gbp/image_pipeline-release.git";
-      hash = "sha256-8qUBfw7ljSXA0wPEooeF8DWmGJ5tbVRBG9Hh0Nzqyeg=";
       rev = "ef8e572e7b89d015b0c81c98f5bee900d2b34d02";
+      hash = "sha256-8qUBfw7ljSXA0wPEooeF8DWmGJ5tbVRBG9Hh0Nzqyeg=";
     };
     stereo_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/common_interfaces-release.git";
-      hash = "sha256-pslCBNIHA/ok2N2kdjY3FQeLs6/snomzRWKXWnE/iTc=";
       rev = "ac381a89e37baac54f65169fb5eadfb197b5788f";
+      hash = "sha256-pslCBNIHA/ok2N2kdjY3FQeLs6/snomzRWKXWnE/iTc=";
     };
     stomp = fetchGit {
       url = "https://github.com/ros2-gbp/stomp-release.git";
-      hash = "sha256-SMIxIQFBhVkKNSvnxdsAWw5pg4rc6p5xSsSck1Ig4Y8=";
       rev = "699543c259979d6b331206a37941d78cd3122b0e";
+      hash = "sha256-SMIxIQFBhVkKNSvnxdsAWw5pg4rc6p5xSsSck1Ig4Y8=";
     };
     swri_cli_tools = fetchGit {
       url = "https://github.com/ros2-gbp/marti_common-release.git";
-      hash = "sha256-QwxRWoZHoEeWtgjiih1KGtL4z0gAytUMI9yLK2eIJ6Q=";
       rev = "a0e5e084aba56079a5ede4e19907b9ad8ac34ad6";
+      hash = "sha256-QwxRWoZHoEeWtgjiih1KGtL4z0gAytUMI9yLK2eIJ6Q=";
     };
     swri_console = fetchGit {
       url = "https://github.com/ros2-gbp/swri_console-release.git";
-      hash = "sha256-zA1cDmzrE6co8sEykB922TKHYC0Dzkqfp9Re4OUxMqk=";
       rev = "20be76e51b6c435fc46410a6752bfab906339e97";
+      hash = "sha256-zA1cDmzrE6co8sEykB922TKHYC0Dzkqfp9Re4OUxMqk=";
     };
     swri_console_util = fetchGit {
       url = "https://github.com/ros2-gbp/marti_common-release.git";
-      hash = "sha256-KFD9ZDITUVdWMKo6Oul0LEf5o467diDWXltVYaRSLyQ=";
       rev = "a21ce415ca1c9f884e0ace562d6ffbf738ca5df7";
+      hash = "sha256-KFD9ZDITUVdWMKo6Oul0LEf5o467diDWXltVYaRSLyQ=";
     };
     swri_dbw_interface = fetchGit {
       url = "https://github.com/ros2-gbp/marti_common-release.git";
-      hash = "sha256-R/3o8fpxmCNv/RZhQcYoxeioiuK0u0WprDMKuyYGpyc=";
       rev = "4c34a7399b0ed6f3585e2a3a8e1ec412a40e4584";
+      hash = "sha256-R/3o8fpxmCNv/RZhQcYoxeioiuK0u0WprDMKuyYGpyc=";
     };
     swri_geometry_util = fetchGit {
       url = "https://github.com/ros2-gbp/marti_common-release.git";
-      hash = "sha256-pz0GY5aY3hNn41PVQt01Ea+WrC/WQ0v6js4IpDasC0c=";
       rev = "ff56e2b6f3c2f936455a4a3420fbe8f8d43cebe9";
+      hash = "sha256-pz0GY5aY3hNn41PVQt01Ea+WrC/WQ0v6js4IpDasC0c=";
     };
     swri_image_util = fetchGit {
       url = "https://github.com/ros2-gbp/marti_common-release.git";
-      hash = "sha256-KZLr2L6b9CSpmepsGPkZ6D7FlyM9iUKwg7uPDQxfqK4=";
       rev = "cedd3a80526c4e68192bda1a2c2a602fda55b1d4";
+      hash = "sha256-KZLr2L6b9CSpmepsGPkZ6D7FlyM9iUKwg7uPDQxfqK4=";
     };
     swri_math_util = fetchGit {
       url = "https://github.com/ros2-gbp/marti_common-release.git";
-      hash = "sha256-H/negEcGvBrltnGov5f1eOUia7jrj9xoYDkLioffbTg=";
       rev = "21dc11b514efba72277c37121dae73d7fed1ad73";
+      hash = "sha256-H/negEcGvBrltnGov5f1eOUia7jrj9xoYDkLioffbTg=";
     };
     swri_opencv_util = fetchGit {
       url = "https://github.com/ros2-gbp/marti_common-release.git";
-      hash = "sha256-O7uegvVK9JP7juWtlT41devO/YkgnTe3FUb0VYtDDZg=";
       rev = "deb4f31aae1f85e8d468ebdef4390fc6bf5c7fff";
+      hash = "sha256-O7uegvVK9JP7juWtlT41devO/YkgnTe3FUb0VYtDDZg=";
     };
     swri_prefix_tools = fetchGit {
       url = "https://github.com/ros2-gbp/marti_common-release.git";
-      hash = "sha256-jIsfgQqTk62YMgEfLgaJB6ee4pZm5iTGxeQZ1Vi07zY=";
       rev = "3ffb96b4159dc27cfe6a4ca5ec747627525fd14b";
+      hash = "sha256-jIsfgQqTk62YMgEfLgaJB6ee4pZm5iTGxeQZ1Vi07zY=";
     };
     swri_roscpp = fetchGit {
       url = "https://github.com/ros2-gbp/marti_common-release.git";
-      hash = "sha256-IiiAye8pmAHZ4v2/7T46QwlTajRoH7m3RPlJjPuhNoY=";
       rev = "a23f24f1697a49e6bc3b7e427401dc2a84418186";
+      hash = "sha256-IiiAye8pmAHZ4v2/7T46QwlTajRoH7m3RPlJjPuhNoY=";
     };
     swri_route_util = fetchGit {
       url = "https://github.com/ros2-gbp/marti_common-release.git";
-      hash = "sha256-Opkx5/etJwnlusBl9vZeMF+M5msxpehmC4Cykze1gTQ=";
       rev = "6645839538ba5012ccd1958753a59169043646f9";
+      hash = "sha256-Opkx5/etJwnlusBl9vZeMF+M5msxpehmC4Cykze1gTQ=";
     };
     swri_serial_util = fetchGit {
       url = "https://github.com/ros2-gbp/marti_common-release.git";
-      hash = "sha256-MtfpNlZ7vE6gIf3Fg5rtl/4sDegKFpKiyBrIFCwXJy8=";
       rev = "bbac0dfc7c9cb57508e663a6c0c6d59ff2b39e15";
+      hash = "sha256-MtfpNlZ7vE6gIf3Fg5rtl/4sDegKFpKiyBrIFCwXJy8=";
     };
     swri_system_util = fetchGit {
       url = "https://github.com/ros2-gbp/marti_common-release.git";
-      hash = "sha256-S3WYBS3mwgU0LQXSc43+46DAtHiOBbXgwl4IfjI5Fuo=";
       rev = "55947affbec6fac0d7d5404c825e83976cd6a25c";
+      hash = "sha256-S3WYBS3mwgU0LQXSc43+46DAtHiOBbXgwl4IfjI5Fuo=";
     };
     swri_transform_util = fetchGit {
       url = "https://github.com/ros2-gbp/marti_common-release.git";
-      hash = "sha256-bC4r0nZwj85Y2JxDOl/WzHymbONWD96uLlidPbnTW1c=";
       rev = "0f1230b1c13063e9390695025cb4840edb4c719e";
+      hash = "sha256-bC4r0nZwj85Y2JxDOl/WzHymbONWD96uLlidPbnTW1c=";
     };
     system_fingerprint = fetchGit {
       url = "https://github.com/ros2-gbp/ros_system_fingerprint-release.git";
-      hash = "sha256-swG8fwjiFc0LXSlbA6Lml0jlh/VyNS//insRqM01fr0=";
       rev = "0dd0aeb274ee7e6ecb70a2bfa77ad6d0dd0503c2";
+      hash = "sha256-swG8fwjiFc0LXSlbA6Lml0jlh/VyNS//insRqM01fr0=";
     };
     system_modes = fetchGit {
       url = "https://github.com/ros2-gbp/system_modes-release.git";
-      hash = "sha256-0KjnR6c32kc4yM0vwAGYI1LgRZn4tLfIZSO+UE2llbM=";
       rev = "fa0c72a8417d876e4a40d82d550d329fd85f9b8a";
+      hash = "sha256-0KjnR6c32kc4yM0vwAGYI1LgRZn4tLfIZSO+UE2llbM=";
     };
     system_modes_examples = fetchGit {
       url = "https://github.com/ros2-gbp/system_modes-release.git";
-      hash = "sha256-0kfAi8ExAnUicuzTFtWKNQwRZP8qipcdbz4XUrg7EQM=";
       rev = "82dc72703a933e257875ff35ddd912ed010dc775";
+      hash = "sha256-0kfAi8ExAnUicuzTFtWKNQwRZP8qipcdbz4XUrg7EQM=";
     };
     system_modes_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/system_modes-release.git";
-      hash = "sha256-UcVnvMWo1lcz8PljlXg4m53YoUKsphq4TbfgB7Z3dgw=";
       rev = "0ca34ba1a38941ce091a31331eb78be7520efec9";
+      hash = "sha256-UcVnvMWo1lcz8PljlXg4m53YoUKsphq4TbfgB7Z3dgw=";
     };
     tango_icons_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/tango_icons_vendor-release.git";
-      hash = "sha256-AojB2C4N8d91dNC3ZqCjPlxc7h6RQQwp4qO/FzDaujM=";
       rev = "f39545a4d833fdda28ad1458496129de949c59d8";
+      hash = "sha256-AojB2C4N8d91dNC3ZqCjPlxc7h6RQQwp4qO/FzDaujM=";
     };
     tcb_span = fetchGit {
       url = "https://github.com/ros2-gbp/cpp_polyfills-release.git";
-      hash = "sha256-61JrUYgWw+LJJmryzDfZte0H+hhzDbHqOY1wEyk996Q=";
       rev = "8995fcd50c0d65df37a701dac05b1d29f7db167e";
+      hash = "sha256-61JrUYgWw+LJJmryzDfZte0H+hhzDbHqOY1wEyk996Q=";
     };
     teleop_tools = fetchGit {
       url = "https://github.com/ros2-gbp/teleop_tools-release.git";
-      hash = "sha256-WmN/i4ppTEs6mXUMJhIIuv+z4LYd+SuJ/61i+YUORhw=";
       rev = "e6b979265d244329719510fe08fe55830e0e1222";
+      hash = "sha256-WmN/i4ppTEs6mXUMJhIIuv+z4LYd+SuJ/61i+YUORhw=";
     };
     teleop_tools_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/teleop_tools-release.git";
-      hash = "sha256-3E7KDUY3Y1ahVWN0MvkVQcLut/HAjodHElxX2AGIdf8=";
       rev = "6fca1aa419b025c2373f8762dd312ead25b88c7e";
+      hash = "sha256-3E7KDUY3Y1ahVWN0MvkVQcLut/HAjodHElxX2AGIdf8=";
     };
     teleop_twist_joy = fetchGit {
       url = "https://github.com/ros2-gbp/teleop_twist_joy-release.git";
-      hash = "sha256-xwkPZBm3cKtKEe7pNLUfiL6oKZgjX5cLiIvMsB55dUs=";
       rev = "1a8356ff2ee1bc5a03aa2c3ab5bbdc6f85786a20";
+      hash = "sha256-xwkPZBm3cKtKEe7pNLUfiL6oKZgjX5cLiIvMsB55dUs=";
     };
     teleop_twist_keyboard = fetchGit {
       url = "https://github.com/ros2-gbp/teleop_twist_keyboard-release.git";
-      hash = "sha256-RIp2xSUZdrlSj/8rUnbFawM86Cz5qYfDOhW28D0mr3Q=";
       rev = "4a7be17b9cce71cb672485fb1e0afecf3bba628f";
+      hash = "sha256-RIp2xSUZdrlSj/8rUnbFawM86Cz5qYfDOhW28D0mr3Q=";
     };
     tensorrt_cmake_module = fetchGit {
       url = "https://github.com/ros2-gbp/tensorrt_cmake_module-release.git";
-      hash = "sha256-S620gK89qsxhq1mo2yFSZCD1LP45mJBLXJbCTiT5VZk=";
       rev = "24346a131e0ffd199c767dd1582fdef9af42e19c";
+      hash = "sha256-S620gK89qsxhq1mo2yFSZCD1LP45mJBLXJbCTiT5VZk=";
     };
     test_apex_test_tools = fetchGit {
       url = "https://github.com/ros2-gbp/apex_test_tools-release.git";
-      hash = "sha256-ZB2lhFknuQ+9fA1s+tCKrhHEUOnSLF2ogSsE0tVMrjE=";
       rev = "590ff5f45328eaf6331bcda20fc8edd30c7dd1a8";
+      hash = "sha256-ZB2lhFknuQ+9fA1s+tCKrhHEUOnSLF2ogSsE0tVMrjE=";
     };
     test_interface_files = fetchGit {
       url = "https://github.com/ros2-gbp/test_interface_files-release.git";
-      hash = "sha256-55oYOWFsjeO86zmwokUyJ+y79la3zhFhSRObMo+Ihj4=";
       rev = "be3978a0de425a0be5cb3530800a3d34f2fe0027";
+      hash = "sha256-55oYOWFsjeO86zmwokUyJ+y79la3zhFhSRObMo+Ihj4=";
     };
     test_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/rcl_interfaces-release.git";
-      hash = "sha256-7ptSwzU+Pw1ORsW5Zawq4gKz438/XaoJGhvKIYsrwI4=";
       rev = "949ba51a791bdd1fcc9bee93eebad446d617a89d";
+      hash = "sha256-7ptSwzU+Pw1ORsW5Zawq4gKz438/XaoJGhvKIYsrwI4=";
     };
     test_ros_gz_bridge = fetchGit {
       url = "https://github.com/ros2-gbp/ros_ign-release.git";
-      hash = "sha256-MlsNBKbiXrU3lALw/jqtJCl5hyJeGAf2CCCmwZE6jwc=";
       rev = "41e10fb58e664b11d0ddaba9ec9eab434ada35a9";
+      hash = "sha256-MlsNBKbiXrU3lALw/jqtJCl5hyJeGAf2CCCmwZE6jwc=";
     };
     tf2 = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-Jb+UxsNLB0QSOmFav6rMyiyfkTm5BnHT7sHM+CmHdjk=";
       rev = "a3cde480eeca378e3175de43b0de526b31601694";
+      hash = "sha256-Jb+UxsNLB0QSOmFav6rMyiyfkTm5BnHT7sHM+CmHdjk=";
     };
     tf2_2d = fetchGit {
       url = "https://github.com/ros2-gbp/tf2_2d-release.git";
-      hash = "sha256-4ty09wIhIUq3vI2s5th/54iRL5jTzcYeDumtwzLqeVk=";
       rev = "0fc501d87112fe781ad6945eb8c997ac317dbdd4";
+      hash = "sha256-4ty09wIhIUq3vI2s5th/54iRL5jTzcYeDumtwzLqeVk=";
     };
     tf2_bullet = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-NhnCyE+gRVQ55h676dZyFt7eYlqWLH5N4SkxF1/bcrM=";
       rev = "fa984b138aa51bfae7e066616cc08fd9291d9a50";
+      hash = "sha256-NhnCyE+gRVQ55h676dZyFt7eYlqWLH5N4SkxF1/bcrM=";
     };
     tf2_eigen = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-pgXSqFQCFNNoDKQSqj5Iy3zm1vPXuG7Hr8lFvCR3LG4=";
       rev = "fc5413683bbad63f20db3da1e788800683b3aa98";
+      hash = "sha256-pgXSqFQCFNNoDKQSqj5Iy3zm1vPXuG7Hr8lFvCR3LG4=";
     };
     tf2_eigen_kdl = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-stCQiwa7ek5lXkoU9tbHpzGhQN2wglHvNDDTozRzUa0=";
       rev = "4e1452d3f3c580368b58bf60d5ca18eb6582245e";
+      hash = "sha256-stCQiwa7ek5lXkoU9tbHpzGhQN2wglHvNDDTozRzUa0=";
     };
     tf2_geometry_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-+QObzKcNZ9ty7dJGQCLRJxrtxlgCbCr52/ETI6K3cQ0=";
       rev = "6212e5422373e1c5ec14e74e3ab1786906928261";
+      hash = "sha256-+QObzKcNZ9ty7dJGQCLRJxrtxlgCbCr52/ETI6K3cQ0=";
     };
     tf2_kdl = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-SIzfGQUX7Fpm4YXH6kf0jxFVNTxAIs9ucD2HRkZyfbg=";
       rev = "9e4418691d02feb52e72dd3144cf4d52af70a38b";
+      hash = "sha256-SIzfGQUX7Fpm4YXH6kf0jxFVNTxAIs9ucD2HRkZyfbg=";
     };
     tf2_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-xoTxLC/66w0tvk9hQtXTnCBf9YooZZ6tO6bXqqwJKmU=";
       rev = "5c767d7a075e068aded2c228d6671f3776374269";
+      hash = "sha256-xoTxLC/66w0tvk9hQtXTnCBf9YooZZ6tO6bXqqwJKmU=";
     };
     tf2_py = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-e1+9fb5F1BhljMWTl9g6uvKXX2MFX1U7Vi4m3YjK93k=";
       rev = "22c2b92c6a7e4e4c8bd5efc270e79169c44ef8e9";
+      hash = "sha256-e1+9fb5F1BhljMWTl9g6uvKXX2MFX1U7Vi4m3YjK93k=";
     };
     tf2_ros = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-ZnrXlbFoU/tpV3oVRCAjkypRda3o8UGWCBJHJVaM3FA=";
       rev = "10a3a820949d0e09cbabff6c396a0d4f7ced4163";
+      hash = "sha256-ZnrXlbFoU/tpV3oVRCAjkypRda3o8UGWCBJHJVaM3FA=";
     };
     tf2_ros_py = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-mVPYq8A85vSLPh6r8Qti+YKZ9dJBzIkHatfi4nndSKA=";
       rev = "4d145d4799c00815612cd8636f4ca17f8222aeeb";
+      hash = "sha256-mVPYq8A85vSLPh6r8Qti+YKZ9dJBzIkHatfi4nndSKA=";
     };
     tf2_sensor_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-5Tzg7LDYc2p/MY2jUUNXphcoUddtSYTQcj4pWt7m6G4=";
       rev = "1ab7128d051887663cf363c6c4c72ae8ce2feb14";
+      hash = "sha256-5Tzg7LDYc2p/MY2jUUNXphcoUddtSYTQcj4pWt7m6G4=";
     };
     tf2_tools = fetchGit {
       url = "https://github.com/ros2-gbp/geometry2-release.git";
-      hash = "sha256-dHtVvaKNOt1mxXBgaHpNzOjkyZV7NnP1S+DEbqkPvLg=";
       rev = "985d79ecc02978c993c3db46f636a34a43475721";
+      hash = "sha256-dHtVvaKNOt1mxXBgaHpNzOjkyZV7NnP1S+DEbqkPvLg=";
     };
     tf_transformations = fetchGit {
       url = "https://github.com/ros2-gbp/tf_transformations_release.git";
-      hash = "sha256-ZpntCNRY//B8eLWdIgouelBtxzP77cHw4dIl0MVnAig=";
       rev = "0c390a36be721638d407fe58ccf6248d8f2c447c";
+      hash = "sha256-ZpntCNRY//B8eLWdIgouelBtxzP77cHw4dIl0MVnAig=";
     };
     theora_image_transport = fetchGit {
       url = "https://github.com/ros2-gbp/image_transport_plugins-release.git";
-      hash = "sha256-BB3cBZFrc8n9PVh367lTsIVaFurWdmVaFE16Dwmjf7o=";
       rev = "37f0fb21a5d86a18a5369296ac4e861e1006023d";
+      hash = "sha256-BB3cBZFrc8n9PVh367lTsIVaFurWdmVaFE16Dwmjf7o=";
     };
     tile_map = fetchGit {
       url = "https://github.com/ros2-gbp/mapviz-release.git";
-      hash = "sha256-0iUL8wMHfRRc8jU2qyjNoCspfh4GFBeQQhI2FwAgF9Q=";
       rev = "1b3beab509ebdbe12474ad403d078ff79bc7441a";
+      hash = "sha256-0iUL8wMHfRRc8jU2qyjNoCspfh4GFBeQQhI2FwAgF9Q=";
     };
     tinyspline_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/tinyspline_vendor-release.git";
-      hash = "sha256-mQi06924EtNw7quRVGSQDJ2EFYqUCOsq37JO/eH/gJE=";
       rev = "a06565ed4aff7d2c19a4a058ea3f43323075b2ab";
+      hash = "sha256-mQi06924EtNw7quRVGSQDJ2EFYqUCOsq37JO/eH/gJE=";
     };
     tinyxml2_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/tinyxml2_vendor-release.git";
-      hash = "sha256-ptCYnrl38I2LTVvOgSO8OXjxfgGAen17kQSYDOgZZRQ=";
       rev = "155ed531ad0a75b6f9e1d1ee39cd80fb47e9e341";
+      hash = "sha256-ptCYnrl38I2LTVvOgSO8OXjxfgGAen17kQSYDOgZZRQ=";
     };
     tinyxml_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/tinyxml_vendor-release.git";
-      hash = "sha256-dUN/DADvU7TSwxQ/YcI/RcFlAYZ5JLYHb+TNOCpoO7k=";
       rev = "d8b6f008b165ed9bca9410f49ca500a2c865933e";
+      hash = "sha256-dUN/DADvU7TSwxQ/YcI/RcFlAYZ5JLYHb+TNOCpoO7k=";
     };
     tl_expected = fetchGit {
       url = "https://github.com/ros2-gbp/cpp_polyfills-release.git";
-      hash = "sha256-MRDjBU0WqHHPomrtLuNox0zVGvy6aMGTGO8WBV04bF8=";
       rev = "1b7fd0d9944225b12ed2d8e8840e5608a04d1997";
+      hash = "sha256-MRDjBU0WqHHPomrtLuNox0zVGvy6aMGTGO8WBV04bF8=";
     };
     tlsf = fetchGit {
       url = "https://github.com/ros2-gbp/tlsf-release.git";
-      hash = "sha256-y3cjlV+RU4Go9bap7m+OMAdNUie5Z4IAVrrp7tyyBpw=";
       rev = "e5404343cc186e3237c2bae081bcc270af9eab45";
+      hash = "sha256-y3cjlV+RU4Go9bap7m+OMAdNUie5Z4IAVrrp7tyyBpw=";
     };
     tlsf_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/realtime_support-release.git";
-      hash = "sha256-cREflSs5wBd1xMcnVyiq5H1VkfQCR1AKoYN2/u4T7nQ=";
       rev = "8f622c3e255fcd12fc402170b139b3347ef75baf";
+      hash = "sha256-cREflSs5wBd1xMcnVyiq5H1VkfQCR1AKoYN2/u4T7nQ=";
     };
     topic_based_ros2_control = fetchGit {
       url = "https://github.com/ros2-gbp/topic_based_ros2_control-release.git";
-      hash = "sha256-SEfc/iqNZsxrD/m/f0CKmIfgo4mFGeziwqBv/ZXj1lM=";
       rev = "26c2db948ee965568b80e037bfa57e6cb85f87a0";
+      hash = "sha256-SEfc/iqNZsxrD/m/f0CKmIfgo4mFGeziwqBv/ZXj1lM=";
     };
     topic_monitor = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-GA57MYOZOEO3eCVy4eN3N65yCJ/KynuE2zh2EYSctqg=";
       rev = "af7208b4e17f17d95c61c6f91c91bf40a0da736b";
+      hash = "sha256-GA57MYOZOEO3eCVy4eN3N65yCJ/KynuE2zh2EYSctqg=";
     };
     topic_statistics_demo = fetchGit {
       url = "https://github.com/ros2-gbp/demos-release.git";
-      hash = "sha256-MGegxz/S1T1QKeNAg7dASD48fl1GCUaPgH6svDm7+VM=";
       rev = "9f9d46f6fad31a53c63318737d5ae53dd344aa58";
+      hash = "sha256-MGegxz/S1T1QKeNAg7dASD48fl1GCUaPgH6svDm7+VM=";
     };
     topic_tools = fetchGit {
       url = "https://github.com/ros2-gbp/topic_tools-release.git";
-      hash = "sha256-maSjbWC7ie5nCohC1Tg5QDoTDmSpwBflgbzy+o361jA=";
       rev = "68e05f5af89a64ceea47d51607b67066412ba43e";
+      hash = "sha256-maSjbWC7ie5nCohC1Tg5QDoTDmSpwBflgbzy+o361jA=";
     };
     topic_tools_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/topic_tools-release.git";
-      hash = "sha256-9TKPSR2abtxNDVITE+J4rc1rAlwcR7UTk39XKk3OO6g=";
       rev = "98d599dd5c5342f8ea185199494fcb8eee3966e6";
+      hash = "sha256-9TKPSR2abtxNDVITE+J4rc1rAlwcR7UTk39XKk3OO6g=";
     };
     trac_ik = fetchGit {
       url = "https://github.com/ros2-gbp/trac_ik-release.git";
-      hash = "sha256-Mi5zU70nYLOrjdiVRLXtTefB9IBLrHv8HpqzxWWRWas=";
       rev = "92b5f9f982498bed253e7fe0aaccabb177014abb";
+      hash = "sha256-Mi5zU70nYLOrjdiVRLXtTefB9IBLrHv8HpqzxWWRWas=";
     };
     trac_ik_kinematics_plugin = fetchGit {
       url = "https://github.com/ros2-gbp/trac_ik-release.git";
-      hash = "sha256-Xj4omXPV8GY+CWCUvSBOT33WTxVQiW0A8N57S5bpDNo=";
       rev = "e608e52b92b8e9306bc8ef4ae7488bc8c90350df";
+      hash = "sha256-Xj4omXPV8GY+CWCUvSBOT33WTxVQiW0A8N57S5bpDNo=";
     };
     trac_ik_lib = fetchGit {
       url = "https://github.com/ros2-gbp/trac_ik-release.git";
-      hash = "sha256-RHtJG5zWq6hgg1ylgO5tkkidAlHTg7G+wMzeoB8s6p8=";
       rev = "7caceeb979beee59aa99202a48575b16fc72918c";
+      hash = "sha256-RHtJG5zWq6hgg1ylgO5tkkidAlHTg7G+wMzeoB8s6p8=";
     };
     tracetools = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_tracing-release.git";
-      hash = "sha256-i66LTM0n72UzAILrGIzm192MWomhPsgDwmWMyJJ7N4E=";
       rev = "104e6fff7d00e77fa44ee75ce1a7f2539825a57f";
+      hash = "sha256-i66LTM0n72UzAILrGIzm192MWomhPsgDwmWMyJJ7N4E=";
     };
     tracetools_acceleration = fetchGit {
       url = "https://github.com/ros2-gbp/tracetools_acceleration-release.git";
-      hash = "sha256-8S7qrZQ1ohJoEVhAiMPHVKAD4lCTHCfRb1CD5hu4VWg=";
       rev = "5b343e424887e2d3703364dad8973a5a1c578660";
+      hash = "sha256-8S7qrZQ1ohJoEVhAiMPHVKAD4lCTHCfRb1CD5hu4VWg=";
     };
     tracetools_analysis = fetchGit {
       url = "https://github.com/ros2-gbp/tracetools_analysis-release.git";
-      hash = "sha256-DPKjLLYf07C3NN4cCJqYVc28MZaOWmDTrLO+g2oyGwA=";
       rev = "64fed20f71cccc3ad9670dd36ce9066b14545df4";
+      hash = "sha256-DPKjLLYf07C3NN4cCJqYVc28MZaOWmDTrLO+g2oyGwA=";
     };
     tracetools_image_pipeline = fetchGit {
       url = "https://github.com/ros2-gbp/image_pipeline-release.git";
-      hash = "sha256-8np7N5q5alXqiCKQu6WipE6aZSSY4xMZ5bGkXYJVOlU=";
       rev = "aa5d9209d9f6dad33ae4d6708dd8ed30a5bdb99e";
+      hash = "sha256-8np7N5q5alXqiCKQu6WipE6aZSSY4xMZ5bGkXYJVOlU=";
     };
     tracetools_launch = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_tracing-release.git";
-      hash = "sha256-S06JJzvBbISxt23CmHnbQIa8OxvO4unfdztMhznw8Zo=";
       rev = "7ebe7c6a5fc83d4247c47f5ee6889d1512725f53";
+      hash = "sha256-S06JJzvBbISxt23CmHnbQIa8OxvO4unfdztMhznw8Zo=";
     };
     tracetools_read = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_tracing-release.git";
-      hash = "sha256-NPKfGkVG8PaQ12F2IkOJV4Yxi7k5y226Coc7i9HaCQE=";
       rev = "d2400eeb280651f83520b2bc51ff80ab431cee28";
+      hash = "sha256-NPKfGkVG8PaQ12F2IkOJV4Yxi7k5y226Coc7i9HaCQE=";
     };
     tracetools_test = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_tracing-release.git";
-      hash = "sha256-RR+g7apKjiBL9Ww77YrDHd915WVymIZiQ2pMoV261rA=";
       rev = "7c218f661d8fdf1bb99003c64d3935a0083b6baf";
+      hash = "sha256-RR+g7apKjiBL9Ww77YrDHd915WVymIZiQ2pMoV261rA=";
     };
     tracetools_trace = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_tracing-release.git";
-      hash = "sha256-ch4DMQjovwGHhTAxm3HVXqAW1kxHWbFkce6vxiSEEHw=";
       rev = "0b4fed251fb0f36011894f0c1579760c0c06aac4";
+      hash = "sha256-ch4DMQjovwGHhTAxm3HVXqAW1kxHWbFkce6vxiSEEHw=";
     };
     trajectory_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/common_interfaces-release.git";
-      hash = "sha256-7CDVCo1MH2SjEg2UKfl2N4aU4ygYOLtn8EhASs6E/pE=";
       rev = "c19aea6c1d72c99aa397289cfcd19213576948ea";
+      hash = "sha256-7CDVCo1MH2SjEg2UKfl2N4aU4ygYOLtn8EhASs6E/pE=";
     };
     transmission_interface = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_control-release.git";
-      hash = "sha256-2Le6mKVZHOZxyVUJxPMtxL8yWaqe7lHFtAx5IEyRcBw=";
       rev = "97e28c2a0ee36a5fc1813773d5b3d5c330da38fb";
+      hash = "sha256-2Le6mKVZHOZxyVUJxPMtxL8yWaqe7lHFtAx5IEyRcBw=";
     };
     tricycle_controller = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-MlZ2vPGF9WX8wE8W/A5at7wuWf9DIF/PcH6gGphKuNo=";
       rev = "16470622cb0f38e932e26b32187bc431f31f5ad7";
+      hash = "sha256-MlZ2vPGF9WX8wE8W/A5at7wuWf9DIF/PcH6gGphKuNo=";
     };
     tricycle_steering_controller = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-pB036CmULK1cJ1KUFt2jz7GLdmD0A+nJU6ebALwHSm4=";
       rev = "81511bdd7725946997481b45e159656df3df492d";
+      hash = "sha256-pB036CmULK1cJ1KUFt2jz7GLdmD0A+nJU6ebALwHSm4=";
     };
     turbojpeg_compressed_image_transport = fetchGit {
       url = "https://github.com/ros2-gbp/turbojpeg_compressed_image_transport-release.git";
-      hash = "sha256-290O2WlZeS1IA0hOWZ0GYuYv0yt8SkAIxoz+P3YiVi8=";
       rev = "b06c8c2136a8797b7d8136c1e2eada128cb6dc1d";
+      hash = "sha256-290O2WlZeS1IA0hOWZ0GYuYv0yt8SkAIxoz+P3YiVi8=";
     };
     turtle_tf2_cpp = fetchGit {
       url = "https://github.com/ros2-gbp/geometry_tutorials-release.git";
-      hash = "sha256-/+vZZp6tpMuKd5xAZHma9sMN5Q0aWVwbu5ZnKW6t2nQ=";
       rev = "2d789073138906e56dbe40d0fa5f9c170ea3a463";
+      hash = "sha256-/+vZZp6tpMuKd5xAZHma9sMN5Q0aWVwbu5ZnKW6t2nQ=";
     };
     turtle_tf2_py = fetchGit {
       url = "https://github.com/ros2-gbp/geometry_tutorials-release.git";
-      hash = "sha256-KyrTt9hvh28k8MJ6EaD2AnuC3cH+nNMX5fYPjXkz6AA=";
       rev = "d231c2cfdb3f630b4d833e8a6dcef28ed9a5d900";
+      hash = "sha256-KyrTt9hvh28k8MJ6EaD2AnuC3cH+nNMX5fYPjXkz6AA=";
     };
     turtlebot3_fake_node = fetchGit {
       url = "https://github.com/ros2-gbp/turtlebot3_simulations-release.git";
-      hash = "sha256-RC56Xh4EBNwDvXTRDOIw1kV2Q9fZB4veFuXoOZI3KZA=";
       rev = "d51d854fb17df3f0dc2ab07fb0a086f8166bca5e";
+      hash = "sha256-RC56Xh4EBNwDvXTRDOIw1kV2Q9fZB4veFuXoOZI3KZA=";
     };
     turtlebot3_gazebo = fetchGit {
       url = "https://github.com/ros2-gbp/turtlebot3_simulations-release.git";
-      hash = "sha256-v6xnRm6M8asU/HVNlinmuyhrm7cTaIuA3aSHJzPeX6c=";
       rev = "2052448a92e43ce2ed8565594d944ba638f78bd9";
+      hash = "sha256-v6xnRm6M8asU/HVNlinmuyhrm7cTaIuA3aSHJzPeX6c=";
     };
     turtlebot3_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/turtlebot3_msgs-release.git";
-      hash = "sha256-AfTC3VY2EzfPdav7DvNaPrB+NM5laHjJRrpSaWfb2Cw=";
       rev = "bdda58f589ea7a37beb28192ab4830cbed47537f";
+      hash = "sha256-AfTC3VY2EzfPdav7DvNaPrB+NM5laHjJRrpSaWfb2Cw=";
     };
     turtlebot3_simulations = fetchGit {
       url = "https://github.com/ros2-gbp/turtlebot3_simulations-release.git";
-      hash = "sha256-W+h1Fb5Y9PXr/M12d+YOfwxWR1QaArnZtIDmkpQ95xI=";
       rev = "111af0a35692265f89f85e85fcf66e1d79278a1a";
+      hash = "sha256-W+h1Fb5Y9PXr/M12d+YOfwxWR1QaArnZtIDmkpQ95xI=";
     };
     turtlesim = fetchGit {
       url = "https://github.com/ros2-gbp/ros_tutorials-release.git";
-      hash = "sha256-+NwG+0EX/wiy8jFqWI7LoLitojrfxvVmRfY4duvQICU=";
       rev = "dee596e8c4643aec9e5a6f93098371f93b5c8a02";
+      hash = "sha256-+NwG+0EX/wiy8jFqWI7LoLitojrfxvVmRfY4duvQICU=";
     };
     tuw_geometry = fetchGit {
       url = "https://github.com/ros2-gbp/tuw_geometry-release.git";
-      hash = "sha256-3joMrg733OXs5YY23/zK9hQEuS0t3jlDrTEsNlr8C3Q=";
       rev = "1ec8432bce0f5c3155a16a68991b6ec9963a2e12";
+      hash = "sha256-3joMrg733OXs5YY23/zK9hQEuS0t3jlDrTEsNlr8C3Q=";
     };
     tvm_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/tvm_vendor-release.git";
-      hash = "sha256-zx1sU7fTJXQqMOjy+jstX1Wq7B7zPKQCxlfV685GzSA=";
       rev = "a415b453b01fd87caf6873f53e56e002c0354596";
+      hash = "sha256-zx1sU7fTJXQqMOjy+jstX1Wq7B7zPKQCxlfV685GzSA=";
     };
     twist_mux = fetchGit {
       url = "https://github.com/ros2-gbp/twist_mux-release.git";
-      hash = "sha256-1U2LplwpCgA8qKz24xmFg4QH73v52isEVKL9Xck6OlA=";
       rev = "025308b135ade9fed08cd4b41ec8148cfbf95f08";
+      hash = "sha256-1U2LplwpCgA8qKz24xmFg4QH73v52isEVKL9Xck6OlA=";
     };
     twist_mux_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/twist_mux_msgs-release.git";
-      hash = "sha256-ILOj3MizVk8mZox4k3XDTrx1z7e20vK78J+4k6OuLx8=";
       rev = "ecd98d548cafd24f83f52d468fd27e7414787f05";
+      hash = "sha256-ILOj3MizVk8mZox4k3XDTrx1z7e20vK78J+4k6OuLx8=";
     };
     twist_stamper = fetchGit {
       url = "https://github.com/ros2-gbp/twist_stamper-release.git";
-      hash = "sha256-AE3PKMNhcFfc7nbMllXSYBoKhQmRVHLCirRpDAEknEQ=";
       rev = "32213e5bb95ab8a6d3d5202f84bbad81ca359d37";
+      hash = "sha256-AE3PKMNhcFfc7nbMllXSYBoKhQmRVHLCirRpDAEknEQ=";
     };
     type_description_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/rcl_interfaces-release.git";
-      hash = "sha256-xUT46L5yIW2waiOgCH9yky8Mxz/On8iU3u1U4ZFJ5E4=";
       rev = "19c6e62afc4dc77010694e911d6f9c64373fa5fc";
+      hash = "sha256-xUT46L5yIW2waiOgCH9yky8Mxz/On8iU3u1U4ZFJ5E4=";
     };
     ublox = fetchGit {
       url = "https://github.com/ros2-gbp/ublox-release.git";
-      hash = "sha256-tCPY6Wu0TQ0Auvkx3xW6yyreMV7K0GruiyS4AZ29LtI=";
       rev = "4de0d3af5abd05e2823b6947261f9c0fa83e6bfa";
+      hash = "sha256-tCPY6Wu0TQ0Auvkx3xW6yyreMV7K0GruiyS4AZ29LtI=";
     };
     ublox_dgnss = fetchGit {
       url = "https://github.com/ros2-gbp/ublox_dgnss-release.git";
-      hash = "sha256-6iGhNZeoJO63+6Z50d7QqpRpzqjKw+GVN0jKCKIK/Nw=";
       rev = "060b0794d0fd88f9254604e252f6a729729409c7";
+      hash = "sha256-6iGhNZeoJO63+6Z50d7QqpRpzqjKw+GVN0jKCKIK/Nw=";
     };
     ublox_dgnss_node = fetchGit {
       url = "https://github.com/ros2-gbp/ublox_dgnss-release.git";
-      hash = "sha256-bOuhkOtiT4rK2zGCZ617XN3SmyquVMoBum1EeYOnEOA=";
       rev = "001b92b813abaee8702d11500b13c69e25056c54";
+      hash = "sha256-bOuhkOtiT4rK2zGCZ617XN3SmyquVMoBum1EeYOnEOA=";
     };
     ublox_gps = fetchGit {
       url = "https://github.com/ros2-gbp/ublox-release.git";
-      hash = "sha256-reZXChxPuNCtJNjWaATs7ozW63ldzYenGz4KQv8rJ1M=";
       rev = "f5d7776b5a2919a6764491726d07c5370b2488a2";
+      hash = "sha256-reZXChxPuNCtJNjWaATs7ozW63ldzYenGz4KQv8rJ1M=";
     };
     ublox_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/ublox-release.git";
-      hash = "sha256-y+4Wac/LAoobvoFcSIJ2PGoih6+tPbrMnRKVg6BxUgM=";
       rev = "81c2cba3a487d742189f3022efc01fb794ef7034";
+      hash = "sha256-y+4Wac/LAoobvoFcSIJ2PGoih6+tPbrMnRKVg6BxUgM=";
     };
     ublox_nav_sat_fix_hp_node = fetchGit {
       url = "https://github.com/ros2-gbp/ublox_dgnss-release.git";
-      hash = "sha256-tSiEDFsNto+4KxHDINiu/T57IUkWnrtle7tkbT+B+c0=";
       rev = "742d0d6b4ce9ad0d27ef86a0a88e48b9875d9430";
+      hash = "sha256-tSiEDFsNto+4KxHDINiu/T57IUkWnrtle7tkbT+B+c0=";
     };
     ublox_serialization = fetchGit {
       url = "https://github.com/ros2-gbp/ublox-release.git";
-      hash = "sha256-b2kP01irILk8Ct0RNRYsczUU7sgdAugMNejSpNFPdGE=";
       rev = "85717ac55a1696788eb7d8b2e85a01c76f471781";
+      hash = "sha256-b2kP01irILk8Ct0RNRYsczUU7sgdAugMNejSpNFPdGE=";
     };
     ublox_ubx_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/ublox_dgnss-release.git";
-      hash = "sha256-GKe0RGAVTzo1s9aVoDdarKkspqxDfGs9JB6jM3JmrBo=";
       rev = "8888b0296db01863fed2e91a5337cf367fbb1b4e";
+      hash = "sha256-GKe0RGAVTzo1s9aVoDdarKkspqxDfGs9JB6jM3JmrBo=";
     };
     ublox_ubx_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/ublox_dgnss-release.git";
-      hash = "sha256-ERggcaG4kBM5GwH5iM+42CzraKbcqjGc1IMqgeoBtrE=";
       rev = "ab4207257e0bd9e858866e33b108aa90ba412e5a";
+      hash = "sha256-ERggcaG4kBM5GwH5iM+42CzraKbcqjGc1IMqgeoBtrE=";
     };
     udp_driver = fetchGit {
       url = "https://github.com/ros2-gbp/transport_drivers-release.git";
-      hash = "sha256-ufshq3ku5f0OLD1L+CJhsfg8tSqLiOzmXueZGXDO9+4=";
       rev = "de1037c5bdee946ffc06ca634e2fd26f1333528a";
+      hash = "sha256-ufshq3ku5f0OLD1L+CJhsfg8tSqLiOzmXueZGXDO9+4=";
     };
     udp_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/udp_msgs-release.git";
-      hash = "sha256-g0Gi+BMs9cMS5t5Fh+epx+fKUhebhUczapOPMz9Bg5A=";
       rev = "be225e6194a24e9617456332f43415ade552f9eb";
+      hash = "sha256-g0Gi+BMs9cMS5t5Fh+epx+fKUhebhUczapOPMz9Bg5A=";
     };
     uncrustify_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/uncrustify_vendor-release.git";
-      hash = "sha256-yVmdBegpkwKPCWppTjfeJpLZn9LCFAPVsI0sy2mZvpw=";
       rev = "69a8304c634ed4b0872634acbc73bc1854510fff";
+      hash = "sha256-yVmdBegpkwKPCWppTjfeJpLZn9LCFAPVsI0sy2mZvpw=";
     };
     unique_identifier_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/unique_identifier_msgs-release.git";
-      hash = "sha256-hqqiauecY9R4fqhisGA7JfZIm7RnqlOnb6/NhY2FsLg=";
       rev = "8f82dd5c724dc222ac795630fcf8e32cc3c203b4";
+      hash = "sha256-hqqiauecY9R4fqhisGA7JfZIm7RnqlOnb6/NhY2FsLg=";
     };
     ur = fetchGit {
       url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release.git";
-      hash = "sha256-s2JWZ5kmUiM1N8BfSDVDJ0fVw7Cz55K9+cYZwBjG3+k=";
       rev = "65bfbab4d05e11ac5b465259f436eed81f49bfdc";
+      hash = "sha256-s2JWZ5kmUiM1N8BfSDVDJ0fVw7Cz55K9+cYZwBjG3+k=";
     };
     ur_calibration = fetchGit {
       url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release.git";
-      hash = "sha256-yDb2+K9ErpRASv9kg4xq5ml5WGTPFDFzlTpf9ArE4yE=";
       rev = "7baebe6ea8665729634c2fdc03f881d8e62ec3a1";
+      hash = "sha256-yDb2+K9ErpRASv9kg4xq5ml5WGTPFDFzlTpf9ArE4yE=";
     };
     ur_client_library = fetchGit {
       url = "https://github.com/ros2-gbp/Universal_Robots_Client_Library-release.git";
-      hash = "sha256-ZtZ7wH2xmYhDXoGeeIA30rqkhK9iiy0RK2bOZDD27kY=";
       rev = "de61a833fadbd910f4e56e78b2c489a83addbbe7";
+      hash = "sha256-ZtZ7wH2xmYhDXoGeeIA30rqkhK9iiy0RK2bOZDD27kY=";
     };
     ur_controllers = fetchGit {
       url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release.git";
-      hash = "sha256-DzKXQV8Q+0ZYkzYGT/dFT5q2w7PiDSn9C/zSI6fqbvc=";
       rev = "1113bc1df41a64ad851721b31dd71a9788b6edf3";
+      hash = "sha256-DzKXQV8Q+0ZYkzYGT/dFT5q2w7PiDSn9C/zSI6fqbvc=";
     };
     ur_dashboard_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release.git";
-      hash = "sha256-cpkc8b9rEAO2IBjUSxUIpDLD4qK35Vv/5uj4LCvZsZE=";
       rev = "15b585b54c372f5405228ac09c9b1ea4fde4f30f";
+      hash = "sha256-cpkc8b9rEAO2IBjUSxUIpDLD4qK35Vv/5uj4LCvZsZE=";
     };
     ur_description = fetchGit {
       url = "https://github.com/ros2-gbp/ur_description-release.git";
-      hash = "sha256-vssJES2RNCkXKY4wCdby72la0Pzi2VhMXcxj+OwpPjU=";
       rev = "218d3ee2bc0655a2899940cb4ea9200cf9f2cedf";
+      hash = "sha256-vssJES2RNCkXKY4wCdby72la0Pzi2VhMXcxj+OwpPjU=";
     };
     ur_moveit_config = fetchGit {
       url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release.git";
-      hash = "sha256-f3ffejf/CzZA1EqEYcgnnrN23i/ElOlHlxkOivSNnMA=";
       rev = "50c38db50f33d86848e7b5b2dbe38471e25e6fe6";
+      hash = "sha256-f3ffejf/CzZA1EqEYcgnnrN23i/ElOlHlxkOivSNnMA=";
     };
     ur_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/ur_msgs-release.git";
-      hash = "sha256-JsglE/PolObyk2tuC9viw8JYmRlBJ8Ym7pjb5k+2EyQ=";
       rev = "e79a4194e4629a33eafcaf3751d560635ab8b591";
+      hash = "sha256-JsglE/PolObyk2tuC9viw8JYmRlBJ8Ym7pjb5k+2EyQ=";
     };
     ur_robot_driver = fetchGit {
       url = "https://github.com/ros2-gbp/Universal_Robots_ROS2_Driver-release.git";
-      hash = "sha256-F3F0pei4rPLBS2oiOhEyFPWw0sce94s2AM9Oz0M5YRs=";
       rev = "da89ba56e5ee8b80f9a32262588dc6b254330e0d";
+      hash = "sha256-F3F0pei4rPLBS2oiOhEyFPWw0sce94s2AM9Oz0M5YRs=";
     };
     urdf = fetchGit {
       url = "https://github.com/ros2-gbp/urdf-release.git";
-      hash = "sha256-Jbhvu/SUA7Ophk3dwW/j/f2HG3k2+/JlUH4E7yQmm8k=";
       rev = "6d6d4f6455766d6b900ee8fe1b702d1f9ddc2303";
+      hash = "sha256-Jbhvu/SUA7Ophk3dwW/j/f2HG3k2+/JlUH4E7yQmm8k=";
     };
     urdf_launch = fetchGit {
       url = "https://github.com/ros2-gbp/urdf_launch-release.git";
-      hash = "sha256-culhEaUIVzEURBnbx83ibUd3MceQsW3fVCfO2lKvIEQ=";
       rev = "720838f2c65e468e850c50069f8689faa23f125a";
+      hash = "sha256-culhEaUIVzEURBnbx83ibUd3MceQsW3fVCfO2lKvIEQ=";
     };
     urdf_parser_plugin = fetchGit {
       url = "https://github.com/ros2-gbp/urdf-release.git";
-      hash = "sha256-GCrcxy4++BTlYYQe+5+6IfQLfmKX/BCNMCgdYQ4Ttd4=";
       rev = "dad3497e5da0adf790e330ba745819f2f34c79b1";
+      hash = "sha256-GCrcxy4++BTlYYQe+5+6IfQLfmKX/BCNMCgdYQ4Ttd4=";
     };
     urdf_tutorial = fetchGit {
       url = "https://github.com/ros2-gbp/urdf_tutorial-release.git";
-      hash = "sha256-is2/qeO2wFsbEBxJ8Kf0u+3EkFtbejI8nZpazjXVziM=";
       rev = "768fb035b41a3366d0bd4c5088643a7b8b411276";
+      hash = "sha256-is2/qeO2wFsbEBxJ8Kf0u+3EkFtbejI8nZpazjXVziM=";
     };
     urdfdom = fetchGit {
       url = "https://github.com/ros2-gbp/urdfdom-release.git";
-      hash = "sha256-g0ad4Vg+l8H2Pv4suUdF6WseUIeSWbeHIXY+Z5il3hc=";
       rev = "e14e279e7907a5a05da330e07955eacd74163dee";
+      hash = "sha256-g0ad4Vg+l8H2Pv4suUdF6WseUIeSWbeHIXY+Z5il3hc=";
     };
     urdfdom_headers = fetchGit {
       url = "https://github.com/ros2-gbp/urdfdom_headers-release.git";
-      hash = "sha256-TpmzYPZ+36H+OGt00z8kZqNs+L3JOcpDoVCAtONyQHw=";
       rev = "985a8402c401e898526b55c4eb23069276262d3d";
+      hash = "sha256-TpmzYPZ+36H+OGt00z8kZqNs+L3JOcpDoVCAtONyQHw=";
     };
     urdfdom_py = fetchGit {
       url = "https://github.com/ros2-gbp/urdfdom_py-release.git";
-      hash = "sha256-XIQzb/e4G8nvo/oqr/BKyEWW1LAFi2kvQhIdXhJHG+Q=";
       rev = "691b53d7cea6d00fed623d8273f8914d94de760c";
+      hash = "sha256-XIQzb/e4G8nvo/oqr/BKyEWW1LAFi2kvQhIdXhJHG+Q=";
     };
     urg_c = fetchGit {
       url = "https://github.com/ros2-gbp/urg_c-release.git";
-      hash = "sha256-d1sMppxyaGt43L2i5Eplkfen4tHz1t6hkC42mCbg0EM=";
       rev = "83e66702d52c8fc284861f6a7064354003c773a3";
+      hash = "sha256-d1sMppxyaGt43L2i5Eplkfen4tHz1t6hkC42mCbg0EM=";
     };
     urg_node = fetchGit {
       url = "https://github.com/ros2-gbp/urg_node-release.git";
-      hash = "sha256-hz6upepfbgI1ToUr7XupzHvWBA7oKZk4QZTKCZwbMRI=";
       rev = "78cb9f69fb5e467d23badd16e04b0f751e1661a5";
+      hash = "sha256-hz6upepfbgI1ToUr7XupzHvWBA7oKZk4QZTKCZwbMRI=";
     };
     urg_node_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/urg_node_msgs-release.git";
-      hash = "sha256-IBl7J8akPgn5ni5/8kPGDOh4Fklto+RggWCIxGald/w=";
       rev = "b30be43c2ffbe917e1db13776e191089eebc5d17";
+      hash = "sha256-IBl7J8akPgn5ni5/8kPGDOh4Fklto+RggWCIxGald/w=";
     };
     usb_cam = fetchGit {
       url = "https://github.com/ros2-gbp/usb_cam-release.git";
-      hash = "sha256-D4YStPBN+X8H0h6dWlVYgxuLYH5T7XWoyN0zLV5xN2E=";
       rev = "9d2e5af7197f8021a289b5af78c7362eaf86fcb4";
+      hash = "sha256-D4YStPBN+X8H0h6dWlVYgxuLYH5T7XWoyN0zLV5xN2E=";
     };
     v4l2_camera = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_v4l2_camera-release.git";
-      hash = "sha256-OaSGrGK1Lj3ZocwVMqc8WO1+T6jU/Ky2u2UwIpRHqwY=";
       rev = "ad3d1855e15fb303b725cb6522470ac178b88cb7";
+      hash = "sha256-OaSGrGK1Lj3ZocwVMqc8WO1+T6jU/Ky2u2UwIpRHqwY=";
     };
     velocity_controllers = fetchGit {
       url = "https://github.com/ros2-gbp/ros2_controllers-release.git";
-      hash = "sha256-B/XWVdkPaEgEoofuypZXki7hUHQMp9L9nZUEjqK5Euw=";
       rev = "144c5dea770a02a624d79c4facf5624db9839463";
+      hash = "sha256-B/XWVdkPaEgEoofuypZXki7hUHQMp9L9nZUEjqK5Euw=";
     };
     velodyne = fetchGit {
       url = "https://github.com/ros2-gbp/velodyne-release.git";
-      hash = "sha256-Wr9qH+muZay+hoPYPI7pJRs11jWr4I26LKKsmaWL/4A=";
       rev = "94c7ffc762f021d72b7295602f86f988b7e10160";
+      hash = "sha256-Wr9qH+muZay+hoPYPI7pJRs11jWr4I26LKKsmaWL/4A=";
     };
     velodyne_description = fetchGit {
       url = "https://github.com/ros2-gbp/velodyne_simulator-release.git";
-      hash = "sha256-vYig3j3DqPeSuEmGlDfvaH64IGdK8x/Yxx40R/Sv5j4=";
       rev = "6c81fe14afd36e842acd1c8017cf8bad4be1b7ba";
+      hash = "sha256-vYig3j3DqPeSuEmGlDfvaH64IGdK8x/Yxx40R/Sv5j4=";
     };
     velodyne_driver = fetchGit {
       url = "https://github.com/ros2-gbp/velodyne-release.git";
-      hash = "sha256-9ysVDD9seg0Ss+VilOfbSs7ysVE2cxvVHaHR3kj+yKQ=";
       rev = "273cef3d0cf5364e2fd8995a89d9339892219530";
+      hash = "sha256-9ysVDD9seg0Ss+VilOfbSs7ysVE2cxvVHaHR3kj+yKQ=";
     };
     velodyne_gazebo_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/velodyne_simulator-release.git";
-      hash = "sha256-TFxh7d/7+m5z05amlR634rbaqZYAHs06SxUx3ZlM/NI=";
       rev = "b222a126f184cb5576c83c2160991304727f5506";
+      hash = "sha256-TFxh7d/7+m5z05amlR634rbaqZYAHs06SxUx3ZlM/NI=";
     };
     velodyne_laserscan = fetchGit {
       url = "https://github.com/ros2-gbp/velodyne-release.git";
-      hash = "sha256-rSKlfJVrsBMOdfguEVxqRmL3bNJiRLJsyy6iTcxdfKY=";
       rev = "45af76c98be872e120796c9000e764a74205521d";
+      hash = "sha256-rSKlfJVrsBMOdfguEVxqRmL3bNJiRLJsyy6iTcxdfKY=";
     };
     velodyne_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/velodyne-release.git";
-      hash = "sha256-5Ak6A/tW8O/xY1B8LoKlY6GJfvga1cnajGYEKb7eKFo=";
       rev = "42dfd152f78b4edca4ed94c689332373b25a75b8";
+      hash = "sha256-5Ak6A/tW8O/xY1B8LoKlY6GJfvga1cnajGYEKb7eKFo=";
     };
     velodyne_pointcloud = fetchGit {
       url = "https://github.com/ros2-gbp/velodyne-release.git";
-      hash = "sha256-hkvzuZw8cF8+XSVnSmlVOPLOTlg7vhtPoqd1gNK0mo8=";
       rev = "35739a33f8f260a755e03a4dfb6e170fca09b01e";
+      hash = "sha256-hkvzuZw8cF8+XSVnSmlVOPLOTlg7vhtPoqd1gNK0mo8=";
     };
     velodyne_simulator = fetchGit {
       url = "https://github.com/ros2-gbp/velodyne_simulator-release.git";
-      hash = "sha256-Cu17nhMENoRv3E5+1HvQyw35oWBdZXPr9BQ3APt4Q0c=";
       rev = "b06e73cc29075cbe9a2823e2a4e66f3f7954e987";
+      hash = "sha256-Cu17nhMENoRv3E5+1HvQyw35oWBdZXPr9BQ3APt4Q0c=";
     };
     vision_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/vision_msgs-release.git";
-      hash = "sha256-3eI3eKu1pjYzfsXNxO7zGJoJNG6s9QU4SjIzqZvSNEI=";
       rev = "4e50b05d0740fa6777421eeeb574fe09616e08b8";
+      hash = "sha256-3eI3eKu1pjYzfsXNxO7zGJoJNG6s9QU4SjIzqZvSNEI=";
     };
     vision_msgs_layers = fetchGit {
       url = "https://github.com/ros2-gbp/vision_msgs_layers-release.git";
-      hash = "sha256-/AF+whPTfuXAf3vP/iP6XQf4SZFSuJjxb7oQ61JEiGs=";
       rev = "309c516bbf9f26bc20f61969a4962659f3b4ad3c";
+      hash = "sha256-/AF+whPTfuXAf3vP/iP6XQf4SZFSuJjxb7oQ61JEiGs=";
     };
     vision_msgs_rviz_plugins = fetchGit {
       url = "https://github.com/ros2-gbp/vision_msgs-release.git";
-      hash = "sha256-If7mQ5EP7ZLB2EDPnUwciKX0dBfJa4PjuLnUH/ThGjM=";
       rev = "ebb9be37660ba670afd284336523d0de9dd2d0ee";
+      hash = "sha256-If7mQ5EP7ZLB2EDPnUwciKX0dBfJa4PjuLnUH/ThGjM=";
     };
     vision_opencv = fetchGit {
       url = "https://github.com/ros2-gbp/vision_opencv-release.git";
-      hash = "sha256-PwJir9LBkybRtAwNZwGQr1ZxvFm4f+Id0qbqJNMEokk=";
       rev = "f0ccbe01e1591e4920c51cda62e6c7e805d85f94";
+      hash = "sha256-PwJir9LBkybRtAwNZwGQr1ZxvFm4f+Id0qbqJNMEokk=";
     };
     visp = fetchGit {
       url = "https://github.com/ros2-gbp/visp-release.git";
-      hash = "sha256-nMrdYB+RessgluLVeY69cP1jA4ucoAfcxyaNk1gyiSQ=";
       rev = "86defd59f99edec4f6d6772b8eaacbcb50cd175b";
+      hash = "sha256-nMrdYB+RessgluLVeY69cP1jA4ucoAfcxyaNk1gyiSQ=";
     };
     visualization_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/common_interfaces-release.git";
-      hash = "sha256-9hi9fbYKjuHxGMO+Oiykg7g21bDIVNc5sK/cmoS3SEg=";
       rev = "129eac1285a1f1df2afb99ef6e130968fa7f287c";
+      hash = "sha256-9hi9fbYKjuHxGMO+Oiykg7g21bDIVNc5sK/cmoS3SEg=";
     };
     vitis_common = fetchGit {
       url = "https://github.com/ros2-gbp/vitis_common-release.git";
-      hash = "sha256-K6BliyL56las1cA019YmPWtcy/bVEejNPaYTF7SVYic=";
       rev = "28bbce9694fa95111d41b949a4c850475095198f";
+      hash = "sha256-K6BliyL56las1cA019YmPWtcy/bVEejNPaYTF7SVYic=";
     };
     vrpn = fetchGit {
       url = "https://github.com/ros2-gbp/vrpn-release.git";
-      hash = "sha256-2oOc4KpLGkfRc8tNDvM7xxjiHahtaoa5tGYhQEA7ViA=";
       rev = "0b68703610a8b017be5d3b8a773b7dfaa63103ab";
+      hash = "sha256-2oOc4KpLGkfRc8tNDvM7xxjiHahtaoa5tGYhQEA7ViA=";
     };
     vrpn_mocap = fetchGit {
       url = "https://github.com/ros2-gbp/vrpn_mocap-release.git";
-      hash = "sha256-qTdwB+YAkx59icepyKJgOykWlxF7kMMSSJ/EKm+NVWs=";
       rev = "27cc8261b8a41745047892d33a03c323ca565e8d";
+      hash = "sha256-qTdwB+YAkx59icepyKJgOykWlxF7kMMSSJ/EKm+NVWs=";
     };
     warehouse_ros = fetchGit {
       url = "https://github.com/ros2-gbp/warehouse_ros-release.git";
-      hash = "sha256-89Ku8Zth68EgdS2DXIeyBjbm75ZItsbMZ0ZbKGlw6Fw=";
       rev = "204f4f29c8c23a738da510ade7c9bb0a5bc21c02";
+      hash = "sha256-89Ku8Zth68EgdS2DXIeyBjbm75ZItsbMZ0ZbKGlw6Fw=";
     };
     warehouse_ros_sqlite = fetchGit {
       url = "https://github.com/ros2-gbp/warehouse_ros_sqlite-release.git";
-      hash = "sha256-JavUpzsS5NkJHqZj/lSXLsAOzHX5D/KrEHOhGM/AgLc=";
       rev = "9170d2ce31e93b0181aa16d138012d5a8d2f1bbe";
+      hash = "sha256-JavUpzsS5NkJHqZj/lSXLsAOzHX5D/KrEHOhGM/AgLc=";
     };
     webots_ros2 = fetchGit {
       url = "https://github.com/ros2-gbp/webots_ros2-release.git";
-      hash = "sha256-FnL4qXJW0C5/hn98Yjy6D2xq3GL41+uGs/kOJsRDfDo=";
       rev = "d12d4b3d1c7ea799b0b684d784cfb82e7c02a27e";
+      hash = "sha256-FnL4qXJW0C5/hn98Yjy6D2xq3GL41+uGs/kOJsRDfDo=";
     };
     webots_ros2_control = fetchGit {
       url = "https://github.com/ros2-gbp/webots_ros2-release.git";
-      hash = "sha256-Nrm3WBXZheyRsgEPMJeMYHwXvYmLNTnYc+Ej/MbBm9s=";
       rev = "4027989472e683b8645318976b4c9b1bc7576a44";
+      hash = "sha256-Nrm3WBXZheyRsgEPMJeMYHwXvYmLNTnYc+Ej/MbBm9s=";
     };
     webots_ros2_driver = fetchGit {
       url = "https://github.com/ros2-gbp/webots_ros2-release.git";
-      hash = "sha256-jqW+Ul7u0gR5/P17vrbPrr8sdA1JMNrwXLDrQ2A/qCU=";
       rev = "428c6fe4c0450a686fccd5585a3dc8b9fd7aa66e";
+      hash = "sha256-jqW+Ul7u0gR5/P17vrbPrr8sdA1JMNrwXLDrQ2A/qCU=";
     };
     webots_ros2_epuck = fetchGit {
       url = "https://github.com/ros2-gbp/webots_ros2-release.git";
-      hash = "sha256-o97nQuIC2/e/wHlOabMJL6n2jqaQRDyW4R86jzKNuWQ=";
       rev = "5a65e4b33212b91932b1524d953eadbc489e4542";
+      hash = "sha256-o97nQuIC2/e/wHlOabMJL6n2jqaQRDyW4R86jzKNuWQ=";
     };
     webots_ros2_importer = fetchGit {
       url = "https://github.com/ros2-gbp/webots_ros2-release.git";
-      hash = "sha256-M/JdzeCXvGMd8XJ+mMAROFdB9/DI3PB0yLEp/2WaiBg=";
       rev = "5a79f917912ed912e0c862386c2af0147952d741";
+      hash = "sha256-M/JdzeCXvGMd8XJ+mMAROFdB9/DI3PB0yLEp/2WaiBg=";
     };
     webots_ros2_mavic = fetchGit {
       url = "https://github.com/ros2-gbp/webots_ros2-release.git";
-      hash = "sha256-bnvjSJHn0EQjiG7e82YYPx0NT3izcAePZyH/m41jsCw=";
       rev = "0134091045aebc1d30c4e9858ae45f31c61e15a4";
+      hash = "sha256-bnvjSJHn0EQjiG7e82YYPx0NT3izcAePZyH/m41jsCw=";
     };
     webots_ros2_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/webots_ros2-release.git";
-      hash = "sha256-+Axcc0d4ZWp2K1lpbqpfMqsi8dIAei6MSY3mDxG4tig=";
       rev = "d54eadb73a8e0772397c1b1ad23c887a0c970657";
+      hash = "sha256-+Axcc0d4ZWp2K1lpbqpfMqsi8dIAei6MSY3mDxG4tig=";
     };
     webots_ros2_tesla = fetchGit {
       url = "https://github.com/ros2-gbp/webots_ros2-release.git";
-      hash = "sha256-9L+L6YPQY0KkUGa3kLYss/0WZP/aQIM2TqA4GyLOTJA=";
       rev = "a8824b2d3a8abd457a92182aa04e8f02e6f439cd";
+      hash = "sha256-9L+L6YPQY0KkUGa3kLYss/0WZP/aQIM2TqA4GyLOTJA=";
     };
     webots_ros2_tests = fetchGit {
       url = "https://github.com/ros2-gbp/webots_ros2-release.git";
-      hash = "sha256-jTfBsM17BQ20ktL0Q46ChDPYOVrniigyrwY5E0xLh54=";
       rev = "10a0e1ad9bdeb410e1fec2b4b225c7790003bdde";
+      hash = "sha256-jTfBsM17BQ20ktL0Q46ChDPYOVrniigyrwY5E0xLh54=";
     };
     webots_ros2_tiago = fetchGit {
       url = "https://github.com/ros2-gbp/webots_ros2-release.git";
-      hash = "sha256-/j9c90wP3C3iLTehu0VzCh+SlKfydx4Y/2SKhs0+HKg=";
       rev = "5f79bc35578e158dbe043e3bdf1a3488f67847b1";
+      hash = "sha256-/j9c90wP3C3iLTehu0VzCh+SlKfydx4Y/2SKhs0+HKg=";
     };
     webots_ros2_turtlebot = fetchGit {
       url = "https://github.com/ros2-gbp/webots_ros2-release.git";
-      hash = "sha256-2TxF0QtrOF4IKuagK9U1DtFWGg2NtFAyNg+eBtH3pBk=";
       rev = "490605ec8d4f5070cf9423cef892d6494dddfda3";
+      hash = "sha256-2TxF0QtrOF4IKuagK9U1DtFWGg2NtFAyNg+eBtH3pBk=";
     };
     webots_ros2_universal_robot = fetchGit {
       url = "https://github.com/ros2-gbp/webots_ros2-release.git";
-      hash = "sha256-WdqufTOh9CMdN2xgzdfADgOy3gdp6UUGQk2DKVldIqk=";
       rev = "5f7b25a81c295060749623b131e80967ab725b59";
+      hash = "sha256-WdqufTOh9CMdN2xgzdfADgOy3gdp6UUGQk2DKVldIqk=";
     };
     wiimote = fetchGit {
       url = "https://github.com/ros2-gbp/joystick_drivers-release.git";
-      hash = "sha256-WghWanmw0GXmNOdR/EHg1/ytIXNtIKstCe5hSIgpQ/s=";
       rev = "511ae4275bf3980a65c8af0f85f1e07748487b7e";
+      hash = "sha256-WghWanmw0GXmNOdR/EHg1/ytIXNtIKstCe5hSIgpQ/s=";
     };
     wiimote_msgs = fetchGit {
       url = "https://github.com/ros2-gbp/joystick_drivers-release.git";
-      hash = "sha256-CTizMiNOKAwVd/bOq8yB5s7j00cvCsHVQotPLLXwrhI=";
       rev = "bb120b9f12f8ab0bcf9f0f9ff6edf63c0658fac6";
+      hash = "sha256-CTizMiNOKAwVd/bOq8yB5s7j00cvCsHVQotPLLXwrhI=";
     };
     xacro = fetchGit {
       url = "https://github.com/ros2-gbp/xacro-release.git";
-      hash = "sha256-+93WLiVZewjzhzlEzSTG/zTjYx3+ri7uv+d7nO1xdX8=";
       rev = "cf73bd6240c8b19a819681498f671f0c3ca80758";
+      hash = "sha256-+93WLiVZewjzhzlEzSTG/zTjYx3+ri7uv+d7nO1xdX8=";
     };
     yaml_cpp_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/yaml_cpp_vendor-release.git";
-      hash = "sha256-+IC1J62UuHdmOjU/1+W0xO33jgHhgeC3OZXA8E8ewDw=";
       rev = "01001306eb4361d5de3bb06a749a72769884cadd";
+      hash = "sha256-+IC1J62UuHdmOjU/1+W0xO33jgHhgeC3OZXA8E8ewDw=";
     };
     zbar_ros = fetchGit {
       url = "https://github.com/ros2-gbp/zbar_ros-release.git";
-      hash = "sha256-WZR9JZCFn6iUWjl8bwdsbzYpvyCWFaOPEmSgu8WuO0A=";
       rev = "bd55b012222f2a79ae26429d1990cc2e818de827";
+      hash = "sha256-WZR9JZCFn6iUWjl8bwdsbzYpvyCWFaOPEmSgu8WuO0A=";
     };
     zbar_ros_interfaces = fetchGit {
       url = "https://github.com/ros2-gbp/zbar_ros-release.git";
-      hash = "sha256-SsaDsbUZ3f1a3gVgspGXknM9wXhNvAAQ9iENzeuZQgI=";
       rev = "fe518793f51e19584dca90504bbcabd4e0e0a549";
+      hash = "sha256-SsaDsbUZ3f1a3gVgspGXknM9wXhNvAAQ9iENzeuZQgI=";
     };
     zenoh_bridge_dds = fetchGit {
       url = "https://github.com/ros2-gbp/zenoh_bridge_dds-release.git";
-      hash = "sha256-f7l+qyV5vSYtTVBV57bVQUV49odL51NPVkvmo00gimY=";
       rev = "9bfadd4d1132571b6ac912a2f1746d1113cf5258";
+      hash = "sha256-f7l+qyV5vSYtTVBV57bVQUV49odL51NPVkvmo00gimY=";
     };
     zlib_point_cloud_transport = fetchGit {
       url = "https://github.com/ros2-gbp/point_cloud_transport_plugins-release.git";
-      hash = "sha256-agDsR7TmrKKFOcq/JtuQdYftIST1fDPevcsQHzXS4EY=";
       rev = "2441ec9bf116a62674c254cfad1811611ab5df93";
+      hash = "sha256-agDsR7TmrKKFOcq/JtuQdYftIST1fDPevcsQHzXS4EY=";
     };
     zmqpp_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/zmqpp_vendor-release.git";
-      hash = "sha256-OHJpSJAua016kXvKxcD1ay55wprlXnqSL19uzz/el6w=";
       rev = "b0f21543a13623f4155fbfdc7f42b0e8083e6c1b";
+      hash = "sha256-OHJpSJAua016kXvKxcD1ay55wprlXnqSL19uzz/el6w=";
     };
     zstd_image_transport = fetchGit {
       url = "https://github.com/ros2-gbp/image_transport_plugins-release.git";
-      hash = "sha256-PRNU4i/9CZjLK+jMkRkB/40VWLK7sx0Mu6j7qyLcjXE=";
       rev = "a41debc5378078af711e2f5068bcac5a59a9faab";
+      hash = "sha256-PRNU4i/9CZjLK+jMkRkB/40VWLK7sx0Mu6j7qyLcjXE=";
     };
     zstd_point_cloud_transport = fetchGit {
       url = "https://github.com/ros2-gbp/point_cloud_transport_plugins-release.git";
-      hash = "sha256-xqUGi2WaBdkpLROw0Z/jDu3kWEBHgIHXw9/1LB/KP0c=";
       rev = "c15ceec307f19f2ad483bc708baba0fc605bcea3";
+      hash = "sha256-xqUGi2WaBdkpLROw0Z/jDu3kWEBHgIHXw9/1LB/KP0c=";
     };
     zstd_vendor = fetchGit {
       url = "https://github.com/ros2-gbp/rosbag2-release.git";
-      hash = "sha256-ZBGkZHVOL91El40Sdlx3iV+kSzn3SKzWHDLGGM9FnTQ=";
       rev = "1f96118ede75e25677ac96b0578858c0fe9928c5";
+      hash = "sha256-ZBGkZHVOL91El40Sdlx3iV+kSzn3SKzWHDLGGM9FnTQ=";
     };
   });
 in

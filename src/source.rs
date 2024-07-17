@@ -207,16 +207,22 @@ impl Drop for SourceCache {
 
 #[cfg(test)]
 mod test {
+    use tracing::level_filters::LevelFilter;
+
     use super::*;
 
     #[tokio::test]
     async fn test_fetch_git() {
-        tracing_subscriber::fmt::init();
+        let _ = tracing_subscriber::fmt().with_max_level(LevelFilter::DEBUG).try_init();
         let url = "https://github.com/ros2-gbp/acado_vendor-release.git";
-        Source::fetch_git("acado_vendor", url, "master").await.unwrap();
+        Source::fetch_git("acado_vendor", url, "master")
+            .await
+            .unwrap();
         Source::fetch_git("acado_vendor", url, "release/jazzy/acado_vendor/1.0.0-7")
             .await
             .unwrap();
-        Source::fetch_git("acado_vendor", url, "aaaaaaaa").await.unwrap_err();
+        Source::fetch_git("acado_vendor", url, "aaaaaaaa")
+            .await
+            .unwrap_err();
     }
 }

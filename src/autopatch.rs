@@ -2,7 +2,6 @@ use std::fmt::Display;
 
 use crate::source::Source;
 
-
 pub struct PatchedSource {
     pub source: Source,
     pub substitutions: Vec<Replace>,
@@ -32,4 +31,3 @@ pub fn autopatch_source(src: &Source) -> PatchedSource {
         substitutions: vec![],
     }
 }
-

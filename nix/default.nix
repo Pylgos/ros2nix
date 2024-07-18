@@ -1,10 +1,11 @@
-{ lib, distro }@args:
+{ lib, distro, poetry2nix }:
 
 let
-  mainOverlay = import ./main-overlay.nix args;
-  systemPackagesOverlay = import ./system-packages-overlay.nix args;
+  systemPackagesOverlay = import ./system-packages-overlay.nix { inherit lib distro; };
+  mainOverlay = import ./main-overlay.nix { inherit lib distro; };
 in
 lib.composeManyExtensions [
+  poetry2nix.overlays.default
   systemPackagesOverlay
   mainOverlay
 ]

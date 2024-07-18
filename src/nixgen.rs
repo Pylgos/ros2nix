@@ -131,7 +131,7 @@ fn generate_source_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
     for src in ctx.sources.values() {
         match src.source.kind() {
             SourceKind::Git { rev } => {
-                writeln!(dst, "{} = fetchGit {{", src.source.name())?;
+                writeln!(dst, "{} = fetchgit {{", src.source.name())?;
                 writeln!(dst, "  url = {};", quote(src.source.url()))?;
                 writeln!(dst, "  rev = {};", quote(rev))?;
                 writeln!(dst, "  hash = {};", quote(src.source.nar_hash()))?;
@@ -148,10 +148,10 @@ fn generate_distro_root(ctx: &Ctx) -> Result<()> {
     writeln!(dst, "let")?;
     writeln!(
         dst,
-        "  sources = self.callPackages ({{ fetchZip, fetchGit, substituteSource }}: {{"
+        "  sources = self.callPackage ({{ fetchzip, fetchgit, substituteSource }}: {{"
     )?;
     generate_source_list(ctx, indented(&mut dst).with_str("    "))?;
-    writeln!(dst, "  }});")?;
+    writeln!(dst, "  }}) {{}};")?;
     writeln!(dst, "in")?;
     writeln!(dst, "{{")?;
     generate_package_list(ctx, indented(&mut dst).with_str("  "))?;

@@ -4,6 +4,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/24.05";
     dream2nix.url = "github:nix-community/dream2nix";
     dream2nix.inputs.nixpkgs.follows = "nixpkgs";
+    poetry2nix.url = "github:nix-community/poetry2nix";
   };
 
   outputs =
@@ -12,6 +13,7 @@
       flake-utils,
       nixpkgs,
       dream2nix,
+      poetry2nix,
     }:
     let
       lib = nixpkgs.lib // { dream2nix = dream2nix.lib; };
@@ -29,7 +31,7 @@
       }
     ))
     // {
-      lib.mkOverlay = ({ distro }: import ./overlay.nix { inherit lib distro; });
+      lib.mkOverlay = ({ distro }: import ./overlay.nix { inherit lib distro poetry2nix; });
       overlays.default = self.lib.mkOverlay { distro = "jazzy"; };
     };
 }

@@ -2,14 +2,21 @@
 final: prev:
 
 let
-  private-funcs = import ./private-funcs.nix { inherit lib; pkgs = final; };
+  private-funcs = import ./private-funcs.nix {
+    inherit lib;
+    pkgs = final;
+  };
   distrobutions = {
     jazzy = final.makeScopeWithSplicing' {
       otherSplices = final.generateSplicesForMkScope "rosPackages";
       extra = (spliced: private-funcs);
-      f = import ./gen/jazzy.nix;
+      f = (
+        self:
+        { buildRosPackage = self.callPackage ./build-ros-package.nix { }; } // (import ./gen/jazzy.nix self)
+      );
     };
   };
-in {
+in
+{
   rosPackages = distrobutions.${distro};
 }

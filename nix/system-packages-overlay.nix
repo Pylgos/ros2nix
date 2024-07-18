@@ -23,4 +23,5 @@ final: prev:
       }
     );
   };
+  python3Packages = final.python3.pkgs;
 }

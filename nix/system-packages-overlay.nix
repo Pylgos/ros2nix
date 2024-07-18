@@ -10,21 +10,17 @@ final: prev:
           projectDir = ../poetry;
           python = prev.python3;
           overrides = prev.poetry2nix.overrides.withDefaults (final: prev: {
-            inherit (pyFinal) docutils;
+            inherit (pyFinal) docutils flake8;
+            flake8-builtins = prev.flake8-builtins.overridePythonAttrs (oldAttras: {
+              nativeBuildInputs = oldAttras.nativeBuildInputs ++ [ final.hatchling ];
+            });
+            
           });
         }).poetryPackages;
         pkgsByNames = lib.listToAttrs (map (drv: { name = drv.pname; value = drv; }) pkgList);
       in {
-        rosdistro = pkgsByNames.rosdistro;
+        inherit (pkgsByNames) rosdistro catkin-pkg flake8-quotes flake8-comprehensions flake8-builtins colcon-common-extensions;
       }
-
-      # {
-      #   catkin-pkg = pyFinal.callPackage ./system-packages/catkin-pkg.nix { };
-      #   flake8-quotes = pyFinal.callPackage ./system-packages/flake8-quotes.nix { };
-      #   flake8-comprehensions = pyFinal.callPackage ./system-packages/flake8-comprehensions.nix { };
-      #   flake8-builtins = pyFinal.callPackage ./system-packages/flake8-builtins.nix { };
-      #   rosdistro = pyFinal.callPackage ./system-packages/rosdistro.nix { };
-      # }
     );
   };
 }

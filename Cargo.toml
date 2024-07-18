@@ -4,6 +4,9 @@ version = "0.1.0"
 edition = "2021"
 build = "build.rs"
 
+[workspace]
+members = [ "setup-helper" ]
+
 [dependencies]
 anyhow = "1.0.86"
 async-compression = { version = "0.4.11", features = [

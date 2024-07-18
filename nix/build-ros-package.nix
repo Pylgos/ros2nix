@@ -1,6 +1,8 @@
-{ stdenv, buildPackages }:
+{ stdenv, buildPackages, rosSetupHook }:
 
 {
+  nativeBuildInputs ? [],
+
   configurePhase ? null,
   buildPhase ? null,
   installPhase ? null,
@@ -12,7 +14,7 @@
 stdenv.mkDerivation (
   args
   // {
-    nativeBuildInputs = [ buildPackages.python3Packages.colcon-common-extensions ];
+    nativeBuildInputs = nativeBuildInputs ++ [ buildPackages.python3Packages.colcon-common-extensions rosSetupHook ];
 
     buildPhase =
       if buildPhase == null then

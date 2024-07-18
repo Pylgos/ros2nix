@@ -15,7 +15,7 @@ use tracing::{debug, info, warn};
 
 use crate::config::ConfigRef;
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub struct Source {
     name: String,
     url: String,
@@ -46,7 +46,7 @@ impl Source {
     }
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum SourceKind {
     Git { rev: String },
 }

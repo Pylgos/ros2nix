@@ -1,12 +1,12 @@
 use anyhow::Result;
 use indenter::indented;
-use std::collections::{BTreeMap, BTreeSet};
+use std::collections::{BTreeMap, BTreeSet, HashSet};
 use std::fmt::Write;
 use std::io::Write as _;
 
-use crate::autopatch::PatchedSource;
+use crate::autopatch::{PatchedSource, Replacement};
 use crate::deps::{NixDependency, NixDependencyKind};
-use crate::source::SourceKind;
+use crate::source::{Source, SourceKind};
 use crate::{
     config::ConfigRef,
     deps::NixDependencies,
@@ -57,7 +57,7 @@ fn generate_package_body(ctx: &Ctx, mut dst: impl Write, manifest: &PackageManif
     writeln!(
         dst,
         "src = sources.{};",
-        ctx.sources[&manifest.name].source.name()
+        ctx.sources[&manifest.name].name()
     )?;
     let deps = &ctx.deps[&manifest.name];
     let dep_string_of_kind = |kind: NixDependencyKind, propagated: bool| -> String {
@@ -127,18 +127,56 @@ fn generate_package_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
     Ok(())
 }
 
-fn generate_source_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
-    for src in ctx.sources.values() {
-        match src.source.kind() {
-            SourceKind::Git { rev } => {
-                writeln!(dst, "{} = fetchgit {{", src.source.name())?;
-                writeln!(dst, "  url = {};", quote(src.source.url()))?;
-                writeln!(dst, "  rev = {};", quote(rev))?;
-                writeln!(dst, "  hash = {};", quote(src.source.nar_hash()))?;
-                writeln!(dst, "}};")?;
-            }
+fn collect_sources<'a>(dst: &mut BTreeMap<String, &'a PatchedSource>, src: &'a PatchedSource) {
+    dst.insert(src.name().to_string(), &src);
+    for sub in src.substitutions.iter() {
+        match &sub.with {
+            Replacement::Path(src) => collect_sources(dst, src),
+            Replacement::Url(src) => collect_sources(dst, src),
         }
     }
+
+}
+
+fn generate_source_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
+    let mut all_srcs = BTreeMap::new();
+    for src in ctx.sources.values() {
+        collect_sources(&mut all_srcs, src);
+    }
+
+    for src in all_srcs.values() {
+        let drv_name = src.name().to_string() + "-source";
+        writeln!(dst, "{} = substituteSource {{", src.name())?;
+        write!(dst, "  src = ")?;
+        match src.source.kind() {
+            SourceKind::Git { rev } => {
+                writeln!(dst, "fetchgit {{")?;
+                writeln!(dst, "    name = {};", quote(&drv_name))?;
+                writeln!(dst, "    url = {};", quote(src.source.url()))?;
+                writeln!(dst, "    rev = {};", quote(rev))?;
+                writeln!(dst, "    hash = {};", quote(src.source.nar_hash()))?;
+                writeln!(dst, "  }};")?;
+            }
+        }
+        writeln!(dst, "  substitutions = [")?;
+        for sub in src.substitutions.iter() {
+            writeln!(dst, "    {{")?;
+            writeln!(dst, "      path = {};", quote(&sub.path))?;
+            writeln!(dst, "      from = {};", quote(&sub.from))?;
+            match &sub.with {
+                Replacement::Path(with_src) => {
+                    writeln!(dst, "      to = {};", quote(&format!("PATH ${{{}}}", with_src.name())))?;
+                }
+                Replacement::Url(with_src) => {
+                    writeln!(dst, "      to = {};", quote(&format!("URL ${{{}}}", with_src.name())))?;
+                }
+            }
+            writeln!(dst, "    }}")?;
+        }
+        writeln!(dst, "  ];")?;
+        writeln!(dst, "}};")?;
+    }
+
     Ok(())
 }
 

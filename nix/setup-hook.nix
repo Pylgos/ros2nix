@@ -1,4 +1,9 @@
-{ makeSetupHook, ros-setup-helper, bash, writeScript }:
+{
+  makeSetupHook,
+  ros-setup-helper,
+  bash,
+  writeScript,
+}:
 
 makeSetupHook
   {
@@ -12,10 +17,16 @@ makeSetupHook
     writeScript "run-hello-hook.sh" ''
       #!@shell@
 
-      _setupRosHook() {
+      ros2nixSetupHook_addSerchPath() {
+        addToSearchPath _ROS2NIX_SEARCH_PATH "$1"
+      }
+
+      ros2nixSetupPhase() {
         source <(@setupHelper@)
       }
 
-      preConfigureHooks+=(_setupRosHook)
+      addEnvHooks "$targetOffset" ros2nixSetupHook_addSerchPath
+
+      prePhases+=(ros2nixSetupPhase)
     ''
   )

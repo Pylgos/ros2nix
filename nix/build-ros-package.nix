@@ -9,6 +9,8 @@
   checkPhase ? null,
   preFixup ? "",
   doCheck ? false,
+  dontUseCmakeConfigure ? true,
+  strictDeps ? true,
   ...
 }@args:
 stdenv.mkDerivation (
@@ -65,5 +67,7 @@ stdenv.mkDerivation (
         rm -rf /build/build
         rm -rf /build/log
       '';
+
+    inherit strictDeps dontUseCmakeConfigure;
   }
 )

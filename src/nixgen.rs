@@ -1,12 +1,12 @@
 use anyhow::Result;
 use indenter::indented;
-use std::collections::{BTreeMap, BTreeSet, HashSet};
+use std::collections::{BTreeMap, BTreeSet};
 use std::fmt::Write;
 use std::io::Write as _;
 
 use crate::autopatch::{PatchedSource, Replacement};
 use crate::deps::{NixDependency, NixDependencyKind};
-use crate::source::{Source, SourceKind};
+use crate::source::SourceKind;
 use crate::{
     config::ConfigRef,
     deps::NixDependencies,
@@ -28,6 +28,25 @@ fn spliced_set_name(kind: NixDependencyKind) -> Option<&'static str> {
         TargetTarget => Some("pkgsTargetTarget"),
         Check => None,
     }
+}
+
+fn escape(s: &str) -> String {
+    let mut escaped = String::new();
+    escaped.push('"');
+    let mut chars = s.chars().peekable();
+    while let Some(c) = chars.next() {
+        let maybe_next = chars.peek();
+        match c {
+            '$' if maybe_next == Some(&'{') => {
+                escaped.push_str("\\$");
+            }
+            '\\' => escaped.push_str("\\\\"),
+            '"' => escaped.push_str("\\\""),
+            _ => escaped.push(c),
+        }
+    }
+    escaped.push('"');
+    escaped
 }
 
 fn quote(s: &str) -> String {
@@ -52,8 +71,8 @@ fn generate_parameters(ctx: &Ctx, mut dst: impl Write, manifest: &PackageManifes
 }
 
 fn generate_package_body(ctx: &Ctx, mut dst: impl Write, manifest: &PackageManifest) -> Result<()> {
-    writeln!(dst, "pname = {};", quote(&manifest.name))?;
-    writeln!(dst, "version = {};", quote(&manifest.release_version))?;
+    writeln!(dst, "pname = {};", escape(&manifest.name))?;
+    writeln!(dst, "version = {};", escape(&manifest.release_version))?;
     writeln!(
         dst,
         "src = sources.{};",
@@ -151,18 +170,18 @@ fn generate_source_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
         match src.source.kind() {
             SourceKind::Git { rev } => {
                 writeln!(dst, "fetchgit {{")?;
-                writeln!(dst, "    name = {};", quote(&drv_name))?;
-                writeln!(dst, "    url = {};", quote(src.source.url()))?;
-                writeln!(dst, "    rev = {};", quote(rev))?;
-                writeln!(dst, "    hash = {};", quote(src.source.nar_hash()))?;
+                writeln!(dst, "    name = {};", escape(&drv_name))?;
+                writeln!(dst, "    url = {};", escape(src.source.url()))?;
+                writeln!(dst, "    rev = {};", escape(rev))?;
+                writeln!(dst, "    hash = {};", escape(src.source.nar_hash()))?;
                 writeln!(dst, "  }};")?;
             }
         }
         writeln!(dst, "  substitutions = [")?;
         for sub in src.substitutions.iter() {
             writeln!(dst, "    {{")?;
-            writeln!(dst, "      path = {};", quote(&sub.path))?;
-            writeln!(dst, "      from = {};", quote(&sub.from))?;
+            writeln!(dst, "      path = {};", escape(sub.path.to_str().unwrap()))?;
+            writeln!(dst, "      from = {};", escape(&sub.from))?;
             match &sub.with {
                 Replacement::Path(with_src) => {
                     writeln!(dst, "      to = {};", quote(&format!("PATH ${{{}}}", with_src.name())))?;
@@ -186,7 +205,7 @@ fn generate_distro_root(ctx: &Ctx) -> Result<()> {
     writeln!(dst, "let")?;
     writeln!(
         dst,
-        "  sources = self.callPackage ({{ fetchzip, fetchgit, substituteSource }}: {{"
+        "  sources = self.callPackage ({{ fetchzip, fetchgit, substituteSource }}: rec {{"
     )?;
     generate_source_list(ctx, indented(&mut dst).with_str("    "))?;
     writeln!(dst, "  }}) {{}};")?;

@@ -13,6 +13,7 @@ struct ConfigToml {
     gen_dir: Option<String>,
     env: Option<BTreeMap<String, BTreeMap<String, String>>>,
     system_packages: Option<BTreeMap<String, Vec<String>>>,
+    max_concurrent_downloads: Option<usize>
 }
 
 impl ConfigToml {
@@ -33,6 +34,7 @@ impl ConfigToml {
                 .unwrap_or_else(|| PathBuf::from("nix/gen")),
             env: self.env.unwrap_or_default(),
             system_packages: self.system_packages.unwrap_or_default(),
+            max_concurrent_downloads: self.max_concurrent_downloads.unwrap_or(32),
         }
     }
 }
@@ -43,6 +45,7 @@ pub struct Config {
     gen_dir: PathBuf,
     env: BTreeMap<String, BTreeMap<String, String>>,
     system_packages: BTreeMap<String, Vec<String>>,
+    max_concurrent_downloads: usize,
 }
 
 pub type ConfigRef = std::sync::Arc<Config>;
@@ -54,6 +57,7 @@ impl Default for Config {
             gen_dir: PathBuf::from("nix/gen"),
             env: BTreeMap::new(),
             system_packages: BTreeMap::new(),
+            max_concurrent_downloads: 32,
         }
     }
 }
@@ -89,5 +93,9 @@ impl Config {
 
     pub fn system_packages(&self) -> &BTreeMap<String, Vec<String>> {
         &self.system_packages
+    }
+
+    pub fn max_concurrent_downloads(&self) -> usize {
+        self.max_concurrent_downloads
     }
 }

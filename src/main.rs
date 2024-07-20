@@ -1,12 +1,11 @@
-use std::collections::BTreeMap;
+use std::{collections::BTreeMap, sync::Arc};
 
 use anyhow::Result;
-use autopatch::autopatch_source;
-use config::ConfigRef;
+use autopatch::{autopatch_source, PatchedSource};
 use deps::resolve_dependencies;
-use futures::{future, stream, StreamExt as _};
+use futures::{future, stream, StreamExt as _, TryStreamExt};
 use rosindex::{DistroIndex, DistroStatus, PackageIndex};
-use source::{Source, SourceCache};
+use source::{Fetcher, Source};
 use tokio::select;
 use tracing::warn;
 
@@ -19,25 +18,25 @@ mod rosindex;
 mod source;
 
 pub async fn fetch_sources(
-    cfg: &ConfigRef,
+    fetcher: &Arc<Fetcher>,
     pkg_index: &PackageIndex,
 ) -> Result<BTreeMap<String, Source>> {
-    let cache = SourceCache::new_arc(cfg, &pkg_index.name);
+    let max_concurrent_downloads = fetcher.max_concurrent_downloads();
     let sources: BTreeMap<String, Source> = stream::iter(pkg_index.manifests.iter())
         .map(move |(name, manifest)| {
-            let cache = cache.clone();
+            let fetcher = fetcher.clone();
             let manifest = manifest.clone();
             let name = name.clone();
             tokio::spawn(async move {
                 (
                     name.clone(),
-                    cache
+                    fetcher
                         .fetch_git(name.as_str(), &manifest.repository, &manifest.tag)
                         .await,
                 )
             })
         })
-        .buffer_unordered(32)
+        .buffer_unordered(max_concurrent_downloads)
         .filter_map(|res| {
             let (name, maybe_src) = res.unwrap();
             match maybe_src {
@@ -58,18 +57,29 @@ async fn main_inner() -> Result<()> {
     cfg.create_directories()?;
     let distro_index = DistroIndex::fetch(&cfg).await?;
     for package_index in distro_index.distros.values() {
+        let fetcher = Fetcher::new_arc(&cfg, &package_index.name);
         if package_index.status != DistroStatus::Active {
             continue;
         }
         if package_index.name != "jazzy" {
             continue;
         }
-        let sources = fetch_sources(&cfg, package_index).await?;
+        let sources = fetch_sources(&fetcher, package_index).await?;
         let deps = resolve_dependencies(&cfg, &package_index.manifests)?;
-        let patched_sources = sources
-            .iter()
-            .map(|(name, src)| (name.clone(), autopatch_source(src)))
-            .collect();
+        let patched_sources: BTreeMap<String, PatchedSource> = stream::iter(sources.iter())
+            .map(|(name, src)| {
+                let name = name.clone();
+                let src = src.clone();
+                let fetcher = fetcher.clone();
+                tokio::spawn(async move {
+                    let patched = autopatch_source(&fetcher, &src).await?;
+                    anyhow::Ok((name.clone(), patched))
+                })
+            })
+            .buffer_unordered(fetcher.max_concurrent_downloads())
+            .then(|res| future::ready(res.unwrap()))
+            .try_collect()
+            .await?;
         nixgen::generate(&cfg, package_index, &patched_sources, &deps)?;
     }
 

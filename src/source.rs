@@ -9,13 +9,13 @@ use std::{
 use anyhow::{ensure, Result};
 use futures::StreamExt;
 use serde::{Deserialize, Serialize};
-use tokio::process::{Child, Command};
+use tokio::{process::{Child, Command}, sync::Semaphore};
 use tokio_util::codec::{FramedRead, LinesCodec};
 use tracing::{debug, info, warn};
 
 use crate::config::ConfigRef;
 
-#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
 pub struct Source {
     name: String,
     url: String,
@@ -46,7 +46,7 @@ impl Source {
     }
 }
 
-#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
 pub enum SourceKind {
     Git { rev: String },
 }
@@ -140,12 +140,14 @@ impl SourceCacheData {
 }
 
 #[derive(Debug)]
-pub struct SourceCache {
+pub struct Fetcher {
     path: PathBuf,
     cache: std::sync::Mutex<SourceCacheData>,
+    semaphore: Semaphore,
+    max_concurrent_downloads: usize,
 }
 
-impl SourceCache {
+impl Fetcher {
     pub fn new(cfg: &ConfigRef, name: &str) -> Self {
         let path = cfg
             .cache_dir()
@@ -154,9 +156,11 @@ impl SourceCache {
             Ok(cache) => cache,
             Err(_) => SourceCacheData::default(),
         };
-        SourceCache {
+        Self {
             path,
             cache: std::sync::Mutex::new(cache),
+            semaphore: Semaphore::new(cfg.max_concurrent_downloads()),
+            max_concurrent_downloads: cfg.max_concurrent_downloads(),
         }
     }
 
@@ -176,7 +180,10 @@ impl SourceCache {
                 _ => {}
             }
         }
-        let source = Source::fetch_git(name, url, rev_or_branch).await?;
+        let source = {
+            let _permit = self.semaphore.acquire().await?;
+            Source::fetch_git(name, url, rev_or_branch).await?
+        };
         let mut cache = self.cache.lock().unwrap();
         cache.git_caches.insert(key, source.clone());
         Ok(source)
@@ -187,9 +194,13 @@ impl SourceCache {
         cache.save(&self.path)?;
         Ok(())
     }
+
+    pub fn max_concurrent_downloads(&self) -> usize {
+        self.max_concurrent_downloads
+    }
 }
 
-impl Drop for SourceCache {
+impl Drop for Fetcher {
     fn drop(&mut self) {
         match self.save() {
             Ok(_) => {

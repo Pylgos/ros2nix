@@ -6,8 +6,8 @@
     if substitutions == [ ] then
       src
     else
-      pkgs.mkDerivationNoCC {
-        name = "substitute-${src.name}";
+      pkgs.stdenvNoCC.mkDerivation {
+        name = "${src.name}-substituted";
         src = src;
         phases = [
           "unpackPhase"
@@ -19,9 +19,9 @@
             genLine =
               subst:
               "substituteInPlace ${
-                lib.escapeShellArg [
-                  ("$out/" + subst.path)
-                  "--replace"
+                lib.escapeShellArgs [
+                  subst.path
+                  "--replace-fail"
                   subst.from
                   subst.to
                 ]
@@ -30,7 +30,7 @@
           in
           s;
         installPhase = ''
-          cp -a $src $out
+          cp -a . $out
         '';
       };
 }

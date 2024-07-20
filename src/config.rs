@@ -13,7 +13,7 @@ struct ConfigToml {
     gen_dir: Option<String>,
     env: Option<BTreeMap<String, BTreeMap<String, String>>>,
     system_packages: Option<BTreeMap<String, Vec<String>>>,
-    max_concurrent_downloads: Option<usize>
+    max_concurrent_downloads: Option<usize>,
 }
 
 impl ConfigToml {

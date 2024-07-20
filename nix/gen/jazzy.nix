@@ -1139,6 +1139,51 @@ let
         hash = "sha256-y9V12GcuRTRxl5BbMVNzmPIoC3qIhoGQhgK3kjmd1xs=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/aws/aws-sdk-cpp.git";
+          to = "VCS_TYPE path VCS_URL ${aws_sdk_cpp_vendor-vendor_source0}";
+        }
+      ];
+    };
+    aws_sdk_cpp_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "aws_sdk_cpp_vendor-vendor_source0-source";
+        url = "https://github.com/aws/aws-sdk-cpp.git";
+        rev = "615458352b71fd29de142e01b8ecf293fcd08a88";
+        hash = "sha256-P44Q84E6tVyV6sGcB7Z3+/lnAtR65X4JIws6T/+7a+Q=";
+      };
+      substitutions = [
+        {
+          path = "tools/android-build/CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/bagder/curl.git";
+          to = "URL ${aws_sdk_cpp_vendor-vendor_source0-vendor_source1}";
+        }
+        {
+          path = "tools/android-build/CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/openssl/openssl.git";
+          to = "URL ${aws_sdk_cpp_vendor-vendor_source0-vendor_source0}";
+        }
+      ];
+    };
+    aws_sdk_cpp_vendor-vendor_source0-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "aws_sdk_cpp_vendor-vendor_source0-vendor_source0-source";
+        url = "https://github.com/openssl/openssl.git";
+        rev = "e2e09d9fba1187f8d6aafaa34d4172f56f1ffb72";
+        hash = "sha256-NYLD6ShRq0sIQ9amr0CVKWqTL4qbONf07c4n0eXcmIY=";
+      };
+      substitutions = [
+      ];
+    };
+    aws_sdk_cpp_vendor-vendor_source0-vendor_source1 = substituteSource {
+      src = fetchgit {
+        name = "aws_sdk_cpp_vendor-vendor_source0-vendor_source1-source";
+        url = "https://github.com/bagder/curl.git";
+        rev = "44b9b4d4f56d6f6de92c89636994c03984e9cd01";
+        hash = "sha256-hoUw0d2nRKdQpAtZzn4Q0a2i++VLHfkJ7weAy8VQu0c=";
+      };
+      substitutions = [
       ];
     };
     azure_iot_sdk_c = substituteSource {
@@ -1637,6 +1682,21 @@ let
         url = "https://github.com/ros2-gbp/console_bridge_vendor-release.git";
         rev = "bb994f26fbd204276c099c630b9ee07e48e70026";
         hash = "sha256-+m52Ig9uULM+20Ouz1g69az+DbquL6j4S81kz7VOxD4=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/ros/console_bridge.git";
+          to = "VCS_TYPE path VCS_URL ${console_bridge_vendor-vendor_source0}";
+        }
+      ];
+    };
+    console_bridge_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "console_bridge_vendor-vendor_source0-source";
+        url = "https://github.com/ros/console_bridge.git";
+        rev = "0828d846f2d4940b4e2b5075c6c724991d0cd308";
+        hash = "sha256-M3GocT0hodw3Sc2NHcFDiPVZ1XN7BqIUuYLW8OaXMqM=";
       };
       substitutions = [
       ];
@@ -3799,6 +3859,21 @@ let
         hash = "sha256-mh1shfa2X3rE8xoqZP26ifszBx1NDE+RqsWMx6QZjj0=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_cmake_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_cmake_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_cmake_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-cmake.git";
+        rev = "ddd38ff196640024d6e054ff59cf5fea1ef01d73";
+        hash = "sha256-fnN3Fmp7F5W0JixJUEp2v/OnXzmRidS5ujmSYxIRWto=";
+      };
+      substitutions = [
       ];
     };
     gz_common_vendor = substituteSource {
@@ -3807,6 +3882,21 @@ let
         url = "https://github.com/ros2-gbp/gz_common_vendor-release.git";
         rev = "dac2a4f1bbc25a269c0b1a290082ec5eaac46acb";
         hash = "sha256-g+C82uYpNbdkxuiALKrXgHBROl3EqSfzk5y0UrPruWw=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_common_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_common_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_common_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-common.git";
+        rev = "c4bfb3b9d03f96b65418076c40bc2c48446c7e7b";
+        hash = "sha256-Wc7wUbSg9ltPFWGG/YWDaobktuZOuc8a4Pc1EDNoXrY=";
       };
       substitutions = [
       ];
@@ -3819,6 +3909,21 @@ let
         hash = "sha256-M1p+knNPSpbfQpQATwwHo5EqtCKx0Fn9S7rZLTTWICY=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/dartsim/dart.git";
+          to = "VCS_TYPE path VCS_URL ${gz_dartsim_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_dartsim_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_dartsim_vendor-vendor_source0-source";
+        url = "https://github.com/dartsim/dart.git";
+        rev = "a51e08c210d7892605c6dc0b9ae96fce4446d9fe";
+        hash = "sha256-AfKPqUiW6BsM98TIzTY2ZcFP1WvURs8/dGOzanIiB9g=";
+      };
+      substitutions = [
       ];
     };
     gz_fuel_tools_vendor = substituteSource {
@@ -3827,6 +3932,21 @@ let
         url = "https://github.com/ros2-gbp/gz_fuel_tools_vendor-release.git";
         rev = "40c733ff8578ea9beecb0a461c5d7919c675a599";
         hash = "sha256-gjBPA5xiLQJS07+JRJQfPo03SE0lzKNCX+KcBcyGmyY=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_fuel_tools_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_fuel_tools_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_fuel_tools_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-fuel-tools.git";
+        rev = "c7cd3dd6580db102bbaabfcf4835ae68be9ff66e";
+        hash = "sha256-36WwY3YUeCAUDBY8N+Mbw7FuNRn1fQUifLZvoGhXtcc=";
       };
       substitutions = [
       ];
@@ -3839,6 +3959,21 @@ let
         hash = "sha256-EKGNiBBmlE//7XCL6UQgqzbuMCe5QQIVVtUxb/JbMQ4=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_gui_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_gui_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_gui_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-gui.git";
+        rev = "ac851e62862a9812a117c2f3913de992003cd7e5";
+        hash = "sha256-heYeY6yZrCi8HTrYbgPiJ2/EKpoSfyEE2FNzzGjnTgI=";
+      };
+      substitutions = [
       ];
     };
     gz_launch_vendor = substituteSource {
@@ -3847,6 +3982,21 @@ let
         url = "https://github.com/ros2-gbp/gz_launch_vendor-release.git";
         rev = "56966c515d46fd020678dd1ba1dcad154173bc14";
         hash = "sha256-tlWehAYOYaLfvvZQzS0xVkMXKfkQPuOX3c6lAce+ij8=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_launch_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_launch_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_launch_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-launch.git";
+        rev = "1317511d365d1b2c312c86f9062b8a4b7bfdc132";
+        hash = "sha256-En3V8i/Ie8+KnSHGlm9Bap7REdLhYBaVHVbOM+/Pzno=";
       };
       substitutions = [
       ];
@@ -3859,6 +4009,21 @@ let
         hash = "sha256-mv5JDoyAF8047mJFHCaW+qEffBjX4EfiyTncYAUaxiY=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_math_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_math_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_math_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-math.git";
+        rev = "9f5559212059871c9d1e458dcfe623a0c3667110";
+        hash = "sha256-W+LAe9hn/LhecxFmmxihv/lNAGvze8w2BDj4rRVfzJo=";
+      };
+      substitutions = [
       ];
     };
     gz_msgs_vendor = substituteSource {
@@ -3867,6 +4032,21 @@ let
         url = "https://github.com/ros2-gbp/gz_msgs_vendor-release.git";
         rev = "18c035d7f59a0e73283468dcd3cf8c7022d3315f";
         hash = "sha256-N0N+HMjbSycAwW2nS20h/zbMe6ZMUEqDsZ7pDUV9jZU=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_msgs_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_msgs_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_msgs_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-msgs.git";
+        rev = "78e664a544cdc17e39a86507eec8aaf753a3dbc4";
+        hash = "sha256-/RFzosggLDq5eGfvrcF4Ka/VfHQtZIQprMkY7rd8cZg=";
       };
       substitutions = [
       ];
@@ -3879,6 +4059,21 @@ let
         hash = "sha256-4kfeqp5NoagMC+EqNw8tl7dtjCFunMNruZhuWfzyVow=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/OGRECave/ogre-next.git";
+          to = "VCS_TYPE path VCS_URL ${gz_ogre_next_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_ogre_next_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_ogre_next_vendor-vendor_source0-source";
+        url = "https://github.com/OGRECave/ogre-next.git";
+        rev = "8d4daeaf46d7d8f85f1833f17daedd7dac05daec";
+        hash = "sha256-elSj35LwsLzj1ssDPsk9NW/KSXfiOGYmw9hQSAWdpFM=";
+      };
+      substitutions = [
       ];
     };
     gz_physics_vendor = substituteSource {
@@ -3887,6 +4082,21 @@ let
         url = "https://github.com/ros2-gbp/gz_physics_vendor-release.git";
         rev = "3ac324e31eef6284c7bc48eb10c3bb92d6008413";
         hash = "sha256-bJwvgJ32RT8iOBdBtAsFg5jhKONJROhzN3DTZFEK7xQ=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_physics_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_physics_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_physics_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-physics.git";
+        rev = "bcacf85e3e25961263725f424191027951a03430";
+        hash = "sha256-vDO/QTiSF/yrDilr/4vGj/yEXraACl+TIS91phgMN7s=";
       };
       substitutions = [
       ];
@@ -3899,6 +4109,21 @@ let
         hash = "sha256-/y43QtJVsVEotHcmAu+Ttyji97D5EFXJIH1HzVkePAM=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_plugin_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_plugin_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_plugin_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-plugin.git";
+        rev = "23c28a25aa0c52c87378a28543723b73d475c417";
+        hash = "sha256-9t6vcnBbfRWu6ptmqYAhmWKDoKAaK631JD9u1C0G0mY=";
+      };
+      substitutions = [
       ];
     };
     gz_rendering_vendor = substituteSource {
@@ -3907,6 +4132,21 @@ let
         url = "https://github.com/ros2-gbp/gz_rendering_vendor-release.git";
         rev = "e89bd74f9f586eb6ac4b972c65f04c9309c290fa";
         hash = "sha256-X41BHiRkFFVoA5Ua52e6ClR9giYlS2y92qiH7B4EIQk=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_rendering_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_rendering_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_rendering_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-rendering.git";
+        rev = "df019bb4c01956f0431abd9417d0c178fe56f8ac";
+        hash = "sha256-TI/lGK7dRc6z/nlBKfK7gjKFNCMhgFLFJA+YuVB7Oc8=";
       };
       substitutions = [
       ];
@@ -3939,6 +4179,21 @@ let
         hash = "sha256-8L5/tSyH6kkVWR1hK3tjTTehcWK6UTcrzwfo74BoBzU=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_sensors_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_sensors_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_sensors_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-sensors.git";
+        rev = "27239b4ac9877d87273a18010a307172899dd7a6";
+        hash = "sha256-JK2xOQKvX+0fcnN0e1JcARMx+Lsq8DfkXDHDRiTfuw0=";
+      };
+      substitutions = [
       ];
     };
     gz_sim_vendor = substituteSource {
@@ -3947,6 +4202,21 @@ let
         url = "https://github.com/ros2-gbp/gz_sim_vendor-release.git";
         rev = "32e521b1e6d755f0be80f21d5bf889aa6097e286";
         hash = "sha256-Wt+uY21jWBllaClDEypMjjI5Fq1lqX7YbONJkbE5zcM=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_sim_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_sim_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_sim_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-sim.git";
+        rev = "dc3fb1124fa58439abaec56f1301bb70a3ec7852";
+        hash = "sha256-yvI6CvmSHhWX/lT38T05oYwyEUK98B5bFol/jZLBDNU=";
       };
       substitutions = [
       ];
@@ -3959,6 +4229,21 @@ let
         hash = "sha256-Ha0HMQgXsfsWhwB1+MDCeeqbDMl+52CXQr+dJ15EL+I=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_tools_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_tools_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_tools_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-tools.git";
+        rev = "efcc504bd3665151266f38db627c9095e5a5773f";
+        hash = "sha256-sV/T53oVk1fgjwqn/SRTaPTukt+vAlGGxGvTN8+G6Mo=";
+      };
+      substitutions = [
       ];
     };
     gz_transport_vendor = substituteSource {
@@ -3969,6 +4254,21 @@ let
         hash = "sha256-2yv5Vn9MfAl0aHX9K8souz0y2RLiCXxvhgLeQIZUWns=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_transport_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_transport_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_transport_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-transport.git";
+        rev = "8cfecd0469e409b7af82725727eb0efade731504";
+        hash = "sha256-B6YvpZ8nSgAkhX9VXbxRHjYc9yfFE+qO1hw3S8xeXJc=";
+      };
+      substitutions = [
       ];
     };
     gz_utils_vendor = substituteSource {
@@ -3977,6 +4277,21 @@ let
         url = "https://github.com/ros2-gbp/gz_utils_vendor-release.git";
         rev = "af727228ba30b99fb6e8186ea25a5e86ffcecbb8";
         hash = "sha256-XSES/VOnowqLB7zTSz3NcKXmrOKHsGkNwLQ93IsX9JI=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_utils_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_utils_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_utils_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-utils.git";
+        rev = "9e80552d723ee8f1ba0ed4fcb300d4d9551a138e";
+        hash = "sha256-dNoDOZtk/zseHuOM5mOPHkXKU7wqxxKrFnh7e09bjRA=";
       };
       substitutions = [
       ];
@@ -4969,6 +5284,21 @@ let
         hash = "sha256-qbXJBtbU/GC6K5vEd6Dt1V5gnwyiWAhWD/mya3K/z40=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://gitlab.com/inivation/dv/libcaer.git";
+          to = "VCS_TYPE path VCS_URL ${libcaer_vendor-vendor_source0}";
+        }
+      ];
+    };
+    libcaer_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "libcaer_vendor-vendor_source0-source";
+        url = "https://gitlab.com/inivation/dv/libcaer.git";
+        rev = "8710e73ceb21d9fb4f74ead62ca3fae42d828997";
+        hash = "sha256-aTQw4K7otT7MP6qNediqzgjqbM6Wldg6bzwBTzX34II=";
+      };
+      substitutions = [
       ];
     };
     libcamera = substituteSource {
@@ -4989,6 +5319,21 @@ let
         hash = "sha256-v0iNPURg6MEcVD010bSbeJ81E/2SNv2HQ97U/fcjz1A=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/curl/curl.git";
+          to = "VCS_TYPE path VCS_URL ${libcurl_vendor-vendor_source0}";
+        }
+      ];
+    };
+    libcurl_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "libcurl_vendor-vendor_source0-source";
+        url = "https://github.com/curl/curl.git";
+        rev = "801bd5138ce31aa0d906fa4e2eabfc599d74e793";
+        hash = "sha256-4w15NHw3D+YBuK02ZIZqvGaWgyQVc61MZ34pkLu0Oug=";
+      };
+      substitutions = [
       ];
     };
     libg2o = substituteSource {
@@ -5007,6 +5352,21 @@ let
         url = "https://github.com/ros2-gbp/rosbag2-release.git";
         rev = "24a4a9d4e509be6f2345787f490c3111e74c82e7";
         hash = "sha256-7qUW2AEwVXQRPc8y3Kz3ZmAPEtKj3pR8brDzXbZjVYc=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/lz4/lz4.git";
+          to = "VCS_TYPE path VCS_URL ${liblz4_vendor-vendor_source0}";
+        }
+      ];
+    };
+    liblz4_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "liblz4_vendor-vendor_source0-source";
+        url = "https://github.com/lz4/lz4.git";
+        rev = "5ff839680134437dbf4678f3d0c7b371d84f4964";
+        hash = "sha256-YiMCD3vvrG+oxBUghSrCmP2LAfAGZrEaKz0YoaQJhpI=";
       };
       substitutions = [
       ];
@@ -5102,18 +5462,8 @@ let
         {
           path = "test/downloadGTest.cmake.in";
           from = "GIT_REPOSITORY    https://github.com/google/googletest.git";
-          to = "URL ${librealsense2-vendor_source0-vendor_source0}";
+          to = "URL ${pybind11_json_vendor-vendor_source0-vendor_source0}";
         }
-      ];
-    };
-    librealsense2-vendor_source0-vendor_source0 = substituteSource {
-      src = fetchgit {
-        name = "librealsense2-vendor_source0-vendor_source0-source";
-        url = "https://github.com/google/googletest.git";
-        rev = "ec44c6c1675c25b9827aacd08c02433cccde7780";
-        hash = "sha256-KQ2U/1K6v103ftZHP8he8bRr+Dh9KYlTs/Qht6qkVC4=";
-      };
-      substitutions = [
       ];
     };
     libstatistics_collector = substituteSource {
@@ -5132,6 +5482,21 @@ let
         url = "https://github.com/ros2-gbp/libyaml_vendor-release.git";
         rev = "6716b363b25f6dd62d1d1673537ea10bc9f9c3d8";
         hash = "sha256-B4KqEW6DWzKfnmVCRwlG37WRdC5jasM41pTz21e1of0=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/yaml/libyaml.git";
+          to = "VCS_TYPE path VCS_URL ${libyaml_vendor-vendor_source0}";
+        }
+      ];
+    };
+    libyaml_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "libyaml_vendor-vendor_source0-source";
+        url = "https://github.com/yaml/libyaml.git";
+        rev = "2c891fc7a770e8ba2fec34fc6b545c672beb37e6";
+        hash = "sha256-S7PnooyfyAsIiRAlEPGYkgkVACGaBaCItuqOwrq2+qM=";
       };
       substitutions = [
       ];
@@ -5532,6 +5897,21 @@ let
         url = "https://github.com/ros2-gbp/mimick_vendor-release.git";
         rev = "1be11e576e4ab6745b5fa85c3dc3147b79523679";
         hash = "sha256-wQW/rdoXG6vBtOKZi4dSPTuRv1vmyfVQzzwmj2hOZ20=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/ros2/Mimick.git";
+          to = "VCS_TYPE path VCS_URL ${mimick_vendor-vendor_source0}";
+        }
+      ];
+    };
+    mimick_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "mimick_vendor-vendor_source0-source";
+        url = "https://github.com/ros2/Mimick.git";
+        rev = "9af748b88f6d48723275006ccbb0360e50342dbb";
+        hash = "sha256-3f5T8gTOLxMeYcaYDlAefXMKXP4Wv3xkUWBag07H+0I=";
       };
       substitutions = [
       ];
@@ -7199,6 +7579,21 @@ let
         hash = "sha256-FrogLrgo3JfoRC+Si2YPRBLgLBwzDer0agYmaVr6Q8o=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/prophesee-ai/openeb.git";
+          to = "VCS_TYPE path VCS_URL ${openeb_vendor-vendor_source0}";
+        }
+      ];
+    };
+    openeb_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "openeb_vendor-vendor_source0-source";
+        url = "https://github.com/prophesee-ai/openeb.git";
+        rev = "112dd6eee7ce11e97d6f8994a87c9d6324538a3c";
+        hash = "sha256-Q0ZbldyxOYysii+ObizUQS5FvMANXbOaX0K7JsvwDU0=";
+      };
+      substitutions = [
       ];
     };
     opennav_docking = substituteSource {
@@ -7249,6 +7644,21 @@ let
         hash = "sha256-LHj4WXKVrh8UKDJyfN3lT7gTuGCu0j5eAiN0bigrN2Q=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/orocos/orocos_kinematics_dynamics.git";
+          to = "VCS_TYPE path VCS_URL ${orocos_kdl_vendor-vendor_source0}";
+        }
+      ];
+    };
+    orocos_kdl_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "orocos_kdl_vendor-vendor_source0-source";
+        url = "https://github.com/orocos/orocos_kinematics_dynamics.git";
+        rev = "ce4bcb65a050615b6d7f21bc60fbb2656515791b";
+        hash = "sha256-CfmwMQEg/tRVNaGglBZ94pBwva49mJJwkbSjhqzG2Pw=";
+      };
+      substitutions = [
       ];
     };
     ortools_vendor = substituteSource {
@@ -7257,6 +7667,21 @@ let
         url = "https://github.com/ros2-gbp/ortools_vendor-release.git";
         rev = "87e2a82f7ef8300503e749a1647146e94baff921";
         hash = "sha256-yvm3NB4vC9QcixufG3FnSuEdpj75/eiLD2tzhd7gh5s=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/google/or-tools.git";
+          to = "VCS_TYPE path VCS_URL ${ortools_vendor-vendor_source0}";
+        }
+      ];
+    };
+    ortools_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "ortools_vendor-vendor_source0-source";
+        url = "https://github.com/google/or-tools.git";
+        rev = "3c5c99c278ef3d0ac85cdbd4f008f8c0fd2f3f94";
+        hash = "sha256-Ip2mKl+MuzOPaF1a2FTubqT0tA4gzDnD8dR7dLaHHo8=";
       };
       substitutions = [
       ];
@@ -8014,6 +8439,36 @@ let
         hash = "sha256-MRTBHHIoxucf4OASlszDZ3LuA0He/SRhobqoNsA8vDo=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/pybind/pybind11_json.git";
+          to = "VCS_TYPE path VCS_URL ${pybind11_json_vendor-vendor_source0}";
+        }
+      ];
+    };
+    pybind11_json_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "pybind11_json_vendor-vendor_source0-source";
+        url = "https://github.com/pybind/pybind11_json.git";
+        rev = "0fbbe3bbb27bd07a5ec7d71cbb1f17eaf4d37702";
+        hash = "sha256-GQldzT1YU6I1s1RFfzNIJNaIY/LsrsTevoaUoz1SK+Y=";
+      };
+      substitutions = [
+        {
+          path = "test/downloadGTest.cmake.in";
+          from = "GIT_REPOSITORY    https://github.com/google/googletest.git";
+          to = "URL ${pybind11_json_vendor-vendor_source0-vendor_source0}";
+        }
+      ];
+    };
+    pybind11_json_vendor-vendor_source0-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "pybind11_json_vendor-vendor_source0-vendor_source0-source";
+        url = "https://github.com/google/googletest.git";
+        rev = "ec44c6c1675c25b9827aacd08c02433cccde7780";
+        hash = "sha256-KQ2U/1K6v103ftZHP8he8bRr+Dh9KYlTs/Qht6qkVC4=";
+      };
+      substitutions = [
       ];
     };
     pybind11_vendor = substituteSource {
@@ -8022,6 +8477,21 @@ let
         url = "https://github.com/ros2-gbp/pybind11_vendor-release.git";
         rev = "6551cb9a99f0e0bb3666b9a9d3b2bda0b598c167";
         hash = "sha256-IqvDvVq5oLGYddeKV7uYtjHnf3SS24Ji+DO4Wua7xbU=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/pybind/pybind11.git";
+          to = "VCS_TYPE path VCS_URL ${pybind11_vendor-vendor_source0}";
+        }
+      ];
+    };
+    pybind11_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "pybind11_vendor-vendor_source0-source";
+        url = "https://github.com/pybind/pybind11.git";
+        rev = "8a099e44b3d5f85b20f05828d919d2332a8de841";
+        hash = "sha256-sO/Fa+QrAKyq2EYyYMcjPrYI+bdJIrDoj6L3JHoDo3E=";
       };
       substitutions = [
       ];
@@ -10674,6 +11144,21 @@ let
         hash = "sha256-u9JD903yl+ICtk2/KX/RkX+ZNHHP9vcdPE/8fZLG/eo=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/assimp/assimp.git";
+          to = "VCS_TYPE path VCS_URL ${rviz_assimp_vendor-vendor_source0}";
+        }
+      ];
+    };
+    rviz_assimp_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "rviz_assimp_vendor-vendor_source0-source";
+        url = "https://github.com/assimp/assimp.git";
+        rev = "6a08c39e3a91ef385e76515cfad86aca4bfd57ff";
+        hash = "sha256-ResIn+TA/FvrFt5+svMyLCJb2e+lyHFWopHBuzoXAhQ=";
+      };
+      substitutions = [
       ];
     };
     rviz_common = substituteSource {
@@ -10712,6 +11197,51 @@ let
         url = "https://github.com/ros2-gbp/rviz-release.git";
         rev = "4d4dec1a3a3d4a9c3a39b046f132b23381835a4b";
         hash = "sha256-1DkCwlnSLGJcNPhyfFqcXN6Iu+zp5KnCobzsEDH5/DI=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://git.savannah.gnu.org/git/freetype/freetype2.git";
+          to = "VCS_TYPE path VCS_URL ${rviz_ogre_vendor-vendor_source0}";
+        }
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/OGRECave/ogre.git";
+          to = "VCS_TYPE path VCS_URL ${rviz_ogre_vendor-vendor_source2}";
+        }
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/madler/zlib.git";
+          to = "VCS_TYPE path VCS_URL ${rviz_ogre_vendor-vendor_source1}";
+        }
+      ];
+    };
+    rviz_ogre_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "rviz_ogre_vendor-vendor_source0-source";
+        url = "https://git.savannah.gnu.org/git/freetype/freetype2.git";
+        rev = "3f83daeecb1a78d851b660eed025eeba362c0e4a";
+        hash = "sha256-UEn5Renp7EK9hTNRLiV7sec70zvY8mrLRwJoZ6aUJEE=";
+      };
+      substitutions = [
+      ];
+    };
+    rviz_ogre_vendor-vendor_source1 = substituteSource {
+      src = fetchgit {
+        name = "rviz_ogre_vendor-vendor_source1-source";
+        url = "https://github.com/madler/zlib.git";
+        rev = "09155eaa2f9270dc4ed1fa13e2b4b2613e6e4851";
+        hash = "sha256-eUuXV5zfy+fmiMNdWw5QCqDloBkaxy1tgi7by9nYHNA=";
+      };
+      substitutions = [
+      ];
+    };
+    rviz_ogre_vendor-vendor_source2 = substituteSource {
+      src = fetchgit {
+        name = "rviz_ogre_vendor-vendor_source2-source";
+        url = "https://github.com/OGRECave/ogre.git";
+        rev = "93d7eb5282d31b956f008a53e837bbb820b34454";
+        hash = "sha256-Z0ixdSmkV93coBBVZ5R3lPLfVMXRfWsFz/RsSyqPWFY=";
       };
       substitutions = [
       ];
@@ -10792,6 +11322,21 @@ let
         url = "https://github.com/ros2-gbp/sdformat_vendor-release.git";
         rev = "add2e5a2002981b0b5ff89d4a258cce150e8241f";
         hash = "sha256-Hcyl+RxJjbYOH+rjkk7RIL0EB/KFOhE3Sc3fSG/LplE=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${sdformat_vendor-vendor_source0}";
+        }
+      ];
+    };
+    sdformat_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "sdformat_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/sdformat.git";
+        rev = "6d3672cf3ba437c6c17608a1c960fcfac93040b0";
+        hash = "sha256-Fz8xWC55IOB7hAGck+8exu81qb01vqUS1K7izuPmo0A=";
       };
       substitutions = [
       ];
@@ -11159,6 +11704,21 @@ let
         hash = "sha256-0BY6luUFbdOJPREolo3FR1ZYPXi1nZG1OB84R+VkFiQ=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gabime/spdlog.git";
+          to = "VCS_TYPE path VCS_URL ${spdlog_vendor-vendor_source0}";
+        }
+      ];
+    };
+    spdlog_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "spdlog_vendor-vendor_source0-source";
+        url = "https://github.com/gabime/spdlog.git";
+        rev = "7e635fca68d014934b4af8a1cf874f63989352b7";
+        hash = "sha256-cxTaOuLXHRU8xMz9gluYz0a93O0ez2xOxbloyc1m1ns=";
+      };
+      substitutions = [
       ];
     };
     spinnaker_camera_driver = substituteSource {
@@ -11207,6 +11767,25 @@ let
         url = "https://github.com/ros2-gbp/rosbag2-release.git";
         rev = "fbfd03994971b73ad7da2680adf4ca01bd9855b1";
         hash = "sha256-nhY+4MfnCPiP6YX0UpUyLfMMaDi9VhUOX6ePMFU2IaA=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_TYPE zip";
+          to = "";
+        }
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://www.sqlite.org/2022/sqlite-amalgamation-3370200.zip";
+          to = "VCS_TYPE path VCS_URL ${sqlite3_vendor-vendor_source1}";
+        }
+      ];
+    };
+    sqlite3_vendor-vendor_source1 = substituteSource {
+      src = fetchzip {
+        name = "sqlite3_vendor-vendor_source1-source";
+        url = "https://www.sqlite.org/2022/sqlite-amalgamation-3370200.zip";
+        hash = "sha256-L7BvZlrl+9AlE42C1PszvjE9byi2qtcbfNiotUYInmc=";
       };
       substitutions = [
       ];
@@ -11779,6 +12358,26 @@ let
         hash = "sha256-mQi06924EtNw7quRVGSQDJ2EFYqUCOsq37JO/eH/gJE=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_TYPE git";
+          to = "";
+        }
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/msteinbeck/tinyspline.git";
+          to = "VCS_TYPE path VCS_URL ${tinyspline_vendor-vendor_source1}";
+        }
+      ];
+    };
+    tinyspline_vendor-vendor_source1 = substituteSource {
+      src = fetchgit {
+        name = "tinyspline_vendor-vendor_source1-source";
+        url = "https://github.com/msteinbeck/tinyspline.git";
+        rev = "5f0e8fad34e86771cfae3dac4beef5f1858d5610";
+        hash = "sha256-cvnnVT04R2QnFKsf/lxzkDmxgalAPFw8hGC33HyNsIQ=";
+      };
+      substitutions = [
       ];
     };
     tinyxml2_vendor = substituteSource {
@@ -12317,6 +12916,21 @@ let
         url = "https://github.com/ros2-gbp/uncrustify_vendor-release.git";
         rev = "69a8304c634ed4b0872634acbc73bc1854510fff";
         hash = "sha256-yVmdBegpkwKPCWppTjfeJpLZn9LCFAPVsI0sy2mZvpw=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/uncrustify/uncrustify.git";
+          to = "VCS_TYPE path VCS_URL ${uncrustify_vendor-vendor_source0}";
+        }
+      ];
+    };
+    uncrustify_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "uncrustify_vendor-vendor_source0-source";
+        url = "https://github.com/uncrustify/uncrustify.git";
+        rev = "b8c95286f70ef8e0e83bd055a3a7aabb614a0781";
+        hash = "sha256-L+YEVZC7sIDYuCM3xpSfZLjA3B8XsW5hi+zV2NEgXTs=";
       };
       substitutions = [
       ];
@@ -12899,6 +13513,21 @@ let
         hash = "sha256-+IC1J62UuHdmOjU/1+W0xO33jgHhgeC3OZXA8E8ewDw=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/jbeder/yaml-cpp.git";
+          to = "VCS_TYPE path VCS_URL ${yaml_cpp_vendor-vendor_source0}";
+        }
+      ];
+    };
+    yaml_cpp_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "yaml_cpp_vendor-vendor_source0-source";
+        url = "https://github.com/jbeder/yaml-cpp.git";
+        rev = "f7320141120f720aecc4c32be25586e7da9eb978";
+        hash = "sha256-J87oS6Az1/vNdyXu3L7KmUGWzU0IAkGrGMUUha+xDXI=";
+      };
+      substitutions = [
       ];
     };
     zbar_ros = substituteSource {
@@ -12992,6 +13621,21 @@ let
         url = "https://github.com/ros2-gbp/rosbag2-release.git";
         rev = "1f96118ede75e25677ac96b0578858c0fe9928c5";
         hash = "sha256-ZBGkZHVOL91El40Sdlx3iV+kSzn3SKzWHDLGGM9FnTQ=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/facebook/zstd.git";
+          to = "VCS_TYPE path VCS_URL ${zstd_vendor-vendor_source0}";
+        }
+      ];
+    };
+    zstd_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "zstd_vendor-vendor_source0-source";
+        url = "https://github.com/facebook/zstd.git";
+        rev = "63779c798237346c2b245c546c40b72a5a5913fe";
+        hash = "sha256-tHHHIsQU7vJySrVhJuMKUSq11MzkmC+Pcsj00uFJdnQ=";
       };
       substitutions = [
       ];

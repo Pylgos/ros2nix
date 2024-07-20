@@ -73,11 +73,7 @@ fn generate_parameters(ctx: &Ctx, mut dst: impl Write, manifest: &PackageManifes
 fn generate_package_body(ctx: &Ctx, mut dst: impl Write, manifest: &PackageManifest) -> Result<()> {
     writeln!(dst, "pname = {};", escape(&manifest.name))?;
     writeln!(dst, "version = {};", escape(&manifest.release_version))?;
-    writeln!(
-        dst,
-        "src = sources.{};",
-        ctx.sources[&manifest.name].name()
-    )?;
+    writeln!(dst, "src = sources.{};", ctx.sources[&manifest.name].name())?;
     let deps = &ctx.deps[&manifest.name];
     let dep_string_of_kind = |kind: NixDependencyKind, propagated: bool| -> String {
         deps.iter()
@@ -152,9 +148,9 @@ fn collect_sources<'a>(dst: &mut BTreeMap<String, &'a PatchedSource>, src: &'a P
         match &sub.with {
             Replacement::Path(src) => collect_sources(dst, src),
             Replacement::Url(src) => collect_sources(dst, src),
+            Replacement::Literal(_) => {}
         }
     }
-
 }
 
 fn generate_source_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
@@ -176,6 +172,13 @@ fn generate_source_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
                 writeln!(dst, "    hash = {};", escape(src.source.nar_hash()))?;
                 writeln!(dst, "  }};")?;
             }
+            SourceKind::Archive => {
+                writeln!(dst, "fetchzip {{")?;
+                writeln!(dst, "    name = {};", escape(&drv_name))?;
+                writeln!(dst, "    url = {};", escape(src.source.url()))?;
+                writeln!(dst, "    hash = {};", escape(src.source.nar_hash()))?;
+                writeln!(dst, "  }};")?;
+            }
         }
         writeln!(dst, "  substitutions = [")?;
         for sub in src.substitutions.iter() {
@@ -184,10 +187,24 @@ fn generate_source_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
             writeln!(dst, "      from = {};", escape(&sub.from))?;
             match &sub.with {
                 Replacement::Path(with_src) => {
-                    writeln!(dst, "      to = {};", quote(&format!("PATH ${{{}}}", with_src.name())))?;
+                    writeln!(
+                        dst,
+                        "      to = {};",
+                        quote(&format!(
+                            "VCS_TYPE path VCS_URL ${{{}}}",
+                            with_src.name()
+                        ))
+                    )?;
                 }
                 Replacement::Url(with_src) => {
-                    writeln!(dst, "      to = {};", quote(&format!("URL ${{{}}}", with_src.name())))?;
+                    writeln!(
+                        dst,
+                        "      to = {};",
+                        quote(&format!("URL ${{{}}}", with_src.name()))
+                    )?;
+                }
+                Replacement::Literal(to) => {
+                    writeln!(dst, "      to = {};", escape(to))?;
                 }
             }
             writeln!(dst, "    }}")?;

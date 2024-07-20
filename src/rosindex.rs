@@ -1,5 +1,6 @@
 use std::{
     collections::{BTreeMap, BTreeSet},
+    fmt::{Debug, Display},
     fs::File,
     io::{Read, Write},
 };
@@ -7,7 +8,7 @@ use std::{
 use anyhow::{Context, Result};
 use reqwest::{IntoUrl, Url};
 use serde_roxmltree::Options;
-use tracing::{debug, info};
+use tracing::{debug, info, info_span};
 use yaml_rust2::YamlLoader;
 
 use crate::{condition::eval_condition, config::ConfigRef};
@@ -123,7 +124,8 @@ pub struct RosDependencies {
 // }
 // }
 
-async fn fetch_file_cached(cfg: &ConfigRef, url: impl IntoUrl) -> Result<Vec<u8>> {
+#[tracing::instrument(skip(cfg), fields(url = %url))]
+async fn fetch_file_cached(cfg: &ConfigRef, url: impl IntoUrl + Display) -> Result<Vec<u8>> {
     let url = url.into_url().unwrap();
     let cache_path = cfg
         .cache_dir()
@@ -145,6 +147,7 @@ async fn fetch_file_cached(cfg: &ConfigRef, url: impl IntoUrl) -> Result<Vec<u8>
 }
 
 impl DistroIndex {
+    #[tracing::instrument(skip(cfg))]
     pub async fn fetch(cfg: &ConfigRef) -> Result<Self> {
         let url = "https://raw.githubusercontent.com/ros/rosdistro/master/index-v4.yaml";
         let content = String::from_utf8(fetch_file_cached(cfg, url).await?)?;
@@ -156,6 +159,8 @@ impl DistroIndex {
 
         for (distro_name, distro) in doc["distributions"].as_hash().unwrap() {
             let name = distro_name.as_str().unwrap().to_string();
+            let span = info_span!("parse distro", distro = %name);
+            let _enter = span.enter();
             let status = match distro["distribution_status"].as_str().unwrap() {
                 "active" => DistroStatus::Active,
                 "end-of-life" => DistroStatus::EndOfLife,
@@ -221,6 +226,7 @@ impl DistroIndex {
     }
 }
 
+#[tracing::instrument(skip(cfg, env), fields(url = %url))]
 async fn fetch_package_manifests(
     cfg: &ConfigRef,
     url: &Url,
@@ -270,11 +276,7 @@ fn parse_distro_packages(
                 .collect()
         };
         for package_name in repo_packages.into_iter() {
-            let span = tracing::span!(
-                tracing::Level::INFO,
-                "parse package",
-                package = package_name
-            );
+            let span = tracing::debug_span!("parse package", package_name);
             let _enter = span.enter();
             let tag = tag_template
                 .replace("{version}", version)
@@ -391,7 +393,9 @@ mod test {
 
     #[tokio::test]
     async fn test_fetch_distro_index() {
-        let _ = tracing_subscriber::fmt().with_max_level(LevelFilter::DEBUG).try_init();
+        let _ = tracing_subscriber::fmt()
+            .with_max_level(LevelFilter::DEBUG)
+            .try_init();
         let cfg = Config::default().into_ref();
         cfg.create_directories().unwrap();
         let _index = DistroIndex::fetch(&cfg).await.unwrap();

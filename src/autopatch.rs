@@ -6,7 +6,7 @@ use std::{
     sync::Arc,
 };
 
-use anyhow::Result;
+use anyhow::{Context, Result};
 use futures::{
     future::{self, BoxFuture},
     stream, FutureExt, StreamExt, TryStreamExt as _,
@@ -33,6 +33,7 @@ pub struct Substitution {
 pub enum Replacement {
     Path(PatchedSource),
     Url(PatchedSource),
+    Literal(String),
 }
 
 impl PatchedSource {
@@ -220,26 +221,83 @@ fn cmake_resolve_var(vars: &HashMap<String, String>, arg: &CMakeToken) -> Option
     Some(result)
 }
 
+#[derive(Debug, Clone, PartialEq, Eq, Hash)]
+struct CMakeArgs {
+    args: Vec<String>,
+    ranges: Vec<Range<usize>>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Hash)]
+struct CMakeKeywordArg {
+    value: String,
+    range: Range<usize>,
+}
+
+impl CMakeArgs {
+    fn parse(tokens: &[CMakeToken], vars: &HashMap<String, String>) -> Self {
+        let mut result = CMakeArgs {
+            args: Vec::new(),
+            ranges: Vec::new(),
+        };
+        for token in tokens {
+            if let Some(arg) = cmake_resolve_var(vars, token) {
+                result.args.push(arg);
+                result.ranges.push(token.range.clone());
+            }
+        }
+        result
+    }
+
+    fn find_keyword_arg(&self, keyword: &str) -> Option<CMakeKeywordArg> {
+        let mut args: std::iter::Zip<std::slice::Iter<String>, std::slice::Iter<Range<usize>>> =
+            self.args.iter().zip(self.ranges.iter());
+        while let Some((arg, range)) = args.next() {
+            if arg == keyword {
+                if let Some((next_arg, next_range)) = args.clone().next() {
+                    return Some(CMakeKeywordArg {
+                        value: next_arg.clone(),
+                        range: range.start..next_range.end,
+                    });
+                }
+            }
+        }
+        None
+    }
+
+    fn get(&self, index: usize) -> Option<&str> {
+        self.args.get(index).map(|s| s.as_str())
+    }
+}
+
 // recursive async function is not supported in Rust
 // so we need this dirty workaround
-fn fetch_git_substitution(
-    fetcher: Arc<Fetcher>,
-    name: String,
-    repo: String,
-    tag: String,
-    path: PathBuf,
-    from: String,
-) -> BoxFuture<'static, Result<Substitution>> {
-    async move {
-        let source = fetcher.fetch_git(&name, &repo, &tag).await?;
-        let patched = autopatch_source(&fetcher, &source).await?;
-        Ok(Substitution {
-            path,
-            from,
-            with: Replacement::Url(patched),
-        })
-    }
-    .boxed()
+// fn fetch_git_substitution(
+//     fetcher: Arc<Fetcher>,
+//     name: String,
+//     repo: String,
+//     tag: String,
+//     path: PathBuf,
+//     from: String,
+// ) -> BoxFuture<'static, Result<Substitution>> {
+//     async move {
+//         let source = fetcher.fetch_git(&name, &repo, &tag).await?;
+//         let patched = autopatch_source(&fetcher, &source).await?;
+//         Ok(Substitution {
+//             path,
+//             from,
+//             with: Replacement::Url(patched),
+//         })
+//     }
+//     .boxed()
+// }
+
+fn autopatch_source_boxed(
+    fetcher: &Arc<Fetcher>,
+    src: &Source,
+) -> BoxFuture<'static, Result<PatchedSource>> {
+    let fetcher = fetcher.clone();
+    let src = src.clone();
+    async move { autopatch_source(&fetcher, &src).await }.boxed()
 }
 
 async fn autopatch_cmake_vendor(
@@ -248,84 +306,82 @@ async fn autopatch_cmake_vendor(
     path: &Path,
     rel_path: &Path,
 ) -> Result<BTreeSet<Substitution>> {
-    let mut result = Vec::new();
+    let mut result = BTreeSet::new();
     debug!("checking {path:?}");
-    let content = fs::read_to_string(path).unwrap();
+    let content_bytes = fs::read(path).context(format!("failed to read cmake file: {path:?}"))?;
+    let content = String::from_utf8_lossy(&content_bytes);
     let calls = cmake_find_calls(&content);
 
     let mut vars = HashMap::new();
     for call in calls {
+        let args = CMakeArgs::parse(&call.args, &vars);
         match call.func.to_ascii_lowercase().as_str() {
             "set" => {
-                let (Some(first), Some(second)) = (call.args.get(0), call.args.get(1)) else {
+                let (Some(key), Some(value)) = (args.get(0), args.get(1)) else {
                     continue;
                 };
-                let (Some(key), Some(value)) = (
-                    cmake_resolve_var(&mut vars, first),
-                    cmake_resolve_var(&mut vars, second),
-                ) else {
-                    continue;
-                };
-                vars.insert(key, value);
+                vars.insert(key.into(), value.into());
             }
             "externalproject_add" => {
-                let mut args = call
-                    .args
-                    .iter()
-                    .filter_map(|arg| {
-                        if let Some(val) = cmake_resolve_var(&mut vars, arg) {
-                            Some((val, arg))
-                        } else {
-                            None
-                        }
-                    })
-                    .peekable();
-                let mut git_repo = None;
-                let mut git_tag = None;
-                loop {
-                    let Some(arg) = args.next() else {
-                        break;
-                    };
-                    let maybe_next = args.peek();
-                    let range = maybe_next.map(|next| arg.1.range.start..next.1.range.end);
-                    match (arg.0.as_str(), maybe_next.map(|s| s.0.as_str())) {
-                        ("GIT_REPOSITORY", Some(url)) => {
-                            git_repo = Some((url.to_string(), range.unwrap()));
-                        }
-                        ("GIT_TAG", Some(tag)) => {
-                            git_tag = Some((tag.to_string(), range.unwrap()));
-                        }
-                        _ => {}
-                    }
-                }
+                let git_repo = args.find_keyword_arg("GIT_REPOSITORY");
+                let git_tag = args.find_keyword_arg("GIT_TAG");
                 if let (Some(repo), Some(tag)) = (git_repo, git_tag) {
                     let name = format!("{name}-vendor_source{}", result.len());
-                    let from = content[repo.1.clone()].to_string();
-                    let fut = fetch_git_substitution(
-                        fetcher.clone(),
-                        name,
-                        repo.0,
-                        tag.0,
-                        rel_path.to_path_buf(),
+                    let from = content[repo.range].to_string();
+                    let source = fetcher.fetch_git(&name, &repo.value, &tag.value).await?;
+                    let patched = autopatch_source_boxed(&fetcher, &source).await?;
+                    result.insert(Substitution {
+                        path: rel_path.to_path_buf(),
                         from,
-                    );
-                    let fut = tokio::spawn(fut);
-                    result.push(fut);
+                        with: Replacement::Url(patched),
+                    });
+                }
+            }
+            "ament_vendor" => {
+                let vcs_type = args.find_keyword_arg("VCS_TYPE");
+                let vcs_url = args.find_keyword_arg("VCS_URL");
+                let vcs_version = args.find_keyword_arg("VCS_VERSION");
+
+                if let (Some(vcs_url), Some(vcs_version)) = (vcs_url, vcs_version) {
+                    let name = format!("{name}-vendor_source{}", result.len());
+                    let from = content[vcs_url.range.clone()].to_string();
+                    let source = match vcs_type.as_ref().map(|arg| arg.value.as_str()) {
+                        Some("git") | None => {
+                            fetcher
+                                .fetch_git(&name, &vcs_url.value, &vcs_version.value)
+                                .await?
+                        }
+                        Some("zip") => fetcher.fetch_archive(&name, &vcs_url.value).await.context(format!("failed to fetch archive {name} {}", vcs_url.value))?,
+                        Some(ty) => {
+                            return Err(anyhow::anyhow!("unsupported VCS_TYPE {ty}"));
+                        }
+                    };
+                    let patched = autopatch_source_boxed(&fetcher, &source).await?;
+                    result.insert(Substitution {
+                        path: rel_path.to_path_buf(),
+                        from,
+                        with: Replacement::Path(patched),
+                    });
+                    // Remove VCS_TYPE if exists
+                    if let Some(vcs_type) = &vcs_type {
+                        let from = content[vcs_type.range.clone()].to_string();
+                        result.insert(Substitution {
+                            path: rel_path.to_path_buf(),
+                            from,
+                            with: Replacement::Literal("".into()),
+                        });
+                    }
                 }
             }
             _ => {}
         }
     }
 
-    stream::iter(result)
-        .buffer_unordered(32)
-        .then(|res| future::ready(res.unwrap()))
-        .try_collect()
-        .await
+    Ok(result)
 }
 
+#[tracing::instrument(skip(fetcher), fields(src = %src.name()))]
 pub async fn autopatch_source(fetcher: &Arc<Fetcher>, src: &Source) -> Result<PatchedSource> {
-    info!("autopatching {name}", name = src.name());
     let mut substitutions = BTreeSet::new();
 
     for file in WalkDir::new(src.path()) {
@@ -339,7 +395,9 @@ pub async fn autopatch_source(fetcher: &Arc<Fetcher>, src: &Source) -> Result<Pa
             || filename.ends_with(".cmake")
             || filename.ends_with(".cmake.in")
         {
-            let subst = autopatch_cmake_vendor(fetcher, src.name(), file.path(), rel_path).await?;
+            let subst = autopatch_cmake_vendor(&fetcher, src.name(), file.path(), rel_path)
+                .await
+                .context(format!("faild to patch {src:?}"))?;
             substitutions.extend(subst);
         }
     }

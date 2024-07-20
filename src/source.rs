@@ -6,12 +6,17 @@ use std::{
     sync::Arc,
 };
 
-use anyhow::{ensure, Result};
-use futures::StreamExt;
+use anyhow::{anyhow, bail, ensure, Context, Result};
+use base64::{engine::general_purpose::STANDARD, Engine as _};
+use futures::{AsyncBufReadExt, StreamExt};
 use serde::{Deserialize, Serialize};
-use tokio::{process::{Child, Command}, sync::Semaphore};
+use tokio::{
+    process::{Child, Command},
+    sync::Semaphore,
+};
+
 use tokio_util::codec::{FramedRead, LinesCodec};
-use tracing::{debug, info, warn};
+use tracing::{debug, field::debug, info, warn};
 
 use crate::config::ConfigRef;
 
@@ -49,12 +54,36 @@ impl Source {
 #[derive(Debug, Clone, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
 pub enum SourceKind {
     Git { rev: String },
+    Archive,
 }
 
 impl Source {
-    pub async fn fetch_url() -> Result<Self> {
-        Command::new("nix-prefetch-url").arg("");
-        todo!()
+    pub async fn fetch_url(name: &str, url: &str) -> Result<Self> {
+        debug!("fetching archive {}", url);
+        let child = Command::new("nix-prefetch-url")
+            .arg("--unpack")
+            .arg("--print-path")
+            .arg(url)
+            .stderr(Stdio::piped())
+            .stdout(Stdio::piped())
+            .stdin(Stdio::null())
+            .spawn()?;
+        let output = wait_and_get_output(child).await?;
+        if !output.status.success() {
+            bail!("nix-prefetch-url failed: status: {}\nstdout:\n{}\nstderr:\n{}", output.status, String::from_utf8_lossy(&output.stdout), String::from_utf8_lossy(&output.stderr));
+        }
+        let stdout = String::from_utf8(output.stdout)?;
+        let mut lines = stdout.lines();
+        let hash = parse_nix_base32(lines.next().context("no output from nix-prefetch-url")?)
+            .context("failed to pares hash")?;
+        let path = lines.next().context("no path from nix-prefetch-url")?;
+        Ok(Source {
+            name: name.to_string(),
+            url: url.to_string(),
+            path: path.into(),
+            nar_hash: format!("sha256-{}", STANDARD.encode(hash)),
+            kind: SourceKind::Archive,
+        })
     }
 
     pub async fn fetch_git(name: &str, url: &str, rev_or_branch: &str) -> Result<Self> {
@@ -121,9 +150,35 @@ async fn wait_and_get_output(mut child: Child) -> Result<Output> {
     Ok(child.wait_with_output().await?)
 }
 
+fn parse_nix_base32(s: &str) -> Option<Vec<u8>> {
+    const BASE32_CHARS: &[u8] = b"0123456789abcdfghijklmnpqrsvwxyz";
+    let s = s.as_bytes();
+    let hash_size = s.len() * 5 / 8;
+    let mut hash: Vec<u8> = vec![0; hash_size];
+
+    for n in 0usize..s.len() {
+        let c = s[s.len() - n - 1];
+        let digit = BASE32_CHARS.iter().position(|b| *b == c)? as u8;
+        let b = n * 5;
+        let i = b / 8;
+        let j = b % 8;
+        hash[i] |= digit.checked_shl(j as u32).unwrap_or(0);
+
+        let v2 = digit.checked_shr(8 - j as u32).unwrap_or(0);
+        if i < hash_size - 1 {
+            hash[i + 1] |= v2;
+        } else if v2 != 0 {
+            return None;
+        }
+    }
+
+    Some(hash)
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
 struct SourceCacheData {
     git_caches: BTreeMap<String, Source>,
+    archive_caches: BTreeMap<String, Source>,
 }
 
 impl SourceCacheData {
@@ -168,6 +223,29 @@ impl Fetcher {
         Arc::new(Self::new(cfg, name))
     }
 
+    #[tracing::instrument(skip(self))]
+    pub async fn fetch_archive(&self, name: &str, url: &str) -> Result<Source> {
+        let key = format!("{url}");
+        {
+            let cache = self.cache.lock().unwrap();
+            match cache.git_caches.get(&key) {
+                Some(source) if source.path.exists() => {
+                    debug!("cache hit {url}");
+                    return Ok(source.clone());
+                }
+                _ => {}
+            }
+        }
+        let source = {
+            let _permit = self.semaphore.acquire().await?;
+            Source::fetch_url(name, url).await?
+        };
+        let mut cache = self.cache.lock().unwrap();
+        cache.git_caches.insert(key, source.clone());
+        Ok(source)
+    }
+
+    #[tracing::instrument(skip(self))]
     pub async fn fetch_git(&self, name: &str, url: &str, rev_or_branch: &str) -> Result<Source> {
         let key = format!("{url} {rev_or_branch}");
         {
@@ -224,7 +302,9 @@ mod test {
 
     #[tokio::test]
     async fn test_fetch_git() {
-        let _ = tracing_subscriber::fmt().with_max_level(LevelFilter::DEBUG).try_init();
+        let _ = tracing_subscriber::fmt()
+            .with_max_level(LevelFilter::DEBUG)
+            .try_init();
         let url = "https://github.com/ros2-gbp/acado_vendor-release.git";
         Source::fetch_git("acado_vendor", url, "master")
             .await

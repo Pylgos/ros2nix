@@ -235,7 +235,7 @@ fn classify_dependencies(
                         members.iter().map(|d| ClassifiedRosDependency {
                             name: d.clone(),
                             kind: NixDependencyKind::HostTarget,
-                            propagated: false,
+                            propagated: true,
                         })
                     })
                 }))

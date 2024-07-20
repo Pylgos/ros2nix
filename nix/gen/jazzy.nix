@@ -32851,8 +32851,8 @@ in
       src = sources.rcl;
       nativeBuildInputs = [ ament_cmake_gen_version_h ament_cmake_ros ];
       propagatedNativeBuildInputs = [ rcutils rmw ];
-      buildInputs = [ rcl_logging_noop ];
-      propagatedBuildInputs = [ libyaml libyaml_vendor rcl_interfaces rcl_logging_interface rcl_logging_spdlog rcl_yaml_param_parser rmw_implementation rosidl_runtime_c service_msgs tracetools type_description_interfaces ];
+      buildInputs = [  ];
+      propagatedBuildInputs = [ libyaml libyaml_vendor rcl_interfaces rcl_logging_interface rcl_logging_noop rcl_logging_spdlog rcl_yaml_param_parser rmw_implementation rosidl_runtime_c service_msgs tracetools type_description_interfaces ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -35082,8 +35082,8 @@ in
       src = sources.rmw_implementation;
       nativeBuildInputs = [ ament_cmake rmw ];
       propagatedNativeBuildInputs = [ rcutils rmw_implementation_cmake ];
-      buildInputs = [ rmw_connextdds rmw_cyclonedds_cpp rmw_fastrtps_cpp rmw_fastrtps_dynamic_cpp ];
-      propagatedBuildInputs = [ ament_index_cpp rcpputils ];
+      buildInputs = [  ];
+      propagatedBuildInputs = [ ament_index_cpp rcpputils rmw_connextdds rmw_cyclonedds_cpp rmw_fastrtps_cpp rmw_fastrtps_dynamic_cpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -35788,8 +35788,8 @@ in
       src = sources.ros2launch;
       nativeBuildInputs = [  ];
       propagatedNativeBuildInputs = [ ament_index_python launch launch_xml launch_yaml ];
-      buildInputs = [ launch_xml launch_yaml ];
-      propagatedBuildInputs = [ launch_ros ros2cli ros2pkg ];
+      buildInputs = [  ];
+      propagatedBuildInputs = [ launch_ros launch_xml launch_yaml ros2cli ros2pkg ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -37363,8 +37363,8 @@ in
       src = sources.rosidl_core_generators;
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [ ament_cmake_core rosidl_cmake rosidl_generator_c rosidl_generator_cpp rosidl_generator_py ];
-      buildInputs = [ ament_cmake rosidl_generator_type_description rosidl_typesupport_fastrtps_c rosidl_typesupport_fastrtps_cpp rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp ];
-      propagatedBuildInputs = [ ament_cmake_core rosidl_cmake rosidl_generator_c rosidl_generator_cpp rosidl_generator_py ];
+      buildInputs = [ ament_cmake ];
+      propagatedBuildInputs = [ ament_cmake_core rosidl_cmake rosidl_generator_c rosidl_generator_cpp rosidl_generator_py rosidl_generator_type_description rosidl_typesupport_fastrtps_c rosidl_typesupport_fastrtps_cpp rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [ rosidl_typesupport_c rosidl_typesupport_cpp rosidl_typesupport_fastrtps_c rosidl_typesupport_fastrtps_cpp rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp ];
     }
@@ -37775,8 +37775,8 @@ in
       src = sources.rosidl_typesupport_c;
       nativeBuildInputs = [ ament_cmake_ros ];
       propagatedNativeBuildInputs = [ ament_cmake_core ament_index_python python3 rcutils rosidl_cli rosidl_generator_c rosidl_pycommon ];
-      buildInputs = [ rosidl_typesupport_fastrtps_c rosidl_typesupport_introspection_c ];
-      propagatedBuildInputs = [ rcpputils rosidl_runtime_c rosidl_typesupport_interface ];
+      buildInputs = [  ];
+      propagatedBuildInputs = [ rcpputils rosidl_runtime_c rosidl_typesupport_fastrtps_c rosidl_typesupport_interface rosidl_typesupport_introspection_c ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -37810,8 +37810,8 @@ in
       src = sources.rosidl_typesupport_cpp;
       nativeBuildInputs = [ ament_cmake_ros ];
       propagatedNativeBuildInputs = [ ament_cmake_core ament_index_python python3 rcutils rosidl_cli rosidl_generator_c rosidl_generator_type_description rosidl_pycommon ];
-      buildInputs = [ rosidl_typesupport_fastrtps_cpp rosidl_typesupport_introspection_cpp ];
-      propagatedBuildInputs = [ rcpputils rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_c rosidl_typesupport_interface ];
+      buildInputs = [  ];
+      propagatedBuildInputs = [ rcpputils rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_c rosidl_typesupport_fastrtps_cpp rosidl_typesupport_interface rosidl_typesupport_introspection_cpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }

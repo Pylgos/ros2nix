@@ -19,7 +19,7 @@ final: prev:
         }).poetryPackages;
         pkgsByNames = lib.listToAttrs (map (drv: { name = drv.pname; value = drv; }) pkgList);
       in {
-        inherit (pkgsByNames) rosdistro catkin-pkg flake8-quotes flake8-comprehensions flake8-builtins colcon-common-extensions;
+        inherit (pkgsByNames) rosdistro catkin-pkg flake8-quotes flake8-comprehensions flake8-builtins colcon-common-extensions empy;
       }
     );
   };

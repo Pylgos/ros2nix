@@ -1,0 +1,63 @@
+{
+  ament_cmake_copyright,
+  ament_cmake_core,
+  ament_cmake_lint_cmake,
+  ament_cmake_test,
+  ament_cmake_vendor_package,
+  ament_cmake_xmllint,
+  buildRosPackage,
+  bullet,
+  eigen,
+  fetchgit,
+  fetchurl,
+  fetchzip,
+  gbenchmark,
+  gz_cmake_vendor,
+  gz_common_vendor,
+  gz_dartsim_vendor,
+  gz_math_vendor,
+  gz_plugin_vendor,
+  gz_utils_vendor,
+  sdformat_vendor,
+  substituteSource,
+}:
+let
+  sources = rec {
+    gz_physics_vendor = substituteSource {
+      src = fetchgit {
+        name = "gz_physics_vendor-source";
+        url = "https://github.com/ros2-gbp/gz_physics_vendor-release.git";
+        rev = "3ac324e31eef6284c7bc48eb10c3bb92d6008413";
+        hash = "sha256-bJwvgJ32RT8iOBdBtAsFg5jhKONJROhzN3DTZFEK7xQ=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
+          to = "VCS_TYPE path VCS_URL ${gz_physics_vendor-vendor_source0}";
+        }
+      ];
+    };
+    gz_physics_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_physics_vendor-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-physics.git";
+        rev = "bcacf85e3e25961263725f424191027951a03430";
+        hash = "sha256-vDO/QTiSF/yrDilr/4vGj/yEXraACl+TIS91phgMN7s=";
+      };
+      substitutions = [
+      ];
+    };
+  };
+in
+buildRosPackage {
+  pname = "gz_physics_vendor";
+  version = "0.0.3-1";
+  src = sources.gz_physics_vendor;
+  nativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
+  propagatedNativeBuildInputs = [ gbenchmark ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ bullet eigen gz_cmake_vendor gz_common_vendor gz_dartsim_vendor gz_math_vendor gz_plugin_vendor gz_utils_vendor sdformat_vendor ];
+  depsTargetTarget = [  ];
+  depsTargetTargetPropagated = [  ];
+}

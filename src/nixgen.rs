@@ -2,7 +2,9 @@ use anyhow::Result;
 use indenter::indented;
 use std::collections::{BTreeMap, BTreeSet};
 use std::fmt::Write;
+use std::fs;
 use std::io::Write as _;
+use std::path::{Path, PathBuf};
 
 use crate::autopatch::{PatchedSource, Replacement};
 use crate::deps::{NixDependency, NixDependencyKind};
@@ -15,6 +17,7 @@ use crate::{
 
 struct Ctx<'a> {
     cfg: &'a ConfigRef,
+    distro_dir: PathBuf,
     package_index: &'a PackageIndex,
     sources: &'a BTreeMap<String, PatchedSource>,
     deps: &'a BTreeMap<String, NixDependencies>,
@@ -62,7 +65,9 @@ fn generate_parameters(ctx: &Ctx, mut dst: impl Write, manifest: &PackageManifes
             _ => dep.name.split('.').next().unwrap(),
         })
         .collect();
-    params.insert("buildRosPackage");
+    params.extend([
+        "buildRosPackage", "fetchurl", "fetchzip", "fetchgit", "substituteSource",
+    ]);
     writeln!(dst, "{{")?;
     for param in params {
         writeln!(dst, "  {param},")?;
@@ -123,11 +128,19 @@ fn generate_package_body(ctx: &Ctx, mut dst: impl Write, manifest: &PackageManif
     Ok(())
 }
 
-fn generate_package(ctx: &Ctx, mut dst: impl Write, manifest: &PackageManifest) -> Result<()> {
+fn generate_package(ctx: &Ctx, dst_path: &Path, manifest: &PackageManifest) -> Result<()> {
+    let mut dst = String::new();
     generate_parameters(ctx, &mut dst, manifest)?;
+    writeln!(dst, "let")?;
+    writeln!(dst, "  sources = rec {{")?;
+    generate_source_list(indented(&mut dst).with_str("    "), &ctx.sources[&manifest.name])?;
+    writeln!(dst, "  }};")?;
+    writeln!(dst, "in")?;
     writeln!(dst, "buildRosPackage {{")?;
     generate_package_body(ctx, indented(&mut dst).with_str("  "), manifest)?;
     writeln!(dst, "}}")?;
+    let mut file = std::fs::File::create(dst_path)?;
+    file.write_all(dst.as_bytes())?;
     Ok(())
 }
 
@@ -136,9 +149,10 @@ fn generate_package_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
         if !ctx.deps.contains_key(name) {
             continue;
         };
-        writeln!(dst, "{name} = self.callPackage (")?;
-        generate_package(ctx, indented(&mut dst).with_str("  "), manifest)?;
-        writeln!(dst, ") {{}};")?;
+        let filename = name.to_string() + ".nix";
+        let pkg_path = ctx.distro_dir.join(&filename);
+        generate_package(ctx, &pkg_path, manifest)?;
+        writeln!(dst, "{name} = self.callPackage ./{filename} {{}};")?;
     }
     Ok(())
 }
@@ -155,11 +169,9 @@ fn collect_sources<'a>(dst: &mut BTreeMap<String, &'a PatchedSource>, src: &'a P
     }
 }
 
-fn generate_source_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
+fn generate_source_list(mut dst: impl Write, source: &PatchedSource) -> Result<()> {
     let mut all_srcs = BTreeMap::new();
-    for src in ctx.sources.values() {
-        collect_sources(&mut all_srcs, src);
-    }
+    collect_sources(&mut all_srcs, source);
 
     for src in all_srcs.values() {
         let drv_name = src.name().to_string() + "-source";
@@ -235,22 +247,19 @@ fn generate_source_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
 fn generate_distro_root(ctx: &Ctx) -> Result<()> {
     let mut dst = String::new();
     writeln!(dst, "self:")?;
-    writeln!(dst, "let")?;
-    writeln!(
-        dst,
-        "  sources = self.callPackage ({{ fetchurl, fetchzip, fetchgit, substituteSource }}: rec {{"
-    )?;
-    generate_source_list(ctx, indented(&mut dst).with_str("    "))?;
-    writeln!(dst, "  }}) {{}};")?;
-    writeln!(dst, "in")?;
+    // writeln!(dst, "let")?;
+    // writeln!(
+    //     dst,
+    //     "  sources = self.callPackage ({{ fetchurl, fetchzip, fetchgit, substituteSource }}: rec {{"
+    // )?;
+    // generate_source_list(ctx, indented(&mut dst).with_str("    "))?;
+    // writeln!(dst, "  }}) {{}};")?;
+    // writeln!(dst, "in")?;
     writeln!(dst, "{{")?;
     generate_package_list(ctx, indented(&mut dst).with_str("  "))?;
     writeln!(dst, "}}")?;
 
-    let dst_path = ctx
-        .cfg
-        .gen_dir()
-        .join(ctx.package_index.name.to_string() + ".nix");
+    let dst_path = ctx.distro_dir.join("default.nix");
     let mut file = std::fs::File::create(dst_path)?;
     file.write_all(dst.as_bytes())?;
     Ok(())
@@ -262,12 +271,15 @@ pub fn generate(
     sources: &BTreeMap<String, PatchedSource>,
     deps: &BTreeMap<String, NixDependencies>,
 ) -> Result<()> {
+    let distro_dir = cfg.gen_dir().join(&package_index.name);
     let ctx = Ctx {
         cfg,
         package_index,
         sources,
         deps,
+        distro_dir,
     };
+    fs::create_dir_all(&ctx.distro_dir)?;
     generate_distro_root(&ctx)?;
     Ok(())
 }

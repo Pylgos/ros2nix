@@ -15,7 +15,7 @@ let
     jazzy = final.makeScopeWithSplicing' {
       otherSplices = final.generateSplicesForMkScope "rosPackages";
       extra = (spliced: private-funcs);
-      f = (self: (common self) // (import ./gen/jazzy.nix self));
+      f = (self: (common self) // (import ./gen/jazzy self));
     };
   };
 in

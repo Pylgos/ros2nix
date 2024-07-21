@@ -24,13 +24,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/foonathan/memory.git";
-          to = "URL ${foonathan_memory_vendor-vendor_source0}";
+          to = "URL ${foonathan_memory_vendor-vendor_source-memory-0}";
         }
       ];
     };
-    foonathan_memory_vendor-vendor_source0 = substituteSource {
+    foonathan_memory_vendor-vendor_source-memory-0 = substituteSource {
       src = fetchgit {
-        name = "foonathan_memory_vendor-vendor_source0-source";
+        name = "foonathan_memory_vendor-vendor_source-memory-0-source";
         url = "https://github.com/foonathan/memory.git";
         rev = "0f0775770fd1c506fa9c5ad566bd6ba59659db66";
         hash = "sha256-nLBnxPbPKiLCFF2TJgD/eJKJJfzktVBW3SRW2m3WK/s=";

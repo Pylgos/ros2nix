@@ -28,13 +28,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/msteinbeck/tinyspline.git";
-          to = "VCS_TYPE path VCS_URL ${tinyspline_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${tinyspline_vendor-vendor_source-tinyspline-0}";
         }
       ];
     };
-    tinyspline_vendor-vendor_source0 = substituteSource {
+    tinyspline_vendor-vendor_source-tinyspline-0 = substituteSource {
       src = fetchgit {
-        name = "tinyspline_vendor-vendor_source0-source";
+        name = "tinyspline_vendor-vendor_source-tinyspline-0-source";
         url = "https://github.com/msteinbeck/tinyspline.git";
         rev = "5f0e8fad34e86771cfae3dac4beef5f1858d5610";
         hash = "sha256-cvnnVT04R2QnFKsf/lxzkDmxgalAPFw8hGC33HyNsIQ=";

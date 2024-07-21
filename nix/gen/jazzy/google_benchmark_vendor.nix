@@ -21,13 +21,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/google/benchmark.git";
-          to = "URL ${google_benchmark_vendor-vendor_source0}";
+          to = "URL ${google_benchmark_vendor-vendor_source-benchmark-0}";
         }
       ];
     };
-    google_benchmark_vendor-vendor_source0 = substituteSource {
+    google_benchmark_vendor-vendor_source-benchmark-0 = substituteSource {
       src = fetchgit {
-        name = "google_benchmark_vendor-vendor_source0-source";
+        name = "google_benchmark_vendor-vendor_source-benchmark-0-source";
         url = "https://github.com/google/benchmark.git";
         rev = "344117638c8ff7e239044fd0fa7085839fc03021";
         hash = "sha256-gztnxui9Fe/FTieMjdvfJjWHjkImtlsHn6fM1FruyME=";

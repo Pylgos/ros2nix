@@ -15,9 +15,9 @@
 }:
 let
   sources = rec {
-    ortools_vendor-vendor_source0-vendor_source0 = substituteSource {
+    fields2cover-vendor_source-or-tools-5-vendor_source-doxygen-awesome-0 = substituteSource {
       src = fetchurl {
-        name = "ortools_vendor-vendor_source0-vendor_source0-source";
+        name = "fields2cover-vendor_source-or-tools-5-vendor_source-doxygen-awesome-0-source";
         url = "https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/v2.1.0/doxygen-awesome.css";
         hash = "sha256-HIlS9jhR+Ic9j73/EY/9nZG6QJEjsYFu59zTqNHlWHA=";
       };
@@ -35,7 +35,7 @@ let
         {
           path = "docs/CMakeLists.txt";
           from = "DOWNLOAD\n     https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/v2.1.0/doxygen-awesome.css";
-          to = "DOWNLOAD file://${ortools_vendor-vendor_source0-vendor_source0}";
+          to = "DOWNLOAD file://${fields2cover-vendor_source-or-tools-5-vendor_source-doxygen-awesome-0}";
         }
       ];
     };

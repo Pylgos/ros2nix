@@ -22,13 +22,13 @@ let
         {
           path = "gtsam/3rdparty/Eigen/lapack/CMakeLists.txt";
           from = "DOWNLOAD \"http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz\"";
-          to = "DOWNLOAD file://${gtsam-vendor_source0}";
+          to = "DOWNLOAD file://${gtsam-vendor_source-lapack_addons_3-0}";
         }
       ];
     };
-    gtsam-vendor_source0 = substituteSource {
+    gtsam-vendor_source-lapack_addons_3-0 = substituteSource {
       src = fetchurl {
-        name = "gtsam-vendor_source0-source";
+        name = "gtsam-vendor_source-lapack_addons_3-0-source";
         url = "http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz";
         hash = "sha256-vZntt9xHKapjGQQapStG2/erraGkP3oj/iYm2yTFJDw=";
       };

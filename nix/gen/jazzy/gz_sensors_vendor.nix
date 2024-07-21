@@ -33,13 +33,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
-          to = "VCS_TYPE path VCS_URL ${gz_sensors_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${gz_sensors_vendor-vendor_source-gz-sensors-0}";
         }
       ];
     };
-    gz_sensors_vendor-vendor_source0 = substituteSource {
+    gz_sensors_vendor-vendor_source-gz-sensors-0 = substituteSource {
       src = fetchgit {
-        name = "gz_sensors_vendor-vendor_source0-source";
+        name = "gz_sensors_vendor-vendor_source-gz-sensors-0-source";
         url = "https://github.com/gazebosim/gz-sensors.git";
         rev = "27239b4ac9877d87273a18010a307172899dd7a6";
         hash = "sha256-JK2xOQKvX+0fcnN0e1JcARMx+Lsq8DfkXDHDRiTfuw0=";

@@ -8,11 +8,11 @@ use std::{
 
 use anyhow::{Context, Result};
 use futures::{
-    future::{self, BoxFuture},
-    stream, FutureExt, StreamExt, TryStreamExt as _,
+    future::BoxFuture,
+    FutureExt,
 };
 use reqwest::Url;
-use tracing::{debug, info, warn};
+use tracing::{debug, warn};
 use walkdir::WalkDir;
 
 use crate::source::{Fetcher, Source};
@@ -116,7 +116,7 @@ fn cmake_tokenize(src: &str) -> Vec<CMakeToken> {
                 }
             }
             '#' => {
-                while let Some((_, c)) = chars.next() {
+                for (_, c) in chars.by_ref() {
                     if c == '\n' {
                         break;
                     }
@@ -165,7 +165,7 @@ fn cmake_find_calls(src: &str) -> Vec<CMakeCall> {
             }
             tokens_iter.next(); // skip '('
             let mut args = Vec::new();
-            while let Some(token) = tokens_iter.next() {
+            for token in tokens_iter.by_ref() {
                 match &token.kind {
                     ParRi => {
                         break;
@@ -206,9 +206,11 @@ fn cmake_resolve_var(vars: &HashMap<String, String>, arg: &CMakeToken) -> Option
             ('$', Some('{')) => {
                 chars.next(); // skip '{'
                 let mut var = String::new();
-                while let Some(c) = chars.next() {
+                for c in chars.by_ref() {
                     if c == '}' {
-                        vars.get(&var).map(|v| result.push_str(v));
+                        if let Some(v) = vars.get(&var) {
+                            result.push_str(v);
+                        }
                         break;
                     }
                     var.push(c);
@@ -285,6 +287,20 @@ impl CMakeArgs {
     }
 }
 
+fn guess_name_from_url(url: &str) -> Option<String> {
+    let url = Url::parse(url).ok()?;
+    let path = url.path_segments()?.last()?;
+    let name = path.split('.').next()?;
+    Some(name.to_string())
+}
+
+fn get_vendor_source_name(name: &str, url: &str, disamb: usize) -> String {
+    format!(
+        "{name}-vendor_source-{}-{disamb}",
+        guess_name_from_url(url).unwrap_or("unknown".into())
+    )
+}
+
 fn autopatch_source_boxed(
     fetcher: &Arc<Fetcher>,
     src: &Source,
@@ -321,20 +337,23 @@ async fn autopatch_cmake_vendor(
                 let git_tag = args.find_keyword_arg("GIT_TAG");
                 let url = args.find_keyword_arg_expect_url("URL");
                 if let (Some(repo), Some(tag)) = (git_repo, git_tag) {
-                    let name = format!("{name}-vendor_source{}", result.len());
+                    let name = get_vendor_source_name(name, &repo.value, result.len());
                     let from = content[repo.range].to_string();
                     let source = fetcher.fetch_git(&name, &repo.value, &tag.value).await?;
-                    let patched = autopatch_source_boxed(&fetcher, &source).await?;
+                    let patched = autopatch_source_boxed(fetcher, &source).await?;
                     result.insert(Substitution {
                         path: rel_path.to_path_buf(),
                         from,
                         with: Replacement::Url(patched),
                     });
                 } else if let Some(url) = url {
-                    let name = format!("{name}-vendor_source{}", result.len());
+                    let name = get_vendor_source_name(name, &url.value, result.len());
                     let from = content[url.range].to_string();
-                    let source = fetcher.fetch_url(&name, &url.value, true).await.context(format!("failed to fetch archive {name} {}", url.value))?;
-                    let patched = autopatch_source_boxed(&fetcher, &source).await?;
+                    let source = fetcher
+                        .fetch_url(&name, &url.value, true)
+                        .await
+                        .context(format!("failed to fetch archive {name} {}", url.value))?;
+                    let patched = autopatch_source_boxed(fetcher, &source).await?;
                     result.insert(Substitution {
                         path: rel_path.to_path_buf(),
                         from,
@@ -348,7 +367,7 @@ async fn autopatch_cmake_vendor(
                 let vcs_version = args.find_keyword_arg("VCS_VERSION");
 
                 if let (Some(vcs_url), Some(vcs_version)) = (vcs_url, vcs_version) {
-                    let name = format!("{name}-vendor_source{}", result.len());
+                    let name = get_vendor_source_name(name, &vcs_url.value, result.len());
                     let from = content[vcs_url.range.clone()].to_string();
                     let source = match vcs_type.as_ref().map(|arg| arg.value.as_str()) {
                         Some("git") | None => {
@@ -356,12 +375,15 @@ async fn autopatch_cmake_vendor(
                                 .fetch_git(&name, &vcs_url.value, &vcs_version.value)
                                 .await?
                         }
-                        Some("zip") => fetcher.fetch_url(&name, &vcs_url.value, true).await.context(format!("failed to fetch archive {name} {}", vcs_url.value))?,
+                        Some("zip") => fetcher
+                            .fetch_url(&name, &vcs_url.value, true)
+                            .await
+                            .context(format!("failed to fetch archive {name} {}", vcs_url.value))?,
                         Some(ty) => {
                             return Err(anyhow::anyhow!("unsupported VCS_TYPE {ty}"));
                         }
                     };
-                    let patched = autopatch_source_boxed(&fetcher, &source).await?;
+                    let patched = autopatch_source_boxed(fetcher, &source).await?;
                     result.insert(Substitution {
                         path: rel_path.to_path_buf(),
                         from,
@@ -381,9 +403,12 @@ async fn autopatch_cmake_vendor(
             "file" => {
                 let url = args.find_keyword_arg_expect_url("DOWNLOAD");
                 if let Some(url) = url {
-                    let name = format!("{name}-vendor_source{}", result.len());
+                    let name = get_vendor_source_name(name, &url.value, result.len());
                     let from = content[url.range].to_string();
-                    let source = fetcher.fetch_url(&name, &url.value, false).await.context(format!("failed to fetch archive {name} {}", url.value))?;
+                    let source = fetcher
+                        .fetch_url(&name, &url.value, false)
+                        .await
+                        .context(format!("failed to fetch archive {name} {}", url.value))?;
                     result.insert(Substitution {
                         path: rel_path.to_path_buf(),
                         from,
@@ -411,7 +436,11 @@ pub async fn autopatch_source(fetcher: &Arc<Fetcher>, src: &Source) -> Result<Pa
             continue;
         }
         let rel_path = file.path().strip_prefix(src.path())?;
-        if rel_path.to_string_lossy().to_ascii_lowercase().contains("test") {
+        if rel_path
+            .to_string_lossy()
+            .to_ascii_lowercase()
+            .contains("test")
+        {
             continue;
         }
         let filename = file.file_name().to_string_lossy();
@@ -422,7 +451,7 @@ pub async fn autopatch_source(fetcher: &Arc<Fetcher>, src: &Source) -> Result<Pa
             || filename.ends_with(".cmake")
             || filename.ends_with(".cmake.in")
         {
-            let subst = autopatch_cmake_vendor(&fetcher, src.name(), file.path(), rel_path).await;
+            let subst = autopatch_cmake_vendor(fetcher, src.name(), file.path(), rel_path).await;
             match subst {
                 Ok(subst) => substitutions.extend(subst),
                 Err(err) => {

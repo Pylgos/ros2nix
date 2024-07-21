@@ -23,13 +23,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/ocornut/imgui.git";
-          to = "URL ${rig_reconfigure-vendor_source0}";
+          to = "URL ${rig_reconfigure-vendor_source-imgui-0}";
         }
       ];
     };
-    rig_reconfigure-vendor_source0 = substituteSource {
+    rig_reconfigure-vendor_source-imgui-0 = substituteSource {
       src = fetchgit {
-        name = "rig_reconfigure-vendor_source0-source";
+        name = "rig_reconfigure-vendor_source-imgui-0-source";
         url = "https://github.com/ocornut/imgui.git";
         rev = "f8704cd085c4347f835c21dc12a3951924143872";
         hash = "sha256-eY8lRsonPfDRTMCPhInT9rQ6lSaJPsXpkh428OKpTnA=";

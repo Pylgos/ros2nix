@@ -6,9 +6,9 @@ use std::{
     sync::Arc,
 };
 
-use anyhow::{anyhow, bail, ensure, Context, Result};
+use anyhow::{bail, ensure, Context, Result};
 use base64::{engine::general_purpose::STANDARD, Engine as _};
-use futures::{AsyncBufReadExt, StreamExt};
+use futures::StreamExt;
 use serde::{Deserialize, Serialize};
 use tokio::{
     process::{Child, Command},
@@ -16,7 +16,7 @@ use tokio::{
 };
 
 use tokio_util::codec::{FramedRead, LinesCodec};
-use tracing::{debug, field::debug, info, warn};
+use tracing::{debug, info, warn};
 
 use crate::config::ConfigRef;
 
@@ -98,7 +98,11 @@ impl Source {
             url: url.to_string(),
             path: path.into(),
             nar_hash: format!("sha256-{}", STANDARD.encode(hash)),
-            kind: if unpack { SourceKind::UnpackedArchive } else { SourceKind::File },
+            kind: if unpack {
+                SourceKind::UnpackedArchive
+            } else {
+                SourceKind::File
+            },
         })
     }
 
@@ -193,8 +197,7 @@ fn parse_nix_base32(s: &str) -> Option<Vec<u8>> {
 
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
 struct SourceCacheData {
-    git_caches: BTreeMap<String, Source>,
-    archive_caches: BTreeMap<String, Source>,
+    caches: BTreeMap<String, Source>,
 }
 
 impl SourceCacheData {
@@ -241,10 +244,10 @@ impl Fetcher {
 
     #[tracing::instrument(skip(self))]
     pub async fn fetch_url(&self, name: &str, url: &str, unpack: bool) -> Result<Source> {
-        let key = format!("{url} {unpack}");
+        let key = format!("url {url}{}", if unpack { " unpacked" } else { "" });
         {
             let cache = self.cache.lock().unwrap();
-            match cache.archive_caches.get(&key) {
+            match cache.caches.get(&key) {
                 Some(source) if source.path.exists() => {
                     debug!("cache hit {url}");
                     return Ok(source.clone());
@@ -257,16 +260,16 @@ impl Fetcher {
             Source::fetch_url(name, url, unpack).await?
         };
         let mut cache = self.cache.lock().unwrap();
-        cache.archive_caches.insert(key, source.clone());
+        cache.caches.insert(key, source.clone());
         Ok(source)
     }
 
     #[tracing::instrument(skip(self))]
     pub async fn fetch_git(&self, name: &str, url: &str, rev_or_branch: &str) -> Result<Source> {
-        let key = format!("{url} {rev_or_branch}");
+        let key = format!("git {url} {rev_or_branch}");
         {
             let cache = self.cache.lock().unwrap();
-            match cache.git_caches.get(&key) {
+            match cache.caches.get(&key) {
                 Some(source) if source.path.exists() => {
                     debug!("cache hit {url} {rev_or_branch}");
                     return Ok(source.clone());
@@ -279,7 +282,7 @@ impl Fetcher {
             Source::fetch_git(name, url, rev_or_branch).await?
         };
         let mut cache = self.cache.lock().unwrap();
-        cache.git_caches.insert(key, source.clone());
+        cache.caches.insert(key, source.clone());
         Ok(source)
     }
 

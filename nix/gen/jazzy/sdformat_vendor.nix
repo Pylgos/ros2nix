@@ -32,13 +32,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
-          to = "VCS_TYPE path VCS_URL ${sdformat_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${sdformat_vendor-vendor_source-sdformat-0}";
         }
       ];
     };
-    sdformat_vendor-vendor_source0 = substituteSource {
+    sdformat_vendor-vendor_source-sdformat-0 = substituteSource {
       src = fetchgit {
-        name = "sdformat_vendor-vendor_source0-source";
+        name = "sdformat_vendor-vendor_source-sdformat-0-source";
         url = "https://github.com/gazebosim/sdformat.git";
         rev = "6d3672cf3ba437c6c17608a1c960fcfac93040b0";
         hash = "sha256-Fz8xWC55IOB7hAGck+8exu81qb01vqUS1K7izuPmo0A=";

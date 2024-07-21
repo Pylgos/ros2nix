@@ -34,13 +34,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/OGRECave/ogre-next.git";
-          to = "VCS_TYPE path VCS_URL ${gz_ogre_next_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${gz_ogre_next_vendor-vendor_source-ogre-next-0}";
         }
       ];
     };
-    gz_ogre_next_vendor-vendor_source0 = substituteSource {
+    gz_ogre_next_vendor-vendor_source-ogre-next-0 = substituteSource {
       src = fetchgit {
-        name = "gz_ogre_next_vendor-vendor_source0-source";
+        name = "gz_ogre_next_vendor-vendor_source-ogre-next-0-source";
         url = "https://github.com/OGRECave/ogre-next.git";
         rev = "8d4daeaf46d7d8f85f1833f17daedd7dac05daec";
         hash = "sha256-elSj35LwsLzj1ssDPsk9NW/KSXfiOGYmw9hQSAWdpFM=";

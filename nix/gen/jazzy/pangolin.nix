@@ -24,13 +24,13 @@ let
         {
           path = "scripts/vcpkg/ports/qca/portfile.cmake";
           from = "DOWNLOAD https://raw.githubusercontent.com/mozilla/gecko-dev/master/security/nss/lib/ckfw/builtins/certdata.txt";
-          to = "DOWNLOAD file://${pangolin-vendor_source0}";
+          to = "DOWNLOAD file://${pangolin-vendor_source-certdata-0}";
         }
       ];
     };
-    pangolin-vendor_source0 = substituteSource {
+    pangolin-vendor_source-certdata-0 = substituteSource {
       src = fetchurl {
-        name = "pangolin-vendor_source0-source";
+        name = "pangolin-vendor_source-certdata-0-source";
         url = "https://raw.githubusercontent.com/mozilla/gecko-dev/master/security/nss/lib/ckfw/builtins/certdata.txt";
         hash = "sha256-RW/wld3m3XM1TFwoxz2cBvU7YagDljQUy5Gh2SlFzdM=";
       };

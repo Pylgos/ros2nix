@@ -22,13 +22,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/pybind/pybind11_json.git";
-          to = "VCS_TYPE path VCS_URL ${pybind11_json_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${pybind11_json_vendor-vendor_source-pybind11_json-0}";
         }
       ];
     };
-    pybind11_json_vendor-vendor_source0 = substituteSource {
+    pybind11_json_vendor-vendor_source-pybind11_json-0 = substituteSource {
       src = fetchgit {
-        name = "pybind11_json_vendor-vendor_source0-source";
+        name = "pybind11_json_vendor-vendor_source-pybind11_json-0-source";
         url = "https://github.com/pybind/pybind11_json.git";
         rev = "0fbbe3bbb27bd07a5ec7d71cbb1f17eaf4d37702";
         hash = "sha256-GQldzT1YU6I1s1RFfzNIJNaIY/LsrsTevoaUoz1SK+Y=";

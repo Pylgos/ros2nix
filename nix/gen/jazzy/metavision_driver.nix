@@ -48,13 +48,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/ros-event-camera/openeb.git";
-          to = "URL ${metavision_driver-vendor_source0}";
+          to = "URL ${metavision_driver-vendor_source-openeb-0}";
         }
       ];
     };
-    metavision_driver-vendor_source0 = substituteSource {
+    metavision_driver-vendor_source-openeb-0 = substituteSource {
       src = fetchgit {
-        name = "metavision_driver-vendor_source0-source";
+        name = "metavision_driver-vendor_source-openeb-0-source";
         url = "https://github.com/ros-event-camera/openeb.git";
         rev = "db34531b9d0fef952e39f5fef7169e583575b6e9";
         hash = "sha256-QHs3Bz6Mj08Rk8lUAIyWfMwMcoW1XCswASYhX0hfPiM=";

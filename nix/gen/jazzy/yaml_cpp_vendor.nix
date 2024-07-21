@@ -21,13 +21,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/jbeder/yaml-cpp.git";
-          to = "VCS_TYPE path VCS_URL ${yaml_cpp_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${yaml_cpp_vendor-vendor_source-yaml-cpp-0}";
         }
       ];
     };
-    yaml_cpp_vendor-vendor_source0 = substituteSource {
+    yaml_cpp_vendor-vendor_source-yaml-cpp-0 = substituteSource {
       src = fetchgit {
-        name = "yaml_cpp_vendor-vendor_source0-source";
+        name = "yaml_cpp_vendor-vendor_source-yaml-cpp-0-source";
         url = "https://github.com/jbeder/yaml-cpp.git";
         rev = "f7320141120f720aecc4c32be25586e7da9eb978";
         hash = "sha256-J87oS6Az1/vNdyXu3L7KmUGWzU0IAkGrGMUUha+xDXI=";

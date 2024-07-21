@@ -37,13 +37,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
-          to = "VCS_TYPE path VCS_URL ${gz_transport_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${gz_transport_vendor-vendor_source-gz-transport-0}";
         }
       ];
     };
-    gz_transport_vendor-vendor_source0 = substituteSource {
+    gz_transport_vendor-vendor_source-gz-transport-0 = substituteSource {
       src = fetchgit {
-        name = "gz_transport_vendor-vendor_source0-source";
+        name = "gz_transport_vendor-vendor_source-gz-transport-0-source";
         url = "https://github.com/gazebosim/gz-transport.git";
         rev = "8cfecd0469e409b7af82725727eb0efade731504";
         hash = "sha256-B6YvpZ8nSgAkhX9VXbxRHjYc9yfFE+qO1hw3S8xeXJc=";

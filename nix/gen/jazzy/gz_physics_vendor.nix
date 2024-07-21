@@ -34,13 +34,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
-          to = "VCS_TYPE path VCS_URL ${gz_physics_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${gz_physics_vendor-vendor_source-gz-physics-0}";
         }
       ];
     };
-    gz_physics_vendor-vendor_source0 = substituteSource {
+    gz_physics_vendor-vendor_source-gz-physics-0 = substituteSource {
       src = fetchgit {
-        name = "gz_physics_vendor-vendor_source0-source";
+        name = "gz_physics_vendor-vendor_source-gz-physics-0-source";
         url = "https://github.com/gazebosim/gz-physics.git";
         rev = "bcacf85e3e25961263725f424191027951a03430";
         hash = "sha256-vDO/QTiSF/yrDilr/4vGj/yEXraACl+TIS91phgMN7s=";

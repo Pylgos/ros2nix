@@ -22,13 +22,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "URL https://github.com/foxglove/mcap/archive/refs/tags/releases/cpp/v1.3.0.tar.gz";
-          to = "URL ${mcap_vendor-vendor_source0}";
+          to = "URL ${mcap_vendor-vendor_source-v1-0}";
         }
       ];
     };
-    mcap_vendor-vendor_source0 = substituteSource {
+    mcap_vendor-vendor_source-v1-0 = substituteSource {
       src = fetchzip {
-        name = "mcap_vendor-vendor_source0-source";
+        name = "mcap_vendor-vendor_source-v1-0-source";
         url = "https://github.com/foxglove/mcap/archive/refs/tags/releases/cpp/v1.3.0.tar.gz";
         hash = "sha256-vGMdVNa0wsX9OD0W29Ndk2YmwFphmxPbiovCXtHxF4E=";
       };

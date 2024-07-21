@@ -22,13 +22,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/ros2/Mimick.git";
-          to = "VCS_TYPE path VCS_URL ${mimick_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${mimick_vendor-vendor_source-Mimick-0}";
         }
       ];
     };
-    mimick_vendor-vendor_source0 = substituteSource {
+    mimick_vendor-vendor_source-Mimick-0 = substituteSource {
       src = fetchgit {
-        name = "mimick_vendor-vendor_source0-source";
+        name = "mimick_vendor-vendor_source-Mimick-0-source";
         url = "https://github.com/ros2/Mimick.git";
         rev = "9af748b88f6d48723275006ccbb0360e50342dbb";
         hash = "sha256-3f5T8gTOLxMeYcaYDlAefXMKXP4Wv3xkUWBag07H+0I=";

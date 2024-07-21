@@ -23,13 +23,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/curl/curl.git";
-          to = "VCS_TYPE path VCS_URL ${libcurl_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${libcurl_vendor-vendor_source-curl-0}";
         }
       ];
     };
-    libcurl_vendor-vendor_source0 = substituteSource {
+    libcurl_vendor-vendor_source-curl-0 = substituteSource {
       src = fetchgit {
-        name = "libcurl_vendor-vendor_source0-source";
+        name = "libcurl_vendor-vendor_source-curl-0-source";
         url = "https://github.com/curl/curl.git";
         rev = "801bd5138ce31aa0d906fa4e2eabfc599d74e793";
         hash = "sha256-4w15NHw3D+YBuK02ZIZqvGaWgyQVc61MZ34pkLu0Oug=";

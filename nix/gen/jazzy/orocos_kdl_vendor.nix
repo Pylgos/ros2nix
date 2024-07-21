@@ -25,13 +25,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/orocos/orocos_kinematics_dynamics.git";
-          to = "VCS_TYPE path VCS_URL ${orocos_kdl_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${orocos_kdl_vendor-vendor_source-orocos_kinematics_dynamics-0}";
         }
       ];
     };
-    orocos_kdl_vendor-vendor_source0 = substituteSource {
+    orocos_kdl_vendor-vendor_source-orocos_kinematics_dynamics-0 = substituteSource {
       src = fetchgit {
-        name = "orocos_kdl_vendor-vendor_source0-source";
+        name = "orocos_kdl_vendor-vendor_source-orocos_kinematics_dynamics-0-source";
         url = "https://github.com/orocos/orocos_kinematics_dynamics.git";
         rev = "ce4bcb65a050615b6d7f21bc60fbb2656515791b";
         hash = "sha256-CfmwMQEg/tRVNaGglBZ94pBwva49mJJwkbSjhqzG2Pw=";

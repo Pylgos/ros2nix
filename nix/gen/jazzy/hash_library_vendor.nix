@@ -22,13 +22,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/stbrumme/hash-library.git";
-          to = "URL ${hash_library_vendor-vendor_source0}";
+          to = "URL ${hash_library_vendor-vendor_source-hash-library-0}";
         }
       ];
     };
-    hash_library_vendor-vendor_source0 = substituteSource {
+    hash_library_vendor-vendor_source-hash-library-0 = substituteSource {
       src = fetchgit {
-        name = "hash_library_vendor-vendor_source0-source";
+        name = "hash_library_vendor-vendor_source-hash-library-0-source";
         url = "https://github.com/stbrumme/hash-library.git";
         rev = "70cc93763d49a24c4536c7f0a23248f9b40e30f5";
         hash = "sha256-z4JzmggZnNfsTD8OzBiX4egJax4qJXGYr2Q8GPrInRI=";

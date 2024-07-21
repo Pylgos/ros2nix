@@ -21,13 +21,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/uncrustify/uncrustify.git";
-          to = "VCS_TYPE path VCS_URL ${uncrustify_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${uncrustify_vendor-vendor_source-uncrustify-0}";
         }
       ];
     };
-    uncrustify_vendor-vendor_source0 = substituteSource {
+    uncrustify_vendor-vendor_source-uncrustify-0 = substituteSource {
       src = fetchgit {
-        name = "uncrustify_vendor-vendor_source0-source";
+        name = "uncrustify_vendor-vendor_source-uncrustify-0-source";
         url = "https://github.com/uncrustify/uncrustify.git";
         rev = "b8c95286f70ef8e0e83bd055a3a7aabb614a0781";
         hash = "sha256-L+YEVZC7sIDYuCM3xpSfZLjA3B8XsW5hi+zV2NEgXTs=";

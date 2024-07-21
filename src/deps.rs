@@ -1,6 +1,5 @@
 use anyhow::Result;
 use serde::Serialize;
-use tokio::sync::oneshot::error;
 use std::collections::{BTreeMap, BTreeSet};
 use tracing::warn;
 
@@ -184,7 +183,6 @@ fn classify_dependencies(
             for dep in deps.iter().filter(|d| d.kind.is_buildtool()) {
                 if !definetly_not_buildtools.contains(dep.name.as_str()) {
                     buildtools.insert(dep.name.as_str());
-
                 }
             }
 

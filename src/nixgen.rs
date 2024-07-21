@@ -16,7 +16,6 @@ use crate::{
 };
 
 struct Ctx<'a> {
-    cfg: &'a ConfigRef,
     distro_dir: PathBuf,
     package_index: &'a PackageIndex,
     sources: &'a BTreeMap<String, PatchedSource>,
@@ -66,7 +65,11 @@ fn generate_parameters(ctx: &Ctx, mut dst: impl Write, manifest: &PackageManifes
         })
         .collect();
     params.extend([
-        "buildRosPackage", "fetchurl", "fetchzip", "fetchgit", "substituteSource",
+        "buildRosPackage",
+        "fetchurl",
+        "fetchzip",
+        "fetchgit",
+        "substituteSource",
     ]);
     writeln!(dst, "{{")?;
     for param in params {
@@ -133,7 +136,10 @@ fn generate_package(ctx: &Ctx, dst_path: &Path, manifest: &PackageManifest) -> R
     generate_parameters(ctx, &mut dst, manifest)?;
     writeln!(dst, "let")?;
     writeln!(dst, "  sources = rec {{")?;
-    generate_source_list(indented(&mut dst).with_str("    "), &ctx.sources[&manifest.name])?;
+    generate_source_list(
+        indented(&mut dst).with_str("    "),
+        &ctx.sources[&manifest.name],
+    )?;
     writeln!(dst, "  }};")?;
     writeln!(dst, "in")?;
     writeln!(dst, "buildRosPackage {{")?;
@@ -158,7 +164,7 @@ fn generate_package_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
 }
 
 fn collect_sources<'a>(dst: &mut BTreeMap<String, &'a PatchedSource>, src: &'a PatchedSource) {
-    dst.insert(src.name().to_string(), &src);
+    dst.insert(src.name().to_string(), src);
     for sub in src.substitutions.iter() {
         match &sub.with {
             Replacement::Path(src) => collect_sources(dst, src),
@@ -211,10 +217,7 @@ fn generate_source_list(mut dst: impl Write, source: &PatchedSource) -> Result<(
                     writeln!(
                         dst,
                         "      to = {};",
-                        quote(&format!(
-                            "VCS_TYPE path VCS_URL ${{{}}}",
-                            with_src.name()
-                        ))
+                        quote(&format!("VCS_TYPE path VCS_URL ${{{}}}", with_src.name()))
                     )?;
                 }
                 Replacement::Url(with_src) => {
@@ -273,7 +276,6 @@ pub fn generate(
 ) -> Result<()> {
     let distro_dir = cfg.gen_dir().join(&package_index.name);
     let ctx = Ctx {
-        cfg,
         package_index,
         sources,
         deps,

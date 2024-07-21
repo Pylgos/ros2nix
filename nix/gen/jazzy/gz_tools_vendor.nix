@@ -25,13 +25,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
-          to = "VCS_TYPE path VCS_URL ${gz_tools_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${gz_tools_vendor-vendor_source-gz-tools-0}";
         }
       ];
     };
-    gz_tools_vendor-vendor_source0 = substituteSource {
+    gz_tools_vendor-vendor_source-gz-tools-0 = substituteSource {
       src = fetchgit {
-        name = "gz_tools_vendor-vendor_source0-source";
+        name = "gz_tools_vendor-vendor_source-gz-tools-0-source";
         url = "https://github.com/gazebosim/gz-tools.git";
         rev = "efcc504bd3665151266f38db627c9095e5a5773f";
         hash = "sha256-sV/T53oVk1fgjwqn/SRTaPTukt+vAlGGxGvTN8+G6Mo=";

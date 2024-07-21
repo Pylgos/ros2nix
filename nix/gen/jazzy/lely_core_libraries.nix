@@ -24,13 +24,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "GIT_REPOSITORY https://gitlab.com/lely_industries/lely-core.git";
-          to = "URL ${lely_core_libraries-vendor_source0}";
+          to = "URL ${lely_core_libraries-vendor_source-lely-core-0}";
         }
       ];
     };
-    lely_core_libraries-vendor_source0 = substituteSource {
+    lely_core_libraries-vendor_source-lely-core-0 = substituteSource {
       src = fetchgit {
-        name = "lely_core_libraries-vendor_source0-source";
+        name = "lely_core_libraries-vendor_source-lely-core-0-source";
         url = "https://gitlab.com/lely_industries/lely-core.git";
         rev = "b63a0b6f79d3ea91dc221724b42dae49894449fc";
         hash = "sha256-hTLUHWJ4aRdeijo3lL6RhXAygQwKuvbFiCMw2CPuEZE=";

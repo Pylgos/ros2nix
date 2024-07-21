@@ -20,13 +20,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "URL https://www.libsdl.org/release/SDL2-2.0.20.tar.gz";
-          to = "URL ${sdl2_vendor-vendor_source0}";
+          to = "URL ${sdl2_vendor-vendor_source-SDL2-2-0}";
         }
       ];
     };
-    sdl2_vendor-vendor_source0 = substituteSource {
+    sdl2_vendor-vendor_source-SDL2-2-0 = substituteSource {
       src = fetchzip {
-        name = "sdl2_vendor-vendor_source0-source";
+        name = "sdl2_vendor-vendor_source-SDL2-2-0-source";
         url = "https://www.libsdl.org/release/SDL2-2.0.20.tar.gz";
         hash = "sha256-DyBhGqPrQBiCq7gcAZhgD4X0KQ0mT6utCCXhJECpT3c=";
       };

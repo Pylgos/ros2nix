@@ -22,13 +22,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/pybind/pybind11.git";
-          to = "URL ${sophus-vendor_source0}";
+          to = "URL ${sophus-vendor_source-pybind11-0}";
         }
       ];
     };
-    sophus-vendor_source0 = substituteSource {
+    sophus-vendor_source-pybind11-0 = substituteSource {
       src = fetchgit {
-        name = "sophus-vendor_source0-source";
+        name = "sophus-vendor_source-pybind11-0-source";
         url = "https://github.com/pybind/pybind11.git";
         rev = "6d4805ced1f8fc8f503d41381853f6082f3064a3";
         hash = "sha256-6D7ccD3EL2bWtR/6hV0FnofcsqU+BFlwV4TMPsO3RCM=";

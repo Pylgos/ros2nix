@@ -37,13 +37,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/gazebosim/\${GITHUB_NAME}.git";
-          to = "VCS_TYPE path VCS_URL ${gz_gui_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${gz_gui_vendor-vendor_source-gz-gui-0}";
         }
       ];
     };
-    gz_gui_vendor-vendor_source0 = substituteSource {
+    gz_gui_vendor-vendor_source-gz-gui-0 = substituteSource {
       src = fetchgit {
-        name = "gz_gui_vendor-vendor_source0-source";
+        name = "gz_gui_vendor-vendor_source-gz-gui-0-source";
         url = "https://github.com/gazebosim/gz-gui.git";
         rev = "ac851e62862a9812a117c2f3913de992003cd7e5";
         hash = "sha256-heYeY6yZrCi8HTrYbgPiJ2/EKpoSfyEE2FNzzGjnTgI=";

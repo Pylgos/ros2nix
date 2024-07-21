@@ -24,13 +24,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://gitlab.com/inivation/dv/libcaer.git";
-          to = "VCS_TYPE path VCS_URL ${libcaer_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${libcaer_vendor-vendor_source-libcaer-0}";
         }
       ];
     };
-    libcaer_vendor-vendor_source0 = substituteSource {
+    libcaer_vendor-vendor_source-libcaer-0 = substituteSource {
       src = fetchgit {
-        name = "libcaer_vendor-vendor_source0-source";
+        name = "libcaer_vendor-vendor_source-libcaer-0-source";
         url = "https://gitlab.com/inivation/dv/libcaer.git";
         rev = "8710e73ceb21d9fb4f74ead62ca3fae42d828997";
         hash = "sha256-aTQw4K7otT7MP6qNediqzgjqbM6Wldg6bzwBTzX34II=";

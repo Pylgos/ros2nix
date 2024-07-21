@@ -23,13 +23,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/zeromq/zmqpp.git";
-          to = "URL ${zmqpp_vendor-vendor_source0}";
+          to = "URL ${zmqpp_vendor-vendor_source-zmqpp-0}";
         }
       ];
     };
-    zmqpp_vendor-vendor_source0 = substituteSource {
+    zmqpp_vendor-vendor_source-zmqpp-0 = substituteSource {
       src = fetchgit {
-        name = "zmqpp_vendor-vendor_source0-source";
+        name = "zmqpp_vendor-vendor_source-zmqpp-0-source";
         url = "https://github.com/zeromq/zmqpp.git";
         rev = "da73a138f290274cfd604b3f05a908956390a66e";
         hash = "sha256-UZyJpBEOf/Ys+i2tiBTjv4PlM5fHjjNLWuGhpgcmYyM=";

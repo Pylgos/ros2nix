@@ -37,13 +37,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/prophesee-ai/openeb.git";
-          to = "VCS_TYPE path VCS_URL ${openeb_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${openeb_vendor-vendor_source-openeb-0}";
         }
       ];
     };
-    openeb_vendor-vendor_source0 = substituteSource {
+    openeb_vendor-vendor_source-openeb-0 = substituteSource {
       src = fetchgit {
-        name = "openeb_vendor-vendor_source0-source";
+        name = "openeb_vendor-vendor_source-openeb-0-source";
         url = "https://github.com/prophesee-ai/openeb.git";
         rev = "112dd6eee7ce11e97d6f8994a87c9d6324538a3c";
         hash = "sha256-Q0ZbldyxOYysii+ObizUQS5FvMANXbOaX0K7JsvwDU0=";

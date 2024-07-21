@@ -29,13 +29,13 @@ let
         {
           path = "cmake/FindCatch2.cmake";
           from = "GIT_REPOSITORY https://github.com/catchorg/Catch2.git";
-          to = "URL ${pick_ik-vendor_source0}";
+          to = "URL ${pick_ik-vendor_source-Catch2-0}";
         }
       ];
     };
-    pick_ik-vendor_source0 = substituteSource {
+    pick_ik-vendor_source-Catch2-0 = substituteSource {
       src = fetchgit {
-        name = "pick_ik-vendor_source0-source";
+        name = "pick_ik-vendor_source-Catch2-0-source";
         url = "https://github.com/catchorg/Catch2.git";
         rev = "7818e2666d5cc7bb1d912acb22b68f6669b74520";
         hash = "sha256-IqTzKPR/RA1uphsr4n5/LfxJNS37I8IFRmMMF/DfBH0=";

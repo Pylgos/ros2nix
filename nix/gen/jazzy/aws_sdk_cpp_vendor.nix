@@ -25,13 +25,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/aws/aws-sdk-cpp.git";
-          to = "VCS_TYPE path VCS_URL ${aws_sdk_cpp_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${aws_sdk_cpp_vendor-vendor_source-aws-sdk-cpp-0}";
         }
       ];
     };
-    aws_sdk_cpp_vendor-vendor_source0 = substituteSource {
+    aws_sdk_cpp_vendor-vendor_source-aws-sdk-cpp-0 = substituteSource {
       src = fetchgit {
-        name = "aws_sdk_cpp_vendor-vendor_source0-source";
+        name = "aws_sdk_cpp_vendor-vendor_source-aws-sdk-cpp-0-source";
         url = "https://github.com/aws/aws-sdk-cpp.git";
         rev = "615458352b71fd29de142e01b8ecf293fcd08a88";
         hash = "sha256-P44Q84E6tVyV6sGcB7Z3+/lnAtR65X4JIws6T/+7a+Q=";
@@ -40,32 +40,33 @@ let
         {
           path = "tools/android-build/CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/bagder/curl.git";
-          to = "URL ${aws_sdk_cpp_vendor-vendor_source0-vendor_source2}";
+          to = "URL ${aws_sdk_cpp_vendor-vendor_source-aws-sdk-cpp-0-vendor_source-curl-2}";
         }
         {
           path = "tools/android-build/CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/openssl/openssl.git";
-          to = "URL ${aws_sdk_cpp_vendor-vendor_source0-vendor_source1}";
+          to = "URL ${aws_sdk_cpp_vendor-vendor_source-aws-sdk-cpp-0-vendor_source-openssl-1}";
         }
         {
           path = "tools/android-build/CMakeLists.txt";
           from = "URL https://sdk.amazonaws.com/cpp/builds/zlib-1.2.11.tar.gz";
-          to = "URL ${aws_sdk_cpp_vendor-vendor_source0-vendor_source0}";
+          to = "URL ${aws_sdk_cpp_vendor-vendor_source-aws-sdk-cpp-0-vendor_source-zlib-1-0}";
         }
       ];
     };
-    aws_sdk_cpp_vendor-vendor_source0-vendor_source0 = substituteSource {
-      src = fetchzip {
-        name = "aws_sdk_cpp_vendor-vendor_source0-vendor_source0-source";
-        url = "https://sdk.amazonaws.com/cpp/builds/zlib-1.2.11.tar.gz";
-        hash = "sha256-AQIoy96jcdmKs/F4GVqDFXxcZ7c66GF+yalHg3ALEyU=";
+    aws_sdk_cpp_vendor-vendor_source-aws-sdk-cpp-0-vendor_source-curl-2 = substituteSource {
+      src = fetchgit {
+        name = "aws_sdk_cpp_vendor-vendor_source-aws-sdk-cpp-0-vendor_source-curl-2-source";
+        url = "https://github.com/bagder/curl.git";
+        rev = "44b9b4d4f56d6f6de92c89636994c03984e9cd01";
+        hash = "sha256-hoUw0d2nRKdQpAtZzn4Q0a2i++VLHfkJ7weAy8VQu0c=";
       };
       substitutions = [
       ];
     };
-    aws_sdk_cpp_vendor-vendor_source0-vendor_source1 = substituteSource {
+    aws_sdk_cpp_vendor-vendor_source-aws-sdk-cpp-0-vendor_source-openssl-1 = substituteSource {
       src = fetchgit {
-        name = "aws_sdk_cpp_vendor-vendor_source0-vendor_source1-source";
+        name = "aws_sdk_cpp_vendor-vendor_source-aws-sdk-cpp-0-vendor_source-openssl-1-source";
         url = "https://github.com/openssl/openssl.git";
         rev = "e2e09d9fba1187f8d6aafaa34d4172f56f1ffb72";
         hash = "sha256-NYLD6ShRq0sIQ9amr0CVKWqTL4qbONf07c4n0eXcmIY=";
@@ -73,12 +74,11 @@ let
       substitutions = [
       ];
     };
-    aws_sdk_cpp_vendor-vendor_source0-vendor_source2 = substituteSource {
-      src = fetchgit {
-        name = "aws_sdk_cpp_vendor-vendor_source0-vendor_source2-source";
-        url = "https://github.com/bagder/curl.git";
-        rev = "44b9b4d4f56d6f6de92c89636994c03984e9cd01";
-        hash = "sha256-hoUw0d2nRKdQpAtZzn4Q0a2i++VLHfkJ7weAy8VQu0c=";
+    aws_sdk_cpp_vendor-vendor_source-aws-sdk-cpp-0-vendor_source-zlib-1-0 = substituteSource {
+      src = fetchzip {
+        name = "aws_sdk_cpp_vendor-vendor_source-aws-sdk-cpp-0-vendor_source-zlib-1-0-source";
+        url = "https://sdk.amazonaws.com/cpp/builds/zlib-1.2.11.tar.gz";
+        hash = "sha256-AQIoy96jcdmKs/F4GVqDFXxcZ7c66GF+yalHg3ALEyU=";
       };
       substitutions = [
       ];

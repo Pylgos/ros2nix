@@ -23,13 +23,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/osqp/osqp.git";
-          to = "URL ${osqp_vendor-vendor_source0}";
+          to = "URL ${osqp_vendor-vendor_source-osqp-0}";
         }
       ];
     };
-    osqp_vendor-vendor_source0 = substituteSource {
+    osqp_vendor-vendor_source-osqp-0 = substituteSource {
       src = fetchgit {
-        name = "osqp_vendor-vendor_source0-source";
+        name = "osqp_vendor-vendor_source-osqp-0-source";
         url = "https://github.com/osqp/osqp.git";
         rev = "f9fc23d3436e4b17dd2cb95f70cfa1f37d122c24";
         hash = "sha256-RYk3zuZrJXPcF27eMhdoZAio4DZ+I+nFaUEg1g/aLNk=";

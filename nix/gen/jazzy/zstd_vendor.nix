@@ -21,13 +21,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/facebook/zstd.git";
-          to = "VCS_TYPE path VCS_URL ${zstd_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${zstd_vendor-vendor_source-zstd-0}";
         }
       ];
     };
-    zstd_vendor-vendor_source0 = substituteSource {
+    zstd_vendor-vendor_source-zstd-0 = substituteSource {
       src = fetchgit {
-        name = "zstd_vendor-vendor_source0-source";
+        name = "zstd_vendor-vendor_source-zstd-0-source";
         url = "https://github.com/facebook/zstd.git";
         rev = "63779c798237346c2b245c546c40b72a5a5913fe";
         hash = "sha256-tHHHIsQU7vJySrVhJuMKUSq11MzkmC+Pcsj00uFJdnQ=";

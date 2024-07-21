@@ -22,13 +22,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "DOWNLOAD\n    https://raw.githubusercontent.com/opencv/opencv/0677f3e21cc3379e68d517dc80a8c12e5df0c608/cmake/FindCUDNN.cmake";
-          to = "DOWNLOAD file://${cudnn_cmake_module-vendor_source0}";
+          to = "DOWNLOAD file://${cudnn_cmake_module-vendor_source-FindCUDNN-0}";
         }
       ];
     };
-    cudnn_cmake_module-vendor_source0 = substituteSource {
+    cudnn_cmake_module-vendor_source-FindCUDNN-0 = substituteSource {
       src = fetchurl {
-        name = "cudnn_cmake_module-vendor_source0-source";
+        name = "cudnn_cmake_module-vendor_source-FindCUDNN-0-source";
         url = "https://raw.githubusercontent.com/opencv/opencv/0677f3e21cc3379e68d517dc80a8c12e5df0c608/cmake/FindCUDNN.cmake";
         hash = "sha256-pvm3+OkJ6qjN3Av6hrgKjmj3O52wFUsl/8eb9e7VL2Y=";
       };

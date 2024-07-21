@@ -12,6 +12,16 @@
 }:
 let
   sources = rec {
+    librealsense2-vendor_source-Catch2-0 = substituteSource {
+      src = fetchgit {
+        name = "librealsense2-vendor_source-Catch2-0-source";
+        url = "https://github.com/catchorg/Catch2.git";
+        rev = "6e79e682b726f524310d55dec8ddac4e9c52fb5f";
+        hash = "sha256-DqGGfNjKPW9HFJrX9arFHyNYjB61uoL6NabZatTWrr0=";
+      };
+      substitutions = [
+      ];
+    };
     odri_master_board_sdk = substituteSource {
       src = fetchgit {
         name = "odri_master_board_sdk-source";
@@ -23,18 +33,8 @@ let
         {
           path = "CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/catchorg/Catch2.git";
-          to = "URL ${odri_master_board_sdk-vendor_source0}";
+          to = "URL ${librealsense2-vendor_source-Catch2-0}";
         }
-      ];
-    };
-    odri_master_board_sdk-vendor_source0 = substituteSource {
-      src = fetchgit {
-        name = "odri_master_board_sdk-vendor_source0-source";
-        url = "https://github.com/catchorg/Catch2.git";
-        rev = "6e79e682b726f524310d55dec8ddac4e9c52fb5f";
-        hash = "sha256-DqGGfNjKPW9HFJrX9arFHyNYjB61uoL6NabZatTWrr0=";
-      };
-      substitutions = [
       ];
     };
   };

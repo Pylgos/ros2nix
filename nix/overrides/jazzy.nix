@@ -5,7 +5,7 @@ final: prev: {
         final.git
       ];
       patches = patches ++ [
-        ./ament_vendor.patch
+        ./ament_cmake_vendor_package
       ];
     });
     rosidl_generator_py = rosPrev.rosidl_generator_py.overrideAttrs ({ depsTargetTargetPropagated ? [], ...}: {

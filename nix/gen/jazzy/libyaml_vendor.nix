@@ -26,13 +26,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/yaml/libyaml.git";
-          to = "VCS_TYPE path VCS_URL ${libyaml_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${libyaml_vendor-vendor_source-libyaml-0}";
         }
       ];
     };
-    libyaml_vendor-vendor_source0 = substituteSource {
+    libyaml_vendor-vendor_source-libyaml-0 = substituteSource {
       src = fetchgit {
-        name = "libyaml_vendor-vendor_source0-source";
+        name = "libyaml_vendor-vendor_source-libyaml-0-source";
         url = "https://github.com/yaml/libyaml.git";
         rev = "2c891fc7a770e8ba2fec34fc6b545c672beb37e6";
         hash = "sha256-S7PnooyfyAsIiRAlEPGYkgkVACGaBaCItuqOwrq2+qM=";

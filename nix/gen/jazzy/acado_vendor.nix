@@ -22,18 +22,18 @@ let
         {
           path = "CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/cho3/acado.git";
-          to = "URL ${acado_vendor-vendor_source0}";
+          to = "URL ${acado_vendor-vendor_source-acado-0}";
         }
         {
           path = "CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/cho3/hpmpc.git";
-          to = "URL ${acado_vendor-vendor_source1}";
+          to = "URL ${acado_vendor-vendor_source-hpmpc-1}";
         }
       ];
     };
-    acado_vendor-vendor_source0 = substituteSource {
+    acado_vendor-vendor_source-acado-0 = substituteSource {
       src = fetchgit {
-        name = "acado_vendor-vendor_source0-source";
+        name = "acado_vendor-vendor_source-acado-0-source";
         url = "https://github.com/cho3/acado.git";
         rev = "8366e22cd5d815078e8d24f78dbced28b48d7e32";
         hash = "sha256-ExF4tV7ZpaL6BEwENt3CU+g2I1c2MOt0cs/Q9g/SSlI=";
@@ -41,9 +41,9 @@ let
       substitutions = [
       ];
     };
-    acado_vendor-vendor_source1 = substituteSource {
+    acado_vendor-vendor_source-hpmpc-1 = substituteSource {
       src = fetchgit {
-        name = "acado_vendor-vendor_source1-source";
+        name = "acado_vendor-vendor_source-hpmpc-1-source";
         url = "https://github.com/cho3/hpmpc.git";
         rev = "abbcf0806e4c8763ab2129a90efd827d194c1b00";
         hash = "sha256-KGC2+9ce1lyaxrPR5gApoB7Msk3bgTnKJYvBxDrHJDg=";

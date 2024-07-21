@@ -27,13 +27,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/apache/tvm";
-          to = "URL ${tvm_vendor-vendor_source0}";
+          to = "URL ${tvm_vendor-vendor_source-tvm-0}";
         }
       ];
     };
-    tvm_vendor-vendor_source0 = substituteSource {
+    tvm_vendor-vendor_source-tvm-0 = substituteSource {
       src = fetchgit {
-        name = "tvm_vendor-vendor_source0-source";
+        name = "tvm_vendor-vendor_source-tvm-0-source";
         url = "https://github.com/apache/tvm";
         rev = "d361585965b95acfb35563b92a2011fe8059876c";
         hash = "sha256-lzLrd4vNK1c7BwWS0H5x1uDdZ3moUl+zWHb8G6gs8hw=";
@@ -42,13 +42,13 @@ let
         {
           path = "apps/ios_rpc/CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/octoml/macho-dyld.git";
-          to = "URL ${tvm_vendor-vendor_source0-vendor_source0}";
+          to = "URL ${tvm_vendor-vendor_source-tvm-0-vendor_source-macho-dyld-0}";
         }
       ];
     };
-    tvm_vendor-vendor_source0-vendor_source0 = substituteSource {
+    tvm_vendor-vendor_source-tvm-0-vendor_source-macho-dyld-0 = substituteSource {
       src = fetchgit {
-        name = "tvm_vendor-vendor_source0-vendor_source0-source";
+        name = "tvm_vendor-vendor_source-tvm-0-vendor_source-macho-dyld-0-source";
         url = "https://github.com/octoml/macho-dyld.git";
         rev = "0742b8129de7df1130be355b74faa8c036265bfc";
         hash = "sha256-OAa4FiviTL/KoUMLd/vaUFVUBol5C47MXZptb7nL278=";

@@ -20,13 +20,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "URL https://www.phidgets.com/downloads/phidget22/libraries/linux/libphidget22/libphidget22-1.19.20240304.tar.gz";
-          to = "URL ${libphidget22-vendor_source0}";
+          to = "URL ${libphidget22-vendor_source-libphidget22-1-0}";
         }
       ];
     };
-    libphidget22-vendor_source0 = substituteSource {
+    libphidget22-vendor_source-libphidget22-1-0 = substituteSource {
       src = fetchzip {
-        name = "libphidget22-vendor_source0-source";
+        name = "libphidget22-vendor_source-libphidget22-1-0-source";
         url = "https://www.phidgets.com/downloads/phidget22/libraries/linux/libphidget22/libphidget22-1.19.20240304.tar.gz";
         hash = "sha256-TQg72tGQsU7ygESyh3gR68l+RXNF4uDHR/tj5vVlXY0=";
       };

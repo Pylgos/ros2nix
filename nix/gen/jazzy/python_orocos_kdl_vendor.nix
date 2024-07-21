@@ -26,13 +26,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "URL https://github.com/orocos/orocos_kinematics_dynamics/archive/ce4bcb65a050615b6d7f21bc60fbb2656515791b.zip";
-          to = "URL ${python_orocos_kdl_vendor-vendor_source0}";
+          to = "URL ${python_orocos_kdl_vendor-vendor_source-ce4bcb65a050615b6d7f21bc60fbb2656515791b-0}";
         }
       ];
     };
-    python_orocos_kdl_vendor-vendor_source0 = substituteSource {
+    python_orocos_kdl_vendor-vendor_source-ce4bcb65a050615b6d7f21bc60fbb2656515791b-0 = substituteSource {
       src = fetchzip {
-        name = "python_orocos_kdl_vendor-vendor_source0-source";
+        name = "python_orocos_kdl_vendor-vendor_source-ce4bcb65a050615b6d7f21bc60fbb2656515791b-0-source";
         url = "https://github.com/orocos/orocos_kinematics_dynamics/archive/ce4bcb65a050615b6d7f21bc60fbb2656515791b.zip";
         hash = "sha256-JXNOS6uV6ls3eMI53sBkX+zJfiVUakbK6iLlzPlD1+8=";
       };

@@ -19,13 +19,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "URL https://github.com/cameron314/readerwriterqueue/archive/ef7dfbf553288064347d51b8ac335f1ca489032a.zip";
-          to = "URL ${shared_queues_vendor-vendor_source0}";
+          to = "URL ${shared_queues_vendor-vendor_source-ef7dfbf553288064347d51b8ac335f1ca489032a-0}";
         }
       ];
     };
-    shared_queues_vendor-vendor_source0 = substituteSource {
+    shared_queues_vendor-vendor_source-ef7dfbf553288064347d51b8ac335f1ca489032a-0 = substituteSource {
       src = fetchzip {
-        name = "shared_queues_vendor-vendor_source0-source";
+        name = "shared_queues_vendor-vendor_source-ef7dfbf553288064347d51b8ac335f1ca489032a-0-source";
         url = "https://github.com/cameron314/readerwriterqueue/archive/ef7dfbf553288064347d51b8ac335f1ca489032a.zip";
         hash = "sha256-tfF1cjjiVn/Di2rYUS7TAqD4ojx7x0eRHVyn/GG/7+Q=";
       };

@@ -20,13 +20,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "URL https://downloads.sourceforge.net/project/tinyxml/tinyxml/2.6.2/tinyxml_2_6_2.tar.gz";
-          to = "URL ${tinyxml_vendor-vendor_source0}";
+          to = "URL ${tinyxml_vendor-vendor_source-tinyxml_2_6_2-0}";
         }
       ];
     };
-    tinyxml_vendor-vendor_source0 = substituteSource {
+    tinyxml_vendor-vendor_source-tinyxml_2_6_2-0 = substituteSource {
       src = fetchzip {
-        name = "tinyxml_vendor-vendor_source0-source";
+        name = "tinyxml_vendor-vendor_source-tinyxml_2_6_2-0-source";
         url = "https://downloads.sourceforge.net/project/tinyxml/tinyxml/2.6.2/tinyxml_2_6_2.tar.gz";
         hash = "sha256-nYksyFj8nzE1IS8vKoqxI0zVpqgfieWHMU7Ke6C5oY0=";
       };

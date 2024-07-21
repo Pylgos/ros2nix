@@ -33,13 +33,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/dartsim/dart.git";
-          to = "VCS_TYPE path VCS_URL ${gz_dartsim_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${gz_dartsim_vendor-vendor_source-dart-0}";
         }
       ];
     };
-    gz_dartsim_vendor-vendor_source0 = substituteSource {
+    gz_dartsim_vendor-vendor_source-dart-0 = substituteSource {
       src = fetchgit {
-        name = "gz_dartsim_vendor-vendor_source0-source";
+        name = "gz_dartsim_vendor-vendor_source-dart-0-source";
         url = "https://github.com/dartsim/dart.git";
         rev = "a51e08c210d7892605c6dc0b9ae96fce4446d9fe";
         hash = "sha256-AfKPqUiW6BsM98TIzTY2ZcFP1WvURs8/dGOzanIiB9g=";

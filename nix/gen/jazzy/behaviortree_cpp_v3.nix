@@ -26,13 +26,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip";
-          to = "URL ${behaviortree_cpp_v3-vendor_source0}";
+          to = "URL ${behaviortree_cpp_v3-vendor_source-609281088cfefc76f9d0ce82e1ff6c30cc3591e5-0}";
         }
       ];
     };
-    behaviortree_cpp_v3-vendor_source0 = substituteSource {
+    behaviortree_cpp_v3-vendor_source-609281088cfefc76f9d0ce82e1ff6c30cc3591e5-0 = substituteSource {
       src = fetchzip {
-        name = "behaviortree_cpp_v3-vendor_source0-source";
+        name = "behaviortree_cpp_v3-vendor_source-609281088cfefc76f9d0ce82e1ff6c30cc3591e5-0-source";
         url = "https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip";
         hash = "sha256-P8l4pv8z1n/XUBYpdpLumX8VTnzO+AvBLg+8wD4+ldg=";
       };

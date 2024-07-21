@@ -1,8 +1,12 @@
-{ lib, distro }:
+{ lib, config }:
 final: prev:
-
+let
+  prevPython3 = {
+    jazzy = prev.python312;
+  }.${config.distro};
+in
 {
-  python3 = prev.python3 // {
+  python3 = prev.prevPython3 // {
     pkgs = prev.python3.pkgs.overrideScope (
       pyFinal: pyPrev:
       let
@@ -24,9 +28,4 @@ final: prev:
     );
   };
   python3Packages = final.python3.pkgs;
-  # boost = prev.boost.override (old: {
-  #   enablePython = true;
-  #   enableNumpy = true;
-  #   python = final.python3;
-  # });
 }

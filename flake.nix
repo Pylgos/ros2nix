@@ -31,7 +31,8 @@
       }
     ))
     // {
-      lib.mkOverlay = ({ distro }: import ./overlay.nix { inherit lib distro poetry2nix; });
-      overlays.default = self.lib.mkOverlay { distro = "jazzy"; };
+      lib.mkOverlay = ({ config }: import ./overlay.nix { inherit lib poetry2nix; config = self.lib.defaultConfig // config; });
+      lib.defaultConfig = { distro = "jazzy"; };
+      overlays.default = self.lib.mkOverlay { config = self.lib.defaultConfig; };
     };
 }

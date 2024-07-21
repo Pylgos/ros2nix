@@ -1,4 +1,4 @@
-{ lib, distro }:
+{ lib, config }:
 final: prev:
 
 let
@@ -21,5 +21,5 @@ let
   };
 in
 {
-  rosPackages = distrobutions.${distro};
+  rosPackages = distrobutions.${config.distro};
 }

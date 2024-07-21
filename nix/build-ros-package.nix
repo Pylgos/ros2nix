@@ -1,4 +1,5 @@
 {
+  lib,
   stdenv,
   buildPackages,
   rosSetupHook,
@@ -7,7 +8,6 @@
 
 {
   nativeBuildInputs ? [ ],
-  configurePhase ? null,
   buildPhase ? null,
   installPhase ? null,
   checkPhase ? null,
@@ -17,10 +17,20 @@
   strictDeps ? true,
   dontWrapQtApps ? true,
   shellHook ? "",
-  passthru ? { },
   ...
 }@args:
 let
+  passthru = {
+    shell = mkShell {
+      name = "${args.pname or "ros"}-workspace";
+      nativeBuildInputs = [ rosSetupHook ];
+      buildInputs = [ self ];
+      shellHook = ''
+        ROS2NIX_SETUP_DEVEL_ENV=1 _ros2nixSetupHook_postHook 2> /dev/null
+      '';
+    };
+  } // (args.passthru or { });
+
   self = stdenv.mkDerivation (
     args
     // {
@@ -79,25 +89,19 @@ let
           rm -rf /build/log
         '';
 
-      shellHook = ''
-        ROS2NIX_SETUP_DEVEL_ENV=1 _ros2nixSetupHook_postHook 2> /dev/null
-      '' + shellHook;
+      shellHook =
+        ''
+          ROS2NIX_SETUP_DEVEL_ENV=1 _ros2nixSetupHook_postHook 2> /dev/null
+        ''
+        + shellHook;
 
-      inherit strictDeps dontUseCmakeConfigure dontWrapQtApps;
-
-      passthru = {
-        shell = mkShell {
-          name = "${args.pname or "ros"}-workspace";
-          nativeBuildInputs = [
-            rosSetupHook
-          ];
-          buildInputs = [ self ];
-          shellHook = ''
-            ROS2NIX_SETUP_DEVEL_ENV=1 _ros2nixSetupHook_postHook 2> /dev/null
-          '';
-        };
-      } // passthru;
+      inherit
+        passthru
+        strictDeps
+        dontUseCmakeConfigure
+        dontWrapQtApps
+        ;
     }
   );
 in
-self
+lib.extendDerivation true args self

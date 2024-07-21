@@ -54,23 +54,39 @@ impl Source {
 #[derive(Debug, Clone, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
 pub enum SourceKind {
     Git { rev: String },
-    Archive,
+    UnpackedArchive,
+    File,
 }
 
 impl Source {
-    pub async fn fetch_url(name: &str, url: &str) -> Result<Self> {
+    pub async fn fetch_url(name: &str, url: &str, unpack: bool) -> Result<Self> {
         debug!("fetching archive {}", url);
-        let child = Command::new("nix-prefetch-url")
-            .arg("--unpack")
-            .arg("--print-path")
-            .arg(url)
-            .stderr(Stdio::piped())
-            .stdout(Stdio::piped())
-            .stdin(Stdio::null())
-            .spawn()?;
+        let child = if unpack {
+            Command::new("nix-prefetch-url")
+                .arg("--unpack")
+                .arg("--print-path")
+                .arg(url)
+                .stderr(Stdio::piped())
+                .stdout(Stdio::piped())
+                .stdin(Stdio::null())
+                .spawn()?
+        } else {
+            Command::new("nix-prefetch-url")
+                .arg("--print-path")
+                .arg(url)
+                .stderr(Stdio::piped())
+                .stdout(Stdio::piped())
+                .stdin(Stdio::null())
+                .spawn()?
+        };
         let output = wait_and_get_output(child).await?;
         if !output.status.success() {
-            bail!("nix-prefetch-url failed: status: {}\nstdout:\n{}\nstderr:\n{}", output.status, String::from_utf8_lossy(&output.stdout), String::from_utf8_lossy(&output.stderr));
+            bail!(
+                "nix-prefetch-url failed: status: {}\nstdout:\n{}\nstderr:\n{}",
+                output.status,
+                String::from_utf8_lossy(&output.stdout),
+                String::from_utf8_lossy(&output.stderr)
+            );
         }
         let stdout = String::from_utf8(output.stdout)?;
         let mut lines = stdout.lines();
@@ -82,7 +98,7 @@ impl Source {
             url: url.to_string(),
             path: path.into(),
             nar_hash: format!("sha256-{}", STANDARD.encode(hash)),
-            kind: SourceKind::Archive,
+            kind: if unpack { SourceKind::UnpackedArchive } else { SourceKind::File },
         })
     }
 
@@ -224,11 +240,11 @@ impl Fetcher {
     }
 
     #[tracing::instrument(skip(self))]
-    pub async fn fetch_archive(&self, name: &str, url: &str) -> Result<Source> {
-        let key = format!("{url}");
+    pub async fn fetch_url(&self, name: &str, url: &str, unpack: bool) -> Result<Source> {
+        let key = format!("{url} {unpack}");
         {
             let cache = self.cache.lock().unwrap();
-            match cache.git_caches.get(&key) {
+            match cache.archive_caches.get(&key) {
                 Some(source) if source.path.exists() => {
                     debug!("cache hit {url}");
                     return Ok(source.clone());
@@ -238,10 +254,10 @@ impl Fetcher {
         }
         let source = {
             let _permit = self.semaphore.acquire().await?;
-            Source::fetch_url(name, url).await?
+            Source::fetch_url(name, url, unpack).await?
         };
         let mut cache = self.cache.lock().unwrap();
-        cache.git_caches.insert(key, source.clone());
+        cache.archive_caches.insert(key, source.clone());
         Ok(source)
     }
 

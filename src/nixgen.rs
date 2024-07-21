@@ -42,6 +42,7 @@ fn escape(s: &str) -> String {
             }
             '\\' => escaped.push_str("\\\\"),
             '"' => escaped.push_str("\\\""),
+            '\n' => escaped.push_str("\\n"),
             _ => escaped.push(c),
         }
     }
@@ -148,6 +149,7 @@ fn collect_sources<'a>(dst: &mut BTreeMap<String, &'a PatchedSource>, src: &'a P
         match &sub.with {
             Replacement::Path(src) => collect_sources(dst, src),
             Replacement::Url(src) => collect_sources(dst, src),
+            Replacement::Download(src) => collect_sources(dst, src),
             Replacement::Literal(_) => {}
         }
     }
@@ -172,8 +174,15 @@ fn generate_source_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
                 writeln!(dst, "    hash = {};", escape(src.source.nar_hash()))?;
                 writeln!(dst, "  }};")?;
             }
-            SourceKind::Archive => {
+            SourceKind::UnpackedArchive => {
                 writeln!(dst, "fetchzip {{")?;
+                writeln!(dst, "    name = {};", escape(&drv_name))?;
+                writeln!(dst, "    url = {};", escape(src.source.url()))?;
+                writeln!(dst, "    hash = {};", escape(src.source.nar_hash()))?;
+                writeln!(dst, "  }};")?;
+            }
+            SourceKind::File => {
+                writeln!(dst, "fetchurl {{")?;
                 writeln!(dst, "    name = {};", escape(&drv_name))?;
                 writeln!(dst, "    url = {};", escape(src.source.url()))?;
                 writeln!(dst, "    hash = {};", escape(src.source.nar_hash()))?;
@@ -206,6 +215,13 @@ fn generate_source_list(ctx: &Ctx, mut dst: impl Write) -> Result<()> {
                 Replacement::Literal(to) => {
                     writeln!(dst, "      to = {};", escape(to))?;
                 }
+                Replacement::Download(with_src) => {
+                    writeln!(
+                        dst,
+                        "      to = {};",
+                        quote(&format!("DOWNLOAD file://${{{}}}", with_src.name()))
+                    )?;
+                }
             }
             writeln!(dst, "    }}")?;
         }
@@ -222,7 +238,7 @@ fn generate_distro_root(ctx: &Ctx) -> Result<()> {
     writeln!(dst, "let")?;
     writeln!(
         dst,
-        "  sources = self.callPackage ({{ fetchzip, fetchgit, substituteSource }}: rec {{"
+        "  sources = self.callPackage ({{ fetchurl, fetchzip, fetchgit, substituteSource }}: rec {{"
     )?;
     generate_source_list(ctx, indented(&mut dst).with_str("    "))?;
     writeln!(dst, "  }}) {{}};")?;

@@ -1,6 +1,6 @@
 self:
 let
-  sources = self.callPackage ({ fetchzip, fetchgit, substituteSource }: rec {
+  sources = self.callPackage ({ fetchurl, fetchzip, fetchgit, substituteSource }: rec {
     acado_vendor = substituteSource {
       src = fetchgit {
         name = "acado_vendor-source";
@@ -1157,21 +1157,25 @@ let
         {
           path = "tools/android-build/CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/bagder/curl.git";
-          to = "URL ${aws_sdk_cpp_vendor-vendor_source0-vendor_source1}";
+          to = "URL ${aws_sdk_cpp_vendor-vendor_source0-vendor_source2}";
         }
         {
           path = "tools/android-build/CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/openssl/openssl.git";
+          to = "URL ${aws_sdk_cpp_vendor-vendor_source0-vendor_source1}";
+        }
+        {
+          path = "tools/android-build/CMakeLists.txt";
+          from = "URL https://sdk.amazonaws.com/cpp/builds/zlib-1.2.11.tar.gz";
           to = "URL ${aws_sdk_cpp_vendor-vendor_source0-vendor_source0}";
         }
       ];
     };
     aws_sdk_cpp_vendor-vendor_source0-vendor_source0 = substituteSource {
-      src = fetchgit {
+      src = fetchzip {
         name = "aws_sdk_cpp_vendor-vendor_source0-vendor_source0-source";
-        url = "https://github.com/openssl/openssl.git";
-        rev = "e2e09d9fba1187f8d6aafaa34d4172f56f1ffb72";
-        hash = "sha256-NYLD6ShRq0sIQ9amr0CVKWqTL4qbONf07c4n0eXcmIY=";
+        url = "https://sdk.amazonaws.com/cpp/builds/zlib-1.2.11.tar.gz";
+        hash = "sha256-AQIoy96jcdmKs/F4GVqDFXxcZ7c66GF+yalHg3ALEyU=";
       };
       substitutions = [
       ];
@@ -1179,6 +1183,16 @@ let
     aws_sdk_cpp_vendor-vendor_source0-vendor_source1 = substituteSource {
       src = fetchgit {
         name = "aws_sdk_cpp_vendor-vendor_source0-vendor_source1-source";
+        url = "https://github.com/openssl/openssl.git";
+        rev = "e2e09d9fba1187f8d6aafaa34d4172f56f1ffb72";
+        hash = "sha256-NYLD6ShRq0sIQ9amr0CVKWqTL4qbONf07c4n0eXcmIY=";
+      };
+      substitutions = [
+      ];
+    };
+    aws_sdk_cpp_vendor-vendor_source0-vendor_source2 = substituteSource {
+      src = fetchgit {
+        name = "aws_sdk_cpp_vendor-vendor_source0-vendor_source2-source";
         url = "https://github.com/bagder/curl.git";
         rev = "44b9b4d4f56d6f6de92c89636994c03984e9cd01";
         hash = "sha256-hoUw0d2nRKdQpAtZzn4Q0a2i++VLHfkJ7weAy8VQu0c=";
@@ -1232,6 +1246,20 @@ let
         url = "https://github.com/ros2-gbp/behaviortree_cpp-release.git";
         rev = "0b5edf037bf08f1401392b7914a0d6add7789360";
         hash = "sha256-mNfg3QRd1f1UOvmGK4o+bj8+rt+2/pir2Z6H+vRmxDE=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip";
+          to = "URL ${behaviortree_cpp_v3-vendor_source0}";
+        }
+      ];
+    };
+    behaviortree_cpp_v3-vendor_source0 = substituteSource {
+      src = fetchzip {
+        name = "behaviortree_cpp_v3-vendor_source0-source";
+        url = "https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip";
+        hash = "sha256-P8l4pv8z1n/XUBYpdpLumX8VTnzO+AvBLg+8wD4+ldg=";
       };
       substitutions = [
       ];
@@ -1715,11 +1743,6 @@ let
           to = "URL ${control_box_rst-vendor_source0}";
         }
         {
-          path = "src/extern/gtest/CMakeLists.txt";
-          from = "GIT_REPOSITORY https://github.com/google/googletest.git";
-          to = "URL ${control_box_rst-vendor_source0}";
-        }
-        {
           path = "src/extern/protobuf/CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/google/protobuf.git";
           to = "URL ${control_box_rst-vendor_source0}";
@@ -1807,6 +1830,20 @@ let
         url = "https://github.com/ros2-gbp/cudnn_cmake_module-release.git";
         rev = "de4d4f9f0b0abe550eb0594bb9cea11ceeb536e7";
         hash = "sha256-J6BqQzZzZMC0MVQ5oJCXgXu5fzoPlV+JErISeIuss6I=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "DOWNLOAD\n    https://raw.githubusercontent.com/opencv/opencv/0677f3e21cc3379e68d517dc80a8c12e5df0c608/cmake/FindCUDNN.cmake";
+          to = "DOWNLOAD file://${cudnn_cmake_module-vendor_source0}";
+        }
+      ];
+    };
+    cudnn_cmake_module-vendor_source0 = substituteSource {
+      src = fetchurl {
+        name = "cudnn_cmake_module-vendor_source0-source";
+        url = "https://raw.githubusercontent.com/opencv/opencv/0677f3e21cc3379e68d517dc80a8c12e5df0c608/cmake/FindCUDNN.cmake";
+        hash = "sha256-pvm3+OkJ6qjN3Av6hrgKjmj3O52wFUsl/8eb9e7VL2Y=";
       };
       substitutions = [
       ];
@@ -3139,6 +3176,253 @@ let
         hash = "sha256-M6nTrgKOJ8WBcqrcY99OK9HEHW3JqWnKANPdzd/r1cQ=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/Fields2Cover/spline.git";
+          to = "URL ${fields2cover-vendor_source1}";
+        }
+        {
+          path = "CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/Fields2Cover/steering_functions.git";
+          to = "URL ${fields2cover-vendor_source0}";
+        }
+        {
+          path = "CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/google/or-tools.git";
+          to = "URL ${fields2cover-vendor_source5}";
+        }
+        {
+          path = "CMakeLists.txt";
+          from = "URL https://github.com/google/or-tools/releases/download/v9.9/or-tools_amd64_ubuntu-22.04_cpp_v9.9.3963.tar.gz";
+          to = "URL ${fields2cover-vendor_source3}";
+        }
+        {
+          path = "CMakeLists.txt";
+          from = "URL https://github.com/google/or-tools/releases/download/v9.9/or-tools_arm64_debian-11_cpp_v9.9.3963.tar.gz";
+          to = "URL ${fields2cover-vendor_source4}";
+        }
+        {
+          path = "CMakeLists.txt";
+          from = "URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz";
+          to = "URL ${fields2cover-vendor_source2}";
+        }
+      ];
+    };
+    fields2cover-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "fields2cover-vendor_source0-source";
+        url = "https://github.com/Fields2Cover/steering_functions.git";
+        rev = "13e3f5658144b3832fb1eb31a0e2f5a3cbf57db9";
+        hash = "sha256-+gGBX6kKKI0G+0AVwvIRyuzFKlCgHp+woiV0jfu0REo=";
+      };
+      substitutions = [
+      ];
+    };
+    fields2cover-vendor_source1 = substituteSource {
+      src = fetchgit {
+        name = "fields2cover-vendor_source1-source";
+        url = "https://github.com/Fields2Cover/spline.git";
+        rev = "1b5d4bad29082997076b264de84ca6d46c2ae6ab";
+        hash = "sha256-nWaanoqOVzDlxbfWFjT4j6ZQtp76E9tVbNVvx1R2dlM=";
+      };
+      substitutions = [
+      ];
+    };
+    fields2cover-vendor_source2 = substituteSource {
+      src = fetchzip {
+        name = "fields2cover-vendor_source2-source";
+        url = "https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz";
+        hash = "sha256-cnGfiVhXzqfj5Fay823wntWcTnbh8r2SefDLslb1Dh0=";
+      };
+      substitutions = [
+      ];
+    };
+    fields2cover-vendor_source3 = substituteSource {
+      src = fetchzip {
+        name = "fields2cover-vendor_source3-source";
+        url = "https://github.com/google/or-tools/releases/download/v9.9/or-tools_amd64_ubuntu-22.04_cpp_v9.9.3963.tar.gz";
+        hash = "sha256-PC2FL81bvEvvu1G1ylGVZdDYndsQCceoE07+0BD+ob4=";
+      };
+      substitutions = [
+      ];
+    };
+    fields2cover-vendor_source4 = substituteSource {
+      src = fetchzip {
+        name = "fields2cover-vendor_source4-source";
+        url = "https://github.com/google/or-tools/releases/download/v9.9/or-tools_arm64_debian-11_cpp_v9.9.3963.tar.gz";
+        hash = "sha256-26Ekgc9p+qiVj5hNswVmdXy2gTLMQqYTbuwBXTGd6oo=";
+      };
+      substitutions = [
+      ];
+    };
+    fields2cover-vendor_source5 = substituteSource {
+      src = fetchgit {
+        name = "fields2cover-vendor_source5-source";
+        url = "https://github.com/google/or-tools.git";
+        rev = "3c5c99c278ef3d0ac85cdbd4f008f8c0fd2f3f94";
+        hash = "sha256-Ip2mKl+MuzOPaF1a2FTubqT0tA4gzDnD8dR7dLaHHo8=";
+      };
+      substitutions = [
+        {
+          path = "cmake/cpp.cmake";
+          from = "DOWNLOAD\n      https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/v2.1.0/doxygen-awesome.css";
+          to = "DOWNLOAD file://${ortools_vendor-vendor_source0-vendor_source0}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/ERGO-Code/HiGHS.git\"";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source9}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/Mizux/Cbc.git\"";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source15}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/Mizux/Cgl.git\"";
+          to = "URL ${fields2cover-vendor_source5-vendor_source14}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/Mizux/Clp.git\"";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source13}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/Mizux/CoinUtils.git\"";
+          to = "URL ${fields2cover-vendor_source5-vendor_source11}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/Mizux/GLPK.git\"";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source8}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/Mizux/Osi.git\"";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source12}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/abseil/abseil-cpp.git\"";
+          to = "URL ${fields2cover-vendor_source5-vendor_source1}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/google/re2.git\"";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source3}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/madler/ZLIB.git\"";
+          to = "URL ${fields2cover-vendor_source5-vendor_source0}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/protocolbuffers/protobuf.git\"";
+          to = "URL ${fields2cover-vendor_source5-vendor_source2}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/pybind/pybind11.git\"";
+          to = "URL ${pybind11_vendor-vendor_source0}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/pybind/pybind11_abseil.git\"";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source6}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/pybind/pybind11_protobuf.git\"";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source7}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/scipopt/scip.git\"";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source10}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://gitlab.com/libeigen/eigen.git\"";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source4}";
+        }
+        {
+          path = "cmake/dependencies/CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/google/googletest.git";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source16}";
+        }
+        {
+          path = "cmake/dotnet.cmake";
+          from = "DOWNLOAD\n      https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/v2.1.0/doxygen-awesome.css";
+          to = "DOWNLOAD file://${ortools_vendor-vendor_source0-vendor_source0}";
+        }
+        {
+          path = "cmake/java.cmake";
+          from = "DOWNLOAD\n      https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/v2.1.0/doxygen-awesome.css";
+          to = "DOWNLOAD file://${ortools_vendor-vendor_source0-vendor_source0}";
+        }
+        {
+          path = "cmake/python.cmake";
+          from = "DOWNLOAD\n      https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/v2.1.0/doxygen-awesome.css";
+          to = "DOWNLOAD file://${ortools_vendor-vendor_source0-vendor_source0}";
+        }
+      ];
+    };
+    fields2cover-vendor_source5-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "fields2cover-vendor_source5-vendor_source0-source";
+        url = "https://github.com/madler/ZLIB.git";
+        rev = "04f42ceca40f73e2978b50e93806c2a18c1281fc";
+        hash = "sha256-+Y5QRTo87r3xXslF01sbWd4RNMG1pFG/0LCthbCybsQ=";
+      };
+      substitutions = [
+      ];
+    };
+    fields2cover-vendor_source5-vendor_source1 = substituteSource {
+      src = fetchgit {
+        name = "fields2cover-vendor_source5-vendor_source1-source";
+        url = "https://github.com/abseil/abseil-cpp.git";
+        rev = "2f9e432cce407ce0ae50676696666f33a77d42ac";
+        hash = "sha256-D4E11bICKr3Z5RRah7QkfXVsXtuUg32FMmKpiOGjZDM=";
+      };
+      substitutions = [
+      ];
+    };
+    fields2cover-vendor_source5-vendor_source11 = substituteSource {
+      src = fetchgit {
+        name = "fields2cover-vendor_source5-vendor_source11-source";
+        url = "https://github.com/Mizux/CoinUtils.git";
+        rev = "675cbb8e131f07705544a2e9074355cfa1a319b4";
+        hash = "sha256-sR+ZM5mBAFss1NubW2jDg6oaCoPoRxn6YsSmk7xi2xI=";
+      };
+      substitutions = [
+      ];
+    };
+    fields2cover-vendor_source5-vendor_source14 = substituteSource {
+      src = fetchgit {
+        name = "fields2cover-vendor_source5-vendor_source14-source";
+        url = "https://github.com/Mizux/Cgl.git";
+        rev = "59d95fba6605329d615d44ac7be0be2397210d5a";
+        hash = "sha256-lSNsHs6BcGGMs5jnaYTqa+V6xzYshrB5U2AapkNxPR8=";
+      };
+      substitutions = [
+      ];
+    };
+    fields2cover-vendor_source5-vendor_source2 = substituteSource {
+      src = fetchgit {
+        name = "fields2cover-vendor_source5-vendor_source2-source";
+        url = "https://github.com/protocolbuffers/protobuf.git";
+        rev = "4a2aef570deb2bfb8927426558701e8bfc26f2a4";
+        hash = "sha256-1gdHC+f1T3KOy8A7KlWOjauRHsMKfEXoQiYqZMzzMxI=";
+      };
+      substitutions = [
+        {
+          path = "upb/cmake/CMakeLists.txt";
+          from = "GIT_REPOSITORY \"https://github.com/protocolbuffers/utf8_range.git\"";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source2-vendor_source0}";
+        }
       ];
     };
     filters = substituteSource {
@@ -3724,21 +4008,6 @@ let
         hash = "sha256-gztnxui9Fe/FTieMjdvfJjWHjkImtlsHn6fM1FruyME=";
       };
       substitutions = [
-        {
-          path = "cmake/GoogleTest.cmake.in";
-          from = "GIT_REPOSITORY    https://github.com/google/googletest.git";
-          to = "URL ${google_benchmark_vendor-vendor_source0-vendor_source0}";
-        }
-      ];
-    };
-    google_benchmark_vendor-vendor_source0-vendor_source0 = substituteSource {
-      src = fetchgit {
-        name = "google_benchmark_vendor-vendor_source0-vendor_source0-source";
-        url = "https://github.com/google/googletest.git";
-        rev = "e2239ee6043f73722e7aa812a459f54a28552929";
-        hash = "sha256-SjlJxushfry13RGA7BCjYC9oZqV4z6x8dOiHfl/wpF0=";
-      };
-      substitutions = [
       ];
     };
     gps_msgs = substituteSource {
@@ -3847,6 +4116,20 @@ let
         url = "https://github.com/ros2-gbp/gtsam-release.git";
         rev = "b3a199bd675027475f53cd0cf40d48c0825e3ade";
         hash = "sha256-pB7YNdBRIvvJ21JFD/rNx7KcYzVzXMLJcyUyVg6w8Zk=";
+      };
+      substitutions = [
+        {
+          path = "gtsam/3rdparty/Eigen/lapack/CMakeLists.txt";
+          from = "DOWNLOAD \"http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz\"";
+          to = "DOWNLOAD file://${gtsam-vendor_source0}";
+        }
+      ];
+    };
+    gtsam-vendor_source0 = substituteSource {
+      src = fetchurl {
+        name = "gtsam-vendor_source0-source";
+        url = "http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz";
+        hash = "sha256-vZntt9xHKapjGQQapStG2/erraGkP3oj/iYm2yTFJDw=";
       };
       substitutions = [
       ];
@@ -4219,6 +4502,21 @@ let
         hash = "sha256-yvI6CvmSHhWX/lT38T05oYwyEUK98B5bFol/jZLBDNU=";
       };
       substitutions = [
+        {
+          path = "examples/plugin/custom_sensor_system/CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/gazebosim/gz-sensors";
+          to = "URL ${gz_sim_vendor-vendor_source0-vendor_source0}";
+        }
+      ];
+    };
+    gz_sim_vendor-vendor_source0-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "gz_sim_vendor-vendor_source0-vendor_source0-source";
+        url = "https://github.com/gazebosim/gz-sensors";
+        rev = "abca8da21ed165d46c516632314222eae0e3370c";
+        hash = "sha256-b5wTwAy50oukLjh47SwTpvVm+LBx4NsPSTFtGTVtW8A=";
+      };
+      substitutions = [
       ];
     };
     gz_tools_vendor = substituteSource {
@@ -4322,6 +4620,21 @@ let
         url = "https://github.com/ros2-gbp/hash_library_vendor-release.git";
         rev = "cd243a064b6da2fcbd714575e2dd3d6158af7901";
         hash = "sha256-/aXRAfmumq2WRfhcS24fzeg13YY+hDi9NQYpVUQNR6w=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/stbrumme/hash-library.git";
+          to = "URL ${hash_library_vendor-vendor_source0}";
+        }
+      ];
+    };
+    hash_library_vendor-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "hash_library_vendor-vendor_source0-source";
+        url = "https://github.com/stbrumme/hash-library.git";
+        rev = "70cc93763d49a24c4536c7f0a23248f9b40e30f5";
+        hash = "sha256-z4JzmggZnNfsTD8OzBiX4egJax4qJXGYr2Q8GPrInRI=";
       };
       substitutions = [
       ];
@@ -5399,6 +5712,20 @@ let
         hash = "sha256-6qmEwpvLQ3uNtKDMaZipmO91nKI98FLjFSl0zWR+tCk=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "URL https://www.phidgets.com/downloads/phidget22/libraries/linux/libphidget22/libphidget22-1.19.20240304.tar.gz";
+          to = "URL ${libphidget22-vendor_source0}";
+        }
+      ];
+    };
+    libphidget22-vendor_source0 = substituteSource {
+      src = fetchzip {
+        name = "libphidget22-vendor_source0-source";
+        url = "https://www.phidgets.com/downloads/phidget22/libraries/linux/libphidget22/libphidget22-1.19.20240304.tar.gz";
+        hash = "sha256-TQg72tGQsU7ygESyh3gR68l+RXNF4uDHR/tj5vVlXY0=";
+      };
+      substitutions = [
       ];
     };
     libpointmatcher = substituteSource {
@@ -5422,7 +5749,22 @@ let
         {
           path = "CMake/catch2-download.cmake.in";
           from = "GIT_REPOSITORY https://github.com/catchorg/Catch2.git";
+          to = "URL ${odri_master_board_sdk-vendor_source0}";
+        }
+        {
+          path = "CMake/connectivity_check.cmake";
+          from = "DOWNLOAD \"https://librealsense.intel.com/Releases/connectivity_check\"";
+          to = "DOWNLOAD file://${librealsense2-vendor_source0}";
+        }
+        {
+          path = "CMake/external_fastdds.cmake";
+          from = "GIT_REPOSITORY https://github.com/eProsima/Fast-DDS.git";
           to = "URL ${librealsense2-vendor_source0}";
+        }
+        {
+          path = "CMake/external_foonathan_memory.cmake";
+          from = "GIT_REPOSITORY https://github.com/foonathan/memory.git";
+          to = "URL ${foonathan_memory_vendor-vendor_source0}";
         }
         {
           path = "CMake/external_libcurl.cmake";
@@ -5449,21 +5791,20 @@ let
           from = "GIT_REPOSITORY \"https://github.com/pybind/pybind11_json.git\"";
           to = "URL ${librealsense2-vendor_source0}";
         }
+        {
+          path = "third-party/glfw/CMake/GenerateMappings.cmake";
+          from = "DOWNLOAD \"\${source_url}\"";
+          to = "DOWNLOAD file://${librealsense2-vendor_source0}";
+        }
       ];
     };
     librealsense2-vendor_source0 = substituteSource {
-      src = fetchgit {
+      src = fetchurl {
         name = "librealsense2-vendor_source0-source";
-        url = "https://github.com/pybind/pybind11_json.git";
-        rev = "b02a2ad597d224c3faee1f05a56d81d4c4453092";
-        hash = "sha256-Kl/QflV2bBoH72/LW03K8JDlhBF+DYYXL47A5s1nmTw=";
+        url = "https://raw.githubusercontent.com/gabomdq/SDL_GameControllerDB/master/gamecontrollerdb.txt";
+        hash = "sha256-503gvcBDasNM51wI3gwzpt5H6u3KXEJtXagvQe0hits=";
       };
       substitutions = [
-        {
-          path = "test/downloadGTest.cmake.in";
-          from = "GIT_REPOSITORY    https://github.com/google/googletest.git";
-          to = "URL ${pybind11_json_vendor-vendor_source0-vendor_source0}";
-        }
       ];
     };
     libstatistics_collector = substituteSource {
@@ -5769,6 +6110,20 @@ let
         hash = "sha256-GeTzcZi2qkundHMGWvGRD6vfh7FfNGRN7M2Gg6ret+U=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "URL https://github.com/foxglove/mcap/archive/refs/tags/releases/cpp/v1.3.0.tar.gz";
+          to = "URL ${mcap_vendor-vendor_source0}";
+        }
+      ];
+    };
+    mcap_vendor-vendor_source0 = substituteSource {
+      src = fetchzip {
+        name = "mcap_vendor-vendor_source0-source";
+        url = "https://github.com/foxglove/mcap/archive/refs/tags/releases/cpp/v1.3.0.tar.gz";
+        hash = "sha256-vGMdVNa0wsX9OD0W29Ndk2YmwFphmxPbiovCXtHxF4E=";
+      };
+      substitutions = [
       ];
     };
     menge_vendor = substituteSource {
@@ -5807,6 +6162,21 @@ let
         url = "https://github.com/ros2-gbp/metavision_driver-release.git";
         rev = "dff2f1635200cb1b5b3e7f364de82e3d04a771ca";
         hash = "sha256-6YJm1D2gLZgtxGftqG+MCBCzfpJxkonaTl9z9Qz+nVs=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/ros-event-camera/openeb.git";
+          to = "URL ${metavision_driver-vendor_source0}";
+        }
+      ];
+    };
+    metavision_driver-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "metavision_driver-vendor_source0-source";
+        url = "https://github.com/ros-event-camera/openeb.git";
+        rev = "db34531b9d0fef952e39f5fef7169e583575b6e9";
+        hash = "sha256-QHs3Bz6Mj08Rk8lUAIyWfMwMcoW1XCswASYhX0hfPiM=";
       };
       substitutions = [
       ];
@@ -6672,6 +7042,59 @@ let
         url = "https://github.com/ros2-gbp/mrpt2-release.git";
         rev = "13832bbaec2d6710e0f9fc44f87f86461c2d0fb6";
         hash = "sha256-rVrQK4cNuaGYOlHTI1EEnTCZKUVq2/emy4aTVWpxc+o=";
+      };
+      substitutions = [
+        {
+          path = "3rdparty/nanogui/ext/glfw/CMake/GenerateMappings.cmake";
+          from = "DOWNLOAD \"\${source_url}\"";
+          to = "DOWNLOAD file://${librealsense2-vendor_source0}";
+        }
+        {
+          path = "cmakemodules/script_assimp.cmake";
+          from = "URL               \"https://github.com/assimp/assimp/archive/v5.3.1.tar.gz\"";
+          to = "URL ${mrpt2-vendor_source0}";
+        }
+        {
+          path = "cmakemodules/script_eigen.cmake";
+          from = "URL               \"https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.tar.bz2\"";
+          to = "URL ${mrpt2-vendor_source0}";
+        }
+        {
+          path = "cmakemodules/script_jpeg.cmake";
+          from = "URL               \"https://github.com/libjpeg-turbo/libjpeg-turbo/archive/1.5.90.tar.gz\"";
+          to = "URL ${mrpt2-vendor_source0}";
+        }
+        {
+          path = "cmakemodules/script_octomap.cmake";
+          from = "URL               \"\${OCTOMAP_EP_URL}\"";
+          to = "URL ${mrpt2-vendor_source0}";
+        }
+        {
+          path = "cmakemodules/script_tinyxml2.cmake";
+          from = "DOWNLOAD\n			https://github.com/leethomason/tinyxml2/raw/\${TINYXML2_VERSION_TO_DOWNLOAD}/tinyxml2.cpp";
+          to = "DOWNLOAD file://${mrpt2-vendor_source1}";
+        }
+        {
+          path = "cmakemodules/script_tinyxml2.cmake";
+          from = "DOWNLOAD\n			https://github.com/leethomason/tinyxml2/raw/\${TINYXML2_VERSION_TO_DOWNLOAD}/tinyxml2.h";
+          to = "DOWNLOAD file://${mrpt2-vendor_source0}";
+        }
+      ];
+    };
+    mrpt2-vendor_source0 = substituteSource {
+      src = fetchurl {
+        name = "mrpt2-vendor_source0-source";
+        url = "https://github.com/leethomason/tinyxml2/raw/7.1.0/tinyxml2.h";
+        hash = "sha256-C3cg/6R4k8QXqGEc3RKJ7Yd5STPSuiWTTmQt3k2FTQk=";
+      };
+      substitutions = [
+      ];
+    };
+    mrpt2-vendor_source1 = substituteSource {
+      src = fetchurl {
+        name = "mrpt2-vendor_source1-source";
+        url = "https://github.com/leethomason/tinyxml2/raw/7.1.0/tinyxml2.cpp";
+        hash = "sha256-EMotGRcFLQY9PO9Lle62yoRQNNMBxUoR1ttfAWpKT44=";
       };
       substitutions = [
       ];
@@ -7559,6 +7982,21 @@ let
         hash = "sha256-CcSf83I4FBj55ky6BiSf/pINL6ZbZYFZiAFrlketTuQ=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/catchorg/Catch2.git";
+          to = "URL ${odri_master_board_sdk-vendor_source0}";
+        }
+      ];
+    };
+    odri_master_board_sdk-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "odri_master_board_sdk-vendor_source0-source";
+        url = "https://github.com/catchorg/Catch2.git";
+        rev = "6e79e682b726f524310d55dec8ddac4e9c52fb5f";
+        hash = "sha256-DqGGfNjKPW9HFJrX9arFHyNYjB61uoL6NabZatTWrr0=";
+      };
+      substitutions = [
       ];
     };
     ompl = substituteSource {
@@ -7672,16 +8110,168 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/google/or-tools.git";
-          to = "VCS_TYPE path VCS_URL ${ortools_vendor-vendor_source0}";
+          to = "VCS_TYPE path VCS_URL ${fields2cover-vendor_source5}";
         }
       ];
     };
-    ortools_vendor-vendor_source0 = substituteSource {
+    ortools_vendor-vendor_source0-vendor_source0 = substituteSource {
+      src = fetchurl {
+        name = "ortools_vendor-vendor_source0-vendor_source0-source";
+        url = "https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/v2.1.0/doxygen-awesome.css";
+        hash = "sha256-HIlS9jhR+Ic9j73/EY/9nZG6QJEjsYFu59zTqNHlWHA=";
+      };
+      substitutions = [
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source10 = substituteSource {
       src = fetchgit {
-        name = "ortools_vendor-vendor_source0-source";
-        url = "https://github.com/google/or-tools.git";
-        rev = "3c5c99c278ef3d0ac85cdbd4f008f8c0fd2f3f94";
-        hash = "sha256-Ip2mKl+MuzOPaF1a2FTubqT0tA4gzDnD8dR7dLaHHo8=";
+        name = "ortools_vendor-vendor_source0-vendor_source10-source";
+        url = "https://github.com/scipopt/scip.git";
+        rev = "61297938717271f462c995b99ab4b217ca1d9499";
+        hash = "sha256-Ub0eykyZOlJtqUofTx4a2YcOMiyG6AUX0llxsqJ+YvE=";
+      };
+      substitutions = [
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source12 = substituteSource {
+      src = fetchgit {
+        name = "ortools_vendor-vendor_source0-vendor_source12-source";
+        url = "https://github.com/Mizux/Osi.git";
+        rev = "d2809dd1ab01eb5c766edce7cea2ca2c1c5ecd2a";
+        hash = "sha256-/kwsR3bauIp2BNvTLqgoAivEZTLmIkcgUfzzcYB5Ytg=";
+      };
+      substitutions = [
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source13 = substituteSource {
+      src = fetchgit {
+        name = "ortools_vendor-vendor_source0-vendor_source13-source";
+        url = "https://github.com/Mizux/Clp.git";
+        rev = "914e0af16285ab6b0514947296213a0e67e80880";
+        hash = "sha256-CpWM0t3CBPvuMbWq1fEsagP9kPFxI+VreeHjjH9cwkI=";
+      };
+      substitutions = [
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source15 = substituteSource {
+      src = fetchgit {
+        name = "ortools_vendor-vendor_source0-vendor_source15-source";
+        url = "https://github.com/Mizux/Cbc.git";
+        rev = "b01a53da39577380acdb84d8a3577911c5d91a13";
+        hash = "sha256-BZbcxscWO29o0haRtO4ND5EPm2v6k23t6bWnrtrG7AQ=";
+      };
+      substitutions = [
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source16 = substituteSource {
+      src = fetchgit {
+        name = "ortools_vendor-vendor_source0-vendor_source16-source";
+        url = "https://github.com/google/googletest.git";
+        rev = "f8d7d77c06936315286eb55f8de22cd23c188571";
+        hash = "sha256-t0RchAHTJbuI5YW4uyBPykTvcjy90JW9AOPNjIhwh6U=";
+      };
+      substitutions = [
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source2-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "ortools_vendor-vendor_source0-vendor_source2-vendor_source0-source";
+        url = "https://github.com/protocolbuffers/utf8_range.git";
+        rev = "d863bc33e15cba6d873c878dcca9e6fe52b2f8cb";
+        hash = "sha256-1iXa01BVX1wk7craFwC3liLnwT3487qvM93YIdOoEBs=";
+      };
+      substitutions = [
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source3 = substituteSource {
+      src = fetchgit {
+        name = "ortools_vendor-vendor_source0-vendor_source3-source";
+        url = "https://github.com/google/re2.git";
+        rev = "9665465b69ab699279ef9fb9454559d90fed1d76";
+        hash = "sha256-a6yo0zLgb193TDL8akselJuZfYqCjPwQ/FJ7+KexuLE=";
+      };
+      substitutions = [
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source4 = substituteSource {
+      src = fetchgit {
+        name = "ortools_vendor-vendor_source0-vendor_source4-source";
+        url = "https://gitlab.com/libeigen/eigen.git";
+        rev = "3147391d946bb4b6c68edd901f2add6ac1f31f8c";
+        hash = "sha256-1/4xMetKMDOgZgzz3WMxfHUEpmdAm52RqZvz6i0mLEw=";
+      };
+      substitutions = [
+        {
+          path = "lapack/CMakeLists.txt";
+          from = "DOWNLOAD \"http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz\"";
+          to = "DOWNLOAD file://${gtsam-vendor_source0}";
+        }
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source6 = substituteSource {
+      src = fetchgit {
+        name = "ortools_vendor-vendor_source0-vendor_source6-source";
+        url = "https://github.com/pybind/pybind11_abseil.git";
+        rev = "52f27398876a3177049977249e004770bd869e61";
+        hash = "sha256-I63AVof0Zfm4B0WTS4W35HCGN9MuAR2MAriEFVsvPrA=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "URL https://github.com/abseil/abseil-cpp/archive/refs/tags/20230802.0.tar.gz";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source6-vendor_source0}";
+        }
+        {
+          path = "CMakeLists.txt";
+          from = "URL https://github.com/pybind/pybind11/archive/refs/heads/master.tar.gz";
+          to = "URL ${ortools_vendor-vendor_source0-vendor_source6-vendor_source1}";
+        }
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source6-vendor_source0 = substituteSource {
+      src = fetchzip {
+        name = "ortools_vendor-vendor_source0-vendor_source6-vendor_source0-source";
+        url = "https://github.com/abseil/abseil-cpp/archive/refs/tags/20230802.0.tar.gz";
+        hash = "sha256-yILAsAERUDMbRWh8t4o6W74YiswvGIHSyBAIuLVbzxY=";
+      };
+      substitutions = [
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source6-vendor_source1 = substituteSource {
+      src = fetchzip {
+        name = "ortools_vendor-vendor_source0-vendor_source6-vendor_source1-source";
+        url = "https://github.com/pybind/pybind11/archive/refs/heads/master.tar.gz";
+        hash = "sha256-6D7ccD3EL2bWtR/6hV0FnofcsqU+BFlwV4TMPsO3RCM=";
+      };
+      substitutions = [
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source7 = substituteSource {
+      src = fetchgit {
+        name = "ortools_vendor-vendor_source0-vendor_source7-source";
+        url = "https://github.com/pybind/pybind11_protobuf.git";
+        rev = "3b11990a99dea5101799e61d98a82c4737d240cc";
+        hash = "sha256-saeBxffAbDoHI/YvLatSubpdch9vb5DAfp/Bz3MC8ps=";
+      };
+      substitutions = [
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source8 = substituteSource {
+      src = fetchgit {
+        name = "ortools_vendor-vendor_source0-vendor_source8-source";
+        url = "https://github.com/Mizux/GLPK.git";
+        rev = "2a3bad935570eb3339792b888a08e61a90db0be0";
+        hash = "sha256-3sWQuyWpf62zyrGJwpWdsUBibIwdfiGeivdm3zEkjXk=";
+      };
+      substitutions = [
+      ];
+    };
+    ortools_vendor-vendor_source0-vendor_source9 = substituteSource {
+      src = fetchgit {
+        name = "ortools_vendor-vendor_source0-vendor_source9-source";
+        url = "https://github.com/ERGO-Code/HiGHS.git";
+        rev = "21da9b90e0dceeb22ef9e35e5ff2c3ab17dc5232";
+        hash = "sha256-Wa5ivUJk0t58FhZD0zy0zxHHj4/p8e9WcxXwu5zenxI=";
       };
       substitutions = [
       ];
@@ -7807,6 +8397,20 @@ let
         url = "https://github.com/ros2-gbp/Pangolin-release.git";
         rev = "4a5f472c7c48e921bcce34c2d9ddad4f0e130970";
         hash = "sha256-VAE6VKDuVagjFsw1q6X/hpGUYbDSIx+Os9F+/76bo08=";
+      };
+      substitutions = [
+        {
+          path = "scripts/vcpkg/ports/qca/portfile.cmake";
+          from = "DOWNLOAD https://raw.githubusercontent.com/mozilla/gecko-dev/master/security/nss/lib/ckfw/builtins/certdata.txt";
+          to = "DOWNLOAD file://${pangolin-vendor_source0}";
+        }
+      ];
+    };
+    pangolin-vendor_source0 = substituteSource {
+      src = fetchurl {
+        name = "pangolin-vendor_source0-source";
+        url = "https://raw.githubusercontent.com/mozilla/gecko-dev/master/security/nss/lib/ckfw/builtins/certdata.txt";
+        hash = "sha256-RW/wld3m3XM1TFwoxz2cBvU7YagDljQUy5Gh2SlFzdM=";
       };
       substitutions = [
       ];
@@ -8127,6 +8731,21 @@ let
         url = "https://github.com/ros2-gbp/pick_ik-release.git";
         rev = "6dd0fb91beb17489e4511a811c4d55c6351e3eea";
         hash = "sha256-TKEKv9lclKHQqUyAVLAw2f8hI+p0lV4m8xLdNCeqBYA=";
+      };
+      substitutions = [
+        {
+          path = "cmake/FindCatch2.cmake";
+          from = "GIT_REPOSITORY https://github.com/catchorg/Catch2.git";
+          to = "URL ${pick_ik-vendor_source0}";
+        }
+      ];
+    };
+    pick_ik-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "pick_ik-vendor_source0-source";
+        url = "https://github.com/catchorg/Catch2.git";
+        rev = "7818e2666d5cc7bb1d912acb22b68f6669b74520";
+        hash = "sha256-IqTzKPR/RA1uphsr4n5/LfxJNS37I8IFRmMMF/DfBH0=";
       };
       substitutions = [
       ];
@@ -8454,21 +9073,6 @@ let
         hash = "sha256-GQldzT1YU6I1s1RFfzNIJNaIY/LsrsTevoaUoz1SK+Y=";
       };
       substitutions = [
-        {
-          path = "test/downloadGTest.cmake.in";
-          from = "GIT_REPOSITORY    https://github.com/google/googletest.git";
-          to = "URL ${pybind11_json_vendor-vendor_source0-vendor_source0}";
-        }
-      ];
-    };
-    pybind11_json_vendor-vendor_source0-vendor_source0 = substituteSource {
-      src = fetchgit {
-        name = "pybind11_json_vendor-vendor_source0-vendor_source0-source";
-        url = "https://github.com/google/googletest.git";
-        rev = "ec44c6c1675c25b9827aacd08c02433cccde7780";
-        hash = "sha256-KQ2U/1K6v103ftZHP8he8bRr+Dh9KYlTs/Qht6qkVC4=";
-      };
-      substitutions = [
       ];
     };
     pybind11_vendor = substituteSource {
@@ -8512,6 +9116,20 @@ let
         url = "https://github.com/ros2-gbp/orocos_kdl_vendor-release.git";
         rev = "d1d43bdb1c1352d9e431c857e7bc6537c2ff680b";
         hash = "sha256-vl1eKkJp/P4mQsOWDBIWnCOpp/m2LB18yxZI9GWgaYY=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "URL https://github.com/orocos/orocos_kinematics_dynamics/archive/ce4bcb65a050615b6d7f21bc60fbb2656515791b.zip";
+          to = "URL ${python_orocos_kdl_vendor-vendor_source0}";
+        }
+      ];
+    };
+    python_orocos_kdl_vendor-vendor_source0 = substituteSource {
+      src = fetchzip {
+        name = "python_orocos_kdl_vendor-vendor_source0-source";
+        url = "https://github.com/orocos/orocos_kinematics_dynamics/archive/ce4bcb65a050615b6d7f21bc60fbb2656515791b.zip";
+        hash = "sha256-JXNOS6uV6ls3eMI53sBkX+zJfiVUakbK6iLlzPlD1+8=";
       };
       substitutions = [
       ];
@@ -9102,6 +9720,21 @@ let
         url = "https://github.com/ros2-gbp/rig_reconfigure-release.git";
         rev = "9c79fe972e8beb44531194d8522048695851b45f";
         hash = "sha256-gZ+VV9GFmbsEaslar1+3aM0MYYc/PCvELyOWAiUPxHM=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/ocornut/imgui.git";
+          to = "URL ${rig_reconfigure-vendor_source0}";
+        }
+      ];
+    };
+    rig_reconfigure-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "rig_reconfigure-vendor_source0-source";
+        url = "https://github.com/ocornut/imgui.git";
+        rev = "f8704cd085c4347f835c21dc12a3951924143872";
+        hash = "sha256-eY8lRsonPfDRTMCPhInT9rQ6lSaJPsXpkh428OKpTnA=";
       };
       substitutions = [
       ];
@@ -11034,6 +11667,11 @@ let
         hash = "sha256-E8+8s6cFca2isl5g5q2OD85VomBeUfxjFIb3we5RUTA=";
       };
       substitutions = [
+        {
+          path = "docs/CMakeLists.txt";
+          from = "DOWNLOAD\n     https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/v2.1.0/doxygen-awesome.css";
+          to = "DOWNLOAD file://${ortools_vendor-vendor_source0-vendor_source0}";
+        }
       ];
     };
     rt_manipulators_cpp = substituteSource {
@@ -11244,6 +11882,20 @@ let
         hash = "sha256-Z0ixdSmkV93coBBVZ5R3lPLfVMXRfWsFz/RsSyqPWFY=";
       };
       substitutions = [
+        {
+          path = "Components/Overlay/CMakeLists.txt";
+          from = "DOWNLOAD\n        https://github.com/ocornut/imgui/archive/v1.79.tar.gz";
+          to = "DOWNLOAD file://${rviz_ogre_vendor-vendor_source2-vendor_source0}";
+        }
+      ];
+    };
+    rviz_ogre_vendor-vendor_source2-vendor_source0 = substituteSource {
+      src = fetchurl {
+        name = "rviz_ogre_vendor-vendor_source2-vendor_source0-source";
+        url = "https://github.com/ocornut/imgui/archive/v1.79.tar.gz";
+        hash = "sha256-8ZCFAfbcbbik1XLCklmEf2+IJoSxBIjTqNLaMXRM0KQ=";
+      };
+      substitutions = [
       ];
     };
     rviz_rendering = substituteSource {
@@ -11349,6 +12001,20 @@ let
         hash = "sha256-FPIFbwhynn0Z2eddBdAgdM0oExj1aEQTgF2n59zGr40=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "URL https://www.libsdl.org/release/SDL2-2.0.20.tar.gz";
+          to = "URL ${sdl2_vendor-vendor_source0}";
+        }
+      ];
+    };
+    sdl2_vendor-vendor_source0 = substituteSource {
+      src = fetchzip {
+        name = "sdl2_vendor-vendor_source0-source";
+        url = "https://www.libsdl.org/release/SDL2-2.0.20.tar.gz";
+        hash = "sha256-DyBhGqPrQBiCq7gcAZhgD4X0KQ0mT6utCCXhJECpT3c=";
+      };
+      substitutions = [
       ];
     };
     self_test = substituteSource {
@@ -11427,6 +12093,20 @@ let
         url = "https://github.com/ros2-gbp/rosbag2-release.git";
         rev = "b6134b7292a65ce2151f04b7b7faa20cbb4f1df1";
         hash = "sha256-BrWsI3yFX/Qg+13ZAMwMXRBH47qhG+nVbHpuNHNjM0k=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "URL https://github.com/cameron314/readerwriterqueue/archive/ef7dfbf553288064347d51b8ac335f1ca489032a.zip";
+          to = "URL ${shared_queues_vendor-vendor_source0}";
+        }
+      ];
+    };
+    shared_queues_vendor-vendor_source0 = substituteSource {
+      src = fetchzip {
+        name = "shared_queues_vendor-vendor_source0-source";
+        url = "https://github.com/cameron314/readerwriterqueue/archive/ef7dfbf553288064347d51b8ac335f1ca489032a.zip";
+        hash = "sha256-tfF1cjjiVn/Di2rYUS7TAqD4ojx7x0eRHVyn/GG/7+Q=";
       };
       substitutions = [
       ];
@@ -11674,6 +12354,20 @@ let
         hash = "sha256-7QHZRudxq3hdsfEAYKKJydc4rv6lyN6UIt/2Zmaejx8=";
       };
       substitutions = [
+        {
+          path = "cmake/Packages/FindLuaBuild/LuaJIT.cmake";
+          from = "URL \"\${LUA_JIT_DOWNLOAD_URI}\"";
+          to = "URL ${sol_vendor-vendor_source0-vendor_source0}";
+        }
+      ];
+    };
+    sol_vendor-vendor_source0-vendor_source0 = substituteSource {
+      src = fetchzip {
+        name = "sol_vendor-vendor_source0-vendor_source0-source";
+        url = "http://luajit.org/download/LuaJIT-2.1.0-beta3.tar.gz";
+        hash = "sha256-kX55QnUEqYcDVi0F05iO3WwKGMPlWaPZ7qHAGH84AEg=";
+      };
+      substitutions = [
       ];
     };
     sophus = substituteSource {
@@ -11682,6 +12376,21 @@ let
         url = "https://github.com/ros2-gbp/sophus-release.git";
         rev = "39c729040cd2c3720879b0df85f162c4ac789877";
         hash = "sha256-xTS2ysDs9SSKpvKrxnhooJVtfpwRvYCuMpbFc4skbDM=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/pybind/pybind11.git";
+          to = "URL ${sophus-vendor_source0}";
+        }
+      ];
+    };
+    sophus-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "sophus-vendor_source0-source";
+        url = "https://github.com/pybind/pybind11.git";
+        rev = "6d4805ced1f8fc8f503d41381853f6082f3064a3";
+        hash = "sha256-6D7ccD3EL2bWtR/6hV0FnofcsqU+BFlwV4TMPsO3RCM=";
       };
       substitutions = [
       ];
@@ -11717,6 +12426,21 @@ let
         url = "https://github.com/gabime/spdlog.git";
         rev = "7e635fca68d014934b4af8a1cf874f63989352b7";
         hash = "sha256-cxTaOuLXHRU8xMz9gluYz0a93O0ez2xOxbloyc1m1ns=";
+      };
+      substitutions = [
+        {
+          path = "bench/CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/google/benchmark.git";
+          to = "URL ${spdlog_vendor-vendor_source0-vendor_source0}";
+        }
+      ];
+    };
+    spdlog_vendor-vendor_source0-vendor_source0 = substituteSource {
+      src = fetchgit {
+        name = "spdlog_vendor-vendor_source0-vendor_source0-source";
+        url = "https://github.com/google/benchmark.git";
+        rev = "f91b6b42b1b9854772a90ae9501464a161707d1e";
+        hash = "sha256-EAJk3JhLdkuGKRMtspTLejck8doWPd7Z0Lv/Mvf3KFY=";
       };
       substitutions = [
       ];
@@ -11777,13 +12501,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://www.sqlite.org/2022/sqlite-amalgamation-3370200.zip";
-          to = "VCS_TYPE path VCS_URL ${sqlite3_vendor-vendor_source1}";
+          to = "VCS_TYPE path VCS_URL ${sqlite3_vendor-vendor_source0}";
         }
       ];
     };
-    sqlite3_vendor-vendor_source1 = substituteSource {
+    sqlite3_vendor-vendor_source0 = substituteSource {
       src = fetchzip {
-        name = "sqlite3_vendor-vendor_source1-source";
+        name = "sqlite3_vendor-vendor_source0-source";
         url = "https://www.sqlite.org/2022/sqlite-amalgamation-3370200.zip";
         hash = "sha256-L7BvZlrl+9AlE42C1PszvjE9byi2qtcbfNiotUYInmc=";
       };
@@ -12366,13 +13090,13 @@ let
         {
           path = "CMakeLists.txt";
           from = "VCS_URL https://github.com/msteinbeck/tinyspline.git";
-          to = "VCS_TYPE path VCS_URL ${tinyspline_vendor-vendor_source1}";
+          to = "VCS_TYPE path VCS_URL ${tinyspline_vendor-vendor_source0}";
         }
       ];
     };
-    tinyspline_vendor-vendor_source1 = substituteSource {
+    tinyspline_vendor-vendor_source0 = substituteSource {
       src = fetchgit {
-        name = "tinyspline_vendor-vendor_source1-source";
+        name = "tinyspline_vendor-vendor_source0-source";
         url = "https://github.com/msteinbeck/tinyspline.git";
         rev = "5f0e8fad34e86771cfae3dac4beef5f1858d5610";
         hash = "sha256-cvnnVT04R2QnFKsf/lxzkDmxgalAPFw8hGC33HyNsIQ=";
@@ -12396,6 +13120,20 @@ let
         url = "https://github.com/ros2-gbp/tinyxml_vendor-release.git";
         rev = "d8b6f008b165ed9bca9410f49ca500a2c865933e";
         hash = "sha256-dUN/DADvU7TSwxQ/YcI/RcFlAYZ5JLYHb+TNOCpoO7k=";
+      };
+      substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "URL https://downloads.sourceforge.net/project/tinyxml/tinyxml/2.6.2/tinyxml_2_6_2.tar.gz";
+          to = "URL ${tinyxml_vendor-vendor_source0}";
+        }
+      ];
+    };
+    tinyxml_vendor-vendor_source0 = substituteSource {
+      src = fetchzip {
+        name = "tinyxml_vendor-vendor_source0-source";
+        url = "https://downloads.sourceforge.net/project/tinyxml/tinyxml/2.6.2/tinyxml_2_6_2.tar.gz";
+        hash = "sha256-nYksyFj8nzE1IS8vKoqxI0zVpqgfieWHMU7Ke6C5oY0=";
       };
       substitutions = [
       ];
@@ -15396,7 +16134,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ aruco_opencv_msgs cv_bridge image_transport libyamlcpp python3Packages.opencv3 rclcpp rclcpp_components rclcpp_lifecycle tf2_geometry_msgs tf2_ros ];
+      propagatedBuildInputs = [ aruco_opencv_msgs cv_bridge image_transport libyamlcpp python3Packages.opencv4 rclcpp rclcpp_components rclcpp_lifecycle tf2_geometry_msgs tf2_ros ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -15477,10 +16215,10 @@ in
   async_web_server_cpp = self.callPackage (
     {
       ament_cmake_ros,
-      boost,
       buildRosPackage,
       launch_testing,
       openssl,
+      python3Packages,
     }:
     buildRosPackage {
       pname = "async_web_server_cpp";
@@ -15489,7 +16227,7 @@ in
       nativeBuildInputs = [ ament_cmake_ros ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [ openssl ];
-      propagatedBuildInputs = [ boost ];
+      propagatedBuildInputs = [ python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -15764,7 +16502,6 @@ in
       ament_cmake_ros,
       autoware_cmake,
       autoware_lanelet2_extension,
-      boost,
       buildRosPackage,
       geometry_msgs,
       lanelet2_core,
@@ -15774,6 +16511,7 @@ in
       lanelet2_routing,
       lanelet2_traffic_rules,
       lanelet2_validation,
+      python3Packages,
       python_cmake_module,
       rclcpp,
     }:
@@ -15784,7 +16522,7 @@ in
       nativeBuildInputs = [ ament_cmake_auto autoware_cmake python_cmake_module ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ autoware_lanelet2_extension boost geometry_msgs lanelet2_core lanelet2_io lanelet2_projection lanelet2_python lanelet2_routing lanelet2_traffic_rules lanelet2_validation rclcpp ];
+      propagatedBuildInputs = [ autoware_lanelet2_extension geometry_msgs lanelet2_core lanelet2_io lanelet2_projection lanelet2_python lanelet2_routing lanelet2_traffic_rules lanelet2_validation python3Packages.boost rclcpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -15965,9 +16703,9 @@ in
       ament_cmake_auto,
       ament_cmake_ros,
       autoware_cmake,
-      boost,
       buildRosPackage,
       builtin_interfaces,
+      python3Packages,
       rclcpp,
       unique_identifier_msgs,
     }:
@@ -15978,7 +16716,7 @@ in
       nativeBuildInputs = [ ament_cmake_auto autoware_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost builtin_interfaces rclcpp unique_identifier_msgs ];
+      propagatedBuildInputs = [ builtin_interfaces python3Packages.boost rclcpp unique_identifier_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -16150,10 +16888,10 @@ in
       ament_cmake,
       ament_cmake_gtest,
       ament_index_cpp,
-      boost,
       buildRosPackage,
       cppzmq,
       ncurses,
+      python3Packages,
       rclcpp,
       ros_environment,
     }:
@@ -16164,7 +16902,7 @@ in
       nativeBuildInputs = [ ament_cmake ros_environment ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ ament_index_cpp boost cppzmq ncurses rclcpp ];
+      propagatedBuildInputs = [ ament_index_cpp cppzmq ncurses python3Packages.boost rclcpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -16403,10 +17141,10 @@ in
       ament_cmake,
       ament_cmake_auto,
       ament_lint_auto,
-      boost,
       buildRosPackage,
       geometry_msgs,
       ouxt_common,
+      python3Packages,
       rclcpp,
     }:
     buildRosPackage {
@@ -16416,7 +17154,7 @@ in
       nativeBuildInputs = [ ament_cmake ament_cmake_auto ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost geometry_msgs rclcpp ];
+      propagatedBuildInputs = [ geometry_msgs python3Packages.boost rclcpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -16462,7 +17200,7 @@ in
       nativeBuildInputs = [  ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ cv_bridge image_geometry message_filters python3Packages.opencv3 rclpy sensor_msgs std_srvs ];
+      propagatedBuildInputs = [ cv_bridge image_geometry message_filters python3Packages.opencv4 rclpy sensor_msgs std_srvs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -16565,12 +17303,12 @@ in
     {
       ament_cmake_ros,
       ament_lint_auto,
-      boost,
       buildRosPackage,
       canopen_base_driver,
       canopen_core,
       canopen_interfaces,
       canopen_proxy_driver,
+      python3Packages,
       rclcpp,
       rclcpp_components,
       rclcpp_lifecycle,
@@ -16584,7 +17322,7 @@ in
       nativeBuildInputs = [ ament_cmake_ros ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost canopen_base_driver canopen_core canopen_interfaces canopen_proxy_driver rclcpp rclcpp_components rclcpp_lifecycle sensor_msgs std_srvs ];
+      propagatedBuildInputs = [ canopen_base_driver canopen_core canopen_interfaces canopen_proxy_driver python3Packages.boost rclcpp rclcpp_components rclcpp_lifecycle sensor_msgs std_srvs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -16593,12 +17331,12 @@ in
     {
       ament_cmake_ros,
       ament_lint_auto,
-      boost,
       buildRosPackage,
       canopen_core,
       canopen_interfaces,
       diagnostic_updater,
       lely_core_libraries,
+      python3Packages,
       rclcpp,
       rclcpp_components,
       rclcpp_lifecycle,
@@ -16612,7 +17350,7 @@ in
       nativeBuildInputs = [ ament_cmake_ros ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost canopen_core canopen_interfaces diagnostic_updater lely_core_libraries rclcpp rclcpp_components rclcpp_lifecycle std_msgs std_srvs ];
+      propagatedBuildInputs = [ canopen_core canopen_interfaces diagnostic_updater lely_core_libraries python3Packages.boost rclcpp rclcpp_components rclcpp_lifecycle std_msgs std_srvs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -16621,11 +17359,11 @@ in
     {
       ament_cmake,
       ament_lint_auto,
-      boost,
       buildRosPackage,
       canopen_interfaces,
       lely_core_libraries,
       lifecycle_msgs,
+      python3Packages,
       rclcpp,
       rclcpp_components,
       rclcpp_lifecycle,
@@ -16638,7 +17376,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost canopen_interfaces lely_core_libraries lifecycle_msgs rclcpp rclcpp_components rclcpp_lifecycle yaml_cpp_vendor ];
+      propagatedBuildInputs = [ canopen_interfaces lely_core_libraries lifecycle_msgs python3Packages.boost rclcpp rclcpp_components rclcpp_lifecycle yaml_cpp_vendor ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -16848,7 +17586,6 @@ in
   cartographer = self.callPackage (
     {
       abseil-cpp,
-      boost,
       buildRosPackage,
       cairo,
       ceres-solver,
@@ -16869,7 +17606,7 @@ in
       nativeBuildInputs = [ cmake git gtest ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [ python3Packages.sphinx ];
-      propagatedBuildInputs = [ abseil-cpp boost cairo ceres-solver eigen gflags glog lua5 protobuf ];
+      propagatedBuildInputs = [ abseil-cpp cairo ceres-solver eigen gflags glog lua5 protobuf python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -16946,13 +17683,13 @@ in
     {
       abseil-cpp,
       ament_cmake,
-      boost,
       buildRosPackage,
       cartographer,
       cartographer_ros,
       cartographer_ros_msgs,
       eigen,
       pluginlib,
+      python3Packages,
       rclcpp,
       rviz_common,
       rviz_ogre_vendor,
@@ -16965,7 +17702,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ abseil-cpp boost cartographer cartographer_ros cartographer_ros_msgs eigen pluginlib rclcpp rviz_common rviz_ogre_vendor rviz_rendering ];
+      propagatedBuildInputs = [ abseil-cpp cartographer cartographer_ros cartographer_ros_msgs eigen pluginlib python3Packages.boost rclcpp rviz_common rviz_ogre_vendor rviz_rendering ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -17204,9 +17941,9 @@ in
       version = "0.33.4-1";
       src = sources.composition;
       nativeBuildInputs = [ ament_cmake ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ example_interfaces launch_ros rclcpp rclcpp_components std_msgs ];
+      propagatedBuildInputs = [ example_interfaces launch_ros rclcpp rclcpp_components rcutils std_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -17359,9 +18096,9 @@ in
       version = "3.2.0-3";
       src = sources.control_toolbox;
       nativeBuildInputs = [ ament_cmake ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ control_msgs filters generate_parameter_library geometry_msgs pluginlib rclcpp realtime_tools ];
+      propagatedBuildInputs = [ control_msgs filters generate_parameter_library geometry_msgs pluginlib rclcpp rcutils realtime_tools ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -17498,7 +18235,6 @@ in
       ament_index_python,
       ament_lint_auto,
       ament_lint_common,
-      boost,
       buildPackages,
       buildRosPackage,
       opencv,
@@ -17514,8 +18250,8 @@ in
       src = sources.cv_bridge;
       nativeBuildInputs = [ ament_cmake_ros python_cmake_module ];
       propagatedNativeBuildInputs = [ ament_index_python buildPackages.python3Packages.numpy ];
-      buildInputs = [ boost ];
-      propagatedBuildInputs = [ boost opencv python3Packages.opencv3 rclcpp rcpputils sensor_msgs ];
+      buildInputs = [ python3Packages.boost ];
+      propagatedBuildInputs = [ opencv python3Packages.boost python3Packages.opencv4 rclcpp rcpputils sensor_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -17683,9 +18419,9 @@ in
       version = "0.33.4-1";
       src = sources.demo_nodes_cpp;
       nativeBuildInputs = [ ament_cmake ];
-      propagatedNativeBuildInputs = [ launch_xml rcutils rmw ];
+      propagatedNativeBuildInputs = [ launch_xml rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ example_interfaces launch_ros rcl rcl_interfaces rclcpp rclcpp_components rcpputils std_msgs ];
+      propagatedBuildInputs = [ example_interfaces launch_ros rcl rcl_interfaces rclcpp rclcpp_components rcpputils rcutils std_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -18211,9 +18947,9 @@ in
       version = "0.5.0-5";
       src = sources.domain_bridge;
       nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ libyamlcpp rclcpp rclcpp_components rosbag2_cpp rosidl_default_runtime rosidl_typesupport_cpp zstd_vendor ];
+      propagatedBuildInputs = [ libyamlcpp rclcpp rclcpp_components rcutils rosbag2_cpp rosidl_default_runtime rosidl_typesupport_cpp zstd_vendor ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -19579,7 +20315,6 @@ in
   ) {};
   eigenpy = self.callPackage (
     {
-      boost,
       buildPackages,
       buildRosPackage,
       cmake,
@@ -19596,7 +20331,7 @@ in
       nativeBuildInputs = [ cmake doxygen git ];
       propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost eigen python3 python3Packages.scipy ];
+      propagatedBuildInputs = [ eigen python3 python3Packages.boost python3Packages.scipy ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -20602,9 +21337,9 @@ in
       version = "1.0.1-2";
       src = sources.ffmpeg_image_transport;
       nativeBuildInputs = [ ament_cmake ament_cmake_ros pkg-config ros_environment ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ cv_bridge ffmpeg ffmpeg_image_transport_msgs image_transport libogg pluginlib rclcpp sensor_msgs std_msgs ];
+      propagatedBuildInputs = [ cv_bridge ffmpeg ffmpeg_image_transport_msgs image_transport libogg pluginlib rclcpp rcutils sensor_msgs std_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -20662,7 +21397,6 @@ in
   ) {};
   fields2cover = self.callPackage (
     {
-      boost,
       buildRosPackage,
       cmake,
       eigen,
@@ -20685,7 +21419,7 @@ in
       nativeBuildInputs = [ cmake ];
       propagatedNativeBuildInputs = [ git gtest python3 ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost eigen gdal geos protobuf python3 python3Packages.matplotlib python3Packages.tkinter swig tbb tinyxml-2 ];
+      propagatedBuildInputs = [ eigen gdal geos protobuf python3 python3Packages.boost python3Packages.matplotlib python3Packages.tkinter swig tbb tinyxml-2 ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -20698,9 +21432,9 @@ in
       ament_cmake_gtest,
       ament_cmake_uncrustify,
       ament_cmake_xmllint,
-      boost,
       buildRosPackage,
       pluginlib,
+      python3Packages,
       rclcpp,
     }:
     buildRosPackage {
@@ -20710,7 +21444,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost pluginlib rclcpp ];
+      propagatedBuildInputs = [ pluginlib python3Packages.boost rclcpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -21338,7 +22072,6 @@ in
       ament_cmake_ros,
       ament_lint_auto,
       ament_lint_common,
-      boost,
       buildRosPackage,
       ceres-solver,
       eigen,
@@ -21348,6 +22081,7 @@ in
       launch,
       launch_pytest,
       pluginlib,
+      python3Packages,
       rcl_interfaces,
       rclcpp,
       rclcpp_components,
@@ -21359,7 +22093,7 @@ in
       nativeBuildInputs = [ ament_cmake_ros ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost ceres-solver eigen fuse_msgs glog pluginlib rcl_interfaces rclcpp rclcpp_components ];
+      propagatedBuildInputs = [ ceres-solver eigen fuse_msgs glog pluginlib python3Packages.boost rcl_interfaces rclcpp rclcpp_components ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -21439,7 +22173,6 @@ in
       ament_cmake_ros,
       ament_lint_auto,
       ament_lint_common,
-      boost,
       buildRosPackage,
       ceres-solver,
       eigen,
@@ -21453,6 +22186,7 @@ in
       geometry_msgs,
       nav_msgs,
       pluginlib,
+      python3Packages,
       rclcpp,
       rclcpp_components,
       sensor_msgs,
@@ -21469,7 +22203,7 @@ in
       nativeBuildInputs = [ ament_cmake_ros ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost ceres-solver eigen fuse_constraints fuse_core fuse_graphs fuse_msgs fuse_publishers fuse_variables geometry_msgs nav_msgs pluginlib rclcpp rclcpp_components sensor_msgs std_srvs tf2 tf2_2d tf2_geometry_msgs tf2_ros ];
+      propagatedBuildInputs = [ ceres-solver eigen fuse_constraints fuse_core fuse_graphs fuse_msgs fuse_publishers fuse_variables geometry_msgs nav_msgs pluginlib python3Packages.boost rclcpp rclcpp_components sensor_msgs std_srvs tf2 tf2_2d tf2_geometry_msgs tf2_ros ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -21503,7 +22237,6 @@ in
       ament_cmake_ros,
       ament_lint_auto,
       ament_lint_common,
-      boost,
       buildRosPackage,
       ceres-solver,
       diagnostic_updater,
@@ -21520,6 +22253,7 @@ in
       launch_ros,
       nav_msgs,
       pluginlib,
+      python3Packages,
       rclcpp,
       rclcpp_components,
       std_srvs,
@@ -21531,7 +22265,7 @@ in
       nativeBuildInputs = [ ament_cmake_ros ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost ceres-solver diagnostic_updater eigen fuse_constraints fuse_core fuse_graphs fuse_msgs fuse_variables pluginlib rclcpp rclcpp_components std_srvs ];
+      propagatedBuildInputs = [ ceres-solver diagnostic_updater eigen fuse_constraints fuse_core fuse_graphs fuse_msgs fuse_variables pluginlib python3Packages.boost rclcpp rclcpp_components std_srvs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -21936,7 +22670,6 @@ in
       ament_lint_auto,
       ament_lint_cmake,
       assimp,
-      boost,
       buildRosPackage,
       console_bridge_vendor,
       eigen,
@@ -21944,6 +22677,7 @@ in
       eigen_stl_containers,
       geometry_msgs,
       pkg-config,
+      python3Packages,
       qhull,
       random_numbers,
       rclcpp,
@@ -21959,8 +22693,8 @@ in
       src = sources.geometric_shapes;
       nativeBuildInputs = [ ament_cmake pkg-config rosidl_default_generators ];
       propagatedNativeBuildInputs = [ eigen3_cmake_module ];
-      buildInputs = [ assimp boost ];
-      propagatedBuildInputs = [ assimp boost console_bridge_vendor eigen eigen_stl_containers geometry_msgs qhull random_numbers rclcpp resource_retriever rosidl_default_runtime shape_msgs visualization_msgs ];
+      buildInputs = [ assimp python3Packages.boost ];
+      propagatedBuildInputs = [ assimp console_bridge_vendor eigen eigen_stl_containers geometry_msgs python3Packages.boost qhull random_numbers rclcpp resource_retriever rosidl_default_runtime shape_msgs visualization_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -22304,10 +23038,10 @@ in
   ) {};
   gtsam = self.callPackage (
     {
-      boost,
       buildRosPackage,
       cmake,
       eigen,
+      python3Packages,
       tbb,
     }:
     buildRosPackage {
@@ -22316,7 +23050,7 @@ in
       src = sources.gtsam;
       nativeBuildInputs = [ cmake ];
       propagatedNativeBuildInputs = [  ];
-      buildInputs = [ boost eigen tbb ];
+      buildInputs = [ eigen python3Packages.boost tbb ];
       propagatedBuildInputs = [  ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
@@ -22382,7 +23116,6 @@ in
       ament_cmake_xmllint,
       ament_lint_auto,
       assimp,
-      boost,
       buildRosPackage,
       bullet,
       eigen,
@@ -22391,6 +23124,7 @@ in
       libccd,
       lz4,
       ode,
+      python3Packages,
       tinyxml-2,
       urdfdom,
     }:
@@ -22401,7 +23135,7 @@ in
       nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ assimp boost bullet eigen fcl fmt libccd lz4 ode tinyxml-2 urdfdom ];
+      propagatedBuildInputs = [ assimp bullet eigen fcl fmt libccd lz4 ode python3Packages.boost tinyxml-2 urdfdom ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -22579,12 +23313,12 @@ in
       ament_cmake_vendor_package,
       ament_cmake_xmllint,
       ament_lint_auto,
-      boost,
       buildRosPackage,
       freetype,
       libGL,
       libGLU,
       poco,
+      python3Packages,
       rapidjson,
       tbb,
       tinyxml-2,
@@ -22599,7 +23333,7 @@ in
       nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ SDL2 boost freetype libGL libGLU poco rapidjson tbb tinyxml-2 vulkan-loader xorg.libX11 xorg.libXaw xorg.libXrandr zziplib ];
+      propagatedBuildInputs = [ SDL2 freetype libGL libGLU poco python3Packages.boost rapidjson tbb tinyxml-2 vulkan-loader xorg.libX11 xorg.libXaw xorg.libXrandr zziplib ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -22945,9 +23679,9 @@ in
       version = "4.11.0-1";
       src = sources.hardware_interface;
       nativeBuildInputs = [ ament_cmake ament_cmake_gen_version_h ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ control_msgs joint_limits lifecycle_msgs pluginlib rclcpp_lifecycle rcpputils tinyxml2_vendor urdf ];
+      propagatedBuildInputs = [ control_msgs joint_limits lifecycle_msgs pluginlib rclcpp_lifecycle rcpputils rcutils tinyxml2_vendor urdf ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -23019,8 +23753,8 @@ in
   hls_lfcd_lds_driver = self.callPackage (
     {
       ament_cmake,
-      boost,
       buildRosPackage,
+      python3Packages,
       rclcpp,
       sensor_msgs,
     }:
@@ -23031,7 +23765,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost rclcpp sensor_msgs ];
+      propagatedBuildInputs = [ python3Packages.boost rclcpp sensor_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -23039,7 +23773,6 @@ in
   hpp-fcl = self.callPackage (
     {
       assimp,
-      boost,
       buildPackages,
       buildRosPackage,
       cmake,
@@ -23058,7 +23791,7 @@ in
       nativeBuildInputs = [ cmake doxygen git ];
       propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
       buildInputs = [ python3Packages.lxml ];
-      propagatedBuildInputs = [ assimp boost eigen eigenpy octomap python3 ];
+      propagatedBuildInputs = [ assimp eigen eigenpy octomap python3 python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -23165,13 +23898,13 @@ in
   ) {};
   ifm3d_core = self.callPackage (
     {
-      boost,
       buildRosPackage,
       cmake,
       curl,
       cv_bridge,
       glog,
       pcl,
+      python3Packages,
       xmlrpc_c,
     }:
     buildRosPackage {
@@ -23180,7 +23913,7 @@ in
       src = sources.ifm3d_core;
       nativeBuildInputs = [ cmake ];
       propagatedNativeBuildInputs = [ curl ];
-      buildInputs = [ boost ];
+      buildInputs = [ python3Packages.boost ];
       propagatedBuildInputs = [ cv_bridge glog pcl xmlrpc_c ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
@@ -23280,9 +24013,9 @@ in
       version = "5.0.1-3";
       src = sources.image_proc;
       nativeBuildInputs = [ ament_cmake_auto ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ camera_calibration_parsers cv_bridge geometry_msgs image_geometry image_transport opencv rclcpp rclcpp_components sensor_msgs tracetools_image_pipeline ];
+      propagatedBuildInputs = [ camera_calibration_parsers cv_bridge geometry_msgs image_geometry image_transport opencv rclcpp rclcpp_components rcutils sensor_msgs tracetools_image_pipeline ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -23669,9 +24402,9 @@ in
       version = "2.5.4-2";
       src = sources.interactive_markers;
       nativeBuildInputs = [ ament_cmake ament_cmake_python ];
-      propagatedNativeBuildInputs = [ rcutils rmw ];
+      propagatedNativeBuildInputs = [ rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ builtin_interfaces geometry_msgs rclcpp rclpy std_msgs tf2 tf2_geometry_msgs visualization_msgs ];
+      propagatedBuildInputs = [ builtin_interfaces geometry_msgs rclcpp rclpy rcutils std_msgs tf2 tf2_geometry_msgs visualization_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -23802,9 +24535,9 @@ in
       version = "4.9.0-1";
       src = sources.joint_state_broadcaster;
       nativeBuildInputs = [ ament_cmake ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ backward_ros builtin_interfaces control_msgs controller_interface generate_parameter_library pluginlib rclcpp_lifecycle realtime_tools sensor_msgs ];
+      propagatedBuildInputs = [ backward_ros builtin_interfaces control_msgs controller_interface generate_parameter_library pluginlib rclcpp_lifecycle rcutils realtime_tools sensor_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -24032,9 +24765,9 @@ in
       version = "2.11.0-3";
       src = sources.kdl_parser;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ orocos_kdl_vendor urdf urdfdom_headers ];
+      propagatedBuildInputs = [ orocos_kdl_vendor rcutils urdf urdfdom_headers ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -24261,11 +24994,11 @@ in
   lanelet2_core = self.callPackage (
     {
       ament_cmake_core,
-      boost,
       buildRosPackage,
       eigen,
       gtest,
       mrt_cmake_modules,
+      python3Packages,
     }:
     buildRosPackage {
       pname = "lanelet2_core";
@@ -24274,7 +25007,7 @@ in
       nativeBuildInputs = [ ament_cmake_core ];
       propagatedNativeBuildInputs = [ mrt_cmake_modules ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost eigen ];
+      propagatedBuildInputs = [ eigen python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -24309,12 +25042,12 @@ in
   lanelet2_io = self.callPackage (
     {
       ament_cmake_core,
-      boost,
       buildRosPackage,
       gtest,
       lanelet2_core,
       mrt_cmake_modules,
       pugixml,
+      python3Packages,
     }:
     buildRosPackage {
       pname = "lanelet2_io";
@@ -24323,7 +25056,7 @@ in
       nativeBuildInputs = [ ament_cmake_core ];
       propagatedNativeBuildInputs = [ mrt_cmake_modules ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost lanelet2_core pugixml ];
+      propagatedBuildInputs = [ lanelet2_core pugixml python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -24395,7 +25128,6 @@ in
   lanelet2_python = self.callPackage (
     {
       ament_cmake_core,
-      boost,
       buildRosPackage,
       gtest,
       lanelet2_core,
@@ -24405,6 +25137,7 @@ in
       lanelet2_routing,
       lanelet2_traffic_rules,
       mrt_cmake_modules,
+      python3Packages,
     }:
     buildRosPackage {
       pname = "lanelet2_python";
@@ -24413,7 +25146,7 @@ in
       nativeBuildInputs = [ ament_cmake_core ];
       propagatedNativeBuildInputs = [ mrt_cmake_modules ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost lanelet2_core lanelet2_io lanelet2_matching lanelet2_projection lanelet2_routing lanelet2_traffic_rules ];
+      propagatedBuildInputs = [ lanelet2_core lanelet2_io lanelet2_matching lanelet2_projection lanelet2_routing lanelet2_traffic_rules python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -24421,12 +25154,12 @@ in
   lanelet2_routing = self.callPackage (
     {
       ament_cmake_core,
-      boost,
       buildRosPackage,
       gtest,
       lanelet2_core,
       lanelet2_traffic_rules,
       mrt_cmake_modules,
+      python3Packages,
     }:
     buildRosPackage {
       pname = "lanelet2_routing";
@@ -24435,7 +25168,7 @@ in
       nativeBuildInputs = [ ament_cmake_core ];
       propagatedNativeBuildInputs = [ mrt_cmake_modules ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost lanelet2_core lanelet2_traffic_rules ];
+      propagatedBuildInputs = [ lanelet2_core lanelet2_traffic_rules python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -25389,10 +26122,10 @@ in
   ) {};
   libnabo = self.callPackage (
     {
-      boost,
       buildRosPackage,
       cmake,
       eigen,
+      python3Packages,
     }:
     buildRosPackage {
       pname = "libnabo";
@@ -25401,7 +26134,7 @@ in
       nativeBuildInputs = [ cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost eigen ];
+      propagatedBuildInputs = [ eigen python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -25426,12 +26159,12 @@ in
   ) {};
   libpointmatcher = self.callPackage (
     {
-      boost,
       buildRosPackage,
       cmake,
       eigen,
       libnabo,
       libyamlcpp,
+      python3Packages,
     }:
     buildRosPackage {
       pname = "libpointmatcher";
@@ -25440,7 +26173,7 @@ in
       nativeBuildInputs = [ cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost eigen libnabo libyamlcpp ];
+      propagatedBuildInputs = [ eigen libnabo libyamlcpp python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -25637,9 +26370,9 @@ in
       version = "0.33.4-1";
       src = sources.logging_demo;
       nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ rclcpp rclcpp_components rosidl_default_runtime std_msgs ];
+      propagatedBuildInputs = [ rclcpp rclcpp_components rcutils rosidl_default_runtime std_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -26254,9 +26987,9 @@ in
       version = "4.11.1-2";
       src = sources.message_filters;
       nativeBuildInputs = [ ament_cmake_python ament_cmake_ros python_cmake_module ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ builtin_interfaces rclcpp rclpy std_msgs ];
+      propagatedBuildInputs = [ builtin_interfaces rclcpp rclpy rcutils std_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -26299,7 +27032,6 @@ in
       ament_cmake_pep257,
       ament_cmake_ros,
       ament_cmake_xmllint,
-      boost,
       buildRosPackage,
       cmake,
       curl,
@@ -26313,6 +27045,7 @@ in
       libusb1,
       opencv,
       openscenegraph,
+      python3Packages,
       rclcpp,
       rclcpp_components,
       ros_environment,
@@ -26327,7 +27060,7 @@ in
       nativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_ros cmake curl git ros_environment unzip wget ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost event_camera_msgs ffmpeg glew glfw3 hdf5 libusb1 opencv openscenegraph rclcpp rclcpp_components std_srvs ];
+      propagatedBuildInputs = [ event_camera_msgs ffmpeg glew glfw3 hdf5 libusb1 opencv openscenegraph python3Packages.boost rclcpp rclcpp_components std_srvs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -26921,7 +27654,6 @@ in
   ) {};
   mola_navstate_fg = self.callPackage (
     {
-      boost,
       buildRosPackage,
       cmake,
       gtsam,
@@ -26929,6 +27661,7 @@ in
       mola_imu_preintegration,
       mola_kernel,
       mrpt2,
+      python3Packages,
     }:
     buildRosPackage {
       pname = "mola_navstate_fg";
@@ -26936,7 +27669,7 @@ in
       src = sources.mola_navstate_fg;
       nativeBuildInputs = [ cmake ];
       propagatedNativeBuildInputs = [  ];
-      buildInputs = [ boost gtsam ];
+      buildInputs = [ gtsam python3Packages.boost ];
       propagatedBuildInputs = [ mola_common mola_imu_preintegration mola_kernel mrpt2 ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
@@ -27227,7 +27960,6 @@ in
       ament_index_cpp,
       angles,
       assimp,
-      boost,
       buildRosPackage,
       bullet,
       common_interfaces,
@@ -27250,6 +27982,7 @@ in
       osqp_vendor,
       pkg-config,
       pluginlib,
+      python3Packages,
       random_numbers,
       rcl_interfaces,
       rclcpp,
@@ -27277,7 +28010,7 @@ in
       nativeBuildInputs = [ ament_cmake pkg-config ];
       propagatedNativeBuildInputs = [ eigen3_cmake_module google_benchmark_vendor ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ angles assimp boost bullet common_interfaces eigen eigen_stl_containers fcl generate_parameter_library geometric_shapes geometry_msgs kdl_parser moveit_common moveit_msgs octomap_msgs osqp_vendor pluginlib random_numbers rclcpp rsl ruckig sensor_msgs shape_msgs srdfdom std_msgs tf2 tf2_eigen tf2_geometry_msgs tf2_kdl trajectory_msgs urdf urdfdom urdfdom_headers visualization_msgs ];
+      propagatedBuildInputs = [ angles assimp bullet common_interfaces eigen eigen_stl_containers fcl generate_parameter_library geometric_shapes geometry_msgs kdl_parser moveit_common moveit_msgs octomap_msgs osqp_vendor pluginlib python3Packages.boost random_numbers rclcpp rsl ruckig sensor_msgs shape_msgs srdfdom std_msgs tf2 tf2_eigen tf2_geometry_msgs tf2_kdl trajectory_msgs urdf urdfdom urdfdom_headers visualization_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -27771,7 +28504,6 @@ in
   moveit_ros_benchmarks = self.callPackage (
     {
       ament_cmake,
-      boost,
       buildRosPackage,
       launch_param_builder,
       moveit_common,
@@ -27780,6 +28512,7 @@ in
       moveit_ros_planning,
       moveit_ros_warehouse,
       pluginlib,
+      python3Packages,
       rclcpp,
       tf2_eigen,
     }:
@@ -27789,8 +28522,8 @@ in
       src = sources.moveit_ros_benchmarks;
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
-      buildInputs = [ boost moveit_core ];
-      propagatedBuildInputs = [ boost launch_param_builder moveit_common moveit_configs_utils moveit_ros_planning moveit_ros_warehouse pluginlib rclcpp tf2_eigen ];
+      buildInputs = [ moveit_core python3Packages.boost ];
+      propagatedBuildInputs = [ launch_param_builder moveit_common moveit_configs_utils moveit_ros_planning moveit_ros_warehouse pluginlib python3Packages.boost rclcpp tf2_eigen ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -28990,7 +29723,6 @@ in
       ament_cmake_xmllint,
       ament_lint_auto,
       ament_lint_common,
-      boost,
       buildRosPackage,
       cmake,
       cppzmq,
@@ -29015,7 +29747,7 @@ in
       nativeBuildInputs = [ ament_cmake ament_cmake_gmock ament_cmake_gtest cmake ros_environment ];
       propagatedNativeBuildInputs = [ unzip wget ];
       buildInputs = [ ament_cmake_xmllint ];
-      propagatedBuildInputs = [ boost cppzmq mrpt2 nav_msgs protobuf python3 python3Packages.pip python3Packages.protobuf python3Packages.pybind11 ros2launch sensor_msgs tf2 tf2_geometry_msgs visualization_msgs ];
+      propagatedBuildInputs = [ cppzmq mrpt2 nav_msgs protobuf python3 python3Packages.boost python3Packages.pip python3Packages.protobuf python3Packages.pybind11 ros2launch sensor_msgs tf2 tf2_geometry_msgs visualization_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -29069,10 +29801,10 @@ in
       ament_cmake_gtest,
       ament_lint_auto,
       ament_lint_common,
-      boost,
       buildRosPackage,
       nao_command_msgs,
       nao_sensor_msgs,
+      python3Packages,
       rclcpp,
     }:
     buildRosPackage {
@@ -29082,7 +29814,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost nao_command_msgs nao_sensor_msgs rclcpp ];
+      propagatedBuildInputs = [ nao_command_msgs nao_sensor_msgs python3Packages.boost rclcpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -29093,10 +29825,10 @@ in
       ament_cmake_gtest,
       ament_lint_auto,
       ament_lint_common,
-      boost,
       buildRosPackage,
       nao_lola_command_msgs,
       nao_lola_sensor_msgs,
+      python3Packages,
       rcl_interfaces,
       rclcpp,
       rclcpp_components,
@@ -29109,7 +29841,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost nao_lola_command_msgs nao_lola_sensor_msgs rcl_interfaces rclcpp rclcpp_components sensor_msgs ];
+      propagatedBuildInputs = [ nao_lola_command_msgs nao_lola_sensor_msgs python3Packages.boost rcl_interfaces rclcpp rclcpp_components sensor_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -30464,7 +31196,6 @@ in
     {
       ament_cmake,
       ament_lint_auto,
-      boost,
       buildRosPackage,
       controller_interface,
       geographic_msgs,
@@ -30474,6 +31205,7 @@ in
       ouxt_lint_common,
       pkg-config,
       pluginlib,
+      python3Packages,
       quaternion_operation,
       rclcpp,
       rclcpp_components,
@@ -30488,7 +31220,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [ pkg-config ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost controller_interface geographic_msgs gtk3 hardware_interface nmea_msgs pluginlib quaternion_operation rclcpp rclcpp_components realtime_tools ros2_control rviz2 ];
+      propagatedBuildInputs = [ controller_interface geographic_msgs gtk3 hardware_interface nmea_msgs pluginlib python3Packages.boost quaternion_operation rclcpp rclcpp_components realtime_tools ros2_control rviz2 ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -30596,7 +31328,6 @@ in
       ament_cmake_gtest,
       ament_index_cpp,
       ament_lint_auto,
-      boost,
       buildRosPackage,
       diagnostic_msgs,
       diagnostic_updater,
@@ -30604,6 +31335,7 @@ in
       libpcap,
       nav_msgs,
       novatel_gps_msgs,
+      python3Packages,
       rclcpp,
       rclcpp_components,
       sensor_msgs,
@@ -30621,7 +31353,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost diagnostic_msgs diagnostic_updater gps_msgs libpcap nav_msgs novatel_gps_msgs rclcpp rclcpp_components sensor_msgs std_msgs swri_math_util swri_roscpp swri_serial_util tf2 tf2_geometry_msgs ];
+      propagatedBuildInputs = [ diagnostic_msgs diagnostic_updater gps_msgs libpcap nav_msgs novatel_gps_msgs python3Packages.boost rclcpp rclcpp_components sensor_msgs std_msgs swri_math_util swri_roscpp swri_serial_util tf2 tf2_geometry_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -30933,12 +31665,12 @@ in
   ) {};
   odri_master_board_sdk = self.callPackage (
     {
-      boost,
       buildPackages,
       buildRosPackage,
       cmake,
       git,
       python3,
+      python3Packages,
     }:
     buildRosPackage {
       pname = "odri_master_board_sdk";
@@ -30947,20 +31679,20 @@ in
       nativeBuildInputs = [ cmake ];
       propagatedNativeBuildInputs = [ git buildPackages.python3Packages.numpy ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost python3 ];
+      propagatedBuildInputs = [ python3 python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
   ) {};
   ompl = self.callPackage (
     {
-      boost,
       buildRosPackage,
       cmake,
       eigen,
       flann,
       ode,
       pkg-config,
+      python3Packages,
     }:
     buildRosPackage {
       pname = "ompl";
@@ -30969,7 +31701,7 @@ in
       nativeBuildInputs = [ cmake pkg-config ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost eigen flann ode ];
+      propagatedBuildInputs = [ eigen flann ode python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -30978,7 +31710,6 @@ in
     {
       ament_cmake,
       ament_cmake_vendor_package,
-      boost,
       buildRosPackage,
       cmake,
       curl,
@@ -30994,6 +31725,7 @@ in
       openscenegraph,
       pkg-config,
       protobuf,
+      python3Packages,
       unzip,
       wget,
     }:
@@ -31004,7 +31736,7 @@ in
       nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package cmake curl git pkg-config unzip wget ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost ffmpeg glew glfw3 hdf5 libusb-compat-0_1 libusb1 opencv openscenegraph protobuf ];
+      propagatedBuildInputs = [ ffmpeg glew glfw3 hdf5 libusb-compat-0_1 libusb1 opencv openscenegraph protobuf python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -31354,9 +32086,9 @@ in
       ament_cmake_gtest,
       ament_lint_auto,
       ament_lint_common,
-      boost,
       buildRosPackage,
       pal_statistics_msgs,
+      python3Packages,
       rclcpp,
       rclcpp_lifecycle,
       rclpy,
@@ -31368,7 +32100,7 @@ in
       nativeBuildInputs = [ ament_cmake_auto ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost pal_statistics_msgs rclcpp rclcpp_lifecycle rclpy ];
+      propagatedBuildInputs = [ pal_statistics_msgs python3Packages.boost rclcpp rclcpp_lifecycle rclpy ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -32139,7 +32871,6 @@ in
       ament_cmake,
       ament_cmake_gmock,
       ament_cmake_gtest,
-      boost,
       buildRosPackage,
       eigen3_cmake_module,
       generate_parameter_library,
@@ -32158,6 +32889,7 @@ in
       orocos_kdl_vendor,
       pilz_industrial_motion_planner_testutils,
       pluginlib,
+      python3Packages,
       rclcpp,
       ros_testing,
       tf2,
@@ -32204,7 +32936,6 @@ in
   ) {};
   pinocchio = self.callPackage (
     {
-      boost,
       buildPackages,
       buildRosPackage,
       clang,
@@ -32215,6 +32946,7 @@ in
       git,
       hpp-fcl,
       python3,
+      python3Packages,
       urdfdom,
     }:
     buildRosPackage {
@@ -32224,7 +32956,7 @@ in
       nativeBuildInputs = [ clang cmake doxygen git ];
       propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost eigen eigenpy hpp-fcl python3 urdfdom ];
+      propagatedBuildInputs = [ eigen eigenpy hpp-fcl python3 python3Packages.boost urdfdom ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -32234,12 +32966,12 @@ in
       ament_cmake,
       ament_index_cpp,
       binutils,
-      boost,
       buildRosPackage,
       cppzmq,
       fastcdr,
       lz4,
       protobuf,
+      python3Packages,
       qt5,
       rclcpp,
       zstd,
@@ -32251,7 +32983,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ ament_index_cpp binutils boost cppzmq fastcdr lz4 protobuf qt5.qtbase qt5.qtsvg qt5.qtwebsockets qt5.qtx11extras rclcpp zstd ];
+      propagatedBuildInputs = [ ament_index_cpp binutils cppzmq fastcdr lz4 protobuf python3Packages.boost qt5.qtbase qt5.qtsvg qt5.qtwebsockets qt5.qtx11extras rclcpp zstd ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -32283,9 +33015,9 @@ in
     {
       ament_cmake,
       binutils,
-      boost,
       buildRosPackage,
       plotjuggler,
+      python3Packages,
       qt5,
       rclcpp,
       rcpputils,
@@ -32302,7 +33034,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [ ros_environment ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ binutils boost plotjuggler qt5.qtbase qt5.qtsvg qt5.qtwebsockets rclcpp rcpputils rosbag2 rosbag2_transport tf2_msgs tf2_ros ];
+      propagatedBuildInputs = [ binutils plotjuggler python3Packages.boost qt5.qtbase qt5.qtsvg qt5.qtwebsockets rclcpp rcpputils rosbag2 rosbag2_transport tf2_msgs tf2_ros ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -32323,9 +33055,9 @@ in
       version = "5.4.2-2";
       src = sources.pluginlib;
       nativeBuildInputs = [ ament_cmake ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ ament_index_cpp class_loader rcpputils tinyxml2_vendor ];
+      propagatedBuildInputs = [ ament_index_cpp class_loader rcpputils rcutils tinyxml2_vendor ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -32738,7 +33470,7 @@ in
       nativeBuildInputs = [ buildPackages.python3Packages.setuptools ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [ qt5.qttools.dev ];
-      propagatedBuildInputs = [ python3Packages.pyqt5 python3Packages.pyqtwebengine ];
+      propagatedBuildInputs = [ python3Packages.pyqtwebengine python3Packages.pyside2 ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -32895,7 +33627,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [ qt5.qtbase ];
-      propagatedBuildInputs = [ python3Packages.pyqt5 ];
+      propagatedBuildInputs = [ python3Packages.pyside2 ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -32959,7 +33691,7 @@ in
       src = sources.qt_gui;
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [ ament_index_python buildPackages.python3Packages.catkin-pkg ];
-      buildInputs = [ python3Packages.pyqt5 qt5.qtbase ];
+      buildInputs = [ python3Packages.pyside2 qt5.qtbase ];
       propagatedBuildInputs = [ python_qt_binding tango_icons_vendor ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
@@ -33071,9 +33803,9 @@ in
       version = "0.33.4-1";
       src = sources.quality_of_service_demo_cpp;
       nativeBuildInputs = [ ament_cmake rmw_implementation_cmake ];
-      propagatedNativeBuildInputs = [ rcutils rmw ];
+      propagatedNativeBuildInputs = [ rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ example_interfaces launch_ros rclcpp rclcpp_components sensor_msgs std_msgs ];
+      propagatedBuildInputs = [ example_interfaces launch_ros rclcpp rclcpp_components rcutils sensor_msgs std_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -33174,8 +33906,8 @@ in
       ament_cmake,
       ament_lint_auto,
       ament_lint_cmake,
-      boost,
       buildRosPackage,
+      python3Packages,
     }:
     buildRosPackage {
       pname = "random_numbers";
@@ -33183,8 +33915,8 @@ in
       src = sources.random_numbers;
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
-      buildInputs = [ boost ];
-      propagatedBuildInputs = [ boost ];
+      buildInputs = [ python3Packages.boost ];
+      propagatedBuildInputs = [ python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -33494,9 +34226,9 @@ in
       version = "9.2.3-1";
       src = sources.rcl;
       nativeBuildInputs = [ ament_cmake_gen_version_h ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils rmw ];
+      propagatedNativeBuildInputs = [ rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ libyaml libyaml_vendor rcl_interfaces rcl_logging_interface rcl_logging_noop rcl_logging_spdlog rcl_yaml_param_parser rmw_implementation rosidl_runtime_c service_msgs tracetools type_description_interfaces ];
+      propagatedBuildInputs = [ libyaml libyaml_vendor rcl_interfaces rcl_logging_interface rcl_logging_noop rcl_logging_spdlog rcl_yaml_param_parser rcutils rmw_implementation rosidl_runtime_c service_msgs tracetools type_description_interfaces ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -33523,9 +34255,9 @@ in
       version = "9.2.3-1";
       src = sources.rcl_action;
       nativeBuildInputs = [ ament_cmake_gen_version_h ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils rmw ];
+      propagatedNativeBuildInputs = [ rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ action_msgs rcl rosidl_runtime_c ];
+      propagatedBuildInputs = [ action_msgs rcl rcutils rosidl_runtime_c ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -33573,9 +34305,9 @@ in
       version = "9.2.3-1";
       src = sources.rcl_lifecycle;
       nativeBuildInputs = [ ament_cmake_gen_version_h ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils rmw ];
+      propagatedNativeBuildInputs = [ rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ lifecycle_msgs rcl rosidl_runtime_c tracetools ];
+      propagatedBuildInputs = [ lifecycle_msgs rcl rcutils rosidl_runtime_c tracetools ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -33594,9 +34326,9 @@ in
       version = "3.1.0-2";
       src = sources.rcl_logging_interface;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [  ];
+      propagatedBuildInputs = [ rcutils ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -33619,9 +34351,9 @@ in
       version = "3.1.0-2";
       src = sources.rcl_logging_noop;
       nativeBuildInputs = [ ament_cmake_ros buildPackages.python3Packages.empy ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ rcl_logging_interface ];
+      propagatedBuildInputs = [ rcl_logging_interface rcutils ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -33644,9 +34376,9 @@ in
       version = "3.1.0-2";
       src = sources.rcl_logging_spdlog;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ rcl_logging_interface rcpputils spdlog spdlog_vendor ];
+      propagatedBuildInputs = [ rcl_logging_interface rcpputils rcutils spdlog spdlog_vendor ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -33672,9 +34404,9 @@ in
       version = "9.2.3-1";
       src = sources.rcl_yaml_param_parser;
       nativeBuildInputs = [ ament_cmake_gen_version_h ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils rmw ];
+      propagatedNativeBuildInputs = [ rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ libyaml libyaml_vendor ];
+      propagatedBuildInputs = [ libyaml libyaml_vendor rcutils ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -33705,9 +34437,9 @@ in
       version = "6.1.0-3";
       src = sources.rclc;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils rosidl_generator_c ];
+      propagatedNativeBuildInputs = [ rosidl_generator_c ];
       buildInputs = [ rosidl_typesupport_c ];
-      propagatedBuildInputs = [ rcl rcl_action ];
+      propagatedBuildInputs = [ rcl rcl_action rcutils ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -33785,9 +34517,9 @@ in
       version = "6.1.0-3";
       src = sources.rclc_parameter;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ builtin_interfaces rcl rcl_interfaces rclc rosidl_runtime_c ];
+      propagatedBuildInputs = [ builtin_interfaces rcl rcl_interfaces rclc rcutils rosidl_runtime_c ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -33832,9 +34564,9 @@ in
       version = "28.1.3-1";
       src = sources.rclcpp;
       nativeBuildInputs = [ ament_cmake_gen_version_h ament_cmake_ros python3 ];
-      propagatedNativeBuildInputs = [ rcutils rmw rosidl_dynamic_typesupport ];
+      propagatedNativeBuildInputs = [ rmw rosidl_dynamic_typesupport ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ ament_index_cpp builtin_interfaces libstatistics_collector rcl rcl_interfaces rcl_logging_interface rcl_yaml_param_parser rcpputils rosgraph_msgs rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_c rosidl_typesupport_cpp statistics_msgs tracetools ];
+      propagatedBuildInputs = [ ament_index_cpp builtin_interfaces libstatistics_collector rcl rcl_interfaces rcl_logging_interface rcl_yaml_param_parser rcpputils rcutils rosgraph_msgs rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_c rosidl_typesupport_cpp statistics_msgs tracetools ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -33946,9 +34678,9 @@ in
       version = "28.1.3-1";
       src = sources.rclcpp_lifecycle;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils rmw ];
+      propagatedNativeBuildInputs = [ rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ lifecycle_msgs rcl rcl_interfaces rcl_lifecycle rclcpp rosidl_typesupport_cpp ];
+      propagatedBuildInputs = [ lifecycle_msgs rcl rcl_interfaces rcl_lifecycle rclcpp rcutils rosidl_typesupport_cpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -33991,9 +34723,9 @@ in
       pname = "rclpy";
       version = "7.1.1-2";
       src = sources.rclpy;
-      nativeBuildInputs = [ ament_cmake python_cmake_module rcutils rmw_implementation_cmake ];
+      nativeBuildInputs = [ ament_cmake python_cmake_module rmw_implementation_cmake ];
       propagatedNativeBuildInputs = [ ament_index_python buildPackages.python3Packages.pyyaml rmw rpyutils ];
-      buildInputs = [ pybind11_vendor rcpputils ];
+      buildInputs = [ pybind11_vendor rcpputils rcutils ];
       propagatedBuildInputs = [ action_msgs builtin_interfaces lifecycle_msgs rcl rcl_action rcl_interfaces rcl_lifecycle rcl_logging_interface rcl_yaml_param_parser rmw_implementation rosgraph_msgs rosidl_runtime_c unique_identifier_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
@@ -34071,9 +34803,9 @@ in
       version = "2.11.0-2";
       src = sources.rcpputils;
       nativeBuildInputs = [ ament_cmake ament_cmake_gen_version_h ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [  ];
+      propagatedBuildInputs = [ rcutils ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -34206,7 +34938,6 @@ in
       mimick_vendor,
       osrf_testing_tools_cpp,
       performance_test_fixture,
-      python3Packages,
     }:
     buildRosPackage {
       pname = "rcutils";
@@ -34214,7 +34945,7 @@ in
       src = sources.rcutils;
       nativeBuildInputs = [ ament_cmake_ros buildPackages.python3Packages.empy ];
       propagatedNativeBuildInputs = [  ];
-      buildInputs = [ ament_cmake_ros python3Packages.empy ];
+      buildInputs = [  ];
       propagatedBuildInputs = [  ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
@@ -35384,12 +36115,12 @@ in
       ament_cmake_uncrustify,
       ament_lint_auto,
       ament_lint_common,
-      boost,
       buildRosPackage,
       builtin_interfaces,
       eigen,
       geometry_msgs,
       openssl,
+      python3Packages,
       rclcpp,
       rclcpp_components,
       rmf_traffic,
@@ -35408,7 +36139,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [ rosidl_default_generators ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost builtin_interfaces eigen geometry_msgs openssl rclcpp rclcpp_components rmf_traffic rmf_traffic_msgs rmf_traffic_ros2 rmf_visualization_msgs visualization_msgs websocketpp ];
+      propagatedBuildInputs = [ builtin_interfaces eigen geometry_msgs openssl python3Packages.boost rclcpp rclcpp_components rmf_traffic rmf_traffic_msgs rmf_traffic_ros2 rmf_visualization_msgs visualization_msgs websocketpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -35418,11 +36149,11 @@ in
       ament_cmake,
       ament_cmake_catch2,
       ament_cmake_uncrustify,
-      boost,
       buildRosPackage,
       eigen,
       nlohmann_json,
       nlohmann_json_schema_validator_vendor,
+      python3Packages,
       rclcpp,
       rmf_utils,
       websocketpp,
@@ -35434,7 +36165,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [ eigen ];
-      propagatedBuildInputs = [ boost nlohmann_json nlohmann_json_schema_validator_vendor rclcpp rmf_utils websocketpp ];
+      propagatedBuildInputs = [ nlohmann_json nlohmann_json_schema_validator_vendor python3Packages.boost rclcpp rmf_utils websocketpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -35478,11 +36209,11 @@ in
       version = "7.3.1-1";
       src = sources.rmw;
       nativeBuildInputs = [ ament_cmake_ros ament_cmake_version ];
-      propagatedNativeBuildInputs = [ rcutils rosidl_dynamic_typesupport ];
+      propagatedNativeBuildInputs = [ rosidl_dynamic_typesupport ];
       buildInputs = [ ament_cmake_ros ament_cmake_version ];
-      propagatedBuildInputs = [ rcutils rosidl_dynamic_typesupport ];
+      propagatedBuildInputs = [ rosidl_dynamic_typesupport ];
       depsTargetTarget = [  ];
-      depsTargetTargetPropagated = [ rosidl_runtime_c ];
+      depsTargetTargetPropagated = [ rcutils rosidl_runtime_c ];
     }
   ) {};
   rmw_connextdds = self.callPackage (
@@ -35532,9 +36263,9 @@ in
       version = "0.22.0-2";
       src = sources.rmw_connextdds_common;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ ament_cmake rcutils rmw ];
+      propagatedNativeBuildInputs = [ ament_cmake rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ fastcdr rcpputils rmw_dds_common rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_fastrtps_c rosidl_typesupport_fastrtps_cpp rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp rti_connext_dds_cmake_module tracetools ];
+      propagatedBuildInputs = [ fastcdr rcpputils rcutils rmw_dds_common rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_fastrtps_c rosidl_typesupport_fastrtps_cpp rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp rti_connext_dds_cmake_module tracetools ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -35561,9 +36292,9 @@ in
       version = "2.2.1-1";
       src = sources.rmw_cyclonedds_cpp;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils rmw ];
+      propagatedNativeBuildInputs = [ rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ cyclonedds iceoryx_binding_c rcpputils rmw_dds_common rosidl_runtime_c rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp tracetools ];
+      propagatedBuildInputs = [ cyclonedds iceoryx_binding_c rcpputils rcutils rmw_dds_common rosidl_runtime_c rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp tracetools ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -35590,9 +36321,9 @@ in
       version = "3.1.0-2";
       src = sources.rmw_dds_common;
       nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-      propagatedNativeBuildInputs = [ rcutils rmw ];
+      propagatedNativeBuildInputs = [ rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ rcpputils rosidl_default_runtime rosidl_runtime_c rosidl_runtime_cpp ];
+      propagatedBuildInputs = [ rcpputils rcutils rosidl_default_runtime rosidl_runtime_c rosidl_runtime_cpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -35628,9 +36359,9 @@ in
       version = "8.4.1-1";
       src = sources.rmw_fastrtps_cpp;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ ament_cmake fastrtps_cmake_module rcutils rmw rosidl_dynamic_typesupport ];
+      propagatedNativeBuildInputs = [ ament_cmake fastrtps_cmake_module rmw rosidl_dynamic_typesupport ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ fastcdr fastrtps rcpputils rmw_dds_common rmw_fastrtps_shared_cpp rosidl_dynamic_typesupport_fastrtps rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_fastrtps_c rosidl_typesupport_fastrtps_cpp tracetools ];
+      propagatedBuildInputs = [ fastcdr fastrtps rcpputils rcutils rmw_dds_common rmw_fastrtps_shared_cpp rosidl_dynamic_typesupport_fastrtps rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_fastrtps_c rosidl_typesupport_fastrtps_cpp tracetools ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -35662,9 +36393,9 @@ in
       version = "8.4.1-1";
       src = sources.rmw_fastrtps_dynamic_cpp;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ ament_cmake fastrtps_cmake_module rcutils rmw ];
+      propagatedNativeBuildInputs = [ ament_cmake fastrtps_cmake_module rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ fastcdr fastrtps rcpputils rmw_dds_common rmw_fastrtps_shared_cpp rosidl_runtime_c rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp ];
+      propagatedBuildInputs = [ fastcdr fastrtps rcpputils rcutils rmw_dds_common rmw_fastrtps_shared_cpp rosidl_runtime_c rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -35695,9 +36426,9 @@ in
       version = "8.4.1-1";
       src = sources.rmw_fastrtps_shared_cpp;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ ament_cmake fastrtps_cmake_module rcutils rmw rosidl_dynamic_typesupport ];
+      propagatedNativeBuildInputs = [ ament_cmake fastrtps_cmake_module rmw rosidl_dynamic_typesupport ];
       buildInputs = [ rosidl_runtime_c ];
-      propagatedBuildInputs = [ fastcdr fastrtps rcpputils rmw_dds_common rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp tracetools ];
+      propagatedBuildInputs = [ fastcdr fastrtps rcpputils rcutils rmw_dds_common rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp tracetools ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -35725,9 +36456,9 @@ in
       version = "2.15.3-1";
       src = sources.rmw_implementation;
       nativeBuildInputs = [ ament_cmake rmw ];
-      propagatedNativeBuildInputs = [ rcutils rmw_implementation_cmake ];
+      propagatedNativeBuildInputs = [ rmw_implementation_cmake ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ ament_index_cpp rcpputils rmw_connextdds rmw_cyclonedds_cpp rmw_fastrtps_cpp rmw_fastrtps_dynamic_cpp ];
+      propagatedBuildInputs = [ ament_index_cpp rcpputils rcutils rmw_connextdds rmw_cyclonedds_cpp rmw_fastrtps_cpp rmw_fastrtps_dynamic_cpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -35755,7 +36486,6 @@ in
     {
       ament_cmake,
       ament_cmake_gtest,
-      boost,
       buildRosPackage,
       camera_calibration_parsers,
       ceres-solver,
@@ -35775,6 +36505,7 @@ in
       orocos-kdl,
       pluginlib,
       protobuf,
+      python3Packages,
       rclcpp,
       rclcpp_action,
       robot_calibration_msgs,
@@ -35794,7 +36525,7 @@ in
       src = sources.robot_calibration;
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
-      buildInputs = [ boost eigen ];
+      buildInputs = [ eigen python3Packages.boost ];
       propagatedBuildInputs = [ camera_calibration_parsers ceres-solver control_msgs cv_bridge geometric_shapes geometry_msgs gflags kdl_parser libyamlcpp moveit_msgs nav_msgs orocos-kdl pluginlib protobuf rclcpp rclcpp_action robot_calibration_msgs rosbag2_cpp sensor_msgs std_msgs suitesparse tf2_geometry_msgs tf2_ros tinyxml-2 tinyxml2_vendor visualization_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
@@ -35830,7 +36561,6 @@ in
       ament_lint_auto,
       ament_lint_common,
       angles,
-      boost,
       buildRosPackage,
       builtin_interfaces,
       diagnostic_msgs,
@@ -35843,6 +36573,7 @@ in
       launch_testing_ament_cmake,
       message_filters,
       nav_msgs,
+      python3Packages,
       rclcpp,
       rmw_implementation,
       rosidl_default_generators,
@@ -35863,7 +36594,7 @@ in
       nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [ builtin_interfaces ];
-      propagatedBuildInputs = [ angles boost diagnostic_msgs diagnostic_updater eigen geographic_msgs geographiclib geometry_msgs message_filters nav_msgs rclcpp rmw_implementation rosidl_default_runtime sensor_msgs std_msgs std_srvs tf2 tf2_eigen tf2_geometry_msgs tf2_ros yaml_cpp_vendor ];
+      propagatedBuildInputs = [ angles diagnostic_msgs diagnostic_updater eigen geographic_msgs geographiclib geometry_msgs message_filters nav_msgs python3Packages.boost rclcpp rmw_implementation rosidl_default_runtime sensor_msgs std_msgs std_srvs tf2 tf2_eigen tf2_geometry_msgs tf2_ros yaml_cpp_vendor ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -37297,9 +38028,9 @@ in
       version = "0.26.4-1";
       src = sources.rosbag2_compression;
       nativeBuildInputs = [ ament_cmake ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ rcpputils rosbag2_cpp rosbag2_storage ];
+      propagatedBuildInputs = [ rcpputils rcutils rosbag2_cpp rosbag2_storage ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -37323,9 +38054,9 @@ in
       version = "0.26.4-1";
       src = sources.rosbag2_compression_zstd;
       nativeBuildInputs = [ ament_cmake ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ pluginlib rosbag2_compression zstd_vendor ];
+      propagatedBuildInputs = [ pluginlib rcutils rosbag2_compression zstd_vendor ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -37361,9 +38092,9 @@ in
       version = "0.26.4-1";
       src = sources.rosbag2_cpp;
       nativeBuildInputs = [ ament_cmake ];
-      propagatedNativeBuildInputs = [ rcutils rmw ];
+      propagatedNativeBuildInputs = [ rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ ament_index_cpp pluginlib rclcpp rcpputils rmw_implementation rosbag2_storage rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_cpp rosidl_typesupport_introspection_cpp shared_queues_vendor ];
+      propagatedBuildInputs = [ ament_index_cpp pluginlib rclcpp rcpputils rcutils rmw_implementation rosbag2_storage rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_cpp rosidl_typesupport_introspection_cpp shared_queues_vendor ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -37553,9 +38284,9 @@ in
       version = "0.26.4-1";
       src = sources.rosbag2_storage;
       nativeBuildInputs = [ ament_cmake ];
-      propagatedNativeBuildInputs = [ rcutils rmw ];
+      propagatedNativeBuildInputs = [ rmw ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ pluginlib rclcpp yaml_cpp_vendor ];
+      propagatedBuildInputs = [ pluginlib rclcpp rcutils yaml_cpp_vendor ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -37602,9 +38333,9 @@ in
       version = "0.26.4-1";
       src = sources.rosbag2_storage_mcap;
       nativeBuildInputs = [ ament_cmake ament_cmake_python ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ ament_index_cpp mcap_vendor pluginlib rosbag2_storage yaml_cpp_vendor ];
+      propagatedBuildInputs = [ ament_index_cpp mcap_vendor pluginlib rcutils rosbag2_storage yaml_cpp_vendor ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -37631,9 +38362,9 @@ in
       version = "0.26.4-1";
       src = sources.rosbag2_storage_sqlite3;
       nativeBuildInputs = [ ament_cmake ament_cmake_python ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ pluginlib rcpputils rosbag2_storage sqlite3_vendor yaml_cpp_vendor ];
+      propagatedBuildInputs = [ pluginlib rcpputils rcutils rosbag2_storage sqlite3_vendor yaml_cpp_vendor ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -37654,9 +38385,9 @@ in
       version = "0.26.4-1";
       src = sources.rosbag2_test_common;
       nativeBuildInputs = [ ament_cmake ament_cmake_python python_cmake_module ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ rclcpp ];
+      propagatedBuildInputs = [ rclcpp rcutils ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -38098,11 +38829,11 @@ in
       version = "0.1.2-3";
       src = sources.rosidl_dynamic_typesupport;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [ ament_cmake_ros ];
-      propagatedBuildInputs = [ rcutils ];
+      propagatedBuildInputs = [  ];
       depsTargetTarget = [  ];
-      depsTargetTargetPropagated = [ rosidl_runtime_c ];
+      depsTargetTargetPropagated = [ rcutils rosidl_runtime_c ];
     }
   ) {};
   rosidl_dynamic_typesupport_fastrtps = self.callPackage (
@@ -38120,9 +38851,9 @@ in
       version = "0.1.0-3";
       src = sources.rosidl_dynamic_typesupport_fastrtps;
       nativeBuildInputs = [ ament_cmake_ros fastrtps_cmake_module ];
-      propagatedNativeBuildInputs = [ rcutils rosidl_dynamic_typesupport ];
+      propagatedNativeBuildInputs = [ rosidl_dynamic_typesupport ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ fastcdr fastrtps ];
+      propagatedBuildInputs = [ fastcdr fastrtps rcutils ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -38150,11 +38881,11 @@ in
       version = "4.6.3-1";
       src = sources.rosidl_generator_c;
       nativeBuildInputs = [ ament_cmake_python ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ ament_cmake_core ament_index_python python3 rcutils rosidl_cli rosidl_cmake rosidl_generator_type_description rosidl_parser rosidl_pycommon ];
+      propagatedNativeBuildInputs = [ ament_cmake_core ament_index_python python3 rosidl_cli rosidl_cmake rosidl_generator_type_description rosidl_parser rosidl_pycommon ];
       buildInputs = [ ament_cmake_python ament_cmake_ros ];
-      propagatedBuildInputs = [ ament_cmake_core ament_index_python rcutils rosidl_cli rosidl_cmake rosidl_generator_type_description rosidl_parser rosidl_pycommon ];
+      propagatedBuildInputs = [ ament_cmake_core ament_index_python rosidl_cli rosidl_cmake rosidl_generator_type_description rosidl_parser rosidl_pycommon ];
       depsTargetTarget = [  ];
-      depsTargetTargetPropagated = [ rosidl_typesupport_interface ];
+      depsTargetTargetPropagated = [ rcutils rosidl_typesupport_interface ];
     }
   ) {};
   rosidl_generator_cpp = self.callPackage (
@@ -38337,9 +39068,9 @@ in
       version = "4.6.3-1";
       src = sources.rosidl_runtime_c;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ ament_cmake rcutils ];
+      propagatedNativeBuildInputs = [ ament_cmake ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ rosidl_typesupport_interface ];
+      propagatedBuildInputs = [ rcutils rosidl_typesupport_interface ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -38418,9 +39149,9 @@ in
       version = "3.2.2-1";
       src = sources.rosidl_typesupport_c;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ ament_cmake_core ament_index_python python3 rcutils rosidl_cli rosidl_generator_c rosidl_pycommon ];
+      propagatedNativeBuildInputs = [ ament_cmake_core ament_index_python python3 rosidl_cli rosidl_generator_c rosidl_pycommon ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ rcpputils rosidl_runtime_c rosidl_typesupport_fastrtps_c rosidl_typesupport_interface rosidl_typesupport_introspection_c ];
+      propagatedBuildInputs = [ rcpputils rcutils rosidl_runtime_c rosidl_typesupport_fastrtps_c rosidl_typesupport_interface rosidl_typesupport_introspection_c ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -38453,9 +39184,9 @@ in
       version = "3.2.2-1";
       src = sources.rosidl_typesupport_cpp;
       nativeBuildInputs = [ ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ ament_cmake_core ament_index_python python3 rcutils rosidl_cli rosidl_generator_c rosidl_generator_type_description rosidl_pycommon ];
+      propagatedNativeBuildInputs = [ ament_cmake_core ament_index_python python3 rosidl_cli rosidl_generator_c rosidl_generator_type_description rosidl_pycommon ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ rcpputils rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_c rosidl_typesupport_fastrtps_cpp rosidl_typesupport_interface rosidl_typesupport_introspection_cpp ];
+      propagatedBuildInputs = [ rcpputils rcutils rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_c rosidl_typesupport_fastrtps_cpp rosidl_typesupport_interface rosidl_typesupport_introspection_cpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -39689,8 +40420,8 @@ in
   rviz_2d_overlay_plugins = self.callPackage (
     {
       ament_cmake,
-      boost,
       buildRosPackage,
+      python3Packages,
       rviz_2d_overlay_msgs,
       rviz_common,
       rviz_ogre_vendor,
@@ -39704,7 +40435,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost rviz_2d_overlay_msgs rviz_common rviz_ogre_vendor rviz_rendering std_msgs ];
+      propagatedBuildInputs = [ python3Packages.boost rviz_2d_overlay_msgs rviz_common rviz_ogre_vendor rviz_rendering std_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -39988,9 +40719,9 @@ in
       version = "14.1.2-1";
       src = sources.rviz_visual_testing_framework;
       nativeBuildInputs = [ ament_cmake ];
-      propagatedNativeBuildInputs = [ ament_cmake_gtest rcutils ];
+      propagatedNativeBuildInputs = [ ament_cmake_gtest ];
       buildInputs = [ qt5.qtbase ];
-      propagatedBuildInputs = [ geometry_msgs rclcpp rviz_common rviz_ogre_vendor rviz_rendering std_msgs tf2 tf2_ros ];
+      propagatedBuildInputs = [ geometry_msgs rclcpp rcutils rviz_common rviz_ogre_vendor rviz_rendering std_msgs tf2 tf2_ros ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -40078,9 +40809,9 @@ in
       version = "1.0.2-1";
       src = sources.sdformat_urdf;
       nativeBuildInputs = [  ];
-      propagatedNativeBuildInputs = [ ament_cmake_ros rcutils ];
+      propagatedNativeBuildInputs = [ ament_cmake_ros ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ pluginlib sdformat_vendor tinyxml2_vendor urdf urdf_parser_plugin urdfdom-headers ];
+      propagatedBuildInputs = [ pluginlib rcutils sdformat_vendor tinyxml2_vendor urdf urdf_parser_plugin urdfdom-headers ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -40209,7 +40940,6 @@ in
   septentrio_gnss_driver = self.callPackage (
     {
       ament_cmake,
-      boost,
       buildRosPackage,
       diagnostic_msgs,
       geographiclib,
@@ -40218,6 +40948,7 @@ in
       libpcap,
       nav_msgs,
       nmea_msgs,
+      python3Packages,
       rclcpp,
       rclcpp_components,
       rosidl_default_generators,
@@ -40235,7 +40966,7 @@ in
       nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost diagnostic_msgs geographiclib geometry_msgs gps_msgs libpcap nav_msgs nmea_msgs rclcpp rclcpp_components rosidl_default_runtime sensor_msgs tf2 tf2_eigen tf2_geometry_msgs tf2_ros ];
+      propagatedBuildInputs = [ diagnostic_msgs geographiclib geometry_msgs gps_msgs libpcap nav_msgs nmea_msgs python3Packages.boost rclcpp rclcpp_components rosidl_default_runtime sensor_msgs tf2 tf2_eigen tf2_geometry_msgs tf2_ros ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -40347,10 +41078,10 @@ in
   sick_safevisionary_driver = self.callPackage (
     {
       ament_cmake,
-      boost,
       buildRosPackage,
       cv_bridge,
       lifecycle_msgs,
+      python3Packages,
       rclcpp,
       rclcpp_lifecycle,
       sensor_msgs,
@@ -40364,7 +41095,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost cv_bridge lifecycle_msgs rclcpp rclcpp_lifecycle sensor_msgs sick_safevisionary_base sick_safevisionary_interfaces ];
+      propagatedBuildInputs = [ cv_bridge lifecycle_msgs python3Packages.boost rclcpp rclcpp_lifecycle sensor_msgs sick_safevisionary_base sick_safevisionary_interfaces ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -40524,7 +41255,6 @@ in
       ament_lint_auto,
       bond,
       bondcpp,
-      boost,
       buildRosPackage,
       builtin_interfaces,
       ceres-solver,
@@ -40537,6 +41267,7 @@ in
       message_filters,
       nav_msgs,
       pluginlib,
+      python3Packages,
       qt5,
       rclcpp,
       rclcpp_lifecycle,
@@ -40563,7 +41294,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [ rosidl_default_generators ];
       buildInputs = [ qt5.qtbase ];
-      propagatedBuildInputs = [ bond bondcpp boost builtin_interfaces ceres-solver eigen interactive_markers liblapack lifecycle_msgs message_filters nav_msgs pluginlib qt5.qtbase rclcpp rclcpp_lifecycle rviz_common rviz_default_plugins rviz_ogre_vendor rviz_rendering sensor_msgs std_msgs std_srvs suitesparse tbb tf2 tf2_geometry_msgs tf2_ros tf2_sensor_msgs visualization_msgs ];
+      propagatedBuildInputs = [ bond bondcpp builtin_interfaces ceres-solver eigen interactive_markers liblapack lifecycle_msgs message_filters nav_msgs pluginlib python3Packages.boost qt5.qtbase rclcpp rclcpp_lifecycle rviz_common rviz_default_plugins rviz_ogre_vendor rviz_rendering sensor_msgs std_msgs std_srvs suitesparse tbb tf2 tf2_geometry_msgs tf2_ros tf2_sensor_msgs visualization_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -41070,10 +41801,10 @@ in
       ament_cmake_python,
       ament_lint_auto,
       ament_lint_cmake,
-      boost,
       buildRosPackage,
       console-bridge,
       console_bridge_vendor,
+      python3Packages,
       tinyxml2_vendor,
       urdf,
       urdfdom_headers,
@@ -41085,7 +41816,7 @@ in
       src = sources.srdfdom;
       nativeBuildInputs = [ ament_cmake ament_cmake_python ];
       propagatedNativeBuildInputs = [  ];
-      buildInputs = [ boost urdfdom_headers ];
+      buildInputs = [ python3Packages.boost urdfdom_headers ];
       propagatedBuildInputs = [ console-bridge console_bridge_vendor tinyxml2_vendor urdf urdfdom_py ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
@@ -41365,8 +42096,8 @@ in
   swri_console = self.callPackage (
     {
       ament_cmake,
-      boost,
       buildRosPackage,
+      python3Packages,
       qt5,
       rcl_interfaces,
       rclcpp,
@@ -41381,7 +42112,7 @@ in
       nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [ qt5.qtbase ];
-      propagatedBuildInputs = [ boost qt5.qtbase rcl_interfaces rclcpp rosbag2_transport rosidl_default_runtime ];
+      propagatedBuildInputs = [ python3Packages.boost qt5.qtbase rcl_interfaces rclcpp rosbag2_transport rosidl_default_runtime ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -41450,7 +42181,6 @@ in
       ament_cmake,
       ament_cmake_gtest,
       ament_index_cpp,
-      boost,
       buildRosPackage,
       camera_calibration_parsers,
       cv_bridge,
@@ -41461,6 +42191,7 @@ in
       message_filters,
       nav_msgs,
       pkg-config,
+      python3Packages,
       rclcpp,
       rclcpp_components,
       rclpy,
@@ -41478,7 +42209,7 @@ in
       nativeBuildInputs = [ ament_cmake pkg-config ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ ament_index_cpp boost camera_calibration_parsers cv_bridge eigen geometry_msgs image_geometry image_transport message_filters nav_msgs rclcpp rclcpp_components rclpy std_msgs swri_geometry_util swri_math_util swri_opencv_util swri_roscpp tf2 ];
+      propagatedBuildInputs = [ ament_index_cpp camera_calibration_parsers cv_bridge eigen geometry_msgs image_geometry image_transport message_filters nav_msgs python3Packages.boost rclcpp rclcpp_components rclpy std_msgs swri_geometry_util swri_math_util swri_opencv_util swri_roscpp tf2 ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -41487,8 +42218,8 @@ in
     {
       ament_cmake,
       ament_cmake_gtest,
-      boost,
       buildRosPackage,
+      python3Packages,
       rclcpp,
     }:
     buildRosPackage {
@@ -41498,7 +42229,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost rclcpp ];
+      propagatedBuildInputs = [ python3Packages.boost rclcpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -41506,9 +42237,9 @@ in
   swri_opencv_util = self.callPackage (
     {
       ament_cmake,
-      boost,
       buildRosPackage,
       cv_bridge,
+      python3Packages,
       swri_math_util,
     }:
     buildRosPackage {
@@ -41518,7 +42249,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost cv_bridge swri_math_util ];
+      propagatedBuildInputs = [ cv_bridge python3Packages.boost swri_math_util ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -41545,12 +42276,12 @@ in
     {
       ament_cmake,
       ament_cmake_gtest,
-      boost,
       buildRosPackage,
       diagnostic_updater,
       gtest,
       marti_common_msgs,
       nav_msgs,
+      python3Packages,
       rclcpp,
       ros_environment,
       rosidl_cmake,
@@ -41566,7 +42297,7 @@ in
       nativeBuildInputs = [ ament_cmake ros_environment rosidl_cmake rosidl_default_generators ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost diagnostic_updater marti_common_msgs nav_msgs rclcpp rosidl_default_runtime std_msgs std_srvs ];
+      propagatedBuildInputs = [ diagnostic_updater marti_common_msgs nav_msgs python3Packages.boost rclcpp rosidl_default_runtime std_msgs std_srvs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -41574,10 +42305,10 @@ in
   swri_route_util = self.callPackage (
     {
       ament_cmake,
-      boost,
       buildRosPackage,
       marti_common_msgs,
       marti_nav_msgs,
+      python3Packages,
       rclcpp,
       swri_geometry_util,
       swri_math_util,
@@ -41593,7 +42324,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost marti_common_msgs marti_nav_msgs rclcpp swri_geometry_util swri_math_util swri_roscpp swri_transform_util tf2_geometry_msgs visualization_msgs ];
+      propagatedBuildInputs = [ marti_common_msgs marti_nav_msgs python3Packages.boost rclcpp swri_geometry_util swri_math_util swri_roscpp swri_transform_util tf2_geometry_msgs visualization_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -41601,8 +42332,8 @@ in
   swri_serial_util = self.callPackage (
     {
       ament_cmake,
-      boost,
       buildRosPackage,
+      python3Packages,
     }:
     buildRosPackage {
       pname = "swri_serial_util";
@@ -41611,7 +42342,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost ];
+      propagatedBuildInputs = [ python3Packages.boost ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -41621,8 +42352,8 @@ in
       ament_cmake,
       ament_cmake_gtest,
       ament_index_cpp,
-      boost,
       buildRosPackage,
+      python3Packages,
       rclcpp,
     }:
     buildRosPackage {
@@ -41632,7 +42363,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost rclcpp ];
+      propagatedBuildInputs = [ python3Packages.boost rclcpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -41641,7 +42372,6 @@ in
     {
       ament_cmake,
       ament_cmake_python,
-      boost,
       buildPackages,
       buildRosPackage,
       cv_bridge,
@@ -41655,6 +42385,7 @@ in
       marti_nav_msgs,
       pkg-config,
       proj,
+      python3Packages,
       rcl_interfaces,
       rclcpp,
       rclcpp_components,
@@ -41673,7 +42404,7 @@ in
       nativeBuildInputs = [ ament_cmake ament_cmake_python pkg-config ];
       propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost cv_bridge diagnostic_msgs diagnostic_updater geographic_msgs geometry_msgs geos gps_msgs libyamlcpp marti_nav_msgs proj rcl_interfaces rclcpp rclcpp_components rclpy sensor_msgs swri_math_util swri_roscpp tf2 tf2_geometry_msgs tf2_ros ];
+      propagatedBuildInputs = [ cv_bridge diagnostic_msgs diagnostic_updater geographic_msgs geometry_msgs geos gps_msgs libyamlcpp marti_nav_msgs proj python3Packages.boost rcl_interfaces rclcpp rclcpp_components rclpy sensor_msgs swri_math_util swri_roscpp tf2 tf2_geometry_msgs tf2_ros ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -42046,9 +42777,9 @@ in
       version = "0.36.4-1";
       src = sources.tf2;
       nativeBuildInputs = [ ament_cmake ament_cmake_ros ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ builtin_interfaces geometry_msgs rosidl_runtime_cpp ];
+      propagatedBuildInputs = [ builtin_interfaces geometry_msgs rcutils rosidl_runtime_cpp ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -42059,9 +42790,9 @@ in
       ament_cmake_gtest,
       ament_lint_auto,
       ament_lint_common,
-      boost,
       buildRosPackage,
       eigen,
+      python3Packages,
       rclcpp,
       tf2,
       tf2_geometry_msgs,
@@ -42074,7 +42805,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost eigen rclcpp tf2 tf2_geometry_msgs tf2_ros ];
+      propagatedBuildInputs = [ eigen python3Packages.boost rclcpp tf2 tf2_geometry_msgs tf2_ros ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -42408,9 +43139,9 @@ in
       version = "4.0.0-2";
       src = sources.theora_image_transport;
       nativeBuildInputs = [ ament_cmake pkg-config rosidl_default_generators ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ cv_bridge image_transport libogg libtheora pluginlib rclcpp rosidl_default_runtime sensor_msgs std_msgs ];
+      propagatedBuildInputs = [ cv_bridge image_transport libogg libtheora pluginlib rclcpp rcutils rosidl_default_runtime sensor_msgs std_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -42624,9 +43355,9 @@ in
       version = "0.33.4-1";
       src = sources.topic_statistics_demo;
       nativeBuildInputs = [ ament_cmake ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ rclcpp sensor_msgs statistics_msgs ];
+      propagatedBuildInputs = [ rclcpp rcutils sensor_msgs statistics_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -43778,9 +44509,9 @@ in
       version = "2.4.5-1";
       src = sources.ur_controllers;
       nativeBuildInputs = [ ament_cmake ];
-      propagatedNativeBuildInputs = [ rcutils ];
+      propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ angles controller_interface joint_trajectory_controller lifecycle_msgs pluginlib rclcpp_lifecycle realtime_tools std_msgs std_srvs ur_dashboard_msgs ur_msgs ];
+      propagatedBuildInputs = [ angles controller_interface joint_trajectory_controller lifecycle_msgs pluginlib rclcpp_lifecycle rcutils realtime_tools std_msgs std_srvs ur_dashboard_msgs ur_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -44107,11 +44838,11 @@ in
       ament_cmake,
       ament_lint_auto,
       ament_lint_common,
-      boost,
       buildRosPackage,
       builtin_interfaces,
       diagnostic_updater,
       laser_proc,
+      python3Packages,
       rclcpp,
       rclcpp_components,
       rosidl_default_generators,
@@ -44128,7 +44859,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [ rosidl_default_generators ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost builtin_interfaces diagnostic_updater laser_proc rclcpp rclcpp_components sensor_msgs std_srvs urdf urg_c urg_node_msgs ];
+      propagatedBuildInputs = [ builtin_interfaces diagnostic_updater laser_proc python3Packages.boost rclcpp rclcpp_components sensor_msgs std_srvs urdf urg_c urg_node_msgs ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -44637,11 +45368,11 @@ in
       ament_cmake,
       ament_cmake_copyright,
       ament_lint_auto,
-      boost,
       buildRosPackage,
       geometry_msgs,
       openssl,
       pluginlib,
+      python3Packages,
       rclcpp,
       std_msgs,
       tf2,
@@ -44655,7 +45386,7 @@ in
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ boost geometry_msgs openssl pluginlib rclcpp std_msgs tf2 tf2_geometry_msgs tf2_ros ];
+      propagatedBuildInputs = [ geometry_msgs openssl pluginlib python3Packages.boost rclcpp std_msgs tf2 tf2_geometry_msgs tf2_ros ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }
@@ -44667,10 +45398,10 @@ in
       ament_cmake_gtest,
       ament_lint_auto,
       ament_lint_common,
-      boost,
       buildRosPackage,
       class_loader,
       geometry_msgs,
+      python3Packages,
       rclcpp,
       sqlite,
       sqlite3_vendor,
@@ -44682,7 +45413,7 @@ in
       src = sources.warehouse_ros_sqlite;
       nativeBuildInputs = [ ament_cmake ];
       propagatedNativeBuildInputs = [  ];
-      buildInputs = [ boost sqlite sqlite3_vendor ];
+      buildInputs = [ python3Packages.boost sqlite sqlite3_vendor ];
       propagatedBuildInputs = [ class_loader rclcpp sqlite warehouse_ros ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
@@ -44899,7 +45630,7 @@ in
       nativeBuildInputs = [  ];
       propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
       buildInputs = [  ];
-      propagatedBuildInputs = [ ackermann_msgs builtin_interfaces python3Packages.opencv3 rclpy webots_ros2_driver ];
+      propagatedBuildInputs = [ ackermann_msgs builtin_interfaces python3Packages.opencv4 rclpy webots_ros2_driver ];
       depsTargetTarget = [  ];
       depsTargetTargetPropagated = [  ];
     }

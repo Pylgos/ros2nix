@@ -24,4 +24,9 @@ final: prev:
     );
   };
   python3Packages = final.python3.pkgs;
+  # boost = prev.boost.override (old: {
+  #   enablePython = true;
+  #   enableNumpy = true;
+  #   python = final.python3;
+  # });
 }

@@ -11,7 +11,8 @@ use futures::{
     future::{self, BoxFuture},
     stream, FutureExt, StreamExt, TryStreamExt as _,
 };
-use tracing::{debug, info};
+use reqwest::Url;
+use tracing::{debug, info, warn};
 use walkdir::WalkDir;
 
 use crate::source::{Fetcher, Source};
@@ -33,6 +34,7 @@ pub struct Substitution {
 pub enum Replacement {
     Path(PatchedSource),
     Url(PatchedSource),
+    Download(PatchedSource),
     Literal(String),
 }
 
@@ -249,8 +251,7 @@ impl CMakeArgs {
     }
 
     fn find_keyword_arg(&self, keyword: &str) -> Option<CMakeKeywordArg> {
-        let mut args: std::iter::Zip<std::slice::Iter<String>, std::slice::Iter<Range<usize>>> =
-            self.args.iter().zip(self.ranges.iter());
+        let mut args = self.args.iter().zip(self.ranges.iter());
         while let Some((arg, range)) = args.next() {
             if arg == keyword {
                 if let Some((next_arg, next_range)) = args.clone().next() {
@@ -264,32 +265,25 @@ impl CMakeArgs {
         None
     }
 
+    fn find_keyword_arg_expect_url(&self, keyword: &str) -> Option<CMakeKeywordArg> {
+        let arg = self.find_keyword_arg(keyword);
+        if let Some(arg) = arg {
+            match Url::parse(&arg.value) {
+                Ok(_) => Some(arg),
+                Err(err) => {
+                    warn!("failed to parse url: {}", err);
+                    None
+                }
+            }
+        } else {
+            None
+        }
+    }
+
     fn get(&self, index: usize) -> Option<&str> {
         self.args.get(index).map(|s| s.as_str())
     }
 }
-
-// recursive async function is not supported in Rust
-// so we need this dirty workaround
-// fn fetch_git_substitution(
-//     fetcher: Arc<Fetcher>,
-//     name: String,
-//     repo: String,
-//     tag: String,
-//     path: PathBuf,
-//     from: String,
-// ) -> BoxFuture<'static, Result<Substitution>> {
-//     async move {
-//         let source = fetcher.fetch_git(&name, &repo, &tag).await?;
-//         let patched = autopatch_source(&fetcher, &source).await?;
-//         Ok(Substitution {
-//             path,
-//             from,
-//             with: Replacement::Url(patched),
-//         })
-//     }
-//     .boxed()
-// }
 
 fn autopatch_source_boxed(
     fetcher: &Arc<Fetcher>,
@@ -322,9 +316,10 @@ async fn autopatch_cmake_vendor(
                 };
                 vars.insert(key.into(), value.into());
             }
-            "externalproject_add" => {
-                let git_repo = args.find_keyword_arg("GIT_REPOSITORY");
+            "externalproject_add" | "fetchcontent_declare" => {
+                let git_repo = args.find_keyword_arg_expect_url("GIT_REPOSITORY");
                 let git_tag = args.find_keyword_arg("GIT_TAG");
+                let url = args.find_keyword_arg_expect_url("URL");
                 if let (Some(repo), Some(tag)) = (git_repo, git_tag) {
                     let name = format!("{name}-vendor_source{}", result.len());
                     let from = content[repo.range].to_string();
@@ -335,11 +330,21 @@ async fn autopatch_cmake_vendor(
                         from,
                         with: Replacement::Url(patched),
                     });
+                } else if let Some(url) = url {
+                    let name = format!("{name}-vendor_source{}", result.len());
+                    let from = content[url.range].to_string();
+                    let source = fetcher.fetch_url(&name, &url.value, true).await.context(format!("failed to fetch archive {name} {}", url.value))?;
+                    let patched = autopatch_source_boxed(&fetcher, &source).await?;
+                    result.insert(Substitution {
+                        path: rel_path.to_path_buf(),
+                        from,
+                        with: Replacement::Url(patched),
+                    });
                 }
             }
             "ament_vendor" => {
                 let vcs_type = args.find_keyword_arg("VCS_TYPE");
-                let vcs_url = args.find_keyword_arg("VCS_URL");
+                let vcs_url = args.find_keyword_arg_expect_url("VCS_URL");
                 let vcs_version = args.find_keyword_arg("VCS_VERSION");
 
                 if let (Some(vcs_url), Some(vcs_version)) = (vcs_url, vcs_version) {
@@ -351,7 +356,7 @@ async fn autopatch_cmake_vendor(
                                 .fetch_git(&name, &vcs_url.value, &vcs_version.value)
                                 .await?
                         }
-                        Some("zip") => fetcher.fetch_archive(&name, &vcs_url.value).await.context(format!("failed to fetch archive {name} {}", vcs_url.value))?,
+                        Some("zip") => fetcher.fetch_url(&name, &vcs_url.value, true).await.context(format!("failed to fetch archive {name} {}", vcs_url.value))?,
                         Some(ty) => {
                             return Err(anyhow::anyhow!("unsupported VCS_TYPE {ty}"));
                         }
@@ -373,6 +378,22 @@ async fn autopatch_cmake_vendor(
                     }
                 }
             }
+            "file" => {
+                let url = args.find_keyword_arg_expect_url("DOWNLOAD");
+                if let Some(url) = url {
+                    let name = format!("{name}-vendor_source{}", result.len());
+                    let from = content[url.range].to_string();
+                    let source = fetcher.fetch_url(&name, &url.value, false).await.context(format!("failed to fetch archive {name} {}", url.value))?;
+                    result.insert(Substitution {
+                        path: rel_path.to_path_buf(),
+                        from,
+                        with: Replacement::Download(PatchedSource {
+                            source,
+                            substitutions: BTreeSet::new(),
+                        }),
+                    });
+                }
+            }
             _ => {}
         }
     }
@@ -390,15 +411,24 @@ pub async fn autopatch_source(fetcher: &Arc<Fetcher>, src: &Source) -> Result<Pa
             continue;
         }
         let rel_path = file.path().strip_prefix(src.path())?;
+        if rel_path.to_string_lossy().to_ascii_lowercase().contains("test") {
+            continue;
+        }
         let filename = file.file_name().to_string_lossy();
+        if filename == "ci-build.cmake" {
+            continue;
+        }
         if filename == "CMakeLists.txt"
             || filename.ends_with(".cmake")
             || filename.ends_with(".cmake.in")
         {
-            let subst = autopatch_cmake_vendor(&fetcher, src.name(), file.path(), rel_path)
-                .await
-                .context(format!("faild to patch {src:?}"))?;
-            substitutions.extend(subst);
+            let subst = autopatch_cmake_vendor(&fetcher, src.name(), file.path(), rel_path).await;
+            match subst {
+                Ok(subst) => substitutions.extend(subst),
+                Err(err) => {
+                    warn!("failed to autopatch {file:?}: {err}");
+                }
+            }
         }
     }
 
@@ -445,5 +475,30 @@ mod test {
             println!("{:?}", sub);
         }
         subs.iter().next().unwrap();
+    }
+
+    #[test]
+    fn test_cmake_tokenize() {
+        let src = r#"cmake_minimum_required(VERSION 3.6)
+project(pybind11-json-download NONE)
+
+include(ExternalProject)
+ExternalProject_Add(
+    pybind11_json
+    PREFIX .
+    GIT_REPOSITORY "https://github.com/pybind/pybind11_json.git"
+    GIT_TAG        0.2.13
+    GIT_CONFIG     advice.detachedHead=false  # otherwise we'll get "You are in 'detached HEAD' state..."
+    SOURCE_DIR     "${CMAKE_BINARY_DIR}/third-party/pybind11-json"
+    GIT_SHALLOW    ON        # No history needed (requires cmake 3.6)
+    # Override default steps with no action, we just want the clone step.
+    CONFIGURE_COMMAND ""
+    BUILD_COMMAND ""
+    INSTALL_COMMAND ""
+    )"#;
+        let calls = cmake_find_calls(src);
+        for call in calls {
+            println!("{:?}", call);
+        }
     }
 }

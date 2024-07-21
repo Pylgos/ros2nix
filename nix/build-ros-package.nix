@@ -15,6 +15,7 @@
   doCheck ? false,
   dontUseCmakeConfigure ? true,
   strictDeps ? true,
+  dontWrapQtApps ? true,
   passthru ? { },
   ...
 }@args:
@@ -77,7 +78,7 @@ let
           rm -rf /build/log
         '';
 
-      inherit strictDeps dontUseCmakeConfigure;
+      inherit strictDeps dontUseCmakeConfigure dontWrapQtApps;
 
       passthru = {
         shell = mkShell {

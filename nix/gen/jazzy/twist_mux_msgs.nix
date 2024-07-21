@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "twist_mux_msgs";
   version = "3.0.1-3";
   src = sources.twist_mux_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ action_msgs rosidl_default_runtime ];
   depsTargetTarget = [  ];

@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "ur_controllers";
   version = "2.4.5-1";
   src = sources.ur_controllers;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ angles controller_interface joint_trajectory_controller lifecycle_msgs pluginlib rclcpp_lifecycle rcutils realtime_tools std_msgs std_srvs ur_dashboard_msgs ur_msgs ];
   depsTargetTarget = [  ];

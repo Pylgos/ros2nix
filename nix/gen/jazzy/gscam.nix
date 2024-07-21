@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "gscam";
   version = "2.0.2-5";
   src = sources.gscam;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ camera_calibration_parsers camera_info_manager class_loader cv_bridge gst_all_1.gst-plugins-base gst_all_1.gstreamer image_transport rclcpp rclcpp_components sensor_msgs ];
   depsTargetTarget = [  ];

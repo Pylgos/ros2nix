@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "ublox_gps";
   version = "2.3.0-4";
   src = sources.ublox_gps;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ asio diagnostic_msgs diagnostic_updater geometry_msgs rcl_interfaces rclcpp rclcpp_components sensor_msgs std_msgs tf2 ublox_msgs ublox_serialization ];
   depsTargetTarget = [  ];

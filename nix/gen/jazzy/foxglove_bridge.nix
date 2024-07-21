@@ -39,10 +39,10 @@ buildRosPackage {
   pname = "foxglove_bridge";
   version = "0.7.7-1";
   src = sources.foxglove_bridge;
-  nativeBuildInputs = [ ament_cmake ros_environment ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ asio nlohmann_json openssl websocketpp ];
-  propagatedBuildInputs = [ ament_index_cpp openssl rclcpp rclcpp_components resource_retriever rosgraph_msgs zlib ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_index_cpp asio nlohmann_json openssl rclcpp rclcpp_components resource_retriever rosgraph_msgs websocketpp zlib ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

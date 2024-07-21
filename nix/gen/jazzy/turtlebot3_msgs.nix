@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "turtlebot3_msgs";
   version = "2.2.1-5";
   src = sources.turtlebot3_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ action_msgs builtin_interfaces rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

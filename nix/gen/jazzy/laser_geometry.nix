@@ -39,8 +39,8 @@ buildRosPackage {
   pname = "laser_geometry";
   version = "2.7.0-3";
   src = sources.laser_geometry;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ eigen3_cmake_module buildPackages.python3Packages.numpy ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake eigen3_cmake_module buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen rclcpp rclpy sensor_msgs sensor_msgs_py tf2 ];
   depsTargetTarget = [  ];

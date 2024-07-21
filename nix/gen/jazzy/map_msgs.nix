@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "map_msgs";
   version = "2.4.1-2";
   src = sources.map_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ nav_msgs rosidl_default_runtime sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

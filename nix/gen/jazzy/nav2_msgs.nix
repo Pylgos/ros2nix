@@ -33,10 +33,10 @@ buildRosPackage {
   pname = "nav2_msgs";
   version = "1.3.1-1";
   src = sources.nav2_msgs;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ rosidl_default_generators ];
-  buildInputs = [ nav2_common ];
-  propagatedBuildInputs = [ action_msgs builtin_interfaces geographic_msgs geometry_msgs nav_msgs rclcpp std_msgs ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ action_msgs builtin_interfaces geographic_msgs geometry_msgs nav2_common nav_msgs rclcpp std_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

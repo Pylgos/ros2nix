@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "laser_filters";
   version = "2.0.7-3";
   src = sources.laser_filters;
-  nativeBuildInputs = [ ament_cmake_auto ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_auto ];
   buildInputs = [  ];
   propagatedBuildInputs = [ angles filters laser_geometry message_filters pluginlib rclcpp rclcpp_lifecycle sensor_msgs tf2 tf2_ros ];
   depsTargetTarget = [  ];

@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "swri_console_util";
   version = "3.6.1-3";
   src = sources.swri_console_util;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp ];
   depsTargetTarget = [  ];

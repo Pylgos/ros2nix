@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "rcpputils";
   version = "2.11.0-2";
   src = sources.rcpputils;
-  nativeBuildInputs = [ ament_cmake ament_cmake_gen_version_h ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_gen_version_h ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rcutils ];
   depsTargetTarget = [  ];

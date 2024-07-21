@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "qt_gui_core";
   version = "2.7.4-2";
   src = sources.qt_gui_core;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

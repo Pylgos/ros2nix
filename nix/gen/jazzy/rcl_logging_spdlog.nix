@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "rcl_logging_spdlog";
   version = "3.1.0-2";
   src = sources.rcl_logging_spdlog;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rcl_logging_interface rcpputils rcutils spdlog spdlog_vendor ];
   depsTargetTarget = [  ];

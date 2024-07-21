@@ -32,10 +32,10 @@ buildRosPackage {
   pname = "pcl_conversions";
   version = "2.6.1-4";
   src = sources.pcl_conversions;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ pcl ];
-  propagatedBuildInputs = [ eigen message_filters pcl_msgs rclcpp sensor_msgs std_msgs ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ eigen message_filters pcl pcl_msgs rclcpp sensor_msgs std_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

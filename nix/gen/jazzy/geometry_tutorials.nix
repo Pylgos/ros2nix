@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "geometry_tutorials";
   version = "0.3.6-5";
   src = sources.geometry_tutorials;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

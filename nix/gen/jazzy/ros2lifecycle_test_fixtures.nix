@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "ros2lifecycle_test_fixtures";
   version = "0.32.1-1";
   src = sources.ros2lifecycle_test_fixtures;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rclcpp_lifecycle ];
   depsTargetTarget = [  ];

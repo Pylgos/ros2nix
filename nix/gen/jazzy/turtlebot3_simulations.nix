@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "turtlebot3_simulations";
   version = "2.2.5-5";
   src = sources.turtlebot3_simulations;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ turtlebot3_fake_node turtlebot3_gazebo ];
   depsTargetTarget = [  ];

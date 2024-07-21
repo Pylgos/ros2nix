@@ -41,10 +41,10 @@ buildRosPackage {
   pname = "diff_drive_controller";
   version = "4.9.0-1";
   src = sources.diff_drive_controller;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ generate_parameter_library ];
-  propagatedBuildInputs = [ backward_ros controller_interface geometry_msgs hardware_interface nav_msgs pluginlib rclcpp rclcpp_lifecycle rcpputils realtime_tools tf2 tf2_msgs ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ backward_ros controller_interface generate_parameter_library geometry_msgs hardware_interface nav_msgs pluginlib rclcpp rclcpp_lifecycle rcpputils realtime_tools tf2 tf2_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

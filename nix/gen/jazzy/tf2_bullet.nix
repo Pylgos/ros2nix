@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "tf2_bullet";
   version = "0.36.4-1";
   src = sources.tf2_bullet;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ bullet geometry_msgs tf2 tf2_ros ];
   depsTargetTarget = [  ];

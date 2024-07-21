@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "spacenav";
   version = "3.3.0-3";
   src = sources.spacenav;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs libspnav rclcpp rclcpp_components sensor_msgs spacenavd ];
   depsTargetTarget = [  ];

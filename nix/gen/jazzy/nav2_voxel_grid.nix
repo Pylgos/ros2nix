@@ -29,10 +29,10 @@ buildRosPackage {
   pname = "nav2_voxel_grid";
   version = "1.3.1-1";
   src = sources.nav2_voxel_grid;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ nav2_common ];
-  propagatedBuildInputs = [ rclcpp ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ nav2_common rclcpp ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

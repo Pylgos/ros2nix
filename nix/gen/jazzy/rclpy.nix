@@ -53,10 +53,10 @@ buildRosPackage {
   pname = "rclpy";
   version = "7.1.1-2";
   src = sources.rclpy;
-  nativeBuildInputs = [ ament_cmake python_cmake_module rmw_implementation_cmake ];
-  propagatedNativeBuildInputs = [ ament_index_python buildPackages.python3Packages.pyyaml rmw rpyutils ];
-  buildInputs = [ pybind11_vendor rcpputils rcutils ];
-  propagatedBuildInputs = [ action_msgs builtin_interfaces lifecycle_msgs rcl rcl_action rcl_interfaces rcl_lifecycle rcl_logging_interface rcl_yaml_param_parser rmw_implementation rosgraph_msgs rosidl_runtime_c unique_identifier_msgs ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_index_python buildPackages.python3Packages.pyyaml python_cmake_module rmw rmw_implementation_cmake rpyutils ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ action_msgs builtin_interfaces lifecycle_msgs pybind11_vendor rcl rcl_action rcl_interfaces rcl_lifecycle rcl_logging_interface rcl_yaml_param_parser rcpputils rcutils rmw_implementation rosgraph_msgs rosidl_runtime_c unique_identifier_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "point_cloud_msg_wrapper";
   version = "1.0.7-5";
   src = sources.point_cloud_msg_wrapper;
-  nativeBuildInputs = [ ament_cmake ament_cmake_auto ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_auto ];
   buildInputs = [  ];
   propagatedBuildInputs = [ sensor_msgs ];
   depsTargetTarget = [  ];

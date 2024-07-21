@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "py_trees";
   version = "2.2.1-4";
   src = sources.py_trees;
-  nativeBuildInputs = [ buildPackages.python3Packages.setuptools ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.setuptools ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.pydot ];
   depsTargetTarget = [  ];

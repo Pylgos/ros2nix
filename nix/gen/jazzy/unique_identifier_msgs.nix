@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "unique_identifier_msgs";
   version = "2.5.0-3";
   src = sources.unique_identifier_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_core_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_core_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_core_runtime ];
   depsTargetTarget = [  ];

@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "ros_workspace";
   version = "1.0.3-6";
   src = sources.ros_workspace;
-  nativeBuildInputs = [ ament_cmake_core ament_package cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_package cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

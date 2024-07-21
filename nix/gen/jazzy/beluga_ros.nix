@@ -39,8 +39,8 @@ buildRosPackage {
   pname = "beluga_ros";
   version = "2.0.2-1";
   src = sources.beluga_ros;
-  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
-  propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ beluga geometry_msgs nav_msgs python3Packages.h5py python3Packages.matplotlib python3Packages.scipy sensor_msgs std_msgs tf2 tf2_eigen tf2_geometry_msgs tf2_ros visualization_msgs ];
   depsTargetTarget = [  ];

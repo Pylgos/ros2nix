@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "dwb_msgs";
   version = "1.3.1-1";
   src = sources.dwb_msgs;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs nav_2d_msgs nav_msgs rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "shared_queues_vendor";
   version = "0.26.4-1";
   src = sources.shared_queues_vendor;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

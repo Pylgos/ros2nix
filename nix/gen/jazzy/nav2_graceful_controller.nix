@@ -40,8 +40,8 @@ buildRosPackage {
   pname = "nav2_graceful_controller";
   version = "1.3.1-1";
   src = sources.nav2_graceful_controller;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ angles geometry_msgs nav2_common nav2_core nav2_costmap_2d nav2_msgs nav2_util nav_2d_utils pluginlib rclcpp tf2 tf2_geometry_msgs ];
   depsTargetTarget = [  ];

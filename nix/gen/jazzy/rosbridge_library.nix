@@ -43,8 +43,8 @@ buildRosPackage {
   pname = "rosbridge_library";
   version = "1.3.2-3";
   src = sources.rosbridge_library;
-  nativeBuildInputs = [ ament_cmake ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.pillow python3Packages.pymongo rclpy rosidl_default_runtime ];
   depsTargetTarget = [  ];

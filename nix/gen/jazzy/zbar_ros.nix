@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "zbar_ros";
   version = "0.6.0-1";
   src = sources.zbar_ros;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge rclcpp sensor_msgs std_msgs zbar zbar_ros_interfaces ];
   depsTargetTarget = [  ];

@@ -26,10 +26,10 @@ buildRosPackage {
   pname = "rclpy_message_converter_msgs";
   version = "2.0.1-4";
   src = sources.rclpy_message_converter_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ builtin_interfaces ];
-  propagatedBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ builtin_interfaces ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

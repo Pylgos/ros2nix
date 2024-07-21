@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "std_srvs";
   version = "5.3.5-1";
   src = sources.std_srvs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime ];
   depsTargetTarget = [  ];

@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "proxsuite";
   version = "0.6.5-1";
   src = sources.proxsuite;
-  nativeBuildInputs = [ cmake doxygen git ];
-  propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake doxygen git buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen python3Packages.scipy ];
   depsTargetTarget = [  ];

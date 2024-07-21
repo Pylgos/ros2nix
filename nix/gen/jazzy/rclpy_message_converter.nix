@@ -38,10 +38,10 @@ buildRosPackage {
   pname = "rclpy_message_converter";
   version = "2.0.1-4";
   src = sources.rclpy_message_converter;
-  nativeBuildInputs = [ rosidl_default_generators ];
-  propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy rosidl_parser ];
-  buildInputs = [ builtin_interfaces ];
-  propagatedBuildInputs = [ rclpy rosidl_runtime_py ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy rosidl_default_generators rosidl_parser ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ builtin_interfaces rclpy rosidl_runtime_py ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

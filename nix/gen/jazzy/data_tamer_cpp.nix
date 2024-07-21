@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "data_tamer_cpp";
   version = "0.9.4-4";
   src = sources.data_tamer_cpp;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ data_tamer_msgs mcap_vendor rclcpp ];
   depsTargetTarget = [  ];

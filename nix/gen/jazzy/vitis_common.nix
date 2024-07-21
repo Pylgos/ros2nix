@@ -28,10 +28,10 @@ buildRosPackage {
   pname = "vitis_common";
   version = "0.4.2-4";
   src = sources.vitis_common;
-  nativeBuildInputs = [ ament_cmake ament_vitis ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ opencl-headers ];
-  propagatedBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_vitis ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ opencl-headers ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

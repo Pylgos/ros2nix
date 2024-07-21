@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "perception";
   version = "0.11.0-1";
   src = sources.perception;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ image_common image_pipeline image_transport_plugins laser_filters laser_geometry perception_pcl ros_base vision_opencv ];
   depsTargetTarget = [  ];

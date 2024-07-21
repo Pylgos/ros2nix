@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "diagnostics";
   version = "3.1.2-3";
   src = sources.diagnostics;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diagnostic_aggregator diagnostic_common_diagnostics diagnostic_updater self_test ];
   depsTargetTarget = [  ];

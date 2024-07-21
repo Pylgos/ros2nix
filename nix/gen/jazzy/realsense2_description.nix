@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "realsense2_description";
   version = "4.55.1-3";
   src = sources.realsense2_description;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ launch_ros rclcpp rclcpp_components realsense2_camera_msgs xacro ];
   depsTargetTarget = [  ];

@@ -42,8 +42,8 @@ buildRosPackage {
   pname = "libcaer_driver";
   version = "1.3.3-1";
   src = sources.libcaer_driver;
-  nativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_ros ros_environment ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_ros ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ camera_info_manager event_camera_msgs image_transport libcaer_vendor rclcpp rclcpp_components sensor_msgs std_srvs ];
   depsTargetTarget = [  ];

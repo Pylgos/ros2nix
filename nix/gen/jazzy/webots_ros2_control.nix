@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "webots_ros2_control";
   version = "2023.1.2-4";
   src = sources.webots_ros2_control;
-  nativeBuildInputs = [ ament_cmake ros_environment ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ controller_manager hardware_interface pluginlib rclcpp rclcpp_lifecycle webots_ros2_driver ];
   depsTargetTarget = [  ];

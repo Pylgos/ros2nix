@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "action_tutorials_cpp";
   version = "0.33.4-1";
   src = sources.action_tutorials_cpp;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ action_tutorials_interfaces rclcpp rclcpp_action rclcpp_components ];
   depsTargetTarget = [  ];

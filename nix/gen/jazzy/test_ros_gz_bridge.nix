@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "test_ros_gz_bridge";
   version = "1.0.0-1";
   src = sources.test_ros_gz_bridge;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ros_gz_bridge ];
   depsTargetTarget = [  ];

@@ -37,10 +37,10 @@ buildRosPackage {
   pname = "canopen_tests";
   version = "0.2.9-2";
   src = sources.canopen_tests;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ lely_core_libraries ];
-  propagatedBuildInputs = [ canopen_402_driver canopen_core canopen_fake_slaves canopen_proxy_driver canopen_ros2_controllers controller_manager forward_command_controller joint_state_broadcaster joint_trajectory_controller robot_state_publisher xacro ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ canopen_402_driver canopen_core canopen_fake_slaves canopen_proxy_driver canopen_ros2_controllers controller_manager forward_command_controller joint_state_broadcaster joint_trajectory_controller lely_core_libraries robot_state_publisher xacro ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

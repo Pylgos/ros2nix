@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "aruco_opencv_msgs";
   version = "6.0.1-1";
   src = sources.aruco_opencv_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

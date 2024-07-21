@@ -44,8 +44,8 @@ buildRosPackage {
   pname = "rviz_assimp_vendor";
   version = "14.1.2-1";
   src = sources.rviz_assimp_vendor;
-  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
   buildInputs = [  ];
   propagatedBuildInputs = [ assimp ];
   depsTargetTarget = [  ];

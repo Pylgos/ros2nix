@@ -26,10 +26,10 @@ buildRosPackage {
   pname = "eigen3_cmake_module";
   version = "0.3.0-3";
   src = sources.eigen3_cmake_module;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ ament_cmake ];
-  propagatedBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

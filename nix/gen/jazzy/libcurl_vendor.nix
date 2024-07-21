@@ -43,10 +43,10 @@ buildRosPackage {
   pname = "libcurl_vendor";
   version = "3.4.3-1";
   src = sources.libcurl_vendor;
-  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
-  propagatedNativeBuildInputs = [ curl pkg-config ];
-  buildInputs = [ file ];
-  propagatedBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package curl pkg-config ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ file ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

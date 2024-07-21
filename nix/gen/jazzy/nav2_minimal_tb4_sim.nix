@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "nav2_minimal_tb4_sim";
   version = "1.0.1-1";
   src = sources.nav2_minimal_tb4_sim;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ nav2_minimal_tb4_description robot_state_publisher ros_gz_bridge ros_gz_image ros_gz_interfaces ros_gz_sim xacro ];
   depsTargetTarget = [  ];

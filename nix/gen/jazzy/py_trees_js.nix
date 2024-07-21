@@ -27,10 +27,10 @@ buildRosPackage {
   pname = "py_trees_js";
   version = "0.6.4-1";
   src = sources.py_trees_js;
-  nativeBuildInputs = [ buildPackages.python3Packages.setuptools wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ qt5.qttools.dev ];
-  propagatedBuildInputs = [ python3Packages.pyqtwebengine python3Packages.pyside2 ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.setuptools ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ python3Packages.pyqtwebengine python3Packages.pyside2 qt5.qttools.dev ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

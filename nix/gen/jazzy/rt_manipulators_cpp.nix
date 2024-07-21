@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "rt_manipulators_cpp";
   version = "1.0.0-4";
   src = sources.rt_manipulators_cpp;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ eigen3_cmake_module ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake eigen3_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ dynamixel_sdk eigen libyamlcpp yaml_cpp_vendor ];
   depsTargetTarget = [  ];

@@ -40,8 +40,8 @@ buildRosPackage {
   pname = "tf2_sensor_msgs";
   version = "0.36.4-1";
   src = sources.tf2_sensor_msgs;
-  nativeBuildInputs = [ ament_cmake python_cmake_module ];
-  propagatedNativeBuildInputs = [ eigen3_cmake_module buildPackages.python3Packages.numpy ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake eigen3_cmake_module buildPackages.python3Packages.numpy python_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen geometry_msgs sensor_msgs sensor_msgs_py std_msgs tf2 tf2_ros tf2_ros_py ];
   depsTargetTarget = [  ];

@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "image_common";
   version = "5.1.4-1";
   src = sources.image_common;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ camera_calibration_parsers camera_info_manager image_transport ];
   depsTargetTarget = [  ];

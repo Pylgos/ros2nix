@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "diagnostic_common_diagnostics";
   version = "3.1.2-3";
   src = sources.diagnostic_common_diagnostics;
-  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diagnostic_updater rclpy ];
   depsTargetTarget = [  ];

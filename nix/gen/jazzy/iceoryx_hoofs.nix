@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "iceoryx_hoofs";
   version = "2.0.5-6";
   src = sources.iceoryx_hoofs;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ acl ];
   depsTargetTarget = [  ];

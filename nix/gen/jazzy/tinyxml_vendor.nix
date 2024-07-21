@@ -39,8 +39,8 @@ buildRosPackage {
   pname = "tinyxml_vendor";
   version = "0.10.0-3";
   src = sources.tinyxml_vendor;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ tinyxml ];
   depsTargetTarget = [  ];

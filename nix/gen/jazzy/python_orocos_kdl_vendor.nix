@@ -45,8 +45,8 @@ buildRosPackage {
   pname = "python_orocos_kdl_vendor";
   version = "0.5.1-2";
   src = sources.python_orocos_kdl_vendor;
-  nativeBuildInputs = [ ament_cmake ament_cmake_python python_cmake_module ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python python_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ orocos_kdl_vendor pybind11_vendor python3Packages.pykdl ];
   depsTargetTarget = [  ];

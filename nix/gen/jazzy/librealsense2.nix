@@ -181,10 +181,10 @@ buildRosPackage {
   pname = "librealsense2";
   version = "2.55.1-1";
   src = sources.librealsense2;
-  nativeBuildInputs = [ cmake git pkg-config ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ libusb1 openssl udev ];
-  propagatedBuildInputs = [ glfw3 libGL libGLU xorg.libX11 ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake git pkg-config ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ glfw3 libGL libGLU libusb1 openssl udev xorg.libX11 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

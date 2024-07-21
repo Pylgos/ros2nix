@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "autoware_common_msgs";
   version = "1.1.0-1";
   src = sources.autoware_common_msgs;
-  nativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime ];
   depsTargetTarget = [  ];

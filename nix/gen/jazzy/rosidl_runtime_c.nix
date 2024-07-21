@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "rosidl_runtime_c";
   version = "4.6.3-1";
   src = sources.rosidl_runtime_c;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rcutils rosidl_typesupport_interface ];
   depsTargetTarget = [  ];

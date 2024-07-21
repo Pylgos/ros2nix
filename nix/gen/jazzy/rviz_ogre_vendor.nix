@@ -90,8 +90,8 @@ buildRosPackage {
   pname = "rviz_ogre_vendor";
   version = "14.1.2-1";
   src = sources.rviz_ogre_vendor;
-  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
   buildInputs = [  ];
   propagatedBuildInputs = [ freetype libGL libGLU xorg.libX11 xorg.libXaw xorg.libXrandr ];
   depsTargetTarget = [  ];

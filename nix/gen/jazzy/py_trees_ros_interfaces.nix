@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "py_trees_ros_interfaces";
   version = "2.1.0-4";
   src = sources.py_trees_ros_interfaces;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ action_msgs diagnostic_msgs geometry_msgs rosidl_default_runtime unique_identifier_msgs ];
   depsTargetTarget = [  ];

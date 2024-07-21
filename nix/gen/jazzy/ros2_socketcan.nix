@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "ros2_socketcan";
   version = "1.2.0-3";
   src = sources.ros2_socketcan;
-  nativeBuildInputs = [ ament_cmake_auto ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_auto ];
   buildInputs = [  ];
   propagatedBuildInputs = [ can_msgs lifecycle_msgs rclcpp rclcpp_components rclcpp_lifecycle ros2_socketcan_msgs ];
   depsTargetTarget = [  ];

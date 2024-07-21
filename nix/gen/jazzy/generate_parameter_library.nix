@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "generate_parameter_library";
   version = "0.3.8-4";
   src = sources.generate_parameter_library;
-  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
-  propagatedNativeBuildInputs = [ generate_parameter_library_py ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python generate_parameter_library_py ];
   buildInputs = [  ];
   propagatedBuildInputs = [ fmt parameter_traits rclcpp rclcpp_lifecycle rclpy rsl tcb_span tl_expected ];
   depsTargetTarget = [  ];

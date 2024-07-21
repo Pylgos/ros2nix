@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "udp_driver";
   version = "1.2.0-4";
   src = sources.udp_driver;
-  nativeBuildInputs = [ ament_cmake_auto asio_cmake_module ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_auto asio_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ asio io_context lifecycle_msgs rclcpp rclcpp_components rclcpp_lifecycle std_msgs udp_msgs ];
   depsTargetTarget = [  ];

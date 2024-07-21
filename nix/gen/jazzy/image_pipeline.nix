@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "image_pipeline";
   version = "5.0.1-3";
   src = sources.image_pipeline;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ camera_calibration depth_image_proc image_proc image_publisher image_rotate image_view stereo_image_proc ];
   depsTargetTarget = [  ];

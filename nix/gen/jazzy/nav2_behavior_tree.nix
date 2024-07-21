@@ -45,10 +45,10 @@ buildRosPackage {
   pname = "nav2_behavior_tree";
   version = "1.3.1-1";
   src = sources.nav2_behavior_tree;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ nav2_common ];
-  propagatedBuildInputs = [ behaviortree_cpp builtin_interfaces geometry_msgs lifecycle_msgs nav2_msgs nav2_util nav_msgs rclcpp rclcpp_action rclcpp_lifecycle sensor_msgs std_msgs std_srvs tf2 tf2_geometry_msgs tf2_ros ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ behaviortree_cpp builtin_interfaces geometry_msgs lifecycle_msgs nav2_common nav2_msgs nav2_util nav_msgs rclcpp rclcpp_action rclcpp_lifecycle sensor_msgs std_msgs std_srvs tf2 tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -26,10 +26,10 @@ buildRosPackage {
   pname = "ament_cmake_gen_version_h";
   version = "2.5.2-1";
   src = sources.ament_cmake_gen_version_h;
-  nativeBuildInputs = [ ament_package ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ];
-  buildInputs = [ ament_package ];
-  propagatedBuildInputs = [ ament_cmake_core ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_package ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake_core ament_package ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

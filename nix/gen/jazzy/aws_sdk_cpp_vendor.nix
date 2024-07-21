@@ -89,8 +89,8 @@ buildRosPackage {
   pname = "aws_sdk_cpp_vendor";
   version = "0.2.1-3";
   src = sources.aws_sdk_cpp_vendor;
-  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package curl ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package curl ];
   buildInputs = [  ];
   propagatedBuildInputs = [ openssl zlib ];
   depsTargetTarget = [  ];

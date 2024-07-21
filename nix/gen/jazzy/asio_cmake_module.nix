@@ -27,10 +27,10 @@ buildRosPackage {
   pname = "asio_cmake_module";
   version = "1.2.0-4";
   src = sources.asio_cmake_module;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ ament_cmake ];
-  propagatedBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

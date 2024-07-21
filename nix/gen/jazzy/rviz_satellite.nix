@@ -36,10 +36,10 @@ buildRosPackage {
   pname = "rviz_satellite";
   version = "4.0.0-1";
   src = sources.rviz_satellite;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ qt5.qtbase ];
-  propagatedBuildInputs = [ angles rclcpp rcpputils rviz_common rviz_default_plugins sensor_msgs tf2_ros ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ angles qt5.qtbase rclcpp rcpputils rviz_common rviz_default_plugins sensor_msgs tf2_ros ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

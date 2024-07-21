@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "autoware_adapi_version_msgs";
   version = "1.2.1-1";
   src = sources.autoware_adapi_version_msgs;
-  nativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime ];
   depsTargetTarget = [  ];

@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "rosbag2_test_common";
   version = "0.26.4-1";
   src = sources.rosbag2_test_common;
-  nativeBuildInputs = [ ament_cmake ament_cmake_python python_cmake_module ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python python_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rcutils ];
   depsTargetTarget = [  ];

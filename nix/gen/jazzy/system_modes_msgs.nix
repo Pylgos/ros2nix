@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "system_modes_msgs";
   version = "0.9.0-6";
   src = sources.system_modes_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime ];
   depsTargetTarget = [  ];

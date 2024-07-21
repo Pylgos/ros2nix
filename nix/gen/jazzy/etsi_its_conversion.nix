@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "etsi_its_conversion";
   version = "2.0.2-1";
   src = sources.etsi_its_conversion;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ ros_environment ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ etsi_its_cam_conversion etsi_its_denm_conversion rclcpp rclcpp_components std_msgs udp_msgs ];
   depsTargetTarget = [  ];

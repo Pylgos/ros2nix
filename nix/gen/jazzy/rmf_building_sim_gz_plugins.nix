@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "rmf_building_sim_gz_plugins";
   version = "2.3.2-1";
   src = sources.rmf_building_sim_gz_plugins;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ gz_gui_vendor gz_msgs_vendor gz_plugin_vendor gz_rendering_vendor gz_sim_vendor gz_transport_vendor menge_vendor qt5.qtbase qt5.qtdeclarative rclcpp rmf_door_msgs rmf_fleet_msgs rmf_lift_msgs ];
   depsTargetTarget = [  ];

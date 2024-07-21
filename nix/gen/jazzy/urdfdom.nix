@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "urdfdom";
   version = "4.0.0-3";
   src = sources.urdfdom;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ console-bridge console_bridge_vendor tinyxml-2 tinyxml2_vendor urdfdom_headers ];
   depsTargetTarget = [  ];

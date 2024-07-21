@@ -41,8 +41,8 @@ buildRosPackage {
   pname = "iceoryx_posh";
   version = "2.0.5-6";
   src = sources.iceoryx_posh;
-  nativeBuildInputs = [ cmake git ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake git ];
   buildInputs = [  ];
   propagatedBuildInputs = [ iceoryx_hoofs ];
   depsTargetTarget = [  ];

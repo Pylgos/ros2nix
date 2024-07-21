@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "autoware_adapi_v1_msgs";
   version = "1.2.1-1";
   src = sources.autoware_adapi_v1_msgs;
-  nativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geographic_msgs geometry_msgs rosidl_default_runtime shape_msgs std_msgs unique_identifier_msgs ];
   depsTargetTarget = [  ];

@@ -41,8 +41,8 @@ buildRosPackage {
   pname = "rosbag2_tests";
   version = "0.26.4-1";
   src = sources.rosbag2_tests;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp ];
   depsTargetTarget = [  ];

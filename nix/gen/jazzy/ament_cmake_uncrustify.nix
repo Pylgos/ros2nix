@@ -28,10 +28,10 @@ buildRosPackage {
   pname = "ament_cmake_uncrustify";
   version = "0.17.1-1";
   src = sources.ament_cmake_uncrustify;
-  nativeBuildInputs = [ ament_cmake_core ];
-  propagatedNativeBuildInputs = [ ament_cmake_test ament_uncrustify ];
-  buildInputs = [ ament_cmake_core ];
-  propagatedBuildInputs = [ ament_cmake_test ament_uncrustify ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_uncrustify ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake_core ament_cmake_test ament_uncrustify ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

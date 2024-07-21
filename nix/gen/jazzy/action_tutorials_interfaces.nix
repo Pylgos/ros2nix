@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "action_tutorials_interfaces";
   version = "0.33.4-1";
   src = sources.action_tutorials_interfaces;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime ];
   depsTargetTarget = [  ];

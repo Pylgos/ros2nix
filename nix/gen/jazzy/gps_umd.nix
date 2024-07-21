@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "gps_umd";
   version = "2.0.3-2";
   src = sources.gps_umd;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ gps_msgs gps_tools gpsd_client ];
   depsTargetTarget = [  ];

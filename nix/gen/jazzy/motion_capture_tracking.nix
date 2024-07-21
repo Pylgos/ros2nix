@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "motion_capture_tracking";
   version = "1.0.3-3";
   src = sources.motion_capture_tracking;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ eigen3_cmake_module ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake eigen3_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen motion_capture_tracking_interfaces pcl rclcpp sensor_msgs tf2_ros ];
   depsTargetTarget = [  ];

@@ -31,10 +31,10 @@ buildRosPackage {
   pname = "lttngpy";
   version = "8.2.1-1";
   src = sources.lttngpy;
-  nativeBuildInputs = [ ament_cmake python_cmake_module ];
-  propagatedNativeBuildInputs = [ rpyutils ];
-  buildInputs = [ pybind11_vendor ];
-  propagatedBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake python_cmake_module rpyutils ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ pybind11_vendor ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

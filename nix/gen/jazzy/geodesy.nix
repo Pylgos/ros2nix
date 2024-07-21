@@ -30,10 +30,10 @@ buildRosPackage {
   pname = "geodesy";
   version = "1.0.6-2";
   src = sources.geodesy;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ python3Packages.catkin-pkg ];
-  propagatedBuildInputs = [ angles geographic_msgs geometry_msgs python3Packages.pyproj sensor_msgs unique_identifier_msgs ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ angles geographic_msgs geometry_msgs python3Packages.catkin-pkg python3Packages.pyproj sensor_msgs unique_identifier_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "angles";
   version = "1.16.0-5";
   src = sources.angles;
-  nativeBuildInputs = [ ament_cmake_python buildPackages.python3Packages.setuptools ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python buildPackages.python3Packages.setuptools ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

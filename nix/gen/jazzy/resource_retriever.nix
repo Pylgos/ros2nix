@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "resource_retriever";
   version = "3.4.3-1";
   src = sources.resource_retriever;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [ ament_index_python ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ament_index_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp libcurl_vendor ];
   depsTargetTarget = [  ];

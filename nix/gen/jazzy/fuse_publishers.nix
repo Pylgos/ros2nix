@@ -39,8 +39,8 @@ buildRosPackage {
   pname = "fuse_publishers";
   version = "1.1.1-1";
   src = sources.fuse_publishers;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ fuse_core fuse_msgs fuse_variables geometry_msgs nav_msgs pluginlib rclcpp tf2 tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];

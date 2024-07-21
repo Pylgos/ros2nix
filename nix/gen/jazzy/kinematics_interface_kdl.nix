@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "kinematics_interface_kdl";
   version = "1.1.0-1";
   src = sources.kinematics_interface_kdl;
-  nativeBuildInputs = [ ament_cmake eigen3_cmake_module ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake eigen3_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen kdl_parser kinematics_interface pluginlib tf2_eigen_kdl ];
   depsTargetTarget = [  ];

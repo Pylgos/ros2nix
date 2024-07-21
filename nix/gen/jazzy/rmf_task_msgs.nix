@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "rmf_task_msgs";
   version = "3.3.1-1";
   src = sources.rmf_task_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rmf_dispenser_msgs rosidl_default_runtime ];
   depsTargetTarget = [  ];

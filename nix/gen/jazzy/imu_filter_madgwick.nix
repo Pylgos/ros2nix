@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "imu_filter_madgwick";
   version = "2.1.3-4";
   src = sources.imu_filter_madgwick;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs nav_msgs rclcpp rclcpp_action rclcpp_lifecycle sensor_msgs tf2_geometry_msgs tf2_ros visualization_msgs ];
   depsTargetTarget = [  ];

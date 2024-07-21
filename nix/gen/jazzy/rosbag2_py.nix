@@ -43,8 +43,8 @@ buildRosPackage {
   pname = "rosbag2_py";
   version = "0.26.4-1";
   src = sources.rosbag2_py;
-  nativeBuildInputs = [ ament_cmake_python ament_cmake_ros python_cmake_module ];
-  propagatedNativeBuildInputs = [ rpyutils ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_python ament_cmake_ros python_cmake_module rpyutils ];
   buildInputs = [  ];
   propagatedBuildInputs = [ pybind11_vendor rclpy rosbag2_compression rosbag2_cpp rosbag2_storage rosbag2_transport ];
   depsTargetTarget = [  ];

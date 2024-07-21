@@ -39,8 +39,8 @@ buildRosPackage {
   pname = "velodyne_pointcloud";
   version = "2.3.0-4";
   src = sources.velodyne_pointcloud;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ angles diagnostic_updater geometry_msgs libyamlcpp message_filters pcl rclcpp rclcpp_components sensor_msgs tf2 tf2_ros velodyne_msgs ];
   depsTargetTarget = [  ];

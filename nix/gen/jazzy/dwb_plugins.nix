@@ -35,10 +35,10 @@ buildRosPackage {
   pname = "dwb_plugins";
   version = "1.3.1-1";
   src = sources.dwb_plugins;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ nav2_common ];
-  propagatedBuildInputs = [ angles dwb_core nav2_util nav_2d_msgs nav_2d_utils pluginlib rclcpp ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ angles dwb_core nav2_common nav2_util nav_2d_msgs nav_2d_utils pluginlib rclcpp ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "warehouse_ros";
   version = "2.0.4-5";
   src = sources.warehouse_ros;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs openssl pluginlib python3Packages.boost rclcpp std_msgs tf2 tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];

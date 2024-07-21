@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "joy";
   version = "3.3.0-3";
   src = sources.joy;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rclcpp_components sdl2_vendor sensor_msgs ];
   depsTargetTarget = [  ];

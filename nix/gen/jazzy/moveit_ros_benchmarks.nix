@@ -35,10 +35,10 @@ buildRosPackage {
   pname = "moveit_ros_benchmarks";
   version = "2.10.0-1";
   src = sources.moveit_ros_benchmarks;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ moveit_core python3Packages.boost ];
-  propagatedBuildInputs = [ launch_param_builder moveit_common moveit_configs_utils moveit_ros_planning moveit_ros_warehouse pluginlib python3Packages.boost rclcpp tf2_eigen ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ launch_param_builder moveit_common moveit_configs_utils moveit_core moveit_ros_planning moveit_ros_warehouse pluginlib python3Packages.boost rclcpp tf2_eigen ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

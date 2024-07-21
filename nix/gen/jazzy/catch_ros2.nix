@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "catch_ros2";
   version = "0.2.1-2";
   src = sources.catch_ros2;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp ros2launch std_srvs ];
   depsTargetTarget = [  ];

@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "rosbag2_storage_default_plugins";
   version = "0.26.4-1";
   src = sources.rosbag2_storage_default_plugins;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosbag2_storage_mcap rosbag2_storage_sqlite3 ];
   depsTargetTarget = [  ];

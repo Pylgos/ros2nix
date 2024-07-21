@@ -32,10 +32,10 @@ buildRosPackage {
   pname = "mola_launcher";
   version = "1.0.6-1";
   src = sources.mola_launcher;
-  nativeBuildInputs = [ ament_cmake ament_cmake_gtest cmake ros_environment ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ ament_cmake_xmllint ];
-  propagatedBuildInputs = [ mola_kernel mrpt2 ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_gtest cmake ros_environment ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake_xmllint mola_kernel mrpt2 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

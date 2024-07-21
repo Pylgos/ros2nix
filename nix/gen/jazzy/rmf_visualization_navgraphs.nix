@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "rmf_visualization_navgraphs";
   version = "2.3.2-1";
   src = sources.rmf_visualization_navgraphs;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs rclcpp rclcpp_components rmf_building_map_msgs rmf_fleet_msgs rmf_traffic rmf_traffic_ros2 rmf_visualization_msgs visualization_msgs ];
   depsTargetTarget = [  ];

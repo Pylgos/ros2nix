@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "sros2_cmake";
   version = "0.13.2-1";
   src = sources.sros2_cmake;
-  nativeBuildInputs = [ ament_cmake ament_cmake_test ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_test ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ros2cli sros2 ];
   depsTargetTarget = [  ];

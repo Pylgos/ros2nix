@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "fuse_loss";
   version = "1.1.1-1";
   src = sources.fuse_loss;
-  nativeBuildInputs = [ ament_cmake_ros wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ceres-solver fuse_core pluginlib rclcpp ];
   depsTargetTarget = [  ];

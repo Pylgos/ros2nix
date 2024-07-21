@@ -30,10 +30,10 @@ buildRosPackage {
   pname = "rtcm_msgs";
   version = "1.1.6-4";
   src = sources.rtcm_msgs;
-  nativeBuildInputs = [ ament_cmake ros_environment rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ builtin_interfaces ];
-  propagatedBuildInputs = [ rosidl_default_runtime std_msgs ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ros_environment rosidl_default_generators ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

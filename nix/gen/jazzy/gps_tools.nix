@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "gps_tools";
   version = "2.0.3-2";
   src = sources.gps_tools;
-  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ gps_msgs nav_msgs rclcpp rclcpp_components rclpy sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

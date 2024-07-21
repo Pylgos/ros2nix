@@ -47,8 +47,8 @@ buildRosPackage {
   pname = "nav2_smac_planner";
   version = "1.3.1-1";
   src = sources.nav2_smac_planner;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ eigen3_cmake_module ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake eigen3_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ angles builtin_interfaces eigen geometry_msgs nav2_common nav2_core nav2_costmap_2d nav2_msgs nav2_util nav_msgs nlohmann_json ompl pluginlib rclcpp rclcpp_action rclcpp_lifecycle tf2_ros visualization_msgs ];
   depsTargetTarget = [  ];

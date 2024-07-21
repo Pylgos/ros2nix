@@ -28,10 +28,10 @@ buildRosPackage {
   pname = "ament_cmake_pep257";
   version = "0.17.1-1";
   src = sources.ament_cmake_pep257;
-  nativeBuildInputs = [ ament_cmake_core ];
-  propagatedNativeBuildInputs = [ ament_cmake_test ament_pep257 ];
-  buildInputs = [ ament_cmake_core ];
-  propagatedBuildInputs = [ ament_cmake_test ament_pep257 ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_pep257 ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake_core ament_cmake_test ament_pep257 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "nao_lola_command_msgs";
   version = "1.3.0-2";
   src = sources.nao_lola_command_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

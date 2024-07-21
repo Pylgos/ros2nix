@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "ecl_mobile_robot";
   version = "1.2.1-5";
   src = sources.ecl_mobile_robot;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ecl_build ecl_errors ecl_formatters ecl_geometry ecl_license ecl_linear_algebra ecl_math ];
   depsTargetTarget = [  ];

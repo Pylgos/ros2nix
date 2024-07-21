@@ -39,8 +39,8 @@ buildRosPackage {
   pname = "ros2launch_security_examples";
   version = "1.0.0-5";
   src = sources.ros2launch_security_examples;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_nodl example_interfaces rclcpp rclcpp_components rclpy ros2launch_security sensor_msgs ];
   depsTargetTarget = [  ];

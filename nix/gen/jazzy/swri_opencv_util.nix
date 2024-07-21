@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "swri_opencv_util";
   version = "3.6.1-3";
   src = sources.swri_opencv_util;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge python3Packages.boost swri_math_util ];
   depsTargetTarget = [  ];

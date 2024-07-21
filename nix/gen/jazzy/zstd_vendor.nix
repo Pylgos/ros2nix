@@ -41,8 +41,8 @@ buildRosPackage {
   pname = "zstd_vendor";
   version = "0.26.4-1";
   src = sources.zstd_vendor;
-  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
   buildInputs = [  ];
   propagatedBuildInputs = [ zstd ];
   depsTargetTarget = [  ];

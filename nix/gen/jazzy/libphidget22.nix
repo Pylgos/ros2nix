@@ -39,9 +39,9 @@ buildRosPackage {
   pname = "libphidget22";
   version = "2.3.3-2";
   src = sources.libphidget22;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ libusb1 ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
   propagatedBuildInputs = [ libusb1 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];

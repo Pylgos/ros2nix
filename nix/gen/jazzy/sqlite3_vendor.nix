@@ -45,8 +45,8 @@ buildRosPackage {
   pname = "sqlite3_vendor";
   version = "0.26.4-1";
   src = sources.sqlite3_vendor;
-  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
   buildInputs = [  ];
   propagatedBuildInputs = [ sqlite ];
   depsTargetTarget = [  ];

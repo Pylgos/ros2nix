@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "apriltag";
   version = "3.4.2-1";
   src = sources.apriltag;
-  nativeBuildInputs = [ cmake python3 buildPackages.python3Packages.numpy ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake python3 buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

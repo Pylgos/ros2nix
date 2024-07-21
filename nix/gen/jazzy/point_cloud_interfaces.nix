@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "point_cloud_interfaces";
   version = "4.0.0-1";
   src = sources.point_cloud_interfaces;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

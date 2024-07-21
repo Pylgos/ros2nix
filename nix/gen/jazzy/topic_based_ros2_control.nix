@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "topic_based_ros2_control";
   version = "0.2.0-3";
   src = sources.topic_based_ros2_control;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ angles hardware_interface rclcpp sensor_msgs ];
   depsTargetTarget = [  ];

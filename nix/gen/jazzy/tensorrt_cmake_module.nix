@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "tensorrt_cmake_module";
   version = "0.0.3-4";
   src = sources.tensorrt_cmake_module;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

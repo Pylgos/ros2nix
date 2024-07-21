@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "mola_navstate_fuse";
   version = "1.0.6-1";
   src = sources.mola_navstate_fuse;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ mola_common mola_imu_preintegration mola_kernel mrpt2 ];
   depsTargetTarget = [  ];

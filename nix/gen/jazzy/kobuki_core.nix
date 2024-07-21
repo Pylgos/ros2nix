@@ -35,10 +35,10 @@ buildRosPackage {
   pname = "kobuki_core";
   version = "1.4.0-4";
   src = sources.kobuki_core;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ ecl_build ];
-  propagatedBuildInputs = [ ecl_command_line ecl_config ecl_console ecl_converters ecl_devices ecl_geometry ecl_mobile_robot ecl_sigslots ecl_threads ecl_time ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ecl_build ecl_command_line ecl_config ecl_console ecl_converters ecl_devices ecl_geometry ecl_mobile_robot ecl_sigslots ecl_threads ecl_time ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

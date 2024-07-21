@@ -70,8 +70,8 @@ buildRosPackage {
   pname = "control_box_rst";
   version = "0.0.7-1";
   src = sources.control_box_rst;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen ];
   depsTargetTarget = [  ];

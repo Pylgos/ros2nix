@@ -41,8 +41,8 @@ buildRosPackage {
   pname = "rqt_common_plugins";
   version = "1.2.0-4";
   src = sources.rqt_common_plugins;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rqt_action rqt_bag rqt_bag_plugins rqt_console rqt_graph rqt_image_view rqt_msg rqt_plot rqt_publisher rqt_py_common rqt_py_console rqt_reconfigure rqt_service_caller rqt_shell rqt_srv rqt_topic ];
   depsTargetTarget = [  ];

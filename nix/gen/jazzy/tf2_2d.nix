@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "tf2_2d";
   version = "1.0.1-4";
   src = sources.tf2_2d;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen python3Packages.boost rclcpp tf2 tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];

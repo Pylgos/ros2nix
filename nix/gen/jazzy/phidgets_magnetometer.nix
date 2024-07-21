@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "phidgets_magnetometer";
   version = "2.3.3-2";
   src = sources.phidgets_magnetometer;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [ launch ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ phidgets_api rclcpp rclcpp_components sensor_msgs ];
   depsTargetTarget = [  ];

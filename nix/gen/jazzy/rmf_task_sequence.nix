@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "rmf_task_sequence";
   version = "2.5.1-1";
   src = sources.rmf_task_sequence;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ nlohmann_json nlohmann_json_schema_validator_vendor rmf_api_msgs rmf_task ];
   depsTargetTarget = [  ];

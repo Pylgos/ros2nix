@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "logging_demo";
   version = "0.33.4-1";
   src = sources.logging_demo;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rclcpp_components rcutils rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

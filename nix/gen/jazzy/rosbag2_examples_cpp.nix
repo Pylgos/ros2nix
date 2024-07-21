@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "rosbag2_examples_cpp";
   version = "0.26.4-1";
   src = sources.rosbag2_examples_cpp;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ example_interfaces rclcpp rosbag2_cpp ];
   depsTargetTarget = [  ];

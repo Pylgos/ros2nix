@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "avt_vimba_camera";
   version = "2001.1.0-6";
   src = sources.avt_vimba_camera;
-  nativeBuildInputs = [ ament_cmake_auto ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_auto ];
   buildInputs = [  ];
   propagatedBuildInputs = [ camera_info_manager diagnostic_msgs diagnostic_updater image_proc image_transport message_filters rclcpp rclcpp_components sensor_msgs std_msgs stereo_image_proc ];
   depsTargetTarget = [  ];

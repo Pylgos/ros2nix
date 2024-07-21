@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "rmf_traffic_examples";
   version = "3.3.3-1";
   src = sources.rmf_traffic_examples;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rmf_traffic ];
   depsTargetTarget = [  ];

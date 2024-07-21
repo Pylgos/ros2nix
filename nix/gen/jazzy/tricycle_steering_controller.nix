@@ -38,10 +38,10 @@ buildRosPackage {
   pname = "tricycle_steering_controller";
   version = "4.9.0-1";
   src = sources.tricycle_steering_controller;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ generate_parameter_library ];
-  propagatedBuildInputs = [ backward_ros control_msgs controller_interface hardware_interface pluginlib rclcpp rclcpp_lifecycle std_srvs steering_controllers_library ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ backward_ros control_msgs controller_interface generate_parameter_library hardware_interface pluginlib rclcpp rclcpp_lifecycle std_srvs steering_controllers_library ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -41,8 +41,8 @@ buildRosPackage {
   pname = "aruco_opencv";
   version = "6.0.1-1";
   src = sources.aruco_opencv;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ aruco_opencv_msgs cv_bridge image_transport libyamlcpp python3Packages.opencv4 rclcpp rclcpp_components rclcpp_lifecycle tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];

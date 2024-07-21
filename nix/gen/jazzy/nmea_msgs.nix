@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "nmea_msgs";
   version = "2.1.0-3";
   src = sources.nmea_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

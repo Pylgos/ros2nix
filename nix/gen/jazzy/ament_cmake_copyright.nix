@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "ament_cmake_copyright";
   version = "0.17.1-1";
   src = sources.ament_cmake_copyright;
-  nativeBuildInputs = [ ament_cmake_core ];
-  propagatedNativeBuildInputs = [ ament_cmake_test ament_copyright ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_copyright ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

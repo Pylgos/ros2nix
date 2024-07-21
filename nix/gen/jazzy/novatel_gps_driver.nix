@@ -43,8 +43,8 @@ buildRosPackage {
   pname = "novatel_gps_driver";
   version = "4.1.2-5";
   src = sources.novatel_gps_driver;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diagnostic_msgs diagnostic_updater gps_msgs libpcap nav_msgs novatel_gps_msgs python3Packages.boost rclcpp rclcpp_components sensor_msgs std_msgs swri_math_util swri_roscpp swri_serial_util tf2 tf2_geometry_msgs ];
   depsTargetTarget = [  ];

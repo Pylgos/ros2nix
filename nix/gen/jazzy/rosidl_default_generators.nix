@@ -30,10 +30,10 @@ buildRosPackage {
   pname = "rosidl_default_generators";
   version = "1.6.0-3";
   src = sources.rosidl_default_generators;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ ament_cmake_core rosidl_core_generators ];
-  buildInputs = [ ament_cmake ];
-  propagatedBuildInputs = [ ament_cmake_core rosidl_core_generators ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_core rosidl_core_generators ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake ament_cmake_core rosidl_core_generators ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [ action_msgs service_msgs ];
 }

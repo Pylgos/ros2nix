@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "rmf_api_msgs";
   version = "0.3.1-1";
   src = sources.rmf_api_msgs;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ buildPackages.python3Packages.jinja2 ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake buildPackages.python3Packages.jinja2 ];
   buildInputs = [  ];
   propagatedBuildInputs = [ nlohmann_json python3Packages.jsonschema ];
   depsTargetTarget = [  ];

@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "leo_gz_plugins";
   version = "2.0.0-1";
   src = sources.leo_gz_plugins;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ gz_plugin_vendor gz_sim_vendor ];
   depsTargetTarget = [  ];

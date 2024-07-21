@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "realsense2_camera_msgs";
   version = "4.55.1-3";
   src = sources.realsense2_camera_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

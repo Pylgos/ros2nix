@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "ruckig";
   version = "0.9.2-5";
   src = sources.ruckig;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "spinnaker_synchronized_camera_driver";
   version = "2.0.20-1";
   src = sources.spinnaker_synchronized_camera_driver;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rclcpp_components spinnaker_camera_driver ];
   depsTargetTarget = [  ];

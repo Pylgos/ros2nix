@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "dynamixel_hardware";
   version = "0.5.0-1";
   src = sources.dynamixel_hardware;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ dynamixel_workbench_toolbox hardware_interface lifecycle_msgs pluginlib rclcpp rclcpp_lifecycle ];
   depsTargetTarget = [  ];

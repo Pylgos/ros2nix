@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "sick_safevisionary_base";
   version = "1.0.1-3";
   src = sources.sick_safevisionary_base;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

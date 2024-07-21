@@ -46,8 +46,8 @@ buildRosPackage {
   pname = "fuse_optimizers";
   version = "1.1.1-1";
   src = sources.fuse_optimizers;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ceres-solver diagnostic_updater eigen fuse_constraints fuse_core fuse_graphs fuse_msgs fuse_variables pluginlib python3Packages.boost rclcpp rclcpp_components std_srvs ];
   depsTargetTarget = [  ];

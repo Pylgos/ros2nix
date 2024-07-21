@@ -43,8 +43,8 @@ buildRosPackage {
   pname = "zmqpp_vendor";
   version = "0.0.2-4";
   src = sources.zmqpp_vendor;
-  nativeBuildInputs = [ ament_cmake git ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake git ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cppzmq ];
   depsTargetTarget = [  ];

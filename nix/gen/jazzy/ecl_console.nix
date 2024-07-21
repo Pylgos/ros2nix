@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "ecl_console";
   version = "1.2.0-5";
   src = sources.ecl_console;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ecl_build ecl_config ecl_license ];
   depsTargetTarget = [  ];

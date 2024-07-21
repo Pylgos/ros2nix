@@ -27,10 +27,10 @@ buildRosPackage {
   pname = "ament_cmake_gtest";
   version = "2.5.2-1";
   src = sources.ament_cmake_gtest;
-  nativeBuildInputs = [ ament_cmake_core ];
-  propagatedNativeBuildInputs = [ ament_cmake_test gtest gtest_vendor ];
-  buildInputs = [ ament_cmake_core ];
-  propagatedBuildInputs = [ ament_cmake_test gtest gtest_vendor ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test gtest gtest_vendor ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake_core ament_cmake_test gtest gtest_vendor ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

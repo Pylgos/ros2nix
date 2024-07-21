@@ -31,10 +31,10 @@ buildRosPackage {
   pname = "ecl_sigslots";
   version = "1.2.1-5";
   src = sources.ecl_sigslots;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ ecl_build ];
-  propagatedBuildInputs = [ ecl_config ecl_license ecl_threads ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ecl_build ecl_config ecl_license ecl_threads ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

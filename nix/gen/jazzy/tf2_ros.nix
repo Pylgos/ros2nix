@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "tf2_ros";
   version = "0.36.4-1";
   src = sources.tf2_ros;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs message_filters rcl_interfaces rclcpp rclcpp_action rclcpp_components tf2 tf2_msgs ];
   depsTargetTarget = [  ];

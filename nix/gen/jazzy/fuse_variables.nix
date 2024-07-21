@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "fuse_variables";
   version = "1.1.1-1";
   src = sources.fuse_variables;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ceres-solver fuse_core pluginlib rclcpp ];
   depsTargetTarget = [  ];

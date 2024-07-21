@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "ublox_dgnss";
   version = "0.5.3-2";
   src = sources.ublox_dgnss;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ntrip_client_node ublox_dgnss_node ublox_nav_sat_fix_hp_node ublox_ubx_interfaces ublox_ubx_msgs ];
   depsTargetTarget = [  ];

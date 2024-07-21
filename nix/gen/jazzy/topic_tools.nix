@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "topic_tools";
   version = "1.3.0-3";
   src = sources.topic_tools;
-  nativeBuildInputs = [ ament_cmake_auto ament_cmake_python rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_auto ament_cmake_python rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rclcpp_components rclpy ros2cli rosidl_runtime_py topic_tools_interfaces ];
   depsTargetTarget = [  ];

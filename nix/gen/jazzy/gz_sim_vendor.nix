@@ -83,8 +83,8 @@ buildRosPackage {
   pname = "gz_sim_vendor";
   version = "0.0.3-1";
   src = sources.gz_sim_vendor;
-  nativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ gbenchmark ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package gbenchmark ];
   buildInputs = [  ];
   propagatedBuildInputs = [ freeglut glew gz_cmake_vendor gz_common_vendor gz_fuel_tools_vendor gz_gui_vendor gz_math_vendor gz_msgs_vendor gz_physics_vendor gz_plugin_vendor gz_rendering_vendor gz_sensors_vendor gz_tools_vendor gz_transport_vendor gz_utils_vendor protobuf python3Packages.pybind11 qt5.qtbase qt5.qtdeclarative sdformat_vendor tinyxml-2 util-linux xorg.libXi xorg.libXmu ];
   depsTargetTarget = [  ];

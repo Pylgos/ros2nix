@@ -38,10 +38,10 @@ buildRosPackage {
   pname = "image_rotate";
   version = "5.0.1-3";
   src = sources.image_rotate;
-  nativeBuildInputs = [ ament_cmake_auto ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ class_loader ];
-  propagatedBuildInputs = [ cv_bridge geometry_msgs image_transport opencv rcl_interfaces rclcpp rclcpp_components sensor_msgs tf2 tf2_geometry_msgs tf2_ros ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_auto ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ class_loader cv_bridge geometry_msgs image_transport opencv rcl_interfaces rclcpp rclcpp_components sensor_msgs tf2 tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

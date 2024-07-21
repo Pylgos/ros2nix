@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "cmake_generate_parameter_module_example";
   version = "0.3.8-4";
   src = sources.cmake_generate_parameter_module_example;
-  nativeBuildInputs = [ ament_cmake_python ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ generate_parameter_library rclpy ];
   depsTargetTarget = [  ];

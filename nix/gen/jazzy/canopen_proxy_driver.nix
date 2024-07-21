@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "canopen_proxy_driver";
   version = "0.2.9-2";
   src = sources.canopen_proxy_driver;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ canopen_base_driver canopen_core canopen_interfaces rclcpp rclcpp_components rclcpp_lifecycle std_msgs std_srvs ];
   depsTargetTarget = [  ];

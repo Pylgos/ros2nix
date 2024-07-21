@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "ecl_statistics";
   version = "1.2.1-5";
   src = sources.ecl_statistics;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ecl_build ecl_config ecl_license ecl_linear_algebra ecl_mpl ecl_type_traits ];
   depsTargetTarget = [  ];

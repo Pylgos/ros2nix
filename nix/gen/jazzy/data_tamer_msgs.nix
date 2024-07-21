@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "data_tamer_msgs";
   version = "0.9.4-4";
   src = sources.data_tamer_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime ];
   depsTargetTarget = [  ];

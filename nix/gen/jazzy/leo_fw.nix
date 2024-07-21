@@ -46,10 +46,10 @@ buildRosPackage {
   pname = "leo_fw";
   version = "1.4.0-3";
   src = sources.leo_fw;
-  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
-  propagatedNativeBuildInputs = [ ament_index_python buildPackages.python3Packages.numpy buildPackages.python3Packages.pyyaml ];
-  buildInputs = [ libyamlcpp ];
-  propagatedBuildInputs = [ geometry_msgs leo_msgs nav_msgs python3Packages.dbus-python python3Packages.whichcraft rclcpp rclcpp_components rclpy ros2cli sensor_msgs std_msgs std_srvs ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python ament_index_python buildPackages.python3Packages.numpy buildPackages.python3Packages.pyyaml ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ geometry_msgs leo_msgs libyamlcpp nav_msgs python3Packages.dbus-python python3Packages.whichcraft rclcpp rclcpp_components rclpy ros2cli sensor_msgs std_msgs std_srvs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

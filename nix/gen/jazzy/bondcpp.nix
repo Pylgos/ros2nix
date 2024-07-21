@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "bondcpp";
   version = "4.1.0-1";
   src = sources.bondcpp;
-  nativeBuildInputs = [ ament_cmake pkg-config ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake pkg-config ];
   buildInputs = [  ];
   propagatedBuildInputs = [ bond rclcpp rclcpp_lifecycle smclib util-linux ];
   depsTargetTarget = [  ];

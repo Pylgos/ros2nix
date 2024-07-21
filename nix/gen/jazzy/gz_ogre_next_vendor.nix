@@ -54,8 +54,8 @@ buildRosPackage {
   pname = "gz_ogre_next_vendor";
   version = "0.0.5-1";
   src = sources.gz_ogre_next_vendor;
-  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
   buildInputs = [  ];
   propagatedBuildInputs = [ SDL2 freetype libGL libGLU poco python3Packages.boost rapidjson tbb tinyxml-2 vulkan-loader xorg.libX11 xorg.libXaw xorg.libXrandr zziplib ];
   depsTargetTarget = [  ];

@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "rc_common_msgs";
   version = "0.5.3-6";
   src = sources.rc_common_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

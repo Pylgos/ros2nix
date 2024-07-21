@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "ibeo_msgs";
   version = "4.0.0-4";
   src = sources.ibeo_msgs;
-  nativeBuildInputs = [ ament_cmake ros_environment rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ros_environment rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "ecl_threads";
   version = "1.2.1-5";
   src = sources.ecl_threads;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ecl_build ecl_concepts ecl_config ecl_errors ecl_exceptions ecl_license ecl_time ecl_utilities ];
   depsTargetTarget = [  ];

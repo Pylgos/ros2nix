@@ -40,8 +40,8 @@ buildRosPackage {
   pname = "ffmpeg_image_transport";
   version = "1.0.1-2";
   src = sources.ffmpeg_image_transport;
-  nativeBuildInputs = [ ament_cmake ament_cmake_ros pkg-config ros_environment ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_ros pkg-config ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge ffmpeg ffmpeg_image_transport_msgs image_transport libogg pluginlib rclcpp rcutils sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

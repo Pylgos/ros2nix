@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "fuse_msgs";
   version = "1.1.1-1";
   src = sources.fuse_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

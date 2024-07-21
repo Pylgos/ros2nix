@@ -26,10 +26,10 @@ buildRosPackage {
   pname = "zenoh_bridge_dds";
   version = "0.5.0-5";
   src = sources.zenoh_bridge_dds;
-  nativeBuildInputs = [ ament_cmake clang ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ cargo ];
-  propagatedBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake clang ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ cargo ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

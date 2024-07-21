@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "moveit_resources_fanuc_moveit_config";
   version = "3.0.0-3";
   src = sources.moveit_resources_fanuc_moveit_config;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ joint_state_publisher moveit_resources_fanuc_description robot_state_publisher tf2_ros xacro ];
   depsTargetTarget = [  ];

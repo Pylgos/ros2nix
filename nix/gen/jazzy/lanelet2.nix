@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "lanelet2";
   version = "1.2.1-1";
   src = sources.lanelet2;
-  nativeBuildInputs = [ ament_cmake_core ros_environment ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ lanelet2_core lanelet2_examples lanelet2_io lanelet2_maps lanelet2_matching lanelet2_projection lanelet2_python lanelet2_routing lanelet2_traffic_rules lanelet2_validation ];
   depsTargetTarget = [  ];

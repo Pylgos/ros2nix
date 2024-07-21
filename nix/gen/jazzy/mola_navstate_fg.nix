@@ -30,10 +30,10 @@ buildRosPackage {
   pname = "mola_navstate_fg";
   version = "1.0.6-1";
   src = sources.mola_navstate_fg;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ gtsam python3Packages.boost ];
-  propagatedBuildInputs = [ mola_common mola_imu_preintegration mola_kernel mrpt2 ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ gtsam mola_common mola_imu_preintegration mola_kernel mrpt2 python3Packages.boost ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

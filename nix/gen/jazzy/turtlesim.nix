@@ -37,9 +37,9 @@ buildRosPackage {
   pname = "turtlesim";
   version = "1.8.3-1";
   src = sources.turtlesim;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ qt5.qtbase ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp geometry_msgs qt5.qtbase rcl_interfaces rclcpp rclcpp_action rosidl_default_runtime std_msgs std_srvs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];

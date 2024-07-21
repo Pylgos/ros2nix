@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "position_controllers";
   version = "4.9.0-1";
   src = sources.position_controllers;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ backward_ros forward_command_controller pluginlib rclcpp ];
   depsTargetTarget = [  ];

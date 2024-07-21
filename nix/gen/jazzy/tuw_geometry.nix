@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "tuw_geometry";
   version = "0.0.7-4";
   src = sources.tuw_geometry;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ opencv rclcpp rclcpp_components sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

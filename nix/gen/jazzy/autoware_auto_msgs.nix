@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "autoware_auto_msgs";
   version = "1.0.0-7";
   src = sources.autoware_auto_msgs;
-  nativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ action_msgs geometry_msgs rosidl_default_runtime sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

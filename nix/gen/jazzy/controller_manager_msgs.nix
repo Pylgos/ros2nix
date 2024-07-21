@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "controller_manager_msgs";
   version = "4.11.0-1";
   src = sources.controller_manager_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces lifecycle_msgs rosidl_default_runtime ];
   depsTargetTarget = [  ];

@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "foxglove_msgs";
   version = "3.0.0-3";
   src = sources.foxglove_msgs;
-  nativeBuildInputs = [ ament_cmake ros_environment rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ros_environment rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs rosidl_default_runtime visualization_msgs ];
   depsTargetTarget = [  ];

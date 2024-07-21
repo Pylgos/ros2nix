@@ -43,8 +43,8 @@ buildRosPackage {
   pname = "odri_master_board_sdk";
   version = "1.0.6-5";
   src = sources.odri_master_board_sdk;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [ git buildPackages.python3Packages.numpy ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake git buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3 python3Packages.boost ];
   depsTargetTarget = [  ];

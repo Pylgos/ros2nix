@@ -45,8 +45,8 @@ buildRosPackage {
   pname = "orocos_kdl_vendor";
   version = "0.5.1-2";
   src = sources.orocos_kdl_vendor;
-  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
-  propagatedNativeBuildInputs = [ eigen3_cmake_module ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package eigen3_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen orocos-kdl ];
   depsTargetTarget = [  ];

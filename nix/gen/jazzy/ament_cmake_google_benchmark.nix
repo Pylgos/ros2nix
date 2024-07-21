@@ -28,10 +28,10 @@ buildRosPackage {
   pname = "ament_cmake_google_benchmark";
   version = "2.5.2-1";
   src = sources.ament_cmake_google_benchmark;
-  nativeBuildInputs = [ ament_cmake_core ament_cmake_export_dependencies ament_cmake_python ];
-  propagatedNativeBuildInputs = [ ament_cmake_test google_benchmark_vendor ];
-  buildInputs = [ ament_cmake_core ament_cmake_export_dependencies ament_cmake_python ];
-  propagatedBuildInputs = [ ament_cmake_test google_benchmark_vendor ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_export_dependencies ament_cmake_python ament_cmake_test google_benchmark_vendor ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake_core ament_cmake_export_dependencies ament_cmake_python ament_cmake_test google_benchmark_vendor ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "swri_prefix_tools";
   version = "3.6.1-3";
   src = sources.swri_prefix_tools;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.psutil ];
   depsTargetTarget = [  ];

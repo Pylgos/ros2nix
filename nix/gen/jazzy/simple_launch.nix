@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "simple_launch";
   version = "1.9.1-3";
   src = sources.simple_launch;
-  nativeBuildInputs = [ ament_cmake_python ];
-  propagatedNativeBuildInputs = [ ament_index_python launch ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_python ament_index_python launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ launch_ros xacro ];
   depsTargetTarget = [  ];

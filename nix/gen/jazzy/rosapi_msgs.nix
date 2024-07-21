@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "rosapi_msgs";
   version = "1.3.2-3";
   src = sources.rosapi_msgs;
-  nativeBuildInputs = [ ament_cmake_ros rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rcl_interfaces rosidl_default_runtime ];
   depsTargetTarget = [  ];

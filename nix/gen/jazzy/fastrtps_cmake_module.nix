@@ -26,10 +26,10 @@ buildRosPackage {
   pname = "fastrtps_cmake_module";
   version = "3.6.0-2";
   src = sources.fastrtps_cmake_module;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ ament_cmake ];
-  propagatedBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

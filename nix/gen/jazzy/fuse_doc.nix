@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "fuse_doc";
   version = "1.1.1-1";
   src = sources.fuse_doc;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "rmf_utils";
   version = "1.6.2-1";
   src = sources.rmf_utils;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

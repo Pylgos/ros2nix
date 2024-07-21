@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "rclc_parameter";
   version = "6.1.0-3";
   src = sources.rclc_parameter;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rcl rcl_interfaces rclc rcutils rosidl_runtime_c ];
   depsTargetTarget = [  ];

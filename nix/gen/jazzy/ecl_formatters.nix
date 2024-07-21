@@ -29,10 +29,10 @@ buildRosPackage {
   pname = "ecl_formatters";
   version = "1.2.1-5";
   src = sources.ecl_formatters;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ ecl_build ];
-  propagatedBuildInputs = [ ecl_config ecl_converters ecl_exceptions ecl_license ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ecl_build ecl_config ecl_converters ecl_exceptions ecl_license ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "flir_camera_msgs";
   version = "2.0.20-1";
   src = sources.flir_camera_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

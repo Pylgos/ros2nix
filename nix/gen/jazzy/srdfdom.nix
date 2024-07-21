@@ -36,10 +36,10 @@ buildRosPackage {
   pname = "srdfdom";
   version = "2.0.4-4";
   src = sources.srdfdom;
-  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ python3Packages.boost urdfdom_headers ];
-  propagatedBuildInputs = [ console-bridge console_bridge_vendor tinyxml2_vendor urdf urdfdom_py ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ console-bridge console_bridge_vendor python3Packages.boost tinyxml2_vendor urdf urdfdom_headers urdfdom_py ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

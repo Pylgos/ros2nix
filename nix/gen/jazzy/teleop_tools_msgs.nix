@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "teleop_tools_msgs";
   version = "1.5.0-3";
   src = sources.teleop_tools_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ action_msgs rosidl_default_runtime ];
   depsTargetTarget = [  ];

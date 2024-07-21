@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "rmf_traffic_editor_assets";
   version = "1.9.1-1";
   src = sources.rmf_traffic_editor_assets;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

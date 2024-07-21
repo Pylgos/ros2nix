@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "tl_expected";
   version = "1.0.2-5";
   src = sources.tl_expected;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

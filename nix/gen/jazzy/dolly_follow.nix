@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "dolly_follow";
   version = "0.4.0-6";
   src = sources.dolly_follow;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs rclcpp sensor_msgs ];
   depsTargetTarget = [  ];

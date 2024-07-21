@@ -25,10 +25,10 @@ buildRosPackage {
   pname = "gmock_vendor";
   version = "1.14.9000-2";
   src = sources.gmock_vendor;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [ gtest_vendor ];
-  buildInputs = [ cmake ];
-  propagatedBuildInputs = [ gtest_vendor ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake gtest_vendor ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ cmake gtest_vendor ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "topic_tools_interfaces";
   version = "1.3.0-3";
   src = sources.topic_tools_interfaces;
-  nativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime ];
   depsTargetTarget = [  ];

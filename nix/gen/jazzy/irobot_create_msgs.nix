@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "irobot_create_msgs";
   version = "3.0.0-2";
   src = sources.irobot_create_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ action_msgs builtin_interfaces geometry_msgs rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

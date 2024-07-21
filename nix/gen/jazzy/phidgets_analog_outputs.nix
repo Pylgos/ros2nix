@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "phidgets_analog_outputs";
   version = "2.3.3-2";
   src = sources.phidgets_analog_outputs;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ phidgets_api phidgets_msgs rclcpp rclcpp_components std_msgs ];
   depsTargetTarget = [  ];

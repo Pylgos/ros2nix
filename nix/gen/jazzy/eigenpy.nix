@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "eigenpy";
   version = "3.7.0-1";
   src = sources.eigenpy;
-  nativeBuildInputs = [ cmake doxygen git ];
-  propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake doxygen git buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen python3 python3Packages.boost python3Packages.scipy ];
   depsTargetTarget = [  ];

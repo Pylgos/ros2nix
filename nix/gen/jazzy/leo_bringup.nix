@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "leo_bringup";
   version = "1.4.0-3";
   src = sources.leo_bringup;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs image_proc leo_description leo_fw robot_state_publisher rosapi rosbridge_server sensor_msgs v4l2_camera xacro ];
   depsTargetTarget = [  ];

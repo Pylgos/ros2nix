@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "robot_calibration_msgs";
   version = "0.9.0-1";
   src = sources.robot_calibration_msgs;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ rosidl_default_generators ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ action_msgs builtin_interfaces rosidl_default_runtime sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "urg_node";
   version = "1.1.1-4";
   src = sources.urg_node;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ rosidl_default_generators ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces diagnostic_updater laser_proc python3Packages.boost rclcpp rclcpp_components sensor_msgs std_srvs urdf urg_c urg_node_msgs ];
   depsTargetTarget = [  ];

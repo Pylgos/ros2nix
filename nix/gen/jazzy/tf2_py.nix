@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "tf2_py";
   version = "0.36.4-1";
   src = sources.tf2_py;
-  nativeBuildInputs = [ ament_cmake python_cmake_module ];
-  propagatedNativeBuildInputs = [ rpyutils ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake python_cmake_module rpyutils ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs rclpy tf2 ];
   depsTargetTarget = [  ];

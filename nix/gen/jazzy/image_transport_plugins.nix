@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "image_transport_plugins";
   version = "4.0.0-2";
   src = sources.image_transport_plugins;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ compressed_depth_image_transport compressed_image_transport theora_image_transport zstd_image_transport ];
   depsTargetTarget = [  ];

@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "opennav_docking_core";
   version = "1.3.1-1";
   src = sources.opennav_docking_core;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ nav2_msgs nav2_util rclcpp rclcpp_lifecycle ];
   depsTargetTarget = [  ];

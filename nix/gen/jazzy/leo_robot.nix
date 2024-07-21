@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "leo_robot";
   version = "1.4.0-3";
   src = sources.leo_robot;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ leo leo_bringup leo_fw ];
   depsTargetTarget = [  ];

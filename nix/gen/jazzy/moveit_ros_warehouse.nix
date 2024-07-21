@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "moveit_ros_warehouse";
   version = "2.10.0-1";
   src = sources.moveit_ros_warehouse;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ fmt moveit_common moveit_core moveit_ros_planning rclcpp tf2_eigen tf2_ros warehouse_ros ];
   depsTargetTarget = [  ];

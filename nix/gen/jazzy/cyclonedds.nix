@@ -28,9 +28,9 @@ buildRosPackage {
   pname = "cyclonedds";
   version = "0.10.5-1";
   src = sources.cyclonedds;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ openssl ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
+  buildInputs = [  ];
   propagatedBuildInputs = [ iceoryx_binding_c iceoryx_hoofs iceoryx_posh openssl ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];

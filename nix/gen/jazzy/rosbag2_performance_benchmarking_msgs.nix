@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "rosbag2_performance_benchmarking_msgs";
   version = "0.26.4-1";
   src = sources.rosbag2_performance_benchmarking_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime ];
   depsTargetTarget = [  ];

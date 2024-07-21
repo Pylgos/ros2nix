@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "micro_ros_diagnostic_bridge";
   version = "0.3.0-6";
   src = sources.micro_ros_diagnostic_bridge;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diagnostic_msgs micro_ros_diagnostic_msgs rclcpp ];
   depsTargetTarget = [  ];

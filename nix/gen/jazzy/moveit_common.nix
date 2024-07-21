@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "moveit_common";
   version = "2.10.0-1";
   src = sources.moveit_common;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ backward_ros ];
   depsTargetTarget = [  ];

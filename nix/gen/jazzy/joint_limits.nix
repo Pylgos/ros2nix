@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "joint_limits";
   version = "4.11.0-1";
   src = sources.joint_limits;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rclcpp_lifecycle urdf ];
   depsTargetTarget = [  ];

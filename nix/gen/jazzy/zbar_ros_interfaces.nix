@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "zbar_ros_interfaces";
   version = "0.6.0-1";
   src = sources.zbar_ros_interfaces;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime vision_msgs ];
   depsTargetTarget = [  ];

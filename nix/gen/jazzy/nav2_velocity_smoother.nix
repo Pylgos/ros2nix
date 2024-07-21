@@ -32,10 +32,10 @@ buildRosPackage {
   pname = "nav2_velocity_smoother";
   version = "1.3.1-1";
   src = sources.nav2_velocity_smoother;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ nav2_common ];
-  propagatedBuildInputs = [ geometry_msgs nav2_util rclcpp rclcpp_components ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ geometry_msgs nav2_common nav2_util rclcpp rclcpp_components ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

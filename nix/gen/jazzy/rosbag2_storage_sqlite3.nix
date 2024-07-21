@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "rosbag2_storage_sqlite3";
   version = "0.26.4-1";
   src = sources.rosbag2_storage_sqlite3;
-  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ pluginlib rcpputils rcutils rosbag2_storage sqlite3_vendor yaml_cpp_vendor ];
   depsTargetTarget = [  ];

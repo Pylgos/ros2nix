@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "zlib_point_cloud_transport";
   version = "4.0.0-1";
   src = sources.zlib_point_cloud_transport;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ pluginlib point_cloud_interfaces point_cloud_transport rclcpp zlib ];
   depsTargetTarget = [  ];

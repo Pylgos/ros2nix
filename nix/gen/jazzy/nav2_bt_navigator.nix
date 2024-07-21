@@ -41,10 +41,10 @@ buildRosPackage {
   pname = "nav2_bt_navigator";
   version = "1.3.1-1";
   src = sources.nav2_bt_navigator;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ nav2_common std_srvs ];
-  propagatedBuildInputs = [ behaviortree_cpp geometry_msgs nav2_behavior_tree nav2_core nav2_msgs nav2_util nav_msgs pluginlib rclcpp rclcpp_action rclcpp_lifecycle std_msgs tf2_ros ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ behaviortree_cpp geometry_msgs nav2_behavior_tree nav2_common nav2_core nav2_msgs nav2_util nav_msgs pluginlib rclcpp rclcpp_action rclcpp_lifecycle std_msgs std_srvs tf2_ros ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -44,8 +44,8 @@ buildRosPackage {
   pname = "console_bridge_vendor";
   version = "1.7.1-3";
   src = sources.console_bridge_vendor;
-  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
   buildInputs = [  ];
   propagatedBuildInputs = [ console-bridge ];
   depsTargetTarget = [  ];

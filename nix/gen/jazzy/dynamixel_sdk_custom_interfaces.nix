@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "dynamixel_sdk_custom_interfaces";
   version = "3.7.40-6";
   src = sources.dynamixel_sdk_custom_interfaces;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime ];
   depsTargetTarget = [  ];

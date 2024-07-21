@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "cartographer_ros_msgs";
   version = "2.0.9003-2";
   src = sources.cartographer_ros_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "nav2_regulated_pure_pursuit_controller";
   version = "1.3.1-1";
   src = sources.nav2_regulated_pure_pursuit_controller;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ angles geometry_msgs nav2_common nav2_core nav2_costmap_2d nav2_msgs nav2_util pluginlib rclcpp tf2 tf2_geometry_msgs ];
   depsTargetTarget = [  ];

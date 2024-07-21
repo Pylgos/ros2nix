@@ -41,8 +41,8 @@ buildRosPackage {
   pname = "ros2_ouster";
   version = "0.5.1-5";
   src = sources.ros2_ouster;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ launch ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs launch_ros ouster_msgs pcl pcl_conversions rclcpp rclcpp_components rclcpp_lifecycle sensor_msgs std_srvs tf2_geometry_msgs tf2_ros visualization_msgs ];
   depsTargetTarget = [  ];

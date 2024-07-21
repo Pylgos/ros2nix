@@ -41,10 +41,10 @@ buildRosPackage {
   pname = "google_benchmark_vendor";
   version = "0.5.0-2";
   src = sources.google_benchmark_vendor;
-  nativeBuildInputs = [ cmake git ];
-  propagatedNativeBuildInputs = [ gbenchmark ];
-  buildInputs = [ cmake git ];
-  propagatedBuildInputs = [ gbenchmark ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake gbenchmark git ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ cmake gbenchmark git ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

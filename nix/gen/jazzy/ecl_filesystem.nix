@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "ecl_filesystem";
   version = "1.2.1-5";
   src = sources.ecl_filesystem;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ecl_build ecl_config ecl_errors ecl_license ];
   depsTargetTarget = [  ];

@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "openni2_camera";
   version = "2.2.0-2";
   src = sources.openni2_camera;
-  nativeBuildInputs = [ ament_cmake pkg-config rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake pkg-config rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces camera_info_manager depth_image_proc image_transport rclcpp rclcpp_components rosidl_default_runtime sensor_msgs ];
   depsTargetTarget = [  ];

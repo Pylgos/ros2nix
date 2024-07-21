@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "libstatistics_collector";
   version = "1.7.3-1";
   src = sources.libstatistics_collector;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [ rmw ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros rmw ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rcl rcpputils statistics_msgs ];
   depsTargetTarget = [  ];

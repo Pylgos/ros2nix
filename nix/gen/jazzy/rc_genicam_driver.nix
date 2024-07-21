@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "rc_genicam_driver";
   version = "0.3.1-1";
   src = sources.rc_genicam_driver;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diagnostic_updater image_transport rc_common_msgs rc_genicam_api rclcpp rclcpp_components sensor_msgs stereo_msgs ];
   depsTargetTarget = [  ];

@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "rosbag2_storage_mcap";
   version = "0.26.4-1";
   src = sources.rosbag2_storage_mcap;
-  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp mcap_vendor pluginlib rcutils rosbag2_storage yaml_cpp_vendor ];
   depsTargetTarget = [  ];

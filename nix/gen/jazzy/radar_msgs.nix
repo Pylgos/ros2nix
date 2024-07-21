@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "radar_msgs";
   version = "0.2.2-4";
   src = sources.radar_msgs;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ rosidl_default_generators ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs std_msgs unique_identifier_msgs ];
   depsTargetTarget = [  ];

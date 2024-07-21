@@ -28,10 +28,10 @@ buildRosPackage {
   pname = "ament_cmake_flake8";
   version = "0.17.1-1";
   src = sources.ament_cmake_flake8;
-  nativeBuildInputs = [ ament_cmake_core ];
-  propagatedNativeBuildInputs = [ ament_cmake_test ament_flake8 ];
-  buildInputs = [ ament_cmake_core ];
-  propagatedBuildInputs = [ ament_cmake_test ament_flake8 ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_flake8 ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake_core ament_cmake_test ament_flake8 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

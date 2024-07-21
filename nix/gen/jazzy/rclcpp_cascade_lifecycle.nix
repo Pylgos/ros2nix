@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "rclcpp_cascade_lifecycle";
   version = "2.0.0-2";
   src = sources.rclcpp_cascade_lifecycle;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cascade_lifecycle_msgs lifecycle_msgs rclcpp rclcpp_lifecycle ];
   depsTargetTarget = [  ];

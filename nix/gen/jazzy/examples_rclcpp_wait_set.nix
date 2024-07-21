@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "examples_rclcpp_wait_set";
   version = "0.19.4-1";
   src = sources.examples_rclcpp_wait_set;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ example_interfaces rclcpp rclcpp_components std_msgs ];
   depsTargetTarget = [  ];

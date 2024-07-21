@@ -47,8 +47,8 @@ buildRosPackage {
   src = sources.webots_ros2_tests;
   nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
-  buildInputs = [ rclpy ros2bag rosbag2_storage_default_plugins webots_ros2_driver ];
-  propagatedBuildInputs = [  ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ rclpy ros2bag rosbag2_storage_default_plugins webots_ros2_driver ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "rosbag2_compression_zstd";
   version = "0.26.4-1";
   src = sources.rosbag2_compression_zstd;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ pluginlib rcutils rosbag2_compression zstd_vendor ];
   depsTargetTarget = [  ];

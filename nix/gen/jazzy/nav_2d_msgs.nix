@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "nav_2d_msgs";
   version = "1.3.1-1";
   src = sources.nav_2d_msgs;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ rosidl_default_generators ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

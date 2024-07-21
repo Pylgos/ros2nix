@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "tf2_geometry_msgs";
   version = "0.36.4-1";
   src = sources.tf2_geometry_msgs;
-  nativeBuildInputs = [ ament_cmake python_cmake_module ];
-  propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake buildPackages.python3Packages.numpy python_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs orocos_kdl_vendor tf2 tf2_ros tf2_ros_py ];
   depsTargetTarget = [  ];

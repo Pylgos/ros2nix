@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "stereo_msgs";
   version = "5.3.5-1";
   src = sources.stereo_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

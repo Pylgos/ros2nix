@@ -29,10 +29,10 @@ buildRosPackage {
   pname = "rqt_gui_cpp";
   version = "1.6.0-2";
   src = sources.rqt_gui_cpp;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ qt5.qtbase ];
-  propagatedBuildInputs = [ pluginlib qt_gui_cpp rclcpp ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ pluginlib qt5.qtbase qt_gui_cpp rclcpp ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "ntrip_client_node";
   version = "0.5.3-2";
   src = sources.ntrip_client_node;
-  nativeBuildInputs = [ ament_cmake pkg-config ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake pkg-config ];
   buildInputs = [  ];
   propagatedBuildInputs = [ libcurl_vendor rclcpp rclcpp_components rtcm_msgs std_msgs ];
   depsTargetTarget = [  ];

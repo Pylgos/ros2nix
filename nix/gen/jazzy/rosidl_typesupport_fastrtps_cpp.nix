@@ -44,8 +44,8 @@ buildRosPackage {
   pname = "rosidl_typesupport_fastrtps_cpp";
   version = "3.6.0-2";
   src = sources.rosidl_typesupport_fastrtps_cpp;
-  nativeBuildInputs = [ ament_cmake_python ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ament_index_python fastrtps_cmake_module python3 rmw rosidl_cli rosidl_generator_c rosidl_generator_cpp rosidl_pycommon ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_python ament_cmake_ros ament_index_python fastrtps_cmake_module python3 rmw rosidl_cli rosidl_generator_c rosidl_generator_cpp rosidl_pycommon ];
   buildInputs = [  ];
   propagatedBuildInputs = [ fastcdr rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_interface ];
   depsTargetTarget = [  ];

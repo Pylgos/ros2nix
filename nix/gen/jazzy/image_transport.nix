@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "image_transport";
   version = "5.1.4-1";
   src = sources.image_transport;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ message_filters pluginlib rclcpp rclcpp_components sensor_msgs ];
   depsTargetTarget = [  ];

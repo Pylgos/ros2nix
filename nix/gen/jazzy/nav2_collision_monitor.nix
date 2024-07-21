@@ -40,8 +40,8 @@ buildRosPackage {
   pname = "nav2_collision_monitor";
   version = "1.3.1-1";
   src = sources.nav2_collision_monitor;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs nav2_common nav2_costmap_2d nav2_msgs nav2_util rclcpp rclcpp_components sensor_msgs std_msgs tf2 tf2_geometry_msgs tf2_ros visualization_msgs ];
   depsTargetTarget = [  ];

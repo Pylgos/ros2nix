@@ -37,10 +37,10 @@ buildRosPackage {
   pname = "fuse_viz";
   version = "1.1.1-1";
   src = sources.fuse_viz;
-  nativeBuildInputs = [ ament_cmake_ros wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ qt5.qtbase ];
-  propagatedBuildInputs = [ eigen fuse_constraints fuse_core fuse_msgs fuse_variables geometry_msgs rviz_common rviz_rendering tf2_geometry_msgs ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ eigen fuse_constraints fuse_core fuse_msgs fuse_variables geometry_msgs qt5.qtbase rviz_common rviz_rendering tf2_geometry_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

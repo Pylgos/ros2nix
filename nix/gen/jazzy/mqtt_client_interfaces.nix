@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "mqtt_client_interfaces";
   version = "2.3.0-1";
   src = sources.mqtt_client_interfaces;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [ ros_environment ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ros_environment rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

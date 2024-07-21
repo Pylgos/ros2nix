@@ -39,8 +39,8 @@ buildRosPackage {
   pname = "ros_gz_sim_demos";
   version = "1.0.0-1";
   src = sources.ros_gz_sim_demos;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ gz_sim_vendor image_transport_plugins robot_state_publisher ros_gz_bridge ros_gz_image ros_gz_sim rqt_image_view rqt_plot rqt_topic rviz2 sdformat_urdf xacro ];
   depsTargetTarget = [  ];

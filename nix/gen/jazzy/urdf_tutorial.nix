@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "urdf_tutorial";
   version = "1.1.0-3";
   src = sources.urdf_tutorial;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ urdf_launch ];
   depsTargetTarget = [  ];

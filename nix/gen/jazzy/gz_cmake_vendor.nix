@@ -45,8 +45,8 @@ buildRosPackage {
   pname = "gz_cmake_vendor";
   version = "0.0.8-1";
   src = sources.gz_cmake_vendor;
-  nativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

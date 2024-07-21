@@ -39,8 +39,8 @@ buildRosPackage {
   pname = "rclcpp_lifecycle";
   version = "28.1.3-1";
   src = sources.rclcpp_lifecycle;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [ rmw ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros rmw ];
   buildInputs = [  ];
   propagatedBuildInputs = [ lifecycle_msgs rcl rcl_interfaces rcl_lifecycle rclcpp rcutils rosidl_typesupport_cpp ];
   depsTargetTarget = [  ];

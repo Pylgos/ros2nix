@@ -32,8 +32,8 @@ buildRosPackage {
   src = sources.grbl_ros;
   nativeBuildInputs = [  ];
   propagatedNativeBuildInputs = [  ];
-  buildInputs = [ python3Packages.pyserial ];
-  propagatedBuildInputs = [ grbl_msgs rclpy std_msgs ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ grbl_msgs python3Packages.pyserial rclpy std_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

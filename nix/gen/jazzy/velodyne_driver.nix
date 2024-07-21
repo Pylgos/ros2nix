@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "velodyne_driver";
   version = "2.3.0-4";
   src = sources.velodyne_driver;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diagnostic_msgs diagnostic_updater libpcap rclcpp rclcpp_components tf2_ros velodyne_msgs ];
   depsTargetTarget = [  ];

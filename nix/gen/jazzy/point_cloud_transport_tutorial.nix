@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "point_cloud_transport_tutorial";
   version = "0.0.2-2";
   src = sources.point_cloud_transport_tutorial;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ point_cloud_transport point_cloud_transport_plugins rclcpp rcpputils rosbag2_cpp sensor_msgs ];
   depsTargetTarget = [  ];

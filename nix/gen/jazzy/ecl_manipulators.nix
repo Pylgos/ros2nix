@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "ecl_manipulators";
   version = "1.2.1-5";
   src = sources.ecl_manipulators;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ecl_build ecl_exceptions ecl_formatters ecl_geometry ecl_license ];
   depsTargetTarget = [  ];

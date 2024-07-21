@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "examples_rclcpp_minimal_composition";
   version = "0.19.4-1";
   src = sources.examples_rclcpp_minimal_composition;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rclcpp_components std_msgs ];
   depsTargetTarget = [  ];

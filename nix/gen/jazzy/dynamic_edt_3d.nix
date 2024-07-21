@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "dynamic_edt_3d";
   version = "1.10.0-4";
   src = sources.dynamic_edt_3d;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ octomap ];
   depsTargetTarget = [  ];

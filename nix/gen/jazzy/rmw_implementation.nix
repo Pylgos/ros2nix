@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "rmw_implementation";
   version = "2.15.3-1";
   src = sources.rmw_implementation;
-  nativeBuildInputs = [ ament_cmake rmw ];
-  propagatedNativeBuildInputs = [ rmw_implementation_cmake ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rmw rmw_implementation_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp rcpputils rcutils rmw_connextdds rmw_cyclonedds_cpp rmw_fastrtps_cpp rmw_fastrtps_dynamic_cpp ];
   depsTargetTarget = [  ];

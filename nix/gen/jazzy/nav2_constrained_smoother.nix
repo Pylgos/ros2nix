@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "nav2_constrained_smoother";
   version = "1.3.1-1";
   src = sources.nav2_constrained_smoother;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ angles ceres-solver nav2_common nav2_core nav2_costmap_2d nav2_msgs nav2_util pluginlib rclcpp ];
   depsTargetTarget = [  ];

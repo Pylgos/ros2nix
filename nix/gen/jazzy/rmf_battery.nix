@@ -30,10 +30,10 @@ buildRosPackage {
   pname = "rmf_battery";
   version = "0.3.1-1";
   src = sources.rmf_battery;
-  nativeBuildInputs = [ cmake eigen3_cmake_module ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ eigen ];
-  propagatedBuildInputs = [ rmf_traffic rmf_utils ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake eigen3_cmake_module ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ eigen rmf_traffic rmf_utils ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

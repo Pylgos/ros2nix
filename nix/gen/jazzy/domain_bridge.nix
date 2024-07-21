@@ -46,8 +46,8 @@ buildRosPackage {
   pname = "domain_bridge";
   version = "0.5.0-5";
   src = sources.domain_bridge;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ libyamlcpp rclcpp rclcpp_components rcutils rosbag2_cpp rosidl_default_runtime rosidl_typesupport_cpp zstd_vendor ];
   depsTargetTarget = [  ];

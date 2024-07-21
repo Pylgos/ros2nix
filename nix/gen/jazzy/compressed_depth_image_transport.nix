@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "compressed_depth_image_transport";
   version = "4.0.0-2";
   src = sources.compressed_depth_image_transport;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge image_transport ];
   depsTargetTarget = [  ];

@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "rcl_logging_noop";
   version = "3.1.0-2";
   src = sources.rcl_logging_noop;
-  nativeBuildInputs = [ ament_cmake_ros buildPackages.python3Packages.empy ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros buildPackages.python3Packages.empy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rcl_logging_interface rcutils ];
   depsTargetTarget = [  ];

@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "magic_enum";
   version = "0.9.5-3";
   src = sources.magic_enum;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

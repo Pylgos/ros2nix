@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "swri_math_util";
   version = "3.6.1-3";
   src = sources.swri_math_util;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.boost rclcpp ];
   depsTargetTarget = [  ];

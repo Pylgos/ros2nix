@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "gpsd_client";
   version = "2.0.3-2";
   src = sources.gpsd_client;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ pkg-config ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake pkg-config ];
   buildInputs = [  ];
   propagatedBuildInputs = [ gps_msgs gpsd rclcpp rclcpp_components sensor_msgs ];
   depsTargetTarget = [  ];

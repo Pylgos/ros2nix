@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "dummy_map_server";
   version = "0.33.4-1";
   src = sources.dummy_map_server;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ nav_msgs rclcpp ];
   depsTargetTarget = [  ];

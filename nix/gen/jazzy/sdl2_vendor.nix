@@ -39,8 +39,8 @@ buildRosPackage {
   pname = "sdl2_vendor";
   version = "3.3.0-3";
   src = sources.sdl2_vendor;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ SDL2 ];
   depsTargetTarget = [  ];

@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "rcgcd_spl_14";
   version = "4.0.1-1";
   src = sources.rcgcd_spl_14;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime ];
   depsTargetTarget = [  ];

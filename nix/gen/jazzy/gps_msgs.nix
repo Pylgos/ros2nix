@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "gps_msgs";
   version = "2.0.3-2";
   src = sources.gps_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

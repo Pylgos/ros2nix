@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "mola_input_rosbag2";
   version = "1.0.6-1";
   src = sources.mola_input_rosbag2;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge mola_kernel mrpt2 rosbag2_cpp sensor_msgs tf2_geometry_msgs tf2_msgs tf2_ros ];
   depsTargetTarget = [  ];

@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "desktop_full";
   version = "0.11.0-1";
   src = sources.desktop_full;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ desktop perception ros_gz_sim_demos simulation ];
   depsTargetTarget = [  ];

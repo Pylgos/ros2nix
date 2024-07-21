@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "geographic_info";
   version = "1.0.6-2";
   src = sources.geographic_info;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geodesy geographic_msgs ];
   depsTargetTarget = [  ];

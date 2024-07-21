@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "canopen";
   version = "0.2.9-2";
   src = sources.canopen;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ canopen_402_driver canopen_base_driver canopen_core canopen_interfaces canopen_proxy_driver lely_core_libraries ];
   depsTargetTarget = [  ];

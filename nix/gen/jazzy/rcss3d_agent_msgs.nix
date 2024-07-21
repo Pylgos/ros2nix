@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "rcss3d_agent_msgs";
   version = "0.4.1-4";
   src = sources.rcss3d_agent_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime ];
   depsTargetTarget = [  ];

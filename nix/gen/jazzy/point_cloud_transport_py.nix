@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "point_cloud_transport_py";
   version = "4.0.2-1";
   src = sources.point_cloud_transport_py;
-  nativeBuildInputs = [ ament_cmake_python ament_cmake_ros python_cmake_module ];
-  propagatedNativeBuildInputs = [ rpyutils ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_python ament_cmake_ros python_cmake_module rpyutils ];
   buildInputs = [  ];
   propagatedBuildInputs = [ pluginlib point_cloud_transport pybind11_vendor rclcpp sensor_msgs ];
   depsTargetTarget = [  ];

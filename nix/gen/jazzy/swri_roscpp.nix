@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "swri_roscpp";
   version = "3.6.1-3";
   src = sources.swri_roscpp;
-  nativeBuildInputs = [ ament_cmake ros_environment rosidl_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ros_environment rosidl_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diagnostic_updater marti_common_msgs nav_msgs python3Packages.boost rclcpp rosidl_default_runtime std_msgs std_srvs ];
   depsTargetTarget = [  ];

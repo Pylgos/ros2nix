@@ -48,8 +48,8 @@ buildRosPackage {
   pname = "tinyspline_vendor";
   version = "0.6.1-1";
   src = sources.tinyspline_vendor;
-  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package git ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package git ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

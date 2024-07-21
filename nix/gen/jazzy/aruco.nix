@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "aruco";
   version = "5.0.5-1";
   src = sources.aruco;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge eigen ];
   depsTargetTarget = [  ];

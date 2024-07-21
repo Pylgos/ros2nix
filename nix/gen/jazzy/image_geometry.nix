@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "image_geometry";
   version = "4.1.0-1";
   src = sources.image_geometry;
-  nativeBuildInputs = [ ament_cmake_python ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_python ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ opencv sensor_msgs ];
   depsTargetTarget = [  ];

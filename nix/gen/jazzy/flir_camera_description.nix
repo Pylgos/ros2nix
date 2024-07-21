@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "flir_camera_description";
   version = "2.0.20-1";
   src = sources.flir_camera_description;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ robot_state_publisher urdf xacro ];
   depsTargetTarget = [  ];

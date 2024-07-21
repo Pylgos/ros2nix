@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "rcl_interfaces";
   version = "2.0.2-2";
   src = sources.rcl_interfaces;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime ];
   depsTargetTarget = [  ];

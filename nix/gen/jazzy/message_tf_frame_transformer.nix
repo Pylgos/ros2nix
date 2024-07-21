@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "message_tf_frame_transformer";
   version = "1.1.2-1";
   src = sources.message_tf_frame_transformer;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ ros_environment ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs rclcpp sensor_msgs tf2 tf2_geometry_msgs tf2_ros tf2_sensor_msgs ];
   depsTargetTarget = [  ];

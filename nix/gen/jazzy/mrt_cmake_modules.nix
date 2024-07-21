@@ -29,10 +29,10 @@ buildRosPackage {
   pname = "mrt_cmake_modules";
   version = "1.0.9-5";
   src = sources.mrt_cmake_modules;
-  nativeBuildInputs = [ ament_cmake_core ];
-  propagatedNativeBuildInputs = [ gtest_vendor lcov buildPackages.python3Packages.catkin-pkg buildPackages.python3Packages.pyyaml buildPackages.python3Packages.setuptools ros_environment ];
-  buildInputs = [ ament_cmake_core ];
-  propagatedBuildInputs = [ gtest_vendor lcov python3Packages.catkin-pkg python3Packages.pyyaml python3Packages.setuptools ros_environment ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core gtest_vendor lcov buildPackages.python3Packages.catkin-pkg buildPackages.python3Packages.pyyaml buildPackages.python3Packages.setuptools ros_environment ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake_core gtest_vendor lcov python3Packages.catkin-pkg python3Packages.pyyaml python3Packages.setuptools ros_environment ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

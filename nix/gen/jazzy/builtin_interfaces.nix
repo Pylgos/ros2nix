@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "builtin_interfaces";
   version = "2.0.2-2";
   src = sources.builtin_interfaces;
-  nativeBuildInputs = [ ament_cmake rosidl_core_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_core_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_core_runtime ];
   depsTargetTarget = [  ];

@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "flexbe_behavior_engine";
   version = "3.0.3-1";
   src = sources.flexbe_behavior_engine;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ flexbe_core flexbe_input flexbe_mirror flexbe_msgs flexbe_onboard flexbe_states flexbe_testing flexbe_widget ];
   depsTargetTarget = [  ];

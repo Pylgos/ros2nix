@@ -30,10 +30,10 @@ buildRosPackage {
   pname = "libcamera";
   version = "0.3.0-3";
   src = sources.libcamera;
-  nativeBuildInputs = [ pkg-config buildPackages.python3Packages.jinja2 buildPackages.python3Packages.pyyaml ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ openssl python3Packages.pybind11 ];
-  propagatedBuildInputs = [ libyaml openssl python3 udev ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ pkg-config buildPackages.python3Packages.jinja2 buildPackages.python3Packages.pyyaml ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ libyaml openssl python3 python3Packages.pybind11 udev ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

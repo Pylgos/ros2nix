@@ -31,10 +31,10 @@ buildRosPackage {
   pname = "ecl_type_traits";
   version = "1.2.1-5";
   src = sources.ecl_type_traits;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ ecl_build ];
-  propagatedBuildInputs = [ ecl_config ecl_license ecl_mpl ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ecl_build ecl_config ecl_license ecl_mpl ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

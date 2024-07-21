@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "polygon_msgs";
   version = "1.0.2-3";
   src = sources.polygon_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

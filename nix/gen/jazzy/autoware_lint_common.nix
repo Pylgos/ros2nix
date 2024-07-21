@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "autoware_lint_common";
   version = "1.0.0-1";
   src = sources.autoware_lint_common;
-  nativeBuildInputs = [ ament_cmake_export_dependencies ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_cppcheck ament_cmake_test ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_cppcheck ament_cmake_export_dependencies ament_cmake_test ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_cmake_copyright ament_cmake_lint_cmake ament_cmake_xmllint ];
   depsTargetTarget = [  ];

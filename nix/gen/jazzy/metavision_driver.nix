@@ -68,8 +68,8 @@ buildRosPackage {
   pname = "metavision_driver";
   version = "1.0.8-3";
   src = sources.metavision_driver;
-  nativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_ros cmake curl git ros_environment unzip wget ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_ros cmake curl git ros_environment unzip wget ];
   buildInputs = [  ];
   propagatedBuildInputs = [ event_camera_msgs ffmpeg glew glfw3 hdf5 libusb1 opencv openscenegraph python3Packages.boost rclcpp rclcpp_components std_srvs ];
   depsTargetTarget = [  ];

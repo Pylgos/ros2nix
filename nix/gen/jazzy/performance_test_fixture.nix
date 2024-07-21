@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "performance_test_fixture";
   version = "0.2.0-3";
   src = sources.performance_test_fixture;
-  nativeBuildInputs = [ ament_cmake_core ament_cmake_export_dependencies ament_cmake_export_targets ament_cmake_test ];
-  propagatedNativeBuildInputs = [ ament_cmake_google_benchmark google_benchmark_vendor ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_export_dependencies ament_cmake_export_targets ament_cmake_google_benchmark ament_cmake_test google_benchmark_vendor ];
   buildInputs = [  ];
   propagatedBuildInputs = [ osrf_testing_tools_cpp ];
   depsTargetTarget = [  ];

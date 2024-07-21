@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "rcss3d_agent_basic";
   version = "0.4.1-4";
   src = sources.rcss3d_agent_basic;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp_components rcss3d_agent ];
   depsTargetTarget = [  ];

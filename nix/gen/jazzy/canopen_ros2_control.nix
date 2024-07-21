@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "canopen_ros2_control";
   version = "0.2.9-2";
   src = sources.canopen_ros2_control;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ canopen_402_driver canopen_core canopen_proxy_driver hardware_interface pluginlib rclcpp rclcpp_components rclcpp_lifecycle ];
   depsTargetTarget = [  ];

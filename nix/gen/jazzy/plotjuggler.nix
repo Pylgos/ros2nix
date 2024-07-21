@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "plotjuggler";
   version = "3.9.2-1";
   src = sources.plotjuggler;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp binutils cppzmq fastcdr lz4 protobuf python3Packages.boost qt5.qtbase qt5.qtsvg qt5.qtwebsockets qt5.qtx11extras rclcpp zstd ];
   depsTargetTarget = [  ];

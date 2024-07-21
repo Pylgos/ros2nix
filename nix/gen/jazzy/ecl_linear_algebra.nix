@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "ecl_linear_algebra";
   version = "1.2.1-5";
   src = sources.ecl_linear_algebra;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ecl_build ecl_converters ecl_eigen ecl_exceptions ecl_formatters ecl_license ecl_math sophus ];
   depsTargetTarget = [  ];

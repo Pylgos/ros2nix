@@ -54,8 +54,8 @@ buildRosPackage {
   pname = "gz_physics_vendor";
   version = "0.0.3-1";
   src = sources.gz_physics_vendor;
-  nativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
-  propagatedNativeBuildInputs = [ gbenchmark ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package gbenchmark ];
   buildInputs = [  ];
   propagatedBuildInputs = [ bullet eigen gz_cmake_vendor gz_common_vendor gz_dartsim_vendor gz_math_vendor gz_plugin_vendor gz_utils_vendor sdformat_vendor ];
   depsTargetTarget = [  ];

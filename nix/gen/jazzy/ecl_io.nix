@@ -28,10 +28,10 @@ buildRosPackage {
   pname = "ecl_io";
   version = "1.2.0-5";
   src = sources.ecl_io;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ ecl_build ];
-  propagatedBuildInputs = [ ecl_config ecl_errors ecl_license ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ecl_build ecl_config ecl_errors ecl_license ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

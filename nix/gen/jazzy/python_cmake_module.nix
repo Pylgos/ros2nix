@@ -27,10 +27,10 @@ buildRosPackage {
   pname = "python_cmake_module";
   version = "0.11.1-2";
   src = sources.python_cmake_module;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ python3 ];
-  buildInputs = [ ament_cmake ];
-  propagatedBuildInputs = [ python3 ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake python3 ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake python3 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "sick_safevisionary_tests";
   version = "1.0.3-3";
   src = sources.sick_safevisionary_tests;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

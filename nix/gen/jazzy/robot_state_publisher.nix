@@ -40,8 +40,8 @@ buildRosPackage {
   pname = "robot_state_publisher";
   version = "3.3.3-3";
   src = sources.robot_state_publisher;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs kdl_parser orocos_kdl_vendor rcl_interfaces rclcpp rclcpp_components sensor_msgs std_msgs tf2_ros urdf ];
   depsTargetTarget = [  ];

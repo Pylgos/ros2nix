@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "tracetools_acceleration";
   version = "0.4.1-4";
   src = sources.tracetools_acceleration;
-  nativeBuildInputs = [ ament_cmake_ros pkg-config ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros pkg-config ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

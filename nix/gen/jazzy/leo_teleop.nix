@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "leo_teleop";
   version = "3.0.3-1";
   src = sources.leo_teleop;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ joy_linux teleop_twist_joy teleop_twist_keyboard ];
   depsTargetTarget = [  ];

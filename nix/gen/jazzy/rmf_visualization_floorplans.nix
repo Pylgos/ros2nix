@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "rmf_visualization_floorplans";
   version = "2.3.2-1";
   src = sources.rmf_visualization_floorplans;
-  nativeBuildInputs = [ ament_cmake eigen3_cmake_module ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake eigen3_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen geometry_msgs nav_msgs opencv rclcpp rclcpp_components rmf_building_map_msgs rmf_visualization_msgs ];
   depsTargetTarget = [  ];

@@ -30,10 +30,10 @@ buildRosPackage {
   pname = "ifm3d_core";
   version = "0.18.0-10";
   src = sources.ifm3d_core;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [ curl ];
-  buildInputs = [ python3Packages.boost ];
-  propagatedBuildInputs = [ cv_bridge glog pcl xmlrpc_c ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake curl ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ cv_bridge glog pcl python3Packages.boost xmlrpc_c ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

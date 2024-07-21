@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "point_cloud_transport_plugins";
   version = "4.0.0-1";
   src = sources.point_cloud_transport_plugins;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ draco_point_cloud_transport point_cloud_interfaces zlib_point_cloud_transport zstd_point_cloud_transport ];
   depsTargetTarget = [  ];

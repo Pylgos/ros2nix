@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "soccer_model_msgs";
   version = "1.0.0-2";
   src = sources.soccer_model_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs rosidl_default_runtime soccer_geometry_msgs soccer_vision_attribute_msgs std_msgs ];
   depsTargetTarget = [  ];

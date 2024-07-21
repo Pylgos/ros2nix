@@ -48,10 +48,10 @@ buildRosPackage {
   pname = "gz_math_vendor";
   version = "0.0.5-1";
   src = sources.gz_math_vendor;
-  nativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ python3Packages.pybind11 ];
-  propagatedBuildInputs = [ eigen gz_cmake_vendor gz_utils_vendor ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ eigen gz_cmake_vendor gz_utils_vendor python3Packages.pybind11 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

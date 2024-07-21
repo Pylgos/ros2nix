@@ -35,10 +35,10 @@ buildRosPackage {
   pname = "cartographer";
   version = "2.0.9003-2";
   src = sources.cartographer;
-  nativeBuildInputs = [ cmake git gtest ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ python3Packages.sphinx ];
-  propagatedBuildInputs = [ abseil-cpp cairo ceres-solver eigen gflags glog lua5 protobuf python3Packages.boost ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake git gtest ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ abseil-cpp cairo ceres-solver eigen gflags glog lua5 protobuf python3Packages.boost python3Packages.sphinx ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

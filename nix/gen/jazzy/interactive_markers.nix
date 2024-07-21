@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "interactive_markers";
   version = "2.5.4-2";
   src = sources.interactive_markers;
-  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
-  propagatedNativeBuildInputs = [ rmw ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python rmw ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs rclcpp rclpy rcutils std_msgs tf2 tf2_geometry_msgs visualization_msgs ];
   depsTargetTarget = [  ];

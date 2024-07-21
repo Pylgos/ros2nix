@@ -48,10 +48,10 @@ buildRosPackage {
   pname = "microstrain_inertial_driver";
   version = "4.3.0-1";
   src = sources.microstrain_inertial_driver;
-  nativeBuildInputs = [ curl git ros_environment rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ eigen geographiclib jq ];
-  propagatedBuildInputs = [ diagnostic_aggregator diagnostic_updater geometry_msgs lifecycle_msgs microstrain_inertial_msgs nav_msgs nmea_msgs rclcpp_lifecycle rosidl_default_runtime rtcm_msgs sensor_msgs std_msgs std_srvs tf2 tf2_geometry_msgs tf2_ros ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ curl git ros_environment rosidl_default_generators ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ diagnostic_aggregator diagnostic_updater eigen geographiclib geometry_msgs jq lifecycle_msgs microstrain_inertial_msgs nav_msgs nmea_msgs rclcpp_lifecycle rosidl_default_runtime rtcm_msgs sensor_msgs std_msgs std_srvs tf2 tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

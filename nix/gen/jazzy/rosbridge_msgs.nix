@@ -27,10 +27,10 @@ buildRosPackage {
   pname = "rosbridge_msgs";
   version = "1.3.2-3";
   src = sources.rosbridge_msgs;
-  nativeBuildInputs = [ ament_cmake_ros rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ builtin_interfaces ];
-  propagatedBuildInputs = [ rosidl_default_runtime ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_ros rosidl_default_generators ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

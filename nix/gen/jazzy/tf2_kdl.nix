@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "tf2_kdl";
   version = "0.36.4-1";
   src = sources.tf2_kdl;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs orocos_kdl_vendor tf2 tf2_ros tf2_ros_py ];
   depsTargetTarget = [  ];

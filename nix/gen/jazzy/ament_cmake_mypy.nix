@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "ament_cmake_mypy";
   version = "0.17.1-1";
   src = sources.ament_cmake_mypy;
-  nativeBuildInputs = [ ament_cmake_core ];
-  propagatedNativeBuildInputs = [ ament_cmake_test ament_mypy ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_mypy ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

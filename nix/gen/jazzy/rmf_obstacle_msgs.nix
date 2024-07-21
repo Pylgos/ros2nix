@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "rmf_obstacle_msgs";
   version = "3.3.1-1";
   src = sources.rmf_obstacle_msgs;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

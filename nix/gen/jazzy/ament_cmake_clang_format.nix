@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "ament_cmake_clang_format";
   version = "0.17.1-1";
   src = sources.ament_cmake_clang_format;
-  nativeBuildInputs = [ ament_cmake_core ];
-  propagatedNativeBuildInputs = [ ament_clang_format ament_cmake_test ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_clang_format ament_cmake_core ament_cmake_test ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

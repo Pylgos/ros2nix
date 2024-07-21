@@ -39,10 +39,10 @@ buildRosPackage {
   pname = "fmi_adapter";
   version = "2.1.2-1";
   src = sources.fmi_adapter;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ launch ];
-  buildInputs = [ fmilibrary_vendor ];
-  propagatedBuildInputs = [ launch_ros rcl_interfaces rclcpp rclcpp_components rclcpp_lifecycle std_msgs ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake launch ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ fmilibrary_vendor launch_ros rcl_interfaces rclcpp rclcpp_components rclcpp_lifecycle std_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

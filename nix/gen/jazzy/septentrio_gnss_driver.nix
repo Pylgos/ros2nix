@@ -41,8 +41,8 @@ buildRosPackage {
   pname = "septentrio_gnss_driver";
   version = "1.4.0-3";
   src = sources.septentrio_gnss_driver;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diagnostic_msgs geographiclib geometry_msgs gps_msgs libpcap nav_msgs nmea_msgs python3Packages.boost rclcpp rclcpp_components rosidl_default_runtime sensor_msgs tf2 tf2_eigen tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];

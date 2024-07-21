@@ -44,8 +44,8 @@ buildRosPackage {
   pname = "stereo_image_proc";
   version = "5.0.1-3";
   src = sources.stereo_image_proc;
-  nativeBuildInputs = [ ament_cmake_auto ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_auto ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge image_geometry image_proc image_transport message_filters rclcpp rclcpp_components sensor_msgs stereo_msgs ];
   depsTargetTarget = [  ];

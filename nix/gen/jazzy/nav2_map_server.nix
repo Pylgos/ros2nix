@@ -41,10 +41,10 @@ buildRosPackage {
   pname = "nav2_map_server";
   version = "1.3.1-1";
   src = sources.nav2_map_server;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ launch_testing ];
-  buildInputs = [ nav2_common ];
-  propagatedBuildInputs = [ graphicsmagick launch_ros nav2_msgs nav2_util nav_msgs rclcpp rclcpp_lifecycle std_msgs tf2 yaml_cpp_vendor ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake launch_testing ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ graphicsmagick launch_ros nav2_common nav2_msgs nav2_util nav_msgs rclcpp rclcpp_lifecycle std_msgs tf2 yaml_cpp_vendor ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "moveit_plugins";
   version = "2.10.0-1";
   src = sources.moveit_plugins;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ moveit_simple_controller_manager ];
   depsTargetTarget = [  ];

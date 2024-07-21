@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "kobuki_ros_interfaces";
   version = "1.0.0-5";
   src = sources.kobuki_ros_interfaces;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ action_msgs rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

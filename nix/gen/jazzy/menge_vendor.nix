@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "menge_vendor";
   version = "1.2.1-1";
   src = sources.menge_vendor;
-  nativeBuildInputs = [ ament_cmake pkg-config ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake pkg-config ];
   buildInputs = [  ];
   propagatedBuildInputs = [ tinyxml ];
   depsTargetTarget = [  ];

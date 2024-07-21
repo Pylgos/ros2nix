@@ -43,8 +43,8 @@ buildRosPackage {
   pname = "rig_reconfigure";
   version = "1.4.0-4";
   src = sources.rig_reconfigure;
-  nativeBuildInputs = [ ament_cmake git ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake git ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp glfw3 rclcpp ];
   depsTargetTarget = [  ];

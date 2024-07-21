@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "moveit_ros_occupancy_map_monitor";
   version = "2.10.0-1";
   src = sources.moveit_ros_occupancy_map_monitor;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ eigen3_cmake_module ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake eigen3_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen geometric_shapes moveit_common moveit_core moveit_msgs pluginlib rclcpp tf2_ros ];
   depsTargetTarget = [  ];

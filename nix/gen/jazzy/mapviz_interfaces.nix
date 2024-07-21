@@ -27,10 +27,10 @@ buildRosPackage {
   pname = "mapviz_interfaces";
   version = "2.3.0-3";
   src = sources.mapviz_interfaces;
-  nativeBuildInputs = [ rosidl_default_generators ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ builtin_interfaces marti_common_msgs ];
-  propagatedBuildInputs = [ rosidl_default_runtime ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ rosidl_default_generators ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ builtin_interfaces marti_common_msgs rosidl_default_runtime ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

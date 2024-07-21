@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "libcaer";
   version = "1.0.2-3";
   src = sources.libcaer;
-  nativeBuildInputs = [ cmake pkg-config ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake pkg-config ];
   buildInputs = [  ];
   propagatedBuildInputs = [ libusb1 ];
   depsTargetTarget = [  ];

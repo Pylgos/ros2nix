@@ -41,10 +41,10 @@ buildRosPackage {
   pname = "spinnaker_camera_driver";
   version = "2.0.20-1";
   src = sources.spinnaker_camera_driver;
-  nativeBuildInputs = [ ament_cmake ament_cmake_ros curl ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ dpkg python3Packages.distro ];
-  propagatedBuildInputs = [ camera_info_manager ffmpeg flir_camera_msgs image_transport libusb1 libyamlcpp rclcpp rclcpp_components sensor_msgs std_msgs ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_ros curl ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ camera_info_manager dpkg ffmpeg flir_camera_msgs image_transport libusb1 libyamlcpp python3Packages.distro rclcpp rclcpp_components sensor_msgs std_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

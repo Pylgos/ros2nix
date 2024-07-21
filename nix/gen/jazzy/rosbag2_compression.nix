@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "rosbag2_compression";
   version = "0.26.4-1";
   src = sources.rosbag2_compression;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rcpputils rcutils rosbag2_cpp rosbag2_storage ];
   depsTargetTarget = [  ];

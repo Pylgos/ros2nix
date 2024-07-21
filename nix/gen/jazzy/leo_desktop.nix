@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "leo_desktop";
   version = "3.0.0-3";
   src = sources.leo_desktop;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ leo leo_viz ];
   depsTargetTarget = [  ];

@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "urdfdom_headers";
   version = "1.1.1-3";
   src = sources.urdfdom_headers;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

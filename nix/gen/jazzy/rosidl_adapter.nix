@@ -32,10 +32,10 @@ buildRosPackage {
   pname = "rosidl_adapter";
   version = "4.6.3-1";
   src = sources.rosidl_adapter;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ ament_cmake_core python3 buildPackages.python3Packages.empy rosidl_cli ];
-  buildInputs = [ ament_cmake ];
-  propagatedBuildInputs = [ ament_cmake_core python3Packages.empy rosidl_cli ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_core python3 buildPackages.python3Packages.empy rosidl_cli ];
+  buildInputs = [  ];
+  propagatedBuildInputs = [ ament_cmake ament_cmake_core python3Packages.empy rosidl_cli ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

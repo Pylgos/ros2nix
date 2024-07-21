@@ -45,8 +45,8 @@ buildRosPackage {
   pname = "rsl";
   version = "1.1.0-3";
   src = sources.rsl;
-  nativeBuildInputs = [ doxygen ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ doxygen ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen fmt rclcpp tcb_span tl_expected ];
   depsTargetTarget = [  ];

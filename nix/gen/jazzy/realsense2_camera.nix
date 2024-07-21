@@ -49,8 +49,8 @@ buildRosPackage {
   pname = "realsense2_camera";
   version = "4.55.1-3";
   src = sources.realsense2_camera;
-  nativeBuildInputs = [ ament_cmake ros_environment ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces cv_bridge diagnostic_updater eigen geometry_msgs image_transport launch_ros librealsense2 nav_msgs rclcpp rclcpp_components realsense2_camera_msgs sensor_msgs std_msgs tf2 tf2_ros ];
   depsTargetTarget = [  ];

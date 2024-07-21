@@ -40,8 +40,8 @@ buildRosPackage {
   pname = "rmw_connextdds_common";
   version = "0.22.0-2";
   src = sources.rmw_connextdds_common;
-  nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [ ament_cmake rmw ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_ros rmw ];
   buildInputs = [  ];
   propagatedBuildInputs = [ fastcdr rcpputils rcutils rmw_dds_common rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_fastrtps_c rosidl_typesupport_fastrtps_cpp rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp rti_connext_dds_cmake_module tracetools ];
   depsTargetTarget = [  ];

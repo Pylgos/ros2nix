@@ -30,9 +30,9 @@ buildRosPackage {
   pname = "octovis";
   version = "1.10.0-4";
   src = sources.octovis;
-  nativeBuildInputs = [ cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ libsForQt5.libqglviewer qt5.qtbase ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ cmake ];
+  buildInputs = [  ];
   propagatedBuildInputs = [ libGL libGLU libsForQt5.libqglviewer octomap qt5.qtbase ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];

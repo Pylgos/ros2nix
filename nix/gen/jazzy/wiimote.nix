@@ -38,9 +38,9 @@ buildRosPackage {
   pname = "wiimote";
   version = "3.3.0-3";
   src = sources.wiimote;
-  nativeBuildInputs = [ ament_cmake ament_cmake_auto ];
-  propagatedNativeBuildInputs = [  ];
-  buildInputs = [ bluez cwiid ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_auto ];
+  buildInputs = [  ];
   propagatedBuildInputs = [ bluez cwiid geometry_msgs rclcpp rclcpp_components rclcpp_lifecycle sensor_msgs std_msgs std_srvs wiimote_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];

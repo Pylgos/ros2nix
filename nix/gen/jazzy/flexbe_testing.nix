@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "flexbe_testing";
   version = "3.0.3-1";
   src = sources.flexbe_testing;
-  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ flexbe_core flexbe_msgs launch_ros rclpy ];
   depsTargetTarget = [  ];

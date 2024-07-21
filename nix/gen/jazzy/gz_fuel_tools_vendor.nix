@@ -55,8 +55,8 @@ buildRosPackage {
   pname = "gz_fuel_tools_vendor";
   version = "0.0.3-1";
   src = sources.gz_fuel_tools_vendor;
-  nativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
   buildInputs = [  ];
   propagatedBuildInputs = [ curl gflags gz_cmake_vendor gz_common_vendor gz_math_vendor gz_msgs_vendor gz_tools_vendor gz_utils_vendor jsoncpp libyaml tinyxml-2 ];
   depsTargetTarget = [  ];

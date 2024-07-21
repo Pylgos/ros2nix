@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "vrpn";
   version = "7.35.0-18";
   src = sources.vrpn;
-  nativeBuildInputs = [ cmake ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

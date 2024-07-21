@@ -40,8 +40,8 @@ buildRosPackage {
   pname = "joint_state_broadcaster";
   version = "4.9.0-1";
   src = sources.joint_state_broadcaster;
-  nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ backward_ros builtin_interfaces control_msgs controller_interface generate_parameter_library pluginlib rclcpp_lifecycle rcutils realtime_tools sensor_msgs ];
   depsTargetTarget = [  ];

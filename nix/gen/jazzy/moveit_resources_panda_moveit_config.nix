@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "moveit_resources_panda_moveit_config";
   version = "3.0.0-3";
   src = sources.moveit_resources_panda_moveit_config;
-  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ joint_state_publisher joint_state_publisher_gui moveit_resources_panda_description robot_state_publisher xacro ];
   depsTargetTarget = [  ];

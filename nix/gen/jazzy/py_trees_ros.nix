@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "py_trees_ros";
   version = "2.2.2-4";
   src = sources.py_trees_ros;
-  nativeBuildInputs = [ buildPackages.python3Packages.setuptools ];
-  propagatedNativeBuildInputs = [  ];
+  nativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.setuptools ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs py_trees py_trees_ros_interfaces rcl_interfaces rclpy ros2topic sensor_msgs std_msgs tf2_ros_py unique_identifier_msgs ];
   depsTargetTarget = [  ];

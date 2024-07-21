@@ -1,7 +1,8 @@
 { lib, pkgs }:
 
 rec {
-  compressZip = src:
+  compressZip =
+    src:
     pkgs.stdenvNoCC.mkDerivation {
       name = "${src.name}.zip";
       nativeBuildInputs = [ pkgs.buildPackages.zip ];

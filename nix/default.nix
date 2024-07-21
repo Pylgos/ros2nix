@@ -1,4 +1,8 @@
-{ lib, poetry2nix, config }:
+{
+  lib,
+  poetry2nix,
+  config,
+}:
 
 let
   systemPackagesOverlay = import ./system-packages-overlay.nix { inherit lib config; };

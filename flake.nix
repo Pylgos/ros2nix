@@ -16,7 +16,9 @@
       poetry2nix,
     }:
     let
-      lib = nixpkgs.lib // { dream2nix = dream2nix.lib; };
+      lib = nixpkgs.lib // {
+        dream2nix = dream2nix.lib;
+      };
     in
     (flake-utils.lib.eachDefaultSystem (
       system:
@@ -31,8 +33,16 @@
       }
     ))
     // {
-      lib.mkOverlay = ({ config }: import ./overlay.nix { inherit lib poetry2nix; config = self.lib.defaultConfig // config; });
-      lib.defaultConfig = { distro = "jazzy"; };
+      lib.mkOverlay = (
+        { config }:
+        import ./overlay.nix {
+          inherit lib poetry2nix;
+          config = self.lib.defaultConfig // config;
+        }
+      );
+      lib.defaultConfig = {
+        distro = "jazzy";
+      };
       overlays.default = self.lib.mkOverlay { config = self.lib.defaultConfig; };
     };
 }

@@ -30,7 +30,7 @@ buildRosPackage {
   nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ buildPackages.python3Packages.setuptools ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ python3Packages.pyqtwebengine python3Packages.pyside2 qt5.qttools.dev ];
+  propagatedBuildInputs = [ python3Packages.pyqt5 python3Packages.pyqtwebengine python3Packages.pyside2 python3Packages.sip4 qt5.qttools.dev ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

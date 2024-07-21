@@ -33,7 +33,7 @@ buildRosPackage {
   nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ python3Packages.pyside2 qt5.qtbase ];
+  propagatedBuildInputs = [ python3Packages.pyqt5 python3Packages.pyside2 python3Packages.sip4 qt5.qtbase ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

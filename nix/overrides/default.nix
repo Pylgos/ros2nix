@@ -1,6 +1,3 @@
 { lib, config }:
 
-if config.distro == "jazzy" then
-  import ./jazzy.nix
-else
-  (final: prev: {})
+import { jazzy = ./jazzy.nix; }.${config.distro} or (final: prev: { })

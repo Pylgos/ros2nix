@@ -19,7 +19,6 @@ wrapRosQtAppsHook() {
 
         find "$targetDir" ! -type d -executable -print0 | while IFS= read -r -d '' file
         do
-            echo "file: $file"
             isELF "$file" || isMachO "$file" || isScript "$file" || continue
             local basename
             basename="$(basename "$file")"

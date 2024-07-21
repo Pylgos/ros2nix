@@ -8,6 +8,7 @@ let
   };
   common = self: {
     ros-setup-helper = self.callPackage ./setup-helper.nix { };
+    wrapRosQtAppsHook = self.callPackage ./wrap-ros-qt-apps-hook.nix { };
     rosSetupHook = self.callPackage ./setup-hook.nix { };
     buildRosPackage = self.callPackage ./build-ros-package.nix { };
   };

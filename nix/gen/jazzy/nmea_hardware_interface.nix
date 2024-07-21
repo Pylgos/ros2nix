@@ -21,6 +21,7 @@
   ros2_control,
   rviz2,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -40,7 +41,7 @@ buildRosPackage {
   pname = "nmea_hardware_interface";
   version = "0.0.1-5";
   src = sources.nmea_hardware_interface;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ pkg-config ];
   buildInputs = [  ];
   propagatedBuildInputs = [ controller_interface geographic_msgs gtk3 hardware_interface nmea_msgs pluginlib python3Packages.boost quaternion_operation rclcpp rclcpp_components realtime_tools ros2_control rviz2 ];

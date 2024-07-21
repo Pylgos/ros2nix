@@ -9,6 +9,7 @@
   rqt_gui,
   rqt_gui_py,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -28,7 +29,7 @@ buildRosPackage {
   pname = "rqt_controller_manager";
   version = "4.11.0-1";
   src = sources.rqt_controller_manager;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ controller_manager controller_manager_msgs rclpy rqt_gui rqt_gui_py ];

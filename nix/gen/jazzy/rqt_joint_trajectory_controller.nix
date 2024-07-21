@@ -12,6 +12,7 @@
   rqt_gui_py,
   substituteSource,
   trajectory_msgs,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -31,7 +32,7 @@ buildRosPackage {
   pname = "rqt_joint_trajectory_controller";
   version = "4.9.0-1";
   src = sources.rqt_joint_trajectory_controller;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ control_msgs controller_manager_msgs python_qt_binding qt_gui rclpy rqt_gui rqt_gui_py trajectory_msgs ];

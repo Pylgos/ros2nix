@@ -9,6 +9,7 @@
   fetchzip,
   qt_gui,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -28,7 +29,7 @@ buildRosPackage {
   pname = "qt_gui_app";
   version = "2.7.4-2";
   src = sources.qt_gui_app;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ ament_index_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ qt_gui ];

@@ -14,6 +14,7 @@
   qt5,
   rmf_utils,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -33,7 +34,7 @@ buildRosPackage {
   pname = "rmf_traffic_editor";
   version = "1.9.1-1";
   src = sources.rmf_traffic_editor;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ ament_index_cpp eigen libyamlcpp qt5.qtbase rmf_utils ];
   propagatedBuildInputs = [ ceres-solver glog proj ];

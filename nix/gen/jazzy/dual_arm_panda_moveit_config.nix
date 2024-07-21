@@ -10,6 +10,7 @@
   robot_state_publisher,
   substituteSource,
   topic_tools,
+  wrapRosQtAppsHook,
   xacro,
 }:
 let
@@ -30,7 +31,7 @@ buildRosPackage {
   pname = "dual_arm_panda_moveit_config";
   version = "3.0.0-3";
   src = sources.dual_arm_panda_moveit_config;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ joint_state_publisher joint_state_publisher_gui moveit_resources_panda_description robot_state_publisher topic_tools xacro ];

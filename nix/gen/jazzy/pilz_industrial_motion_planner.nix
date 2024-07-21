@@ -33,6 +33,7 @@
   tf2_geometry_msgs,
   tf2_kdl,
   tf2_ros,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -52,7 +53,7 @@ buildRosPackage {
   pname = "pilz_industrial_motion_planner";
   version = "2.10.0-1";
   src = sources.pilz_industrial_motion_planner;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ eigen3_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ generate_parameter_library geometry_msgs moveit_common moveit_core moveit_msgs moveit_ros_move_group moveit_ros_planning orocos_kdl_vendor pluginlib rclcpp tf2 tf2_eigen tf2_eigen_kdl tf2_geometry_msgs tf2_kdl tf2_ros ];

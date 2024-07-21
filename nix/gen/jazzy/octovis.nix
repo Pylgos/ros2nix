@@ -10,6 +10,7 @@
   octomap,
   qt5,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -29,7 +30,7 @@ buildRosPackage {
   pname = "octovis";
   version = "1.10.0-4";
   src = sources.octovis;
-  nativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ libsForQt5.libqglviewer qt5.qtbase ];
   propagatedBuildInputs = [ libGL libGLU libsForQt5.libqglviewer octomap qt5.qtbase ];

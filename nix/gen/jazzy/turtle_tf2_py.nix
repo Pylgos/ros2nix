@@ -15,6 +15,7 @@
   substituteSource,
   tf2_ros,
   turtlesim,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -34,7 +35,7 @@ buildRosPackage {
   pname = "turtle_tf2_py";
   version = "0.3.6-5";
   src = sources.turtle_tf2_py;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ launch buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs launch_ros rclpy tf2_ros turtlesim ];

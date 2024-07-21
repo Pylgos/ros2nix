@@ -10,6 +10,7 @@
   ros2launch,
   rviz2,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -29,7 +30,7 @@ buildRosPackage {
   pname = "dolly_ignition";
   version = "0.4.0-6";
   src = sources.dolly_ignition;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ dolly_follow ros2launch rviz2 ];

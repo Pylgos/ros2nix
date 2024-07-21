@@ -16,6 +16,7 @@
   tf2_geometry_msgs,
   tf2_ros,
   turtlesim,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -35,7 +36,7 @@ buildRosPackage {
   pname = "turtle_tf2_cpp";
   version = "0.3.6-5";
   src = sources.turtle_tf2_cpp;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs launch_ros message_filters rclcpp tf2 tf2_geometry_msgs tf2_ros turtlesim ];

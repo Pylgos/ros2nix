@@ -13,6 +13,7 @@
   moveit_ros_planning_interface,
   moveit_ros_warehouse,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -32,7 +33,7 @@ buildRosPackage {
   pname = "moveit_runtime";
   version = "2.10.0-1";
   src = sources.moveit_runtime;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ moveit_core moveit_planners moveit_plugins moveit_ros_move_group moveit_ros_perception moveit_ros_planning moveit_ros_planning_interface moveit_ros_warehouse ];

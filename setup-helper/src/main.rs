@@ -5,7 +5,6 @@ use std::{
     env, fs,
     io::Write,
     path::{Path, PathBuf},
-    time::Instant,
 };
 
 #[derive(Debug, Clone)]
@@ -79,10 +78,14 @@ enum DsvOperation {
 
 fn parse_dsv(content: &str, prefix: &Path) -> Result<Vec<DsvOperation>> {
     let mut ops = vec![];
-    let add_prefix_if_relative = |path: &str| -> PathBuf {
-        let path = Path::new(path);
+    let add_prefix_if_relative = |path_str: &str| -> PathBuf {
+        let path = Path::new(path_str);
         if path.is_relative() {
-            prefix.join(path)
+            if path_str.is_empty() {
+                prefix.to_path_buf()
+            } else {
+                prefix.join(path)
+            }
         } else {
             path.to_path_buf()
         }
@@ -145,7 +148,7 @@ fn parse_dsv(content: &str, prefix: &Path) -> Result<Vec<DsvOperation>> {
     Ok(ops)
 }
 
-fn dsv_optimize_source(ops: Vec<DsvOperation>) -> Result<Vec<DsvOperation>> {
+fn dsv_transform(ops: Vec<DsvOperation>, develop: bool) -> Result<Vec<DsvOperation>> {
     #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Default)]
     struct AvailableExtensions {
         dsv: bool,
@@ -165,13 +168,13 @@ fn dsv_optimize_source(ops: Vec<DsvOperation>) -> Result<Vec<DsvOperation>> {
             if base.with_extension("dsv").is_file() {
                 let path = base.with_extension("dsv");
                 let content = fs::read_to_string(path)?;
-                new_ops.extend(dsv_optimize_source(parse_dsv(&content, &prefix)?)?);
-            } else if base.with_extension("sh").is_file() {
+                new_ops.extend(dsv_transform(parse_dsv(&content, &prefix)?, develop)?);
+            } else if develop && base.with_extension("sh").is_file() {
                 new_ops.push(DsvOperation::Source {
                     path: base.with_extension("sh"),
                     prefix,
                 });
-            } else if base.with_extension("bash").is_file() {
+            } else if develop && base.with_extension("bash").is_file() {
                 new_ops.push(DsvOperation::Source {
                     path: base.with_extension("bash"),
                     prefix,
@@ -214,6 +217,7 @@ fn toposort_pkgs(pkgs: &BTreeMap<String, Package>) -> Vec<&str> {
 fn gether_dsv_ops(
     pkgs: &BTreeMap<String, Package>,
     sorted_pkgs: &[&str],
+    develop: bool,
 ) -> Result<Vec<DsvOperation>> {
     let mut ops = Vec::new();
 
@@ -222,7 +226,7 @@ fn gether_dsv_ops(
             let dsv_path = pkg.package_dsv();
             let content = fs::read_to_string(&dsv_path)?;
             let mut pkg_ops = parse_dsv(&content, &pkg.prefix).unwrap();
-            pkg_ops = dsv_optimize_source(pkg_ops).unwrap();
+            pkg_ops = dsv_transform(pkg_ops, develop).unwrap();
             ops.extend(pkg_ops);
         }
     }
@@ -249,7 +253,7 @@ fn generate_setup_script(
                 if_exists,
             } => {
                 if let Some(prev) = env.get_mut(name) {
-                    if prev.len() != 0 {
+                    if !prev.is_empty() {
                         *prev = format!("{}:{prev}", value.display());
                         modified_env.insert(name);
                     } else if !if_exists {
@@ -267,7 +271,7 @@ fn generate_setup_script(
                 if_unset,
             } => {
                 if let Some(prev) = env.get_mut(name) {
-                    if prev.len() == 0 || !if_unset {
+                    if prev.is_empty() || !if_unset {
                         *prev = value.display().to_string();
                         modified_env.insert(name);
                     }
@@ -299,11 +303,9 @@ fn generate_setup_script(
 }
 
 fn main() -> Result<()> {
-    eprintln!("ros2nix-setup-helper: generating setup script");
-    let start = Instant::now();
     let search_path: Vec<_> = env::var("_ROS2NIX_SEARCH_PATH")
         .unwrap_or_default()
-        .split(":")
+        .split(':')
         .map(PathBuf::from)
         .collect();
     let pkgs: BTreeMap<String, Package> = search_path
@@ -311,12 +313,11 @@ fn main() -> Result<()> {
         .flat_map(|p| Package::find(p).into_iter())
         .collect();
     let sorted_pkgs = toposort_pkgs(&pkgs);
-    let ops = gether_dsv_ops(&pkgs, &sorted_pkgs)?;
+    let develop = env::var("ROS2NIX_SETUP_DEVEL_ENV")
+        .map(|val| val != "0")
+        .unwrap_or(false);
+    let ops = gether_dsv_ops(&pkgs, &sorted_pkgs, develop)?;
     let env: HashMap<String, String> = env::vars().collect();
     generate_setup_script(std::io::stdout(), &ops, env)?;
-    eprintln!(
-        "ros2nix-setup-helper: done. elapsed: {}us",
-        start.elapsed().as_micros()
-    );
     Ok(())
 }

@@ -17,6 +17,7 @@
   trajectory_msgs,
   webots_ros2_control,
   webots_ros2_driver,
+  wrapRosQtAppsHook,
   xacro,
 }:
 let
@@ -37,7 +38,7 @@ buildRosPackage {
   pname = "webots_ros2_universal_robot";
   version = "2023.1.2-4";
   src = sources.webots_ros2_universal_robot;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces control_msgs controller_manager joint_state_broadcaster joint_trajectory_controller rclpy robot_state_publisher rviz2 trajectory_msgs webots_ros2_control webots_ros2_driver xacro ];

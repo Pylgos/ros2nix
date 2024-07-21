@@ -8,6 +8,7 @@
   imu_filter_madgwick,
   rviz_imu_plugin,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -27,7 +28,7 @@ buildRosPackage {
   pname = "imu_tools";
   version = "2.1.3-4";
   src = sources.imu_tools;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ imu_complementary_filter imu_filter_madgwick rviz_imu_plugin ];

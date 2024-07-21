@@ -13,6 +13,7 @@
   substituteSource,
   tf2_eigen,
   visualization_msgs,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -32,7 +33,7 @@ buildRosPackage {
   pname = "moveit_planners_stomp";
   version = "2.10.0-1";
   src = sources.moveit_planners_stomp;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ generate_parameter_library moveit_common moveit_core rsl std_msgs stomp tf2_eigen visualization_msgs ];

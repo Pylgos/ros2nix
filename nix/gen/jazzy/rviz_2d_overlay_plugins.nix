@@ -11,6 +11,7 @@
   rviz_rendering,
   std_msgs,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -30,7 +31,7 @@ buildRosPackage {
   pname = "rviz_2d_overlay_plugins";
   version = "1.3.0-3";
   src = sources.rviz_2d_overlay_plugins;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.boost rviz_2d_overlay_msgs rviz_common rviz_ogre_vendor rviz_rendering std_msgs ];

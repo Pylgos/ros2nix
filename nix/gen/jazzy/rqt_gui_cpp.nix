@@ -9,6 +9,7 @@
   qt_gui_cpp,
   rclcpp,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -28,7 +29,7 @@ buildRosPackage {
   pname = "rqt_gui_cpp";
   version = "1.6.0-2";
   src = sources.rqt_gui_cpp;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ qt5.qtbase ];
   propagatedBuildInputs = [ pluginlib qt_gui_cpp rclcpp ];

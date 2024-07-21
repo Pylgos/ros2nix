@@ -13,6 +13,7 @@
   qt5,
   substituteSource,
   tango_icons_vendor,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -32,7 +33,7 @@ buildRosPackage {
   pname = "qt_gui";
   version = "2.7.4-2";
   src = sources.qt_gui;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ ament_index_python buildPackages.python3Packages.catkin-pkg ];
   buildInputs = [ python3Packages.pyside2 qt5.qtbase ];
   propagatedBuildInputs = [ python_qt_binding tango_icons_vendor ];

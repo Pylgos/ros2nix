@@ -19,6 +19,7 @@
   rclcpp,
   std_msgs,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -38,7 +39,7 @@ buildRosPackage {
   pname = "ros_gz_sim";
   version = "1.0.0-1";
   src = sources.ros_gz_sim;
-  nativeBuildInputs = [ ament_cmake pkg-config ];
+  nativeBuildInputs = [ ament_cmake pkg-config wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ ament_index_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ gflags gz_math_vendor gz_msgs_vendor gz_sim_vendor gz_transport_vendor rclcpp std_msgs ];

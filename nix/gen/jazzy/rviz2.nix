@@ -21,6 +21,7 @@
   rviz_ogre_vendor,
   sensor_msgs,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -40,7 +41,7 @@ buildRosPackage {
   pname = "rviz2";
   version = "14.1.2-1";
   src = sources.rviz2;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ qt5.qtbase ];
   propagatedBuildInputs = [ python3 rviz_common rviz_default_plugins rviz_ogre_vendor ];

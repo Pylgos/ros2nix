@@ -23,6 +23,7 @@
   substituteSource,
   tf2,
   tf2_ros,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -42,7 +43,7 @@ buildRosPackage {
   pname = "rviz_visual_testing_framework";
   version = "14.1.2-1";
   src = sources.rviz_visual_testing_framework;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ ament_cmake_gtest ];
   buildInputs = [ qt5.qtbase ];
   propagatedBuildInputs = [ geometry_msgs rclcpp rcutils rviz_common rviz_ogre_vendor rviz_rendering std_msgs tf2 tf2_ros ];

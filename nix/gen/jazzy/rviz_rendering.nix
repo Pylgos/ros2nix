@@ -20,6 +20,7 @@
   rviz_assimp_vendor,
   rviz_ogre_vendor,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -39,7 +40,7 @@ buildRosPackage {
   pname = "rviz_rendering";
   version = "14.1.2-1";
   src = sources.rviz_rendering;
-  nativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ eigen3_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp eigen qt5.qtbase resource_retriever rviz_assimp_vendor rviz_ogre_vendor ];

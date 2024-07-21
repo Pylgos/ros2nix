@@ -27,6 +27,7 @@
   tf2,
   tf2_kdl,
   urdfdom,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -46,7 +47,7 @@ buildRosPackage {
   pname = "moveit_kinematics";
   version = "2.10.0-1";
   src = sources.moveit_kinematics;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ class_loader eigen generate_parameter_library moveit_common moveit_core moveit_msgs moveit_ros_planning orocos_kdl_vendor pluginlib python3Packages.lxml rsl tf2 tf2_kdl urdfdom ];

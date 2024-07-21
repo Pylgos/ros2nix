@@ -250,14 +250,6 @@ fn generate_source_list(mut dst: impl Write, source: &PatchedSource) -> Result<(
 fn generate_distro_root(ctx: &Ctx) -> Result<()> {
     let mut dst = String::new();
     writeln!(dst, "self:")?;
-    // writeln!(dst, "let")?;
-    // writeln!(
-    //     dst,
-    //     "  sources = self.callPackage ({{ fetchurl, fetchzip, fetchgit, substituteSource }}: rec {{"
-    // )?;
-    // generate_source_list(ctx, indented(&mut dst).with_str("    "))?;
-    // writeln!(dst, "  }}) {{}};")?;
-    // writeln!(dst, "in")?;
     writeln!(dst, "{{")?;
     generate_package_list(ctx, indented(&mut dst).with_str("  "))?;
     writeln!(dst, "}}")?;

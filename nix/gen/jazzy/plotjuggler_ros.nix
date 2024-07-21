@@ -16,6 +16,7 @@
   substituteSource,
   tf2_msgs,
   tf2_ros,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -35,7 +36,7 @@ buildRosPackage {
   pname = "plotjuggler_ros";
   version = "2.1.2-2";
   src = sources.plotjuggler_ros;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ binutils plotjuggler python3Packages.boost qt5.qtbase qt5.qtsvg qt5.qtwebsockets rclcpp rcpputils rosbag2 rosbag2_transport tf2_msgs tf2_ros ];

@@ -10,6 +10,7 @@
   rqt_gui,
   rqt_gui_py,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -29,7 +30,7 @@ buildRosPackage {
   pname = "rqt_graph";
   version = "1.5.4-1";
   src = sources.rqt_graph;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ ament_index_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python_qt_binding qt_dotgraph rqt_gui rqt_gui_py ];

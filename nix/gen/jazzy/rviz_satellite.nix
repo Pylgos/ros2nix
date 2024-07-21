@@ -16,6 +16,7 @@
   sensor_msgs,
   substituteSource,
   tf2_ros,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -35,7 +36,7 @@ buildRosPackage {
   pname = "rviz_satellite";
   version = "4.0.0-1";
   src = sources.rviz_satellite;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ qt5.qtbase ];
   propagatedBuildInputs = [ angles rclcpp rcpputils rviz_common rviz_default_plugins sensor_msgs tf2_ros ];

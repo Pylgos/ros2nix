@@ -13,6 +13,7 @@
   tf2_eigen_kdl,
   tf2_geometry_msgs,
   tf2_kdl,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -32,7 +33,7 @@ buildRosPackage {
   pname = "moveit_resources_prbt_ikfast_manipulator_plugin";
   version = "2.10.0-1";
   src = sources.moveit_resources_prbt_ikfast_manipulator_plugin;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ tf2_eigen tf2_eigen_kdl ];
   propagatedBuildInputs = [ generate_parameter_library moveit_core pluginlib rclcpp tf2_geometry_msgs tf2_kdl ];

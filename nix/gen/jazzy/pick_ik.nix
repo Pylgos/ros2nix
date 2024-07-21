@@ -15,6 +15,7 @@
   tf2_geometry_msgs,
   tf2_kdl,
   tl_expected,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -49,7 +50,7 @@ buildRosPackage {
   pname = "pick_ik";
   version = "1.1.0-4";
   src = sources.pick_ik;
-  nativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ fmt generate_parameter_library moveit_core pluginlib rclcpp rsl tf2_geometry_msgs tf2_kdl tl_expected ];

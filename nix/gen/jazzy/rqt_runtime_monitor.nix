@@ -15,6 +15,7 @@
   rqt_gui,
   rqt_gui_py,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -34,7 +35,7 @@ buildRosPackage {
   pname = "rqt_runtime_monitor";
   version = "1.0.0-5";
   src = sources.rqt_runtime_monitor;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ ament_index_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diagnostic_msgs python_qt_binding qt_gui rclpy rqt_gui rqt_gui_py ];

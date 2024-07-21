@@ -13,6 +13,7 @@
   rosidl_default_generators,
   rosidl_default_runtime,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -32,7 +33,7 @@ buildRosPackage {
   pname = "rqt_py_common";
   version = "1.6.0-2";
   src = sources.rqt_py_common;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python_qt_binding qt5.qtbase qt_gui rclpy ];

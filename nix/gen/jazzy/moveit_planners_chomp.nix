@@ -10,6 +10,7 @@
   pluginlib,
   rclcpp,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -29,7 +30,7 @@ buildRosPackage {
   pname = "moveit_planners_chomp";
   version = "2.10.0-1";
   src = sources.moveit_planners_chomp;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ chomp_motion_planner moveit_common moveit_core pluginlib rclcpp ];

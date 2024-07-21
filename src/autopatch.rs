@@ -7,10 +7,7 @@ use std::{
 };
 
 use anyhow::{Context, Result};
-use futures::{
-    future::BoxFuture,
-    FutureExt,
-};
+use futures::{future::BoxFuture, FutureExt};
 use reqwest::Url;
 use tracing::{debug, warn};
 use walkdir::WalkDir;

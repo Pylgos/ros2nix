@@ -11,6 +11,7 @@
   rclcpp,
   rclcpp_action,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -30,7 +31,7 @@ buildRosPackage {
   pname = "moveit_simple_controller_manager";
   version = "2.10.0-1";
   src = sources.moveit_simple_controller_manager;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ control_msgs moveit_common moveit_core pluginlib rclcpp rclcpp_action ];

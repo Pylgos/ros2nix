@@ -14,6 +14,7 @@
   qt5,
   rclcpp,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -33,7 +34,7 @@ buildRosPackage {
   pname = "fuse_loss";
   version = "1.1.1-1";
   src = sources.fuse_loss;
-  nativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ceres-solver fuse_core pluginlib rclcpp ];

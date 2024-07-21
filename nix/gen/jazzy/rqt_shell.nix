@@ -11,6 +11,7 @@
   rqt_gui,
   rqt_gui_py,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -30,7 +31,7 @@ buildRosPackage {
   pname = "rqt_shell";
   version = "1.2.2-2";
   src = sources.rqt_shell;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ buildPackages.python3Packages.catkin-pkg ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python_qt_binding qt_gui qt_gui_py_common rqt_gui rqt_gui_py ];

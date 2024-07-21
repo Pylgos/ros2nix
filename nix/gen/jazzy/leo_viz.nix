@@ -12,6 +12,7 @@
   leo_description,
   rviz2,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -31,7 +32,7 @@ buildRosPackage {
   pname = "leo_viz";
   version = "3.0.0-3";
   src = sources.leo_viz;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ joint_state_publisher joint_state_publisher_gui leo_description rviz2 ];

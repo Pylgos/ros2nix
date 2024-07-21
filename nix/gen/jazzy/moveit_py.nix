@@ -16,6 +16,7 @@
   rclcpp,
   rclpy,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -35,7 +36,7 @@ buildRosPackage {
   pname = "moveit_py";
   version = "2.10.0-1";
   src = sources.moveit_py;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ ament_index_python ];
   buildInputs = [ pybind11_vendor ];
   propagatedBuildInputs = [ geometry_msgs moveit_core moveit_ros_planning moveit_ros_planning_interface octomap_msgs rclcpp rclpy ];

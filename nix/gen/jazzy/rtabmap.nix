@@ -14,6 +14,7 @@
   qt_gui_cpp,
   sqlite,
   substituteSource,
+  wrapRosQtAppsHook,
   zlib,
 }:
 let
@@ -34,7 +35,7 @@ buildRosPackage {
   pname = "rtabmap";
   version = "0.21.5-1";
   src = sources.rtabmap;
-  nativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ proj ];
   propagatedBuildInputs = [ cv_bridge gtsam libg2o libpointmatcher octomap pcl qt_gui_cpp sqlite zlib ];

@@ -11,6 +11,7 @@
   std_msgs,
   substituteSource,
   visualization_msgs,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -30,7 +31,7 @@ buildRosPackage {
   pname = "color_names";
   version = "0.0.3-6";
   src = sources.color_names;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rviz2 std_msgs visualization_msgs ];

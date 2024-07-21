@@ -10,6 +10,7 @@
   python3Packages,
   qt5,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -29,7 +30,7 @@ buildRosPackage {
   pname = "python_qt_binding";
   version = "2.2.1-1";
   src = sources.python_qt_binding;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ qt5.qtbase ];
   propagatedBuildInputs = [ python3Packages.pyside2 ];

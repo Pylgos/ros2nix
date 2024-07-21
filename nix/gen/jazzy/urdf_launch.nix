@@ -12,6 +12,7 @@
   rviz_common,
   rviz_default_plugins,
   substituteSource,
+  wrapRosQtAppsHook,
   xacro,
 }:
 let
@@ -32,7 +33,7 @@ buildRosPackage {
   pname = "urdf_launch";
   version = "0.1.1-3";
   src = sources.urdf_launch;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ joint_state_publisher joint_state_publisher_gui launch_ros robot_state_publisher rviz2 rviz_common rviz_default_plugins xacro ];

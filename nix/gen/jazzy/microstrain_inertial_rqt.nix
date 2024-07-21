@@ -11,6 +11,7 @@
   rqt_gui_py,
   std_msgs,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -30,7 +31,7 @@ buildRosPackage {
   pname = "microstrain_inertial_rqt";
   version = "4.3.0-1";
   src = sources.microstrain_inertial_rqt;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs microstrain_inertial_msgs nav_msgs rclpy rqt_gui rqt_gui_py std_msgs ];

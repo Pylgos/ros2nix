@@ -12,6 +12,7 @@
   rosidl_default_generators,
   rosidl_default_runtime,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -31,7 +32,7 @@ buildRosPackage {
   pname = "swri_console";
   version = "2.0.5-1";
   src = sources.swri_console;
-  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ qt5.qtbase ];
   propagatedBuildInputs = [ python3Packages.boost qt5.qtbase rcl_interfaces rclcpp rosbag2_transport rosidl_default_runtime ];

@@ -9,6 +9,7 @@
   rqt_image_overlay_layer,
   substituteSource,
   vision_msgs,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -28,7 +29,7 @@ buildRosPackage {
   pname = "vision_msgs_layers";
   version = "0.2.0-4";
   src = sources.vision_msgs_layers;
-  nativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rqt_image_overlay_layer vision_msgs ];

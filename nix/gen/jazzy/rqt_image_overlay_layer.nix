@@ -13,6 +13,7 @@
   rcpputils,
   rosidl_runtime_cpp,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -32,7 +33,7 @@ buildRosPackage {
   pname = "rqt_image_overlay_layer";
   version = "0.3.1-4";
   src = sources.rqt_image_overlay_layer;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ message_filters pluginlib qt5.qtbase rclcpp rcpputils rosidl_runtime_cpp ];

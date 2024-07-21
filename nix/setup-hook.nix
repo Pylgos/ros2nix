@@ -17,11 +17,11 @@ makeSetupHook
     writeScript "ros2nix-setup-hook.sh" ''
       #!@shell@
 
-      ros2nixSetupHook_addSerchPath() {
+      _ros2nixSetupHook_addSerchPath() {
         addToSearchPath _ROS2NIX_SEARCH_PATH "$1"
       }
 
-      ros2nixSetupPhase() {
+      _ros2nixSetupHook_postHook() {
         local fake_complete
         if ! type complete > /dev/null 2>&1; then
           complete() {
@@ -35,9 +35,9 @@ makeSetupHook
         fi
       }
 
-      addEnvHooks "$targetOffset" ros2nixSetupHook_addSerchPath
-      addEnvHooks "$hostOffset" ros2nixSetupHook_addSerchPath
+      addEnvHooks "$targetOffset" _ros2nixSetupHook_addSerchPath
+      addEnvHooks "$hostOffset" _ros2nixSetupHook_addSerchPath
 
-      prePhases+=(ros2nixSetupPhase)
+      postHooks+=(_ros2nixSetupHook_postHook)
     ''
   )

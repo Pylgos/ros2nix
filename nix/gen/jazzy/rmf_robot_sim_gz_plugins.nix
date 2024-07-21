@@ -18,6 +18,7 @@
   rmf_fleet_msgs,
   rmf_robot_sim_common,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -37,7 +38,7 @@ buildRosPackage {
   pname = "rmf_robot_sim_gz_plugins";
   version = "2.3.2-1";
   src = sources.rmf_robot_sim_gz_plugins;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen gz_gui_vendor gz_msgs_vendor gz_plugin_vendor gz_rendering_vendor gz_sim_vendor gz_transport_vendor qt5.qtbase qt5.qtdeclarative rclcpp rmf_building_map_msgs rmf_building_sim_gz_plugins rmf_fleet_msgs rmf_robot_sim_common ];

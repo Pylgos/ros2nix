@@ -13,6 +13,7 @@
   tf2_kdl,
   trac_ik_lib,
   urdf,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -32,7 +33,7 @@ buildRosPackage {
   pname = "trac_ik_kinematics_plugin";
   version = "2.0.1-1";
   src = sources.trac_ik_kinematics_plugin;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ class_loader generate_parameter_library moveit_core pluginlib rclcpp tf2_kdl trac_ik_lib urdf ];

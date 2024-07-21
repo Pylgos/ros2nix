@@ -32,6 +32,27 @@ struct ClassifiedRosDependency {
     propagated: bool,
 }
 
+fn find_qt_dependants(pkg_deps: &BTreeMap<String, NixDependencies>) -> BTreeSet<String> {
+    let mut dependants = BTreeSet::new();
+    let mut prev_dependants_len = 0;
+    loop {
+        for (name, deps) in pkg_deps.iter() {
+            if deps
+                .iter()
+                .any(|d| d.name.contains("qt5") || dependants.contains(&d.name))
+            {
+                dependants.insert(name.clone());
+            }
+        }
+
+        if dependants.len() == prev_dependants_len {
+            break;
+        }
+        prev_dependants_len = dependants.len();
+    }
+    dependants
+}
+
 pub fn resolve_dependencies(
     cfg: &ConfigRef,
     manifests: &BTreeMap<String, PackageManifest>,
@@ -101,10 +122,21 @@ pub fn resolve_dependencies(
         res
     };
 
-    Ok(package_deps
+    let mut result = package_deps
         .into_iter()
         .map(|(name, deps)| (name, resolve(&deps)))
-        .collect())
+        .collect();
+
+    let qt_dependants = find_qt_dependants(&result);
+    for name in qt_dependants {
+        result.get_mut(&name).unwrap().insert(NixDependency {
+            name: "wrapRosQtAppsHook".to_string(),
+            kind: NixDependencyKind::BuildHost,
+            propagated: false,
+        });
+    }
+
+    Ok(result)
 }
 
 fn map_dependency_kind(

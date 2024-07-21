@@ -21,6 +21,7 @@
   webots_ros2_control,
   webots_ros2_driver,
   webots_ros2_msgs,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -40,7 +41,7 @@ buildRosPackage {
   pname = "webots_ros2_epuck";
   version = "2023.1.2-4";
   src = sources.webots_ros2_epuck;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces controller_manager diff_drive_controller geometry_msgs joint_state_broadcaster nav_msgs rclpy robot_state_publisher rviz2 sensor_msgs std_msgs tf2_ros webots_ros2_control webots_ros2_driver webots_ros2_msgs ];

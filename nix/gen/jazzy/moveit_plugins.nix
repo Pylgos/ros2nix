@@ -6,6 +6,7 @@
   fetchzip,
   moveit_simple_controller_manager,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -25,7 +26,7 @@ buildRosPackage {
   pname = "moveit_plugins";
   version = "2.10.0-1";
   src = sources.moveit_plugins;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ moveit_simple_controller_manager ];

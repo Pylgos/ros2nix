@@ -13,6 +13,7 @@
   rqt_topic,
   sensor_msgs,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -32,7 +33,7 @@ buildRosPackage {
   pname = "rqt_moveit";
   version = "1.0.1-5";
   src = sources.rqt_moveit;
-  nativeBuildInputs = [ buildPackages.python3Packages.setuptools rosidl_default_generators ];
+  nativeBuildInputs = [ buildPackages.python3Packages.setuptools rosidl_default_generators wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python_qt_binding rclpy rqt_gui rqt_gui_py rqt_py_common rqt_topic sensor_msgs ];

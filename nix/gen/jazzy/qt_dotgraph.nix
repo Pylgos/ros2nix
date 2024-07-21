@@ -10,6 +10,7 @@
   python3Packages,
   python_qt_binding,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -29,7 +30,7 @@ buildRosPackage {
   pname = "qt_dotgraph";
   version = "2.7.4-2";
   src = sources.qt_dotgraph;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.pydot python_qt_binding ];

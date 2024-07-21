@@ -17,6 +17,7 @@
   tf2_ros,
   webots_ros2_control,
   webots_ros2_driver,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -36,7 +37,7 @@ buildRosPackage {
   pname = "webots_ros2_tiago";
   version = "2023.1.2-4";
   src = sources.webots_ros2_tiago;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces controller_manager diff_drive_controller geometry_msgs joint_state_broadcaster rclpy robot_state_publisher rviz2 tf2_ros webots_ros2_control webots_ros2_driver ];

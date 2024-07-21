@@ -36,6 +36,7 @@
   tf2_ros,
   urdf,
   visualization_msgs,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -55,7 +56,7 @@ buildRosPackage {
   pname = "rviz_default_plugins";
   version = "14.1.2-1";
   src = sources.rviz_default_plugins;
-  nativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ qt5.qtbase ];
   propagatedBuildInputs = [ geometry_msgs gz_math_vendor image_transport interactive_markers laser_geometry map_msgs nav_msgs pluginlib point_cloud_transport qt5.qtbase rclcpp resource_retriever rviz_common rviz_ogre_vendor rviz_rendering tf2 tf2_geometry_msgs tf2_ros urdf visualization_msgs ];

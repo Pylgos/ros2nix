@@ -14,6 +14,7 @@
   rqt_py_common,
   std_msgs,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -33,7 +34,7 @@ buildRosPackage {
   pname = "rqt_plot";
   version = "1.4.0-2";
   src = sources.rqt_plot;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ buildPackages.python3Packages.catkin-pkg buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.matplotlib python_qt_binding qt_gui_py_common rclpy rqt_gui rqt_gui_py rqt_py_common std_msgs ];

@@ -8,6 +8,7 @@
   python3Packages,
   rqt_gui_py,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -27,7 +28,7 @@ buildRosPackage {
   pname = "slider_publisher";
   version = "2.3.1-3";
   src = sources.slider_publisher;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.scipy rqt_gui_py ];

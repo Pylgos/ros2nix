@@ -42,6 +42,7 @@
   tf2_ros,
   tf2_sensor_msgs,
   visualization_msgs,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -61,7 +62,7 @@ buildRosPackage {
   pname = "slam_toolbox";
   version = "2.8.1-2";
   src = sources.slam_toolbox;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ rosidl_default_generators ];
   buildInputs = [ qt5.qtbase ];
   propagatedBuildInputs = [ bond bondcpp builtin_interfaces ceres-solver eigen interactive_markers liblapack lifecycle_msgs message_filters nav_msgs pluginlib python3Packages.boost qt5.qtbase rclcpp rclcpp_lifecycle rviz_common rviz_default_plugins rviz_ogre_vendor rviz_rendering sensor_msgs std_msgs std_srvs suitesparse tbb tf2 tf2_geometry_msgs tf2_ros tf2_sensor_msgs visualization_msgs ];

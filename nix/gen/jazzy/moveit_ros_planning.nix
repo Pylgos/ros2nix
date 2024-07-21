@@ -33,6 +33,7 @@
   tf2_msgs,
   tf2_ros,
   urdf,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -52,7 +53,7 @@ buildRosPackage {
   pname = "moveit_ros_planning";
   version = "2.10.0-1";
   src = sources.moveit_ros_planning;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ eigen3_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp eigen fmt generate_parameter_library message_filters moveit_common moveit_core moveit_msgs moveit_ros_occupancy_map_monitor pluginlib rclcpp rclcpp_action rclcpp_components srdfdom std_msgs tf2 tf2_eigen tf2_geometry_msgs tf2_msgs tf2_ros urdf ];

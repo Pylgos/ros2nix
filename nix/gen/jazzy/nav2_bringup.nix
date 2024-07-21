@@ -21,6 +21,7 @@
   ros_gz_sim,
   slam_toolbox,
   substituteSource,
+  wrapRosQtAppsHook,
   xacro,
 }:
 let
@@ -41,7 +42,7 @@ buildRosPackage {
   pname = "nav2_bringup";
   version = "1.3.1-1";
   src = sources.nav2_bringup;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diff_drive_controller joint_state_broadcaster launch_ros nav2_common nav2_minimal_tb3_sim nav2_minimal_tb4_sim navigation2 ros_gz_bridge ros_gz_sim slam_toolbox xacro ];

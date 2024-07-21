@@ -1,12 +1,14 @@
 use std::{collections::BTreeMap, sync::Arc};
 
+use crate::{
+    autopatch::{autopatch_source, PatchedSource},
+    deps::resolve_dependencies,
+    rosindex::{DistroIndex, DistroStatus, PackageIndex},
+    source::Fetcher,
+};
 use anyhow::Result;
-use autopatch::{autopatch_source, PatchedSource};
-use deps::resolve_dependencies;
 use futures::{future, stream, StreamExt as _, TryStreamExt};
 use indicatif::ProgressStyle;
-use rosindex::{DistroIndex, DistroStatus, PackageIndex};
-use source::Fetcher;
 use tokio::select;
 use tracing::info_span;
 use tracing::level_filters::LevelFilter;

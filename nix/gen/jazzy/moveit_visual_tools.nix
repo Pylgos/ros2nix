@@ -19,6 +19,7 @@
   tf2_ros,
   trajectory_msgs,
   visualization_msgs,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -38,7 +39,7 @@ buildRosPackage {
   pname = "moveit_visual_tools";
   version = "4.1.0-4";
   src = sources.moveit_visual_tools;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs graph_msgs moveit_common moveit_core moveit_ros_planning rclcpp rviz_visual_tools std_msgs tf2_eigen tf2_ros trajectory_msgs visualization_msgs ];

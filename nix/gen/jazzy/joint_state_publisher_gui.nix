@@ -7,6 +7,7 @@
   python_qt_binding,
   rclpy,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -26,7 +27,7 @@ buildRosPackage {
   pname = "joint_state_publisher_gui";
   version = "2.4.0-3";
   src = sources.joint_state_publisher_gui;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ joint_state_publisher python_qt_binding rclpy ];

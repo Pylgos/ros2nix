@@ -10,6 +10,7 @@
   rqt_gui,
   rqt_gui_py,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -29,7 +30,7 @@ buildRosPackage {
   pname = "rqt_robot_steering";
   version = "1.0.0-6";
   src = sources.rqt_robot_steering;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ ament_index_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs python_qt_binding rclpy rqt_gui rqt_gui_py ];

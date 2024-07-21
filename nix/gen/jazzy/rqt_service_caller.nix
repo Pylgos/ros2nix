@@ -8,6 +8,7 @@
   rqt_gui_py,
   rqt_py_common,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -27,7 +28,7 @@ buildRosPackage {
   pname = "rqt_service_caller";
   version = "1.2.1-3";
   src = sources.rqt_service_caller;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rqt_gui rqt_gui_py rqt_py_common ];

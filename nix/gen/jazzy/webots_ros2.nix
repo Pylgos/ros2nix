@@ -20,6 +20,7 @@
   webots_ros2_tiago,
   webots_ros2_turtlebot,
   webots_ros2_universal_robot,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -39,7 +40,7 @@ buildRosPackage {
   pname = "webots_ros2";
   version = "2023.1.2-4";
   src = sources.webots_ros2;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rclpy std_msgs webots_ros2_control webots_ros2_driver webots_ros2_epuck webots_ros2_importer webots_ros2_mavic webots_ros2_msgs webots_ros2_tesla webots_ros2_tiago webots_ros2_turtlebot webots_ros2_universal_robot ];

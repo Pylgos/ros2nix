@@ -13,6 +13,7 @@
   gz_plugin_vendor,
   gz_sim_vendor,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -32,7 +33,7 @@ buildRosPackage {
   pname = "leo_gz_plugins";
   version = "2.0.0-1";
   src = sources.leo_gz_plugins;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ gz_plugin_vendor gz_sim_vendor ];

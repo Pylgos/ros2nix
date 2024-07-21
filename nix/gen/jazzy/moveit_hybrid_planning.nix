@@ -29,6 +29,7 @@
   substituteSource,
   tf2_ros,
   trajectory_msgs,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -48,7 +49,7 @@ buildRosPackage {
   pname = "moveit_hybrid_planning";
   version = "2.10.0-1";
   src = sources.moveit_hybrid_planning;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp controller_manager moveit_common moveit_core moveit_msgs moveit_resources_panda_moveit_config moveit_ros_planning moveit_ros_planning_interface pluginlib position_controllers rclcpp rclcpp_action rclcpp_components robot_state_publisher rviz2 std_msgs std_srvs tf2_ros trajectory_msgs ];

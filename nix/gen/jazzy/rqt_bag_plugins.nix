@@ -14,6 +14,7 @@
   sensor_msgs,
   std_msgs,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -33,7 +34,7 @@ buildRosPackage {
   pname = "rqt_bag_plugins";
   version = "1.5.3-1";
   src = sources.rqt_bag_plugins;
-  nativeBuildInputs = [  ];
+  nativeBuildInputs = [ wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs python3Packages.pillow python3Packages.pycairo rclpy rosbag2 rqt_bag rqt_gui rqt_gui_py rqt_plot sensor_msgs std_msgs ];

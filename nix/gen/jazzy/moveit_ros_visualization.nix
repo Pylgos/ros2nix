@@ -21,6 +21,7 @@
   rviz2,
   substituteSource,
   tf2_eigen,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -40,7 +41,7 @@ buildRosPackage {
   pname = "moveit_ros_visualization";
   version = "2.10.0-1";
   src = sources.moveit_ros_visualization;
-  nativeBuildInputs = [ ament_cmake pkg-config ];
+  nativeBuildInputs = [ ament_cmake pkg-config wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ class_loader eigen qt5.qtbase ];
   propagatedBuildInputs = [ geometric_shapes interactive_markers moveit_common moveit_ros_planning_interface moveit_ros_robot_interaction moveit_ros_warehouse object_recognition_msgs pluginlib rclcpp rclpy rviz2 tf2_eigen ];

@@ -14,6 +14,7 @@
   rqt_gui_cpp,
   sensor_msgs,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -33,7 +34,7 @@ buildRosPackage {
   pname = "rqt_image_view";
   version = "1.3.0-2";
   src = sources.rqt_image_view;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ qt5.qtbase ];
   propagatedBuildInputs = [ cv_bridge geometry_msgs image_transport qt_gui_cpp rclcpp rqt_gui rqt_gui_cpp sensor_msgs ];

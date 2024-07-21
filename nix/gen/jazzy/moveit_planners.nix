@@ -8,6 +8,7 @@
   moveit_planners_stomp,
   pilz_industrial_motion_planner,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -27,7 +28,7 @@ buildRosPackage {
   pname = "moveit_planners";
   version = "2.10.0-1";
   src = sources.moveit_planners;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ moveit_planners_ompl moveit_planners_stomp pilz_industrial_motion_planner ];

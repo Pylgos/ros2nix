@@ -11,6 +11,7 @@
   rviz_common,
   rviz_rendering,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -30,7 +31,7 @@ buildRosPackage {
   pname = "snowbot_operating_system";
   version = "0.1.2-5";
   src = sources.snowbot_operating_system;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [ ament_cmake_ros ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs pluginlib rviz_common rviz_rendering ];

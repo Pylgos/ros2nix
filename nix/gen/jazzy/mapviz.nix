@@ -26,6 +26,7 @@
   tf2,
   tf2_geometry_msgs,
   tf2_ros,
+  wrapRosQtAppsHook,
   xorg,
 }:
 let
@@ -46,7 +47,7 @@ buildRosPackage {
   pname = "mapviz";
   version = "2.3.0-3";
   src = sources.mapviz;
-  nativeBuildInputs = [ ament_cmake pkg-config ros_environment ];
+  nativeBuildInputs = [ ament_cmake pkg-config ros_environment wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ qt5.qtbase ];
   propagatedBuildInputs = [ cv_bridge freeglut geometry_msgs glew image_transport libyamlcpp mapviz_interfaces marti_common_msgs pluginlib qt5.qtbase rclcpp rqt_gui rqt_gui_cpp std_srvs swri_math_util swri_transform_util tf2 tf2_geometry_msgs tf2_ros xorg.libXi xorg.libXmu ];

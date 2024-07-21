@@ -14,6 +14,7 @@
   rviz_default_plugins,
   rviz_rendering,
   substituteSource,
+  wrapRosQtAppsHook,
 }:
 let
   sources = rec {
@@ -33,7 +34,7 @@ buildRosPackage {
   pname = "octomap_rviz_plugins";
   version = "2.0.0-5";
   src = sources.octomap_rviz_plugins;
-  nativeBuildInputs = [ ament_cmake_auto ];
+  nativeBuildInputs = [ ament_cmake_auto wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ octomap octomap_msgs qt5.qtbase rclcpp rviz_common rviz_default_plugins rviz_rendering ];

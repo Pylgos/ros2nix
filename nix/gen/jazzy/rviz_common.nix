@@ -28,6 +28,7 @@
   tf2_ros,
   tinyxml2_vendor,
   urdf,
+  wrapRosQtAppsHook,
   yaml_cpp_vendor,
 }:
 let
@@ -48,7 +49,7 @@ buildRosPackage {
   pname = "rviz_common";
   version = "14.1.2-1";
   src = sources.rviz_common;
-  nativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [ qt5.qtsvg ];
   propagatedBuildInputs = [ geometry_msgs message_filters pluginlib qt5.qtbase rclcpp resource_retriever rviz_ogre_vendor rviz_rendering sensor_msgs std_msgs std_srvs tf2 tf2_ros tinyxml2_vendor urdf yaml_cpp_vendor ];

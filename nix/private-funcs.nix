@@ -14,6 +14,7 @@ rec {
       installPhase = ''
         zip -r $out .
       '';
+      preferLocalBuild = true;
     };
 
   substituteSource =
@@ -49,6 +50,8 @@ rec {
             installPhase = ''
               cp -a . $out
             '';
+            preferLocalBuild = true;
+            allowSubstitutes = false;
           };
     in
     self // { zipped = compressZip self; };

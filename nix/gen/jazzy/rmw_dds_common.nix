@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "rmw_dds_common";
   version = "3.1.0-2";
   src = sources.rmw_dds_common;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rmw rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [ rmw ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rcpputils rcutils rosidl_default_runtime rosidl_runtime_c rosidl_runtime_cpp ];
   depsTargetTarget = [  ];

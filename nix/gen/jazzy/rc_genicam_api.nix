@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "rc_genicam_api";
   version = "2.6.5-2";
   src = sources.rc_genicam_api;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ libpng libusb1 ncurses ];
   depsTargetTarget = [  ];

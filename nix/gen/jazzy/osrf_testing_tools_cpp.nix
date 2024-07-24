@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "osrf_testing_tools_cpp";
   version = "2.0.0-3";
   src = sources.osrf_testing_tools_cpp;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

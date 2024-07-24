@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "controller_interface";
   version = "4.11.0-1";
   src = sources.controller_interface;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_gen_version_h ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_gen_version_h ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ hardware_interface rclcpp_lifecycle sensor_msgs ];
   depsTargetTarget = [  ];

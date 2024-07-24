@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "rviz_imu_plugin";
   version = "2.1.3-4";
   src = sources.rviz_imu_plugin;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ message_filters pluginlib qt5.qtbase rclcpp rviz_common rviz_ogre_vendor rviz_rendering sensor_msgs tf2 tf2_ros ];
   depsTargetTarget = [  ];

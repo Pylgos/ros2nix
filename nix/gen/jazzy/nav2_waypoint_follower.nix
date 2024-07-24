@@ -42,8 +42,8 @@ buildRosPackage {
   pname = "nav2_waypoint_follower";
   version = "1.3.1-1";
   src = sources.nav2_waypoint_follower;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge geographic_msgs image_transport nav2_common nav2_core nav2_msgs nav2_util nav_msgs pluginlib rclcpp rclcpp_action rclcpp_lifecycle robot_localization tf2_ros ];
   depsTargetTarget = [  ];

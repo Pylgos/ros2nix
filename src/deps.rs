@@ -168,10 +168,12 @@ fn map_dependency_kind(
     }
 }
 
-fn is_propagation_required(_dependency_kind: RosDependencyKind) -> bool {
-    // use RosDependencyKind::*;
-    // matches!(dependency_kind, BuildExport | BuildtoolExport | Exec)
-    true // just propagate everything for now
+fn is_propagation_required(dependency_kind: RosDependencyKind) -> bool {
+    use RosDependencyKind::*;
+    matches!(
+        dependency_kind,
+        Build | BuildExport | BuildtoolExport | Exec
+    )
 }
 
 fn classify_dependencies(

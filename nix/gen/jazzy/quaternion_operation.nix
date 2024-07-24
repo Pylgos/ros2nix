@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "quaternion_operation";
   version = "0.0.7-5";
   src = sources.quaternion_operation;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_auto ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ament_cmake_auto ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen geometry_msgs rclcpp tf2_ros ];
   depsTargetTarget = [  ];

@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "mavlink";
   version = "2024.6.6-1";
   src = sources.mavlink;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake cmake python3 ros_environment ];
+  nativeBuildInputs = [ ament_cmake cmake ros_environment ];
+  propagatedNativeBuildInputs = [ python3 ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.future python3Packages.lxml ];
   depsTargetTarget = [  ];

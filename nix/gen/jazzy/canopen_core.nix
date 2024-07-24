@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "canopen_core";
   version = "0.2.9-2";
   src = sources.canopen_core;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ canopen_interfaces lely_core_libraries lifecycle_msgs python3Packages.boost rclcpp rclcpp_components rclcpp_lifecycle yaml_cpp_vendor ];
   depsTargetTarget = [  ];

@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "bag2_to_image";
   version = "0.1.0-5";
   src = sources.bag2_to_image;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ opencv rclcpp rclcpp_components rosbag2_cpp rosbag2_storage sensor_msgs ];
   depsTargetTarget = [  ];

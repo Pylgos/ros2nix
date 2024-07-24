@@ -24,10 +24,10 @@ buildRosPackage {
   pname = "ros_environment";
   version = "4.2.1-1";
   src = sources.ros_environment;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ];
-  buildInputs = [  ];
-  propagatedBuildInputs = [ ament_cmake_core ];
+  nativeBuildInputs = [ ament_cmake_core ];
+  propagatedNativeBuildInputs = [  ];
+  buildInputs = [ ament_cmake_core ];
+  propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

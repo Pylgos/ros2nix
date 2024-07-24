@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "robotiq_description";
   version = "0.0.1-3";
   src = sources.robotiq_description;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake launch ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ joint_state_publisher_gui launch_ros robot_state_publisher rviz2 urdf xacro ];
   depsTargetTarget = [  ];

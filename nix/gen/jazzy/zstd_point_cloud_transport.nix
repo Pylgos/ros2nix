@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "zstd_point_cloud_transport";
   version = "4.0.0-1";
   src = sources.zstd_point_cloud_transport;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ pluginlib point_cloud_interfaces point_cloud_transport rclcpp zstd ];
   depsTargetTarget = [  ];

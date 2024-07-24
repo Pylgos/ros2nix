@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "mp2p_icp";
   version = "1.5.0-1";
   src = sources.mp2p_icp;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ mola_common mrpt2 ];
   depsTargetTarget = [  ];

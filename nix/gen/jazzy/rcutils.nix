@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "rcutils";
   version = "6.7.1-1";
   src = sources.rcutils;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros buildPackages.python3Packages.empy ];
+  nativeBuildInputs = [ ament_cmake_ros buildPackages.python3Packages.empy ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

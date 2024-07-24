@@ -49,8 +49,8 @@ buildRosPackage {
   pname = "fuse_models";
   version = "1.1.1-1";
   src = sources.fuse_models;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ceres-solver eigen fuse_constraints fuse_core fuse_graphs fuse_msgs fuse_publishers fuse_variables geometry_msgs nav_msgs pluginlib python3Packages.boost rclcpp rclcpp_components sensor_msgs std_srvs tf2 tf2_2d tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];

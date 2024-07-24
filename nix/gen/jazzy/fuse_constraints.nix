@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "fuse_constraints";
   version = "1.1.1-1";
   src = sources.fuse_constraints;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ceres-solver eigen fuse_core fuse_graphs fuse_variables geometry_msgs pluginlib rclcpp suitesparse ];
   depsTargetTarget = [  ];

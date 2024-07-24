@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "keyboard_handler";
   version = "0.3.1-2";
   src = sources.keyboard_handler;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

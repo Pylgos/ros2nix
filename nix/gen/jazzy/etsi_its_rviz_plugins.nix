@@ -40,8 +40,8 @@ buildRosPackage {
   pname = "etsi_its_rviz_plugins";
   version = "2.0.2-1";
   src = sources.etsi_its_rviz_plugins;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ etsi_its_msgs etsi_its_msgs_utils pluginlib qt5.qtbase rclcpp rviz2 rviz_common rviz_default_plugins rviz_ogre_vendor rviz_rendering rviz_satellite tf2 tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];

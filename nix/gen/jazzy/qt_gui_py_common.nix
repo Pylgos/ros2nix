@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "qt_gui_py_common";
   version = "2.7.4-2";
   src = sources.qt_gui_py_common;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_index_python ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_index_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python_qt_binding ];
   depsTargetTarget = [  ];

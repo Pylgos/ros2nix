@@ -54,8 +54,8 @@ buildRosPackage {
   pname = "rclcpp";
   version = "28.1.3-1";
   src = sources.rclcpp;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_gen_version_h ament_cmake_ros python3 rmw rosidl_dynamic_typesupport ];
+  nativeBuildInputs = [ ament_cmake_gen_version_h ament_cmake_ros python3 ];
+  propagatedNativeBuildInputs = [ rmw rosidl_dynamic_typesupport ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp builtin_interfaces libstatistics_collector rcl rcl_interfaces rcl_logging_interface rcl_yaml_param_parser rcpputils rcutils rosgraph_msgs rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_c rosidl_typesupport_cpp statistics_msgs tracetools ];
   depsTargetTarget = [  ];

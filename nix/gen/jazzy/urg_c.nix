@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "urg_c";
   version = "1.0.4001-6";
   src = sources.urg_c;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

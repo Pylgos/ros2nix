@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "canopen_402_driver";
   version = "0.2.9-2";
   src = sources.canopen_402_driver;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ canopen_base_driver canopen_core canopen_interfaces canopen_proxy_driver python3Packages.boost rclcpp rclcpp_components rclcpp_lifecycle sensor_msgs std_srvs ];
   depsTargetTarget = [  ];

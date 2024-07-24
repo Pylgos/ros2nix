@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "qt_gui_cpp";
   version = "2.7.4-2";
   src = sources.qt_gui_cpp;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake pkg-config ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ pkg-config ];
   buildInputs = [  ];
   propagatedBuildInputs = [ pluginlib python_qt_binding qt5.qtbase qt_gui tinyxml2_vendor ];
   depsTargetTarget = [  ];

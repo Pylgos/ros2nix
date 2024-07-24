@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "velodyne_description";
   version = "2.0.3-4";
   src = sources.velodyne_description;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ urdf xacro ];
   depsTargetTarget = [  ];

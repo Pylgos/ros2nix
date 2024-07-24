@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "rmf_visualization_obstacles";
   version = "2.3.2-1";
   src = sources.rmf_visualization_obstacles;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs rclcpp rclcpp_components rmf_obstacle_msgs rmf_visualization_msgs vision_msgs visualization_msgs ];
   depsTargetTarget = [  ];

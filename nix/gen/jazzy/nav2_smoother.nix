@@ -40,8 +40,8 @@ buildRosPackage {
   pname = "nav2_smoother";
   version = "1.3.1-1";
   src = sources.nav2_smoother;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ angles nav2_common nav2_core nav2_msgs nav2_util nav_2d_msgs nav_2d_utils pluginlib rclcpp rclcpp_action rclcpp_components std_msgs ];
   depsTargetTarget = [  ];

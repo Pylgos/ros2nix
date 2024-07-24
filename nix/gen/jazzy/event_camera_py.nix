@@ -42,8 +42,8 @@ buildRosPackage {
   pname = "event_camera_py";
   version = "1.3.6-1";
   src = sources.event_camera_py;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_python ament_cmake_ros python_cmake_module ros_environment rpyutils ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_python ament_cmake_ros python_cmake_module ];
+  propagatedNativeBuildInputs = [ ros_environment rpyutils ];
   buildInputs = [  ];
   propagatedBuildInputs = [ event_camera_codecs event_camera_msgs pybind11_vendor ];
   depsTargetTarget = [  ];

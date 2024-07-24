@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "swri_console";
   version = "2.0.5-1";
   src = sources.swri_console;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.boost qt5.qtbase rcl_interfaces rclcpp rosbag2_transport rosidl_default_runtime ];
   depsTargetTarget = [  ];

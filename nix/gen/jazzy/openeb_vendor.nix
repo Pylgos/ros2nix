@@ -57,8 +57,8 @@ buildRosPackage {
   pname = "openeb_vendor";
   version = "1.3.2-1";
   src = sources.openeb_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package cmake curl git pkg-config unzip wget ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package cmake curl git pkg-config unzip wget ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ffmpeg glew glfw3 hdf5 libusb-compat-0_1 libusb1 opencv openscenegraph protobuf python3Packages.boost ];
   depsTargetTarget = [  ];

@@ -41,10 +41,10 @@ buildRosPackage {
   pname = "uncrustify_vendor";
   version = "3.0.0-2";
   src = sources.uncrustify_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package uncrustify ];
-  buildInputs = [  ];
-  propagatedBuildInputs = [ ament_cmake ament_cmake_vendor_package uncrustify ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
+  propagatedNativeBuildInputs = [ uncrustify ];
+  buildInputs = [ ament_cmake ament_cmake_vendor_package ];
+  propagatedBuildInputs = [ uncrustify ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

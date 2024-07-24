@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "dummy_sensors";
   version = "0.33.4-1";
   src = sources.dummy_sensors;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp sensor_msgs ];
   depsTargetTarget = [  ];

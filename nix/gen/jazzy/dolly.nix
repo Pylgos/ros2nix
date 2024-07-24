@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "dolly";
   version = "0.4.0-6";
   src = sources.dolly;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ dolly_follow dolly_gazebo dolly_ignition ];
   depsTargetTarget = [  ];

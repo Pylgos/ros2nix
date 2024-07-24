@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "pilz_industrial_motion_planner_testutils";
   version = "2.10.0-1";
   src = sources.pilz_industrial_motion_planner_testutils;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake eigen3_cmake_module ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ eigen3_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ moveit_common moveit_core moveit_msgs rclcpp tf2_eigen ];
   depsTargetTarget = [  ];

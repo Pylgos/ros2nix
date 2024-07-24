@@ -57,8 +57,8 @@ buildRosPackage {
   pname = "acado_vendor";
   version = "1.0.0-7";
   src = sources.acado_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

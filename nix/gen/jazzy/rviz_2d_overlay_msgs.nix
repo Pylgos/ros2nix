@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "rviz_2d_overlay_msgs";
   version = "1.3.0-3";
   src = sources.rviz_2d_overlay_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

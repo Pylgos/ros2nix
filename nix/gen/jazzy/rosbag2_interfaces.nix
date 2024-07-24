@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "rosbag2_interfaces";
   version = "0.26.4-1";
   src = sources.rosbag2_interfaces;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime ];
   depsTargetTarget = [  ];

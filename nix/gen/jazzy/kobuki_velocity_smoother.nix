@@ -43,8 +43,8 @@ buildRosPackage {
   pname = "kobuki_velocity_smoother";
   version = "0.15.0-4";
   src = sources.kobuki_velocity_smoother;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ecl_build geometry_msgs nav_msgs rcl_interfaces rclcpp rclcpp_components ];
   depsTargetTarget = [  ];

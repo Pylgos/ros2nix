@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "rviz_rendering_tests";
   version = "14.1.2-1";
   src = sources.rviz_rendering_tests;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ qt5.qtbase resource_retriever rviz_rendering ];
   depsTargetTarget = [  ];

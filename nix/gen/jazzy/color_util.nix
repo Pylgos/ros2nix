@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "color_util";
   version = "1.0.0-4";
   src = sources.color_util;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ std_msgs ];
   depsTargetTarget = [  ];

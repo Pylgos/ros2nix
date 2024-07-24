@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "motion_capture_tracking_interfaces";
   version = "1.0.3-3";
   src = sources.motion_capture_tracking_interfaces;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

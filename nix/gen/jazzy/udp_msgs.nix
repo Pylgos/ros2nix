@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "udp_msgs";
   version = "0.0.3-7";
   src = sources.udp_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

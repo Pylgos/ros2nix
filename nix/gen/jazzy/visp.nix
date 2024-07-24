@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "visp";
   version = "3.5.0-4";
   src = sources.visp;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake doxygen ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [ doxygen ];
   buildInputs = [  ];
   propagatedBuildInputs = [ bzip2 eigen libjpeg liblapack libpng libv4l libxml2 opencv xorg.libX11 ];
   depsTargetTarget = [  ];

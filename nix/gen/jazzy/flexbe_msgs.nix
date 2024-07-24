@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "flexbe_msgs";
   version = "3.0.3-1";
   src = sources.flexbe_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ action_msgs builtin_interfaces rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

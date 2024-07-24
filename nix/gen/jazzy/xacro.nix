@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "xacro";
   version = "2.0.11-2";
   src = sources.xacro;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python ament_index_python buildPackages.python3Packages.pyyaml ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
+  propagatedNativeBuildInputs = [ ament_index_python buildPackages.python3Packages.pyyaml ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

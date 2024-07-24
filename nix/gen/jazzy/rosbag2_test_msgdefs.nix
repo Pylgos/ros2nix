@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "rosbag2_test_msgdefs";
   version = "0.26.4-1";
   src = sources.rosbag2_test_msgdefs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

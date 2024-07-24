@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "mobileye_560_660_msgs";
   version = "4.0.0-4";
   src = sources.mobileye_560_660_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ros_environment rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "tracetools";
   version = "8.2.1-1";
   src = sources.tracetools;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_gen_version_h ament_cmake_ros pkg-config ];
+  nativeBuildInputs = [ ament_cmake_gen_version_h ament_cmake_ros pkg-config ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ lttng-tools lttng-ust ];
   depsTargetTarget = [  ];

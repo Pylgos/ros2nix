@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "nav2_theta_star_planner";
   version = "1.3.1-1";
   src = sources.nav2_theta_star_planner;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces nav2_common nav2_core nav2_costmap_2d nav2_msgs nav2_util pluginlib rclcpp rclcpp_action rclcpp_lifecycle tf2_ros ];
   depsTargetTarget = [  ];

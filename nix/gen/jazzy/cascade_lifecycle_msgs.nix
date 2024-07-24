@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "cascade_lifecycle_msgs";
   version = "2.0.0-2";
   src = sources.cascade_lifecycle_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces lifecycle_msgs rclcpp ];
   depsTargetTarget = [  ];

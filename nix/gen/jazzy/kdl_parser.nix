@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "kdl_parser";
   version = "2.11.0-3";
   src = sources.kdl_parser;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ orocos_kdl_vendor rcutils urdf urdfdom_headers ];
   depsTargetTarget = [  ];

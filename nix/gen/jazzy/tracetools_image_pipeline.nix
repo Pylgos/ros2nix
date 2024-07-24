@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "tracetools_image_pipeline";
   version = "5.0.1-3";
   src = sources.tracetools_image_pipeline;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros pkg-config ];
+  nativeBuildInputs = [ ament_cmake_ros pkg-config ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

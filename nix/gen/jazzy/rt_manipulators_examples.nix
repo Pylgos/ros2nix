@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "rt_manipulators_examples";
   version = "1.0.0-4";
   src = sources.rt_manipulators_examples;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rt_manipulators_cpp ];
   depsTargetTarget = [  ];

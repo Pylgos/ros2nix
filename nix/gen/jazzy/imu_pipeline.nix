@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "imu_pipeline";
   version = "0.5.0-3";
   src = sources.imu_pipeline;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ imu_processors imu_transformer ];
   depsTargetTarget = [  ];

@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "octomap";
   version = "1.10.0-4";
   src = sources.octomap;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

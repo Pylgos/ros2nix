@@ -42,8 +42,8 @@ buildRosPackage {
   pname = "pybind11_json_vendor";
   version = "0.4.2-1";
   src = sources.pybind11_json_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ nlohmann_json pybind11_vendor ];
   depsTargetTarget = [  ];

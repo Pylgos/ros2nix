@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "nav2_minimal_tb4_description";
   version = "1.0.1-1";
   src = sources.nav2_minimal_tb4_description;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ joint_state_publisher robot_state_publisher urdf xacro ];
   depsTargetTarget = [  ];

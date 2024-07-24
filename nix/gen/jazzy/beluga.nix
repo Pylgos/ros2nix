@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "beluga";
   version = "2.0.2-1";
   src = sources.beluga;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen hdf5 sophus tbb ];
   depsTargetTarget = [  ];

@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "flexbe_widget";
   version = "3.0.3-1";
   src = sources.flexbe_widget;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ flexbe_core flexbe_mirror flexbe_msgs flexbe_onboard launch_ros rclpy ];
   depsTargetTarget = [  ];

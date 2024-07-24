@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "rmf_websocket";
   version = "2.7.2-1";
   src = sources.rmf_websocket;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen nlohmann_json nlohmann_json_schema_validator_vendor python3Packages.boost rclcpp rmf_utils websocketpp ];
   depsTargetTarget = [  ];

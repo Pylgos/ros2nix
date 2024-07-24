@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "ament_cmake_lint_cmake";
   version = "0.17.1-1";
   src = sources.ament_cmake_lint_cmake;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_lint_cmake ];
+  nativeBuildInputs = [ ament_cmake_core ];
+  propagatedNativeBuildInputs = [ ament_cmake_test ament_lint_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

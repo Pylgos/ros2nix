@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "rplidar_ros";
   version = "2.1.0-4";
   src = sources.rplidar_ros;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_auto ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rclcpp_components sensor_msgs std_srvs ];
   depsTargetTarget = [  ];

@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "event_camera_msgs";
   version = "1.3.6-1";
   src = sources.event_camera_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake ros_environment ];
+  propagatedNativeBuildInputs = [ rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

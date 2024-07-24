@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "rqt_image_view";
   version = "1.3.0-2";
   src = sources.rqt_image_view;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge geometry_msgs image_transport qt5.qtbase qt_gui_cpp rclcpp rqt_gui rqt_gui_cpp sensor_msgs ];
   depsTargetTarget = [  ];

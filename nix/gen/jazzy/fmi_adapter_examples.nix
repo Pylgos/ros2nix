@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "fmi_adapter_examples";
   version = "2.1.2-1";
   src = sources.fmi_adapter_examples;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake launch ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ fmi_adapter launch_ros ];
   depsTargetTarget = [  ];

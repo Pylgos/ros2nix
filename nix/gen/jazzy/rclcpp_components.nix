@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "rclcpp_components";
   version = "28.1.3-1";
   src = sources.rclcpp_components;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp class_loader composition_interfaces rclcpp rcpputils ];
   depsTargetTarget = [  ];

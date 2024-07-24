@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "octomap_ros";
   version = "0.4.3-4";
   src = sources.octomap_ros;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto ];
+  nativeBuildInputs = [ ament_cmake_auto ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ octomap octomap_msgs sensor_msgs tf2 ];
   depsTargetTarget = [  ];

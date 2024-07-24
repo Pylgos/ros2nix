@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "camera_calibration_parsers";
   version = "5.1.4-1";
   src = sources.camera_calibration_parsers;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp sensor_msgs yaml_cpp_vendor ];
   depsTargetTarget = [  ];

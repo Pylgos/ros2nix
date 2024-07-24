@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "force_torque_sensor_broadcaster";
   version = "4.9.0-1";
   src = sources.force_torque_sensor_broadcaster;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ backward_ros controller_interface generate_parameter_library geometry_msgs hardware_interface pluginlib rclcpp rclcpp_lifecycle realtime_tools ];
   depsTargetTarget = [  ];

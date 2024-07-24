@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "odom_to_tf_ros2";
   version = "1.0.2-4";
   src = sources.odom_to_tf_ros2;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ nav_msgs rclcpp tf2_ros ];
   depsTargetTarget = [  ];

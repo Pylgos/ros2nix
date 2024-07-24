@@ -44,8 +44,8 @@ buildRosPackage {
   pname = "nav2_mppi_controller";
   version = "1.3.1-1";
   src = sources.nav2_mppi_controller;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_ros gbenchmark ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_ros ];
+  propagatedNativeBuildInputs = [ gbenchmark ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs llvmPackages.openmp nav2_common nav2_core nav2_costmap_2d nav2_msgs nav2_util pluginlib rclcpp std_msgs tf2 tf2_eigen tf2_geometry_msgs tf2_ros visualization_msgs ];
   depsTargetTarget = [  ];

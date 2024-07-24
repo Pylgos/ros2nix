@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "autoware_lanelet2_extension_python";
   version = "0.4.0-1";
   src = sources.autoware_lanelet2_extension_python;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto autoware_cmake python_cmake_module ];
+  nativeBuildInputs = [ ament_cmake_auto autoware_cmake python_cmake_module ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ autoware_lanelet2_extension geometry_msgs lanelet2_core lanelet2_io lanelet2_projection lanelet2_python lanelet2_routing lanelet2_traffic_rules lanelet2_validation python3Packages.boost rclcpp ];
   depsTargetTarget = [  ];

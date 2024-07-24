@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "sick_safevisionary_driver";
   version = "1.0.3-3";
   src = sources.sick_safevisionary_driver;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge lifecycle_msgs python3Packages.boost rclcpp rclcpp_lifecycle sensor_msgs sick_safevisionary_base sick_safevisionary_interfaces ];
   depsTargetTarget = [  ];

@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "dolly_gazebo";
   version = "0.4.0-6";
   src = sources.dolly_gazebo;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ dolly_follow ros2launch rviz2 ];
   depsTargetTarget = [  ];

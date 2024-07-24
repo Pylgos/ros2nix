@@ -28,10 +28,10 @@ buildRosPackage {
   pname = "ament_cmake_cpplint";
   version = "0.17.1-1";
   src = sources.ament_cmake_cpplint;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cpplint ];
-  buildInputs = [  ];
-  propagatedBuildInputs = [ ament_cmake_core ament_cmake_test ament_cpplint ];
+  nativeBuildInputs = [ ament_cmake_core ];
+  propagatedNativeBuildInputs = [ ament_cmake_test ament_cpplint ];
+  buildInputs = [ ament_cmake_core ];
+  propagatedBuildInputs = [ ament_cmake_test ament_cpplint ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "automotive_autonomy_msgs";
   version = "3.0.4-6";
   src = sources.automotive_autonomy_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ automotive_navigation_msgs automotive_platform_msgs ];
   depsTargetTarget = [  ];

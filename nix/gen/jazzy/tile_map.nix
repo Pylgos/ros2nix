@@ -35,9 +35,9 @@ buildRosPackage {
   pname = "tile_map";
   version = "2.3.0-3";
   src = sources.tile_map;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
-  buildInputs = [  ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
+  buildInputs = [ qt5.qtbase ];
   propagatedBuildInputs = [ glew jsoncpp libyamlcpp mapviz pluginlib qt5.qtbase rclcpp swri_math_util swri_transform_util tf2 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];

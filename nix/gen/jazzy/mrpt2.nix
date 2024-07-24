@@ -169,8 +169,8 @@ buildRosPackage {
   pname = "mrpt2";
   version = "2.13.2-1";
   src = sources.mrpt2;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake cmake pkg-config ros_environment ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [ ament_cmake pkg-config ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ assimp cv_bridge eigen ffmpeg freeglut freenect geometry_msgs glfw3 jsoncpp libGL libGLU libjpeg libpcap libusb1 nav_msgs opencv python3Packages.pip python3Packages.pybind11 rclcpp rosbag2_storage sensor_msgs std_msgs stereo_msgs suitesparse tf2 tf2_msgs tinyxml-2 udev wxGTK xorg.libXrandr zlib ];
   depsTargetTarget = [  ];

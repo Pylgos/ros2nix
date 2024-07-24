@@ -32,10 +32,10 @@ buildRosPackage {
   pname = "rmw";
   version = "7.3.1-1";
   src = sources.rmw;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ament_cmake_version rosidl_dynamic_typesupport ];
-  buildInputs = [  ];
-  propagatedBuildInputs = [ ament_cmake_ros ament_cmake_version rosidl_dynamic_typesupport ];
+  nativeBuildInputs = [ ament_cmake_ros ament_cmake_version ];
+  propagatedNativeBuildInputs = [ rosidl_dynamic_typesupport ];
+  buildInputs = [ ament_cmake_ros ament_cmake_version ];
+  propagatedBuildInputs = [ rosidl_dynamic_typesupport ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [ rcutils rosidl_runtime_c ];
 }

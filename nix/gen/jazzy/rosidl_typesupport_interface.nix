@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "rosidl_typesupport_interface";
   version = "4.6.3-1";
   src = sources.rosidl_typesupport_interface;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

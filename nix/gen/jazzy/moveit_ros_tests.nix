@@ -42,8 +42,8 @@ buildRosPackage {
   pname = "moveit_ros_tests";
   version = "2.10.0-1";
   src = sources.moveit_ros_tests;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ moveit_common rclcpp ];
   depsTargetTarget = [  ];

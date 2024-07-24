@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "composition_interfaces";
   version = "2.0.2-2";
   src = sources.composition_interfaces;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rcl_interfaces rosidl_default_runtime ];
   depsTargetTarget = [  ];

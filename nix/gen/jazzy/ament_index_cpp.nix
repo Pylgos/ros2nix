@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "ament_index_cpp";
   version = "1.8.1-1";
   src = sources.ament_index_cpp;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

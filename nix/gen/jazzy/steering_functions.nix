@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "steering_functions";
   version = "0.3.0-1";
   src = sources.steering_functions;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ros_environment ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen ];
   depsTargetTarget = [  ];

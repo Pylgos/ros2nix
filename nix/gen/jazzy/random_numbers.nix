@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "random_numbers";
   version = "2.0.1-5";
   src = sources.random_numbers;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.boost ];
   depsTargetTarget = [  ];

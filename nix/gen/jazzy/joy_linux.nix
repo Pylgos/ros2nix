@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "joy_linux";
   version = "3.3.0-3";
   src = sources.joy_linux;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diagnostic_msgs diagnostic_updater rclcpp sensor_msgs ];
   depsTargetTarget = [  ];

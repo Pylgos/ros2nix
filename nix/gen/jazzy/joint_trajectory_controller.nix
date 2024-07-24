@@ -43,8 +43,8 @@ buildRosPackage {
   pname = "joint_trajectory_controller";
   version = "4.9.0-1";
   src = sources.joint_trajectory_controller;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ angles backward_ros control_msgs control_toolbox controller_interface generate_parameter_library hardware_interface pluginlib rclcpp rclcpp_lifecycle realtime_tools rsl tl_expected trajectory_msgs urdf ];
   depsTargetTarget = [  ];

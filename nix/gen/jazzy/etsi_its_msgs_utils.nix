@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "etsi_its_msgs_utils";
   version = "2.0.2-1";
   src = sources.etsi_its_msgs_utils;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ etsi_its_msgs geographiclib geometry_msgs ];
   depsTargetTarget = [  ];

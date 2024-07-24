@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "rmf_task_ros2";
   version = "2.7.2-1";
   src = sources.rmf_task_ros2;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ backward_ros eigen nlohmann_json nlohmann_json_schema_validator_vendor rclcpp rmf_api_msgs rmf_task_msgs rmf_traffic rmf_traffic_ros2 rmf_utils rmf_websocket ];
   depsTargetTarget = [  ];

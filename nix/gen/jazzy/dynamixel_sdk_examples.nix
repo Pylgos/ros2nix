@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "dynamixel_sdk_examples";
   version = "3.7.40-6";
   src = sources.dynamixel_sdk_examples;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ dynamixel_sdk dynamixel_sdk_custom_interfaces rclcpp ];
   depsTargetTarget = [  ];

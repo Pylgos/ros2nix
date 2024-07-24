@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "tango_icons_vendor";
   version = "0.3.0-3";
   src = sources.tango_icons_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ tango-icon-theme ];
   depsTargetTarget = [  ];

@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "ros2_control_test_assets";
   version = "4.11.0-1";
   src = sources.ros2_control_test_assets;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

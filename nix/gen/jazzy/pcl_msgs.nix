@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "pcl_msgs";
   version = "1.0.0-9";
   src = sources.pcl_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

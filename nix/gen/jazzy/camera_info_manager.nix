@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "camera_info_manager";
   version = "5.1.4-1";
   src = sources.camera_info_manager;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp camera_calibration_parsers rclcpp rclcpp_lifecycle rcpputils sensor_msgs ];
   depsTargetTarget = [  ];

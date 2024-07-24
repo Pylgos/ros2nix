@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "rttest";
   version = "0.17.0-3";
   src = sources.rttest;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

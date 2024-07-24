@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "ros_industrial_cmake_boilerplate";
   version = "0.5.4-3";
   src = sources.ros_industrial_cmake_boilerplate;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

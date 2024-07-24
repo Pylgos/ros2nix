@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "ecl_license";
   version = "1.0.3-5";
   src = sources.ecl_license;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

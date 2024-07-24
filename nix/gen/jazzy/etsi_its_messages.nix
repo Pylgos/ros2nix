@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "etsi_its_messages";
   version = "2.0.2-1";
   src = sources.etsi_its_messages;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ etsi_its_coding etsi_its_conversion etsi_its_msgs etsi_its_msgs_utils ];
   depsTargetTarget = [  ];

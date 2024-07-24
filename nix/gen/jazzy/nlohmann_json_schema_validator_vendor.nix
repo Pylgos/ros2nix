@@ -41,8 +41,8 @@ buildRosPackage {
   pname = "nlohmann_json_schema_validator_vendor";
   version = "0.4.1-1";
   src = sources.nlohmann_json_schema_validator_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake git ];
+  nativeBuildInputs = [ ament_cmake git ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ nlohmann_json ];
   depsTargetTarget = [  ];

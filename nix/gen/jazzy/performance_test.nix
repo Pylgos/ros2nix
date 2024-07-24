@@ -93,8 +93,8 @@ buildRosPackage {
   pname = "performance_test";
   version = "2.0.0-2";
   src = sources.performance_test;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake git ros_environment rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake git rosidl_default_generators ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rmw_implementation rosidl_default_runtime ];
   depsTargetTarget = [  ];

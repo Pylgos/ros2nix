@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "topic_statistics_demo";
   version = "0.33.4-1";
   src = sources.topic_statistics_demo;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rcutils sensor_msgs statistics_msgs ];
   depsTargetTarget = [  ];

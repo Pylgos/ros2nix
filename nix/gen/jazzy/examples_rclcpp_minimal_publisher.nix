@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "examples_rclcpp_minimal_publisher";
   version = "0.19.4-1";
   src = sources.examples_rclcpp_minimal_publisher;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp std_msgs ];
   depsTargetTarget = [  ];

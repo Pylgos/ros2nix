@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "urg_node_msgs";
   version = "1.0.1-9";
   src = sources.urg_node_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces std_msgs ];
   depsTargetTarget = [  ];

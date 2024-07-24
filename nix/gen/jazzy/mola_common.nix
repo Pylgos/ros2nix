@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "mola_common";
   version = "0.3.1-1";
   src = sources.mola_common;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_gtest cmake ros_environment ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_gtest cmake ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_cmake_xmllint ];
   depsTargetTarget = [  ];

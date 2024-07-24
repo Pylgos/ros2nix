@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "io_context";
   version = "1.2.0-4";
   src = sources.io_context;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto asio_cmake_module ];
+  nativeBuildInputs = [ ament_cmake_auto asio_cmake_module ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ asio rclcpp std_msgs udp_msgs ];
   depsTargetTarget = [  ];

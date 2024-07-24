@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "rmf_task";
   version = "2.5.1-1";
   src = sources.rmf_task;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen rmf_battery rmf_utils ];
   depsTargetTarget = [  ];

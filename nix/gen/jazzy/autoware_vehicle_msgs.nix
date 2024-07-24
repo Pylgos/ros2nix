@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "autoware_vehicle_msgs";
   version = "1.1.0-1";
   src = sources.autoware_vehicle_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ autoware_planning_msgs builtin_interfaces rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

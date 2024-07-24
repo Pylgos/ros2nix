@@ -464,8 +464,8 @@ buildRosPackage {
   pname = "fields2cover";
   version = "2.0.0-9";
   src = sources.fields2cover;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake git gtest python3 ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [ git gtest python3 ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen gdal geos protobuf python3 python3Packages.boost python3Packages.matplotlib python3Packages.tkinter swig tbb tinyxml-2 ];
   depsTargetTarget = [  ];

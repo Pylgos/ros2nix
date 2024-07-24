@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "urdf_parser_plugin";
   version = "2.10.0-3";
   src = sources.urdf_parser_plugin;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ urdfdom_headers ];
   depsTargetTarget = [  ];

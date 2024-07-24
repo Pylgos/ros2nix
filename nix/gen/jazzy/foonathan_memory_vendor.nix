@@ -44,8 +44,8 @@ buildRosPackage {
   pname = "foonathan_memory_vendor";
   version = "1.3.1-3";
   src = sources.foonathan_memory_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake git ];
+  nativeBuildInputs = [ git ];
+  propagatedNativeBuildInputs = [ cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

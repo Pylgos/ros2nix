@@ -40,8 +40,8 @@ buildRosPackage {
   pname = "rmf_traffic_ros2";
   version = "2.7.2-1";
   src = sources.rmf_traffic_ros2;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ backward_ros eigen libyamlcpp nlohmann_json proj rclcpp rmf_building_map_msgs rmf_fleet_msgs rmf_site_map_msgs rmf_traffic rmf_traffic_msgs rmf_utils util-linux zlib ];
   depsTargetTarget = [  ];

@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "mola_traj_tools";
   version = "1.0.6-1";
   src = sources.mola_traj_tools;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ mola_common mrpt2 ];
   depsTargetTarget = [  ];

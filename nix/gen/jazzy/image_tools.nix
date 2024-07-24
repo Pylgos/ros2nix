@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "image_tools";
   version = "0.33.4-1";
   src = sources.image_tools;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ opencv rclcpp rclcpp_components sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

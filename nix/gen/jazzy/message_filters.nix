@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "message_filters";
   version = "4.11.1-2";
   src = sources.message_filters;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_python ament_cmake_ros python_cmake_module ];
+  nativeBuildInputs = [ ament_cmake_python ament_cmake_ros python_cmake_module ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rclcpp rclpy rcutils std_msgs ];
   depsTargetTarget = [  ];

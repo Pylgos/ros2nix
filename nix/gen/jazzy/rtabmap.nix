@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "rtabmap";
   version = "0.21.5-1";
   src = sources.rtabmap;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge gtsam libg2o libpointmatcher octomap pcl proj qt_gui_cpp sqlite zlib ];
   depsTargetTarget = [  ];

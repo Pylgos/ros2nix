@@ -47,8 +47,8 @@ buildRosPackage {
   pname = "nav2_util";
   version = "1.3.1-1";
   src = sources.nav2_util;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ bond bondcpp builtin_interfaces geometry_msgs lifecycle_msgs nav2_common nav2_msgs nav_msgs rcl_interfaces rclcpp rclcpp_action rclcpp_lifecycle std_msgs tf2 tf2_geometry_msgs tf2_msgs tf2_ros ];
   depsTargetTarget = [  ];

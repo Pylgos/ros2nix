@@ -56,8 +56,8 @@ buildRosPackage {
   pname = "sol_vendor";
   version = "0.0.3-5";
   src = sources.sol_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake git ];
+  nativeBuildInputs = [ ament_cmake git ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

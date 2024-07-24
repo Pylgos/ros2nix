@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "slider_publisher";
   version = "2.3.1-3";
   src = sources.slider_publisher;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake buildPackages.python3Packages.numpy ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.scipy rqt_gui_py ];
   depsTargetTarget = [  ];

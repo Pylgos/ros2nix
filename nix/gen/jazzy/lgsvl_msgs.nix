@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "lgsvl_msgs";
   version = "0.0.4-5";
   src = sources.lgsvl_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ros_environment rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs rosidl_default_runtime sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

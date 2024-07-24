@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "phidgets_ik";
   version = "2.3.3-2";
   src = sources.phidgets_ik;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake launch ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ phidgets_analog_inputs phidgets_digital_inputs phidgets_digital_outputs ];
   depsTargetTarget = [  ];

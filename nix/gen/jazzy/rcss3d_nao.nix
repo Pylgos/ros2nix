@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "rcss3d_nao";
   version = "1.2.0-3";
   src = sources.rcss3d_nao;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs nao_lola_command_msgs nao_lola_sensor_msgs rclcpp_components rcss3d_agent rcss3d_agent_msgs_to_soccer_interfaces sensor_msgs soccer_vision_3d_msgs ];
   depsTargetTarget = [  ];

@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "teleop_tools";
   version = "1.5.0-3";
   src = sources.teleop_tools;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ joy_teleop key_teleop teleop_tools_msgs ];
   depsTargetTarget = [  ];

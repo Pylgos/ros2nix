@@ -72,8 +72,8 @@ buildRosPackage {
   pname = "moveit_core";
   version = "2.10.0-1";
   src = sources.moveit_core;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake eigen3_cmake_module google_benchmark_vendor pkg-config ];
+  nativeBuildInputs = [ ament_cmake pkg-config wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ eigen3_cmake_module google_benchmark_vendor ];
   buildInputs = [  ];
   propagatedBuildInputs = [ angles assimp bullet common_interfaces eigen eigen_stl_containers fcl generate_parameter_library geometric_shapes geometry_msgs kdl_parser moveit_common moveit_msgs octomap_msgs osqp_vendor pluginlib python3Packages.boost random_numbers rclcpp rsl ruckig sensor_msgs shape_msgs srdfdom std_msgs tf2 tf2_eigen tf2_geometry_msgs tf2_kdl trajectory_msgs urdf urdfdom urdfdom_headers visualization_msgs ];
   depsTargetTarget = [  ];

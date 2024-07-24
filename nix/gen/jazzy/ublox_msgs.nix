@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "ublox_msgs";
   version = "2.3.0-4";
   src = sources.ublox_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [ rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ sensor_msgs std_msgs ublox_serialization ];
   depsTargetTarget = [  ];

@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "ros_image_to_qimage";
   version = "0.4.1-4";
   src = sources.ros_image_to_qimage;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_pytest ament_cmake_python ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_pytest ament_cmake_python wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge python_qt_binding qt5.qtbase sensor_msgs ];
   depsTargetTarget = [  ];

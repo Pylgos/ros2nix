@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "hardware_interface";
   version = "4.11.0-1";
   src = sources.hardware_interface;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_gen_version_h ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_gen_version_h ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ control_msgs joint_limits lifecycle_msgs pluginlib rclcpp_lifecycle rcpputils rcutils tinyxml2_vendor urdf ];
   depsTargetTarget = [  ];

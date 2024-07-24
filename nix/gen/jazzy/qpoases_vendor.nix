@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "qpoases_vendor";
   version = "3.2.3-5";
   src = sources.qpoases_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto ];
+  nativeBuildInputs = [ ament_cmake_auto ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ subversion ];
   depsTargetTarget = [  ];

@@ -26,10 +26,10 @@ buildRosPackage {
   pname = "rmf_traffic_editor_test_maps";
   version = "1.9.1-1";
   src = sources.rmf_traffic_editor_test_maps;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
-  buildInputs = [  ];
-  propagatedBuildInputs = [ rmf_building_map_tools ros2run ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
+  buildInputs = [ rmf_building_map_tools ros2run ];
+  propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

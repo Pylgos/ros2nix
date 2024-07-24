@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "imu_complementary_filter";
   version = "2.1.3-4";
   src = sources.imu_complementary_filter;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs message_filters rclcpp sensor_msgs std_msgs tf2 tf2_ros ];
   depsTargetTarget = [  ];

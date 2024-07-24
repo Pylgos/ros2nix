@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "transmission_interface";
   version = "4.11.0-1";
   src = sources.transmission_interface;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_gen_version_h ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_gen_version_h ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ hardware_interface pluginlib ];
   depsTargetTarget = [  ];

@@ -44,8 +44,8 @@ buildRosPackage {
   pname = "controller_manager";
   version = "4.11.0-1";
   src = sources.controller_manager;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_gen_version_h ament_cmake_python launch ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_gen_version_h ament_cmake_python ];
+  propagatedNativeBuildInputs = [ launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp backward_ros controller_interface controller_manager_msgs diagnostic_updater hardware_interface launch_ros pluginlib rclcpp rcpputils realtime_tools ros2_control_test_assets ros2param ros2run std_msgs ];
   depsTargetTarget = [  ];

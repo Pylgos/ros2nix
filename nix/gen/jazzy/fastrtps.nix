@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "fastrtps";
   version = "2.14.1-1";
   src = sources.fastrtps;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ asio fastcdr foonathan_memory_vendor openssl python3 tinyxml-2 ];
   depsTargetTarget = [  ];

@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "intra_process_demo";
   version = "0.33.4-1";
   src = sources.intra_process_demo;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ opencv rclcpp sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

@@ -41,8 +41,8 @@ buildRosPackage {
   pname = "mcap_vendor";
   version = "0.26.4-1";
   src = sources.mcap_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake git ];
+  nativeBuildInputs = [ ament_cmake git ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ liblz4_vendor zstd_vendor ];
   depsTargetTarget = [  ];

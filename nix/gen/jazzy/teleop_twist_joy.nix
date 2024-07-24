@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "teleop_twist_joy";
   version = "2.6.0-3";
   src = sources.teleop_twist_joy;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs joy rclcpp rclcpp_components sensor_msgs ];
   depsTargetTarget = [  ];

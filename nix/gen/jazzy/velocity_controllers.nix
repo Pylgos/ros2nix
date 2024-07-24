@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "velocity_controllers";
   version = "4.9.0-1";
   src = sources.velocity_controllers;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ backward_ros forward_command_controller pluginlib rclcpp ];
   depsTargetTarget = [  ];

@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "ntpd_driver";
   version = "2.2.0-4";
   src = sources.ntpd_driver;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ poco rclcpp rclcpp_components sensor_msgs ];
   depsTargetTarget = [  ];

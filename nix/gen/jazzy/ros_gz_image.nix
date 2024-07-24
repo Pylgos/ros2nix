@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "ros_gz_image";
   version = "1.0.0-1";
   src = sources.ros_gz_image;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake pkg-config ];
+  nativeBuildInputs = [ ament_cmake pkg-config ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ gz_msgs_vendor gz_transport_vendor image_transport rclcpp ros_gz_bridge sensor_msgs ];
   depsTargetTarget = [  ];

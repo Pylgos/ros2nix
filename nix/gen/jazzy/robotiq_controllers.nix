@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "robotiq_controllers";
   version = "0.0.1-3";
   src = sources.robotiq_controllers;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ controller_interface std_srvs ];
   depsTargetTarget = [  ];

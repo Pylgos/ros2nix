@@ -46,8 +46,8 @@ buildRosPackage {
   pname = "nav2_rviz_plugins";
   version = "1.3.1-1";
   src = sources.nav2_rviz_plugins;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs nav2_lifecycle_manager nav2_msgs nav2_util nav_msgs pluginlib qt5.qtbase rclcpp rclcpp_lifecycle resource_retriever rviz_common rviz_default_plugins rviz_ogre_vendor rviz_rendering std_msgs tf2_geometry_msgs urdf visualization_msgs yaml_cpp_vendor ];
   depsTargetTarget = [  ];

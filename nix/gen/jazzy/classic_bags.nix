@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "classic_bags";
   version = "0.1.0-3";
   src = sources.classic_bags;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rclcpp rclpy rosbag2_cpp rosbag2_py rosbag2_storage rosidl_runtime_py ];
   depsTargetTarget = [  ];

@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "rosbridge_server";
   version = "1.3.2-3";
   src = sources.rosbridge_server;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.tornado python3Packages.twisted rclpy rosapi rosbridge_library rosbridge_msgs ];
   depsTargetTarget = [  ];

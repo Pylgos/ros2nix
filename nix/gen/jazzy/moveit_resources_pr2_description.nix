@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "moveit_resources_pr2_description";
   version = "3.0.0-3";
   src = sources.moveit_resources_pr2_description;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

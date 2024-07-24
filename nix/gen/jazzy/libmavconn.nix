@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "libmavconn";
   version = "2.8.0-1";
   src = sources.libmavconn;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake buildPackages.python3Packages.empy ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.empy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ asio console-bridge mavlink ];
   depsTargetTarget = [  ];

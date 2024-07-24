@@ -53,8 +53,8 @@ buildRosPackage {
   pname = "gz_dartsim_vendor";
   version = "0.0.2-1";
   src = sources.gz_dartsim_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ assimp bullet eigen fcl fmt libccd lz4 ode python3Packages.boost tinyxml-2 urdfdom ];
   depsTargetTarget = [  ];

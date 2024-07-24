@@ -41,8 +41,8 @@ buildRosPackage {
   pname = "rosbridge_test_msgs";
   version = "1.3.2-3";
   src = sources.rosbridge_test_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs rclpy rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

@@ -45,8 +45,8 @@ buildRosPackage {
   pname = "rosbag2_cpp";
   version = "0.26.4-1";
   src = sources.rosbag2_cpp;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rmw ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ rmw ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp pluginlib rclcpp rcpputils rcutils rmw_implementation rosbag2_storage rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_cpp rosidl_typesupport_introspection_cpp shared_queues_vendor ];
   depsTargetTarget = [  ];

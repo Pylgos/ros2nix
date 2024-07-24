@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "velodyne_simulator";
   version = "2.0.3-4";
   src = sources.velodyne_simulator;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ velodyne_description velodyne_gazebo_plugins ];
   depsTargetTarget = [  ];

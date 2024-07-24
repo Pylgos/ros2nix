@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "canopen_fake_slaves";
   version = "0.2.9-2";
   src = sources.canopen_fake_slaves;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ lely_core_libraries lifecycle_msgs rclcpp rclcpp_lifecycle ];
   depsTargetTarget = [  ];

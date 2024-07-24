@@ -45,8 +45,8 @@ buildRosPackage {
   pname = "swri_image_util";
   version = "3.6.1-3";
   src = sources.swri_image_util;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake pkg-config ];
+  nativeBuildInputs = [ ament_cmake pkg-config ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp camera_calibration_parsers cv_bridge eigen geometry_msgs image_geometry image_transport message_filters nav_msgs python3Packages.boost rclcpp rclcpp_components rclpy std_msgs swri_geometry_util swri_math_util swri_opencv_util swri_roscpp tf2 ];
   depsTargetTarget = [  ];

@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "rosidl_core_runtime";
   version = "0.2.0-3";
   src = sources.rosidl_core_runtime;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_generator_py ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ rosidl_generator_py ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_runtime_c rosidl_runtime_cpp rosidl_typesupport_c rosidl_typesupport_cpp rosidl_typesupport_fastrtps_c rosidl_typesupport_fastrtps_cpp rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp ];
   depsTargetTarget = [  ];

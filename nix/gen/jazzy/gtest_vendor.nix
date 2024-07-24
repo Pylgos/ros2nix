@@ -24,10 +24,10 @@ buildRosPackage {
   pname = "gtest_vendor";
   version = "1.14.9000-2";
   src = sources.gtest_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
-  buildInputs = [  ];
-  propagatedBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
+  buildInputs = [ cmake ];
+  propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

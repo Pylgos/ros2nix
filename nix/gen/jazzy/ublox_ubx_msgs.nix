@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "ublox_ubx_msgs";
   version = "0.5.3-2";
   src = sources.ublox_ubx_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces std_msgs ];
   depsTargetTarget = [  ];

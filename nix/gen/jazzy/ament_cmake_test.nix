@@ -25,10 +25,10 @@ buildRosPackage {
   pname = "ament_cmake_test";
   version = "2.5.2-1";
   src = sources.ament_cmake_test;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_python ];
-  buildInputs = [  ];
-  propagatedBuildInputs = [ ament_cmake_core ament_cmake_python ];
+  nativeBuildInputs = [ ament_cmake_python ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ];
+  buildInputs = [ ament_cmake_python ];
+  propagatedBuildInputs = [ ament_cmake_core ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

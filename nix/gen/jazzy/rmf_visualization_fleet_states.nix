@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "rmf_visualization_fleet_states";
   version = "2.3.2-1";
   src = sources.rmf_visualization_fleet_states;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rclcpp_components rmf_fleet_msgs rmf_visualization_msgs visualization_msgs ];
   depsTargetTarget = [  ];

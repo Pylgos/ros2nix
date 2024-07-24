@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "velodyne_laserscan";
   version = "2.3.0-4";
   src = sources.velodyne_laserscan;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rclcpp_components sensor_msgs ];
   depsTargetTarget = [  ];

@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "rcl_logging_interface";
   version = "3.1.0-2";
   src = sources.rcl_logging_interface;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rcutils ];
   depsTargetTarget = [  ];

@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "nav_2d_utils";
   version = "1.3.1-1";
   src = sources.nav_2d_utils;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs nav2_common nav2_msgs nav2_util nav_2d_msgs nav_msgs std_msgs tf2 tf2_geometry_msgs ];
   depsTargetTarget = [  ];

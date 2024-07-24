@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "behaviortree_cpp";
   version = "4.6.1-1";
   src = sources.behaviortree_cpp;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp cppzmq rclcpp sqlite ];
   depsTargetTarget = [  ];

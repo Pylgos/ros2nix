@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "imu_processors";
   version = "0.5.0-3";
   src = sources.imu_processors;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs nav_msgs rclcpp rclcpp_components sensor_msgs tf2_ros ];
   depsTargetTarget = [  ];

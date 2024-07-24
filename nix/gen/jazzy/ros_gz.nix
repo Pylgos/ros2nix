@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "ros_gz";
   version = "1.0.0-1";
   src = sources.ros_gz;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ros_gz_bridge ros_gz_image ros_gz_sim ros_gz_sim_demos ];
   depsTargetTarget = [  ];

@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "microstrain_inertial_msgs";
   version = "4.3.0-1";
   src = sources.microstrain_inertial_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ rosidl_default_generators ];
+  nativeBuildInputs = [ rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs std_msgs ];
   depsTargetTarget = [  ];

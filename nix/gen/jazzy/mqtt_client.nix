@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "mqtt_client";
   version = "2.3.0-1";
   src = sources.mqtt_client;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ fmt mqtt_client_interfaces rclcpp rclcpp_components rcpputils std_msgs ];
   depsTargetTarget = [  ];

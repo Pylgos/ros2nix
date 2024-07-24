@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "pendulum_control";
   version = "0.33.4-1";
   src = sources.pendulum_control;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ pendulum_msgs rclcpp rttest tlsf_cpp ];
   depsTargetTarget = [  ];

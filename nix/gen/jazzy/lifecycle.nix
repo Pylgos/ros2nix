@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "lifecycle";
   version = "0.33.4-1";
   src = sources.lifecycle;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ lifecycle_msgs rclcpp rclcpp_lifecycle std_msgs ];
   depsTargetTarget = [  ];

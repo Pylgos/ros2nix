@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "generate_parameter_library_example";
   version = "0.3.8-4";
   src = sources.generate_parameter_library_example;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_core ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ];
   buildInputs = [  ];
   propagatedBuildInputs = [ generate_parameter_library rclcpp rclcpp_components ];
   depsTargetTarget = [  ];

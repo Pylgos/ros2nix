@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "moveit_py";
   version = "2.10.0-1";
   src = sources.moveit_py;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_index_python ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_index_python ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs moveit_core moveit_ros_planning moveit_ros_planning_interface octomap_msgs pybind11_vendor rclcpp rclpy ];
   depsTargetTarget = [  ];

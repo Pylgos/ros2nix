@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "picknik_reset_fault_controller";
   version = "0.0.3-3";
   src = sources.picknik_reset_fault_controller;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ controller_interface example_interfaces geometry_msgs rclcpp realtime_tools ];
   depsTargetTarget = [  ];

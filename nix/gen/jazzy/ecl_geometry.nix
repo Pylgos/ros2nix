@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "ecl_geometry";
   version = "1.2.1-5";
   src = sources.ecl_geometry;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ecl_build ecl_config ecl_containers ecl_exceptions ecl_formatters ecl_license ecl_linear_algebra ecl_math ecl_mpl ecl_type_traits ];
   depsTargetTarget = [  ];

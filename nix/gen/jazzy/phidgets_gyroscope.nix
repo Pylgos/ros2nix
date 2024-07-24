@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "phidgets_gyroscope";
   version = "2.3.3-2";
   src = sources.phidgets_gyroscope;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros launch ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [ launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ phidgets_api rclcpp rclcpp_components sensor_msgs std_msgs std_srvs ];
   depsTargetTarget = [  ];

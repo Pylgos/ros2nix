@@ -44,8 +44,8 @@ buildRosPackage {
   pname = "libcaer_vendor";
   version = "1.3.0-1";
   src = sources.libcaer_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package cmake pkg-config ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
+  propagatedNativeBuildInputs = [ cmake pkg-config ];
   buildInputs = [  ];
   propagatedBuildInputs = [ libusb1 ];
   depsTargetTarget = [  ];

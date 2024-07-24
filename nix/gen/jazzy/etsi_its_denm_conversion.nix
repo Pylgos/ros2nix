@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "etsi_its_denm_conversion";
   version = "2.0.2-1";
   src = sources.etsi_its_denm_conversion;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ etsi_its_denm_coding etsi_its_denm_msgs etsi_its_primitives_conversion ];
   depsTargetTarget = [  ];

@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "costmap_queue";
   version = "1.3.1-1";
   src = sources.costmap_queue;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ nav2_common nav2_costmap_2d rclcpp ];
   depsTargetTarget = [  ];

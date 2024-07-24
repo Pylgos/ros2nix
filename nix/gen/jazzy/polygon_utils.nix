@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "polygon_utils";
   version = "1.0.2-3";
   src = sources.polygon_utils;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs polygon_msgs ];
   depsTargetTarget = [  ];

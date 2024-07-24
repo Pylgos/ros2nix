@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "heaphook";
   version = "0.1.1-3";
   src = sources.heaphook;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ tlsf ];
   depsTargetTarget = [  ];

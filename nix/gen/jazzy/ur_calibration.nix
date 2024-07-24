@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "ur_calibration";
   version = "2.4.5-1";
   src = sources.ur_calibration;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen libyamlcpp rclcpp ur_client_library ur_robot_driver ];
   depsTargetTarget = [  ];

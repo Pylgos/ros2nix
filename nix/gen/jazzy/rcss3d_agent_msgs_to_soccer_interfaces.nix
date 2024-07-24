@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "rcss3d_agent_msgs_to_soccer_interfaces";
   version = "0.4.1-4";
   src = sources.rcss3d_agent_msgs_to_soccer_interfaces;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rcss3d_agent_msgs soccer_vision_3d_msgs ];
   depsTargetTarget = [  ];

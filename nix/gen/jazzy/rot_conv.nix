@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "rot_conv";
   version = "1.1.0-4";
   src = sources.rot_conv;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake eigen3_cmake_module ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ eigen3_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen ];
   depsTargetTarget = [  ];

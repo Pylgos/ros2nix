@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "moveit_planners";
   version = "2.10.0-1";
   src = sources.moveit_planners;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ moveit_planners_ompl moveit_planners_stomp pilz_industrial_motion_planner ];
   depsTargetTarget = [  ];

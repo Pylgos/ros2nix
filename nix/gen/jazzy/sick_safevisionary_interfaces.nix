@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "sick_safevisionary_interfaces";
   version = "1.0.3-3";
   src = sources.sick_safevisionary_interfaces;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

@@ -43,8 +43,8 @@ buildRosPackage {
   pname = "osqp_vendor";
   version = "0.2.0-4";
   src = sources.osqp_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake git ros_environment ];
+  nativeBuildInputs = [ ament_cmake git ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "lanelet2_python";
   version = "1.2.1-1";
   src = sources.lanelet2_python;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_core mrt_cmake_modules ];
+  nativeBuildInputs = [ ament_cmake_core ];
+  propagatedNativeBuildInputs = [ mrt_cmake_modules ];
   buildInputs = [  ];
   propagatedBuildInputs = [ lanelet2_core lanelet2_io lanelet2_matching lanelet2_projection lanelet2_routing lanelet2_traffic_rules python3Packages.boost ];
   depsTargetTarget = [  ];

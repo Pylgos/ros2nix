@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "mola_kernel";
   version = "1.0.6-1";
   src = sources.mola_kernel;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ mola_common mola_yaml mrpt2 ];
   depsTargetTarget = [  ];

@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "image_publisher";
   version = "5.0.1-3";
   src = sources.image_publisher;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto ];
+  nativeBuildInputs = [ ament_cmake_auto ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ camera_info_manager cv_bridge image_transport rcl_interfaces rclcpp rclcpp_components ];
   depsTargetTarget = [  ];

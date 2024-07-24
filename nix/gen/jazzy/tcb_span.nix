@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "tcb_span";
   version = "1.0.2-5";
   src = sources.tcb_span;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

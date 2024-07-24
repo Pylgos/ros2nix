@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "rmf_traffic";
   version = "3.3.3-1";
   src = sources.rmf_traffic;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake eigen3_cmake_module ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [ eigen3_cmake_module ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen libccd rmf_utils ];
   depsTargetTarget = [  ];

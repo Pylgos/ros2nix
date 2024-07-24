@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "rcdiscover";
   version = "1.1.7-2";
   src = sources.rcdiscover;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

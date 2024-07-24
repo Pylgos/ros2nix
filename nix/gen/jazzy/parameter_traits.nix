@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "parameter_traits";
   version = "0.3.8-4";
   src = sources.parameter_traits;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ fmt rclcpp rsl tcb_span tl_expected ];
   depsTargetTarget = [  ];

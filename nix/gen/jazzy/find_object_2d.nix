@@ -41,8 +41,8 @@ buildRosPackage {
   pname = "find_object_2d";
   version = "0.7.0-6";
   src = sources.find_object_2d;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ros_environment rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces cv_bridge geometry_msgs image_transport message_filters qt5.qtbase rclcpp rosidl_default_runtime sensor_msgs std_msgs std_srvs tf2 tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];

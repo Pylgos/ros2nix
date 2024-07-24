@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "microstrain_inertial_description";
   version = "4.3.0-1";
   src = sources.microstrain_inertial_description;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ xacro ];
   depsTargetTarget = [  ];

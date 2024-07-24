@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "rqt_image_overlay";
   version = "0.3.1-4";
   src = sources.rqt_image_overlay;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ image_transport pluginlib qt5.qtbase rclcpp ros_image_to_qimage rqt_gui rqt_gui_cpp rqt_image_overlay_layer ];
   depsTargetTarget = [  ];

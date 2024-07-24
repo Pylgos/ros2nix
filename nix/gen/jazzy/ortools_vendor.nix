@@ -384,8 +384,8 @@ buildRosPackage {
   pname = "ortools_vendor";
   version = "9.9.0-6";
   src = sources.ortools_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package git ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package git ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "ecl_time";
   version = "1.2.1-5";
   src = sources.ecl_time;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ecl_build ecl_config ecl_errors ecl_exceptions ecl_license ecl_time_lite ];
   depsTargetTarget = [  ];

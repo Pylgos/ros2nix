@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "filters";
   version = "2.1.2-2";
   src = sources.filters;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ pluginlib python3Packages.boost rclcpp ];
   depsTargetTarget = [  ];

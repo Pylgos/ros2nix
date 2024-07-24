@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "moveit_ros_robot_interaction";
   version = "2.10.0-1";
   src = sources.moveit_ros_robot_interaction;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ interactive_markers moveit_common moveit_core moveit_ros_planning rclcpp tf2 tf2_eigen tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];

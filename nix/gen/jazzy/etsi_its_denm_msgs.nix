@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "etsi_its_denm_msgs";
   version = "2.0.2-1";
   src = sources.etsi_its_denm_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ros_environment rosidl_default_generators ];
+  nativeBuildInputs = [ rosidl_default_generators ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

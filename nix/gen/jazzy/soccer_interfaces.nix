@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "soccer_interfaces";
   version = "1.0.0-2";
   src = sources.soccer_interfaces;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ soccer_vision_2d_msgs soccer_vision_3d_msgs soccer_vision_attribute_msgs ];
   depsTargetTarget = [  ];

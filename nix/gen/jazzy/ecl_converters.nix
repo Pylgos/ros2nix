@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "ecl_converters";
   version = "1.2.1-5";
   src = sources.ecl_converters;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ecl_build ecl_concepts ecl_config ecl_errors ecl_exceptions ecl_license ecl_mpl ecl_type_traits ];
   depsTargetTarget = [  ];

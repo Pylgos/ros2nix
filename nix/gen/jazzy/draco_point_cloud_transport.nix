@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "draco_point_cloud_transport";
   version = "4.0.0-1";
   src = sources.draco_point_cloud_transport;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ pluginlib point_cloud_interfaces point_cloud_transport rclcpp rcpputils sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

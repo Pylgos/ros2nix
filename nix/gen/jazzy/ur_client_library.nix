@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "ur_client_library";
   version = "1.3.7-1";
   src = sources.ur_client_library;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

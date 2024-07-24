@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "examples_rclcpp_minimal_action_client";
   version = "0.19.4-1";
   src = sources.examples_rclcpp_minimal_action_client;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ example_interfaces rclcpp rclcpp_action ];
   depsTargetTarget = [  ];

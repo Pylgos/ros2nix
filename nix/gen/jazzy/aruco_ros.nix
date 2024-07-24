@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "aruco_ros";
   version = "5.0.5-1";
   src = sources.aruco_ros;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ aruco aruco_msgs cv_bridge geometry_msgs image_transport rclcpp sensor_msgs tf2 tf2_geometry_msgs tf2_ros visualization_msgs ];
   depsTargetTarget = [  ];

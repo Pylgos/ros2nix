@@ -58,8 +58,8 @@ buildRosPackage {
   pname = "spdlog_vendor";
   version = "1.6.1-1";
   src = sources.spdlog_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ spdlog ];
   depsTargetTarget = [  ];

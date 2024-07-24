@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "fluent_rviz";
   version = "0.0.3-5";
   src = sources.fluent_rviz;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto ];
+  nativeBuildInputs = [ ament_cmake_auto ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs rclcpp std_msgs visualization_msgs ];
   depsTargetTarget = [  ];

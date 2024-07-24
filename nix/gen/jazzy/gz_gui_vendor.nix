@@ -58,8 +58,8 @@ buildRosPackage {
   pname = "gz_gui_vendor";
   version = "0.0.3-1";
   src = sources.gz_gui_vendor;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
+  nativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ gz_cmake_vendor gz_common_vendor gz_math_vendor gz_msgs_vendor gz_plugin_vendor gz_rendering_vendor gz_tools_vendor gz_transport_vendor gz_utils_vendor protobuf qt5.qtbase qt5.qtdeclarative tinyxml-2 ];
   depsTargetTarget = [  ];

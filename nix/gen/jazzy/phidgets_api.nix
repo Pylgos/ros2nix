@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "phidgets_api";
   version = "2.3.3-2";
   src = sources.phidgets_api;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ libphidget22 ];
   depsTargetTarget = [  ];

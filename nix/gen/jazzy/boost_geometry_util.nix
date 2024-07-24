@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "boost_geometry_util";
   version = "0.0.1-5";
   src = sources.boost_geometry_util;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_auto ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_auto ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs python3Packages.boost rclcpp ];
   depsTargetTarget = [  ];

@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "marti_sensor_msgs";
   version = "1.5.2-3";
   src = sources.marti_sensor_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs rosidl_default_runtime ];
   depsTargetTarget = [  ];

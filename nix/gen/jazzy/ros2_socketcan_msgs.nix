@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "ros2_socketcan_msgs";
   version = "1.2.0-3";
   src = sources.ros2_socketcan_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake_auto ];
+  propagatedNativeBuildInputs = [ rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "phidgets_temperature";
   version = "2.3.3-2";
   src = sources.phidgets_temperature;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros launch ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [ launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ phidgets_api rclcpp rclcpp_components std_msgs ];
   depsTargetTarget = [  ];

@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "geographic_msgs";
   version = "1.0.6-2";
   src = sources.geographic_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs rosidl_default_runtime std_msgs unique_identifier_msgs ];
   depsTargetTarget = [  ];

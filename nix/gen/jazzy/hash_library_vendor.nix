@@ -42,8 +42,8 @@ buildRosPackage {
   pname = "hash_library_vendor";
   version = "0.1.1-7";
   src = sources.hash_library_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto git ];
+  nativeBuildInputs = [ ament_cmake_auto git ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

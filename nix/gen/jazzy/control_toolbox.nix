@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "control_toolbox";
   version = "3.2.0-3";
   src = sources.control_toolbox;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ control_msgs filters generate_parameter_library geometry_msgs pluginlib rclcpp rcutils realtime_tools ];
   depsTargetTarget = [  ];

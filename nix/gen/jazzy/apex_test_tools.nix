@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "apex_test_tools";
   version = "0.0.2-9";
   src = sources.apex_test_tools;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_gtest ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_auto ];
+  propagatedNativeBuildInputs = [ ament_cmake_gtest ];
   buildInputs = [  ];
   propagatedBuildInputs = [ osrf_testing_tools_cpp ];
   depsTargetTarget = [  ];

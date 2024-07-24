@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "examples_rclcpp_async_client";
   version = "0.19.4-1";
   src = sources.examples_rclcpp_async_client;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ example_interfaces rclcpp ];
   depsTargetTarget = [  ];

@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "perception_pcl";
   version = "2.6.1-4";
   src = sources.perception_pcl;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ pcl_conversions pcl_msgs pcl_ros ];
   depsTargetTarget = [  ];

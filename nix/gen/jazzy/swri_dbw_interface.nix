@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "swri_dbw_interface";
   version = "3.6.1-3";
   src = sources.swri_dbw_interface;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

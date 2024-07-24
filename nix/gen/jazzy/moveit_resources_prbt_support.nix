@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "moveit_resources_prbt_support";
   version = "2.10.0-1";
   src = sources.moveit_resources_prbt_support;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ xacro ];
   depsTargetTarget = [  ];

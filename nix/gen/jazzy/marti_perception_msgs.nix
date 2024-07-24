@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "marti_perception_msgs";
   version = "1.5.2-3";
   src = sources.marti_perception_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosidl_default_runtime sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

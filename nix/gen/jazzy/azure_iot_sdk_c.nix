@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "azure_iot_sdk_c";
   version = "1.13.0-2";
   src = sources.azure_iot_sdk_c;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake curl ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [ curl ];
   buildInputs = [  ];
   propagatedBuildInputs = [ openssl util-linux ];
   depsTargetTarget = [  ];

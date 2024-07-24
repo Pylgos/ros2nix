@@ -53,8 +53,8 @@ buildRosPackage {
   pname = "rviz_visual_tools";
   version = "4.1.4-4";
   src = sources.rviz_visual_tools;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_index_python eigen3_cmake_module launch ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_index_python eigen3_cmake_module launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen eigen_stl_containers geometry_msgs interactive_markers launch_ros pluginlib qt5.qtbase rclcpp rclcpp_components rviz2 rviz_common rviz_default_plugins rviz_ogre_vendor rviz_rendering sensor_msgs shape_msgs std_msgs tf2 tf2_eigen tf2_geometry_msgs trajectory_msgs visualization_msgs ];
   depsTargetTarget = [  ];

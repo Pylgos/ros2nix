@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "depthai";
   version = "2.26.1-1";
   src = sources.depthai;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ libusb1 nlohmann_json opencv ];
   depsTargetTarget = [  ];

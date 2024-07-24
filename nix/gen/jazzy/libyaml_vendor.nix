@@ -46,8 +46,8 @@ buildRosPackage {
   pname = "libyaml_vendor";
   version = "1.6.3-2";
   src = sources.libyaml_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_vendor_package pkg-config ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_vendor_package ];
+  propagatedNativeBuildInputs = [ pkg-config ];
   buildInputs = [  ];
   propagatedBuildInputs = [ libyaml ];
   depsTargetTarget = [  ];

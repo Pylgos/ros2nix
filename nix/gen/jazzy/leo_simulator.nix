@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "leo_simulator";
   version = "2.0.0-1";
   src = sources.leo_simulator;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ leo_gz_bringup leo_gz_plugins leo_gz_worlds ];
   depsTargetTarget = [  ];

@@ -43,8 +43,8 @@ buildRosPackage {
   pname = "autoware_lanelet2_extension";
   version = "0.4.0-1";
   src = sources.autoware_lanelet2_extension;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto autoware_cmake ];
+  nativeBuildInputs = [ ament_cmake_auto autoware_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ autoware_map_msgs autoware_planning_msgs autoware_utils geographiclib geometry_msgs lanelet2_core lanelet2_io lanelet2_maps lanelet2_projection lanelet2_routing lanelet2_traffic_rules lanelet2_validation pugixml rclcpp tf2 tf2_geometry_msgs visualization_msgs ];
   depsTargetTarget = [  ];

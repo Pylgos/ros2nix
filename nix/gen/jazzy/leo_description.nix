@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "leo_description";
   version = "3.0.3-1";
   src = sources.leo_description;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ robot_state_publisher xacro ];
   depsTargetTarget = [  ];

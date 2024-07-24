@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "polygon_rviz_plugins";
   version = "1.0.2-3";
   src = sources.polygon_rviz_plugins;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ color_util geometry_msgs pluginlib polygon_msgs polygon_utils rviz_common std_msgs ];
   depsTargetTarget = [  ];

@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "ament_cmake_black";
   version = "0.2.4-1";
   src = sources.ament_cmake_black;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_black ament_cmake_core ament_cmake_test ];
+  nativeBuildInputs = [ ament_cmake_core ];
+  propagatedNativeBuildInputs = [ ament_black ament_cmake_test ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

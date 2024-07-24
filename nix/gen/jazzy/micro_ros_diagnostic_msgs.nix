@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "micro_ros_diagnostic_msgs";
   version = "0.3.0-6";
   src = sources.micro_ros_diagnostic_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

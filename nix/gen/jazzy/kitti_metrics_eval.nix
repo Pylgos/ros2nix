@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "kitti_metrics_eval";
   version = "1.0.6-1";
   src = sources.kitti_metrics_eval;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ mola_common mrpt2 ];
   depsTargetTarget = [  ];

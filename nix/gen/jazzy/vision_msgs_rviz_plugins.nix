@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "vision_msgs_rviz_plugins";
   version = "4.1.1-3";
   src = sources.vision_msgs_rviz_plugins;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python buildPackages.python3Packages.numpy ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_python wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ pluginlib rclcpp rclpy rviz2 rviz_common rviz_default_plugins rviz_rendering vision_msgs yaml_cpp_vendor ];
   depsTargetTarget = [  ];

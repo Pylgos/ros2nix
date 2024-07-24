@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "phidgets_motors";
   version = "2.3.3-2";
   src = sources.phidgets_motors;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros launch ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [ launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ phidgets_api phidgets_msgs rclcpp rclcpp_components std_msgs ];
   depsTargetTarget = [  ];

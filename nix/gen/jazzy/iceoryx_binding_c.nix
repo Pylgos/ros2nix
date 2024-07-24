@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "iceoryx_binding_c";
   version = "2.0.5-6";
   src = sources.iceoryx_binding_c;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ iceoryx_hoofs iceoryx_posh ];
   depsTargetTarget = [  ];

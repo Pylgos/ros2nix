@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "moveit_resources_prbt_moveit_config";
   version = "2.10.0-1";
   src = sources.moveit_resources_prbt_moveit_config;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ joint_state_publisher moveit_resources_prbt_ikfast_manipulator_plugin moveit_resources_prbt_support moveit_ros_move_group robot_state_publisher rviz2 xacro ];
   depsTargetTarget = [  ];

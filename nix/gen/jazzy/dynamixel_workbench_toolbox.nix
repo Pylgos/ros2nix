@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "dynamixel_workbench_toolbox";
   version = "2.2.3-5";
   src = sources.dynamixel_workbench_toolbox;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ dynamixel_sdk rclcpp ];
   depsTargetTarget = [  ];

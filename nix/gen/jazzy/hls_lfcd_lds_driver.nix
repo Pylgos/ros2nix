@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "hls_lfcd_lds_driver";
   version = "2.0.4-6";
   src = sources.hls_lfcd_lds_driver;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.boost rclcpp sensor_msgs ];
   depsTargetTarget = [  ];

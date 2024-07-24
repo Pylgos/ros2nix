@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "action_msgs";
   version = "2.0.2-2";
   src = sources.action_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_core_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_core_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces rosidl_core_runtime service_msgs unique_identifier_msgs ];
   depsTargetTarget = [  ];

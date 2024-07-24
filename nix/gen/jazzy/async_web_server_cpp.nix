@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "async_web_server_cpp";
   version = "2.0.0-6";
   src = sources.async_web_server_cpp;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ openssl python3Packages.boost ];
   depsTargetTarget = [  ];

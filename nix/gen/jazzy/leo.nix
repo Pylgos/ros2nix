@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "leo";
   version = "3.0.3-1";
   src = sources.leo;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ leo_description leo_msgs leo_teleop ];
   depsTargetTarget = [  ];

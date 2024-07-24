@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "gripper_controllers";
   version = "4.9.0-1";
   src = sources.gripper_controllers;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ backward_ros control_msgs control_toolbox controller_interface generate_parameter_library hardware_interface pluginlib rclcpp rclcpp_action realtime_tools ];
   depsTargetTarget = [  ];

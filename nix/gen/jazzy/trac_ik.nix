@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "trac_ik";
   version = "2.0.1-1";
   src = sources.trac_ik;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ trac_ik_kinematics_plugin trac_ik_lib ];
   depsTargetTarget = [  ];

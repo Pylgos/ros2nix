@@ -41,8 +41,8 @@ buildRosPackage {
   pname = "system_modes";
   version = "0.9.0-6";
   src = sources.system_modes;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces launch_ros rclcpp rclcpp_lifecycle system_modes_msgs ];
   depsTargetTarget = [  ];

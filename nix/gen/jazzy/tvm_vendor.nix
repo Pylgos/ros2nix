@@ -62,8 +62,8 @@ buildRosPackage {
   pname = "tvm_vendor";
   version = "0.9.1-4";
   src = sources.tvm_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake git ros_environment ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ git ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ libxml2 openblas opencl-headers spirv-headers spirv-tools vulkan-loader ];
   depsTargetTarget = [  ];

@@ -48,8 +48,8 @@ buildRosPackage {
   pname = "swri_transform_util";
   version = "3.6.1-3";
   src = sources.swri_transform_util;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python pkg-config buildPackages.python3Packages.numpy ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_python pkg-config ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge diagnostic_msgs diagnostic_updater geographic_msgs geometry_msgs geos gps_msgs libyamlcpp marti_nav_msgs proj python3Packages.boost rcl_interfaces rclcpp rclcpp_components rclpy sensor_msgs swri_math_util swri_roscpp tf2 tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];

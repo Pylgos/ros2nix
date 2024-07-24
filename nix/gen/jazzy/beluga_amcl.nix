@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "beluga_amcl";
   version = "2.0.2-1";
   src = sources.beluga_amcl;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ beluga beluga_ros bondcpp message_filters rclcpp rclcpp_components rclcpp_lifecycle std_srvs ];
   depsTargetTarget = [  ];

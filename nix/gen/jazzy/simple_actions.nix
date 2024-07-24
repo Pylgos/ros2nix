@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "simple_actions";
   version = "0.3.0-3";
   src = sources.simple_actions;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ action_msgs rclcpp rclcpp_action rclpy ];
   depsTargetTarget = [  ];

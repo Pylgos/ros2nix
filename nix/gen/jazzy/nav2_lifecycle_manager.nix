@@ -40,8 +40,8 @@ buildRosPackage {
   pname = "nav2_lifecycle_manager";
   version = "1.3.1-1";
   src = sources.nav2_lifecycle_manager;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ bondcpp diagnostic_updater geometry_msgs lifecycle_msgs nav2_common nav2_msgs nav2_util rclcpp_action rclcpp_lifecycle std_msgs std_srvs tf2_geometry_msgs ];
   depsTargetTarget = [  ];

@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "velodyne";
   version = "2.3.0-4";
   src = sources.velodyne;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ velodyne_driver velodyne_laserscan velodyne_msgs velodyne_pointcloud ];
   depsTargetTarget = [  ];

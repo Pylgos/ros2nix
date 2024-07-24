@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "depthimage_to_laserscan";
   version = "2.5.1-3";
   src = sources.depthimage_to_laserscan;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ image_geometry opencv rclcpp rclcpp_components sensor_msgs ];
   depsTargetTarget = [  ];

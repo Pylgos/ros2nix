@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "ament_nodl";
   version = "0.1.0-7";
   src = sources.ament_nodl;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

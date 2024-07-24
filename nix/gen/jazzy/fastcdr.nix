@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "fastcdr";
   version = "2.2.2-1";
   src = sources.fastcdr;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

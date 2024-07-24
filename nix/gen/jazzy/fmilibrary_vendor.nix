@@ -40,8 +40,8 @@ buildRosPackage {
   pname = "fmilibrary_vendor";
   version = "1.0.1-1";
   src = sources.fmilibrary_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake git ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ git ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "ouxt_lint_common";
   version = "0.0.8-5";
   src = sources.ouxt_lint_common;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_pep257 ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ament_cmake_pep257 ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_cmake_clang_format ament_cmake_copyright ament_cmake_xmllint ];
   depsTargetTarget = [  ];

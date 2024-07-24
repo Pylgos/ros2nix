@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "test_interface_files";
   version = "0.11.0-3";
   src = sources.test_interface_files;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ];
+  nativeBuildInputs = [ ament_cmake_core ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "stomp";
   version = "0.1.2-4";
   src = sources.stomp;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ console-bridge eigen ros_industrial_cmake_boilerplate ];
   depsTargetTarget = [  ];

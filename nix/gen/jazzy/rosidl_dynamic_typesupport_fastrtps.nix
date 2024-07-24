@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "rosidl_dynamic_typesupport_fastrtps";
   version = "0.1.0-3";
   src = sources.rosidl_dynamic_typesupport_fastrtps;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros fastrtps_cmake_module rosidl_dynamic_typesupport ];
+  nativeBuildInputs = [ ament_cmake_ros fastrtps_cmake_module ];
+  propagatedNativeBuildInputs = [ rosidl_dynamic_typesupport ];
   buildInputs = [  ];
   propagatedBuildInputs = [ fastcdr fastrtps rcutils ];
   depsTargetTarget = [  ];

@@ -51,8 +51,8 @@ buildRosPackage {
   pname = "gz_msgs_vendor";
   version = "0.0.3-1";
   src = sources.gz_msgs_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
+  nativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ gz_cmake_vendor gz_math_vendor gz_tools_vendor protobuf python3 python3Packages.protobuf tinyxml-2 ];
   depsTargetTarget = [  ];

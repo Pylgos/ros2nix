@@ -44,8 +44,8 @@ buildRosPackage {
   pname = "lely_core_libraries";
   version = "0.2.9-2";
   src = sources.lely_core_libraries;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake git buildPackages.python3Packages.empy ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ git buildPackages.python3Packages.empy ];
   buildInputs = [  ];
   propagatedBuildInputs = [ autoconf automake libtool ];
   depsTargetTarget = [  ];

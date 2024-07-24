@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "v4l2_camera";
   version = "0.7.1-1";
   src = sources.v4l2_camera;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ camera_info_manager cv_bridge image_transport rclcpp rclcpp_components sensor_msgs ];
   depsTargetTarget = [  ];

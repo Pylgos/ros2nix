@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "libg2o";
   version = "2020.5.29-6";
   src = sources.libg2o;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen libGL libGLU suitesparse ];
   depsTargetTarget = [  ];

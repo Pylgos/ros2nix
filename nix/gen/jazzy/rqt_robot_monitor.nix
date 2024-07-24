@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "rqt_robot_monitor";
   version = "1.0.6-1";
   src = sources.rqt_robot_monitor;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ rosidl_default_generators ];
+  nativeBuildInputs = [ rosidl_default_generators wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diagnostic_msgs python_qt_binding qt_gui qt_gui_py_common rclpy rqt_gui rqt_gui_py rqt_py_common ];
   depsTargetTarget = [  ];

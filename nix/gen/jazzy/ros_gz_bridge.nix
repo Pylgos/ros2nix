@@ -48,8 +48,8 @@ buildRosPackage {
   pname = "ros_gz_bridge";
   version = "1.0.0-1";
   src = sources.ros_gz_bridge;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake pkg-config rosidl_pycommon ];
+  nativeBuildInputs = [ ament_cmake pkg-config rosidl_pycommon ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ actuator_msgs geometry_msgs gps_msgs gz_msgs_vendor gz_transport_vendor nav_msgs rclcpp rclcpp_components ros_gz_interfaces rosgraph_msgs sensor_msgs std_msgs tf2_msgs trajectory_msgs vision_msgs yaml_cpp_vendor ];
   depsTargetTarget = [  ];

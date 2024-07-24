@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "twist_mux";
   version = "4.3.0-3";
   src = sources.twist_mux;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diagnostic_updater geometry_msgs rclcpp std_msgs twist_mux_msgs visualization_msgs ];
   depsTargetTarget = [  ];

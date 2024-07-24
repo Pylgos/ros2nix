@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "turtlebot3_gazebo";
   version = "2.2.5-5";
   src = sources.turtlebot3_gazebo;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs nav_msgs rclcpp sensor_msgs tf2 ];
   depsTargetTarget = [  ];

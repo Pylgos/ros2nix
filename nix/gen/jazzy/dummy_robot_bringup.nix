@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "dummy_robot_bringup";
   version = "0.33.4-1";
   src = sources.dummy_robot_bringup;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_index_python launch ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ament_index_python launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ dummy_map_server dummy_sensors launch_ros robot_state_publisher ];
   depsTargetTarget = [  ];

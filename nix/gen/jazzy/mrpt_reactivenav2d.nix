@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "mrpt_reactivenav2d";
   version = "2.0.0-1";
   src = sources.mrpt_reactivenav2d;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_lint_auto ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ament_lint_auto ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_lint_common geometry_msgs mrpt2 mrpt_msgs mrpt_nav_interfaces nav_msgs rclcpp rclcpp_components sensor_msgs tf2 tf2_geometry_msgs tf2_ros visualization_msgs ];
   depsTargetTarget = [  ];

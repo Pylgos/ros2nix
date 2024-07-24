@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "sensor_msgs";
   version = "5.3.5-1";
   src = sources.sensor_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

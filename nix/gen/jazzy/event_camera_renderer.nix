@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "event_camera_renderer";
   version = "1.3.4-1";
   src = sources.event_camera_renderer;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_ros ros_environment ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_ros ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ event_camera_codecs event_camera_msgs image_transport rclcpp rclcpp_components sensor_msgs ];
   depsTargetTarget = [  ];

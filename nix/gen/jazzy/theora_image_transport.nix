@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "theora_image_transport";
   version = "4.0.0-2";
   src = sources.theora_image_transport;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake pkg-config rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake pkg-config rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge image_transport libogg libtheora pluginlib rclcpp rcutils rosidl_default_runtime sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

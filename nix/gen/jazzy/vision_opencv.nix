@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "vision_opencv";
   version = "4.1.0-1";
   src = sources.vision_opencv;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ cv_bridge image_geometry ];
   depsTargetTarget = [  ];

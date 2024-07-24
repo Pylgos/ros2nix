@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "py_binding_tools";
   version = "2.0.0-1";
   src = sources.py_binding_tools;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs pybind11_vendor rclcpp ];
   depsTargetTarget = [  ];

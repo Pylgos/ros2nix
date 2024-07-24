@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "ament_cmake_pycodestyle";
   version = "0.17.1-1";
   src = sources.ament_cmake_pycodestyle;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_pycodestyle ];
+  nativeBuildInputs = [ ament_cmake_core ];
+  propagatedNativeBuildInputs = [ ament_cmake_test ament_pycodestyle ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

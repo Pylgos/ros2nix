@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "interactive_marker_twist_server";
   version = "2.1.0-3";
   src = sources.interactive_marker_twist_server;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs interactive_markers rclcpp tf2 visualization_msgs ];
   depsTargetTarget = [  ];

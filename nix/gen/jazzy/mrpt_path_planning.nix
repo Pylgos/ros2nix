@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "mrpt_path_planning";
   version = "0.1.3-1";
   src = sources.mrpt_path_planning;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ mrpt2 mvsim ];
   depsTargetTarget = [  ];

@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "forward_command_controller";
   version = "4.9.0-1";
   src = sources.forward_command_controller;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ backward_ros controller_interface generate_parameter_library hardware_interface pluginlib rclcpp rclcpp_lifecycle realtime_tools std_msgs ];
   depsTargetTarget = [  ];

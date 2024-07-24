@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "ament_download";
   version = "0.0.5-6";
   src = sources.ament_download;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

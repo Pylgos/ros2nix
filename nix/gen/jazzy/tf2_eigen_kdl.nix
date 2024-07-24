@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "tf2_eigen_kdl";
   version = "0.36.4-1";
   src = sources.tf2_eigen_kdl;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen orocos_kdl_vendor tf2 ];
   depsTargetTarget = [  ];

@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "ublox";
   version = "2.3.0-4";
   src = sources.ublox;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ublox_gps ublox_msgs ublox_serialization ];
   depsTargetTarget = [  ];

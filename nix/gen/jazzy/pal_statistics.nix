@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "pal_statistics";
   version = "2.2.4-1";
   src = sources.pal_statistics;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto ];
+  nativeBuildInputs = [ ament_cmake_auto ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ pal_statistics_msgs python3Packages.boost rclcpp rclcpp_lifecycle rclpy ];
   depsTargetTarget = [  ];

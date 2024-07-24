@@ -45,8 +45,8 @@ buildRosPackage {
   pname = "behaviortree_cpp_v3";
   version = "3.8.6-3";
   src = sources.behaviortree_cpp_v3;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp cppzmq ncurses python3Packages.boost rclcpp ];
   depsTargetTarget = [  ];

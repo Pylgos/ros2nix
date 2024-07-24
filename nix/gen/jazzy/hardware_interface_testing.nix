@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "hardware_interface_testing";
   version = "4.11.0-1";
   src = sources.hardware_interface_testing;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ control_msgs hardware_interface lifecycle_msgs pluginlib rclcpp_lifecycle ros2_control_test_assets ];
   depsTargetTarget = [  ];

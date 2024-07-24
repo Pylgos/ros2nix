@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "nao_lola";
   version = "1.3.0-2";
   src = sources.nao_lola;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ nao_command_msgs nao_sensor_msgs python3Packages.boost rclcpp ];
   depsTargetTarget = [  ];

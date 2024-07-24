@@ -56,8 +56,8 @@ buildRosPackage {
   pname = "gz_rendering_vendor";
   version = "0.0.3-1";
   src = sources.gz_rendering_vendor;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
+  nativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ freeglut glew gz_cmake_vendor gz_common_vendor gz_math_vendor gz_ogre_next_vendor gz_plugin_vendor gz_utils_vendor ogre1_9 util-linux vulkan-loader xorg.libXi xorg.libXmu ];
   depsTargetTarget = [  ];

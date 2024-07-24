@@ -44,8 +44,8 @@ buildRosPackage {
   pname = "rosbag2_transport";
   version = "0.26.4-1";
   src = sources.rosbag2_transport;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros rmw ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [ rmw ];
   buildInputs = [  ];
   propagatedBuildInputs = [ keyboard_handler rclcpp rclcpp_components rosbag2_compression rosbag2_cpp rosbag2_interfaces rosbag2_storage shared_queues_vendor yaml_cpp_vendor ];
   depsTargetTarget = [  ];

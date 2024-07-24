@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "mola_relocalization";
   version = "1.0.6-1";
   src = sources.mola_relocalization;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ mola_common mola_pose_list mola_test_datasets mp2p_icp mrpt2 ];
   depsTargetTarget = [  ];

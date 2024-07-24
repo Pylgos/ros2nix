@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "backward_ros";
   version = "1.0.2-6";
   src = sources.backward_ros;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ elfutils ];
   depsTargetTarget = [  ];

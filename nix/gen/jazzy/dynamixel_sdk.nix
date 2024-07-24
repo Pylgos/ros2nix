@@ -24,8 +24,8 @@ buildRosPackage {
   pname = "dynamixel_sdk";
   version = "3.7.40-6";
   src = sources.dynamixel_sdk;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "mola_input_kitti_dataset";
   version = "1.0.6-1";
   src = sources.mola_input_kitti_dataset;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ mola_common mola_kernel mrpt2 ];
   depsTargetTarget = [  ];

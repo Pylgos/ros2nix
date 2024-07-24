@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "mola_viz";
   version = "1.0.6-1";
   src = sources.mola_viz;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ mola_kernel mrpt2 ];
   depsTargetTarget = [  ];

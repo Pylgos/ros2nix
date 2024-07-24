@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "self_test";
   version = "3.1.2-3";
   src = sources.self_test;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ros_environment ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ diagnostic_msgs diagnostic_updater rclcpp ];
   depsTargetTarget = [  ];

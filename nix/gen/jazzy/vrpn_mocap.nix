@@ -33,8 +33,8 @@ buildRosPackage {
   pname = "vrpn_mocap";
   version = "1.1.0-4";
   src = sources.vrpn_mocap;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake eigen3_cmake_module ];
+  nativeBuildInputs = [ ament_cmake eigen3_cmake_module ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen geometry_msgs rclcpp std_msgs tf2 vrpn ];
   depsTargetTarget = [  ];

@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "pluginlib";
   version = "5.4.2-2";
   src = sources.pluginlib;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_index_cpp class_loader rcpputils rcutils tinyxml2_vendor ];
   depsTargetTarget = [  ];

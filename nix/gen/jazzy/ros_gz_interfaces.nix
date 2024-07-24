@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "ros_gz_interfaces";
   version = "1.0.0-1";
   src = sources.ros_gz_interfaces;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs rcl_interfaces rosidl_default_runtime std_msgs ];
   depsTargetTarget = [  ];

@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "executive_smach";
   version = "3.0.3-3";
   src = sources.executive_smach;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ smach smach_msgs smach_ros ];
   depsTargetTarget = [  ];

@@ -42,8 +42,8 @@ buildRosPackage {
   pname = "usb_cam";
   version = "0.8.1-1";
   src = sources.usb_cam;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto ros_environment rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake_auto rosidl_default_generators ];
+  propagatedNativeBuildInputs = [ ros_environment ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces camera_info_manager cv_bridge ffmpeg image_transport image_transport_plugins rclcpp rclcpp_components rosidl_default_runtime sensor_msgs std_msgs std_srvs v4l-utils ];
   depsTargetTarget = [  ];

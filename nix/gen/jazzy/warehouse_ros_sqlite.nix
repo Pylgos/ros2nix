@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "warehouse_ros_sqlite";
   version = "1.0.3-4";
   src = sources.warehouse_ros_sqlite;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ class_loader python3Packages.boost rclcpp sqlite sqlite3_vendor warehouse_ros ];
   depsTargetTarget = [  ];

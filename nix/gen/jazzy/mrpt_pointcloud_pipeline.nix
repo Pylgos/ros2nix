@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "mrpt_pointcloud_pipeline";
   version = "2.0.0-1";
   src = sources.mrpt_pointcloud_pipeline;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_lint_auto ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ ament_lint_auto ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_lint_common mp2p_icp mrpt2 nav_msgs rclcpp rclcpp_components sensor_msgs tf2 tf2_geometry_msgs ];
   depsTargetTarget = [  ];

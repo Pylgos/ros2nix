@@ -44,8 +44,8 @@ buildRosPackage {
   pname = "mvsim";
   version = "0.9.4-1";
   src = sources.mvsim;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_gmock ament_cmake_gtest cmake ros_environment unzip wget ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_gmock ament_cmake_gtest cmake ];
+  propagatedNativeBuildInputs = [ ros_environment unzip wget ];
   buildInputs = [  ];
   propagatedBuildInputs = [ ament_cmake_xmllint cppzmq mrpt2 nav_msgs protobuf python3 python3Packages.boost python3Packages.pip python3Packages.protobuf python3Packages.pybind11 ros2launch sensor_msgs tf2 tf2_geometry_msgs visualization_msgs ];
   depsTargetTarget = [  ];

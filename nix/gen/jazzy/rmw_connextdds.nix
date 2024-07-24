@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "rmw_connextdds";
   version = "0.22.0-2";
   src = sources.rmw_connextdds;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rmw_connextdds_common ];
   depsTargetTarget = [  ];

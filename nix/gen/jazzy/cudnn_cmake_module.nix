@@ -41,8 +41,8 @@ buildRosPackage {
   pname = "cudnn_cmake_module";
   version = "0.0.1-6";
   src = sources.cudnn_cmake_module;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

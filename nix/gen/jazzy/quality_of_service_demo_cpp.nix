@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "quality_of_service_demo_cpp";
   version = "0.33.4-1";
   src = sources.quality_of_service_demo_cpp;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rmw rmw_implementation_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ rmw rmw_implementation_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ example_interfaces launch_ros rclcpp rclcpp_components rcutils sensor_msgs std_msgs ];
   depsTargetTarget = [  ];

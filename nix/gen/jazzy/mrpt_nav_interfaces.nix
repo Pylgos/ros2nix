@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "mrpt_nav_interfaces";
   version = "2.0.0-1";
   src = sources.mrpt_nav_interfaces;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ mrpt_msgs nav_msgs rosidl_default_runtime ];
   depsTargetTarget = [  ];

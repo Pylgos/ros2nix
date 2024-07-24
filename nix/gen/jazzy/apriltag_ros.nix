@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "apriltag_ros";
   version = "3.2.2-1";
   src = sources.apriltag_ros;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ apriltag apriltag_msgs cv_bridge eigen image_transport rclcpp rclcpp_components sensor_msgs tf2_ros ];
   depsTargetTarget = [  ];

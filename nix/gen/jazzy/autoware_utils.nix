@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "autoware_utils";
   version = "1.0.0-1";
   src = sources.autoware_utils;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto autoware_cmake ];
+  nativeBuildInputs = [ ament_cmake_auto autoware_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces python3Packages.boost rclcpp unique_identifier_msgs ];
   depsTargetTarget = [  ];

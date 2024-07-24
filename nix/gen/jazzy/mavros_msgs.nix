@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "mavros_msgs";
   version = "2.8.0-1";
   src = sources.mavros_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geographic_msgs geometry_msgs rcl_interfaces rosidl_default_runtime sensor_msgs ];
   depsTargetTarget = [  ];

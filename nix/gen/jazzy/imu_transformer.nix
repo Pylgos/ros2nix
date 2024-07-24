@@ -32,8 +32,8 @@ buildRosPackage {
   pname = "imu_transformer";
   version = "0.5.0-3";
   src = sources.imu_transformer;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ message_filters rclcpp rclcpp_components sensor_msgs tf2_ros tf2_sensor_msgs ];
   depsTargetTarget = [  ];

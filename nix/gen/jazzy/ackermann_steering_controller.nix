@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "ackermann_steering_controller";
   version = "4.9.0-1";
   src = sources.ackermann_steering_controller;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ backward_ros control_msgs controller_interface generate_parameter_library hardware_interface pluginlib rclcpp rclcpp_lifecycle std_srvs steering_controllers_library ];
   depsTargetTarget = [  ];

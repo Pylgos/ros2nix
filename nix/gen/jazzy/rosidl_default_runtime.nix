@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "rosidl_default_runtime";
   version = "1.6.0-3";
   src = sources.rosidl_default_runtime;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ action_msgs rosidl_core_runtime service_msgs ];
   depsTargetTarget = [  ];

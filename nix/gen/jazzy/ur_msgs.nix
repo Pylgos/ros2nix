@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "ur_msgs";
   version = "2.0.0-4";
   src = sources.ur_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces geometry_msgs rosidl_default_runtime ];
   depsTargetTarget = [  ];

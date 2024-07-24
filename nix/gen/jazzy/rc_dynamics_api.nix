@@ -26,8 +26,8 @@ buildRosPackage {
   pname = "rc_dynamics_api";
   version = "0.10.5-2";
   src = sources.rc_dynamics_api;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ cmake curl ];
+  nativeBuildInputs = [ cmake ];
+  propagatedNativeBuildInputs = [ curl ];
   buildInputs = [  ];
   propagatedBuildInputs = [ protobuf ];
   depsTargetTarget = [  ];

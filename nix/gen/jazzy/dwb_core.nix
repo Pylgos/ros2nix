@@ -42,8 +42,8 @@ buildRosPackage {
   pname = "dwb_core";
   version = "1.3.1-1";
   src = sources.dwb_core;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ dwb_msgs geometry_msgs nav2_common nav2_core nav2_costmap_2d nav2_util nav_2d_msgs nav_2d_utils nav_msgs pluginlib rclcpp sensor_msgs std_msgs tf2_ros visualization_msgs ];
   depsTargetTarget = [  ];

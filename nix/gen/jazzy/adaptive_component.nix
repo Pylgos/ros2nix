@@ -28,8 +28,8 @@ buildRosPackage {
   pname = "adaptive_component";
   version = "0.2.1-5";
   src = sources.adaptive_component;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rclcpp_components ];
   depsTargetTarget = [  ];

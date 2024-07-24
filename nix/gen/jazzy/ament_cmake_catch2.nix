@@ -25,8 +25,8 @@ buildRosPackage {
   pname = "ament_cmake_catch2";
   version = "1.4.1-1";
   src = sources.ament_cmake_catch2;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_test ];
+  nativeBuildInputs = [ ament_cmake_core ];
+  propagatedNativeBuildInputs = [ ament_cmake_test ];
   buildInputs = [  ];
   propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];

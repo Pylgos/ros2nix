@@ -38,8 +38,8 @@ buildRosPackage {
   pname = "composition";
   version = "0.33.4-1";
   src = sources.composition;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ example_interfaces launch_ros rclcpp rclcpp_components rcutils std_msgs ];
   depsTargetTarget = [  ];

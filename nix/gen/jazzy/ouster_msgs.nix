@@ -29,8 +29,8 @@ buildRosPackage {
   pname = "ouster_msgs";
   version = "0.5.1-5";
   src = sources.ouster_msgs;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rosidl_default_generators ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [ rosidl_default_generators ];
   buildInputs = [  ];
   propagatedBuildInputs = [ builtin_interfaces std_msgs ];
   depsTargetTarget = [  ];

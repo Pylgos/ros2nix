@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "smach_ros";
   version = "3.0.3-3";
   src = sources.smach_ros;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_python ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_python ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclpy smach smach_msgs std_msgs std_srvs ];
   depsTargetTarget = [  ];

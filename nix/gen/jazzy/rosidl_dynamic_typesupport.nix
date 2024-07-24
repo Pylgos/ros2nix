@@ -26,10 +26,10 @@ buildRosPackage {
   pname = "rosidl_dynamic_typesupport";
   version = "0.1.2-3";
   src = sources.rosidl_dynamic_typesupport;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_ros ];
-  buildInputs = [  ];
-  propagatedBuildInputs = [ ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
+  buildInputs = [ ament_cmake_ros ];
+  propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [ rcutils rosidl_runtime_c ];
 }

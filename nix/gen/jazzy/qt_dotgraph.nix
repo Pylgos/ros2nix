@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "qt_dotgraph";
   version = "2.7.4-2";
   src = sources.qt_dotgraph;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3Packages.pydot python_qt_binding ];
   depsTargetTarget = [  ];

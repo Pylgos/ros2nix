@@ -39,8 +39,8 @@ buildRosPackage {
   pname = "nav2_rotation_shim_controller";
   version = "1.3.1-1";
   src = sources.nav2_rotation_shim_controller;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ angles geometry_msgs nav2_common nav2_core nav2_costmap_2d nav2_msgs nav2_util pluginlib rclcpp tf2 ];
   depsTargetTarget = [  ];

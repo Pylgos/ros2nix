@@ -35,8 +35,8 @@ buildRosPackage {
   pname = "demo_nodes_cpp_native";
   version = "0.33.4-1";
   src = sources.demo_nodes_cpp_native;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rclcpp rclcpp_components rmw_fastrtps_cpp std_msgs ];
   depsTargetTarget = [  ];

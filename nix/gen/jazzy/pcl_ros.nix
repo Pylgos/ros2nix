@@ -42,8 +42,8 @@ buildRosPackage {
   pname = "pcl_ros";
   version = "2.6.1-4";
   src = sources.pcl_ros;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ eigen geometry_msgs pcl pcl_conversions rclcpp rclcpp_components sensor_msgs tf2 tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];

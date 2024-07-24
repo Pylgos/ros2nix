@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "bond_core";
   version = "4.1.0-1";
   src = sources.bond_core;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ bond bondcpp smclib ];
   depsTargetTarget = [  ];

@@ -43,8 +43,8 @@ buildRosPackage {
   pname = "rviz_visual_testing_framework";
   version = "14.1.2-1";
   src = sources.rviz_visual_testing_framework;
-  nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_gtest ];
+  nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
+  propagatedNativeBuildInputs = [ ament_cmake_gtest ];
   buildInputs = [  ];
   propagatedBuildInputs = [ geometry_msgs qt5.qtbase rclcpp rcutils rviz_common rviz_ogre_vendor rviz_rendering std_msgs tf2 tf2_ros ];
   depsTargetTarget = [  ];

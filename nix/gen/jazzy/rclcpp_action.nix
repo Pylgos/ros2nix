@@ -37,8 +37,8 @@ buildRosPackage {
   pname = "rclcpp_action";
   version = "28.1.3-1";
   src = sources.rclcpp_action;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake_ros ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
   propagatedBuildInputs = [ action_msgs rcl rcl_action rclcpp rcpputils rosidl_runtime_c ];
   depsTargetTarget = [  ];

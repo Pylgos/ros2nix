@@ -34,8 +34,8 @@ buildRosPackage {
   pname = "serial_driver";
   version = "1.2.0-4";
   src = sources.serial_driver;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_auto asio_cmake_module ];
+  nativeBuildInputs = [ ament_cmake_auto asio_cmake_module ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ asio io_context rclcpp rclcpp_components rclcpp_lifecycle std_msgs ];
   depsTargetTarget = [  ];

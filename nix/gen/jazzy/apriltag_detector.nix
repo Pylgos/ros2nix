@@ -36,8 +36,8 @@ buildRosPackage {
   pname = "apriltag_detector";
   version = "1.0.0-3";
   src = sources.apriltag_detector;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ apriltag apriltag_msgs cv_bridge image_transport rclcpp rclcpp_components sensor_msgs ];
   depsTargetTarget = [  ];

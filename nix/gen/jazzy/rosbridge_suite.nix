@@ -27,8 +27,8 @@ buildRosPackage {
   pname = "rosbridge_suite";
   version = "1.3.2-3";
   src = sources.rosbridge_suite;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ rosapi rosbridge_library rosbridge_server ];
   depsTargetTarget = [  ];

@@ -31,8 +31,8 @@ buildRosPackage {
   pname = "class_loader";
   version = "2.7.0-3";
   src = sources.class_loader;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_ros ];
+  nativeBuildInputs = [ ament_cmake ament_cmake_ros ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ console-bridge console_bridge_vendor rcpputils ];
   depsTargetTarget = [  ];

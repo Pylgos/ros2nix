@@ -30,8 +30,8 @@ buildRosPackage {
   pname = "laser_proc";
   version = "1.0.2-7";
   src = sources.laser_proc;
-  nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ];
+  nativeBuildInputs = [ ament_cmake ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ class_loader rclcpp rclcpp_components sensor_msgs ];
   depsTargetTarget = [  ];

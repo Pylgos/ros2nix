@@ -38,9 +38,9 @@ buildRosPackage {
   version = "0.33.4-1";
   src = sources.quality_of_service_demo_cpp;
   nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ rmw rmw_implementation_cmake ];
+  propagatedNativeBuildInputs = [ rmw_implementation_cmake ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ example_interfaces launch_ros rclcpp rclcpp_components rcutils sensor_msgs std_msgs ];
+  propagatedBuildInputs = [ example_interfaces launch_ros rclcpp rclcpp_components rcutils rmw sensor_msgs std_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

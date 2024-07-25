@@ -31,7 +31,7 @@ buildRosPackage {
   nativeBuildInputs = [  ];
   propagatedNativeBuildInputs = [ launch ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ launch ];
+  propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

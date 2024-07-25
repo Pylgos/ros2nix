@@ -29,7 +29,7 @@ buildRosPackage {
   version = "3.4.2-2";
   src = sources.launch_xml;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ launch ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
   propagatedBuildInputs = [ launch ];
   depsTargetTarget = [  ];

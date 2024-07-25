@@ -35,9 +35,9 @@ buildRosPackage {
   version = "0.13.2-1";
   src = sources.sros2;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python buildPackages.python3Packages.argcomplete buildPackages.python3Packages.importlib-resources ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.argcomplete buildPackages.python3Packages.importlib-resources ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ python3Packages.cryptography python3Packages.lxml rclpy ros2cli ];
+  propagatedBuildInputs = [ ament_index_python python3Packages.cryptography python3Packages.lxml rclpy ros2cli ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

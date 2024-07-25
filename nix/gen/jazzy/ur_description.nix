@@ -37,9 +37,9 @@ buildRosPackage {
   version = "2.4.0-1";
   src = sources.ur_description;
   nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ launch ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ joint_state_publisher_gui launch_ros robot_state_publisher rviz2 urdf xacro ];
+  propagatedBuildInputs = [ joint_state_publisher_gui launch launch_ros robot_state_publisher rviz2 urdf xacro ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -36,9 +36,9 @@ buildRosPackage {
   version = "0.3.6-5";
   src = sources.turtle_tf2_py;
   nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ launch buildPackages.python3Packages.numpy ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ geometry_msgs launch_ros rclpy tf2_ros turtlesim ];
+  propagatedBuildInputs = [ geometry_msgs launch launch_ros rclpy tf2_ros turtlesim ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

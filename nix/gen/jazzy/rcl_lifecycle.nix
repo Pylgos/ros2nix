@@ -36,9 +36,9 @@ buildRosPackage {
   version = "9.2.3-1";
   src = sources.rcl_lifecycle;
   nativeBuildInputs = [ ament_cmake_gen_version_h ament_cmake_ros ];
-  propagatedNativeBuildInputs = [ rmw ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ lifecycle_msgs rcl rcutils rosidl_runtime_c tracetools ];
+  propagatedBuildInputs = [ lifecycle_msgs rcl rcutils rmw rosidl_runtime_c tracetools ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

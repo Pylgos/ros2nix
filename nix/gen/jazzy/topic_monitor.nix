@@ -31,9 +31,9 @@ buildRosPackage {
   version = "0.33.4-1";
   src = sources.topic_monitor;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ launch ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ launch_ros rclpy std_msgs ];
+  propagatedBuildInputs = [ launch launch_ros rclpy std_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

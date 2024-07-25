@@ -34,9 +34,9 @@ buildRosPackage {
   version = "1.9.1-1";
   src = sources.rmf_building_map_tools;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python buildPackages.python3Packages.pyyaml ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.pyyaml ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ gz_fuel_tools_vendor libyamlcpp python3Packages.fiona python3Packages.pyproj python3Packages.requests python3Packages.shapely rclpy rmf_building_map_msgs rmf_site_map_msgs sqlite std_msgs ];
+  propagatedBuildInputs = [ ament_index_python gz_fuel_tools_vendor libyamlcpp python3Packages.fiona python3Packages.pyproj python3Packages.requests python3Packages.shapely rclpy rmf_building_map_msgs rmf_site_map_msgs sqlite std_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

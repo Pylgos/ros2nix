@@ -34,9 +34,9 @@ buildRosPackage {
   version = "0.9.0-6";
   src = sources.launch_system_modes;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python launch osrf_pycommon buildPackages.python3Packages.importlib-metadata buildPackages.python3Packages.pyyaml ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.importlib-metadata buildPackages.python3Packages.pyyaml ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ rclpy system_modes_msgs ];
+  propagatedBuildInputs = [ ament_index_python launch osrf_pycommon rclpy system_modes_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

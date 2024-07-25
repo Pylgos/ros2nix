@@ -35,9 +35,9 @@ buildRosPackage {
   version = "0.26.4-1";
   src = sources.rosbag2_storage;
   nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ rmw ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ pluginlib rclcpp rcutils yaml_cpp_vendor ];
+  propagatedBuildInputs = [ pluginlib rclcpp rcutils rmw yaml_cpp_vendor ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

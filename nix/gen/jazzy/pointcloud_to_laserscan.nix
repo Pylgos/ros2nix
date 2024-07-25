@@ -43,9 +43,9 @@ buildRosPackage {
   version = "2.0.2-3";
   src = sources.pointcloud_to_laserscan;
   nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ launch ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ laser_geometry launch_ros message_filters rclcpp rclcpp_components sensor_msgs tf2 tf2_ros tf2_sensor_msgs ];
+  propagatedBuildInputs = [ laser_geometry launch launch_ros message_filters rclcpp rclcpp_components sensor_msgs tf2 tf2_ros tf2_sensor_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

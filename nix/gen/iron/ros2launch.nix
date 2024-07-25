@@ -37,7 +37,7 @@ buildRosPackage {
   nativeBuildInputs = [  ];
   propagatedNativeBuildInputs = [ ament_index_python launch launch_xml launch_yaml ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ launch_ros launch_xml launch_yaml ros2cli ros2pkg ];
+  propagatedBuildInputs = [ launch_ros ros2cli ros2pkg ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

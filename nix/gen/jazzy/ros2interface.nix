@@ -38,9 +38,9 @@ buildRosPackage {
   version = "0.32.1-1";
   src = sources.ros2interface;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python rosidl_adapter ];
+  propagatedNativeBuildInputs = [ rosidl_adapter ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ros2cli rosidl_runtime_py ];
+  propagatedBuildInputs = [ ament_index_python ros2cli rosidl_runtime_py ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

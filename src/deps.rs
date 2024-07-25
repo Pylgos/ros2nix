@@ -5,7 +5,7 @@ use tracing::warn;
 
 use crate::{
     config::ConfigRef,
-    rosindex::{PackageManifest, RosDependencyKind},
+    rosindex::{PackageManifest, RosDependency, RosDependencyKind},
 };
 
 #[derive(Debug, Clone, Copy, Eq, PartialEq, PartialOrd, Ord, Serialize)]
@@ -181,6 +181,7 @@ fn classify_dependencies(
     manifests: &BTreeMap<String, PackageManifest>,
 ) -> Result<BTreeMap<String, BTreeSet<ClassifiedRosDependency>>> {
     let mut buildtools = BTreeSet::new();
+    buildtools.insert("ament_lint_common");
 
     let mut definetly_not_buildtools = BTreeSet::new();
     definetly_not_buildtools.extend(
@@ -198,12 +199,15 @@ fn classify_dependencies(
     );
     definetly_not_buildtools.extend(
         [
+            "rmw",
             "ros2test",
             "ros2run",
+            "launch_testing",
             "rmf_building_map_tools",
             "rosidl_typesupport_interface",
             "qt5-qmake",
             "rcutils",
+            "ament_index_python",
         ]
         .iter(),
     );
@@ -236,6 +240,21 @@ fn classify_dependencies(
         prev_buildtools_len = buildtools.len();
     }
 
+    // for manifest in manifests.values() {
+    //     if buildtools.contains(manifest.name.as_str()) {
+    //         continue;
+    //     }
+    //     let deps = &manifest.dependencies.deps;
+    //     for dep in deps.iter().filter(|d| d.kind.is_runtime()) {
+    //         if buildtools.contains(dep.name.as_str()) {
+    //             warn!(
+    //                 "suspicious: runtime package '{}' 's runtime dependency '{}' is a buildtool",
+    //                 manifest.name, dep.name
+    //             );
+    //         }
+    //     }
+    // }
+
     let mut groups = BTreeMap::new();
     for manifest in manifests.values() {
         for group in manifest.member_of_group.iter() {
@@ -250,8 +269,22 @@ fn classify_dependencies(
         .values()
         .map(|m| {
             let deps = &m.dependencies.deps;
+            let group_deps: Vec<_> = m
+                .dependencies
+                .group_deps
+                .iter()
+                .flat_map(|group| {
+                    groups.get(group).into_iter().flat_map(|members| {
+                        members.iter().map(|d| RosDependency {
+                            name: d.clone(),
+                            kind: RosDependencyKind::Exec,
+                        })
+                    })
+                })
+                .collect();
             let res: BTreeSet<ClassifiedRosDependency> = deps
                 .iter()
+                .chain(group_deps.iter())
                 .flat_map(|d| {
                     map_dependency_kind(
                         d.kind,
@@ -266,15 +299,6 @@ fn classify_dependencies(
                         propagated: is_propagation_required(d.kind),
                     })
                 })
-                .chain(m.dependencies.group_deps.iter().flat_map(|group| {
-                    groups.get(group).into_iter().flat_map(|members| {
-                        members.iter().map(|d| ClassifiedRosDependency {
-                            name: d.clone(),
-                            kind: NixDependencyKind::HostTarget,
-                            propagated: true,
-                        })
-                    })
-                }))
                 .collect();
 
             let res = res

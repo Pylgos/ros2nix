@@ -41,9 +41,9 @@ buildRosPackage {
   version = "3.2.2-1";
   src = sources.rosidl_typesupport_c;
   nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ament_index_python python3 rosidl_cli rosidl_generator_c rosidl_pycommon ];
+  propagatedNativeBuildInputs = [ ament_cmake_core python3 rosidl_cli rosidl_generator_c rosidl_pycommon ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ rcpputils rcutils rosidl_runtime_c rosidl_typesupport_fastrtps_c rosidl_typesupport_interface rosidl_typesupport_introspection_c ];
+  propagatedBuildInputs = [ ament_index_python rcpputils rcutils rosidl_runtime_c rosidl_typesupport_fastrtps_c rosidl_typesupport_interface rosidl_typesupport_introspection_c ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

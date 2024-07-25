@@ -37,9 +37,9 @@ buildRosPackage {
   version = "0.19.4-1";
   src = sources.launch_testing_examples;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ launch launch_testing buildPackages.python3Packages.pytest ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.pytest ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ demo_nodes_cpp launch_ros launch_testing_ros rcl_interfaces rclpy ros2bag std_msgs ];
+  propagatedBuildInputs = [ demo_nodes_cpp launch launch_ros launch_testing launch_testing_ros rcl_interfaces rclpy ros2bag std_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

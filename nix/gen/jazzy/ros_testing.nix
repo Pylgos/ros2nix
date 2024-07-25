@@ -31,9 +31,9 @@ buildRosPackage {
   version = "0.6.0-3";
   src = sources.ros_testing;
   nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_export_dependencies launch_testing launch_testing_ament_cmake ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_export_dependencies launch_testing_ament_cmake ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ launch_testing_ros ros2test ];
+  propagatedBuildInputs = [ launch_testing launch_testing_ros ros2test ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

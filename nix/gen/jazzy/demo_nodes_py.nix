@@ -33,9 +33,9 @@ buildRosPackage {
   version = "0.33.4-1";
   src = sources.demo_nodes_py;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ example_interfaces rcl_interfaces rclpy std_msgs ];
+  propagatedBuildInputs = [ ament_index_python example_interfaces rcl_interfaces rclpy std_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

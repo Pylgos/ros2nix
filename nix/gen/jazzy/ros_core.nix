@@ -56,9 +56,9 @@ buildRosPackage {
   version = "0.11.0-1";
   src = sources.ros_core;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_gmock ament_cmake_gtest ament_cmake_pytest ament_cmake_ros ament_index_python ament_lint_auto launch launch_testing launch_testing_ament_cmake launch_xml launch_yaml ros_environment rosidl_default_generators ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_auto ament_cmake_gmock ament_cmake_gtest ament_cmake_pytest ament_cmake_ros ament_lint_auto launch_testing_ament_cmake ros_environment rosidl_default_generators ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ament_index_cpp ament_lint_common class_loader common_interfaces launch_ros launch_testing_ros pluginlib rcl_lifecycle rclcpp rclcpp_action rclcpp_lifecycle rclpy ros2cli_common_extensions ros2launch rosidl_default_runtime sros2 sros2_cmake ];
+  propagatedBuildInputs = [ ament_index_cpp ament_index_python ament_lint_common class_loader common_interfaces launch launch_ros launch_testing launch_testing_ros launch_xml launch_yaml pluginlib rcl_lifecycle rclcpp rclcpp_action rclcpp_lifecycle rclpy ros2cli_common_extensions ros2launch rosidl_default_runtime sros2 sros2_cmake ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

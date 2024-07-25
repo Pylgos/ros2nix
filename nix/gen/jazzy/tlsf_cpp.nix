@@ -33,9 +33,9 @@ buildRosPackage {
   version = "0.17.0-3";
   src = sources.tlsf_cpp;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake rmw ];
+  propagatedNativeBuildInputs = [ ament_cmake ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ rclcpp std_msgs tlsf ];
+  propagatedBuildInputs = [ rclcpp rmw std_msgs tlsf ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

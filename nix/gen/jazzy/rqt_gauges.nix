@@ -33,9 +33,9 @@ buildRosPackage {
   version = "0.0.3-2";
   src = sources.rqt_gauges;
   nativeBuildInputs = [ wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_index_python ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ qt_gui qt_gui_py_common rclpy rqt_gui rqt_gui_py ];
+  propagatedBuildInputs = [ ament_index_python qt_gui qt_gui_py_common rclpy rqt_gui rqt_gui_py ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

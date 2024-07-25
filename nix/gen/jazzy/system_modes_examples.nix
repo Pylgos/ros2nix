@@ -40,9 +40,9 @@ buildRosPackage {
   version = "0.9.0-6";
   src = sources.system_modes_examples;
   nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ launch ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ launch_system_modes rclcpp rclcpp_lifecycle ros2launch system_modes system_modes_msgs ];
+  propagatedBuildInputs = [ launch launch_system_modes rclcpp rclcpp_lifecycle ros2launch system_modes system_modes_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

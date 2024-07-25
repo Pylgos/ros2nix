@@ -41,9 +41,9 @@ buildRosPackage {
   version = "8.4.1-1";
   src = sources.rmw_fastrtps_shared_cpp;
   nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [ ament_cmake fastrtps_cmake_module rmw rosidl_dynamic_typesupport ];
+  propagatedNativeBuildInputs = [ ament_cmake fastrtps_cmake_module ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ fastcdr fastrtps rcpputils rcutils rmw_dds_common rosidl_runtime_c rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp tracetools ];
+  propagatedBuildInputs = [ fastcdr fastrtps rcpputils rcutils rmw rmw_dds_common rosidl_dynamic_typesupport rosidl_runtime_c rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp tracetools ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

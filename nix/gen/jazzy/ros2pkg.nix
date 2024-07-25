@@ -35,9 +35,9 @@ buildRosPackage {
   version = "0.32.1-1";
   src = sources.ros2pkg;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_copyright ament_index_python buildPackages.python3Packages.catkin-pkg buildPackages.python3Packages.empy buildPackages.python3Packages.importlib-resources ];
+  propagatedNativeBuildInputs = [ ament_copyright buildPackages.python3Packages.catkin-pkg buildPackages.python3Packages.empy buildPackages.python3Packages.importlib-resources ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ python3Packages.setuptools ros2cli ];
+  propagatedBuildInputs = [ ament_index_python python3Packages.setuptools ros2cli ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -34,9 +34,9 @@ buildRosPackage {
   version = "2.4.0-1";
   src = sources.rmf_demos_fleet_adapter;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ launch_xml buildPackages.python3Packages.pyyaml ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.pyyaml ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ python3Packages.numpy python3Packages.pyproj python3Packages.requests rclpy rmf_fleet_adapter_python rmf_fleet_msgs rmf_task_msgs ];
+  propagatedBuildInputs = [ launch_xml python3Packages.numpy python3Packages.pyproj python3Packages.requests rclpy rmf_fleet_adapter_python rmf_fleet_msgs rmf_task_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -45,9 +45,9 @@ buildRosPackage {
   version = "0.26.4-1";
   src = sources.rosbag2_performance_benchmarking;
   nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ ament_index_python launch rmw ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ launch_ros python3Packages.psutil rclcpp rosbag2_compression rosbag2_cpp rosbag2_performance_benchmarking_msgs rosbag2_py rosbag2_storage sensor_msgs yaml_cpp_vendor ];
+  propagatedBuildInputs = [ ament_index_python launch launch_ros python3Packages.psutil rclcpp rmw rosbag2_compression rosbag2_cpp rosbag2_performance_benchmarking_msgs rosbag2_py rosbag2_storage sensor_msgs yaml_cpp_vendor ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

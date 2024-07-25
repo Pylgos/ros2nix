@@ -1,16 +1,32 @@
 max_concurrent_downloads = 16
 
 [env.humble]
+PAL_DISTRO = ""
+RMF_ENABLE_FAILOVER = ""
+BUILD_WITH_LDMRS_SUPPORT = ""
 GZ_VERSION = "fortress"
 IGNITION_VERSION = "fortress"
 
 [env.iron]
+RMF_ENABLE_FAILOVER = ""
+BUILD_WITH_LDMRS_SUPPORT = ""
 GZ_VERSION = "fortress"
 IGNITION_VERSION = "fortress"
 
 [env.jazzy]
+GZ_BUILD_FROM_SOURCE = "1"
+RMF_ENABLE_FAILOVER = ""
+BUILD_WITH_LDMRS_SUPPORT = ""
 GZ_VERSION = "harmonic"
 IGNITION_VERSION = "harmonic"
+
+[env.rolling]
+GZ_BUILD_FROM_SOURCE = "1"
+RMF_ENABLE_FAILOVER = ""
+BUILD_WITH_LDMRS_SUPPORT = ""
+GZ_VERSION = "harmonic"
+IGNITION_VERSION = "harmonic"
+DISABLE_GROUPS_WORKAROUND = "1"
 
 [system_packages]
 "ace" = ["ace"]

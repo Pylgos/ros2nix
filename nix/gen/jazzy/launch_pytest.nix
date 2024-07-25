@@ -32,9 +32,9 @@ buildRosPackage {
   version = "3.4.2-2";
   src = sources.launch_pytest;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python launch launch_testing osrf_pycommon buildPackages.python3Packages.pytest ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.pytest ];
   buildInputs = [  ];
-  propagatedBuildInputs = [  ];
+  propagatedBuildInputs = [ ament_index_python launch launch_testing osrf_pycommon ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

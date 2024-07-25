@@ -31,9 +31,9 @@ buildRosPackage {
   version = "0.11.1-3";
   src = sources.rosidl_generator_dds_idl;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_index_python rosidl_cli rosidl_pycommon ];
+  propagatedNativeBuildInputs = [ ament_cmake rosidl_cli rosidl_pycommon ];
   buildInputs = [  ];
-  propagatedBuildInputs = [  ];
+  propagatedBuildInputs = [ ament_index_python ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

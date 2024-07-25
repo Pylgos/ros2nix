@@ -33,9 +33,9 @@ buildRosPackage {
   version = "8.2.1-1";
   src = sources.tracetools_launch;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ launch ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ launch_ros tracetools_trace ];
+  propagatedBuildInputs = [ launch launch_ros tracetools_trace ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

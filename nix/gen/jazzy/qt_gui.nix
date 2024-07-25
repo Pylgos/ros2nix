@@ -34,9 +34,9 @@ buildRosPackage {
   version = "2.7.4-2";
   src = sources.qt_gui;
   nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_index_python buildPackages.python3Packages.catkin-pkg ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.catkin-pkg ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ python3Packages.pyqt5 python3Packages.pyside2 python3Packages.sip4 python_qt_binding qt5.qtbase tango_icons_vendor ];
+  propagatedBuildInputs = [ ament_index_python python3Packages.pyqt5 python3Packages.pyside2 python3Packages.sip4 python_qt_binding qt5.qtbase tango_icons_vendor ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

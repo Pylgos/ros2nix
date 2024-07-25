@@ -42,9 +42,9 @@ buildRosPackage {
   version = "1.3.1-1";
   src = sources.nav2_amcl;
   nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ launch_testing ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ geometry_msgs launch_ros message_filters nav2_common nav2_msgs nav2_util nav_msgs pluginlib rclcpp sensor_msgs std_srvs tf2 tf2_geometry_msgs tf2_ros ];
+  propagatedBuildInputs = [ geometry_msgs launch_ros launch_testing message_filters nav2_common nav2_msgs nav2_util nav_msgs pluginlib rclcpp sensor_msgs std_srvs tf2 tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

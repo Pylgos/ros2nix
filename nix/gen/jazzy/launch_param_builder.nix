@@ -30,9 +30,9 @@ buildRosPackage {
   version = "0.1.1-4";
   src = sources.launch_param_builder;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python buildPackages.python3Packages.pyyaml ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.pyyaml ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ rclpy xacro ];
+  propagatedBuildInputs = [ ament_index_python rclpy xacro ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

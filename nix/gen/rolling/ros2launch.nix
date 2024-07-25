@@ -35,7 +35,7 @@ buildRosPackage {
   version = "0.27.1-1";
   src = sources.ros2launch;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python launch launch_xml launch_yaml ];
+  propagatedNativeBuildInputs = [ ament_index_python launch ];
   buildInputs = [  ];
   propagatedBuildInputs = [ launch_ros launch_xml launch_yaml ros2cli ros2pkg ];
   depsTargetTarget = [  ];

@@ -37,9 +37,9 @@ buildRosPackage {
   version = "2.4.0-1";
   src = sources.rmf_demos;
   nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ launch_xml ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ rmf_building_map_tools rmf_demos_assets rmf_demos_fleet_adapter rmf_demos_maps rmf_demos_tasks rmf_fleet_adapter rmf_task_ros2 rmf_traffic_ros2 rmf_visualization rviz2 ];
+  propagatedBuildInputs = [ launch_xml rmf_building_map_tools rmf_demos_assets rmf_demos_fleet_adapter rmf_demos_maps rmf_demos_tasks rmf_fleet_adapter rmf_task_ros2 rmf_traffic_ros2 rmf_visualization rviz2 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

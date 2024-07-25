@@ -51,9 +51,9 @@ buildRosPackage {
   version = "0.22.0-2";
   src = sources.rosidl_generator_py;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_cppcheck ament_cmake_cpplint ament_cmake_flake8 ament_cmake_pep257 ament_cmake_uncrustify ament_index_python buildPackages.python3Packages.numpy python_cmake_module rmw rosidl_cli rosidl_generator_c rosidl_parser rosidl_pycommon rpyutils ];
+  propagatedNativeBuildInputs = [ ament_cmake ament_cmake_cppcheck ament_cmake_cpplint ament_cmake_flake8 ament_cmake_pep257 ament_cmake_uncrustify buildPackages.python3Packages.numpy python_cmake_module rosidl_cli rosidl_generator_c rosidl_parser rosidl_pycommon rpyutils ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ament_cmake ament_cmake_cppcheck ament_cmake_cpplint ament_cmake_flake8 ament_cmake_pep257 ament_cmake_uncrustify ament_index_python python3Packages.numpy python_cmake_module rmw rosidl_cli rosidl_generator_c rosidl_parser rosidl_pycommon rpyutils ];
+  propagatedBuildInputs = [ ament_cmake ament_cmake_cppcheck ament_cmake_cpplint ament_cmake_flake8 ament_cmake_pep257 ament_cmake_uncrustify python3Packages.numpy python_cmake_module rosidl_cli rosidl_generator_c rosidl_parser rosidl_pycommon rpyutils ];
   depsTargetTarget = [  ];
-  depsTargetTargetPropagated = [ rosidl_runtime_c rosidl_typesupport_c rosidl_typesupport_interface ];
+  depsTargetTargetPropagated = [ ament_index_python rmw rosidl_runtime_c rosidl_typesupport_c rosidl_typesupport_interface ];
 }

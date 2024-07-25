@@ -34,9 +34,9 @@ buildRosPackage {
   version = "2.4.0-1";
   src = sources.rmf_demos_gz;
   nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ launch_xml ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ gz_sim_vendor rmf_building_sim_gz_plugins rmf_demos rmf_robot_sim_gz_plugins ros2launch ros_gz_bridge teleop_twist_keyboard ];
+  propagatedBuildInputs = [ gz_sim_vendor launch_xml rmf_building_sim_gz_plugins rmf_demos rmf_robot_sim_gz_plugins ros2launch ros_gz_bridge teleop_twist_keyboard ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

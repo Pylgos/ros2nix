@@ -40,9 +40,9 @@ buildRosPackage {
   version = "1.0.0-1";
   src = sources.ros_gz_sim;
   nativeBuildInputs = [ ament_cmake pkg-config wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_index_python ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ gflags gz_math_vendor gz_msgs_vendor gz_sim_vendor gz_transport_vendor rclcpp std_msgs ];
+  propagatedBuildInputs = [ ament_index_python gflags gz_math_vendor gz_msgs_vendor gz_sim_vendor gz_transport_vendor rclcpp std_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

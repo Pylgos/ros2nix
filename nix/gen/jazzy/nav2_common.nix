@@ -31,9 +31,9 @@ buildRosPackage {
   version = "1.3.1-1";
   src = sources.nav2_common;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_python launch osrf_pycommon buildPackages.python3Packages.pyyaml ];
+  propagatedNativeBuildInputs = [ ament_cmake_core ament_cmake_python buildPackages.python3Packages.pyyaml ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ launch_ros rclpy ];
+  propagatedBuildInputs = [ launch launch_ros osrf_pycommon rclpy ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

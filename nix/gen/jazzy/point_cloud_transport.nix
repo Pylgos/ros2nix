@@ -34,9 +34,9 @@ buildRosPackage {
   version = "4.0.2-1";
   src = sources.point_cloud_transport;
   nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [ rmw ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ message_filters pluginlib rclcpp rclcpp_components rcpputils sensor_msgs ];
+  propagatedBuildInputs = [ message_filters pluginlib rclcpp rclcpp_components rcpputils rmw sensor_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

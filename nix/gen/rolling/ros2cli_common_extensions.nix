@@ -44,9 +44,9 @@ buildRosPackage {
   version = "0.4.0-1";
   src = sources.ros2cli_common_extensions;
   nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ launch_xml launch_yaml ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ros2action ros2cli ros2component ros2doctor ros2interface ros2launch ros2lifecycle ros2multicast ros2node ros2param ros2pkg ros2run ros2service ros2topic sros2 ];
+  propagatedBuildInputs = [ launch_xml launch_yaml ros2action ros2cli ros2component ros2doctor ros2interface ros2launch ros2lifecycle ros2multicast ros2node ros2param ros2pkg ros2run ros2service ros2topic sros2 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

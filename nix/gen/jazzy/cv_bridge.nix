@@ -37,9 +37,9 @@ buildRosPackage {
   version = "4.1.0-1";
   src = sources.cv_bridge;
   nativeBuildInputs = [ ament_cmake_ros python_cmake_module ];
-  propagatedNativeBuildInputs = [ ament_index_python buildPackages.python3Packages.numpy ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.numpy ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ opencv python3Packages.boost python3Packages.opencv4 rclcpp rcpputils sensor_msgs ];
+  propagatedBuildInputs = [ ament_index_python opencv python3Packages.boost python3Packages.opencv4 rclcpp rcpputils sensor_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

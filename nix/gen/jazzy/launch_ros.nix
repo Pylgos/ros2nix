@@ -35,9 +35,9 @@ buildRosPackage {
   version = "0.26.5-2";
   src = sources.launch_ros;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python launch osrf_pycommon buildPackages.python3Packages.importlib-metadata buildPackages.python3Packages.pyyaml ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.importlib-metadata buildPackages.python3Packages.pyyaml ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ composition_interfaces lifecycle_msgs rclpy ];
+  propagatedBuildInputs = [ ament_index_python composition_interfaces launch lifecycle_msgs osrf_pycommon rclpy ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

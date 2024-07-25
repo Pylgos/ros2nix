@@ -35,9 +35,9 @@ buildRosPackage {
   version = "0.3.1-5";
   src = sources.ros2nodl;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python buildPackages.python3Packages.argcomplete ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.argcomplete ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ nodl_python ros2cli ros2pkg ros2run ];
+  propagatedBuildInputs = [ ament_index_python nodl_python ros2cli ros2pkg ros2run ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

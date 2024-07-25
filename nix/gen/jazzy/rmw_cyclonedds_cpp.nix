@@ -37,9 +37,9 @@ buildRosPackage {
   version = "2.2.1-1";
   src = sources.rmw_cyclonedds_cpp;
   nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [ rmw ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ cyclonedds iceoryx_binding_c rcpputils rcutils rmw_dds_common rosidl_runtime_c rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp tracetools ];
+  propagatedBuildInputs = [ cyclonedds iceoryx_binding_c rcpputils rcutils rmw rmw_dds_common rosidl_runtime_c rosidl_typesupport_introspection_c rosidl_typesupport_introspection_cpp tracetools ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

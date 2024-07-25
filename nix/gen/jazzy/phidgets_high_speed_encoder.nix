@@ -31,9 +31,9 @@ buildRosPackage {
   version = "2.3.3-2";
   src = sources.phidgets_high_speed_encoder;
   nativeBuildInputs = [ ament_cmake_ros ];
-  propagatedNativeBuildInputs = [ launch ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ phidgets_api phidgets_msgs rclcpp rclcpp_components sensor_msgs ];
+  propagatedBuildInputs = [ launch phidgets_api phidgets_msgs rclcpp rclcpp_components sensor_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

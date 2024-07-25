@@ -55,9 +55,9 @@ buildRosPackage {
   version = "1.3.1-1";
   src = sources.nav2_system_tests;
   nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ launch_testing lcov ];
+  propagatedNativeBuildInputs = [ lcov ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ geometry_msgs launch_ros nav2_amcl nav2_behavior_tree nav2_bringup nav2_common nav2_lifecycle_manager nav2_map_server nav2_minimal_tb3_sim nav2_msgs nav2_navfn_planner nav2_planner nav2_util nav_msgs navigation2 rclcpp rclpy robot_state_publisher std_msgs tf2_geometry_msgs visualization_msgs ];
+  propagatedBuildInputs = [ geometry_msgs launch_ros launch_testing nav2_amcl nav2_behavior_tree nav2_bringup nav2_common nav2_lifecycle_manager nav2_map_server nav2_minimal_tb3_sim nav2_msgs nav2_navfn_planner nav2_planner nav2_util nav_msgs navigation2 rclcpp rclpy robot_state_publisher std_msgs tf2_geometry_msgs visualization_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

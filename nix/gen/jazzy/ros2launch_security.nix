@@ -34,9 +34,9 @@ buildRosPackage {
   version = "1.0.0-5";
   src = sources.ros2launch_security;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ nodl_python ros2launch sros2 ];
+  propagatedBuildInputs = [ ament_index_python nodl_python ros2launch sros2 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -30,9 +30,9 @@ buildRosPackage {
   version = "2.7.4-2";
   src = sources.qt_gui_py_common;
   nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_index_python ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ python_qt_binding ];
+  propagatedBuildInputs = [ ament_index_python python_qt_binding ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

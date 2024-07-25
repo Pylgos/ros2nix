@@ -37,9 +37,9 @@ buildRosPackage {
   version = "0.3.6-5";
   src = sources.turtle_tf2_cpp;
   nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ launch ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ geometry_msgs launch_ros message_filters rclcpp tf2 tf2_geometry_msgs tf2_ros turtlesim ];
+  propagatedBuildInputs = [ geometry_msgs launch launch_ros message_filters rclcpp tf2 tf2_geometry_msgs tf2_ros turtlesim ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -66,6 +66,9 @@ async fn main_inner() -> Result<()> {
         if package_index.status == DistroStatus::EndOfLife {
             continue;
         }
+        if package_index.name != "jazzy" {
+            continue;
+        }
         let deps = resolve_dependencies(&cfg, &package_index.manifests)?;
         let patched_sources = fetch_sources(&fetcher, package_index).await?;
         nixgen::generate(&cfg, package_index, &patched_sources, &deps)?;

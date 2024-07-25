@@ -30,9 +30,9 @@ buildRosPackage {
   version = "0.3.1-5";
   src = sources.nodl_python;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ python3Packages.lxml ];
+  propagatedBuildInputs = [ ament_index_python python3Packages.lxml ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

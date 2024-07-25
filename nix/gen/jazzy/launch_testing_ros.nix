@@ -33,9 +33,9 @@ buildRosPackage {
   version = "0.26.5-2";
   src = sources.launch_testing_ros;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python launch_testing ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ launch_ros rclpy ];
+  propagatedBuildInputs = [ ament_index_python launch_ros launch_testing rclpy ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

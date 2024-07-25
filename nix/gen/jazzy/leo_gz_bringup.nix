@@ -41,9 +41,9 @@ buildRosPackage {
   version = "2.0.0-1";
   src = sources.leo_gz_bringup;
   nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ ament_index_python ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ leo_description leo_gz_plugins leo_gz_worlds robot_state_publisher ros_gz_bridge ros_gz_image ros_gz_sim xacro ];
+  propagatedBuildInputs = [ ament_index_python leo_description leo_gz_plugins leo_gz_worlds robot_state_publisher ros_gz_bridge ros_gz_image ros_gz_sim xacro ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

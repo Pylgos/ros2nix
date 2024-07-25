@@ -32,9 +32,9 @@ buildRosPackage {
   version = "3.4.2-2";
   src = sources.launch;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python osrf_pycommon buildPackages.python3Packages.importlib-metadata buildPackages.python3Packages.lark buildPackages.python3Packages.pyyaml ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.importlib-metadata buildPackages.python3Packages.lark buildPackages.python3Packages.pyyaml ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ament_index_python osrf_pycommon python3Packages.importlib-metadata python3Packages.lark python3Packages.pyyaml ];
+  propagatedBuildInputs = [ ament_index_python osrf_pycommon ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

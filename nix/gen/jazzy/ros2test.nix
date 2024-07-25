@@ -34,9 +34,9 @@ buildRosPackage {
   version = "0.6.0-3";
   src = sources.ros2test;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ domain_coordinator launch launch_testing ];
+  propagatedNativeBuildInputs = [ domain_coordinator ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ launch_ros launch_testing_ros ros2cli ];
+  propagatedBuildInputs = [ launch launch_ros launch_testing launch_testing_ros ros2cli ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

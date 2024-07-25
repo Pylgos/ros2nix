@@ -29,9 +29,9 @@ buildRosPackage {
   version = "2.10.0-1";
   src = sources.moveit_configs_utils;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ ament_index_python launch ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ launch_param_builder launch_ros srdfdom ];
+  propagatedBuildInputs = [ ament_index_python launch launch_param_builder launch_ros srdfdom ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

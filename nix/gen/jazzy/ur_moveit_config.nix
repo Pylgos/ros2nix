@@ -40,9 +40,9 @@ buildRosPackage {
   version = "2.4.5-1";
   src = sources.ur_moveit_config;
   nativeBuildInputs = [ ament_cmake ament_cmake_python wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ launch ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ launch_ros moveit_kinematics moveit_planners_ompl moveit_ros_move_group moveit_ros_visualization moveit_servo moveit_simple_controller_manager rviz2 ur_description urdf warehouse_ros_sqlite xacro ];
+  propagatedBuildInputs = [ launch launch_ros moveit_kinematics moveit_planners_ompl moveit_ros_move_group moveit_ros_visualization moveit_servo moveit_simple_controller_manager rviz2 ur_description urdf warehouse_ros_sqlite xacro ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

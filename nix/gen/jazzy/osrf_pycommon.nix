@@ -4,7 +4,6 @@
   fetchgit,
   fetchurl,
   fetchzip,
-  python3Packages,
   substituteSource,
 }:
 let
@@ -28,7 +27,7 @@ buildRosPackage {
   nativeBuildInputs = [  ];
   propagatedNativeBuildInputs = [ buildPackages.python3Packages.importlib-metadata ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ python3Packages.importlib-metadata ];
+  propagatedBuildInputs = [  ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

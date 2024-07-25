@@ -10,9 +10,9 @@ use anyhow::Result;
 use futures::{future, stream, StreamExt as _, TryStreamExt};
 use indicatif::ProgressStyle;
 use tokio::select;
-use tracing::level_filters::LevelFilter;
 use tracing::{error, info_span};
-use tracing_indicatif::IndicatifLayer;
+use tracing::{level_filters::LevelFilter, Span};
+use tracing_indicatif::{span_ext::IndicatifSpanExt, IndicatifLayer};
 use tracing_subscriber::layer::SubscriberExt;
 use tracing_subscriber::util::SubscriberInitExt;
 use tracing_subscriber::Layer;
@@ -30,6 +30,9 @@ pub async fn fetch_sources(
     pkg_index: &PackageIndex,
 ) -> Result<BTreeMap<String, PatchedSource>> {
     let span = info_span!("fetch_sources", distro = %pkg_index.name);
+    span.pb_set_style(&ProgressStyle::default_bar());
+    span.pb_set_length(pkg_index.manifests.len() as _);
+    span.pb_set_position(1);
     let _enter = span.enter();
     let max_concurrent_downloads = fetcher.max_concurrent_downloads();
     let sources: BTreeMap<String, PatchedSource> = stream::iter(pkg_index.manifests.iter())
@@ -37,11 +40,13 @@ pub async fn fetch_sources(
             let fetcher = fetcher.clone();
             let manifest = manifest.clone();
             let name = name.clone();
+            let span = Span::current();
             tokio::spawn(async move {
                 let src = fetcher
                     .fetch_git(name.as_str(), &manifest.repository, &manifest.tag)
                     .await?;
                 let patched = autopatch_source(&fetcher, &src).await?;
+                span.pb_inc(1);
                 anyhow::Ok((name.clone(), patched))
             })
         })

@@ -1,5 +1,5 @@
 use std::{
-    collections::{BTreeSet, HashMap},
+    collections::{BTreeSet, HashMap, HashSet},
     fs,
     ops::Range,
     path::{Path, PathBuf},
@@ -298,13 +298,15 @@ fn get_vendor_source_name(name: &str, url: &str, disamb: usize) -> String {
     )
 }
 
-fn autopatch_source_boxed(
+fn autopatch_source_recurse(
     fetcher: &Arc<Fetcher>,
     src: &Source,
+    fetched: HashSet<Source>,
 ) -> BoxFuture<'static, Result<PatchedSource>> {
     let fetcher = fetcher.clone();
     let src = src.clone();
-    async move { autopatch_source(&fetcher, &src).await }.boxed()
+    let fetched = fetched.clone();
+    async move { autopatch_source_impl(&fetcher, &src, &fetched).await }.boxed()
 }
 
 async fn autopatch_cmake_vendor(
@@ -312,6 +314,7 @@ async fn autopatch_cmake_vendor(
     name: &str,
     path: &Path,
     rel_path: &Path,
+    fetched: &HashSet<Source>,
 ) -> Result<BTreeSet<Substitution>> {
     let mut result = BTreeSet::new();
     debug!("checking {path:?}");
@@ -337,7 +340,13 @@ async fn autopatch_cmake_vendor(
                     let name = get_vendor_source_name(name, &repo.value, result.len());
                     let from = content[repo.range].to_string();
                     let source = fetcher.fetch_git(&name, &repo.value, &tag.value).await?;
-                    let patched = autopatch_source_boxed(fetcher, &source).await?;
+                    let mut fetched = fetched.clone();
+                    if fetched.contains(&source) {
+                        continue;
+                    } else {
+                        fetched.insert(source.clone());
+                    }
+                    let patched = autopatch_source_recurse(fetcher, &source, fetched).await?;
                     result.insert(Substitution {
                         path: rel_path.to_path_buf(),
                         from,
@@ -350,7 +359,13 @@ async fn autopatch_cmake_vendor(
                         .fetch_url(&name, &url.value, true)
                         .await
                         .context(format!("failed to fetch archive {name} {}", url.value))?;
-                    let patched = autopatch_source_boxed(fetcher, &source).await?;
+                    let mut fetched = fetched.clone();
+                    if fetched.contains(&source) {
+                        continue;
+                    } else {
+                        fetched.insert(source.clone());
+                    }
+                    let patched = autopatch_source_recurse(fetcher, &source, fetched).await?;
                     result.insert(Substitution {
                         path: rel_path.to_path_buf(),
                         from,
@@ -380,7 +395,13 @@ async fn autopatch_cmake_vendor(
                             return Err(anyhow::anyhow!("unsupported VCS_TYPE {ty}"));
                         }
                     };
-                    let patched = autopatch_source_boxed(fetcher, &source).await?;
+                    let mut fetched = fetched.clone();
+                    if fetched.contains(&source) {
+                        continue;
+                    } else {
+                        fetched.insert(source.clone());
+                    }
+                    let patched = autopatch_source_recurse(fetcher, &source, fetched).await?;
                     result.insert(Substitution {
                         path: rel_path.to_path_buf(),
                         from,
@@ -425,6 +446,16 @@ async fn autopatch_cmake_vendor(
 
 #[tracing::instrument(skip(fetcher), fields(src = %src.name()))]
 pub async fn autopatch_source(fetcher: &Arc<Fetcher>, src: &Source) -> Result<PatchedSource> {
+    let mut fetched = HashSet::new();
+    fetched.insert(src.clone());
+    autopatch_source_impl(fetcher, src, &fetched).await
+}
+
+async fn autopatch_source_impl(
+    fetcher: &Arc<Fetcher>,
+    src: &Source,
+    fetched: &HashSet<Source>,
+) -> Result<PatchedSource> {
     let mut substitutions = BTreeSet::new();
 
     for file in WalkDir::new(src.path()) {
@@ -433,11 +464,8 @@ pub async fn autopatch_source(fetcher: &Arc<Fetcher>, src: &Source) -> Result<Pa
             continue;
         }
         let rel_path = file.path().strip_prefix(src.path())?;
-        if rel_path
-            .to_string_lossy()
-            .to_ascii_lowercase()
-            .contains("test")
-        {
+        let rel_path_str = rel_path.to_string_lossy().to_ascii_lowercase();
+        if rel_path_str.contains("test") || rel_path_str.contains("example") {
             continue;
         }
         let filename = file.file_name().to_string_lossy();
@@ -448,7 +476,8 @@ pub async fn autopatch_source(fetcher: &Arc<Fetcher>, src: &Source) -> Result<Pa
             || filename.ends_with(".cmake")
             || filename.ends_with(".cmake.in")
         {
-            let subst = autopatch_cmake_vendor(fetcher, src.name(), file.path(), rel_path).await;
+            let subst =
+                autopatch_cmake_vendor(fetcher, src.name(), file.path(), rel_path, fetched).await;
             match subst {
                 Ok(subst) => substitutions.extend(subst),
                 Err(err) => {
@@ -489,11 +518,13 @@ mod test {
         let fetcher = Arc::new(Fetcher::new(&config, "test"));
         let base_path = resource_dir().join("foonathan_memory_vendor");
         let rel_path = PathBuf::from("CMakeLists.txt");
+        let mut fetched = HashSet::new();
         let subs = autopatch_cmake_vendor(
             &fetcher,
             "foonathan_memory_vendor",
             &base_path.join(&rel_path),
             &rel_path,
+            &mut fetched,
         )
         .await
         .unwrap();

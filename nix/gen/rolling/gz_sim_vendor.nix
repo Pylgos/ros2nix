@@ -60,21 +60,6 @@ let
         hash = "sha256-yvI6CvmSHhWX/lT38T05oYwyEUK98B5bFol/jZLBDNU=";
       };
       substitutions = [
-        {
-          path = "examples/plugin/custom_sensor_system/CMakeLists.txt";
-          from = "GIT_REPOSITORY https://github.com/gazebosim/gz-sensors";
-          to = "URL ${gz_sim_vendor-vendor_source-gz-sim-0-vendor_source-gz-sensors-0}";
-        }
-      ];
-    };
-    gz_sim_vendor-vendor_source-gz-sim-0-vendor_source-gz-sensors-0 = substituteSource {
-      src = fetchgit {
-        name = "gz_sim_vendor-vendor_source-gz-sim-0-vendor_source-gz-sensors-0-source";
-        url = "https://github.com/gazebosim/gz-sensors";
-        rev = "abca8da21ed165d46c516632314222eae0e3370c";
-        hash = "sha256-b5wTwAy50oukLjh47SwTpvVm+LBx4NsPSTFtGTVtW8A=";
-      };
-      substitutions = [
       ];
     };
   };

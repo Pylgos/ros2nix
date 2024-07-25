@@ -33,6 +33,21 @@ let
         hash = "sha256-hIp5KpqNqTOsUoLX8yIotIbwzSpQX+MIBrxdsCM9NJI=";
       };
       substitutions = [
+        {
+          path = "CMakeLists.txt";
+          from = "GIT_REPOSITORY https://github.com/novatel/novatel_edie";
+          to = "URL ${novatel_oem7_driver-vendor_source-novatel_edie-0}";
+        }
+      ];
+    };
+    novatel_oem7_driver-vendor_source-novatel_edie-0 = substituteSource {
+      src = fetchgit {
+        name = "novatel_oem7_driver-vendor_source-novatel_edie-0-source";
+        url = "https://github.com/novatel/novatel_edie";
+        rev = "d02ccc2dfe531d642c1e2ca8a8c0f8205c856f23";
+        hash = "sha256-ZQ7z9vQ8quI+SoNhB93tTw5LQe07UAKdbJJpaMj1C6I=";
+      };
+      substitutions = [
       ];
     };
   };

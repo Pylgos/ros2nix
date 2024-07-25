@@ -8,16 +8,13 @@ use std::{
 
 use anyhow::{bail, ensure, Context, Result};
 use base64::{engine::general_purpose::STANDARD, Engine as _};
-use futures::StreamExt;
-use reqwest::Url;
 use serde::{Deserialize, Serialize};
 use tokio::{
+    io::{AsyncReadExt, BufReader},
     process::{Child, Command},
     select,
     sync::Semaphore,
 };
-
-use tokio_util::codec::{FramedRead, LinesCodec};
 use tracing::{debug, info, warn};
 
 use crate::config::ConfigRef;
@@ -120,7 +117,9 @@ impl Source {
         } else {
             url.to_string()
         };
-
+        let rev_or_branch = rev_or_branch
+            .strip_prefix("origin/")
+            .unwrap_or(rev_or_branch);
         debug!("fetching git repository {} {}", url, rev_or_branch);
         let child = Command::new("nix-prefetch-git")
             .arg("--url")
@@ -168,20 +167,21 @@ impl Source {
 
 async fn wait_and_get_output(mut child: Child) -> Result<Output> {
     let stderr = child.stderr.take().unwrap();
-    let mut reader = FramedRead::new(stderr, LinesCodec::new());
-    tokio::task::spawn(async move {
-        while let Some(Ok(line)) = reader.next().await {
-            debug!("{}", line);
+    let mut reader = BufReader::new(stderr);
+    loop {
+        let mut buf = Vec::new();
+        select! {
+            read_len = reader.read_buf(&mut buf) => {
+                let read_len = read_len?;
+                if read_len == 0 {
+                    return Ok(child.wait_with_output().await?);
+                }
+            }
+            _ = tokio::time::sleep(std::time::Duration::from_secs(60)) => {
+                bail!("timeout")
+            }
         }
-    });
-    select!(
-        output = child.wait_with_output() => {
-            Ok(output?)
-        }
-        _ = tokio::time::sleep(std::time::Duration::from_secs(60)) => {
-            bail!("timeout")
-        }
-    )
+    }
 }
 
 fn parse_nix_base32(s: &str) -> Option<Vec<u8>> {

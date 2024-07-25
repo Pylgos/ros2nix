@@ -5,6 +5,9 @@ let
     {
       # jazzy = prev.python312;
       jazzy = prev.python311; # python3.12 breaks sip4 and pyside2
+      iron = prev.python310;
+      humble = prev.python39;
+      rolling = prev.python311;
     }
     .${config.distro};
 in

@@ -12,6 +12,15 @@
 }:
 let
   sources = rec {
+    fast_gicp-vendor_source-lapack_addons_3-0 = substituteSource {
+      src = fetchurl {
+        name = "fast_gicp-vendor_source-lapack_addons_3-0-source";
+        url = "http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz";
+        hash = "sha256-vZntt9xHKapjGQQapStG2/erraGkP3oj/iYm2yTFJDw=";
+      };
+      substitutions = [
+      ];
+    };
     fields2cover-vendor_source-or-tools-5 = substituteSource {
       src = fetchgit {
         name = "fields2cover-vendor_source-or-tools-5-source";
@@ -237,7 +246,7 @@ let
         {
           path = "lapack/CMakeLists.txt";
           from = "DOWNLOAD \"http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz\"";
-          to = "DOWNLOAD file://${gtsam-vendor_source-lapack_addons_3-0}";
+          to = "DOWNLOAD file://${fast_gicp-vendor_source-lapack_addons_3-0}";
         }
       ];
     };
@@ -319,7 +328,7 @@ let
       src = fetchzip {
         name = "fields2cover-vendor_source-or-tools-5-vendor_source-pybind11_abseil-6-vendor_source-master-1-source";
         url = "https://github.com/pybind/pybind11/archive/refs/heads/master.tar.gz";
-        hash = "sha256-6D7ccD3EL2bWtR/6hV0FnofcsqU+BFlwV4TMPsO3RCM=";
+        hash = "sha256-TW8zUZErRRoMgQM+ON1npoAD5pDQK1/o99tIMpODAtk=";
       };
       substitutions = [
       ];
@@ -350,15 +359,6 @@ let
         url = "https://github.com/scipopt/scip.git";
         rev = "61297938717271f462c995b99ab4b217ca1d9499";
         hash = "sha256-Ub0eykyZOlJtqUofTx4a2YcOMiyG6AUX0llxsqJ+YvE=";
-      };
-      substitutions = [
-      ];
-    };
-    gtsam-vendor_source-lapack_addons_3-0 = substituteSource {
-      src = fetchurl {
-        name = "gtsam-vendor_source-lapack_addons_3-0-source";
-        url = "http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz";
-        hash = "sha256-vZntt9xHKapjGQQapStG2/erraGkP3oj/iYm2yTFJDw=";
       };
       substitutions = [
       ];

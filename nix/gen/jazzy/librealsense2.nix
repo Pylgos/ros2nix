@@ -17,16 +17,6 @@
 }:
 let
   sources = rec {
-    foonathan_memory_vendor-vendor_source-memory-0 = substituteSource {
-      src = fetchgit {
-        name = "foonathan_memory_vendor-vendor_source-memory-0-source";
-        url = "https://github.com/foonathan/memory.git";
-        rev = "0f0775770fd1c506fa9c5ad566bd6ba59659db66";
-        hash = "sha256-nLBnxPbPKiLCFF2TJgD/eJKJJfzktVBW3SRW2m3WK/s=";
-      };
-      substitutions = [
-      ];
-    };
     librealsense2 = substituteSource {
       src = fetchgit {
         name = "librealsense2-source";
@@ -53,7 +43,7 @@ let
         {
           path = "CMake/external_foonathan_memory.cmake";
           from = "GIT_REPOSITORY https://github.com/foonathan/memory.git";
-          to = "URL ${foonathan_memory_vendor-vendor_source-memory-0}";
+          to = "URL ${librealsense2-vendor_source-memory-0}";
         }
         {
           path = "CMake/external_libcurl.cmake";
@@ -130,7 +120,7 @@ let
       src = fetchurl {
         name = "librealsense2-vendor_source-gamecontrollerdb-0-source";
         url = "https://raw.githubusercontent.com/gabomdq/SDL_GameControllerDB/master/gamecontrollerdb.txt";
-        hash = "sha256-503gvcBDasNM51wI3gwzpt5H6u3KXEJtXagvQe0hits=";
+        hash = "sha256-Dyl1eJi8aNkrg6mOqOhzuYNjcRzEELHqF8mXUWhU+3o=";
       };
       substitutions = [
       ];
@@ -151,6 +141,16 @@ let
         url = "https://github.com/ev-mp/libusb.git";
         rev = "2a7372db54094a406a755f0b8548b614ba8c78ec";
         hash = "sha256-KYM8Aaz4kV7GFiQVy+dgFk6tPvDlJI6iPY5ddt4+OIE=";
+      };
+      substitutions = [
+      ];
+    };
+    librealsense2-vendor_source-memory-0 = substituteSource {
+      src = fetchgit {
+        name = "librealsense2-vendor_source-memory-0-source";
+        url = "https://github.com/foonathan/memory.git";
+        rev = "0f0775770fd1c506fa9c5ad566bd6ba59659db66";
+        hash = "sha256-nLBnxPbPKiLCFF2TJgD/eJKJJfzktVBW3SRW2m3WK/s=";
       };
       substitutions = [
       ];

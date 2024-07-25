@@ -18,11 +18,6 @@ let
       };
       substitutions = [
         {
-          path = "src/extern/grpc/CMakeLists.txt";
-          from = "GIT_REPOSITORY \${GRPC_URL}";
-          to = "URL ${control_box_rst-vendor_source-grpc-0}";
-        }
-        {
           path = "src/extern/protobuf/CMakeLists.txt";
           from = "GIT_REPOSITORY https://github.com/google/protobuf.git";
           to = "URL ${control_box_rst-vendor_source-protobuf-0}";
@@ -32,16 +27,6 @@ let
           from = "GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git";
           to = "URL ${control_box_rst-vendor_source-yaml-cpp-0}";
         }
-      ];
-    };
-    control_box_rst-vendor_source-grpc-0 = substituteSource {
-      src = fetchgit {
-        name = "control_box_rst-vendor_source-grpc-0-source";
-        url = "https://github.com/grpc/grpc.git";
-        rev = "b567bb43670f7f2523164fdabdea8786a7595854";
-        hash = "sha256-dQt5gCHoxrEdkhMPKcVSvDKhPQEzN6fgq5klBucOZQQ=";
-      };
-      substitutions = [
       ];
     };
     control_box_rst-vendor_source-protobuf-0 = substituteSource {

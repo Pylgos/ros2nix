@@ -10,8 +10,8 @@ use anyhow::Result;
 use futures::{future, stream, StreamExt as _, TryStreamExt};
 use indicatif::ProgressStyle;
 use tokio::select;
-use tracing::info_span;
 use tracing::level_filters::LevelFilter;
+use tracing::{error, info_span};
 use tracing_indicatif::IndicatifLayer;
 use tracing_subscriber::layer::SubscriberExt;
 use tracing_subscriber::util::SubscriberInitExt;
@@ -56,12 +56,9 @@ async fn main_inner() -> Result<()> {
     let cfg = config::Config::load("ros2nix.toml")?.into_ref();
     cfg.create_directories()?;
     let distro_index = DistroIndex::fetch(&cfg).await?;
+    let fetcher = Fetcher::new_arc(&cfg, "common");
     for package_index in distro_index.distros.values() {
-        let fetcher = Fetcher::new_arc(&cfg, &package_index.name);
-        if package_index.status != DistroStatus::Active {
-            continue;
-        }
-        if package_index.name != "jazzy" {
+        if package_index.status == DistroStatus::EndOfLife {
             continue;
         }
         let deps = resolve_dependencies(&cfg, &package_index.manifests)?;
@@ -91,7 +88,12 @@ async fn main() -> Result<()> {
         .init();
 
     select! {
-        res = main_inner() => res,
+        res = main_inner() => {
+            if let Err(e) = &res {
+                error!("{:?}", e);
+            }
+            res
+        },
         _ = tokio::signal::ctrl_c() => anyhow::bail!("ctrl-c"),
     }
 }

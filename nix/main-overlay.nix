@@ -18,6 +18,21 @@ let
       extra = (spliced: private-funcs);
       f = (self: (common self) // (import ./gen/jazzy self));
     };
+    iron = final.makeScopeWithSplicing' {
+      otherSplices = final.generateSplicesForMkScope "rosPackages";
+      extra = (spliced: private-funcs);
+      f = (self: (common self) // (import ./gen/iron self));
+    };
+    humble = final.makeScopeWithSplicing' {
+      otherSplices = final.generateSplicesForMkScope "rosPackages";
+      extra = (spliced: private-funcs);
+      f = (self: (common self) // (import ./gen/humble self));
+    };
+    rolling = final.makeScopeWithSplicing' {
+      otherSplices = final.generateSplicesForMkScope "rosPackages";
+      extra = (spliced: private-funcs);
+      f = (self: (common self) // (import ./gen/rolling self));
+    };
   };
 in
 {

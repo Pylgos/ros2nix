@@ -9,9 +9,11 @@ use std::{
 use anyhow::{bail, ensure, Context, Result};
 use base64::{engine::general_purpose::STANDARD, Engine as _};
 use futures::StreamExt;
+use reqwest::Url;
 use serde::{Deserialize, Serialize};
 use tokio::{
     process::{Child, Command},
+    select,
     sync::Semaphore,
 };
 
@@ -113,11 +115,16 @@ impl Source {
             path: PathBuf,
             hash: String,
         }
+        let url = if url.starts_with("git://") {
+            url.replacen("git://", "https://", 1)
+        } else {
+            url.to_string()
+        };
 
         debug!("fetching git repository {} {}", url, rev_or_branch);
         let child = Command::new("nix-prefetch-git")
             .arg("--url")
-            .arg(url)
+            .arg(&url)
             .arg("--rev")
             .arg(rev_or_branch)
             .arg("--fetch-submodules")
@@ -132,7 +139,7 @@ impl Source {
         } else {
             let child = Command::new("nix-prefetch-git")
                 .arg("--url")
-                .arg(url)
+                .arg(&url)
                 .arg("--rev")
                 .arg("refs/heads/".to_string() + rev_or_branch)
                 .arg("--fetch-submodules")
@@ -167,7 +174,14 @@ async fn wait_and_get_output(mut child: Child) -> Result<Output> {
             debug!("{}", line);
         }
     });
-    Ok(child.wait_with_output().await?)
+    select!(
+        output = child.wait_with_output() => {
+            Ok(output?)
+        }
+        _ = tokio::time::sleep(std::time::Duration::from_secs(60)) => {
+            bail!("timeout")
+        }
+    )
 }
 
 fn parse_nix_base32(s: &str) -> Option<Vec<u8>> {

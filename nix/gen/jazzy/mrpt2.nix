@@ -41,9 +41,9 @@
 }:
 let
   sources = rec {
-    gtsam-vendor_source-lapack_addons_3-0 = substituteSource {
+    fast_gicp-vendor_source-lapack_addons_3-0 = substituteSource {
       src = fetchurl {
-        name = "gtsam-vendor_source-lapack_addons_3-0-source";
+        name = "fast_gicp-vendor_source-lapack_addons_3-0-source";
         url = "http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz";
         hash = "sha256-vZntt9xHKapjGQQapStG2/erraGkP3oj/iYm2yTFJDw=";
       };
@@ -54,7 +54,7 @@ let
       src = fetchurl {
         name = "librealsense2-vendor_source-gamecontrollerdb-0-source";
         url = "https://raw.githubusercontent.com/gabomdq/SDL_GameControllerDB/master/gamecontrollerdb.txt";
-        hash = "sha256-503gvcBDasNM51wI3gwzpt5H6u3KXEJtXagvQe0hits=";
+        hash = "sha256-Dyl1eJi8aNkrg6mOqOhzuYNjcRzEELHqF8mXUWhU+3o=";
       };
       substitutions = [
       ];
@@ -123,7 +123,7 @@ let
         {
           path = "lapack/CMakeLists.txt";
           from = "DOWNLOAD \"http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz\"";
-          to = "DOWNLOAD file://${gtsam-vendor_source-lapack_addons_3-0}";
+          to = "DOWNLOAD file://${fast_gicp-vendor_source-lapack_addons_3-0}";
         }
       ];
     };

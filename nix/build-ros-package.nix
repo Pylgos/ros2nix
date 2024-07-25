@@ -11,7 +11,6 @@
   buildPhase ? null,
   installPhase ? null,
   checkPhase ? null,
-  preFixup ? "",
   doCheck ? false,
   dontUseCmakeConfigure ? true,
   strictDeps ? true,
@@ -51,11 +50,11 @@ let
           ''
             runHook preBuild
 
-            MAKEFLAGS="-j$NIX_BUILD_CORES" colcon --log-base /build/log build \
+            MAKEFLAGS="-j$NIX_BUILD_CORES" colcon --log-base ./log build \
               --paths . \
               --merge-install \
-              --install-base $out \
-              --build-base /build/build \
+              --install-base "$out" \
+              --build-base ./build \
               --event-handlers console_cohesion- console_direct+ console_package_list- console_start_end- console_stderr- desktop_notification- event_log- log- log_command- status- store_result- summary- terminal_title- \
               --executor sequential ${
                 lib.concatStringsSep " " (
@@ -90,13 +89,6 @@ let
           ''
         else
           checkPhase;
-
-      preFixup =
-        preFixup
-        + ''
-          rm -rf /build/build
-          rm -rf /build/log
-        '';
 
       shellHook =
         ''

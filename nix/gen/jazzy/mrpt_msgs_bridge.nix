@@ -32,9 +32,9 @@ buildRosPackage {
   version = "2.0.0-1";
   src = sources.mrpt_msgs_bridge;
   nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ ament_lint_auto ros_environment ];
+  propagatedNativeBuildInputs = [ ament_lint_auto ament_lint_common ros_environment ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ament_lint_common geometry_msgs mrpt2 mrpt_msgs tf2 ];
+  propagatedBuildInputs = [ geometry_msgs mrpt2 mrpt_msgs tf2 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

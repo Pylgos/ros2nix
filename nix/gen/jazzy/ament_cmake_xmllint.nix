@@ -30,8 +30,8 @@ buildRosPackage {
   src = sources.ament_cmake_xmllint;
   nativeBuildInputs = [ ament_cmake_core ];
   propagatedNativeBuildInputs = [ ament_cmake_test ament_xmllint ];
-  buildInputs = [  ];
-  propagatedBuildInputs = [  ];
+  buildInputs = [ ament_cmake_core ];
+  propagatedBuildInputs = [ ament_cmake_test ament_xmllint ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

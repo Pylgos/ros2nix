@@ -1,5 +1,5 @@
 use std::{
-    collections::BTreeMap,
+    collections::{BTreeMap, BTreeSet},
     path::{Path, PathBuf},
     sync::Arc,
 };
@@ -8,44 +8,37 @@ use anyhow::Result;
 use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
-struct ConfigToml {
-    cache_dir: Option<String>,
-    gen_dir: Option<String>,
-    env: Option<BTreeMap<String, BTreeMap<String, String>>>,
-    system_packages: Option<BTreeMap<String, Vec<String>>>,
-    max_concurrent_downloads: Option<usize>,
-}
-
-impl ConfigToml {
-    fn load(path: &Path) -> Result<Self> {
-        let toml = std::fs::read_to_string(path)?;
-        toml::from_str(&toml).map_err(Into::into)
-    }
-
-    fn into_config(self) -> Config {
-        Config {
-            cache_dir: self
-                .cache_dir
-                .map(PathBuf::from)
-                .unwrap_or_else(|| PathBuf::from("cache")),
-            gen_dir: self
-                .gen_dir
-                .map(PathBuf::from)
-                .unwrap_or_else(|| PathBuf::from("nix/gen")),
-            env: self.env.unwrap_or_default(),
-            system_packages: self.system_packages.unwrap_or_default(),
-            max_concurrent_downloads: self.max_concurrent_downloads.unwrap_or(32),
-        }
-    }
-}
-
-#[derive(Debug)]
 pub struct Config {
+    #[serde(default = "default_cache_dir")]
     cache_dir: PathBuf,
+    #[serde(default = "default_gen_dir")]
     gen_dir: PathBuf,
+    #[serde(default)]
     env: BTreeMap<String, BTreeMap<String, String>>,
+    #[serde(default)]
     system_packages: BTreeMap<String, Vec<String>>,
+    #[serde(default = "default_max_concurrent_downloads")]
     max_concurrent_downloads: usize,
+    #[serde(default)]
+    buildtool_packages: BTreeSet<String>,
+    #[serde(default)]
+    runtime_packages: BTreeSet<String>,
+    #[serde(default)]
+    buildtool_groups: BTreeSet<String>,
+    #[serde(default)]
+    runtime_groups: BTreeSet<String>,
+    #[serde(default)]
+    hybrid_packages: BTreeSet<String>,
+}
+
+fn default_cache_dir() -> PathBuf {
+    "cache".into()
+}
+fn default_gen_dir() -> PathBuf {
+    "nix/gen".into()
+}
+fn default_max_concurrent_downloads() -> usize {
+    32
 }
 
 pub type ConfigRef = std::sync::Arc<Config>;
@@ -58,15 +51,18 @@ impl Default for Config {
             env: BTreeMap::new(),
             system_packages: BTreeMap::new(),
             max_concurrent_downloads: 32,
+            buildtool_packages: Default::default(),
+            runtime_packages: Default::default(),
+            buildtool_groups: Default::default(),
+            runtime_groups: Default::default(),
+            hybrid_packages: Default::default(),
         }
     }
 }
 
 impl Config {
     pub fn load(path: impl AsRef<Path>) -> Result<Config> {
-        ConfigToml::load(path.as_ref())
-            .map_err(Into::into)
-            .map(ConfigToml::into_config)
+        Ok(toml::from_str(&std::fs::read_to_string(path.as_ref())?)?)
     }
 
     pub fn into_ref(self) -> ConfigRef {
@@ -97,5 +93,25 @@ impl Config {
 
     pub fn max_concurrent_downloads(&self) -> usize {
         self.max_concurrent_downloads
+    }
+
+    pub fn buildtool_packages(&self) -> &BTreeSet<String> {
+        &self.buildtool_packages
+    }
+
+    pub fn runtime_packages(&self) -> &BTreeSet<String> {
+        &self.runtime_packages
+    }
+
+    pub fn buildtool_groups(&self) -> &BTreeSet<String> {
+        &self.buildtool_groups
+    }
+
+    pub fn runtime_groups(&self) -> &BTreeSet<String> {
+        &self.runtime_groups
+    }
+
+    pub fn hybrid_packages(&self) -> &BTreeSet<String> {
+        &self.hybrid_packages
     }
 }

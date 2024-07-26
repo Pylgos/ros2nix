@@ -40,9 +40,9 @@ buildRosPackage {
   version = "2.0.0-1";
   src = sources.mrpt_pf_localization;
   nativeBuildInputs = [ ament_cmake cmake ];
-  propagatedNativeBuildInputs = [ ament_lint_auto ];
+  propagatedNativeBuildInputs = [ ament_lint_auto ament_lint_common ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ament_lint_common mola_relocalization mp2p_icp mrpt2 mrpt_msgs mrpt_msgs_bridge nav_msgs pose_cov_ops sensor_msgs std_msgs tf2 tf2_geometry_msgs ];
+  propagatedBuildInputs = [ mola_relocalization mp2p_icp mrpt2 mrpt_msgs mrpt_msgs_bridge nav_msgs pose_cov_ops sensor_msgs std_msgs tf2 tf2_geometry_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

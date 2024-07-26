@@ -1,4 +1,24 @@
 max_concurrent_downloads = 16
+buildtool_packages = ["ament_lint_common"]
+runtime_packages = [
+    "rmw",
+    "ros2test",
+    "ros2run",
+    "launch_testing",
+    "rmf_building_map_tools",
+    "rosidl_typesupport_interface",
+    "qt5-qmake",
+    "rcutils",
+    "ament_index_python",
+]
+runtime_groups = [
+  "rosidl_interface_packages",
+  "rosidl_typesupport_cpp_packages",
+  "rosidl_typesupport_c_packages",
+  "rosidl_runtime_packages",
+  "rmw_implementation_packages",
+]
+
 
 [env.humble]
 PAL_DISTRO = ""

@@ -34,9 +34,9 @@ buildRosPackage {
   version = "2.0.0-1";
   src = sources.mrpt_map_server;
   nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ ament_lint_auto ];
+  propagatedNativeBuildInputs = [ ament_lint_auto ament_lint_common ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ament_lint_common mp2p_icp mrpt2 mrpt_msgs mrpt_nav_interfaces nav_msgs rclcpp rclcpp_components ];
+  propagatedBuildInputs = [ mp2p_icp mrpt2 mrpt_msgs mrpt_nav_interfaces nav_msgs rclcpp rclcpp_components ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

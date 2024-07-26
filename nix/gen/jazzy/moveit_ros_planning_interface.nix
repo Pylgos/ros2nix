@@ -50,9 +50,9 @@ buildRosPackage {
   version = "2.10.0-1";
   src = sources.moveit_ros_planning_interface;
   nativeBuildInputs = [ ament_cmake eigen3_cmake_module wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [  ];
+  propagatedNativeBuildInputs = [ python3 ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ eigen geometry_msgs moveit_common moveit_core moveit_msgs moveit_ros_move_group moveit_ros_planning moveit_ros_warehouse python3 rclcpp rclcpp_action rclpy tf2 tf2_eigen tf2_geometry_msgs tf2_ros ];
+  propagatedBuildInputs = [ eigen geometry_msgs moveit_common moveit_core moveit_msgs moveit_ros_move_group moveit_ros_planning moveit_ros_warehouse rclcpp rclcpp_action rclpy tf2 tf2_eigen tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

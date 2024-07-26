@@ -35,7 +35,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament_cmake_python ament_cmake_ros ];
   propagatedNativeBuildInputs = [ ament_cmake_core python3 rosidl_cli rosidl_parser ];
   buildInputs = [ ament_cmake_python ament_cmake_ros ];
-  propagatedBuildInputs = [ ament_cmake_core rosidl_cli rosidl_parser ];
+  propagatedBuildInputs = [ ament_cmake_core python3 rosidl_cli rosidl_parser ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [ ament_index_python ];
 }

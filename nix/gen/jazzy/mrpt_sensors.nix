@@ -31,9 +31,9 @@ buildRosPackage {
   version = "0.1.0-2";
   src = sources.mrpt_sensors;
   nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ ament_lint_auto ];
+  propagatedNativeBuildInputs = [ ament_lint_auto ament_lint_common ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ament_lint_common mrpt_generic_sensor mrpt_sensor_bumblebee_stereo mrpt_sensor_gnns_nmea mrpt_sensorlib ];
+  propagatedBuildInputs = [ mrpt_generic_sensor mrpt_sensor_bumblebee_stereo mrpt_sensor_gnns_nmea mrpt_sensorlib ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

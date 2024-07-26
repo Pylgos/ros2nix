@@ -33,9 +33,9 @@ buildRosPackage {
   version = "1.0.6-1";
   src = sources.mola_metric_maps;
   nativeBuildInputs = [ ament_cmake ament_cmake_gtest cmake ];
-  propagatedNativeBuildInputs = [ ros_environment ];
+  propagatedNativeBuildInputs = [ ament_cmake_xmllint ros_environment ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ament_cmake_xmllint mola_common mrpt2 ];
+  propagatedBuildInputs = [ mola_common mrpt2 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

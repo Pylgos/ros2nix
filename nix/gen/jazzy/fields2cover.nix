@@ -467,7 +467,7 @@ buildRosPackage {
   nativeBuildInputs = [ cmake ];
   propagatedNativeBuildInputs = [ git gtest python3 ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ eigen gdal geos protobuf python3 python3Packages.boost python3Packages.matplotlib python3Packages.tkinter swig tbb tinyxml-2 ];
+  propagatedBuildInputs = [ eigen gdal geos protobuf python3Packages.boost python3Packages.matplotlib python3Packages.tkinter swig tbb tinyxml-2 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

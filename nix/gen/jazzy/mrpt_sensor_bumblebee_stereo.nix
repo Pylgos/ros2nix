@@ -35,9 +35,9 @@ buildRosPackage {
   version = "0.1.0-2";
   src = sources.mrpt_sensor_bumblebee_stereo;
   nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ ament_lint_auto ros_environment ];
+  propagatedNativeBuildInputs = [ ament_lint_auto ament_lint_common ros_environment ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ament_lint_common mrpt2 mrpt_msgs mrpt_sensorlib rclcpp rclcpp_components tf2 tf2_ros ];
+  propagatedBuildInputs = [ mrpt2 mrpt_msgs mrpt_sensorlib rclcpp rclcpp_components tf2 tf2_ros ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

@@ -177,67 +177,61 @@ fn is_propagation_required(dependency_kind: RosDependencyKind) -> bool {
 }
 
 fn classify_dependencies(
-    _cfg: &ConfigRef,
+    cfg: &ConfigRef,
     manifests: &BTreeMap<String, PackageManifest>,
 ) -> Result<BTreeMap<String, BTreeSet<ClassifiedRosDependency>>> {
-    let mut buildtools = BTreeSet::new();
-    buildtools.insert("ament_lint_common");
-
-    let mut definetly_not_buildtools = BTreeSet::new();
-    definetly_not_buildtools.extend(
+    let mut buildtools_packages = BTreeSet::new();
+    buildtools_packages.extend(cfg.buildtool_packages().iter().map(|s| s.as_str()));
+    buildtools_packages.extend(
         manifests
             .values()
             .filter(|m| {
-                m.member_of_group.contains("rosidl_interface_packages")
-                    || m.member_of_group
-                        .contains("rosidl_typesupport_cpp_packages")
-                    || m.member_of_group.contains("rosidl_typesupport_c_packages")
-                    || m.member_of_group.contains("rosidl_runtime_packages")
-                    || m.member_of_group.contains("rmw_implementation_packages")
+                m.member_of_group
+                    .iter()
+                    .any(|g| cfg.buildtool_groups().contains(g.as_str()))
             })
             .map(|m| m.name.as_str()),
     );
-    definetly_not_buildtools.extend(
-        [
-            "rmw",
-            "ros2test",
-            "ros2run",
-            "launch_testing",
-            "rmf_building_map_tools",
-            "rosidl_typesupport_interface",
-            "qt5-qmake",
-            "rcutils",
-            "ament_index_python",
-        ]
-        .iter(),
+
+    let mut runtime_packages = BTreeSet::new();
+    runtime_packages.extend(cfg.runtime_packages().iter().map(|s| s.as_str()));
+    runtime_packages.extend(
+        manifests
+            .values()
+            .filter(|m| {
+                m.member_of_group
+                    .iter()
+                    .any(|g| cfg.runtime_groups().contains(g.as_str()))
+            })
+            .map(|m| m.name.as_str()),
     );
 
-    let mut both_buildtools_and_runtime = BTreeSet::new();
-    both_buildtools_and_runtime.insert("python3");
+    let mut hybrid_packages = BTreeSet::new();
+    hybrid_packages.extend(cfg.hybrid_packages().iter().map(|s| s.as_str()));
 
     let mut prev_buildtools_len = 0;
     loop {
         for manifest in manifests.values() {
             let deps = &manifest.dependencies.deps;
             for dep in deps.iter().filter(|d| d.kind.is_buildtool()) {
-                if !definetly_not_buildtools.contains(dep.name.as_str()) {
-                    buildtools.insert(dep.name.as_str());
+                if !runtime_packages.contains(dep.name.as_str()) {
+                    buildtools_packages.insert(dep.name.as_str());
                 }
             }
 
-            if buildtools.contains(manifest.name.as_str()) {
+            if buildtools_packages.contains(manifest.name.as_str()) {
                 for dep in deps.iter().filter(|d| d.kind.is_runtime()) {
-                    if !definetly_not_buildtools.contains(dep.name.as_str()) {
-                        buildtools.insert(dep.name.as_str());
+                    if !runtime_packages.contains(dep.name.as_str()) {
+                        buildtools_packages.insert(dep.name.as_str());
                     }
                 }
             }
         }
 
-        if buildtools.len() == prev_buildtools_len {
+        if buildtools_packages.len() == prev_buildtools_len {
             break;
         }
-        prev_buildtools_len = buildtools.len();
+        prev_buildtools_len = buildtools_packages.len();
     }
 
     // for manifest in manifests.values() {
@@ -288,9 +282,9 @@ fn classify_dependencies(
                 .flat_map(|d| {
                     map_dependency_kind(
                         d.kind,
-                        buildtools.contains(m.name.as_str()),
-                        buildtools.contains(d.name.as_str()),
-                        both_buildtools_and_runtime.contains(d.name.as_str()),
+                        buildtools_packages.contains(m.name.as_str()),
+                        buildtools_packages.contains(d.name.as_str()),
+                        hybrid_packages.contains(d.name.as_str()),
                     )
                     .into_iter()
                     .map(|kind| ClassifiedRosDependency {

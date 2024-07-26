@@ -30,9 +30,9 @@ buildRosPackage {
   version = "2.0.0-1";
   src = sources.mrpt_tutorials;
   nativeBuildInputs = [ ament_cmake cmake ];
-  propagatedNativeBuildInputs = [ ament_lint_auto ];
+  propagatedNativeBuildInputs = [ ament_lint_auto ament_lint_common ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ament_lint_common mvsim teleop_twist_keyboard ];
+  propagatedBuildInputs = [ mvsim teleop_twist_keyboard ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

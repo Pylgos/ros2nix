@@ -41,9 +41,9 @@ buildRosPackage {
   version = "1.0.6-1";
   src = sources.mola_bridge_ros2;
   nativeBuildInputs = [ ament_cmake ament_cmake_gmock ament_cmake_gtest cmake ];
-  propagatedNativeBuildInputs = [ ament_lint_auto ros_environment ];
+  propagatedNativeBuildInputs = [ ament_cmake_xmllint ament_lint_auto ament_lint_common ros_environment ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ament_cmake_xmllint ament_lint_common geometry_msgs mola_common mola_kernel mrpt2 nav_msgs rclcpp sensor_msgs tf2 tf2_geometry_msgs ];
+  propagatedBuildInputs = [ geometry_msgs mola_common mola_kernel mrpt2 nav_msgs rclcpp sensor_msgs tf2 tf2_geometry_msgs ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

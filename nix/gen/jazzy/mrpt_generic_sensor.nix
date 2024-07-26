@@ -36,9 +36,9 @@ buildRosPackage {
   version = "0.1.0-2";
   src = sources.mrpt_generic_sensor;
   nativeBuildInputs = [ ament_cmake ];
-  propagatedNativeBuildInputs = [ ament_lint_auto ros_environment ];
+  propagatedNativeBuildInputs = [ ament_lint_auto ament_lint_common ros_environment ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ament_lint_common mrpt_msgs mrpt_sensorlib rclcpp rclcpp_components sensor_msgs tf2 tf2_geometry_msgs tf2_ros ];
+  propagatedBuildInputs = [ mrpt_msgs mrpt_sensorlib rclcpp rclcpp_components sensor_msgs tf2 tf2_geometry_msgs tf2_ros ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

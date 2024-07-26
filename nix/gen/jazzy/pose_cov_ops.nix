@@ -36,9 +36,9 @@ buildRosPackage {
   version = "0.3.11-3";
   src = sources.pose_cov_ops;
   nativeBuildInputs = [ ament_cmake ament_cmake_gmock ament_cmake_gtest cmake ];
-  propagatedNativeBuildInputs = [ ros_environment ];
+  propagatedNativeBuildInputs = [ ament_cmake_xmllint ros_environment ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ ament_cmake_xmllint geometry_msgs mrpt2 tf2 ];
+  propagatedBuildInputs = [ geometry_msgs mrpt2 tf2 ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

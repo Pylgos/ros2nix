@@ -518,13 +518,13 @@ mod test {
         let fetcher = Arc::new(Fetcher::new(&config, "test"));
         let base_path = resource_dir().join("foonathan_memory_vendor");
         let rel_path = PathBuf::from("CMakeLists.txt");
-        let mut fetched = HashSet::new();
+        let fetched = HashSet::new();
         let subs = autopatch_cmake_vendor(
             &fetcher,
             "foonathan_memory_vendor",
             &base_path.join(&rel_path),
             &rel_path,
-            &mut fetched,
+            &fetched,
         )
         .await
         .unwrap();

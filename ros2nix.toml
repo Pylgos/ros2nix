@@ -1,15 +1,15 @@
 max_concurrent_downloads = 16
 buildtool_packages = ["ament_lint_common"]
 runtime_packages = [
-    "rmw",
-    "ros2test",
-    "ros2run",
-    "launch_testing",
-    "rmf_building_map_tools",
-    "rosidl_typesupport_interface",
-    "qt5-qmake",
-    "rcutils",
-    "ament_index_python",
+  "rmw",
+  "ros2test",
+  "ros2run",
+  "launch_testing",
+  "rmf_building_map_tools",
+  "rosidl_typesupport_interface",
+  "qt5-qmake",
+  "rcutils",
+  "ament_index_python",
 ]
 runtime_groups = [
   "rosidl_interface_packages",
@@ -18,6 +18,7 @@ runtime_groups = [
   "rosidl_runtime_packages",
   "rmw_implementation_packages",
 ]
+hybrid_packages = ["python3"]
 
 
 [env.humble]
@@ -86,7 +87,7 @@ DISABLE_GROUPS_WORKAROUND = "1"
 "black" = ["python3Packages.black"]
 "blender" = ["blender"]
 "bluez" = ["bluez"]
-"boost" = ["python3Packages.boost"] 
+"boost" = ["python3Packages.boost"]
 "box2d-dev" = ["box2d"]
 "bullet" = ["bullet"]
 "bullet-extras" = ["bullet"]
@@ -238,36 +239,36 @@ DISABLE_GROUPS_WORKAROUND = "1"
 "libblas-dev" = ["blas"]
 "libbluetooth" = ["bluez"]
 "libbluetooth-dev" = ["bluez"]
-"libboost-atomic" = ["python3Packages.boost"] 
-"libboost-atomic-dev" = ["python3Packages.boost"] 
-"libboost-chrono" = ["python3Packages.boost"] 
-"libboost-chrono-dev" = ["python3Packages.boost"] 
-"libboost-date-time" = ["python3Packages.boost"] 
-"libboost-date-time-dev" = ["python3Packages.boost"] 
-"libboost-dev" = ["python3Packages.boost"] 
-"libboost-filesystem" = ["python3Packages.boost"] 
-"libboost-filesystem-dev" = ["python3Packages.boost"] 
-"libboost-iostreams" = ["python3Packages.boost"] 
-"libboost-iostreams-dev" = ["python3Packages.boost"] 
-"libboost-math" = ["python3Packages.boost"] 
-"libboost-math-dev" = ["python3Packages.boost"] 
-"libboost-numpy-dev" = ["python3Packages.boost"] 
-"libboost-program-options" = ["python3Packages.boost"] 
-"libboost-program-options-dev" = ["python3Packages.boost"] 
-"libboost-python" = ["python3Packages.boost"] 
-"libboost-python-dev" = ["python3Packages.boost"] 
-"libboost-random" = ["python3Packages.boost"] 
-"libboost-random-dev" = ["python3Packages.boost"] 
-"libboost-regex" = ["python3Packages.boost"] 
-"libboost-regex-dev" = ["python3Packages.boost"] 
-"libboost-serialization" = ["python3Packages.boost"] 
-"libboost-serialization-dev" = ["python3Packages.boost"] 
-"libboost-system" = ["python3Packages.boost"] 
-"libboost-system-dev" = ["python3Packages.boost"] 
-"libboost-thread" = ["python3Packages.boost"] 
-"libboost-thread-dev" = ["python3Packages.boost"] 
-"libboost-timer" = ["python3Packages.boost"] 
-"libboost-timer-dev" = ["python3Packages.boost"] 
+"libboost-atomic" = ["python3Packages.boost"]
+"libboost-atomic-dev" = ["python3Packages.boost"]
+"libboost-chrono" = ["python3Packages.boost"]
+"libboost-chrono-dev" = ["python3Packages.boost"]
+"libboost-date-time" = ["python3Packages.boost"]
+"libboost-date-time-dev" = ["python3Packages.boost"]
+"libboost-dev" = ["python3Packages.boost"]
+"libboost-filesystem" = ["python3Packages.boost"]
+"libboost-filesystem-dev" = ["python3Packages.boost"]
+"libboost-iostreams" = ["python3Packages.boost"]
+"libboost-iostreams-dev" = ["python3Packages.boost"]
+"libboost-math" = ["python3Packages.boost"]
+"libboost-math-dev" = ["python3Packages.boost"]
+"libboost-numpy-dev" = ["python3Packages.boost"]
+"libboost-program-options" = ["python3Packages.boost"]
+"libboost-program-options-dev" = ["python3Packages.boost"]
+"libboost-python" = ["python3Packages.boost"]
+"libboost-python-dev" = ["python3Packages.boost"]
+"libboost-random" = ["python3Packages.boost"]
+"libboost-random-dev" = ["python3Packages.boost"]
+"libboost-regex" = ["python3Packages.boost"]
+"libboost-regex-dev" = ["python3Packages.boost"]
+"libboost-serialization" = ["python3Packages.boost"]
+"libboost-serialization-dev" = ["python3Packages.boost"]
+"libboost-system" = ["python3Packages.boost"]
+"libboost-system-dev" = ["python3Packages.boost"]
+"libboost-thread" = ["python3Packages.boost"]
+"libboost-thread-dev" = ["python3Packages.boost"]
+"libboost-timer" = ["python3Packages.boost"]
+"libboost-timer-dev" = ["python3Packages.boost"]
 "libbsd-dev" = ["libbsd"]
 "libcairo2-dev" = ["cairo"]
 "libcap-dev" = ["libcap"]
@@ -694,7 +695,11 @@ python3-flake8-quotes = ["python3Packages.flake8-quotes"]
 "python3-pytest-cov" = ["python3Packages.pytestcov"]
 "python3-pytest-mock" = ["python3Packages.pytest-mock"]
 "python3-pytest-timeout" = ["python3Packages.pytest-timeout"]
-"python3-qt5-bindings" = ["python3Packages.pyside2", "python3Packages.pyqt5", "python3Packages.sip4"]
+"python3-qt5-bindings" = [
+  "python3Packages.pyside2",
+  "python3Packages.pyqt5",
+  "python3Packages.sip4",
+]
 "python3-qt5-bindings-gl" = ["python3Packages.pyqt5"]
 "python3-qt5-bindings-webkit" = ["python3Packages.pyqt5"]
 "python3-qtpy" = ["python3Packages.qtpy"]

@@ -143,13 +143,13 @@ fn map_dependency_kind(
     dependency_kind: RosDependencyKind,
     dependant_is_buildtool: bool,
     dependency_is_buildtool: bool,
-    dependency_is_both_buildtool_and_runtime: bool,
+    dependency_is_hybrid: bool,
 ) -> BTreeSet<NixDependencyKind> {
     use NixDependencyKind::*;
     use RosDependencyKind::*;
     if dependency_kind == Test {
         [Check].into_iter().collect()
-    } else if dependency_is_both_buildtool_and_runtime {
+    } else if dependency_is_hybrid {
         match dependency_kind {
             Build | BuildExport | Exec => [HostTarget].into_iter().collect(),
             Buildtool | BuildtoolExport => [BuildHost].into_iter().collect(),

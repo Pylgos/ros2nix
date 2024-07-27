@@ -42,9 +42,9 @@ buildRosPackage {
   version = "14.1.2-1";
   src = sources.rviz2;
   nativeBuildInputs = [ ament_cmake wrapRosQtAppsHook ];
-  propagatedNativeBuildInputs = [ python3 ];
+  propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ qt5.qtbase rviz_common rviz_default_plugins rviz_ogre_vendor ];
+  propagatedBuildInputs = [ python3 qt5.qtbase rviz_common rviz_default_plugins rviz_ogre_vendor ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

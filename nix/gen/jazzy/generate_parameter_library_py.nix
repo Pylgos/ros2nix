@@ -28,7 +28,7 @@ buildRosPackage {
   version = "0.3.8-4";
   src = sources.generate_parameter_library_py;
   nativeBuildInputs = [  ];
-  propagatedNativeBuildInputs = [ python3 buildPackages.python3Packages.jinja2 buildPackages.python3Packages.pyyaml ];
+  propagatedNativeBuildInputs = [ buildPackages.python3Packages.jinja2 buildPackages.python3Packages.pyyaml ];
   buildInputs = [  ];
   propagatedBuildInputs = [ python3 python3Packages.jinja2 python3Packages.pyyaml ];
   depsTargetTarget = [  ];

@@ -7,6 +7,8 @@ use crate::{
     source::Fetcher,
 };
 use anyhow::Result;
+use clap::Parser;
+use config::ConfigRef;
 use futures::{future, stream, StreamExt as _, TryStreamExt};
 use indicatif::ProgressStyle;
 use tokio::select;
@@ -57,11 +59,9 @@ pub async fn fetch_sources(
     Ok(sources)
 }
 
-async fn main_inner() -> Result<()> {
-    let cfg = config::Config::load("ros2nix.toml")?.into_ref();
-    cfg.create_directories()?;
-    let distro_index = DistroIndex::fetch(&cfg).await?;
-    let fetcher = Fetcher::new_arc(&cfg, "common");
+async fn generate(cfg: &ConfigRef) -> Result<()> {
+    let distro_index = DistroIndex::fetch(cfg).await?;
+    let fetcher = Fetcher::new_arc(cfg, "common");
     for package_index in distro_index.distros.values() {
         if package_index.status == DistroStatus::EndOfLife {
             continue;
@@ -69,11 +69,33 @@ async fn main_inner() -> Result<()> {
         if package_index.name != "jazzy" {
             continue;
         }
-        let deps = resolve_dependencies(&cfg, &package_index.manifests)?;
+        let deps = resolve_dependencies(cfg, &package_index.manifests)?;
         let patched_sources = fetch_sources(&fetcher, package_index).await?;
-        nixgen::generate(&cfg, package_index, &patched_sources, &deps)?;
+        nixgen::generate(cfg, package_index, &patched_sources, &deps)?;
     }
 
+    Ok(())
+}
+
+#[derive(Debug, Parser)]
+enum Subcommand {
+    Generate,
+}
+
+#[derive(Debug, Parser)]
+struct Args {
+    #[command(subcommand)]
+    subcommand: Subcommand,
+}
+
+async fn main_inner() -> Result<()> {
+    let args = Args::parse();
+    let cfg = config::Config::load("ros2nix.toml")?.into_ref();
+    cfg.create_directories()?;
+    match args.subcommand {
+        Subcommand::Generate => {}
+    }
+    generate(&cfg).await?;
     Ok(())
 }
 

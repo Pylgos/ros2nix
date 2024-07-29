@@ -70,7 +70,7 @@
         }
       );
       lib.defaultConfig = {
-        distro = "rolling";
+        distro = "jazzy";
       };
       overlays.default = self.lib.mkOverlay { config = self.lib.defaultConfig; };
     };

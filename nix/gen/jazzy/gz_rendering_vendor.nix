@@ -17,7 +17,6 @@
   gz_ogre_next_vendor,
   gz_plugin_vendor,
   gz_utils_vendor,
-  ogre1_9,
   substituteSource,
   util-linux,
   vulkan-loader,
@@ -59,7 +58,7 @@ buildRosPackage {
   nativeBuildInputs = [ ament_cmake_core ament_cmake_test ament_cmake_vendor_package ];
   propagatedNativeBuildInputs = [  ];
   buildInputs = [  ];
-  propagatedBuildInputs = [ freeglut glew gz_cmake_vendor gz_common_vendor gz_math_vendor gz_ogre_next_vendor gz_plugin_vendor gz_utils_vendor ogre1_9 util-linux vulkan-loader xorg.libXi xorg.libXmu ];
+  propagatedBuildInputs = [ freeglut glew gz_cmake_vendor gz_common_vendor gz_math_vendor gz_ogre_next_vendor gz_plugin_vendor gz_utils_vendor util-linux vulkan-loader xorg.libXi xorg.libXmu ];
   depsTargetTarget = [  ];
   depsTargetTargetPropagated = [  ];
 }

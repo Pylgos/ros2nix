@@ -20,15 +20,6 @@
 }:
 let
   sources = rec {
-    fast_gicp-vendor_source-lapack_addons_3-0 = substituteSource {
-      src = fetchurl {
-        name = "fast_gicp-vendor_source-lapack_addons_3-0-source";
-        url = "http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz";
-        hash = "sha256-vZntt9xHKapjGQQapStG2/erraGkP3oj/iYm2yTFJDw=";
-      };
-      substitutions = [
-      ];
-    };
     fields2cover = substituteSource {
       src = fetchgit {
         name = "fields2cover-source";
@@ -303,7 +294,7 @@ let
         {
           path = "lapack/CMakeLists.txt";
           from = "DOWNLOAD \"http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz\"";
-          to = "DOWNLOAD file://${fast_gicp-vendor_source-lapack_addons_3-0}";
+          to = "DOWNLOAD file://${gtsam-vendor_source-lapack_addons_3-0}";
         }
       ];
     };
@@ -454,6 +445,15 @@ let
         url = "https://github.com/Fields2Cover/steering_functions.git";
         rev = "13e3f5658144b3832fb1eb31a0e2f5a3cbf57db9";
         hash = "sha256-+gGBX6kKKI0G+0AVwvIRyuzFKlCgHp+woiV0jfu0REo=";
+      };
+      substitutions = [
+      ];
+    };
+    gtsam-vendor_source-lapack_addons_3-0 = substituteSource {
+      src = fetchurl {
+        name = "gtsam-vendor_source-lapack_addons_3-0-source";
+        url = "http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz";
+        hash = "sha256-vZntt9xHKapjGQQapStG2/erraGkP3oj/iYm2yTFJDw=";
       };
       substitutions = [
       ];

@@ -12,15 +12,6 @@
 }:
 let
   sources = rec {
-    fast_gicp-vendor_source-lapack_addons_3-0 = substituteSource {
-      src = fetchurl {
-        name = "fast_gicp-vendor_source-lapack_addons_3-0-source";
-        url = "http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz";
-        hash = "sha256-vZntt9xHKapjGQQapStG2/erraGkP3oj/iYm2yTFJDw=";
-      };
-      substitutions = [
-      ];
-    };
     fields2cover-vendor_source-or-tools-5 = substituteSource {
       src = fetchgit {
         name = "fields2cover-vendor_source-or-tools-5-source";
@@ -246,7 +237,7 @@ let
         {
           path = "lapack/CMakeLists.txt";
           from = "DOWNLOAD \"http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz\"";
-          to = "DOWNLOAD file://${fast_gicp-vendor_source-lapack_addons_3-0}";
+          to = "DOWNLOAD file://${gtsam-vendor_source-lapack_addons_3-0}";
         }
       ];
     };
@@ -359,6 +350,15 @@ let
         url = "https://github.com/scipopt/scip.git";
         rev = "61297938717271f462c995b99ab4b217ca1d9499";
         hash = "sha256-Ub0eykyZOlJtqUofTx4a2YcOMiyG6AUX0llxsqJ+YvE=";
+      };
+      substitutions = [
+      ];
+    };
+    gtsam-vendor_source-lapack_addons_3-0 = substituteSource {
+      src = fetchurl {
+        name = "gtsam-vendor_source-lapack_addons_3-0-source";
+        url = "http://downloads.tuxfamily.org/eigen/lapack_addons_3.4.1.tgz";
+        hash = "sha256-vZntt9xHKapjGQQapStG2/erraGkP3oj/iYm2yTFJDw=";
       };
       substitutions = [
       ];

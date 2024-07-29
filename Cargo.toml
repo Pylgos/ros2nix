@@ -4,8 +4,8 @@ version = "0.1.0"
 edition = "2021"
 build = "build.rs"
 
-[workspace]
-members = ["setup-helper"]
+# [workspace]
+# members = ["setup-helper"]
 
 [dependencies]
 anyhow = "1.0.86"

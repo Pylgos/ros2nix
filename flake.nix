@@ -5,6 +5,7 @@
     dream2nix.url = "github:nix-community/dream2nix";
     dream2nix.inputs.nixpkgs.follows = "nixpkgs";
     poetry2nix.url = "github:nix-community/poetry2nix";
+    nix-filter.url = "github:numtide/nix-filter";
   };
 
   outputs =
@@ -14,6 +15,7 @@
       nixpkgs,
       dream2nix,
       poetry2nix,
+      nix-filter,
     }:
     let
       lib = nixpkgs.lib // {
@@ -24,11 +26,38 @@
       system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
+        filter = nix-filter.lib;
       in
       {
         legacyPackages = import nixpkgs {
           inherit system;
           overlays = [ self.overlays.default ];
+        };
+        packages = {
+          ros2nix = pkgs.callPackage (
+            {
+              rustPlatform,
+              pkg-config,
+              openssl,
+            }:
+            rustPlatform.buildRustPackage {
+              pname = "ros2nix";
+              version = "0.1.0";
+              src = filter {
+                root = ./.;
+                include = [
+                  "Cargo.toml"
+                  "Cargo.lock"
+                  "build.rs"
+                  "src"
+                ];
+              };
+              cargoLock.lockFile = ./Cargo.lock;
+              nativeBuildInputs = [ pkg-config ];
+              buildInputs = [ openssl ];
+              doCheck = false;
+            }
+          ) { };
         };
       }
     ))

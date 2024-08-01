@@ -1261,6 +1261,7 @@ dependencies = [
  "indicatif",
  "lalrpop",
  "lalrpop-util",
+ "num_cpus",
  "reqwest",
  "roxmltree",
  "serde",

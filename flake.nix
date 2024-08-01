@@ -34,15 +34,13 @@
         filter = nix-filter.lib;
       in
       {
-        legacyPackages = lib.listToAttrs (
-          map (name: {
-            inherit name;
-            value = import nixpkgs {
-              inherit system;
-              overlays = [ self.overlays.default ];
-            };
-          }) self.lib.distributions
-        );
+        legacyPackages = lib.mapAttrs (
+          name: overlay:
+          import nixpkgs {
+            inherit system;
+            overlays = [ overlay ];
+          }
+        ) self.overlays;
         packages = {
           ros2nix = pkgs.callPackage (
             {

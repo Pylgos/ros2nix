@@ -22,6 +22,7 @@ futures-io = "0.3.30"
 indenter = "0.3.3"
 indicatif = "0.17.8"
 lalrpop-util = { version = "0.20.2", features = ["lexer"] }
+num_cpus = "1.16.0"
 reqwest = "0.12.5"
 roxmltree = "0.20.0"
 serde = { version = "1.0.203", features = ["derive"] }

@@ -155,7 +155,7 @@ pub async fn check_config(cfg: &ConfigRef) -> Result<()> {
             let span = Span::current();
             tokio::spawn(async move {
                 let result = can_evaluate_out_path(&format!("default.{nix_name}")).await?;
-                if result != EvalResult::Success {
+                if result != EvalResult::Success && result != EvalResult::Unfree {
                     error!(
                         ros_name = %ros_name,
                         nix_name = %nix_name,

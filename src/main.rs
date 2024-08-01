@@ -10,7 +10,6 @@ use tracing_subscriber::util::SubscriberInitExt;
 use tracing_subscriber::Layer;
 
 mod autopatch;
-mod ci;
 mod condition;
 mod config;
 mod deps;
@@ -22,7 +21,6 @@ mod source;
 #[derive(Debug, Parser)]
 enum Subcommand {
     Generate,
-    Ci,
 }
 
 #[derive(Debug, Parser)]
@@ -38,9 +36,6 @@ async fn main_inner() -> Result<()> {
     match args.subcommand {
         Subcommand::Generate => {
             generate::generate(&cfg).await?;
-        }
-        Subcommand::Ci => {
-            ci::ci(&cfg).await?;
         }
     }
     Ok(())

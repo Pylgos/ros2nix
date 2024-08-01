@@ -6,6 +6,8 @@
     dream2nix.inputs.nixpkgs.follows = "nixpkgs";
     poetry2nix.url = "github:nix-community/poetry2nix";
     nix-filter.url = "github:numtide/nix-filter";
+    nix-fast-build.url = "github:Mic92/nix-fast-build";
+    nix-fast-build.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -16,6 +18,7 @@
       dream2nix,
       poetry2nix,
       nix-filter,
+      nix-fast-build,
     }:
     let
       lib = nixpkgs.lib // {
@@ -26,13 +29,20 @@
       system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
+        selfPackages = self.packages.${system};
+        nix-fast-build-pkg = nix-fast-build.packages.${system}.nix-fast-build;
         filter = nix-filter.lib;
       in
       {
-        legacyPackages = import nixpkgs {
-          inherit system;
-          overlays = [ self.overlays.default ];
-        };
+        legacyPackages = lib.listToAttrs (
+          map (name: {
+            inherit name;
+            value = import nixpkgs {
+              inherit system;
+              overlays = [ self.overlays.default ];
+            };
+          }) self.lib.distributions
+        );
         packages = {
           ros2nix = pkgs.callPackage (
             {
@@ -59,9 +69,25 @@
             }
           ) { };
         };
+        devShells = {
+          ci = pkgs.mkShell {
+            nativeBuildInputs = [
+              selfPackages.ros2nix
+              nix-fast-build-pkg
+            ];
+          };
+        };
       }
     ))
     // {
+      lib.distributions = [
+        "humble"
+        "iron"
+        "jazzy"
+      ];
+      lib.defaultConfig = {
+        distro = "jazzy";
+      };
       lib.mkOverlay = (
         { config }:
         import ./overlay.nix {
@@ -69,9 +95,19 @@
           config = self.lib.defaultConfig // config;
         }
       );
-      lib.defaultConfig = {
-        distro = "jazzy";
-      };
-      overlays.default = self.lib.mkOverlay { config = self.lib.defaultConfig; };
+      overlays =
+        (lib.listToAttrs (
+          map (name: {
+            inherit name;
+            value = self.lib.mkOverlay {
+              config = {
+                distro = name;
+              };
+            };
+          }) self.lib.distributions
+        ))
+        // {
+          default = self.overlays.jazzy;
+        };
     };
 }

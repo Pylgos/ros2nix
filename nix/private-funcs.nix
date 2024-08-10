@@ -51,7 +51,6 @@ rec {
               cp -a . $out
             '';
             preferLocalBuild = true;
-            allowSubstitutes = false;
           };
     in
     self // { zipped = compressZip self; };
